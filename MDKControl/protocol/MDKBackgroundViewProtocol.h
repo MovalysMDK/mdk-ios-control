@@ -13,27 +13,20 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
+
 #import <Foundation/Foundation.h>
 
 /*!
- * @protocol MFComponentAttributesProtocol
- * @brief This protocol provides a property to hold control attributes
+ * @protocol MDKBackgroundViewProtocol
+ * @brief This protocol declares a backgroundView property
  */
+@protocol MDKBackgroundViewProtocol <NSObject>
 
-//FIXME: Rename en control
-@protocol MFComponentAttributesProtocol <NSObject>
+#pragma mark - Properties
 
 /*!
- * @brief The control attributes property
+ * @brief A view that should be used as background
  */
-@property (nonatomic, strong) NSDictionary *controlAttributes;
-
-
-/*!
- * @brief Adds a control attribute
- * @param controlAttribute A control attribute to add
- * @param key The key used to add the control attribute
- */
--(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key;
+@property (nonatomic, strong) UIView *backgroundView;
 
 @end

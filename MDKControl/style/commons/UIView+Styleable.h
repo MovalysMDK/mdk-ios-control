@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2010 Sopra (support_movalys@sopra.com)
  *
@@ -16,12 +15,28 @@
  */
 #import <UIKit/UIKit.h>
 
+/*!
+ * @category Styleable
+ * @brief This category adds style methods on views.
+ * @discussion It is used to apply MDK Style classes
+ */
 @interface UIView (Styleable)
 
+/*!
+ * @brief Applies the standard style on this view.
+ * The standard style is the style when the view is not on
+ * a valid or invalid state.
+ */
 -(void) applyStandardStyle;
 
+/*!
+ * @brief Applies the valid style on this view.
+ */
 -(void) applyValidStyle;
 
+/*!
+ * @brief Applies the error style on this view.
+ */
 -(void) applyErrorStyle;
 
 @end

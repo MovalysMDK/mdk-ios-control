@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2010 Sopra (support_movalys@sopra.com)
  *
@@ -20,6 +19,10 @@
 
 #import "MFStyleProtocol.h"
 
+/*!
+ * @class MFDefaultStyle
+ * @brief The default style for all MDK UI-components
+ */
 @interface MFDefaultStyle : NSObject <MFStyleProtocol>
 
 @end

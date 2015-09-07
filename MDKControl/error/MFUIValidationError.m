@@ -41,57 +41,57 @@
 //    return [MFUIValidationError getDomainBase];
 //}
 
-///*
-// Designated initializer.
-// @param code Error unique code.
-// @param dict may be nil if no userInfo desired.
-// */
-//- (id)initWithCode:(NSInteger)code userInfo:(NSDictionary *)dict localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName
-//{
-//    self = [super initWithCode:code userInfo:dict];
-//    if(self)
-//    {
-//        self.localizedFieldName = fieldName;
-//        self.technicalFieldName = technicalFieldName;
-//        MFCoreLogVerbose(@"Error domain : %@ - code : %ld - localizedFieldName : %@ - technicalFieldName : %@", self.domainBase, (long)self.code, self.localizedFieldName, self.technicalFieldName);
-//    }
-//    
-//    return self;
-//}
-//
-///*
-// Designated initializer.
-// @param code Error unique code.
-// @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
-// @param failureReasonKey The string that can be displayed as the "informative" (aka "secondary") message on an alert panel
-// */
-//- (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey localizedFailureReasonErrorKey: (NSString *) failureReasonKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName
-//{
-//    self = [super initWithCode:code localizedDescriptionKey:descriptionKey localizedFailureReasonErrorKey:failureReasonKey];
-//    if(self)
-//    {
-//        self.localizedFieldName = fieldName;
-//        self.technicalFieldName = technicalFieldName;
-//        MFCoreLogVerbose(@"Error domain : %@ - code : %ld - localizedFieldName : %@ - technicalFieldName : %@", self.domainBase, (long)self.code, self.localizedFieldName, self.technicalFieldName);
-//    }
-//    return self;
-//}
-//
-///*
-// Designated initializer.
-// @param code Error unique code.
-// @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
-// */
-//- (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName{
-//    self = [super initWithCode:code localizedDescriptionKey:descriptionKey];
-//    if(self)
-//    {
-//        self.localizedFieldName = fieldName;
-//        self.technicalFieldName = technicalFieldName;
-//        MFCoreLogVerbose(@"Error domain : %@ - code : %ld - localizedFieldName : %@ - technicalFieldName : %@", self.domainBase, (long)self.code, self.localizedFieldName, self.technicalFieldName);
-//    }
-//    return self;
-//}
+/*
+ Designated initializer.
+ @param code Error unique code.
+ @param dict may be nil if no userInfo desired.
+ */
+- (id)initWithCode:(NSInteger)code userInfo:(NSDictionary *)dict localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName
+{
+    self = [super initWithDomain:fieldName code:code userInfo:dict];
+    if(self)
+    {
+        self.localizedFieldName = fieldName;
+        self.technicalFieldName = technicalFieldName;
+        NSLog(@"Error domain : %@ - code : %ld - localizedFieldName : %@ - technicalFieldName : %@",fieldName, (long)self.code, self.localizedFieldName, self.technicalFieldName);
+    }
+    
+    return self;
+}
+
+/*
+ Designated initializer.
+ @param code Error unique code.
+ @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
+ @param failureReasonKey The string that can be displayed as the "informative" (aka "secondary") message on an alert panel
+ */
+- (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey localizedFailureReasonErrorKey: (NSString *) failureReasonKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName
+{
+    self = [super initWithDomain:fieldName code:code userInfo:nil];
+    if(self)
+    {
+        self.localizedFieldName = fieldName;
+        self.technicalFieldName = technicalFieldName;
+        NSLog(@"Error domain : %@ - code : %ld - localizedFieldName : %@ - technicalFieldName : %@", descriptionKey, (long)self.code, self.localizedFieldName, self.technicalFieldName);
+    }
+    return self;
+}
+
+/*
+ Designated initializer.
+ @param code Error unique code.
+ @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
+ */
+- (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName{
+    self = [super initWithDomain:fieldName code:code userInfo:nil];
+    if(self)
+    {
+        self.localizedFieldName = fieldName;
+        self.technicalFieldName = technicalFieldName;
+        NSLog(@"Error domain : %@ - code : %ld - localizedFieldName : %@ - technicalFieldName : %@", descriptionKey, (long)self.code, self.localizedFieldName, self.technicalFieldName);
+    }
+    return self;
+}
 
 
 /*

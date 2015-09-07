@@ -15,7 +15,7 @@
  */
 
 #import "MFCommonControlDelegate.h"
-#import "MFUIComponentProtocol.h"
+#import "MDKControlProtocol.h"
 #import "MFStyleProtocol.h"
 #import "MFConstants.h"
 #import "MFErrorViewProtocol.h"
@@ -26,17 +26,17 @@
 
 @interface MFCommonControlDelegate ()
 
-@property (nonatomic, weak) UIView<MFUIComponentProtocol> *component;
+@property (nonatomic, weak) UIView<MDKControlProtocol> *control;
 
 @end
 
 @implementation MFCommonControlDelegate
 
 
--(instancetype)initWithComponent:(UIView<MFUIComponentProtocol> *)component {
+-(instancetype)initWithControl:(UIView<MDKControlProtocol> *)control {
     self = [super init];
     if(self) {
-        self.component = component;
+        self.control = control;
         [self computeStyleClass];
     }
     return self;
@@ -44,54 +44,52 @@
 
 
 -(void)clearErrors {
-    [self.component setIsValid:YES];
-    self.component.errors = [@[] mutableCopy];
+    [self.control setIsValid:YES];
+    self.control.errors = [@[] mutableCopy];
 }
 
 -(NSMutableArray *) getErrors {
     return [@[] mutableCopy];
 }
 
-
-
-//-(void)addErrors:(NSArray *)errors {
-//    if(errors) {
-//        [self.component.errors addObjectsFromArray:errors];
-//    }
-//    if([self.component isKindOfClass:[MFUIOldBaseComponent class]]) {
-//        [self.component performSelector:@selector(showErrorButtons)];
-//        
-//    }else {
-//        [self.component showError:self.component.errors.count];
-//    }
-//    [self setIsValid:(errors.count == 0)];
-//}
+-(void)addErrors:(NSArray *)errors {
+    if(errors) {
+        [self.control.errors addObjectsFromArray:errors];
+    }
+    if([self.control isKindOfClass:NSClassFromString(@"MFUIOldBaseComponent")]) {
+        [self.control performSelector:@selector(showErrorButtons)];
+        
+    }else {
+        [self.control showError:self.control.errors.count];
+    }
+    [self setIsValid:(errors.count == 0)];
+}
 
 -(void)setIsValid:(BOOL)isValid {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.component applyStandardStyle];
+        [self.control applyStandardStyle];
     });
     if(isValid) {
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            [self.component applyValidStyle];
+            [self.control applyValidStyle];
         });
-        [self.component.tooltipView hideAnimated:YES];
+        [self.control.tooltipView hideAnimated:YES];
         
     }
     else{
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.component applyErrorStyle];
+            [self.control applyErrorStyle];
         });
     }
 }
 
 -(void) onErrorButtonClick:(id)sender {
-    if(![self.component.tooltipView superview]){
+    if(![self.control.tooltipView superview]){
         //Récupération du texte des erreurs
         NSString *errorText = @"";
         int errorNumber = 0;
-        for (NSError *error in self.component.errors) {
+        for (NSError *error in self.control.errors) {
             if(errorNumber > 0){
                 errorText = [errorText stringByAppendingString: @"\n"];
             }
@@ -99,7 +97,7 @@
             errorText= [errorText stringByAppendingString: [error localizedDescription]];
         }
         //Passage de la vue au premier plan
-        UIView *currentView = self.component;
+        UIView *currentView = self.control;
         do {
             UIView *superView = currentView.superview;
             [superView setClipsToBounds:NO];
@@ -108,17 +106,17 @@
         } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG);
         
         //Création et affichage de la bulle
-        self.component.tooltipView = [[JDFTooltipView alloc] initWithTargetView:((id<MFErrorViewProtocol>)self.component.styleClass).errorView hostView:currentView tooltipText:@"" arrowDirection:JDFTooltipViewArrowDirectionUp width:self.component.frame.size.width];
-        [currentView bringSubviewToFront:self.component.tooltipView];
-        self.component.tooltipView.tooltipText = errorText;
-        self.component.tooltipView.tooltipBackgroundColour = [self defaultTooltipBackgroundColor];
-        [self.component.tooltipView show];
-        [self.component.tooltipView performSelector:@selector(hideAnimated:) withObject:@1 afterDelay:2];
+        self.control.tooltipView = [[JDFTooltipView alloc] initWithTargetView:((id<MFErrorViewProtocol>)self.control.styleClass).errorView hostView:currentView tooltipText:@"" arrowDirection:JDFTooltipViewArrowDirectionUp width:self.control.frame.size.width];
+        [currentView bringSubviewToFront:self.control.tooltipView];
+        self.control.tooltipView.tooltipText = errorText;
+        self.control.tooltipView.tooltipBackgroundColour = [self defaultTooltipBackgroundColor];
+        [self.control.tooltipView show];
+        [self.control.tooltipView performSelector:@selector(hideAnimated:) withObject:@1 afterDelay:2];
     }
     else {
-        [self.component.tooltipView hideAnimated:YES];
+        [self.control.tooltipView hideAnimated:YES];
     }
-    [self.component bringSubviewToFront:self.component.tooltipView];
+    [self.control bringSubviewToFront:self.control.tooltipView];
 }
 
 
@@ -134,26 +132,26 @@
      * 3. Class style defined as a bean base on the component class name
      * 4. Default Movalys style
      */
-    NSString *componentClassStyleName = [NSString stringWithFormat:@"%@Style", [self.component class]];
+    NSString *componentClassStyleName = [NSString stringWithFormat:@"%@Style", [self.control class]];
     
-    if(self.component.styleClassName) {
-        self.component.styleClass = [NSClassFromString(self.component.styleClassName) new];
+    if(self.control.styleClassName) {
+        self.control.styleClass = [NSClassFromString(self.control.styleClassName) new];
     }
     else if(componentClassStyleName){
-        self.component.styleClass = [NSClassFromString(componentClassStyleName) new];
+        self.control.styleClass = [NSClassFromString(componentClassStyleName) new];
     }
     //TODO: Style via BeanLoader
     else {
-        self.component.styleClass = [NSClassFromString(@"MFDefaultStyle") new];
+        self.control.styleClass = [NSClassFromString(@"MFDefaultStyle") new];
     }
 }
 
 -(void)setVisible:(NSNumber *)visible {
     if([visible integerValue] == 1) {
-        self.component.hidden = NO;
+        self.control.hidden = NO;
     }
     else {
-        self.component.hidden = YES;
+        self.control.hidden = YES;
     }
 }
 
@@ -165,18 +163,18 @@
     //Mandatory validator
     id mandatoryError = nil;
     id<MFFieldValidatorProtocol> mandatoryValidator = nil;
-    if([self.component mandatory]) {
+    if([self.control mandatory]) {
         
-        mandatoryValidator = [[MFFieldValidatorHandler fieldValidatorsForAttributes:@[FIELD_VALIDATOR_ATTRIBUTE_MANDATORY] forControl:[self component]] firstObject];
-        mandatoryError = [mandatoryValidator validate:[self.component getData] withCurrentState:validationState withParameters:@{FIELD_VALIDATOR_ATTRIBUTE_MANDATORY : self.component.mandatory}];
+        mandatoryValidator = [[MFFieldValidatorHandler fieldValidatorsForAttributes:@[FIELD_VALIDATOR_ATTRIBUTE_MANDATORY] forControl:[self control]] firstObject];
+        mandatoryError = [mandatoryValidator validate:[self.control getData] withCurrentState:validationState withParameters:@{FIELD_VALIDATOR_ATTRIBUTE_MANDATORY : self.control.mandatory}];
     }
-    if(!mandatoryError && self.component.controlAttributes) {
+    if(!mandatoryError && self.control.controlAttributes) {
         
         //Component Validators
-        [validators addObjectsFromArray:[self.component controlValidators]];
+        [validators addObjectsFromArray:[self.control controlValidators]];
         
         //Other validatos
-        [validators addObjectsFromArray:[MFFieldValidatorHandler fieldValidatorsForAttributes:self.component.controlAttributes.allKeys forControl:[self component]]];
+        [validators addObjectsFromArray:[MFFieldValidatorHandler fieldValidatorsForAttributes:self.control.controlAttributes.allKeys forControl:[self control]]];
         
         
         for(id<MFFieldValidatorProtocol> fieldValidator in validators) {
@@ -185,16 +183,16 @@
             }
             NSMutableDictionary *validatorParameters = [NSMutableDictionary dictionary];
             for(NSString *recognizedAttribute in [fieldValidator recognizedAttributes]) {
-                if(self.component.controlAttributes[recognizedAttribute]) {
-                    validatorParameters[recognizedAttribute] = self.component.controlAttributes[recognizedAttribute];
+                if(self.control.controlAttributes[recognizedAttribute]) {
+                    validatorParameters[recognizedAttribute] = self.control.controlAttributes[recognizedAttribute];
                 }
             }
             
             //On ajoute le nom du composant
-//            if([self.component bindedName]) {
-//                validatorParameters[@"componentName"] = [self.component bindedName];
+//            if([self.control bindedName]) {
+//                validatorParameters[@"componentName"] = [self.control bindedName];
 //            }
-            id errorResult = [fieldValidator validate:[self.component getData] withCurrentState:validationState withParameters:validatorParameters];
+            id errorResult = [fieldValidator validate:[self.control getData] withCurrentState:validationState withParameters:validatorParameters];
             if(errorResult) {
                 validationState[NSStringFromClass([fieldValidator class])] = errorResult;
                 if([fieldValidator isBlocking]) { break; }
@@ -223,8 +221,8 @@
 }
 
 -(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key {
-    NSMutableDictionary *mutableControlAttributes = [self.component.controlAttributes mutableCopy];
+    NSMutableDictionary *mutableControlAttributes = [self.control.controlAttributes mutableCopy];
     mutableControlAttributes[key] = controlAttribute;
-    self.component.controlAttributes = mutableControlAttributes;
+    self.control.controlAttributes = mutableControlAttributes;
 }
 @end

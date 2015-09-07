@@ -16,6 +16,10 @@
 
 #import "MFDefaultStyle.h"
 
+/*!
+ * @class MFLabelStyle
+ * @brief The style class for MFLabel component.
+ */
 @interface MFLabelStyle : MFDefaultStyle
 
 @end

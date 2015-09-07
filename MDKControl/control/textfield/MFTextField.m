@@ -17,7 +17,7 @@
 #import "MFTextField.h"
 #import "MFTextFieldStyle+ErrorView.h"
 #import "MFTextFieldStyle+TextLayouting.h"
-#import "MFBackgroundViewProtocol.h"
+#import "MDKBackgroundViewProtocol.h"
 #import "MFUIControlExtension.h"
 #import "MFAlertViewManager.h"
 #import "MFLabel.h"
@@ -80,7 +80,7 @@
 }
 
 -(void) initializeComponent {
-    self.controlDelegate = [[MFCommonControlDelegate alloc] initWithComponent:self];
+    self.controlDelegate = [[MFCommonControlDelegate alloc] initWithControl:self];
     self.errors = [NSMutableArray new];
     self.extension = [[MFTextFieldExtension alloc] init];
     if(!self.sender) {

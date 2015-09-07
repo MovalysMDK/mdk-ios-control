@@ -17,13 +17,12 @@
 #import <Foundation/Foundation.h>
 
 /*!
- * @protocol MFComponentBindingProtocol
+ * @protocol MDKControlDataProtocol
  * @brief This protocol defines the necessary methods and properties for a MDK component
  * to be binded by the framework (to a View Model property). For example, a Text Field 
  * component will generally be binded to a NSString property on a View Model.
- * @discussion
  */
-@protocol MFComponentBindingProtocol <NSObject>
+@protocol MDKControlDataProtocol <NSObject>
 
 #pragma mark - Properties
 /*!

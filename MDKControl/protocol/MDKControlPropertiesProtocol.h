@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2010 Sopra (support_movalys@sopra.com)
  *
@@ -14,17 +13,29 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
+#import <Foundation/Foundation.h>
 
-#import "MFDoubleTextFieldStyle.h"
+/*!
+ * @protocol MDKControlPropertiesProtocol
+ * @brief This protocol adds to the control implementing it, 
+ * somen common properties to MDK Controls.
+ */
+@protocol MDKControlPropertiesProtocol <NSObject>
 
-@implementation MFDoubleTextFieldStyle
+#pragma mark - Properties
+/*!
+ Indique si le composant est obligatoire
+ */
+@property (nonatomic, strong) NSNumber *mandatory;
 
--(NSString *)accessoryButtonImageName {
-    return nil;
-}
+/*!
+ Indique si le composant est obligatoire
+ */
+@property (nonatomic) NSNumber *visible;
 
--(BOOL)hasAccessoryButton {
-    return NO;
-}
+/*!
+ Indique si le composant est éditable
+ */
+@property (nonatomic) NSNumber *editable;
 
 @end

@@ -26,11 +26,11 @@
 //#import <MFCore/MFCoreError.h>
 
 #import "MFUIBaseComponent.h"
-#import "MFUIComponentProtocol.H"
+#import "MDKControlProtocol.h"
 #import "MFConstants.h"
 #import "MFErrorViewProtocol.h"
 #import "MFUIBaseRenderableComponent.h"
-#import "MFComponentAssociatedLabelProtocol.h"
+#import "MDKControlAssociatedLabelProtocol.h"
 #import "MFLabel.h"
 
 
@@ -121,7 +121,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 
 -(void)initialize {
     
-    self.controlDelegate = [[MFCommonControlDelegate alloc] initWithComponent:self];
+    self.controlDelegate = [[MFCommonControlDelegate alloc] initWithControl:self];
 //    if([self conformsToProtocol:@protocol(MFDefaultConstraintsProtocol)]) {
 //        [self performSelector:@selector(applyDefaultConstraints) withObject:nil];
 //    }

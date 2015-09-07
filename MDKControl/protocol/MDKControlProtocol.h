@@ -16,13 +16,12 @@
 
 #import "MFUIErrorView.h"
 
-
-#import "MFComponentErrorProtocol.h"
-#import "MFComponentPropertiesProtocol.h"
-#import "MFComponentValidationProtocol.h"
-#import "MFComponentAttributesProtocol.h"
-#import "MFComponentAssociatedLabelProtocol.h"
-#import "MFComponentBindingProtocol.h"
+#import "MDKControlErrorProtocol.h"
+#import "MDKControlPropertiesProtocol.h"
+#import "MDKControlValidationProtocol.h"
+#import "MDKControlAttributesProtocol.h"
+#import "MDKControlAssociatedLabelProtocol.h"
+#import "MDKControlDataProtocol.h"
 
 #import "MFCommonControlDelegate.h"
 
@@ -30,15 +29,12 @@
 #import "MFStyleProtocol.h"
 
 
-
 /*!
- * This protocol is used by the MOVALYS Generic Form to fit the process to the UI component.
- * All MOVALYS UI element must implement this protocol.
+ * @protocol MDKControlProtocol
+ * @brief This is the main protocol to describes a MDK Control.
+ * @discussion It gives all properties and methods needed to make a view a MDK Control.
  */
-
-//FIXME: rename en control
-
-@protocol MFUIComponentProtocol < MFComponentBindingProtocol, MFComponentErrorProtocol, MFComponentPropertiesProtocol, MFComponentValidationProtocol, MFComponentAttributesProtocol, MFComponentAssociatedLabelProtocol>
+@protocol MDKControlProtocol <MDKControlDataProtocol, MDKControlErrorProtocol, MDKControlPropertiesProtocol, MDKControlValidationProtocol, MDKControlAttributesProtocol, MDKControlAssociatedLabelProtocol>
 
 #pragma mark - Properties
 
@@ -75,7 +71,7 @@
 @property (nonatomic, strong) NSIndexPath *componentInCellAtIndexPath;
 
 /*!
- * @brief todo
+ * @brief The last object that updates the valus of this control.
  */
 @property (nonatomic, weak) id lastUpdateSender;
 

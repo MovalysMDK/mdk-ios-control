@@ -1,4 +1,3 @@
-
 /**
  * Copyright (C) 2010 Sopra (support_movalys@sopra.com)
  *
@@ -14,17 +13,30 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
+#import <Foundation/Foundation.h>
 
-#import "MFIntegerTextFieldStyle.h"
+/*!
+ * @protocol MDKControlAttributesProtocol
+ * @brief This protocol provides a property to hold control attributes
+ */
+@protocol MDKControlAttributesProtocol <NSObject>
 
-@implementation MFIntegerTextFieldStyle
+#pragma mark - Properties
 
--(NSString *)accessoryButtonImageName {
-    return nil;
-}
+/*!
+ * @brief The control attributes property
+ */
+@property (nonatomic, strong) NSDictionary *controlAttributes;
 
--(BOOL)hasAccessoryButton {
-    return NO;
-}
+
+
+#pragma mark - Methods
+
+/*!
+ * @brief Adds a control attribute
+ * @param controlAttribute A control attribute to add
+ * @param key The key used to add the control attribute
+ */
+-(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key;
 
 @end

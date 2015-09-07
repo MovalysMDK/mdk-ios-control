@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MFUIComponentProtocol;
+@protocol MDKControlProtocol;
 @protocol MFDescriptorCommonProtocol;
 
 /*!
@@ -32,7 +32,7 @@
  * @param control The control that will use this delegate
  * @return A news instance of this delegate class
  */
--(instancetype)initWithComponent:(UIView<MFUIComponentProtocol> *)component;
+-(instancetype)initWithControl:(UIView<MDKControlProtocol> *)control;
 
 /*!
  * @brief Clears all the errros on the component

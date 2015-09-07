@@ -15,8 +15,8 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "MFUIComponentProtocol.h"
-#import "MFControlChangesProtocol.h"
+#import "MDKControlProtocol.h"
+#import "MDKControlChangesProtocol.h"
 
 /*!
  * @class MFTextField
@@ -25,7 +25,7 @@
  */
 
 IB_DESIGNABLE
-@interface MFTextField : UITextField <MFUIComponentProtocol, MFControlChangesProtocol>
+@interface MFTextField : UITextField <MDKControlProtocol, MDKControlChangesProtocol>
 
 #pragma mark - Properties
 
@@ -35,7 +35,7 @@ IB_DESIGNABLE
 @property (nonatomic) Class customStyleClass;
 
 
-@property (nonatomic, weak) id<MFUIComponentProtocol> sender;
+@property (nonatomic, weak) id<MDKControlProtocol> sender;
 
 
 #pragma mark - Methods

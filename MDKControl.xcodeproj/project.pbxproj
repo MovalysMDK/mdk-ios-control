@@ -21,16 +21,6 @@
 		B02156BA1B9DAC6E001860B5 /* MFLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156921B9DAC6E001860B5 /* MFLabelStyle.m */; };
 		B02156BB1B9DAC6E001860B5 /* MFUIStyleLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156931B9DAC6E001860B5 /* MFUIStyleLabel.h */; };
 		B02156BC1B9DAC6E001860B5 /* MFUIStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156941B9DAC6E001860B5 /* MFUIStyle.h */; };
-		B02156BD1B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156961B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.h */; };
-		B02156BE1B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156971B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.m */; };
-		B02156BF1B9DAC6E001860B5 /* MFDoubleTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156981B9DAC6E001860B5 /* MFDoubleTextFieldStyle.h */; };
-		B02156C01B9DAC6E001860B5 /* MFDoubleTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156991B9DAC6E001860B5 /* MFDoubleTextFieldStyle.m */; };
-		B02156C11B9DAC6E001860B5 /* MFEmailTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B021569A1B9DAC6E001860B5 /* MFEmailTextFieldStyle.h */; };
-		B02156C21B9DAC6E001860B5 /* MFEmailTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B021569B1B9DAC6E001860B5 /* MFEmailTextFieldStyle.m */; };
-		B02156C31B9DAC6E001860B5 /* MFIntegerTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B021569C1B9DAC6E001860B5 /* MFIntegerTextFieldStyle.h */; };
-		B02156C41B9DAC6E001860B5 /* MFIntegerTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B021569D1B9DAC6E001860B5 /* MFIntegerTextFieldStyle.m */; };
-		B02156C51B9DAC6E001860B5 /* MFPhoneTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B021569E1B9DAC6E001860B5 /* MFPhoneTextFieldStyle.h */; };
-		B02156C61B9DAC6E001860B5 /* MFPhoneTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B021569F1B9DAC6E001860B5 /* MFPhoneTextFieldStyle.m */; };
 		B02156C71B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A01B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.h */; };
 		B02156C81B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A11B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.m */; };
 		B02156C91B9DAC6E001860B5 /* MFRegexTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A21B9DAC6E001860B5 /* MFRegexTextFieldStyle.h */; };
@@ -44,20 +34,18 @@
 		B02156D11B9DAC6E001860B5 /* MFTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156AA1B9DAC6E001860B5 /* MFTextFieldStyle.h */; };
 		B02156D21B9DAC6E001860B5 /* MFTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156AB1B9DAC6E001860B5 /* MFTextFieldStyle.m */; };
 		B02156D31B9DAC6E001860B5 /* MFUIStyleTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156AC1B9DAC6E001860B5 /* MFUIStyleTextField.h */; };
-		B02156D41B9DAC6E001860B5 /* MFUrlTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156AD1B9DAC6E001860B5 /* MFUrlTextFieldStyle.h */; };
-		B02156D51B9DAC6E001860B5 /* MFUrlTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156AE1B9DAC6E001860B5 /* MFUrlTextFieldStyle.m */; };
-		B02156E31B9DAD59001860B5 /* MFBackgroundViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DA1B9DAD59001860B5 /* MFBackgroundViewProtocol.h */; };
-		B02156E41B9DAD59001860B5 /* MFComponentAssociatedLabelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DB1B9DAD59001860B5 /* MFComponentAssociatedLabelProtocol.h */; };
-		B02156E51B9DAD59001860B5 /* MFComponentAttributesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DC1B9DAD59001860B5 /* MFComponentAttributesProtocol.h */; };
-		B02156E61B9DAD59001860B5 /* MFComponentBindingProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DD1B9DAD59001860B5 /* MFComponentBindingProtocol.h */; };
-		B02156E71B9DAD59001860B5 /* MFComponentErrorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DE1B9DAD59001860B5 /* MFComponentErrorProtocol.h */; };
-		B02156E81B9DAD59001860B5 /* MFComponentPropertiesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DF1B9DAD59001860B5 /* MFComponentPropertiesProtocol.h */; };
-		B02156E91B9DAD59001860B5 /* MFComponentValidationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156E01B9DAD59001860B5 /* MFComponentValidationProtocol.h */; };
+		B02156E31B9DAD59001860B5 /* MDKBackgroundViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DA1B9DAD59001860B5 /* MDKBackgroundViewProtocol.h */; };
+		B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DB1B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h */; };
+		B02156E51B9DAD59001860B5 /* MDKControlAttributesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DC1B9DAD59001860B5 /* MDKControlAttributesProtocol.h */; };
+		B02156E61B9DAD59001860B5 /* MDKControlDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DD1B9DAD59001860B5 /* MDKControlDataProtocol.h */; };
+		B02156E71B9DAD59001860B5 /* MDKControlErrorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DE1B9DAD59001860B5 /* MDKControlErrorProtocol.h */; };
+		B02156E81B9DAD59001860B5 /* MDKControlPropertiesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DF1B9DAD59001860B5 /* MDKControlPropertiesProtocol.h */; };
+		B02156E91B9DAD59001860B5 /* MDKControlValidationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156E01B9DAD59001860B5 /* MDKControlValidationProtocol.h */; };
 		B02156EA1B9DAD59001860B5 /* MFErrorViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156E11B9DAD59001860B5 /* MFErrorViewProtocol.h */; };
-		B02156EB1B9DAD59001860B5 /* MFUIComponentProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156E21B9DAD59001860B5 /* MFUIComponentProtocol.h */; };
+		B02156EB1B9DAD59001860B5 /* MDKControlProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156E21B9DAD59001860B5 /* MDKControlProtocol.h */; };
 		B02157211B9DAE19001860B5 /* MFCommonControlDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B021571F1B9DAE19001860B5 /* MFCommonControlDelegate.h */; };
 		B02157221B9DAE19001860B5 /* MFCommonControlDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157201B9DAE19001860B5 /* MFCommonControlDelegate.m */; };
-		B02157241B9DAE4C001860B5 /* MFControlChangesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157231B9DAE4C001860B5 /* MFControlChangesProtocol.h */; };
+		B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157231B9DAE4C001860B5 /* MDKControlChangesProtocol.h */; };
 		B02157281B9DAE51001860B5 /* MFControlChangedTargetDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157261B9DAE51001860B5 /* MFControlChangedTargetDescriptor.h */; };
 		B02157291B9DAE51001860B5 /* MFControlChangedTargetDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157271B9DAE51001860B5 /* MFControlChangedTargetDescriptor.m */; };
 		B021573F1B9DAE8E001860B5 /* MFRegexTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157331B9DAE8E001860B5 /* MFRegexTextField.h */; };
@@ -204,16 +192,6 @@
 		B02156921B9DAC6E001860B5 /* MFLabelStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFLabelStyle.m; sourceTree = "<group>"; };
 		B02156931B9DAC6E001860B5 /* MFUIStyleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIStyleLabel.h; sourceTree = "<group>"; };
 		B02156941B9DAC6E001860B5 /* MFUIStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIStyle.h; sourceTree = "<group>"; };
-		B02156961B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFBarCodeScanTextFieldStyle.h; sourceTree = "<group>"; };
-		B02156971B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFBarCodeScanTextFieldStyle.m; sourceTree = "<group>"; };
-		B02156981B9DAC6E001860B5 /* MFDoubleTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDoubleTextFieldStyle.h; sourceTree = "<group>"; };
-		B02156991B9DAC6E001860B5 /* MFDoubleTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFDoubleTextFieldStyle.m; sourceTree = "<group>"; };
-		B021569A1B9DAC6E001860B5 /* MFEmailTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFEmailTextFieldStyle.h; sourceTree = "<group>"; };
-		B021569B1B9DAC6E001860B5 /* MFEmailTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFEmailTextFieldStyle.m; sourceTree = "<group>"; };
-		B021569C1B9DAC6E001860B5 /* MFIntegerTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFIntegerTextFieldStyle.h; sourceTree = "<group>"; };
-		B021569D1B9DAC6E001860B5 /* MFIntegerTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFIntegerTextFieldStyle.m; sourceTree = "<group>"; };
-		B021569E1B9DAC6E001860B5 /* MFPhoneTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPhoneTextFieldStyle.h; sourceTree = "<group>"; };
-		B021569F1B9DAC6E001860B5 /* MFPhoneTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPhoneTextFieldStyle.m; sourceTree = "<group>"; };
 		B02156A01B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFRegexTextFieldStyle+Button.h"; sourceTree = "<group>"; };
 		B02156A11B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MFRegexTextFieldStyle+Button.m"; sourceTree = "<group>"; };
 		B02156A21B9DAC6E001860B5 /* MFRegexTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFRegexTextFieldStyle.h; sourceTree = "<group>"; };
@@ -227,20 +205,18 @@
 		B02156AA1B9DAC6E001860B5 /* MFTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextFieldStyle.h; sourceTree = "<group>"; };
 		B02156AB1B9DAC6E001860B5 /* MFTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTextFieldStyle.m; sourceTree = "<group>"; };
 		B02156AC1B9DAC6E001860B5 /* MFUIStyleTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIStyleTextField.h; sourceTree = "<group>"; };
-		B02156AD1B9DAC6E001860B5 /* MFUrlTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUrlTextFieldStyle.h; sourceTree = "<group>"; };
-		B02156AE1B9DAC6E001860B5 /* MFUrlTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUrlTextFieldStyle.m; sourceTree = "<group>"; };
-		B02156DA1B9DAD59001860B5 /* MFBackgroundViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFBackgroundViewProtocol.h; sourceTree = "<group>"; };
-		B02156DB1B9DAD59001860B5 /* MFComponentAssociatedLabelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComponentAssociatedLabelProtocol.h; sourceTree = "<group>"; };
-		B02156DC1B9DAD59001860B5 /* MFComponentAttributesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComponentAttributesProtocol.h; sourceTree = "<group>"; };
-		B02156DD1B9DAD59001860B5 /* MFComponentBindingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComponentBindingProtocol.h; sourceTree = "<group>"; };
-		B02156DE1B9DAD59001860B5 /* MFComponentErrorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComponentErrorProtocol.h; sourceTree = "<group>"; };
-		B02156DF1B9DAD59001860B5 /* MFComponentPropertiesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComponentPropertiesProtocol.h; sourceTree = "<group>"; };
-		B02156E01B9DAD59001860B5 /* MFComponentValidationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComponentValidationProtocol.h; sourceTree = "<group>"; };
+		B02156DA1B9DAD59001860B5 /* MDKBackgroundViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBackgroundViewProtocol.h; sourceTree = "<group>"; };
+		B02156DB1B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlAssociatedLabelProtocol.h; sourceTree = "<group>"; };
+		B02156DC1B9DAD59001860B5 /* MDKControlAttributesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlAttributesProtocol.h; sourceTree = "<group>"; };
+		B02156DD1B9DAD59001860B5 /* MDKControlDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlDataProtocol.h; sourceTree = "<group>"; };
+		B02156DE1B9DAD59001860B5 /* MDKControlErrorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlErrorProtocol.h; sourceTree = "<group>"; };
+		B02156DF1B9DAD59001860B5 /* MDKControlPropertiesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlPropertiesProtocol.h; sourceTree = "<group>"; };
+		B02156E01B9DAD59001860B5 /* MDKControlValidationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlValidationProtocol.h; sourceTree = "<group>"; };
 		B02156E11B9DAD59001860B5 /* MFErrorViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFErrorViewProtocol.h; sourceTree = "<group>"; };
-		B02156E21B9DAD59001860B5 /* MFUIComponentProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIComponentProtocol.h; sourceTree = "<group>"; };
+		B02156E21B9DAD59001860B5 /* MDKControlProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlProtocol.h; sourceTree = "<group>"; };
 		B021571F1B9DAE19001860B5 /* MFCommonControlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCommonControlDelegate.h; sourceTree = "<group>"; };
 		B02157201B9DAE19001860B5 /* MFCommonControlDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCommonControlDelegate.m; sourceTree = "<group>"; };
-		B02157231B9DAE4C001860B5 /* MFControlChangesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFControlChangesProtocol.h; sourceTree = "<group>"; };
+		B02157231B9DAE4C001860B5 /* MDKControlChangesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlChangesProtocol.h; sourceTree = "<group>"; };
 		B02157261B9DAE51001860B5 /* MFControlChangedTargetDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFControlChangedTargetDescriptor.h; sourceTree = "<group>"; };
 		B02157271B9DAE51001860B5 /* MFControlChangedTargetDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFControlChangedTargetDescriptor.m; sourceTree = "<group>"; };
 		B02157331B9DAE8E001860B5 /* MFRegexTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFRegexTextField.h; sourceTree = "<group>"; };
@@ -449,16 +425,6 @@
 		B02156951B9DAC6E001860B5 /* textfield */ = {
 			isa = PBXGroup;
 			children = (
-				B02156961B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.h */,
-				B02156971B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.m */,
-				B02156981B9DAC6E001860B5 /* MFDoubleTextFieldStyle.h */,
-				B02156991B9DAC6E001860B5 /* MFDoubleTextFieldStyle.m */,
-				B021569A1B9DAC6E001860B5 /* MFEmailTextFieldStyle.h */,
-				B021569B1B9DAC6E001860B5 /* MFEmailTextFieldStyle.m */,
-				B021569C1B9DAC6E001860B5 /* MFIntegerTextFieldStyle.h */,
-				B021569D1B9DAC6E001860B5 /* MFIntegerTextFieldStyle.m */,
-				B021569E1B9DAC6E001860B5 /* MFPhoneTextFieldStyle.h */,
-				B021569F1B9DAC6E001860B5 /* MFPhoneTextFieldStyle.m */,
 				B02156A01B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.h */,
 				B02156A11B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.m */,
 				B02156A21B9DAC6E001860B5 /* MFRegexTextFieldStyle.h */,
@@ -472,8 +438,6 @@
 				B02156AA1B9DAC6E001860B5 /* MFTextFieldStyle.h */,
 				B02156AB1B9DAC6E001860B5 /* MFTextFieldStyle.m */,
 				B02156AC1B9DAC6E001860B5 /* MFUIStyleTextField.h */,
-				B02156AD1B9DAC6E001860B5 /* MFUrlTextFieldStyle.h */,
-				B02156AE1B9DAC6E001860B5 /* MFUrlTextFieldStyle.m */,
 			);
 			path = textfield;
 			sourceTree = "<group>";
@@ -481,16 +445,16 @@
 		B02156D91B9DAD59001860B5 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				B02157231B9DAE4C001860B5 /* MFControlChangesProtocol.h */,
-				B02156DA1B9DAD59001860B5 /* MFBackgroundViewProtocol.h */,
-				B02156DB1B9DAD59001860B5 /* MFComponentAssociatedLabelProtocol.h */,
-				B02156DC1B9DAD59001860B5 /* MFComponentAttributesProtocol.h */,
-				B02156DD1B9DAD59001860B5 /* MFComponentBindingProtocol.h */,
-				B02156DE1B9DAD59001860B5 /* MFComponentErrorProtocol.h */,
-				B02156DF1B9DAD59001860B5 /* MFComponentPropertiesProtocol.h */,
-				B02156E01B9DAD59001860B5 /* MFComponentValidationProtocol.h */,
+				B02157231B9DAE4C001860B5 /* MDKControlChangesProtocol.h */,
+				B02156DA1B9DAD59001860B5 /* MDKBackgroundViewProtocol.h */,
+				B02156DB1B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h */,
+				B02156DC1B9DAD59001860B5 /* MDKControlAttributesProtocol.h */,
+				B02156DD1B9DAD59001860B5 /* MDKControlDataProtocol.h */,
+				B02156DE1B9DAD59001860B5 /* MDKControlErrorProtocol.h */,
+				B02156DF1B9DAD59001860B5 /* MDKControlPropertiesProtocol.h */,
+				B02156E01B9DAD59001860B5 /* MDKControlValidationProtocol.h */,
 				B02156E11B9DAD59001860B5 /* MFErrorViewProtocol.h */,
-				B02156E21B9DAD59001860B5 /* MFUIComponentProtocol.h */,
+				B02156E21B9DAD59001860B5 /* MDKControlProtocol.h */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -796,7 +760,7 @@
 				B02157581B9DAEEA001860B5 /* MFDoubleFieldValidator.h in Headers */,
 				B02157AA1B9DAF30001860B5 /* UILabel+JDFTooltips.h in Headers */,
 				B02157B01B9DAF30001860B5 /* TooltipViewPrivate.h in Headers */,
-				B02156E51B9DAD59001860B5 /* MFComponentAttributesProtocol.h in Headers */,
+				B02156E51B9DAD59001860B5 /* MDKControlAttributesProtocol.h in Headers */,
 				B02156CF1B9DAC6E001860B5 /* MFTextFieldStyle+TextLayouting.h in Headers */,
 				B02158021B9DB207001860B5 /* MFUIControlExtension.h in Headers */,
 				B02157BB1B9DAF30001860B5 /* MFInvalidIntegerValueUIValidationError.h in Headers */,
@@ -807,30 +771,28 @@
 				B02158171B9DBA7F001860B5 /* MFConstants.h in Headers */,
 				B02157C31B9DAF30001860B5 /* MFMandatoryFieldUIValidationError.h in Headers */,
 				B02157691B9DAEEA001860B5 /* MFUIFieldValidator.h in Headers */,
-				B02156E81B9DAD59001860B5 /* MFComponentPropertiesProtocol.h in Headers */,
+				B02156E81B9DAD59001860B5 /* MDKControlPropertiesProtocol.h in Headers */,
 				B02157A21B9DAF30001860B5 /* MFUIControlTooltip.h in Headers */,
-				B02156C51B9DAC6E001860B5 /* MFPhoneTextFieldStyle.h in Headers */,
 				B02158351B9DBC8C001860B5 /* MFUICommand.h in Headers */,
-				B02156C11B9DAC6E001860B5 /* MFEmailTextFieldStyle.h in Headers */,
-				B02156E41B9DAD59001860B5 /* MFComponentAssociatedLabelProtocol.h in Headers */,
+				B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */,
 				B02157D81B9DAFA0001860B5 /* MFComponentProviderProtocol.h in Headers */,
 				B021582A1B9DBC8C001860B5 /* MFCommandHandler.h in Headers */,
 				B02156D31B9DAC6E001860B5 /* MFUIStyleTextField.h in Headers */,
 				B021575C1B9DAEEA001860B5 /* MFFieldValidatorHandler.h in Headers */,
 				B02158381B9DBDC1001860B5 /* MFURL.h in Headers */,
-				B02156EB1B9DAD59001860B5 /* MFUIComponentProtocol.h in Headers */,
+				B02156EB1B9DAD59001860B5 /* MDKControlProtocol.h in Headers */,
 				B02157DF1B9DB124001860B5 /* MFUIBaseRenderableComponent.h in Headers */,
 				B02158141B9DB2EE001860B5 /* MFUIControlLabel.h in Headers */,
 				B02156B51B9DAC6E001860B5 /* MFStyleProtocol.h in Headers */,
 				B02157C11B9DAF30001860B5 /* MFInvalidUrlValueUIValidationError.h in Headers */,
 				B02157E61B9DB17F001860B5 /* MFViewTags.h in Headers */,
-				B02156E61B9DAD59001860B5 /* MFComponentBindingProtocol.h in Headers */,
+				B02156E61B9DAD59001860B5 /* MDKControlDataProtocol.h in Headers */,
 				B02157B11B9DAF30001860B5 /* ValidTooltipView.h in Headers */,
 				B02158091B9DB27D001860B5 /* MFAlertView.h in Headers */,
 				B02157BF1B9DAF30001860B5 /* MFInvalidPhoneNumberValueUIValidationError.h in Headers */,
 				B02157AC1B9DAF30001860B5 /* UIView+JDFTooltips.h in Headers */,
-				B02156E31B9DAD59001860B5 /* MFBackgroundViewProtocol.h in Headers */,
-				B02156E71B9DAD59001860B5 /* MFComponentErrorProtocol.h in Headers */,
+				B02156E31B9DAD59001860B5 /* MDKBackgroundViewProtocol.h in Headers */,
+				B02156E71B9DAD59001860B5 /* MDKControlErrorProtocol.h in Headers */,
 				B02156BC1B9DAC6E001860B5 /* MFUIStyle.h in Headers */,
 				B02157AE1B9DAF30001860B5 /* TooltipView.h in Headers */,
 				B02157CB1B9DAF30001860B5 /* MFUIValidationError.h in Headers */,
@@ -855,13 +817,11 @@
 				B02157611B9DAEEA001860B5 /* MFIntegerFieldValidator.h in Headers */,
 				B02157C51B9DAF30001860B5 /* MFNoMatchingValueUIValidationError.h in Headers */,
 				B02157BD1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.h in Headers */,
-				B02156BD1B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.h in Headers */,
 				B02157A51B9DAF30001860B5 /* JDFTooltipManager.h in Headers */,
 				B0FFDA6C1B33FAFB00CA6E5E /* MDKControl.h in Headers */,
 				B02157F61B9DB207001860B5 /* MFBaseTextExtensionProtocol.h in Headers */,
-				B02157241B9DAE4C001860B5 /* MFControlChangesProtocol.h in Headers */,
+				B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */,
 				B02156CD1B9DAC6E001860B5 /* MFTextFieldStyle+ErrorView.h in Headers */,
-				B02156BF1B9DAC6E001860B5 /* MFDoubleTextFieldStyle.h in Headers */,
 				B02156B91B9DAC6E001860B5 /* MFLabelStyle.h in Headers */,
 				B021580B1B9DB27D001860B5 /* MFAlertViewManager.h in Headers */,
 				B021582F1B9DBC8C001860B5 /* MFOpenURLCommand.h in Headers */,
@@ -871,8 +831,7 @@
 				B02157FD1B9DB207001860B5 /* MFRegexTextExtensionProtocol.h in Headers */,
 				B02157B91B9DAF30001860B5 /* MFInvalidEmailValueUIValidationError.h in Headers */,
 				B021582D1B9DBC8C001860B5 /* MFEmail.h in Headers */,
-				B02156E91B9DAD59001860B5 /* MFComponentValidationProtocol.h in Headers */,
-				B02156D41B9DAC6E001860B5 /* MFUrlTextFieldStyle.h in Headers */,
+				B02156E91B9DAD59001860B5 /* MDKControlValidationProtocol.h in Headers */,
 				B02157A31B9DAF30001860B5 /* JDFSequentialTooltipManager.h in Headers */,
 				B02156B61B9DAC6E001860B5 /* MFUIStyleCommons.h in Headers */,
 				B02156CB1B9DAC6E001860B5 /* MFTextFieldStyle+BackgroundView.h in Headers */,
@@ -885,7 +844,6 @@
 				B02156C91B9DAC6E001860B5 /* MFRegexTextFieldStyle.h in Headers */,
 				B02158401B9DBDF5001860B5 /* MFCreateEmailViewController.h in Headers */,
 				B021579E1B9DAF30001860B5 /* MFUIErrorView.h in Headers */,
-				B02156C31B9DAC6E001860B5 /* MFIntegerTextFieldStyle.h in Headers */,
 				B02156B71B9DAC6E001860B5 /* UIView+Styleable.h in Headers */,
 				B02158331B9DBC8C001860B5 /* MFSendEmailCommand.h in Headers */,
 				B02158121B9DB2EE001860B5 /* MFLabel.h in Headers */,
@@ -1002,10 +960,8 @@
 				B02157F81B9DB207001860B5 /* MFEnumExtension.m in Sources */,
 				B02156781B9DAB93001860B5 /* MFTextField.m in Sources */,
 				B021579F1B9DAF30001860B5 /* MFUIErrorView.m in Sources */,
-				B02156C61B9DAC6E001860B5 /* MFPhoneTextFieldStyle.m in Sources */,
 				B02158181B9DBA7F001860B5 /* MFConstants.m in Sources */,
 				B02156BA1B9DAC6E001860B5 /* MFLabelStyle.m in Sources */,
-				B02156BE1B9DAC6E001860B5 /* MFBarCodeScanTextFieldStyle.m in Sources */,
 				B02156721B9D9863001860B5 /* MDKBase.m in Sources */,
 				B02157661B9DAEEA001860B5 /* MFMandatoryFieldValidator.m in Sources */,
 				B02157BA1B9DAF30001860B5 /* MFInvalidEmailValueUIValidationError.m in Sources */,
@@ -1026,12 +982,9 @@
 				B021582E1B9DBC8C001860B5 /* MFEmail.m in Sources */,
 				B02158291B9DBC8C001860B5 /* MFCallPhoneNumberCommand.m in Sources */,
 				B02157621B9DAEEA001860B5 /* MFIntegerFieldValidator.m in Sources */,
-				B02156D51B9DAC6E001860B5 /* MFUrlTextFieldStyle.m in Sources */,
 				B02158341B9DBC8C001860B5 /* MFSendEmailCommand.m in Sources */,
-				B02156C41B9DAC6E001860B5 /* MFIntegerTextFieldStyle.m in Sources */,
 				B021580C1B9DB27D001860B5 /* MFAlertViewManager.m in Sources */,
 				B021576B1B9DAEEA001860B5 /* MFUrlFieldValidator.m in Sources */,
-				B02156C01B9DAC6E001860B5 /* MFDoubleTextFieldStyle.m in Sources */,
 				B02157C61B9DAF30001860B5 /* MFNoMatchingValueUIValidationError.m in Sources */,
 				B02156D21B9DAC6E001860B5 /* MFTextFieldStyle.m in Sources */,
 				B02157FF1B9DB207001860B5 /* MFRegularExpressionTextFieldExtension.m in Sources */,
@@ -1052,7 +1005,6 @@
 				B02158411B9DBDF5001860B5 /* MFCreateEmailViewController.m in Sources */,
 				B02157291B9DAE51001860B5 /* MFControlChangedTargetDescriptor.m in Sources */,
 				B02157A11B9DAF30001860B5 /* InvalidTooltipView.m in Sources */,
-				B02156C21B9DAC6E001860B5 /* MFEmailTextFieldStyle.m in Sources */,
 				B02157C21B9DAF30001860B5 /* MFInvalidUrlValueUIValidationError.m in Sources */,
 				B02157401B9DAE8E001860B5 /* MFRegexTextField.m in Sources */,
 				B02157DA1B9DAFA0001860B5 /* MFSimpleComponentProvider.m in Sources */,

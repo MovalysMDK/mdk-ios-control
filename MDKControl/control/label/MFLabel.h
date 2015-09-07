@@ -16,14 +16,14 @@
 
 #import <UIKit/UIKit.h>
 #import "MFStyleProtocol.h"
-#import "MFUIComponentProtocol.h"
+#import "MDKControlProtocol.h"
 
 
 FOUNDATION_EXPORT NSString * const MF_MANDATORY_INDICATOR;
 
 IB_DESIGNABLE
 
-@interface MFLabel : UILabel <MFUIComponentProtocol>
+@interface MFLabel : UILabel <MDKControlProtocol>
 
 #pragma mark - Properties
 
@@ -34,7 +34,7 @@ IB_DESIGNABLE
 @property (nonatomic, strong) NSMutableArray *errors;
 
 
-@property (nonatomic, weak) id<MFUIComponentProtocol> sender;
+@property (nonatomic, weak) id<MDKControlProtocol> sender;
 
 
 #pragma mark - Methods
@@ -61,6 +61,6 @@ IB_DESIGNABLE
 
 -(void) onErrorButtonClick:(id)sender;
 
--(void) setSender:(id<MFUIComponentProtocol>)sender ;
+-(void) setSender:(id<MDKControlProtocol>)sender ;
 
 @end

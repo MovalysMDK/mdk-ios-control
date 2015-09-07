@@ -18,11 +18,12 @@
 #import "MFControlChangedTargetDescriptor.h"
 
 /*!
- * @protocol MFControlChangesProtocol
+ * @protocol MDKControlChangesProtocol
  * @brief This protocol identifies a control that can customize its changes events
  */
-@protocol MFControlChangesProtocol <NSObject>
+@protocol MDKControlChangesProtocol <NSObject>
 
+#pragma mark - Properties
 /*!
  * @brief A dictionary that contains key/value paris of a sub-component associated
  * to the MFControlChangedTargetDescriptor object to use to customize the event.
@@ -30,6 +31,7 @@
  */
 @property (nonatomic, strong) NSDictionary *targetDescriptors;
 
+#pragma mark - Methods
 /*!
  * @brief This method should be called by sub-components to customize the target event
  * @param sender The sender of the event

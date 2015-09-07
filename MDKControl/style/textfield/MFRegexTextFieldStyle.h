@@ -21,12 +21,14 @@
 
 /*!
  * @class MFRegexTextFieldStyle
- * @brief The style class of a MFRegexTextField component
+ * @brief The style class of a MFRegexTextField control
  */
 @interface MFRegexTextFieldStyle : MFTextFieldStyle
 
 #pragma mark - Properties
-
+/*!
+ * @brief Indicates if the control has an accessory button
+ */
 @property (nonatomic) BOOL hasAccessoryButton;
 
 @end

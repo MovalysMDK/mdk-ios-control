@@ -79,7 +79,7 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 }
 
 -(void) initializeComponent {
-    self.controlDelegate = [[MFCommonControlDelegate alloc] initWithComponent:self];
+    self.controlDelegate = [[MFCommonControlDelegate alloc] initWithControl:self];
 //    [self.baseStyleClass applyStandardStyleOnComponent:self];
     self.errors = [NSMutableArray new];
     if(!self.sender) {

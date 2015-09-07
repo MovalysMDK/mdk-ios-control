@@ -15,27 +15,18 @@
  */
 
 #import <Foundation/Foundation.h>
-
-//FIXME: Doc
-
-@protocol MFComponentValidationProtocol <NSObject>
-
+@class MFLabel;
 
 /*!
- * Indicate if the control is valid.
+ * @protocol MDKControlAssociatedLabelProtocol
+ * @brief A protocol that provides an associated label property on MDK Controls
  */
-@property(nonatomic, setter=setIsValid:) BOOL isValid;
+@protocol MDKControlAssociatedLabelProtocol <NSObject>
 
+#pragma mark - Properties
 /*!
- * Validate the ui component value.
- * @return Number of errors detected by the UI component
+ * @brief The associated label to the control that implements this protocol
  */
--(NSInteger) validate;
-
-/*!
- * Returns an array of field validators specific to this control only.
- * @return An array of field validators specific to this control only.
- */
--(NSArray *) controlValidators;
+@property (nonatomic, weak) MFLabel *associatedLabel;
 
 @end

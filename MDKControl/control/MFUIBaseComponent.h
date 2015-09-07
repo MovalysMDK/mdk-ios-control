@@ -21,8 +21,8 @@
 //Tooltip
 #import "MFUIControlTooltip.h"
 
-#import "MFUIComponentProtocol.h"
-@protocol MFComponentAssociatedLabelProtocol;
+#import "MDKControlProtocol.h"
+@protocol MDKControlAssociatedLabelProtocol;
 
 //Framework constants
 FOUNDATION_EXPORT NSTimeInterval const ERROR_BUTTON_ANIMATION_DURATION;
@@ -37,7 +37,7 @@ IB_DESIGNABLE
  * @discussion This class allows to add an error button associated to a tooltip when the error button is clicked.
  * @warning If you need to create a custom component binded with the framework, you ALWAYS should inherits this class. If your custom component have some basic methods of another basic iOS component, you can combine with a category that forwards needed methods and properties
  */
-@interface MFUIBaseComponent : UIControl<MFUIComponentProtocol, MFComponentAssociatedLabelProtocol>
+@interface MFUIBaseComponent : UIControl<MDKControlProtocol, MDKControlAssociatedLabelProtocol>
 
 
 #pragma mark - Properties
