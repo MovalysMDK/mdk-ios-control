@@ -14,12 +14,12 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFDefaultStyle.h"
+#import "MDKDefaultStyle.h"
 
 /*!
  * @class MDKLabelStyle
  * @brief The style class for MDKLabel control.
  */
-@interface MDKLabelStyle : MFDefaultStyle
+@interface MDKLabelStyle : MDKDefaultStyle
 
 @end

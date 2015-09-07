@@ -14,9 +14,10 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "Command.h"
+
 #import "MDKSimpleComponentProvider.h"
-#import "MDKCommandProtocol.h"
-#import "MFFieldValidatorProtocol.h"
+#import "MDKFieldValidatorProtocol.h"
 
 @implementation MDKSimpleComponentProvider
 
@@ -32,8 +33,8 @@
     return command;
 }
 
--(id<MFFieldValidatorProtocol>)fieldValidatorWithKey:(NSString *)baseKey {
-    id<MFFieldValidatorProtocol> fieldValidator = nil;
+-(id<MDKFieldValidatorProtocol>)fieldValidatorWithKey:(NSString *)baseKey {
+    id<MDKFieldValidatorProtocol> fieldValidator = nil;
     baseKey = [[[baseKey substringToIndex:1] uppercaseString] stringByAppendingString:[baseKey substringFromIndex:1]];
     Class fieldValidatorClass = [self classWithKey:baseKey withQualifier:@""];
     if(fieldValidatorClass) {

@@ -15,21 +15,21 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 #import "UIView+Styleable.h"
-@protocol MFStyleProtocol;
+@protocol MDKStyleProtocol;
 
 @implementation UIView (Styleable)
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
 -(void)applyStandardStyle {
-    NSObject<MFStyleProtocol> *baseStyleClass = [self performSelector:@selector(styleClass)];
+    NSObject<MDKStyleProtocol> *baseStyleClass = [self performSelector:@selector(styleClass)];
     if([baseStyleClass respondsToSelector:@selector(applyStandardStyleOnComponent:)]) {
         [baseStyleClass performSelector:@selector(applyStandardStyleOnComponent:) withObject:self];
     }
 }
 
 -(void)applyErrorStyle {
-    NSObject<MFStyleProtocol> *baseStyleClass = [self performSelector:@selector(styleClass)];
+    NSObject<MDKStyleProtocol> *baseStyleClass = [self performSelector:@selector(styleClass)];
     if([baseStyleClass respondsToSelector:@selector(applyErrorStyleOnComponent:)]) {
         [baseStyleClass performSelector:@selector(applyErrorStyleOnComponent:) withObject:self];
     }
@@ -37,7 +37,7 @@
 
 
 -(void)applyValidStyle {
-    NSObject<MFStyleProtocol> *baseStyleClass = [self performSelector:@selector(styleClass)];
+    NSObject<MDKStyleProtocol> *baseStyleClass = [self performSelector:@selector(styleClass)];
     if([baseStyleClass respondsToSelector:@selector(applyValidStyleOnComponent:)]) {
         [baseStyleClass performSelector:@selector(applyValidStyleOnComponent:) withObject:self];
     }

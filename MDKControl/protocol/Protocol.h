@@ -14,19 +14,18 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFTextField.h"
+#ifndef MDKControl_Protocol_h
+#define MDKControl_Protocol_h
 
-/*!
- * @class MFRegexTextField
- * @brief The MFRegexTextField component.
- * @discussion This component inherits from MFNewTextField component.
- * @discussion It show a text field where the content is validated or
- * not by a specified regualr expression. 
- * @discussion An action button allows the use to do a specific action
- * following the current text value in the text field.
- */
-@interface MFRegexTextField : MFTextField
+#import "MDKControlChangesProtocol.h"
+#import "MDKBackgroundViewProtocol.h"
+#import "MDKControlAssociatedLabelProtocol.h"
+#import "MDKControlAttributesProtocol.h"
+#import "MDKControlDataProtocol.h"
+#import "MDKControlErrorProtocol.h"
+#import "MDKControlPropertiesProtocol.h"
+#import "MDKControlValidationProtocol.h"
+#import "MDKErrorViewProtocol.h"
+#import "MDKControlProtocol.h"
 
-
-
-@end
+#endif

@@ -13,20 +13,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-
-#import "MFTextField.h"
+#import <Foundation/Foundation.h>
 
 /*!
- * @class MFRegexTextField
- * @brief The MFRegexTextField component.
- * @discussion This component inherits from MFNewTextField component.
- * @discussion It show a text field where the content is validated or
- * not by a specified regualr expression. 
- * @discussion An action button allows the use to do a specific action
- * following the current text value in the text field.
+ * @class MDKFieldValidatorHandler
+ * @brief This class provides the necessary FieldValidators to its caller
  */
-@interface MFRegexTextField : MFTextField
+@interface MDKFieldValidatorHandler : NSObject
 
-
+#pragma mark - Methods
+/*!
+ * @brief Returns a list of validators, given a list of attributes
+ * @param attributes The attributes that hold the component to validate
+ * @return An array of FieldValidator objects that can valid a value following 
+ * the given attributes
+ */
++(NSArray *)fieldValidatorsForAttributes:(NSArray *)attributes forControl:(UIView *)control;
 
 @end

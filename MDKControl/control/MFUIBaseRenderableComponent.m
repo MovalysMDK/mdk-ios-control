@@ -15,7 +15,7 @@
  */
 
 #import "MFUIBaseRenderableComponent.h"
-#import "MFDefaultStyle.h"
+#import "MDKDefaultStyle.h"
 #import "MDKConstants.h"
 #import "JDFTooltipView.h"
 

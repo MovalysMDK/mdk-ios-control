@@ -17,11 +17,11 @@
 
 //Tags
 #import "MFViewTags.h"
+#import "Protocol.h"
 
 //Tooltip
 #import "MFUIControlTooltip.h"
 
-#import "MDKControlProtocol.h"
 @protocol MDKControlAssociatedLabelProtocol;
 
 //Framework constants

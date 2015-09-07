@@ -14,14 +14,14 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "AlertView.h"
+#import "Style.h"
+
 #import "MFTextField.h"
-#import "MFTextFieldStyle+ErrorView.h"
-#import "MFTextFieldStyle+TextLayouting.h"
-#import "MDKBackgroundViewProtocol.h"
+#import "MDKTextFieldStyle+ErrorView.h"
+#import "MDKTextFieldStyle+TextLayouting.h"
 #import "MFUIControlExtension.h"
-#import "MDKAlertViewManager.h"
 #import "MDKLabel.h"
-#import "MFUIFieldValidator.h"
 
 @interface MFTextField ()
 
@@ -108,27 +108,27 @@
 
 -(CGRect)textRectForBounds:(CGRect)bounds {
     [super textRectForBounds:bounds];
-    return [((MFTextFieldStyle *)self.styleClass) textRectForBounds:bounds onComponent:self];
+    return [((MDKTextFieldStyle *)self.styleClass) textRectForBounds:bounds onComponent:self];
 }
 
 -(CGRect)editingRectForBounds:(CGRect)bounds {
     [super editingRectForBounds:bounds];
-    return [((MFTextFieldStyle *)self.styleClass) editingRectForBounds:bounds onComponent:self];
+    return [((MDKTextFieldStyle *)self.styleClass) editingRectForBounds:bounds onComponent:self];
 }
 
 -(CGRect)clearButtonRectForBounds:(CGRect)bounds {
     bounds = [super clearButtonRectForBounds:bounds];
-    return [((MFTextFieldStyle *)self.styleClass) clearButtonRectForBounds:bounds onComponent:self];
+    return [((MDKTextFieldStyle *)self.styleClass) clearButtonRectForBounds:bounds onComponent:self];
 }
 
 - (CGRect)placeholderRectForBounds:(CGRect)bounds {
     bounds = [super textRectForBounds:bounds];
-    return [((MFTextFieldStyle *)self.styleClass) placeholderRectForBounds:bounds onComponent:self];
+    return [((MDKTextFieldStyle *)self.styleClass) placeholderRectForBounds:bounds onComponent:self];
 }
 
 -(CGRect)borderRectForBounds:(CGRect)bounds {
     bounds = [super borderRectForBounds:bounds];
-    return [((MFTextFieldStyle *)self.styleClass) borderRectForBounds:bounds onComponent:self];
+    return [((MDKTextFieldStyle *)self.styleClass) borderRectForBounds:bounds onComponent:self];
     
 }
 
@@ -150,7 +150,7 @@
         [self addSubview:view];
         [self bringSubviewToFront:view];
         view.translatesAutoresizingMaskIntoConstraints = NO;
-        NSArray *constraintsToAdd = [((MFTextFieldStyle *)self.styleClass) defineConstraintsForAccessoryView:view withIdentifier:[[accessoryViews allKeysForObject:view] firstObject] onComponent:self];
+        NSArray *constraintsToAdd = [((MDKTextFieldStyle *)self.styleClass) defineConstraintsForAccessoryView:view withIdentifier:[[accessoryViews allKeysForObject:view] firstObject] onControl:self];
         [self addConstraints:constraintsToAdd];
     }
 }
@@ -275,7 +275,7 @@
 
 -(void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
     if(![self isEqual:target]) {
-        MFControlChangedTargetDescriptor *commonCCTD = [MFControlChangedTargetDescriptor new];
+        MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
         commonCCTD.target = target;
         commonCCTD.action = action;
         self.targetDescriptors = @{@(self.hash) : commonCCTD};
@@ -290,7 +290,7 @@
 #pragma clang diagnostic ignored "-Wundeclared-selector"
 -(void) valueChanged:(UIView *)sender {
     if([self.controlDelegate validate] == 0) {
-        MFControlChangedTargetDescriptor *cctd = self.targetDescriptors[@(sender.hash)];
+        MDKControlEventsDescriptor *cctd = self.targetDescriptors[@(sender.hash)];
         [cctd.target performSelector:cctd.action withObject:self];
     }
 }

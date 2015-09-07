@@ -25,12 +25,11 @@
 //#import <MFCore/MFCoreLog.h>
 //#import <MFCore/MFCoreError.h>
 
+#import "Protocol.h"
+
 #import "MFUIBaseComponent.h"
-#import "MDKControlProtocol.h"
 #import "MDKConstants.h"
-#import "MFErrorViewProtocol.h"
 #import "MFUIBaseRenderableComponent.h"
-#import "MDKControlAssociatedLabelProtocol.h"
 #import "MDKLabel.h"
 
 
@@ -273,7 +272,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
             
             // We calculate the tooltip's anchor point
             
-            CGPoint point = [((id<MFErrorViewProtocol>)self.styleClass).errorView convertPoint:CGPointMake(0.0, ((id<MFErrorViewProtocol>)self.styleClass).errorView.frame.size.height - 4.0) toView:self];
+            CGPoint point = [((id<MDKErrorViewProtocol>)self.styleClass).errorView convertPoint:CGPointMake(0.0, ((id<MDKErrorViewProtocol>)self.styleClass).errorView.frame.size.height - 4.0) toView:self];
             
             // We calculate the tooltip' size
             CGRect tooltipViewFrame = CGRectMake(-10, point.y, self.sender.frame.size.width, self.baseTooltipView.frame.size.height);
@@ -310,7 +309,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 }
 
 -(UIView *) baseErrorButton {
-    return ((id<MFErrorViewProtocol>)self.styleClass).errorView;
+    return ((id<MDKErrorViewProtocol>)self.styleClass).errorView;
 }
 
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {

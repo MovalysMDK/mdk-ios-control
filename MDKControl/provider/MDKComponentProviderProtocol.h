@@ -16,7 +16,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol MDKCommandProtocol;
-@protocol MFFieldValidatorProtocol;
+@protocol MDKFieldValidatorProtocol;
 
 /*!
  * @protocol MDKComponentProviderProtocol
@@ -37,6 +37,6 @@
  * @param baseKey A string that represent the baseKey of the field validator to return
  * @return The field validator corresponding to the given key.
  */
--(id<MFFieldValidatorProtocol>)fieldValidatorWithKey:(NSString *)baseKey;
+-(id<MDKFieldValidatorProtocol>)fieldValidatorWithKey:(NSString *)baseKey;
 
 @end

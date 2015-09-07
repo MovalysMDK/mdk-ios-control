@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "MFControlChangedTargetDescriptor.h"
+#import "MDKControlEventsDescriptor.h"
 
 /*!
  * @protocol MDKControlChangesProtocol
@@ -26,8 +26,8 @@
 #pragma mark - Properties
 /*!
  * @brief A dictionary that contains key/value paris of a sub-component associated
- * to the MFControlChangedTargetDescriptor object to use to customize the event.
- * @see MFControlChangedTargetDescriptor
+ * to the MDKControlEventsDescriptor object to use to customize the event.
+ * @see MDKControlEventsDescriptor
  */
 @property (nonatomic, strong) NSDictionary *targetDescriptors;
 

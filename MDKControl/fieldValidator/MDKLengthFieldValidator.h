@@ -14,19 +14,17 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFTextField.h"
+#import <Foundation/Foundation.h>
+#import "MDKFieldValidatorProtocol.h"
+
+FOUNDATION_EXPORT NSString *FIELD_VALIDATOR_MIN_LENGTH;
+FOUNDATION_EXPORT NSString *FIELD_VALIDATOR_MAX_LENGTH;
 
 /*!
- * @class MFRegexTextField
- * @brief The MFRegexTextField component.
- * @discussion This component inherits from MFNewTextField component.
- * @discussion It show a text field where the content is validated or
- * not by a specified regualr expression. 
- * @discussion An action button allows the use to do a specific action
- * following the current text value in the text field.
+ * @class MDKLengthFieldValidator
+ * @brief The FieldValidator for length
+ * @discussion This validator checks the length of the given value
  */
-@interface MFRegexTextField : MFTextField
-
-
+@interface MDKLengthFieldValidator : NSObject <MDKFieldValidatorProtocol>
 
 @end

@@ -14,13 +14,12 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "Protocol.h"
+
 #import "MFCommonControlDelegate.h"
-#import "MDKControlProtocol.h"
-#import "MFStyleProtocol.h"
+#import "MDKStyleProtocol.h"
 #import "MDKConstants.h"
-#import "MFErrorViewProtocol.h"
 #import "UIView+Styleable.h"
-#import "MFUIFieldValidator.h"
 //#import "MFUIOldBaseComponent.h"
 //#import "UIView+Binding.h"
 
@@ -106,7 +105,7 @@
         } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG);
         
         //Création et affichage de la bulle
-        self.control.tooltipView = [[JDFTooltipView alloc] initWithTargetView:((id<MFErrorViewProtocol>)self.control.styleClass).errorView hostView:currentView tooltipText:@"" arrowDirection:JDFTooltipViewArrowDirectionUp width:self.control.frame.size.width];
+        self.control.tooltipView = [[JDFTooltipView alloc] initWithTargetView:((id<MDKErrorViewProtocol>)self.control.styleClass).errorView hostView:currentView tooltipText:@"" arrowDirection:JDFTooltipViewArrowDirectionUp width:self.control.frame.size.width];
         [currentView bringSubviewToFront:self.control.tooltipView];
         self.control.tooltipView.tooltipText = errorText;
         self.control.tooltipView.tooltipBackgroundColour = [self defaultTooltipBackgroundColor];
@@ -162,10 +161,10 @@
     
     //Mandatory validator
     id mandatoryError = nil;
-    id<MFFieldValidatorProtocol> mandatoryValidator = nil;
+    id<MDKFieldValidatorProtocol> mandatoryValidator = nil;
     if([self.control mandatory]) {
         
-        mandatoryValidator = [[MFFieldValidatorHandler fieldValidatorsForAttributes:@[FIELD_VALIDATOR_ATTRIBUTE_MANDATORY] forControl:[self control]] firstObject];
+        mandatoryValidator = [[MDKFieldValidatorHandler fieldValidatorsForAttributes:@[FIELD_VALIDATOR_ATTRIBUTE_MANDATORY] forControl:[self control]] firstObject];
         mandatoryError = [mandatoryValidator validate:[self.control getData] withCurrentState:validationState withParameters:@{FIELD_VALIDATOR_ATTRIBUTE_MANDATORY : self.control.mandatory}];
     }
     if(!mandatoryError && self.control.controlAttributes) {
@@ -174,10 +173,10 @@
         [validators addObjectsFromArray:[self.control controlValidators]];
         
         //Other validatos
-        [validators addObjectsFromArray:[MFFieldValidatorHandler fieldValidatorsForAttributes:self.control.controlAttributes.allKeys forControl:[self control]]];
+        [validators addObjectsFromArray:[MDKFieldValidatorHandler fieldValidatorsForAttributes:self.control.controlAttributes.allKeys forControl:[self control]]];
         
         
-        for(id<MFFieldValidatorProtocol> fieldValidator in validators) {
+        for(id<MDKFieldValidatorProtocol> fieldValidator in validators) {
             if(validationState[NSStringFromClass([fieldValidator class])]) {
                 continue;
             }

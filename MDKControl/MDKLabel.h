@@ -15,8 +15,9 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "MFStyleProtocol.h"
-#import "MDKControlProtocol.h"
+#import "Protocol.h"
+
+#import "MDKStyleProtocol.h"
 
 
 FOUNDATION_EXPORT NSString * const MF_MANDATORY_INDICATOR;

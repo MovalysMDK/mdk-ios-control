@@ -14,19 +14,22 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFTextField.h"
+#import <Foundation/Foundation.h>
 
 /*!
- * @class MFRegexTextField
- * @brief The MFRegexTextField component.
- * @discussion This component inherits from MFNewTextField component.
- * @discussion It show a text field where the content is validated or
- * not by a specified regualr expression. 
- * @discussion An action button allows the use to do a specific action
- * following the current text value in the text field.
+ * @class MDKControlEventsDescriptor
+ * @brief This class describes a target and an action to perform on this target
  */
-@interface MFRegexTextField : MFTextField
+@interface MDKControlEventsDescriptor : NSObject
 
+/*!
+ * @brief The action to perform when the canges is recognized
+ */
+@property (nonatomic) SEL action;
 
+/*!
+ * @brief The target of the action to perform
+ */
+@property (nonatomic, weak) id target;
 
 @end

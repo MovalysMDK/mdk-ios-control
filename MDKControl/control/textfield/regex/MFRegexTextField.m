@@ -17,7 +17,6 @@
 #import "MFRegexTextField.h"
 //#import "MFException.h"
 #import "MFNoMatchingValueUIValidationError.h"
-#import "MDKControlProtocol.h"
 
 @implementation MFRegexTextField
 @synthesize customStyleClass;

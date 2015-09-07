@@ -15,8 +15,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "MDKControlProtocol.h"
-#import "MDKControlChangesProtocol.h"
+#import "Protocol.h"
 
 /*!
  * @class MFTextField

@@ -26,7 +26,7 @@
 #import "MFCommonControlDelegate.h"
 
 #import "UIView+Styleable.h"
-#import "MFStyleProtocol.h"
+#import "MDKStyleProtocol.h"
 
 
 /*!
@@ -53,7 +53,7 @@
 /*!
  * @brief The instance of the style lass to use to render the component style.
  */
-@property (nonatomic, strong) NSObject<MFStyleProtocol> *styleClass;
+@property (nonatomic, strong) NSObject<MDKStyleProtocol> *styleClass;
 
 /*!
  * @brief Indicates if the component self-validation is active
