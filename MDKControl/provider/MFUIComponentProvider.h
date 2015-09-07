@@ -16,7 +16,7 @@
 #ifndef MFUI_MFUIComponentProvider_h
 #define MFUI_MFUIComponentProvider_h
 
-#import "MFComponentProviderProtocol.h"
-#import "MFComponentApplicationProtocol.h"
+#import "MDKComponentProviderProtocol.h"
+#import "MDKComponentApplicationProtocol.h"
 
 #endif

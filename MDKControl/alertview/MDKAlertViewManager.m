@@ -14,18 +14,18 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFAlertViewManager.h"
-#import "MFAlertView.h"
+#import "MDKAlertViewManager.h"
+#import "MDKAlertView.h"
 
 NSString *ALERTVIEW_FAILED_SAVE_ACTION = @"ALERTVIEW_FAILED_SAVE_ACTION";
 
 
-@implementation MFAlertViewManager
+@implementation MDKAlertViewManager
 
 #pragma mark - Singleton management
 +(instancetype) getInstance{
     //Faire un singleton
-    static MFAlertViewManager *instance = nil;
+    static MDKAlertViewManager *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
@@ -37,16 +37,16 @@ NSString *ALERTVIEW_FAILED_SAVE_ACTION = @"ALERTVIEW_FAILED_SAVE_ACTION";
 -(void) showAlertView:(UIAlertView *)alertView {
     
     //Do some pre-treatments
-    if([alertView isKindOfClass:[MFAlertView class]]) {
-        [self treatBefore:(MFAlertView *)alertView];
+    if([alertView isKindOfClass:[MDKAlertView class]]) {
+        [self treatBefore:(MDKAlertView *)alertView];
     }
     
     //Show the alertView
     [alertView show];
     
     //Do some post-treatments
-    if([alertView isKindOfClass:[MFAlertView class]]) {
-        [self treatAfter:(MFAlertView *)alertView];
+    if([alertView isKindOfClass:[MDKAlertView class]]) {
+        [self treatAfter:(MDKAlertView *)alertView];
     }
 }
 
@@ -56,7 +56,7 @@ NSString *ALERTVIEW_FAILED_SAVE_ACTION = @"ALERTVIEW_FAILED_SAVE_ACTION";
  * @brief Do some treatments before showing the given AlertView
  * @param alertview The AlertView that will be shown after som treatments
  */
--(void) treatBefore:(MFAlertView *)alertview {
+-(void) treatBefore:(MDKAlertView *)alertview {
     if(alertview.identifier == kFailedSavedAction) {
         [[NSNotificationCenter defaultCenter] postNotificationName:ALERTVIEW_FAILED_SAVE_ACTION object:nil];
     }
@@ -66,7 +66,7 @@ NSString *ALERTVIEW_FAILED_SAVE_ACTION = @"ALERTVIEW_FAILED_SAVE_ACTION";
  * @brief Do some treatments after showing the given AlertView
  * @param alertview The AlertView that has be shown
  */
--(void) treatAfter:(MFAlertView *)alertview {
+-(void) treatAfter:(MDKAlertView *)alertview {
 
 }
 @end

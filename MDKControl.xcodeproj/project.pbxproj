@@ -108,10 +108,10 @@
 		B02157C61B9DAF30001860B5 /* MFNoMatchingValueUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157971B9DAF30001860B5 /* MFNoMatchingValueUIValidationError.m */; };
 		B02157CB1B9DAF30001860B5 /* MFUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B021579C1B9DAF30001860B5 /* MFUIValidationError.h */; };
 		B02157CC1B9DAF30001860B5 /* MFUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B021579D1B9DAF30001860B5 /* MFUIValidationError.m */; };
-		B02157D71B9DAFA0001860B5 /* MFComponentApplicationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D01B9DAFA0001860B5 /* MFComponentApplicationProtocol.h */; };
-		B02157D81B9DAFA0001860B5 /* MFComponentProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D11B9DAFA0001860B5 /* MFComponentProviderProtocol.h */; };
-		B02157D91B9DAFA0001860B5 /* MFSimpleComponentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D21B9DAFA0001860B5 /* MFSimpleComponentProvider.h */; };
-		B02157DA1B9DAFA0001860B5 /* MFSimpleComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157D31B9DAFA0001860B5 /* MFSimpleComponentProvider.m */; };
+		B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D01B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h */; };
+		B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D11B9DAFA0001860B5 /* MDKComponentProviderProtocol.h */; };
+		B02157D91B9DAFA0001860B5 /* MDKSimpleComponentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D21B9DAFA0001860B5 /* MDKSimpleComponentProvider.h */; };
+		B02157DA1B9DAFA0001860B5 /* MDKSimpleComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157D31B9DAFA0001860B5 /* MDKSimpleComponentProvider.m */; };
 		B02157DB1B9DAFA0001860B5 /* MFUIComponentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D41B9DAFA0001860B5 /* MFUIComponentProvider.h */; };
 		B02157DE1B9DB124001860B5 /* MFUIBaseRenderableComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157DC1B9DB124001860B5 /* MFUIBaseRenderableComponent.m */; };
 		B02157DF1B9DB124001860B5 /* MFUIBaseRenderableComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157DD1B9DB124001860B5 /* MFUIBaseRenderableComponent.h */; };
@@ -128,12 +128,10 @@
 		B02158001B9DB207001860B5 /* MFTextFieldExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157F31B9DB207001860B5 /* MFTextFieldExtension.h */; };
 		B02158011B9DB207001860B5 /* MFTextFieldExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157F41B9DB207001860B5 /* MFTextFieldExtension.m */; };
 		B02158021B9DB207001860B5 /* MFUIControlExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157F51B9DB207001860B5 /* MFUIControlExtension.h */; };
-		B02158091B9DB27D001860B5 /* MFAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158041B9DB27D001860B5 /* MFAlertView.h */; };
-		B021580A1B9DB27D001860B5 /* MFAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158051B9DB27D001860B5 /* MFAlertView.m */; };
-		B021580B1B9DB27D001860B5 /* MFAlertViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158061B9DB27D001860B5 /* MFAlertViewManager.h */; };
-		B021580C1B9DB27D001860B5 /* MFAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158071B9DB27D001860B5 /* MFAlertViewManager.m */; };
-		B021580D1B9DB27D001860B5 /* MFUIAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158081B9DB27D001860B5 /* MFUIAlertView.h */; };
-		B02158121B9DB2EE001860B5 /* MDKLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B021580F1B9DB2EE001860B5 /* MDKLabel.h */; };
+		B02158091B9DB27D001860B5 /* MDKAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158041B9DB27D001860B5 /* MDKAlertView.h */; };
+		B021580A1B9DB27D001860B5 /* MDKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158051B9DB27D001860B5 /* MDKAlertView.m */; };
+		B021580B1B9DB27D001860B5 /* MDKAlertViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158061B9DB27D001860B5 /* MDKAlertViewManager.h */; };
+		B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158071B9DB27D001860B5 /* MDKAlertViewManager.m */; };
 		B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */; };
 		B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */; };
 		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; };
@@ -260,10 +258,10 @@
 		B02157971B9DAF30001860B5 /* MFNoMatchingValueUIValidationError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFNoMatchingValueUIValidationError.m; sourceTree = "<group>"; };
 		B021579C1B9DAF30001860B5 /* MFUIValidationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIValidationError.h; sourceTree = "<group>"; };
 		B021579D1B9DAF30001860B5 /* MFUIValidationError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUIValidationError.m; sourceTree = "<group>"; };
-		B02157D01B9DAFA0001860B5 /* MFComponentApplicationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComponentApplicationProtocol.h; sourceTree = "<group>"; };
-		B02157D11B9DAFA0001860B5 /* MFComponentProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFComponentProviderProtocol.h; sourceTree = "<group>"; };
-		B02157D21B9DAFA0001860B5 /* MFSimpleComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSimpleComponentProvider.h; sourceTree = "<group>"; };
-		B02157D31B9DAFA0001860B5 /* MFSimpleComponentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSimpleComponentProvider.m; sourceTree = "<group>"; };
+		B02157D01B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKComponentApplicationProtocol.h; sourceTree = "<group>"; };
+		B02157D11B9DAFA0001860B5 /* MDKComponentProviderProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKComponentProviderProtocol.h; sourceTree = "<group>"; };
+		B02157D21B9DAFA0001860B5 /* MDKSimpleComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSimpleComponentProvider.h; sourceTree = "<group>"; };
+		B02157D31B9DAFA0001860B5 /* MDKSimpleComponentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSimpleComponentProvider.m; sourceTree = "<group>"; };
 		B02157D41B9DAFA0001860B5 /* MFUIComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIComponentProvider.h; sourceTree = "<group>"; };
 		B02157DC1B9DB124001860B5 /* MFUIBaseRenderableComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFUIBaseRenderableComponent.m; sourceTree = "<group>"; };
 		B02157DD1B9DB124001860B5 /* MFUIBaseRenderableComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIBaseRenderableComponent.h; sourceTree = "<group>"; };
@@ -280,13 +278,10 @@
 		B02157F31B9DB207001860B5 /* MFTextFieldExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextFieldExtension.h; sourceTree = "<group>"; };
 		B02157F41B9DB207001860B5 /* MFTextFieldExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTextFieldExtension.m; sourceTree = "<group>"; };
 		B02157F51B9DB207001860B5 /* MFUIControlExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIControlExtension.h; sourceTree = "<group>"; };
-		B02158041B9DB27D001860B5 /* MFAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAlertView.h; sourceTree = "<group>"; };
-		B02158051B9DB27D001860B5 /* MFAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAlertView.m; sourceTree = "<group>"; };
-		B02158061B9DB27D001860B5 /* MFAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAlertViewManager.h; sourceTree = "<group>"; };
-		B02158071B9DB27D001860B5 /* MFAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAlertViewManager.m; sourceTree = "<group>"; };
-		B02158081B9DB27D001860B5 /* MFUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIAlertView.h; sourceTree = "<group>"; };
-		B021580F1B9DB2EE001860B5 /* MDKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKLabel.h; sourceTree = "<group>"; };
-		B02158101B9DB2EE001860B5 /* MDKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKLabel.m; sourceTree = "<group>"; };
+		B02158041B9DB27D001860B5 /* MDKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKAlertView.h; sourceTree = "<group>"; };
+		B02158051B9DB27D001860B5 /* MDKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKAlertView.m; sourceTree = "<group>"; };
+		B02158061B9DB27D001860B5 /* MDKAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKAlertViewManager.h; sourceTree = "<group>"; };
+		B02158071B9DB27D001860B5 /* MDKAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKAlertViewManager.m; sourceTree = "<group>"; };
 		B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandHandler.h; sourceTree = "<group>"; };
 		B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCommandHandler.m; sourceTree = "<group>"; };
 		B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandProtocol.h; sourceTree = "<group>"; };
@@ -550,10 +545,10 @@
 		B02157CD1B9DAFA0001860B5 /* provider */ = {
 			isa = PBXGroup;
 			children = (
-				B02157D01B9DAFA0001860B5 /* MFComponentApplicationProtocol.h */,
-				B02157D11B9DAFA0001860B5 /* MFComponentProviderProtocol.h */,
-				B02157D21B9DAFA0001860B5 /* MFSimpleComponentProvider.h */,
-				B02157D31B9DAFA0001860B5 /* MFSimpleComponentProvider.m */,
+				B02157D01B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h */,
+				B02157D11B9DAFA0001860B5 /* MDKComponentProviderProtocol.h */,
+				B02157D21B9DAFA0001860B5 /* MDKSimpleComponentProvider.h */,
+				B02157D31B9DAFA0001860B5 /* MDKSimpleComponentProvider.m */,
 				B02157D41B9DAFA0001860B5 /* MFUIComponentProvider.h */,
 			);
 			path = provider;
@@ -578,23 +573,12 @@
 		B02158031B9DB27D001860B5 /* alertview */ = {
 			isa = PBXGroup;
 			children = (
-				B02158041B9DB27D001860B5 /* MFAlertView.h */,
-				B02158051B9DB27D001860B5 /* MFAlertView.m */,
-				B02158061B9DB27D001860B5 /* MFAlertViewManager.h */,
-				B02158071B9DB27D001860B5 /* MFAlertViewManager.m */,
-				B02158081B9DB27D001860B5 /* MFUIAlertView.h */,
+				B02158041B9DB27D001860B5 /* MDKAlertView.h */,
+				B02158051B9DB27D001860B5 /* MDKAlertView.m */,
+				B02158061B9DB27D001860B5 /* MDKAlertViewManager.h */,
+				B02158071B9DB27D001860B5 /* MDKAlertViewManager.m */,
 			);
 			path = alertview;
-			sourceTree = "<group>";
-		};
-		B021580E1B9DB2EE001860B5 /* label */ = {
-			isa = PBXGroup;
-			children = (
-				B021580F1B9DB2EE001860B5 /* MDKLabel.h */,
-				B02158101B9DB2EE001860B5 /* MDKLabel.m */,
-			);
-			name = label;
-			path = control/label;
 			sourceTree = "<group>";
 		};
 		B02158191B9DBC8C001860B5 /* command */ = {
@@ -643,7 +627,6 @@
 				B08C18EB1B9DD1A200D6F93A /* MDKLabel.h */,
 				B08C18EC1B9DD1A200D6F93A /* MDKLabel.m */,
 				B02158191B9DBC8C001860B5 /* command */,
-				B021580E1B9DB2EE001860B5 /* label */,
 				B02158031B9DB27D001860B5 /* alertview */,
 				B02157CD1B9DAFA0001860B5 /* provider */,
 				B02157431B9DAEEA001860B5 /* fieldValidator */,
@@ -710,7 +693,7 @@
 				B02157A21B9DAF30001860B5 /* MFUIControlTooltip.h in Headers */,
 				B02158351B9DBC8C001860B5 /* MFUICommand.h in Headers */,
 				B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */,
-				B02157D81B9DAFA0001860B5 /* MFComponentProviderProtocol.h in Headers */,
+				B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */,
 				B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */,
 				B02156D31B9DAC6E001860B5 /* MFUIStyleTextField.h in Headers */,
 				B021575C1B9DAEEA001860B5 /* MFFieldValidatorHandler.h in Headers */,
@@ -721,7 +704,7 @@
 				B02157E61B9DB17F001860B5 /* MFViewTags.h in Headers */,
 				B02156E61B9DAD59001860B5 /* MDKControlDataProtocol.h in Headers */,
 				B02157B11B9DAF30001860B5 /* ValidTooltipView.h in Headers */,
-				B02158091B9DB27D001860B5 /* MFAlertView.h in Headers */,
+				B02158091B9DB27D001860B5 /* MDKAlertView.h in Headers */,
 				B02157BF1B9DAF30001860B5 /* MFInvalidPhoneNumberValueUIValidationError.h in Headers */,
 				B02157AC1B9DAF30001860B5 /* UIView+JDFTooltips.h in Headers */,
 				B02156E31B9DAD59001860B5 /* MDKBackgroundViewProtocol.h in Headers */,
@@ -731,9 +714,8 @@
 				B02157CB1B9DAF30001860B5 /* MFUIValidationError.h in Headers */,
 				B02157F71B9DB207001860B5 /* MFEnumExtension.h in Headers */,
 				B02157B31B9DAF30001860B5 /* MFTooLongStringUIValidationError.h in Headers */,
-				B021580D1B9DB27D001860B5 /* MFUIAlertView.h in Headers */,
 				B02156EA1B9DAD59001860B5 /* MFErrorViewProtocol.h in Headers */,
-				B02157D71B9DAFA0001860B5 /* MFComponentApplicationProtocol.h in Headers */,
+				B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */,
 				B02156D11B9DAC6E001860B5 /* MFTextFieldStyle.h in Headers */,
 				B02156B31B9DAC6E001860B5 /* MFDefaultStyle.h in Headers */,
 				B021575E1B9DAEEA001860B5 /* MFFieldValidatorProtocol.h in Headers */,
@@ -753,8 +735,8 @@
 				B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */,
 				B02156CD1B9DAC6E001860B5 /* MFTextFieldStyle+ErrorView.h in Headers */,
 				B02156B91B9DAC6E001860B5 /* MDKLabelStyle.h in Headers */,
-				B021580B1B9DB27D001860B5 /* MFAlertViewManager.h in Headers */,
-				B02157D91B9DAFA0001860B5 /* MFSimpleComponentProvider.h in Headers */,
+				B021580B1B9DB27D001860B5 /* MDKAlertViewManager.h in Headers */,
+				B02157D91B9DAFA0001860B5 /* MDKSimpleComponentProvider.h in Headers */,
 				B021576A1B9DAEEA001860B5 /* MFUrlFieldValidator.h in Headers */,
 				B02157671B9DAEEA001860B5 /* MFPhoneFieldValidator.h in Headers */,
 				B02157FD1B9DB207001860B5 /* MFRegexTextExtensionProtocol.h in Headers */,
@@ -772,7 +754,6 @@
 				B021579E1B9DAF30001860B5 /* MFUIErrorView.h in Headers */,
 				B08C18ED1B9DD1A200D6F93A /* MDKLabel.h in Headers */,
 				B02156B71B9DAC6E001860B5 /* UIView+Styleable.h in Headers */,
-				B02158121B9DB2EE001860B5 /* MDKLabel.h in Headers */,
 				B02157E21B9DB145001860B5 /* MFUIBaseComponent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -874,7 +855,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B021575D1B9DAEEA001860B5 /* MFFieldValidatorHandler.m in Sources */,
-				B021580A1B9DB27D001860B5 /* MFAlertView.m in Sources */,
+				B021580A1B9DB27D001860B5 /* MDKAlertView.m in Sources */,
 				B02157A91B9DAF30001860B5 /* JDFTooltipView.m in Sources */,
 				B02157CC1B9DAF30001860B5 /* MFUIValidationError.m in Sources */,
 				B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */,
@@ -902,7 +883,7 @@
 				B02157BE1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.m in Sources */,
 				B02156D01B9DAC6E001860B5 /* MFTextFieldStyle+TextLayouting.m in Sources */,
 				B02157621B9DAEEA001860B5 /* MFIntegerFieldValidator.m in Sources */,
-				B021580C1B9DB27D001860B5 /* MFAlertViewManager.m in Sources */,
+				B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */,
 				B021576B1B9DAEEA001860B5 /* MFUrlFieldValidator.m in Sources */,
 				B02157C61B9DAF30001860B5 /* MFNoMatchingValueUIValidationError.m in Sources */,
 				B02156D21B9DAC6E001860B5 /* MFTextFieldStyle.m in Sources */,
@@ -925,7 +906,7 @@
 				B02157A11B9DAF30001860B5 /* InvalidTooltipView.m in Sources */,
 				B02157C21B9DAF30001860B5 /* MFInvalidUrlValueUIValidationError.m in Sources */,
 				B02157401B9DAE8E001860B5 /* MFRegexTextField.m in Sources */,
-				B02157DA1B9DAFA0001860B5 /* MFSimpleComponentProvider.m in Sources */,
+				B02157DA1B9DAFA0001860B5 /* MDKSimpleComponentProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,7 +19,7 @@
 #import "MFTextFieldStyle+TextLayouting.h"
 #import "MDKBackgroundViewProtocol.h"
 #import "MFUIControlExtension.h"
-#import "MFAlertViewManager.h"
+#import "MDKAlertViewManager.h"
 #import "MDKLabel.h"
 #import "MFUIFieldValidator.h"
 

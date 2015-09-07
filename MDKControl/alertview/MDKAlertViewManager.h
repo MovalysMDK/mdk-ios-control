@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, MFAlertViewIdentifier) {
  * @discussion The class allows to show an AlertView and to do some treatments
  * before and.or after showing the AlertView.
  */
-@interface MFAlertViewManager : NSObject
+@interface MDKAlertViewManager : NSObject
 
 #pragma mark - Methods
 

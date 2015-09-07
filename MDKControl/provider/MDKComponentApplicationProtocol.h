@@ -14,16 +14,24 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFAlertView.h"
+#import <Foundation/Foundation.h>
+#import "MDKComponentProviderProtocol.h"
 
-@implementation MFAlertView
+/*!
+ * @protocol MDKComponentApplicationProtocol
+ * @brief This protocol specify if the application uses a custom control provider
+ * @discussion This protocol must be implemented on the AppDelegate class only
+ */
+@protocol MDKComponentApplicationProtocol <NSObject>
 
--(instancetype)initWithTitle:(NSString *)title message:(NSString *)message identifier:(NSUInteger)identifier delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
-    self = [super initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
-    if(self) {
-        self.identifier = identifier;
-    }
-    return self;
-}
+@property (nonatomic, strong) NSDictionary *fieldValidatorsByAttributes;
+
+/*!
+ * @brief Returns the custom control provider to use
+ * @discussion You can use the default MFSimpleComponentProvider
+ * @return The custom control provider to use
+ * @see MFSimpleComponentProvider
+ */
+-(id<MDKComponentProviderProtocol>) componentProvider;
 
 @end

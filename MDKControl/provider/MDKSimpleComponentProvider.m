@@ -14,11 +14,11 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFSimpleComponentProvider.h"
+#import "MDKSimpleComponentProvider.h"
 #import "MDKCommandProtocol.h"
 #import "MFFieldValidatorProtocol.h"
 
-@implementation MFSimpleComponentProvider
+@implementation MDKSimpleComponentProvider
 
 -(id<MDKCommandProtocol>)commandWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier {
     id<MDKCommandProtocol> command = nil;

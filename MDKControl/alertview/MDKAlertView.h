@@ -15,13 +15,13 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "MFAlertViewManager.h"
+#import "MDKAlertViewManager.h"
 
 /*!
- * @class MFAlertView
+ * @class MDKAlertView
  * @brief This class represents a custom MDK iOS AlertView
  */
-@interface MFAlertView : UIAlertView
+@interface MDKAlertView : UIAlertView
 
 #pragma properties
 

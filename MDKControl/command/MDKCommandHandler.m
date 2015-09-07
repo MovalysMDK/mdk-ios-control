@@ -15,9 +15,9 @@
  */
 #import "MDKCommandHandler.h"
 #import "MFUICommand.h"
-#import "MFComponentApplicationProtocol.h"
-#import "MFComponentProviderProtocol.h"
-#import "MFSimpleComponentProvider.h"
+#import "MDKComponentApplicationProtocol.h"
+#import "MDKComponentProviderProtocol.h"
+#import "MDKSimpleComponentProvider.h"
 
 
 @implementation MDKCommandHandler
@@ -25,14 +25,14 @@
 +(id<MDKCommandProtocol>) commandWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier {
     id<MDKCommandProtocol> result = nil;
     
-    id<MFComponentProviderProtocol> componentProvider = nil;
+    id<MDKComponentProviderProtocol> componentProvider = nil;
     id<UIApplicationDelegate> appDelegate =  [[UIApplication sharedApplication] delegate];
     
-    if([appDelegate conformsToProtocol:@protocol(MFComponentApplicationProtocol)]) {
-        componentProvider = [((id<MFComponentApplicationProtocol>)appDelegate) componentProvider];
+    if([appDelegate conformsToProtocol:@protocol(MDKComponentApplicationProtocol)]) {
+        componentProvider = [((id<MDKComponentApplicationProtocol>)appDelegate) componentProvider];
     }
     else {
-        componentProvider = [MFSimpleComponentProvider new];
+        componentProvider = [MDKSimpleComponentProvider new];
     }
     result = [componentProvider commandWithKey:baseKey withQualifier:qualifier];
     return result;

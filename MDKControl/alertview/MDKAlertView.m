@@ -14,9 +14,16 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <Foundation/Foundation.h>
-#import "MFComponentProviderProtocol.h"
+#import "MDKAlertView.h"
 
-@interface MFSimpleComponentProvider : NSObject <MFComponentProviderProtocol>
+@implementation MDKAlertView
+
+-(instancetype)initWithTitle:(NSString *)title message:(NSString *)message identifier:(NSUInteger)identifier delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... {
+    self = [super initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
+    if(self) {
+        self.identifier = identifier;
+    }
+    return self;
+}
 
 @end

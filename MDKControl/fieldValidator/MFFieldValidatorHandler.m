@@ -16,8 +16,8 @@
 
 #import "MFFieldValidatorHandler.h"
 #import "MFFieldValidatorProtocol.h"
-#import "MFComponentApplicationProtocol.h"
-#import "MFSimpleComponentProvider.h"
+#import "MDKComponentApplicationProtocol.h"
+#import "MDKSimpleComponentProvider.h"
 
 @implementation MFFieldValidatorHandler
 
@@ -26,8 +26,8 @@
     
     id<UIApplicationDelegate> appDelegate =  [[UIApplication sharedApplication] delegate];
     NSDictionary *completeFieldValidatorDictionary = nil;
-    if([appDelegate conformsToProtocol:@protocol(MFComponentApplicationProtocol)]) {
-        completeFieldValidatorDictionary = ((id<MFComponentApplicationProtocol>)appDelegate).fieldValidatorsByAttributes;
+    if([appDelegate conformsToProtocol:@protocol(MDKComponentApplicationProtocol)]) {
+        completeFieldValidatorDictionary = ((id<MDKComponentApplicationProtocol>)appDelegate).fieldValidatorsByAttributes;
     }
     if(!completeFieldValidatorDictionary){
         completeFieldValidatorDictionary = [MFFieldValidatorHandler loadFieldValidatorByAttributes];
@@ -61,14 +61,14 @@
     for(NSString *fieldValidatorKey in completeValidatorList.allKeys) {
         
         id<MFFieldValidatorProtocol> fieldValidatorInstance = nil;
-        id<MFComponentProviderProtocol> componentProvider = nil;
+        id<MDKComponentProviderProtocol> componentProvider = nil;
         id<UIApplicationDelegate> appDelegate =  [[UIApplication sharedApplication] delegate];
         
-        if([appDelegate conformsToProtocol:@protocol(MFComponentApplicationProtocol)]) {
-            componentProvider = [((id<MFComponentApplicationProtocol>)appDelegate) componentProvider];
+        if([appDelegate conformsToProtocol:@protocol(MDKComponentApplicationProtocol)]) {
+            componentProvider = [((id<MDKComponentApplicationProtocol>)appDelegate) componentProvider];
         }
         else {
-            componentProvider = [MFSimpleComponentProvider new];
+            componentProvider = [MDKSimpleComponentProvider new];
         }
         fieldValidatorInstance = [componentProvider fieldValidatorWithKey:fieldValidatorKey];
         
@@ -88,8 +88,8 @@
         }
     }
     id<UIApplicationDelegate> appDelegate =  [[UIApplication sharedApplication] delegate];
-    if([appDelegate conformsToProtocol:@protocol(MFComponentApplicationProtocol)]) {
-        ((id<MFComponentApplicationProtocol>)appDelegate).fieldValidatorsByAttributes = result;
+    if([appDelegate conformsToProtocol:@protocol(MDKComponentApplicationProtocol)]) {
+        ((id<MDKComponentApplicationProtocol>)appDelegate).fieldValidatorsByAttributes = result;
     }
     
     return result;

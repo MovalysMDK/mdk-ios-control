@@ -19,10 +19,10 @@
 @protocol MFFieldValidatorProtocol;
 
 /*!
- * @protocol MFComponentProviderProtocol
+ * @protocol MDKComponentProviderProtocol
  * @brief This protocol defines a control provider
  */
-@protocol MFComponentProviderProtocol <NSObject>
+@protocol MDKComponentProviderProtocol <NSObject>
 
 /*!
  * @brief Returns a command corresponding to the given command key

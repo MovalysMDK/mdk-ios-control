@@ -14,10 +14,15 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MFUI_MFUIAlertView_h
-#define MFUI_MFUIAlertView_h
+#import <Foundation/Foundation.h>
+#import "MDKComponentProviderProtocol.h"
 
-#import "MFAlertView.h"
-#import "MFAlertViewManager.h"
+/*!
+ * @class MDKSimpleComponentProvider
+ * @brief The simple MDK Component Provider
+ * @discussion This component provider retrieves components (like a Command),
+ * only base on its name.
+ */
+@interface MDKSimpleComponentProvider : NSObject <MDKComponentProviderProtocol>
 
-#endif
+@end
