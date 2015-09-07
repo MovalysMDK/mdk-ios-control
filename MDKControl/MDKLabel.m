@@ -14,14 +14,14 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFLabel.h"
-#import "MFLabelStyle.h"
+#import "MDKLabel.h"
+#import "MDKLabelStyle.h"
 //#import "MFUIError.h"
 //#import "MFConfigurationHandler.h"
 //#import "MFLocalizedString.h"
 
 
-@interface MFLabel ()
+@interface MDKLabel ()
 
 
 /**
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation MFLabel
+@implementation MDKLabel
 @synthesize styleClass = _styleClass;
 @synthesize componentInCellAtIndexPath = _componentInCellAtIndexPath;
 

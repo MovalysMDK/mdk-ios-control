@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B02156711B9D9863001860B5 /* MDKBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B021566F1B9D9863001860B5 /* MDKBase.h */; };
-		B02156721B9D9863001860B5 /* MDKBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156701B9D9863001860B5 /* MDKBase.m */; };
 		B02156771B9DAB93001860B5 /* MFTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156751B9DAB93001860B5 /* MFTextField.h */; };
 		B02156781B9DAB93001860B5 /* MFTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156761B9DAB93001860B5 /* MFTextField.m */; };
 		B02156B31B9DAC6E001860B5 /* MFDefaultStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568A1B9DAC6E001860B5 /* MFDefaultStyle.h */; };
@@ -17,9 +15,8 @@
 		B02156B61B9DAC6E001860B5 /* MFUIStyleCommons.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568D1B9DAC6E001860B5 /* MFUIStyleCommons.h */; };
 		B02156B71B9DAC6E001860B5 /* UIView+Styleable.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568E1B9DAC6E001860B5 /* UIView+Styleable.h */; };
 		B02156B81B9DAC6E001860B5 /* UIView+Styleable.m in Sources */ = {isa = PBXBuildFile; fileRef = B021568F1B9DAC6E001860B5 /* UIView+Styleable.m */; };
-		B02156B91B9DAC6E001860B5 /* MFLabelStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156911B9DAC6E001860B5 /* MFLabelStyle.h */; };
-		B02156BA1B9DAC6E001860B5 /* MFLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156921B9DAC6E001860B5 /* MFLabelStyle.m */; };
-		B02156BB1B9DAC6E001860B5 /* MFUIStyleLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156931B9DAC6E001860B5 /* MFUIStyleLabel.h */; };
+		B02156B91B9DAC6E001860B5 /* MDKLabelStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156911B9DAC6E001860B5 /* MDKLabelStyle.h */; };
+		B02156BA1B9DAC6E001860B5 /* MDKLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156921B9DAC6E001860B5 /* MDKLabelStyle.m */; };
 		B02156BC1B9DAC6E001860B5 /* MFUIStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156941B9DAC6E001860B5 /* MFUIStyle.h */; };
 		B02156C71B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A01B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.h */; };
 		B02156C81B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A11B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.m */; };
@@ -136,15 +133,15 @@
 		B021580B1B9DB27D001860B5 /* MFAlertViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158061B9DB27D001860B5 /* MFAlertViewManager.h */; };
 		B021580C1B9DB27D001860B5 /* MFAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158071B9DB27D001860B5 /* MFAlertViewManager.m */; };
 		B021580D1B9DB27D001860B5 /* MFUIAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158081B9DB27D001860B5 /* MFUIAlertView.h */; };
-		B02158121B9DB2EE001860B5 /* MFLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B021580F1B9DB2EE001860B5 /* MFLabel.h */; };
-		B02158131B9DB2EE001860B5 /* MFLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158101B9DB2EE001860B5 /* MFLabel.m */; };
-		B02158141B9DB2EE001860B5 /* MFUIControlLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158111B9DB2EE001860B5 /* MFUIControlLabel.h */; };
-		B02158171B9DBA7F001860B5 /* MFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158151B9DBA7F001860B5 /* MFConstants.h */; };
-		B02158181B9DBA7F001860B5 /* MFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158161B9DBA7F001860B5 /* MFConstants.m */; };
+		B02158121B9DB2EE001860B5 /* MDKLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B021580F1B9DB2EE001860B5 /* MDKLabel.h */; };
 		B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */; };
 		B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */; };
 		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; };
 		B02158351B9DBC8C001860B5 /* MFUICommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158271B9DBC8C001860B5 /* MFUICommand.h */; };
+		B08C18ED1B9DD1A200D6F93A /* MDKLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C18EB1B9DD1A200D6F93A /* MDKLabel.h */; };
+		B08C18EE1B9DD1A200D6F93A /* MDKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C18EC1B9DD1A200D6F93A /* MDKLabel.m */; };
+		B08C18F21B9DD1AC00D6F93A /* MDKConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C18F01B9DD1AC00D6F93A /* MDKConstants.h */; };
+		B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C18F11B9DD1AC00D6F93A /* MDKConstants.m */; };
 		B0FFDA6C1B33FAFB00CA6E5E /* MDKControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFDA6B1B33FAFB00CA6E5E /* MDKControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0FFDA721B33FAFB00CA6E5E /* MDKControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */; };
 		B0FFDA791B33FAFB00CA6E5E /* MDKControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFDA781B33FAFB00CA6E5E /* MDKControlTests.m */; };
@@ -162,8 +159,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B021566F1B9D9863001860B5 /* MDKBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBase.h; sourceTree = "<group>"; };
-		B02156701B9D9863001860B5 /* MDKBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKBase.m; sourceTree = "<group>"; };
 		B02156751B9DAB93001860B5 /* MFTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFTextField.h; sourceTree = "<group>"; };
 		B02156761B9DAB93001860B5 /* MFTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFTextField.m; sourceTree = "<group>"; };
 		B021568A1B9DAC6E001860B5 /* MFDefaultStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFDefaultStyle.h; sourceTree = "<group>"; };
@@ -172,9 +167,8 @@
 		B021568D1B9DAC6E001860B5 /* MFUIStyleCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIStyleCommons.h; sourceTree = "<group>"; };
 		B021568E1B9DAC6E001860B5 /* UIView+Styleable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Styleable.h"; sourceTree = "<group>"; };
 		B021568F1B9DAC6E001860B5 /* UIView+Styleable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Styleable.m"; sourceTree = "<group>"; };
-		B02156911B9DAC6E001860B5 /* MFLabelStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFLabelStyle.h; sourceTree = "<group>"; };
-		B02156921B9DAC6E001860B5 /* MFLabelStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFLabelStyle.m; sourceTree = "<group>"; };
-		B02156931B9DAC6E001860B5 /* MFUIStyleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIStyleLabel.h; sourceTree = "<group>"; };
+		B02156911B9DAC6E001860B5 /* MDKLabelStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKLabelStyle.h; sourceTree = "<group>"; };
+		B02156921B9DAC6E001860B5 /* MDKLabelStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKLabelStyle.m; sourceTree = "<group>"; };
 		B02156941B9DAC6E001860B5 /* MFUIStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIStyle.h; sourceTree = "<group>"; };
 		B02156A01B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MFRegexTextFieldStyle+Button.h"; sourceTree = "<group>"; };
 		B02156A11B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MFRegexTextFieldStyle+Button.m"; sourceTree = "<group>"; };
@@ -291,15 +285,16 @@
 		B02158061B9DB27D001860B5 /* MFAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFAlertViewManager.h; sourceTree = "<group>"; };
 		B02158071B9DB27D001860B5 /* MFAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFAlertViewManager.m; sourceTree = "<group>"; };
 		B02158081B9DB27D001860B5 /* MFUIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIAlertView.h; sourceTree = "<group>"; };
-		B021580F1B9DB2EE001860B5 /* MFLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFLabel.h; sourceTree = "<group>"; };
-		B02158101B9DB2EE001860B5 /* MFLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFLabel.m; sourceTree = "<group>"; };
-		B02158111B9DB2EE001860B5 /* MFUIControlLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIControlLabel.h; sourceTree = "<group>"; };
-		B02158151B9DBA7F001860B5 /* MFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFConstants.h; sourceTree = "<group>"; };
-		B02158161B9DBA7F001860B5 /* MFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFConstants.m; sourceTree = "<group>"; };
+		B021580F1B9DB2EE001860B5 /* MDKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKLabel.h; sourceTree = "<group>"; };
+		B02158101B9DB2EE001860B5 /* MDKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKLabel.m; sourceTree = "<group>"; };
 		B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandHandler.h; sourceTree = "<group>"; };
 		B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCommandHandler.m; sourceTree = "<group>"; };
 		B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandProtocol.h; sourceTree = "<group>"; };
 		B02158271B9DBC8C001860B5 /* MFUICommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUICommand.h; sourceTree = "<group>"; };
+		B08C18EB1B9DD1A200D6F93A /* MDKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKLabel.h; sourceTree = "<group>"; };
+		B08C18EC1B9DD1A200D6F93A /* MDKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKLabel.m; sourceTree = "<group>"; };
+		B08C18F01B9DD1AC00D6F93A /* MDKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKConstants.h; sourceTree = "<group>"; };
+		B08C18F11B9DD1AC00D6F93A /* MDKConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKConstants.m; sourceTree = "<group>"; };
 		B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDKControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FFDA6A1B33FAFB00CA6E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FFDA6B1B33FAFB00CA6E5E /* MDKControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDKControl.h; sourceTree = "<group>"; };
@@ -383,9 +378,8 @@
 		B02156901B9DAC6E001860B5 /* label */ = {
 			isa = PBXGroup;
 			children = (
-				B02156911B9DAC6E001860B5 /* MFLabelStyle.h */,
-				B02156921B9DAC6E001860B5 /* MFLabelStyle.m */,
-				B02156931B9DAC6E001860B5 /* MFUIStyleLabel.h */,
+				B02156911B9DAC6E001860B5 /* MDKLabelStyle.h */,
+				B02156921B9DAC6E001860B5 /* MDKLabelStyle.m */,
 			);
 			path = label;
 			sourceTree = "<group>";
@@ -596,9 +590,8 @@
 		B021580E1B9DB2EE001860B5 /* label */ = {
 			isa = PBXGroup;
 			children = (
-				B021580F1B9DB2EE001860B5 /* MFLabel.h */,
-				B02158101B9DB2EE001860B5 /* MFLabel.m */,
-				B02158111B9DB2EE001860B5 /* MFUIControlLabel.h */,
+				B021580F1B9DB2EE001860B5 /* MDKLabel.h */,
+				B02158101B9DB2EE001860B5 /* MDKLabel.m */,
 			);
 			name = label;
 			path = control/label;
@@ -615,11 +608,13 @@
 			path = command;
 			sourceTree = "<group>";
 		};
-		B021583A1B9DBDF5001860B5 /* viewcontroller */ = {
+		B08C18EF1B9DD1AC00D6F93A /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				B08C18F01B9DD1AC00D6F93A /* MDKConstants.h */,
+				B08C18F11B9DD1AC00D6F93A /* MDKConstants.m */,
 			);
-			path = viewcontroller;
+			path = utils;
 			sourceTree = "<group>";
 		};
 		B0FFDA5C1B33FAFB00CA6E5E = {
@@ -644,10 +639,10 @@
 		B0FFDA681B33FAFB00CA6E5E /* MDKControl */ = {
 			isa = PBXGroup;
 			children = (
-				B021583A1B9DBDF5001860B5 /* viewcontroller */,
+				B08C18EF1B9DD1AC00D6F93A /* utils */,
+				B08C18EB1B9DD1A200D6F93A /* MDKLabel.h */,
+				B08C18EC1B9DD1A200D6F93A /* MDKLabel.m */,
 				B02158191B9DBC8C001860B5 /* command */,
-				B02158151B9DBA7F001860B5 /* MFConstants.h */,
-				B02158161B9DBA7F001860B5 /* MFConstants.m */,
 				B021580E1B9DB2EE001860B5 /* label */,
 				B02158031B9DB27D001860B5 /* alertview */,
 				B02157CD1B9DAFA0001860B5 /* provider */,
@@ -659,8 +654,6 @@
 				B02156731B9DAB93001860B5 /* control */,
 				B0FFDA6B1B33FAFB00CA6E5E /* MDKControl.h */,
 				B0FFDA691B33FAFB00CA6E5E /* Supporting Files */,
-				B021566F1B9D9863001860B5 /* MDKBase.h */,
-				B02156701B9D9863001860B5 /* MDKBase.m */,
 			);
 			path = MDKControl;
 			sourceTree = "<group>";
@@ -708,10 +701,9 @@
 				B02156CF1B9DAC6E001860B5 /* MFTextFieldStyle+TextLayouting.h in Headers */,
 				B02158021B9DB207001860B5 /* MFUIControlExtension.h in Headers */,
 				B02157BB1B9DAF30001860B5 /* MFInvalidIntegerValueUIValidationError.h in Headers */,
-				B02156711B9D9863001860B5 /* MDKBase.h in Headers */,
 				B02156771B9DAB93001860B5 /* MFTextField.h in Headers */,
 				B02157A71B9DAF30001860B5 /* JDFTooltips.h in Headers */,
-				B02158171B9DBA7F001860B5 /* MFConstants.h in Headers */,
+				B08C18F21B9DD1AC00D6F93A /* MDKConstants.h in Headers */,
 				B02157C31B9DAF30001860B5 /* MFMandatoryFieldUIValidationError.h in Headers */,
 				B02157691B9DAEEA001860B5 /* MFUIFieldValidator.h in Headers */,
 				B02156E81B9DAD59001860B5 /* MDKControlPropertiesProtocol.h in Headers */,
@@ -724,7 +716,6 @@
 				B021575C1B9DAEEA001860B5 /* MFFieldValidatorHandler.h in Headers */,
 				B02156EB1B9DAD59001860B5 /* MDKControlProtocol.h in Headers */,
 				B02157DF1B9DB124001860B5 /* MFUIBaseRenderableComponent.h in Headers */,
-				B02158141B9DB2EE001860B5 /* MFUIControlLabel.h in Headers */,
 				B02156B51B9DAC6E001860B5 /* MFStyleProtocol.h in Headers */,
 				B02157C11B9DAF30001860B5 /* MFInvalidUrlValueUIValidationError.h in Headers */,
 				B02157E61B9DB17F001860B5 /* MFViewTags.h in Headers */,
@@ -740,7 +731,6 @@
 				B02157CB1B9DAF30001860B5 /* MFUIValidationError.h in Headers */,
 				B02157F71B9DB207001860B5 /* MFEnumExtension.h in Headers */,
 				B02157B31B9DAF30001860B5 /* MFTooLongStringUIValidationError.h in Headers */,
-				B02156BB1B9DAC6E001860B5 /* MFUIStyleLabel.h in Headers */,
 				B021580D1B9DB27D001860B5 /* MFUIAlertView.h in Headers */,
 				B02156EA1B9DAD59001860B5 /* MFErrorViewProtocol.h in Headers */,
 				B02157D71B9DAFA0001860B5 /* MFComponentApplicationProtocol.h in Headers */,
@@ -762,7 +752,7 @@
 				B02157F61B9DB207001860B5 /* MFBaseTextExtensionProtocol.h in Headers */,
 				B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */,
 				B02156CD1B9DAC6E001860B5 /* MFTextFieldStyle+ErrorView.h in Headers */,
-				B02156B91B9DAC6E001860B5 /* MFLabelStyle.h in Headers */,
+				B02156B91B9DAC6E001860B5 /* MDKLabelStyle.h in Headers */,
 				B021580B1B9DB27D001860B5 /* MFAlertViewManager.h in Headers */,
 				B02157D91B9DAFA0001860B5 /* MFSimpleComponentProvider.h in Headers */,
 				B021576A1B9DAEEA001860B5 /* MFUrlFieldValidator.h in Headers */,
@@ -780,8 +770,9 @@
 				B02157651B9DAEEA001860B5 /* MFMandatoryFieldValidator.h in Headers */,
 				B02156C91B9DAC6E001860B5 /* MFRegexTextFieldStyle.h in Headers */,
 				B021579E1B9DAF30001860B5 /* MFUIErrorView.h in Headers */,
+				B08C18ED1B9DD1A200D6F93A /* MDKLabel.h in Headers */,
 				B02156B71B9DAC6E001860B5 /* UIView+Styleable.h in Headers */,
-				B02158121B9DB2EE001860B5 /* MFLabel.h in Headers */,
+				B02158121B9DB2EE001860B5 /* MDKLabel.h in Headers */,
 				B02157E21B9DB145001860B5 /* MFUIBaseComponent.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -886,17 +877,16 @@
 				B021580A1B9DB27D001860B5 /* MFAlertView.m in Sources */,
 				B02157A91B9DAF30001860B5 /* JDFTooltipView.m in Sources */,
 				B02157CC1B9DAF30001860B5 /* MFUIValidationError.m in Sources */,
+				B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */,
 				B02156C81B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.m in Sources */,
-				B02158131B9DB2EE001860B5 /* MFLabel.m in Sources */,
+				B08C18EE1B9DD1A200D6F93A /* MDKLabel.m in Sources */,
 				B02157B21B9DAF30001860B5 /* ValidTooltipView.m in Sources */,
 				B02157C01B9DAF30001860B5 /* MFInvalidPhoneNumberValueUIValidationError.m in Sources */,
 				B02157A61B9DAF30001860B5 /* JDFTooltipManager.m in Sources */,
 				B02157F81B9DB207001860B5 /* MFEnumExtension.m in Sources */,
 				B02156781B9DAB93001860B5 /* MFTextField.m in Sources */,
 				B021579F1B9DAF30001860B5 /* MFUIErrorView.m in Sources */,
-				B02158181B9DBA7F001860B5 /* MFConstants.m in Sources */,
-				B02156BA1B9DAC6E001860B5 /* MFLabelStyle.m in Sources */,
-				B02156721B9D9863001860B5 /* MDKBase.m in Sources */,
+				B02156BA1B9DAC6E001860B5 /* MDKLabelStyle.m in Sources */,
 				B02157661B9DAEEA001860B5 /* MFMandatoryFieldValidator.m in Sources */,
 				B02157BA1B9DAF30001860B5 /* MFInvalidEmailValueUIValidationError.m in Sources */,
 				B02157AB1B9DAF30001860B5 /* UILabel+JDFTooltips.m in Sources */,

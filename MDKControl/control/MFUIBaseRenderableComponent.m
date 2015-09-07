@@ -16,7 +16,7 @@
 
 #import "MFUIBaseRenderableComponent.h"
 #import "MFDefaultStyle.h"
-#import "MFConstants.h"
+#import "MDKConstants.h"
 #import "JDFTooltipView.h"
 
 @interface MFUIBaseRenderableComponent ()
@@ -137,28 +137,38 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     if(self.internalView) {
 #if TARGET_INTERFACE_BUILDER
         if(!self.leftConstraint) {
-            self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:![self onError_MDK] ? 0 : self.errorView.frame.size.width];
+            self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft
+                                                               relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
+                                                              multiplier:1 constant:![self onError_MDK] ? 0 : self.errorView.frame.size.width];
             [self addConstraint:self.leftConstraint];
         }
 #else
         if(!self.leftConstraint) {
-            self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:[self isValid] ? 0 : self.errorView.frame.size.width];
+            self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft
+                                                               relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
+                                                              multiplier:1 constant:[self isValid] ? 0 : self.errorView.frame.size.width];
             [self addConstraint:self.leftConstraint];
         }
 #endif
         
         if(!self.topConstraint) {
-            self.topConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+            self.topConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeTop
+                                                              relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop
+                                                             multiplier:1 constant:0];
             [self addConstraint:self.topConstraint];
         }
         
         if(!self.rightConstraint) {
-            self.rightConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight multiplier:1 constant:0];
+            self.rightConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeRight
+                                                                relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
+                                                               multiplier:1 constant:0];
             [self addConstraint:self.rightConstraint];
         }
         
         if(!self.bottomConstraint) {
-            self.bottomConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+            self.bottomConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeBottom
+                                                                 relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom
+                                                                multiplier:1 constant:0];
             [self addConstraint:self.bottomConstraint];
         }
     }
@@ -178,23 +188,32 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
 #if !TARGET_INTERFACE_BUILDER
     self.errorView.translatesAutoresizingMaskIntoConstraints = NO;
     if(!self.errorLeftConstraint) {
-        self.errorLeftConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
-        [self addConstraint:self.errorLeftConstraint];
+        self.errorLeftConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeLeft
+                                                                relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
+                                                               multiplier:1 constant:0];
     }
     
     if(!self.errorCenterYConstraint) {
-        self.errorCenterYConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-        [self addConstraint:self.errorCenterYConstraint];
+        self.errorCenterYConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeCenterY
+                                                                   relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY
+                                                                  multiplier:1 constant:0];
     }
     
     if(!self.errorHeightConstraint) {
-        self.errorHeightConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0 constant:self.errorView.frame.size.height];
-        [self addConstraint:self.errorHeightConstraint];
+        self.errorHeightConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute
+                                                                multiplier:0 constant:self.errorView.frame.size.height];
     }
     
     if(!self.errorWidthConstraint) {
-        self.errorWidthConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0 constant:self.errorView.frame.size.width];
+        self.errorWidthConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeWidth
+                                                                 relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute
+                                                                multiplier:0 constant:self.errorView.frame.size.width];
+        
         [self addConstraint:self.errorWidthConstraint];
+        [self addConstraint:self.errorHeightConstraint];
+        [self addConstraint:self.errorCenterYConstraint];
+        [self addConstraint:self.errorLeftConstraint];
     }
 #else
     self.internalView.frame = self.bounds;

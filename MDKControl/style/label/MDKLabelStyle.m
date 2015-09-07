@@ -14,10 +14,8 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "MDKLabelStyle.h"
 
-#ifndef MFUI_MFUIControlLabel_h
-#define MFUI_MFUIControlLabel_h
+@implementation MDKLabelStyle
 
-#import "MFLabel.h"
-
-#endif
+@end

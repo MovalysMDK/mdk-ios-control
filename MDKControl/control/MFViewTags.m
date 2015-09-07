@@ -49,7 +49,7 @@ NSInteger const TAG_MFDATEPICKER_CANCELBUTTON                 = 10515;
 NSInteger const TAG_MFENUMIMAGE_IMAGEVIEW                     = 11000;
 
 // /MFUI/control/label
-NSInteger const TAG_MFLABEL_LABEL                             = 11500;
+NSInteger const TAG_MDKLABEL_LABEL                             = 11500;
 
 // /MFUI/control/list
 NSInteger const TAG_MFFIXEDLIST_TABLEVIEW                     = 12000;

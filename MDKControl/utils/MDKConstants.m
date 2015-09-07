@@ -13,17 +13,8 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFConstants.m
-//  MFCore
-//
-//
 
-#import "MFConstants.h"
-
-/**
- * Cette classe définit des constantes nécessaires dans le Framework
- */
+#import "MDKConstants.h"
 
 
 NSString *const CONVERTER_LIST_REGISTRY_KEY                 = @"Converters";

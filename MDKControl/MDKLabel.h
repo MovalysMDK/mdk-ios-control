@@ -22,8 +22,11 @@
 FOUNDATION_EXPORT NSString * const MF_MANDATORY_INDICATOR;
 
 IB_DESIGNABLE
-
-@interface MFLabel : UILabel <MDKControlProtocol>
+/*!
+ * @class MDKLabel
+ * @brief The MDKLabel Control.
+ */
+@interface MDKLabel : UILabel <MDKControlProtocol>
 
 #pragma mark - Properties
 

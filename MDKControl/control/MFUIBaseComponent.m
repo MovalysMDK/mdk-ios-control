@@ -27,11 +27,11 @@
 
 #import "MFUIBaseComponent.h"
 #import "MDKControlProtocol.h"
-#import "MFConstants.h"
+#import "MDKConstants.h"
 #import "MFErrorViewProtocol.h"
 #import "MFUIBaseRenderableComponent.h"
 #import "MDKControlAssociatedLabelProtocol.h"
-#import "MFLabel.h"
+#import "MDKLabel.h"
 
 
 /**
@@ -330,7 +330,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
     }
 }
 
--(void)setAssociatedLabel:(MFLabel *)associatedLabel {
+-(void)setAssociatedLabel:(MDKLabel *)associatedLabel {
     _associatedLabel = associatedLabel;
     self.associatedLabel.mandatory = self.mandatory;
 }

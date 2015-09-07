@@ -20,7 +20,7 @@
 #import "MDKBackgroundViewProtocol.h"
 #import "MFUIControlExtension.h"
 #import "MFAlertViewManager.h"
-#import "MFLabel.h"
+#import "MDKLabel.h"
 #import "MFUIFieldValidator.h"
 
 @interface MFTextField ()
@@ -268,7 +268,7 @@
 }
 
 
--(void)setAssociatedLabel:(MFLabel *)associatedLabel {
+-(void)setAssociatedLabel:(MDKLabel *)associatedLabel {
     _associatedLabel = associatedLabel;
     self.associatedLabel.mandatory = self.mandatory;
 }

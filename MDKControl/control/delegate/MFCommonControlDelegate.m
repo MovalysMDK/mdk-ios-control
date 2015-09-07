@@ -17,7 +17,7 @@
 #import "MFCommonControlDelegate.h"
 #import "MDKControlProtocol.h"
 #import "MFStyleProtocol.h"
-#import "MFConstants.h"
+#import "MDKConstants.h"
 #import "MFErrorViewProtocol.h"
 #import "UIView+Styleable.h"
 #import "MFUIFieldValidator.h"

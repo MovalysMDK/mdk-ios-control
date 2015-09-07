@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-@class MFLabel;
+@class MDKLabel;
 
 /*!
  * @protocol MDKControlAssociatedLabelProtocol
@@ -27,6 +27,6 @@
 /*!
  * @brief The associated label to the control that implements this protocol
  */
-@property (nonatomic, weak) MFLabel *associatedLabel;
+@property (nonatomic, weak) MDKLabel *associatedLabel;
 
 @end
