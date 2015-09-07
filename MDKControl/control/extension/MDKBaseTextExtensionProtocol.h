@@ -14,26 +14,24 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFUIErrorView.h"
-#import "MDKRenderableControl.h"
 
-@implementation MFUIErrorView
+/*!
+ * @protocol
 
+ * @brief This protocol defines parameters that a component base on a UItextField can use.
+ */
+@protocol MDKBaseTextExtensionProtocol
 
+#pragma mark - Properties
 
+/*!
+ * @brief The max length the text value can have
+ */
+@property(nonatomic, strong) NSNumber *maxLength;
 
-- (IBAction)onErrorButtonClick:(id)sender {
-    //Forwarding this event on MFUIBaseRenderableComponent parent
-    UIView *currentView = self;
-    while (currentView && ![currentView isKindOfClass:[MDKRenderableControl class]]) {
-        currentView = [currentView superview];
-    }
-    
-    if(currentView) {
-        MDKRenderableControl *parentComponent = (MDKRenderableControl *)currentView;
-        [parentComponent doOnErrorButtonClicked];
-    }
-}
-
+/*!
+ * @brief The min length the text value can have
+ */
+@property(nonatomic, strong) NSNumber *minLength;
 
 @end

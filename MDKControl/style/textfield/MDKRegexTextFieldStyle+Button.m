@@ -16,7 +16,7 @@
  */
 
 #import "MDKRegexTextFieldStyle+Button.h"
-#import "MFRegexTextField.h"
+#import "MDKRegexTextField.h"
 
 
 NSInteger REGEX_BUTTON_SQUARE_SIZE = 22;
@@ -47,7 +47,7 @@ NSString * REGEX_BUTTON_RIGHT_CONSTRAINT = @"REGEX_BUTTON_RIGHT_CONSTRAINT";
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
--(void)addButtonOnTextField:(MFRegexTextField *)component {
+-(void)addButtonOnTextField:(MDKRegexTextField *)component {
     NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"MFUIApplication")];
     NSString *activeImageName = [NSString stringWithFormat:@"ios_ic_%@_active@2x", [self accessoryButtonImageName]];
     NSString *unactiveImageName = [NSString stringWithFormat:@"ios_ic_%@_unactive@2x", [self accessoryButtonImageName]];
@@ -81,7 +81,7 @@ NSString * REGEX_BUTTON_RIGHT_CONSTRAINT = @"REGEX_BUTTON_RIGHT_CONSTRAINT";
 #pragma clang diagnostic pop
 
 
--(NSDictionary *)defineButton:(UIButton *)button constraintsOnComponent:(MFRegexTextField *)component {
+-(NSDictionary *)defineButton:(UIButton *)button constraintsOnComponent:(MDKRegexTextField *)component {
     
     NSDictionary *buttonConstraints = [NSDictionary new];
     
@@ -104,7 +104,7 @@ NSString * REGEX_BUTTON_RIGHT_CONSTRAINT = @"REGEX_BUTTON_RIGHT_CONSTRAINT";
 
 #pragma mark - Public methods
 
--(NSDictionary *)customizeButtonConstraints:(NSDictionary *)buttonConstraints onComponent:(MFRegexTextField *)component {
+-(NSDictionary *)customizeButtonConstraints:(NSDictionary *)buttonConstraints onComponent:(MDKRegexTextField *)component {
     return buttonConstraints;
 }
 

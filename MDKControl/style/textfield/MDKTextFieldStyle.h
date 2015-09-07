@@ -16,8 +16,12 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "MFTextField.h"
+#import "Protocol.h"
+
+#import "MDKControlProtocol.h"
 #import "MDKDefaultStyle.h"
+
+@class MDKTextField;
 
 FOUNDATION_EXPORT NSInteger DEFAULT_ACCESSORIES_MARGIN;
 
@@ -42,6 +46,6 @@ FOUNDATION_EXPORT NSInteger DEFAULT_ACCESSORIES_MARGIN;
  * for this control. Be careful when defining constraints : use identifier parameter
  * to identify the accessoryView you want to define the position in the control.
  */
--(NSArray *)defineConstraintsForAccessoryView:(UIView *)accessoryView withIdentifier:(NSString *)identifier onControl:(MFTextField *)control;
+-(NSArray *)defineConstraintsForAccessoryView:(UIView *)accessoryView withIdentifier:(NSString *)identifier onControl:(MDKTextField *)control;
 
 @end

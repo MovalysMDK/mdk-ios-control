@@ -16,7 +16,7 @@
  */
 
 #import "MDKRegexTextFieldStyle.h"
-#import "MFRegexTextField.h"
+@class MDKRegexTextField;
 
 /*!
  * @brief This constant defines the sides size of the action button
@@ -75,7 +75,7 @@ FOUNDATION_EXPORT const NSString * REGEX_BUTTON_RIGHT_CONSTRAINT;
  * @discussion You can retrieve any constraints in the given dictionary with the keys prefixed
  * by "REGEX_BUTTON_"
  */
--(NSDictionary *)customizeButtonConstraints:(NSDictionary *)buttonConstraints onComponent:(MFRegexTextField *)component;
+-(NSDictionary *)customizeButtonConstraints:(NSDictionary *)buttonConstraints onComponent:(MDKRegexTextField *)component;
 
 
 /*!

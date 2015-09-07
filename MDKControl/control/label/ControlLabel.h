@@ -14,26 +14,9 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFUIErrorView.h"
-#import "MDKRenderableControl.h"
+#ifndef MDKControl_ControlLabel_h
+#define MDKControl_ControlLabel_h
 
-@implementation MFUIErrorView
+#import "MDKLabel.h"
 
-
-
-
-- (IBAction)onErrorButtonClick:(id)sender {
-    //Forwarding this event on MFUIBaseRenderableComponent parent
-    UIView *currentView = self;
-    while (currentView && ![currentView isKindOfClass:[MDKRenderableControl class]]) {
-        currentView = [currentView superview];
-    }
-    
-    if(currentView) {
-        MDKRenderableControl *parentComponent = (MDKRenderableControl *)currentView;
-        [parentComponent doOnErrorButtonClicked];
-    }
-}
-
-
-@end
+#endif

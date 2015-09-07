@@ -32,7 +32,7 @@
  * @param component The Text Field component you want to defines the text rect
  * @return A CGrect structure that defines the text rect of the given component.
  */
--(CGRect) textRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component;
+-(CGRect) textRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component;
 
 /*!
  * @brief Defines the editing rect for the given component
@@ -40,7 +40,7 @@
  * @param component The Text Field component you want to defines the editing rect
  * @return A CGrect structure that defines the editing rect of the given component.
  */
--(CGRect) editingRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component;
+-(CGRect) editingRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component;
 
 /*!
  * @brief Defines the clear button rect for the given component
@@ -48,7 +48,7 @@
  * @param component The Text Field component you want to defines the clear button rect
  * @return A CGrect structure that defines the clear button rect of the given component.
  */
--(CGRect) clearButtonRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component;
+-(CGRect) clearButtonRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component;
 
 /*!
  * @brief Defines the placeholder rect for the given component
@@ -56,7 +56,7 @@
  * @param component The Text Field component you want to defines the placeholder rect
  * @return A CGrect structure that defines the placeholder rect of the given component.
  */
--(CGRect) placeholderRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component;
+-(CGRect) placeholderRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component;
 
 
 /*!
@@ -65,5 +65,5 @@
  * @param component The Text Field component you want to defines the border rect
  * @return A CGrect structure that defines the border rect of the given component.
  */
--(CGRect) borderRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component;
+-(CGRect) borderRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component;
 @end

@@ -15,7 +15,7 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 #import "MDKTextFieldStyle+ErrorView.h"
-#import "MFTextField.h"
+#import "MDKTextField.h"
 
 NSInteger DEFAULT_CLEAR_BUTTON_CONTAINER = 19;
 NSInteger DEFAULT_ERROR_VIEW_SQUARE_SIZE = 22;
@@ -43,7 +43,7 @@ NSString * ERROR_VIEW_RIGHT_CONSTRAINT = @"ERROR_VIEW_RIGHT_CONSTRAINT";
 
 @implementation MDKTextFieldStyle (ErrorView)
 
--(void) addErrorViewOnComponent:(MFTextField *)component {
+-(void) addErrorViewOnComponent:(MDKTextField *)component {
     if(!self.errorView) {
         UIButton *errorButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
         errorButton.clipsToBounds = YES;
@@ -64,7 +64,7 @@ NSString * ERROR_VIEW_RIGHT_CONSTRAINT = @"ERROR_VIEW_RIGHT_CONSTRAINT";
     
 }
 
--(void) removeErrorViewOnComponent:(MFTextField *)component {
+-(void) removeErrorViewOnComponent:(MDKTextField *)component {
     [self.errorView removeFromSuperview];
     self.errorView = nil;
 }
@@ -95,7 +95,7 @@ NSString * ERROR_VIEW_RIGHT_CONSTRAINT = @"ERROR_VIEW_RIGHT_CONSTRAINT";
 #pragma mark - Public Methods
 
 
--(NSDictionary *) customizeErrorViewConstraints:(NSDictionary *)errorViewConstraints onComponent:(MFTextField *)component{
+-(NSDictionary *) customizeErrorViewConstraints:(NSDictionary *)errorViewConstraints onComponent:(MDKTextField *)component{
     return errorViewConstraints;
 }
 

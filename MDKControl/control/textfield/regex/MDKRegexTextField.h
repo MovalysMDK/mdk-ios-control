@@ -14,26 +14,18 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFUIErrorView.h"
-#import "MDKRenderableControl.h"
+#import "MDKTextField.h"
 
-@implementation MFUIErrorView
-
-
-
-
-- (IBAction)onErrorButtonClick:(id)sender {
-    //Forwarding this event on MFUIBaseRenderableComponent parent
-    UIView *currentView = self;
-    while (currentView && ![currentView isKindOfClass:[MDKRenderableControl class]]) {
-        currentView = [currentView superview];
-    }
-    
-    if(currentView) {
-        MDKRenderableControl *parentComponent = (MDKRenderableControl *)currentView;
-        [parentComponent doOnErrorButtonClicked];
-    }
-}
+/*!
+ * @class MDKRegexTextField
+ * @brief The MFRegexTextField component.
+ * @discussion This component inherits from MFNewTextField component.
+ * @discussion It show a text field where the content is validated or
+ * not by a specified regualr expression. 
+ * @discussion An action button allows the use to do a specific action
+ * following the current text value in the text field.
+ */
+@interface MDKRegexTextField : MDKTextField
 
 
 @end

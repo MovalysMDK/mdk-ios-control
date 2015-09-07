@@ -26,7 +26,7 @@ FOUNDATION_EXPORT const NSString * ERROR_VIEW_RIGHT_CONSTRAINT;
 FOUNDATION_EXPORT NSInteger DEFAULT_CLEAR_BUTTON_CONTAINER;
 FOUNDATION_EXPORT NSInteger DEFAULT_ERROR_VIEW_SQUARE_SIZE;
 
-@class MFTextField;
+@class MDKTextField;
 /*!
  * @class MFTextFieldStyle+ErrorView
  * @brief This category on MFTextFieldStyle defines the necessary methods
@@ -48,6 +48,6 @@ FOUNDATION_EXPORT NSInteger DEFAULT_ERROR_VIEW_SQUARE_SIZE;
  * @discussion Typically, you will modifiy the constraints given by the errorViewConstraints
  * dictionary and return the modified dictionary.
  */
--(NSDictionary *) customizeErrorViewConstraints:(NSDictionary *)errorViewConstraints onComponent:(MFTextField *)component;
+-(NSDictionary *) customizeErrorViewConstraints:(NSDictionary *)errorViewConstraints onComponent:(MDKTextField *)component;
 
 @end

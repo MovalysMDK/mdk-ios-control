@@ -15,7 +15,7 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 #import "MDKTextFieldStyle.h"
-@class MFTextField;
+@class MDKTextField;
 
 FOUNDATION_EXPORT const NSString * BACKGROUND_VIEW_WIDTH_CONSTRAINT;
 FOUNDATION_EXPORT const NSString * BACKGROUND_VIEW_HEIGHT_CONSTRAINT;
@@ -42,6 +42,6 @@ FOUNDATION_EXPORT const NSString * BACKGROUND_VIEW_LEFT_CONSTRAINT;
  * @discussion Typically, you will modifiy the constraints given by the backgroundViewConstraints 
  * dictionary and return the modified dictionary.
  */
--(NSDictionary *)customizeBackgroundViewConstraints:(NSDictionary *)backgroundViewConstraints onComponent:(MFTextField *)component;
+-(NSDictionary *)customizeBackgroundViewConstraints:(NSDictionary *)backgroundViewConstraints onComponent:(MDKTextField *)component;
 
 @end

@@ -15,7 +15,7 @@
  */
 
 #import "MDKTextFieldStyle+ErrorView.h"
-#import "MFTextField.h"
+#import "MDKTextField.h"
 
 NSInteger DEFAULT_ACCESSORIES_MARGIN = 2;
 
@@ -24,7 +24,7 @@ NSInteger DEFAULT_ACCESSORIES_MARGIN = 2;
 @synthesize backgroundView;
 
 #pragma mark - Standard Style
--(void)applyStandardStyleOnComponent:(MFTextField *)component {
+-(void)applyStandardStyleOnComponent:(MDKTextField *)component {
     [super applyStandardStyleOnComponent:component];
     if([component.editable isEqualToNumber:@1]) {
         if([component.backgroundColor isEqual:[UIColor clearColor]]) {
@@ -38,13 +38,13 @@ NSInteger DEFAULT_ACCESSORIES_MARGIN = 2;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 #pragma clang diagnostic ignored "-Wundeclared-selector"
--(void)applyErrorStyleOnComponent:(MFTextField *)component {
+-(void)applyErrorStyleOnComponent:(MDKTextField *)component {
     [super applyErrorStyleOnComponent:component];
     [self performSelector:@selector(addErrorViewOnComponent:) withObject:component];
     
 }
 
--(void)applyValidStyleOnComponent:(MFTextField *) component {
+-(void)applyValidStyleOnComponent:(MDKTextField *) component {
     [super applyValidStyleOnComponent:component];
     [self performSelector:@selector(removeErrorViewOnComponent:) withObject:component];
 }
@@ -52,7 +52,7 @@ NSInteger DEFAULT_ACCESSORIES_MARGIN = 2;
 
 
 
--(NSArray *)defineConstraintsForAccessoryView:(UIView *)accessory withIdentifier:(NSString *)identifier onControl:(MFTextField *)control {
+-(NSArray *)defineConstraintsForAccessoryView:(UIView *)accessory withIdentifier:(NSString *)identifier onControl:(MDKTextField *)control {
     return @[];
 }
 @end

@@ -16,7 +16,7 @@
  */
 
 #import "MDKTextFieldStyle+BackgroundView.h"
-#import "MFTextField.h"
+#import "MDKTextField.h"
 
 const NSString * BACKGROUND_VIEW_WIDTH_CONSTRAINT = @"BACKGROUND_VIEW_WIDTH_CONSTRAINT";
 const NSString * BACKGROUND_VIEW_HEIGHT_CONSTRAINT = @"BACKGROUND_VIEW_HEIGHT_CONSTRAINT";
@@ -25,7 +25,7 @@ const NSString * BACKGROUND_VIEW_LEFT_CONSTRAINT = @"BACKGROUND_VIEW_LEFT_CONSTR
 
 @implementation MDKTextFieldStyle (BackgroundView)
 
--(void)displayBackgroundViewOnComponent:(MFTextField *)component {
+-(void)displayBackgroundViewOnComponent:(MDKTextField *)component {
     self.backgroundView = [[UIView alloc] init];
     self.backgroundView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.backgroundView.layer.borderWidth = 1.0f;
@@ -62,14 +62,14 @@ const NSString * BACKGROUND_VIEW_LEFT_CONSTRAINT = @"BACKGROUND_VIEW_LEFT_CONSTR
     
 }
 
--(void)removeBackgroundViewOnComponent:(MFTextField *)component {
+-(void)removeBackgroundViewOnComponent:(MDKTextField *)component {
     if(self.backgroundView) {
         [self.backgroundView removeFromSuperview];
         self.backgroundView = nil;
     }
 }
 
--(NSDictionary *)customizeBackgroundViewConstraints:(NSDictionary *)backgroundViewConstraints onComponent:(MFTextField *)component {
+-(NSDictionary *)customizeBackgroundViewConstraints:(NSDictionary *)backgroundViewConstraints onComponent:(MDKTextField *)component {
     return backgroundViewConstraints;
 }
 

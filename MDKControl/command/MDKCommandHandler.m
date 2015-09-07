@@ -14,9 +14,10 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "Command.h"
+
 #import "ComponentProvider.h"
 
+#import "MDKCommandHandler.h"
 
 @implementation MDKCommandHandler
 

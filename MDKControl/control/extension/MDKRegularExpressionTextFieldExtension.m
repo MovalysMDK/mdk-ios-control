@@ -14,26 +14,21 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFUIErrorView.h"
-#import "MDKRenderableControl.h"
-
-@implementation MFUIErrorView
+#import "MDKRegularExpressionTextFieldExtension.h"
 
 
+const NSString *PARAMETER_REGULAREXPRESSIONTEXTFIELD_PATTERN_KEY = @"pattern";
 
 
-- (IBAction)onErrorButtonClick:(id)sender {
-    //Forwarding this event on MFUIBaseRenderableComponent parent
-    UIView *currentView = self;
-    while (currentView && ![currentView isKindOfClass:[MDKRenderableControl class]]) {
-        currentView = [currentView superview];
-    }
-    
-    if(currentView) {
-        MDKRenderableControl *parentComponent = (MDKRenderableControl *)currentView;
-        [parentComponent doOnErrorButtonClicked];
-    }
+@implementation MDKRegularExpressionTextFieldExtension
+@synthesize pattern = _regularExpression;
+
+
+#pragma mark - Methods
+
+- (NSString *) description
+{
+    return [NSString stringWithFormat:@"MFExtensionKeyboardingUIControlWithRegExp<maxLength: %@, minLength: %@, regularExpression: %@>", self.maxLength, self.minLength, self.pattern];
 }
-
 
 @end

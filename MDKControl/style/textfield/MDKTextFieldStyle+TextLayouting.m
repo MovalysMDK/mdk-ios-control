@@ -18,10 +18,12 @@
 #import "MDKTextFieldStyle+TextLayouting.h"
 #import "MDKTextFieldStyle+ErrorView.h"
 
+#import "ControlTextField.h"
+
 @implementation MDKTextFieldStyle (TextLayouting)
 
 
--(CGRect) textRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component{
+-(CGRect) textRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component{
     NSInteger width = bounds.size.width;
     if(component.clearButtonMode == UITextFieldViewModeUnlessEditing ||
        component.clearButtonMode == UITextFieldViewModeAlways) {
@@ -33,7 +35,7 @@
     return CGRectMake(0, 0 , width, bounds.size.height);
 }
 
--(CGRect) editingRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component{
+-(CGRect) editingRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component{
     NSInteger width = bounds.size.width;
     if(component.clearButtonMode == UITextFieldViewModeWhileEditing ||
        component.clearButtonMode == UITextFieldViewModeAlways) {
@@ -46,14 +48,14 @@
     
 }
 
--(CGRect) clearButtonRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component{
+-(CGRect) clearButtonRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component{
     if(self.errorView) {
         bounds.origin.x -= (2*DEFAULT_ACCESSORIES_MARGIN + DEFAULT_ERROR_VIEW_SQUARE_SIZE);
     }
     return bounds;
 }
 
--(CGRect)placeholderRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component {
+-(CGRect)placeholderRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component {
     NSInteger width = bounds.size.width;
     if(self.errorView) {
         width -= (2*DEFAULT_ACCESSORIES_MARGIN + DEFAULT_ERROR_VIEW_SQUARE_SIZE);
@@ -61,7 +63,7 @@
     return CGRectMake(0, 0 , width, bounds.size.height);
 }
 
--(CGRect)borderRectForBounds:(CGRect)bounds onComponent:(MFTextField *)component {
+-(CGRect)borderRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component {
     return bounds;
 }
 

@@ -14,26 +14,18 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFUIErrorView.h"
-#import "MDKRenderableControl.h"
-
-@implementation MFUIErrorView
 
 
+#import "MDKRegexTextExtensionProtocol.h"
 
+@protocol MDKRegexTextExtensionProtocol <MDKBaseTextExtensionProtocol>
 
-- (IBAction)onErrorButtonClick:(id)sender {
-    //Forwarding this event on MFUIBaseRenderableComponent parent
-    UIView *currentView = self;
-    while (currentView && ![currentView isKindOfClass:[MDKRenderableControl class]]) {
-        currentView = [currentView superview];
-    }
-    
-    if(currentView) {
-        MDKRenderableControl *parentComponent = (MDKRenderableControl *)currentView;
-        [parentComponent doOnErrorButtonClicked];
-    }
-}
+#pragma mark - Properties
 
+/*!
+ * @brief The regular expression pattern that a component that use an extension implementing 
+ * this protocol can manage
+ */
+@property(nonatomic , strong) NSString *pattern;
 
 @end
