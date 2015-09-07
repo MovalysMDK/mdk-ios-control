@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B02156711B9D9863001860B5 /* MDKBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B021566F1B9D9863001860B5 /* MDKBase.h */; };
+		B02156721B9D9863001860B5 /* MDKBase.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156701B9D9863001860B5 /* MDKBase.m */; };
 		B0FFDA6C1B33FAFB00CA6E5E /* MDKControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFDA6B1B33FAFB00CA6E5E /* MDKControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0FFDA721B33FAFB00CA6E5E /* MDKControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */; };
 		B0FFDA791B33FAFB00CA6E5E /* MDKControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFDA781B33FAFB00CA6E5E /* MDKControlTests.m */; };
@@ -24,6 +26,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B021566F1B9D9863001860B5 /* MDKBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBase.h; sourceTree = "<group>"; };
+		B02156701B9D9863001860B5 /* MDKBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKBase.m; sourceTree = "<group>"; };
 		B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDKControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FFDA6A1B33FAFB00CA6E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FFDA6B1B33FAFB00CA6E5E /* MDKControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDKControl.h; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			children = (
 				B0FFDA6B1B33FAFB00CA6E5E /* MDKControl.h */,
 				B0FFDA691B33FAFB00CA6E5E /* Supporting Files */,
+				B021566F1B9D9863001860B5 /* MDKBase.h */,
+				B02156701B9D9863001860B5 /* MDKBase.m */,
 			);
 			path = MDKControl;
 			sourceTree = "<group>";
@@ -115,6 +121,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02156711B9D9863001860B5 /* MDKBase.h in Headers */,
 				B0FFDA6C1B33FAFB00CA6E5E /* MDKControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02156721B9D9863001860B5 /* MDKBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
