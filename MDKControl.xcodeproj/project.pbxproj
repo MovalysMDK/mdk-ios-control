@@ -141,26 +141,10 @@
 		B02158141B9DB2EE001860B5 /* MFUIControlLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158111B9DB2EE001860B5 /* MFUIControlLabel.h */; };
 		B02158171B9DBA7F001860B5 /* MFConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158151B9DBA7F001860B5 /* MFConstants.h */; };
 		B02158181B9DBA7F001860B5 /* MFConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158161B9DBA7F001860B5 /* MFConstants.m */; };
-		B02158281B9DBC8C001860B5 /* MFCallPhoneNumberCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581A1B9DBC8C001860B5 /* MFCallPhoneNumberCommand.h */; };
-		B02158291B9DBC8C001860B5 /* MFCallPhoneNumberCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581B1B9DBC8C001860B5 /* MFCallPhoneNumberCommand.m */; };
-		B021582A1B9DBC8C001860B5 /* MFCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581C1B9DBC8C001860B5 /* MFCommandHandler.h */; };
-		B021582B1B9DBC8C001860B5 /* MFCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MFCommandHandler.m */; };
-		B021582C1B9DBC8C001860B5 /* MFCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MFCommandProtocol.h */; };
-		B021582D1B9DBC8C001860B5 /* MFEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581F1B9DBC8C001860B5 /* MFEmail.h */; };
-		B021582E1B9DBC8C001860B5 /* MFEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158201B9DBC8C001860B5 /* MFEmail.m */; };
-		B021582F1B9DBC8C001860B5 /* MFOpenURLCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158211B9DBC8C001860B5 /* MFOpenURLCommand.h */; };
-		B02158301B9DBC8C001860B5 /* MFOpenURLCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158221B9DBC8C001860B5 /* MFOpenURLCommand.m */; };
-		B02158311B9DBC8C001860B5 /* MFPhoneNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158231B9DBC8C001860B5 /* MFPhoneNumber.h */; };
-		B02158321B9DBC8C001860B5 /* MFPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158241B9DBC8C001860B5 /* MFPhoneNumber.m */; };
-		B02158331B9DBC8C001860B5 /* MFSendEmailCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158251B9DBC8C001860B5 /* MFSendEmailCommand.h */; };
-		B02158341B9DBC8C001860B5 /* MFSendEmailCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158261B9DBC8C001860B5 /* MFSendEmailCommand.m */; };
+		B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */; };
+		B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */; };
+		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; };
 		B02158351B9DBC8C001860B5 /* MFUICommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158271B9DBC8C001860B5 /* MFUICommand.h */; };
-		B02158381B9DBDC1001860B5 /* MFURL.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158361B9DBDC1001860B5 /* MFURL.h */; };
-		B02158391B9DBDC1001860B5 /* MFURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158371B9DBDC1001860B5 /* MFURL.m */; };
-		B02158401B9DBDF5001860B5 /* MFCreateEmailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B021583C1B9DBDF5001860B5 /* MFCreateEmailViewController.h */; };
-		B02158411B9DBDF5001860B5 /* MFCreateEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B021583D1B9DBDF5001860B5 /* MFCreateEmailViewController.m */; };
-		B02158421B9DBDF5001860B5 /* MFUIViewControllerEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = B021583E1B9DBDF5001860B5 /* MFUIViewControllerEmail.h */; };
-		B02158431B9DBDF5001860B5 /* MFCreateEmailViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B021583F1B9DBDF5001860B5 /* MFCreateEmailViewControllerDelegate.h */; };
 		B0FFDA6C1B33FAFB00CA6E5E /* MDKControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFDA6B1B33FAFB00CA6E5E /* MDKControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0FFDA721B33FAFB00CA6E5E /* MDKControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */; };
 		B0FFDA791B33FAFB00CA6E5E /* MDKControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFDA781B33FAFB00CA6E5E /* MDKControlTests.m */; };
@@ -312,26 +296,10 @@
 		B02158111B9DB2EE001860B5 /* MFUIControlLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIControlLabel.h; sourceTree = "<group>"; };
 		B02158151B9DBA7F001860B5 /* MFConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFConstants.h; sourceTree = "<group>"; };
 		B02158161B9DBA7F001860B5 /* MFConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFConstants.m; sourceTree = "<group>"; };
-		B021581A1B9DBC8C001860B5 /* MFCallPhoneNumberCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCallPhoneNumberCommand.h; sourceTree = "<group>"; };
-		B021581B1B9DBC8C001860B5 /* MFCallPhoneNumberCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCallPhoneNumberCommand.m; sourceTree = "<group>"; };
-		B021581C1B9DBC8C001860B5 /* MFCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCommandHandler.h; sourceTree = "<group>"; };
-		B021581D1B9DBC8C001860B5 /* MFCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCommandHandler.m; sourceTree = "<group>"; };
-		B021581E1B9DBC8C001860B5 /* MFCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCommandProtocol.h; sourceTree = "<group>"; };
-		B021581F1B9DBC8C001860B5 /* MFEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFEmail.h; sourceTree = "<group>"; };
-		B02158201B9DBC8C001860B5 /* MFEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFEmail.m; sourceTree = "<group>"; };
-		B02158211B9DBC8C001860B5 /* MFOpenURLCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFOpenURLCommand.h; sourceTree = "<group>"; };
-		B02158221B9DBC8C001860B5 /* MFOpenURLCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFOpenURLCommand.m; sourceTree = "<group>"; };
-		B02158231B9DBC8C001860B5 /* MFPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFPhoneNumber.h; sourceTree = "<group>"; };
-		B02158241B9DBC8C001860B5 /* MFPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFPhoneNumber.m; sourceTree = "<group>"; };
-		B02158251B9DBC8C001860B5 /* MFSendEmailCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFSendEmailCommand.h; sourceTree = "<group>"; };
-		B02158261B9DBC8C001860B5 /* MFSendEmailCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFSendEmailCommand.m; sourceTree = "<group>"; };
+		B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandHandler.h; sourceTree = "<group>"; };
+		B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCommandHandler.m; sourceTree = "<group>"; };
+		B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandProtocol.h; sourceTree = "<group>"; };
 		B02158271B9DBC8C001860B5 /* MFUICommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUICommand.h; sourceTree = "<group>"; };
-		B02158361B9DBDC1001860B5 /* MFURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFURL.h; sourceTree = "<group>"; };
-		B02158371B9DBDC1001860B5 /* MFURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFURL.m; sourceTree = "<group>"; };
-		B021583C1B9DBDF5001860B5 /* MFCreateEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCreateEmailViewController.h; sourceTree = "<group>"; };
-		B021583D1B9DBDF5001860B5 /* MFCreateEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFCreateEmailViewController.m; sourceTree = "<group>"; };
-		B021583E1B9DBDF5001860B5 /* MFUIViewControllerEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIViewControllerEmail.h; sourceTree = "<group>"; };
-		B021583F1B9DBDF5001860B5 /* MFCreateEmailViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFCreateEmailViewControllerDelegate.h; sourceTree = "<group>"; };
 		B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDKControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FFDA6A1B33FAFB00CA6E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FFDA6B1B33FAFB00CA6E5E /* MDKControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDKControl.h; sourceTree = "<group>"; };
@@ -639,21 +607,9 @@
 		B02158191B9DBC8C001860B5 /* command */ = {
 			isa = PBXGroup;
 			children = (
-				B02158361B9DBDC1001860B5 /* MFURL.h */,
-				B02158371B9DBDC1001860B5 /* MFURL.m */,
-				B021581A1B9DBC8C001860B5 /* MFCallPhoneNumberCommand.h */,
-				B021581B1B9DBC8C001860B5 /* MFCallPhoneNumberCommand.m */,
-				B021581C1B9DBC8C001860B5 /* MFCommandHandler.h */,
-				B021581D1B9DBC8C001860B5 /* MFCommandHandler.m */,
-				B021581E1B9DBC8C001860B5 /* MFCommandProtocol.h */,
-				B021581F1B9DBC8C001860B5 /* MFEmail.h */,
-				B02158201B9DBC8C001860B5 /* MFEmail.m */,
-				B02158211B9DBC8C001860B5 /* MFOpenURLCommand.h */,
-				B02158221B9DBC8C001860B5 /* MFOpenURLCommand.m */,
-				B02158231B9DBC8C001860B5 /* MFPhoneNumber.h */,
-				B02158241B9DBC8C001860B5 /* MFPhoneNumber.m */,
-				B02158251B9DBC8C001860B5 /* MFSendEmailCommand.h */,
-				B02158261B9DBC8C001860B5 /* MFSendEmailCommand.m */,
+				B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */,
+				B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */,
+				B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */,
 				B02158271B9DBC8C001860B5 /* MFUICommand.h */,
 			);
 			path = command;
@@ -662,20 +618,8 @@
 		B021583A1B9DBDF5001860B5 /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
-				B021583B1B9DBDF5001860B5 /* email */,
-				B021583F1B9DBDF5001860B5 /* MFCreateEmailViewControllerDelegate.h */,
 			);
 			path = viewcontroller;
-			sourceTree = "<group>";
-		};
-		B021583B1B9DBDF5001860B5 /* email */ = {
-			isa = PBXGroup;
-			children = (
-				B021583C1B9DBDF5001860B5 /* MFCreateEmailViewController.h */,
-				B021583D1B9DBDF5001860B5 /* MFCreateEmailViewController.m */,
-				B021583E1B9DBDF5001860B5 /* MFUIViewControllerEmail.h */,
-			);
-			path = email;
 			sourceTree = "<group>";
 		};
 		B0FFDA5C1B33FAFB00CA6E5E = {
@@ -766,7 +710,6 @@
 				B02157BB1B9DAF30001860B5 /* MFInvalidIntegerValueUIValidationError.h in Headers */,
 				B02156711B9D9863001860B5 /* MDKBase.h in Headers */,
 				B02156771B9DAB93001860B5 /* MFTextField.h in Headers */,
-				B02158421B9DBDF5001860B5 /* MFUIViewControllerEmail.h in Headers */,
 				B02157A71B9DAF30001860B5 /* JDFTooltips.h in Headers */,
 				B02158171B9DBA7F001860B5 /* MFConstants.h in Headers */,
 				B02157C31B9DAF30001860B5 /* MFMandatoryFieldUIValidationError.h in Headers */,
@@ -776,10 +719,9 @@
 				B02158351B9DBC8C001860B5 /* MFUICommand.h in Headers */,
 				B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */,
 				B02157D81B9DAFA0001860B5 /* MFComponentProviderProtocol.h in Headers */,
-				B021582A1B9DBC8C001860B5 /* MFCommandHandler.h in Headers */,
+				B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */,
 				B02156D31B9DAC6E001860B5 /* MFUIStyleTextField.h in Headers */,
 				B021575C1B9DAEEA001860B5 /* MFFieldValidatorHandler.h in Headers */,
-				B02158381B9DBDC1001860B5 /* MFURL.h in Headers */,
 				B02156EB1B9DAD59001860B5 /* MDKControlProtocol.h in Headers */,
 				B02157DF1B9DB124001860B5 /* MFUIBaseRenderableComponent.h in Headers */,
 				B02158141B9DB2EE001860B5 /* MFUIControlLabel.h in Headers */,
@@ -800,20 +742,18 @@
 				B02157B31B9DAF30001860B5 /* MFTooLongStringUIValidationError.h in Headers */,
 				B02156BB1B9DAC6E001860B5 /* MFUIStyleLabel.h in Headers */,
 				B021580D1B9DB27D001860B5 /* MFUIAlertView.h in Headers */,
-				B02158431B9DBDF5001860B5 /* MFCreateEmailViewControllerDelegate.h in Headers */,
 				B02156EA1B9DAD59001860B5 /* MFErrorViewProtocol.h in Headers */,
 				B02157D71B9DAFA0001860B5 /* MFComponentApplicationProtocol.h in Headers */,
 				B02156D11B9DAC6E001860B5 /* MFTextFieldStyle.h in Headers */,
 				B02156B31B9DAC6E001860B5 /* MFDefaultStyle.h in Headers */,
 				B021575E1B9DAEEA001860B5 /* MFFieldValidatorProtocol.h in Headers */,
-				B021582C1B9DBC8C001860B5 /* MFCommandProtocol.h in Headers */,
+				B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */,
 				B02157DB1B9DAFA0001860B5 /* MFUIComponentProvider.h in Headers */,
 				B02157631B9DAEEA001860B5 /* MFLengthFieldValidator.h in Headers */,
 				B02157B71B9DAF30001860B5 /* MFInvalidDoubleValueUIValidationError.h in Headers */,
 				B02156C71B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.h in Headers */,
 				B021573F1B9DAE8E001860B5 /* MFRegexTextField.h in Headers */,
 				B02157281B9DAE51001860B5 /* MFControlChangedTargetDescriptor.h in Headers */,
-				B02158311B9DBC8C001860B5 /* MFPhoneNumber.h in Headers */,
 				B02157611B9DAEEA001860B5 /* MFIntegerFieldValidator.h in Headers */,
 				B02157C51B9DAF30001860B5 /* MFNoMatchingValueUIValidationError.h in Headers */,
 				B02157BD1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.h in Headers */,
@@ -824,13 +764,11 @@
 				B02156CD1B9DAC6E001860B5 /* MFTextFieldStyle+ErrorView.h in Headers */,
 				B02156B91B9DAC6E001860B5 /* MFLabelStyle.h in Headers */,
 				B021580B1B9DB27D001860B5 /* MFAlertViewManager.h in Headers */,
-				B021582F1B9DBC8C001860B5 /* MFOpenURLCommand.h in Headers */,
 				B02157D91B9DAFA0001860B5 /* MFSimpleComponentProvider.h in Headers */,
 				B021576A1B9DAEEA001860B5 /* MFUrlFieldValidator.h in Headers */,
 				B02157671B9DAEEA001860B5 /* MFPhoneFieldValidator.h in Headers */,
 				B02157FD1B9DB207001860B5 /* MFRegexTextExtensionProtocol.h in Headers */,
 				B02157B91B9DAF30001860B5 /* MFInvalidEmailValueUIValidationError.h in Headers */,
-				B021582D1B9DBC8C001860B5 /* MFEmail.h in Headers */,
 				B02156E91B9DAD59001860B5 /* MDKControlValidationProtocol.h in Headers */,
 				B02157A31B9DAF30001860B5 /* JDFSequentialTooltipManager.h in Headers */,
 				B02156B61B9DAC6E001860B5 /* MFUIStyleCommons.h in Headers */,
@@ -839,13 +777,10 @@
 				B02157B51B9DAF30001860B5 /* MFTooShortStringUIValidationError.h in Headers */,
 				B02157211B9DAE19001860B5 /* MFCommonControlDelegate.h in Headers */,
 				B021575A1B9DAEEA001860B5 /* MFEmailFieldValidator.h in Headers */,
-				B02158281B9DBC8C001860B5 /* MFCallPhoneNumberCommand.h in Headers */,
 				B02157651B9DAEEA001860B5 /* MFMandatoryFieldValidator.h in Headers */,
 				B02156C91B9DAC6E001860B5 /* MFRegexTextFieldStyle.h in Headers */,
-				B02158401B9DBDF5001860B5 /* MFCreateEmailViewController.h in Headers */,
 				B021579E1B9DAF30001860B5 /* MFUIErrorView.h in Headers */,
 				B02156B71B9DAC6E001860B5 /* UIView+Styleable.h in Headers */,
-				B02158331B9DBC8C001860B5 /* MFSendEmailCommand.h in Headers */,
 				B02158121B9DB2EE001860B5 /* MFLabel.h in Headers */,
 				B02157E21B9DB145001860B5 /* MFUIBaseComponent.h in Headers */,
 			);
@@ -951,7 +886,6 @@
 				B021580A1B9DB27D001860B5 /* MFAlertView.m in Sources */,
 				B02157A91B9DAF30001860B5 /* JDFTooltipView.m in Sources */,
 				B02157CC1B9DAF30001860B5 /* MFUIValidationError.m in Sources */,
-				B02158301B9DBC8C001860B5 /* MFOpenURLCommand.m in Sources */,
 				B02156C81B9DAC6E001860B5 /* MFRegexTextFieldStyle+Button.m in Sources */,
 				B02158131B9DB2EE001860B5 /* MFLabel.m in Sources */,
 				B02157B21B9DAF30001860B5 /* ValidTooltipView.m in Sources */,
@@ -971,18 +905,13 @@
 				B02157591B9DAEEA001860B5 /* MFDoubleFieldValidator.m in Sources */,
 				B02157BC1B9DAF30001860B5 /* MFInvalidIntegerValueUIValidationError.m in Sources */,
 				B02157681B9DAEEA001860B5 /* MFPhoneFieldValidator.m in Sources */,
-				B021582B1B9DBC8C001860B5 /* MFCommandHandler.m in Sources */,
+				B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */,
 				B02158011B9DB207001860B5 /* MFTextFieldExtension.m in Sources */,
 				B02157221B9DAE19001860B5 /* MFCommonControlDelegate.m in Sources */,
 				B02156CA1B9DAC6E001860B5 /* MFRegexTextFieldStyle.m in Sources */,
-				B02158391B9DBDC1001860B5 /* MFURL.m in Sources */,
 				B02157BE1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.m in Sources */,
 				B02156D01B9DAC6E001860B5 /* MFTextFieldStyle+TextLayouting.m in Sources */,
-				B02158321B9DBC8C001860B5 /* MFPhoneNumber.m in Sources */,
-				B021582E1B9DBC8C001860B5 /* MFEmail.m in Sources */,
-				B02158291B9DBC8C001860B5 /* MFCallPhoneNumberCommand.m in Sources */,
 				B02157621B9DAEEA001860B5 /* MFIntegerFieldValidator.m in Sources */,
-				B02158341B9DBC8C001860B5 /* MFSendEmailCommand.m in Sources */,
 				B021580C1B9DB27D001860B5 /* MFAlertViewManager.m in Sources */,
 				B021576B1B9DAEEA001860B5 /* MFUrlFieldValidator.m in Sources */,
 				B02157C61B9DAF30001860B5 /* MFNoMatchingValueUIValidationError.m in Sources */,
@@ -1002,7 +931,6 @@
 				B02157B81B9DAF30001860B5 /* MFInvalidDoubleValueUIValidationError.m in Sources */,
 				B02157A41B9DAF30001860B5 /* JDFSequentialTooltipManager.m in Sources */,
 				B02157DE1B9DB124001860B5 /* MFUIBaseRenderableComponent.m in Sources */,
-				B02158411B9DBDF5001860B5 /* MFCreateEmailViewController.m in Sources */,
 				B02157291B9DAE51001860B5 /* MFControlChangedTargetDescriptor.m in Sources */,
 				B02157A11B9DAF30001860B5 /* InvalidTooltipView.m in Sources */,
 				B02157C21B9DAF30001860B5 /* MFInvalidUrlValueUIValidationError.m in Sources */,

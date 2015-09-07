@@ -14,10 +14,28 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import <Foundation/Foundation.h>
 
-#ifndef MFUI_MFUIViewControllerEmail_h
-#define MFUI_MFUIViewControllerEmail_h
+/*!
+ * @protocol MDKCommandProtocol
+ * @brief A protocol that represents a command
+ */
+@protocol MDKCommandProtocol <NSObject>
 
-#import "MFCreateEmailViewController.h"
+#pragma mark - Methods
+/*!
+ * @brief Initializes or retrieves the singleton instance of MFSendEmailCommand and returns it to the caller
+ * @return The singleton instance of MFSendEmailCommand and returns it to the caller
+ */
+@required
++ (instancetype)sharedInstance;
 
-#endif
+
+/*!
+ * @brief Executes the comand
+ * @param commandParameters The ViewController from where the command will be executed
+ * @param A variadic list of id parameters
+ */
+@required
+- (id) executeFromViewController:(UIViewController *)viewController withParameters:(id)parameters, ... NS_REQUIRES_NIL_TERMINATION;
+@end

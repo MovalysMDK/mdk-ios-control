@@ -17,11 +17,7 @@
 #ifndef MFUI_MFUICommand_h
 #define MFUI_MFUICommand_h
 
-#import "MFCommandProtocol.h"
-#import "MFCommandHandler.h"
-#import "MFSendEmailCommand.h"
-#import "MFEmail.h"
-#import "MFPhoneNumber.h"
-#import "MFCallPhoneNumberCommand.h"
+#import "MDKCommandProtocol.h"
+#import "MDKCommandHandler.h"
 
 #endif

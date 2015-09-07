@@ -15,13 +15,13 @@
  */
 
 #import "MFSimpleComponentProvider.h"
-#import "MFCommandProtocol.h"
+#import "MDKCommandProtocol.h"
 #import "MFFieldValidatorProtocol.h"
 
 @implementation MFSimpleComponentProvider
 
--(id<MFCommandProtocol>)commandWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier {
-    id<MFCommandProtocol> command = nil;
+-(id<MDKCommandProtocol>)commandWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier {
+    id<MDKCommandProtocol> command = nil;
     Class commandClass = [self classWithKey:baseKey withQualifier:qualifier];
     if(commandClass) {
         command = [commandClass sharedInstance];

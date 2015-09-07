@@ -16,33 +16,21 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
- * @class MFPhoneNumber
- * @brief This class describes a phone number
- */
-@interface MFPhoneNumber : NSObject
-
-#pragma mark - Properties
-/*!
- * @brief The base phone number
- */
-@property (nonatomic, strong) NSString *baseNumber;
+@protocol MDKCommandProtocol;
 
 /*!
- * @brief The international prefix number, like '33' for France
+ * @class MDKCommandHandler
+ * @brief This class allows to retrieve a command form a baseKey and a qualifier.
+ * @discussion A command is an object that implement the MDKCommandProtocol.
+ * @see MDKCommandProtocol
  */
-@property (nonatomic, strong) NSString *internationalPrefix;
+@interface MDKCommandHandler : NSObject
 
 /*!
- * @brief The potential symbol prefix ('+');
+ * @brief Returns a command corresponding to the given command key
+ * @param baseKey A string that represent the baseKey of the command to return
+ * @return The command corresponding to the given key.
  */
-@property (nonatomic, strong) NSString *symbolPrefix;
++(id<MDKCommandProtocol>) commandWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier;
 
-#pragma mark - Methods
-
-/**
- * @brief Builds an returns a string that represents this phone number
- * @return A phone number as string
- */
--(NSString *) buildPhoneString;
 @end

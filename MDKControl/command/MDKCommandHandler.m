@@ -13,17 +13,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-#import "MFCommandHandler.h"
+#import "MDKCommandHandler.h"
 #import "MFUICommand.h"
 #import "MFComponentApplicationProtocol.h"
 #import "MFComponentProviderProtocol.h"
 #import "MFSimpleComponentProvider.h"
 
 
-@implementation MFCommandHandler
+@implementation MDKCommandHandler
 
-+(id<MFCommandProtocol>) commandWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier {
-    id<MFCommandProtocol> result = nil;
++(id<MDKCommandProtocol>) commandWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier {
+    id<MDKCommandProtocol> result = nil;
     
     id<MFComponentProviderProtocol> componentProvider = nil;
     id<UIApplicationDelegate> appDelegate =  [[UIApplication sharedApplication] delegate];

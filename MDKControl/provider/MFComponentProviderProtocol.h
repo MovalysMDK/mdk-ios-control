@@ -15,7 +15,7 @@
  */
 #import <Foundation/Foundation.h>
 
-@protocol MFCommandProtocol;
+@protocol MDKCommandProtocol;
 @protocol MFFieldValidatorProtocol;
 
 /*!
@@ -30,7 +30,7 @@
  * @param qualifier A string that represent the qualifier of the command to return
  * @return The command corresponding to the given key.
  */
--(id<MFCommandProtocol>) commandWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier;
+-(id<MDKCommandProtocol>) commandWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier;
 
 /*!
  * @brief Returns a field validator corresponding to the given field validator key
