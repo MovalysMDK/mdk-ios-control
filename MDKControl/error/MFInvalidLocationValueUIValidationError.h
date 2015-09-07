@@ -14,8 +14,13 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFNoMatchingValueUIValidationError.h"
+#import "MDKNoMatchingValueUIValidationError.h"
 
-@interface MFInvalidLocationValueUIValidationError : MFNoMatchingValueUIValidationError
+/*!
+ * @class MDKInvalidIntegerValueUIValidationError
+ * @brief Report an invalid location value error.
+ * @discussion An instance of this error type must be associated with a field name.
+ */
+@interface MDKInvalidLocationValueUIValidationError : MDKNoMatchingValueUIValidationError
 
 @end

@@ -14,18 +14,18 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "MDKInvalidIntegerValueUIValidationError.h"
 
-#import "MFTooShortStringUIValidationError.h"
+@implementation MDKInvalidIntegerValueUIValidationError
 
-@implementation MFTooShortStringUIValidationError
+NSInteger const INVALID_INTEGER_VALUE_UI_VALIDATION_ERROR_CODE = 10004;
 
-NSInteger const TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE = 10001;
+NSString *const INVALID_INTEGER_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKInvalidIntegerValueUIValidationError";
 
-NSString *const TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFTooShortStringUIValidationError";
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
 {
-    self = [super initWithCode:TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:INVALID_INTEGER_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_INTEGER_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
     return self;
 }
 

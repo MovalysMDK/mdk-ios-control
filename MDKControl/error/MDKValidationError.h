@@ -13,17 +13,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFUIValidationError.h
-//  MFCore
-//
-//
 
 /*!
- User data keyboarding error.
- This error must be thrown from UI layer and must be associated with a field name.
- **/
-@interface MFUIValidationError : NSError
+ * @class MDKValidationError
+ * @brief Reports any validation error.
+ * @discussion This class is the main class for any UI Validation error of MDK Controls.
+ */
+@interface MDKValidationError : NSError
+
+#pragma mark - Properties
 
 /*!
  Displayed field name : field name displayed to user.
@@ -35,32 +33,41 @@
  */
 @property(nonatomic, strong, readonly) NSString *technicalFieldName;
 
-/*
- Designated initializer.
- @param code Error unique code.
- @param dict may be nil if no userInfo desired.
+
+#pragma mark - Methods
+
+/*!
+ * @brief Designated initializer.
+ * @param code Error unique code.
+ * @param dict may be nil if no userInfo desired.
+ * @return The new built instance on MDKValidationError
  */
 - (id)initWithCode:(NSInteger)code userInfo:(NSDictionary *)dict localizedFieldName: (NSString *) fieldName technicalFieldName: (NSString *) technicalFieldName ;
 
-/*
- Designated initializer.
- @param code Error unique code.
- @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
- @param failureReasonKey The string that can be displayed as the "informative" (aka "secondary") message on an alert panel
+/*!
+ * @brief Designated initializer.
+ * @param code Error unique code.
+ * @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just 
+ * the "because" part of the error message (but as a complete sentence, which makes localization easier).
+ * @param failureReasonKey The string that can be displayed as the "informative" (aka "secondary") message on an alert panel
+ * @return The new built instance on MDKValidationError
  */
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey localizedFailureReasonErrorKey: (NSString *) failureReasonKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *) technicalFieldName;
 
-/*
- Designated initializer.
- @param code Error unique code.
- @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
+/*!
+ * @brief Designated initializer.
+ * @param code Error unique code.
+ * @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just 
+ * the "because" part of the error message (but as a complete sentence, which makes localization easier).
+ * @return The new built instance on MDKValidationError
  */
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *) technicalFieldName;
 
-/*
- Designated initializer.
- @param code Error unique code.
- @param dict may be nil if no userInfo desired.
+/*!
+ * @brief Designated initializer.
+ * @param code Error unique code.
+ * @param dict May be nil if no userInfo desired.
+ * @return The new built instance on MDKValidationError
  */
 + (id)errorWithCode:(NSInteger)code userInfo:(NSDictionary *)dict localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *) technicalFieldName;
 

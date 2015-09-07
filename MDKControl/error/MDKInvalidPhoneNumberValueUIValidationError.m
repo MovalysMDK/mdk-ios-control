@@ -15,19 +15,20 @@
  */
 
 
-#import "MFTooLongStringUIValidationError.h"
+#import "MDKInvalidPhoneNumberValueUIValidationError.h"
 
-@implementation MFTooLongStringUIValidationError
-@synthesize localizedFieldName;
+@implementation MDKInvalidPhoneNumberValueUIValidationError
 
-NSInteger const TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE = 10000;
+NSInteger const INVALID_PHONE_NUMBER_VALUE_UI_VALIDATION_ERROR_CODE = 10006;
 
-NSString *const TOO_LONG_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFTooLongStringUIValidationError";
+NSString *const INVALID_PHONE_NUMBER_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKInvalidPhoneNumberValueUIValidationError";
 
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
+
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *)technicalFieldName
 {
-    self = [super initWithCode:TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:TOO_LONG_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:INVALID_PHONE_NUMBER_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_PHONE_NUMBER_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
     return self;
 }
+
 
 @end

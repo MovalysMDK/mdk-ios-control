@@ -15,15 +15,15 @@
  */
 
 
-#import "MFNoMatchingValueUIValidationError.h"
+#import "MDKNoMatchingValueUIValidationError.h"
 
 
 
-@implementation MFNoMatchingValueUIValidationError
+@implementation MDKNoMatchingValueUIValidationError
 
 NSInteger const NO_MATCHING_VALUE_UI_VALIDATION_ERROR_CODE = 10003;
 
-NSString *const NO_MATCHING_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFNoMatchingValueUIValidationError";
+NSString *const NO_MATCHING_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKNoMatchingValueUIValidationError";
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
 {

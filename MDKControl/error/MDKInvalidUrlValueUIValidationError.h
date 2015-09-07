@@ -13,19 +13,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-#import "MFInvalidLocationValueUIValidationError.h"
-
-@implementation MDKInvalidLocationValueUIValidationError
-
-NSInteger const INVALID_LOCATION_VALUE_UI_VALIDATION_ERROR_CODE = 10004;
-
-NSString *const INVALID_LOCATION_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFInvalidLocationValueUIValidationError";
 
 
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
-{
-    self = [super initWithCode:INVALID_LOCATION_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_LOCATION_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
-    return self;
-}
+#import "MDKNoMatchingValueUIValidationError.h"
+
+/*!
+ * @class MDKInvalidUrlValueUIValidationError
+ * @brief Report an invalid url value error.
+ * @discussion An instance of this error type must be associated with a field name.
+ */
+@interface MDKInvalidUrlValueUIValidationError : MDKNoMatchingValueUIValidationError
 
 @end

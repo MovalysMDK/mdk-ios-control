@@ -14,32 +14,31 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "MDKValidationError.h"
+
 
 /*!
- * Report a too short user data keyboarding.
- * An instance of this error type must be associated with a field name.
- **/
-
-#import "MFUIValidationError.h"
-
-@interface MFTooShortStringUIValidationError : MFUIValidationError
-
-/*
- Specific error code.
+ @brief Specific error code.
  */
-extern NSInteger const TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE;
-
-/*
- Specific localized description key.
- */
-extern NSString *const TOO_SHORT_STRING_UI_VALIDATION_ERROR_LOCALIZED_DESCRIPTION_KEY;
+FOUNDATION_EXPORT NSInteger const MANDATORY_FIELD_UI_VALIDATION_ERROR_CODE;
 
 /*!
- * Init new instance.
- *
+ * @brief Specific localized description key.
+ */
+FOUNDATION_EXPORT NSString *const MANDATORY_FIELD_UI_VALIDATION_ERROR_LOCALIZED_DESCRIPTION_KEY;
+
+
+/*!
+ * @class MDKMandatoryFieldUIValidationError
+ * @brief Report an empty mandatory field.
+ * @discussion An instance of this error type must be associated with a field name.
+ */
+@interface MDKMandatoryFieldUIValidationError : MDKValidationError
+
+/*!
+ * @brief Init new instance.
  * @param fieldName - Associated field name.
- * @return new instance of MFTooShortStringUIValidationError
+ * @return new instance of MFMandatoryFieldUIValidationError
  */
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName;
-
 @end

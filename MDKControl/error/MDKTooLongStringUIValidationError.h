@@ -15,29 +15,29 @@
  */
 
 
-/*!
- * Report a too long user data keyboarding.
- * An instance of this error type must be associateËd with a field name.
- **/
+#import "MDKValidationError.h"
 
-
-#import "MFUIValidationError.h"
-
-@interface MFTooLongStringUIValidationError : MFUIValidationError
-
-/*
- Specific error code.
- */
-extern NSInteger const TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE;
-
-/*
- Specific localized description key.
- */
-extern NSString *const TOO_LONG_STRING_UI_VALIDATION_ERROR_LOCALIZED_DESCRIPTION_KEY;
 
 /*!
- * Init new instance.
- *
+ * @brief Specific error code.
+ */
+FOUNDATION_EXPORT NSInteger const TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE;
+
+/*!
+ * @brief Specific localized description key.
+ */
+FOUNDATION_EXPORT NSString *const TOO_LONG_STRING_UI_VALIDATION_ERROR_LOCALIZED_DESCRIPTION_KEY;
+
+
+/*!
+ * @class MDKTooLongStringUIValidationError
+ * @brief Report a too long user data keyboarding.
+ * @discussion An instance of this error type must be associated with a field name.
+ */
+@interface MDKTooLongStringUIValidationError : MDKValidationError
+
+/*!
+ * @brief Init new instance.
  * @param fieldName - Associated displayed field name.
  * @return New instance of MFTooLongStringUIValidationError.
  */

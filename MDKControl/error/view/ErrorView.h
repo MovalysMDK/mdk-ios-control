@@ -13,10 +13,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
+#ifndef MDKControl_ErrorView_h
+#define MDKControl_ErrorView_h
 
+#import "MDKErrorView.h"
+#import "ErrorViewTooltip.h"
 
-#import "MFNoMatchingValueUIValidationError.h"
-
-@interface MFInvalidPhoneNumberValueUIValidationError : MFNoMatchingValueUIValidationError
-
-@end
+#endif

@@ -17,7 +17,7 @@
 #import "Protocol.h"
 
 #import "MDKControlDelegate.h"
-#import "MFUIErrorView.h"
+#import "MDKErrorView.h"
 
 @protocol MDKStyleProtocol;
 

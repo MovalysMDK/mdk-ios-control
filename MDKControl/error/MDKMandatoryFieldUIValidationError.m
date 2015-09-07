@@ -14,20 +14,19 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFInvalidUrlValueUIValidationError.h"
 
-@implementation MFInvalidUrlValueUIValidationError
+#import "MDKMandatoryFieldUIValidationError.h"
 
-NSInteger const INVALID_URL_VALUE_UI_VALIDATION_ERROR_CODE = 10005;
+@implementation MDKMandatoryFieldUIValidationError
 
-NSString *const INVALID_URL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFInvalidUrlValueUIValidationError";
+NSInteger const MANDATORY_FIELD_UI_VALIDATION_ERROR_CODE = 10002;
 
+NSString *const MANDATORY_FIELD_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKMandatoryFieldUIValidationError";
 
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *)technicalFieldName
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
 {
-    self = [super initWithCode:INVALID_URL_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_URL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:MANDATORY_FIELD_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:MANDATORY_FIELD_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
     return self;
 }
-
 
 @end

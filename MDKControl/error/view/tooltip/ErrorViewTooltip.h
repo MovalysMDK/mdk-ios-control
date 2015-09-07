@@ -14,9 +14,14 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#ifndef MDKControl_ErrorViewTooltip_h
+#define MDKControl_ErrorViewTooltip_h
 
-#import "MFNoMatchingValueUIValidationError.h"
+#import "JDFSequentialTooltipManager.h"
+#import "JDFTooltipManager.h"
+#import "JDFTooltipView.h"
+#import "JDFTooltips.h"
+#import "UILabel+JDFTooltips.h"
+#import "UIView+JDFTooltips.h"
 
-@interface MFInvalidDoubleValueUIValidationError : MFNoMatchingValueUIValidationError
-
-@end
+#endif

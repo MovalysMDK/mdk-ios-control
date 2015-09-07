@@ -15,7 +15,7 @@
  */
 
 #import "MDKMandatoryFieldValidator.h"
-#import "MFMandatoryFieldUIValidationError.h"
+#import "MDKMandatoryFieldUIValidationError.h"
 //#import "MFUIBaseListViewModel.h"
 //#import "MFPhotoViewModel.h"
 
@@ -42,7 +42,7 @@ NSString *FIELD_VALIDATOR_ATTRIBUTE_MANDATORY = @"mandatory";
         if([value isKindOfClass:[NSString class]]) {
             NSString *stringValue = (NSString *)value;
             if(!stringValue || stringValue.length == 0) {
-                result = [[MFMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
+                result = [[MDKMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
             }
         }
 //        else if([value isKindOfClass:NSClassFromString(@"MFUIBaseListViewModel")]) {

@@ -15,30 +15,36 @@
  */
 
 
-/*!
- * Report an empty mandatory field.
- * An instance of this error type must be associated with a field name.
- **/
+#import "MDKValidationError.h"
 
-#import "MFUIValidationError.h"
-
-@interface MFMandatoryFieldUIValidationError : MFUIValidationError
-
-/*
- Specific error code.
- */
-extern NSInteger const MANDATORY_FIELD_UI_VALIDATION_ERROR_CODE;
-
-/*
- Specific localized description key.
- */
-extern NSString *const MANDATORY_FIELD_UI_VALIDATION_ERROR_LOCALIZED_DESCRIPTION_KEY;
 
 /*!
- * Init new instance.
+ * @brief Specific error code.
+ */
+FOUNDATION_EXPORT NSInteger const NO_MATCHING_VALUE_UI_VALIDATION_ERROR_CODE;
+
+/*!
+ * @brief Specific localized description key.
+ */
+FOUNDATION_EXPORT NSString *const NO_MATCHING_VALUE_UI_VALIDATION_ERROR_LOCALIZED_DESCRIPTION_KEY;
+
+
+/*!
+ * @class MDKNoMatchingValueUIValidationError
+ * @brief Report an error when a value is not matching.
+ * @discussion An instance of this error type must be associated with a field name.
+ */
+@interface MDKNoMatchingValueUIValidationError : MDKValidationError
+
+#pragma mark - Methods
+
+/*!
+* @brief Init new instance.
  *
- * @param fieldName - Associated field name.
- * @return new instance of MFMandatoryFieldUIValidationError
+ * @param fieldName : Associated field name.
+ * @return New instance of MFNoMatchingValueUIValidationError.
  */
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName;
+
+
 @end

@@ -13,18 +13,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-#import "MFInvalidLocationValueUIValidationError.h"
 
-@implementation MDKInvalidLocationValueUIValidationError
+#import "MDKInvalidDoubleValueUIValidationError.h"
 
-NSInteger const INVALID_LOCATION_VALUE_UI_VALIDATION_ERROR_CODE = 10004;
+@implementation MDKInvalidDoubleValueUIValidationError
 
-NSString *const INVALID_LOCATION_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFInvalidLocationValueUIValidationError";
+NSInteger const INVALID_DOUBLE_VALUE_UI_VALIDATION_ERROR_CODE = 10004;
+
+NSString *const INVALID_DOUBLE_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKInvalidDoubleValueUIValidationError";
 
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
 {
-    self = [super initWithCode:INVALID_LOCATION_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_LOCATION_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:INVALID_DOUBLE_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_DOUBLE_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
     return self;
 }
 

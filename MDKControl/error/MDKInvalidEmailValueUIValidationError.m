@@ -15,8 +15,19 @@
  */
 
 
-#import "MFNoMatchingValueUIValidationError.h"
+#import "MDKInvalidEmailValueUIValidationError.h"
 
-@interface MFInvalidUrlValueUIValidationError : MFNoMatchingValueUIValidationError
+@implementation MDKInvalidEmailValueUIValidationError
+
+NSInteger const INVALID_EMAIL_VALUE_UI_VALIDATION_ERROR_CODE = 10004;
+
+NSString *const INVALID_EMAIL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKInvalidEmailValueUIValidationError";
+
+
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
+{
+    self = [super initWithCode:INVALID_EMAIL_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_EMAIL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    return self;
+}
 
 @end

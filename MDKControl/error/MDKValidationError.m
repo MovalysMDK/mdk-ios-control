@@ -19,9 +19,9 @@
 //
 //
 
-#import "MFUIValidationError.h"
+#import "MDKValidationError.h"
 
-@interface MFUIValidationError ()
+@interface MDKValidationError ()
 
 @property(nonatomic, strong) NSString *localizedFieldName;
 
@@ -29,7 +29,7 @@
 
 @end
 
-@implementation MFUIValidationError
+@implementation MDKValidationError
 
 //+ (NSString *) getDomainBase
 //{
@@ -98,7 +98,7 @@
  Designated initializer. dict may be nil if no userInfo desired.
  */
 + (id)errorWithCode:(NSInteger)code userInfo:(NSDictionary *)dict localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName{
-    return [[MFUIValidationError alloc] initWithCode:code userInfo:dict localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    return [[MDKValidationError alloc] initWithCode:code userInfo:dict localizedFieldName:fieldName technicalFieldName:technicalFieldName];
 }
 
 @end

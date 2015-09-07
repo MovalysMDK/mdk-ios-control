@@ -14,29 +14,33 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <UIKit/UIKit.h>
-
-/*! 
- * @class MFUIError
- * @brief This class represents the view that will display on MDK iOS 
- * components when they are in an invalid state.
- */
-@interface MFUIErrorView : UIView
-
-#pragma mark - IBOutlets
 
 /*!
- * @brief The error button the user will click to display error description
+ * @brief Specific error code.
  */
-@property (weak, nonatomic) IBOutlet UIButton *errorButton;
-
-
-#pragma mark - IBAction
+FOUNDATION_EXPORT NSInteger const TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE;
 
 /*!
- * @brief The action called when the user clicks the errorButton 
- * @param sender The sender of the action
+ * @brief Specific localized description key.
  */
-- (IBAction)onErrorButtonClick:(id)sender;
+FOUNDATION_EXPORT NSString *const TOO_SHORT_STRING_UI_VALIDATION_ERROR_LOCALIZED_DESCRIPTION_KEY;
+
+#import "MDKValidationError.h"
+
+/*!
+ * @class MDKTooShortStringUIValidationError
+ * @brief Report a too short user data keyboarding.
+ * @discussion An instance of this error type must be associated with a field name.
+ */
+@interface MDKTooShortStringUIValidationError : MDKValidationError
+
+
+/*!
+ * Init new instance.
+ *
+ * @param fieldName - Associated field name.
+ * @return new instance of MFTooShortStringUIValidationError
+ */
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName;
 
 @end

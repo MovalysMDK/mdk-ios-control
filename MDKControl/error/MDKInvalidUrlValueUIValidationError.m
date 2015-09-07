@@ -14,19 +14,20 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFInvalidDoubleValueUIValidationError.h"
+#import "MDKInvalidUrlValueUIValidationError.h"
 
-@implementation MFInvalidDoubleValueUIValidationError
+@implementation MDKInvalidUrlValueUIValidationError
 
-NSInteger const INVALID_DOUBLE_VALUE_UI_VALIDATION_ERROR_CODE = 10004;
+NSInteger const INVALID_URL_VALUE_UI_VALIDATION_ERROR_CODE = 10005;
 
-NSString *const INVALID_DOUBLE_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFInvalidDoubleValueUIValidationError";
+NSString *const INVALID_URL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKInvalidUrlValueUIValidationError";
 
 
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *)technicalFieldName
 {
-    self = [super initWithCode:INVALID_DOUBLE_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_DOUBLE_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:INVALID_URL_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_URL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
     return self;
 }
+
 
 @end

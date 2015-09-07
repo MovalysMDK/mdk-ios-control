@@ -18,11 +18,10 @@
 //Tags
 #import "Utils.h"
 #import "Protocol.h"
+#import "Error.h"
 
 #import "MDKControlProtocol.h"
 
-//Tooltip
-#import "MFUIControlTooltip.h"
 
 @protocol MDKControlAssociatedLabelProtocol;
 
@@ -52,7 +51,7 @@ IB_DESIGNABLE
 /*! 
  * Info-bulle affichant la liste des erreurs
  */
-@property (nonatomic, strong) TooltipView *baseTooltipView;
+@property (nonatomic, strong) JDFTooltipView *baseTooltipView;
 
 
 /*!

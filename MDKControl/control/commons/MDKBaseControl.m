@@ -262,45 +262,45 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 
 -(void)showErrorTooltips {
     
-    if( (self.errors != nil) &&  [self.errors count] >0) {
-        if(nil == self.baseTooltipView.text){
-            
-            // We calculate the tooltip's anchor point
-            
-            CGPoint point = [((id<MDKErrorViewProtocol>)self.styleClass).errorView convertPoint:CGPointMake(0.0, ((id<MDKErrorViewProtocol>)self.styleClass).errorView.frame.size.height - 4.0) toView:self];
-            
-            // We calculate the tooltip' size
-            CGRect tooltipViewFrame = CGRectMake(-10, point.y, self.sender.frame.size.width, self.baseTooltipView.frame.size.height);
-            
-            // We create the tooltip' size
-            self.baseTooltipView = [[InvalidTooltipView alloc] init];
-            self.baseTooltipView.frame = tooltipViewFrame;
-            
-            // We build the tooltip's message : one message per line
-            int errorNumber = 0;
-            for (NSError *error in self.errors) {
-                if(errorNumber > 0){
-                    self.baseTooltipView.text = [self.baseTooltipView.text stringByAppendingString: @"\n"];
-                }
-                errorNumber++;
-                self.baseTooltipView.text = [self.baseTooltipView.text stringByAppendingString: [error localizedDescription]];
-            }
+//    if( (self.errors != nil) &&  [self.errors count] >0) {
+//        if(nil == self.baseTooltipView.text){
+//            
+//            // We calculate the tooltip's anchor point
+//            
+//            CGPoint point = [((id<MDKErrorViewProtocol>)self.styleClass).errorView convertPoint:CGPointMake(0.0, ((id<MDKErrorViewProtocol>)self.styleClass).errorView.frame.size.height - 4.0) toView:self];
+//            
+//            // We calculate the tooltip' size
+//            CGRect tooltipViewFrame = CGRectMake(-10, point.y, self.sender.frame.size.width, self.baseTooltipView.frame.size.height);
+//            
+//            // We create the tooltip' size
+//            self.baseTooltipView = [[InvalidTooltipView alloc] init];
+//            self.baseTooltipView.frame = tooltipViewFrame;
+//            
+//            // We build the tooltip's message : one message per line
+//            int errorNumber = 0;
+//            for (NSError *error in self.errors) {
+//                if(errorNumber > 0){
+//                    self.baseTooltipView.text = [self.baseTooltipView.text stringByAppendingString: @"\n"];
+//                }
+//                errorNumber++;
+//                self.baseTooltipView.text = [self.baseTooltipView.text stringByAppendingString: [error localizedDescription]];
+//            }
             // We add tooltip to view
-            [self addSubview:self.baseTooltipView];
-            
-            
-            //Passage de la vue au premier plan
-            UIView *currentView = self;
-            do {
-                UIView *superView = currentView.superview;
-                [superView setClipsToBounds:NO];
-                [superView bringSubviewToFront:currentView];
-                currentView = superView;
-            } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG);
-            [currentView bringSubviewToFront:self.baseTooltipView];
-            [currentView bringSubviewToFront:self.baseErrorButton];
-        }
-    }
+//            [self addSubview:self.baseTooltipView];
+//            
+//            
+//            //Passage de la vue au premier plan
+//            UIView *currentView = self;
+//            do {
+//                UIView *superView = currentView.superview;
+//                [superView setClipsToBounds:NO];
+//                [superView bringSubviewToFront:currentView];
+//                currentView = superView;
+//            } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG);
+//            [currentView bringSubviewToFront:self.baseTooltipView];
+//            [currentView bringSubviewToFront:self.baseErrorButton];
+//        }
+//    }
 }
 
 -(UIView *) baseErrorButton {

@@ -25,7 +25,7 @@
 /**
  * @brief The view used to display that the component is in an invalid state
  */
-@property (nonatomic, strong) MFUIErrorView *errorView;
+@property (nonatomic, strong) MDKErrorView *errorView;
 
 
 /**

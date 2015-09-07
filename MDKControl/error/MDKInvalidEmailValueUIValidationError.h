@@ -14,21 +14,13 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "MDKNoMatchingValueUIValidationError.h"
 
-#import "MFInvalidPhoneNumberValueUIValidationError.h"
-
-@implementation MFInvalidPhoneNumberValueUIValidationError
-
-NSInteger const INVALID_PHONE_NUMBER_VALUE_UI_VALIDATION_ERROR_CODE = 10006;
-
-NSString *const INVALID_PHONE_NUMBER_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFInvalidPhoneNumberValueUIValidationError";
-
-
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *)technicalFieldName
-{
-    self = [super initWithCode:INVALID_PHONE_NUMBER_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_PHONE_NUMBER_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
-    return self;
-}
-
+/*!
+ * @class MDKInvalidEmailValueUIValidationError
+ * @brief Error thrown when a value isn't a valid email adress.
+ * @discussion An instance of this error type must be associated with a field name.
+ */
+@interface MDKInvalidEmailValueUIValidationError : MDKNoMatchingValueUIValidationError
 
 @end

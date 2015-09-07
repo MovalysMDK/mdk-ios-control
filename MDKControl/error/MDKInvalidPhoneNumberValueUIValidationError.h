@@ -15,18 +15,13 @@
  */
 
 
-#import "MFMandatoryFieldUIValidationError.h"
+#import "MDKNoMatchingValueUIValidationError.h"
 
-@implementation MFMandatoryFieldUIValidationError
-
-NSInteger const MANDATORY_FIELD_UI_VALIDATION_ERROR_CODE = 10002;
-
-NSString *const MANDATORY_FIELD_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFMandatoryFieldUIValidationError";
-
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
-{
-    self = [super initWithCode:MANDATORY_FIELD_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:MANDATORY_FIELD_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
-    return self;
-}
+/*!
+ * @class MDKInvalidPhoneNumberValueUIValidationError
+ * @brief Report an invalid phone number value error.
+ * @discussion An instance of this error type must be associated with a field name.
+ */
+@interface MDKInvalidPhoneNumberValueUIValidationError : MDKNoMatchingValueUIValidationError
 
 @end

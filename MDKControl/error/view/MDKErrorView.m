@@ -14,20 +14,26 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "MDKErrorView.h"
+#import "MDKRenderableControl.h"
 
-#import "MFInvalidEmailValueUIValidationError.h"
-
-@implementation MFInvalidEmailValueUIValidationError
-
-NSInteger const INVALID_EMAIL_VALUE_UI_VALIDATION_ERROR_CODE = 10004;
-
-NSString *const INVALID_EMAIL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MFInvalidEmailValueUIValidationError";
+@implementation MDKErrorView
 
 
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
-{
-    self = [super initWithCode:INVALID_EMAIL_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_EMAIL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
-    return self;
+
+
+- (IBAction)onErrorButtonClick:(id)sender {
+    //Forwarding this event on MFUIBaseRenderableComponent parent
+    UIView *currentView = self;
+    while (currentView && ![currentView isKindOfClass:[MDKRenderableControl class]]) {
+        currentView = [currentView superview];
+    }
+    
+    if(currentView) {
+        MDKRenderableControl *parentComponent = (MDKRenderableControl *)currentView;
+        [parentComponent doOnErrorButtonClicked];
+    }
 }
+
 
 @end

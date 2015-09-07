@@ -15,27 +15,18 @@
  */
 
 
-#import "MFUIValidationError.h"
+#import "MDKTooShortStringUIValidationError.h"
 
-@interface MFNoMatchingValueUIValidationError : MFUIValidationError
+@implementation MDKTooShortStringUIValidationError
 
-/*
- Specific error code.
- */
-extern NSInteger const NO_MATCHING_VALUE_UI_VALIDATION_ERROR_CODE;
+NSInteger const TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE = 10001;
 
-/*
- Specific localized description key.
- */
-extern NSString *const NO_MATCHING_VALUE_UI_VALIDATION_ERROR_LOCALIZED_DESCRIPTION_KEY;
+NSString *const TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKTooShortStringUIValidationError";
 
-/*!
- * Init new instance.
- *
- * @param fieldName : Associated field name.
- * @return New instance of MFNoMatchingValueUIValidationError.
- */
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName;
-
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
+{
+    self = [super initWithCode:TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    return self;
+}
 
 @end

@@ -14,11 +14,14 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MFNoMatchingValueUIValidationError.h"
 
-/*
- Error thrown when a value isn't a valid email adress.
+#import "MDKNoMatchingValueUIValidationError.h"
+
+/*!
+ * @class MDKInvalidIntegerValueUIValidationError
+ * @brief Report an invalid double value error.
+ * @discussion An instance of this error type must be associated with a field name.
  */
-@interface MFInvalidEmailValueUIValidationError : MFNoMatchingValueUIValidationError
+@interface MDKInvalidIntegerValueUIValidationError : MDKNoMatchingValueUIValidationError
 
 @end

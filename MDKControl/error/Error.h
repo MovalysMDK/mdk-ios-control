@@ -15,12 +15,21 @@
  */
 
 
-#ifndef MFUI_MFUIControlTooltip_h
-#define MFUI_MFUIControlTooltip_h
+#ifndef MDKControl_Error_h
+#define MDKControl_Error_h
 
-#import "InvalidTooltipView.h"
-#import "TooltipView.h"
-#import "TooltipViewPrivate.h"
-#import "ValidTooltipView.h"
+#import "MDKTooLongStringUIValidationError.h"
+#import "MDKTooShortStringUIValidationError.h"
+#import "MDKInvalidDoubleValueUIValidationError.h"
+#import "MDKInvalidIntegerValueUIValidationError.h"
+#import "MDKInvalidEmailValueUIValidationError.h"
+#import "MFInvalidLocationValueUIValidationError.h"
+#import "MDKInvalidPhoneNumberValueUIValidationError.h"
+#import "MDKInvalidUrlValueUIValidationError.h"
+#import "MDKMandatoryFieldUIValidationError.h"
+#import "MDKNoMatchingValueUIValidationError.h"
+#import "MDKValidationError.h"
+
+#import "ErrorView.h"
 
 #endif

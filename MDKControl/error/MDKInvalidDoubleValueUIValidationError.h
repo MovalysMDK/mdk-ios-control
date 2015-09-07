@@ -15,8 +15,13 @@
  */
 
 
-#import "MFNoMatchingValueUIValidationError.h"
+#import "MDKNoMatchingValueUIValidationError.h"
 
-@interface MFInvalidIntegerValueUIValidationError : MFNoMatchingValueUIValidationError
+/*!
+ * @class MDKInvalidDoubleValueUIValidationError
+ * @brief Report an invalid double value error.
+ * @discussion An instance of this error type must be associated with a field name.
+ */
+@interface MDKInvalidDoubleValueUIValidationError : MDKNoMatchingValueUIValidationError
 
 @end

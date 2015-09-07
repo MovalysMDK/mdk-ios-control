@@ -15,8 +15,8 @@
  */
 
 #import "MDKLengthFieldValidator.h"
-#import "MFTooLongStringUIValidationError.h"
-#import "MFTooShortStringUIValidationError.h"
+#import "MDKTooLongStringUIValidationError.h"
+#import "MDKTooShortStringUIValidationError.h"
 
 
 NSString *FIELD_VALIDATOR_MIN_LENGTH = @"minLength";
@@ -43,10 +43,10 @@ NSString *FIELD_VALIDATOR_MAX_LENGTH = @"maxLength";
     if([value isKindOfClass:[NSString class]]) {
         NSString *stringValue = (NSString *)value;
         if(!stringValue || stringValue.length > [parameters[FIELD_VALIDATOR_MAX_LENGTH] intValue]) {
-            return [[MFTooLongStringUIValidationError alloc] initWithLocalizedFieldName:@"ERREUR" technicalFieldName:@"ON VERRA PLUS TARD"];
+            return [[MDKTooLongStringUIValidationError alloc] initWithLocalizedFieldName:@"ERREUR" technicalFieldName:@"ON VERRA PLUS TARD"];
         }
         else if( stringValue.length < [parameters[FIELD_VALIDATOR_MIN_LENGTH] intValue]) {
-            return [[MFTooShortStringUIValidationError alloc] initWithLocalizedFieldName:@"ERREUR" technicalFieldName:@"ON VERRA PLUS TARD"];
+            return [[MDKTooShortStringUIValidationError alloc] initWithLocalizedFieldName:@"ERREUR" technicalFieldName:@"ON VERRA PLUS TARD"];
         }
     }
     return nil;
