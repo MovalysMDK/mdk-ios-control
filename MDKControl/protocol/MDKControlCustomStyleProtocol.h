@@ -16,6 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol MDKStyleProtocol;
+
 /*!
  * @protocol MDKControlCustomStyleProtocol
  * @brief This protocol adds a property to customize the style class of a control.
@@ -28,5 +30,16 @@
  * @brief The custom Style Class for a control
  */
 @property (nonatomic) Class customStyleClass;
+
+/*!
+ * @brief The name of the custom class to use to render component style
+ */
+@property (nonatomic, strong) NSString *styleClassName;
+
+/*!
+ * @brief The instance of the style lass to use to render the component style.
+ */
+@property (nonatomic, strong) NSObject<MDKStyleProtocol> *styleClass;
+
 
 @end

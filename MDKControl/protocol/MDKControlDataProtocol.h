@@ -35,6 +35,7 @@
  * @brief Set the data to the component
  * @param data The data to set to the component
  */
+@required
 -(void)setData:(id)data;
 
 /*!
@@ -45,6 +46,7 @@
  * overloaded instance of a Text Field component could display "trois", but 
  * the result of this method could be "3".
  */
+@required
 -(id)getData;
 
 
@@ -52,6 +54,7 @@
  * @brief Returns the data-type managed by the component
  * @return A string of the data-type managed by the component
  */
+@required
 + (NSString *) getDataType;
 
 

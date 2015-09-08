@@ -13,11 +13,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
+#import <Foundation/Foundation.h>
 
-#ifndef MDKControl_MDKControl_Prefix_pch
-#define MDKControl_MDKControl_Prefix_pch
 
-#import <UIKit/UIKit.h>
-#import "Utils.h"
+@interface MDKContext : NSObject
 
-#endif
+@end

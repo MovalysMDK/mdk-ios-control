@@ -14,10 +14,9 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_MDKControl_Prefix_pch
-#define MDKControl_MDKControl_Prefix_pch
+#import "MDKContext.h"
 
-#import <UIKit/UIKit.h>
-#import "Utils.h"
+@implementation MDKContext
 
-#endif
+
+@end

@@ -42,13 +42,10 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 
 @implementation MDKBaseControl
 
-@synthesize localizedFieldDisplayName = _localizedFieldDisplayName;
-
 
 @synthesize isValid = _isValid;
 @synthesize mandatory = _mandatory;
 @synthesize visible = _visible;
-@synthesize componentInCellAtIndexPath = _componentInCellAtIndexPath;
 @synthesize editable = _editable;
 @synthesize lastUpdateSender = _lastUpdateSender;
 @synthesize errors = _errors;
@@ -60,7 +57,6 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 @synthesize controlDelegate = _controlDelegate;
 @synthesize tooltipView = _tooltipView;
 @synthesize privateData = _privateData;
-@synthesize componentValidation = _componentValidation;
 
 
 #pragma mark - Constructeurs et initialisation

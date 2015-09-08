@@ -18,6 +18,7 @@
 #import "MDKLabelStyle.h"
 #import "MDKControlProtocol.h"
 
+
 @interface MDKLabel ()
 
 
@@ -29,29 +30,56 @@
 @end
 
 @implementation MDKLabel
-@synthesize styleClass = _styleClass;
-@synthesize componentInCellAtIndexPath = _componentInCellAtIndexPath;
 
-@synthesize localizedFieldDisplayName = _localizedFieldDisplayName;
+/******************************************************/
+/* CONSTANTS                                          */
+/******************************************************/
 
-@synthesize inInitMode = _inInitMode;
-@synthesize controlDelegate = _controlDelegate;
-@synthesize isValid = _isValid;
-@synthesize mandatory = _mandatory;
-@synthesize visible = _visible;
-@synthesize editable = _editable;
-@synthesize tooltipView= _tooltipView;
-@synthesize styleClassName = styleClassName;
-@synthesize controlAttributes = _controlAttributes;
-@synthesize associatedLabel = _associatedLabel;
-@synthesize lastUpdateSender = _lastUpdateSender;
-@synthesize componentValidation = _componentValidation;
-@synthesize privateData = _privateData;
-@synthesize customStyleClass = _customStyleClass;
 
 NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 
-#pragma mark - Initialization
+/******************************************************/
+/* SYNTHESIZE                                         */
+/******************************************************/
+
+#pragma mark - Synthesize
+#pragma mark Style
+@synthesize styleClass = _styleClass;
+@synthesize customStyleClass = _customStyleClass;
+@synthesize styleClassName = styleClassName;
+
+#pragma mark Properties
+@synthesize mandatory = _mandatory;
+@synthesize visible = _visible;
+@synthesize editable = _editable;
+
+#pragma mark Validation
+@synthesize isValid = _isValid;
+
+#pragma mark Error
+@synthesize tooltipView= _tooltipView;
+
+#pragma mark AssociatedLabel
+@synthesize associatedLabel = _associatedLabel;
+
+#pragma mark Attributes
+@synthesize controlAttributes = _controlAttributes;
+
+#pragma mark Data
+@synthesize privateData = _privateData;
+
+#pragma mark Common
+@synthesize inInitMode = _inInitMode;
+@synthesize controlDelegate = _controlDelegate;
+@synthesize lastUpdateSender = _lastUpdateSender;
+
+
+
+/******************************************************/
+/* IMPLEMENTATION                                     */
+/******************************************************/
+
+#pragma mark - Initialization and deallocation
 -(instancetype)init {
     self = [super init];
     if(self) {
@@ -80,92 +108,19 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 #if !TARGET_INTERFACE_BUILDER
 
     self.controlDelegate = [[MDKControlDelegate alloc] initWithControl:self];
-//    [self.baseStyleClass applyStandardStyleOnComponent:self];
     self.errors = [NSMutableArray new];
     if(!self.sender) {
         self.sender = self;
     }
-    
+
 //    MFConfigurationHandler *registry = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
 //    self.mandatoryIndicator = [registry getStringProperty:MF_MANDATORY_INDICATOR];
 #endif
+
 }
 
 
--(void)setIsValid:(BOOL) isValid {
-    [self.controlDelegate setIsValid:isValid];
-}
-
-
-#pragma mark - MDK
-
--(void)setCustomStyleClass:(Class)customStyleClass {
-    _customStyleClass = customStyleClass;
-    [self.controlDelegate setCustomStyleClass:customStyleClass];
-}
-
-- (void)setI18nKey:(NSString *) defaultValue {
-    [self setData:defaultValue];
-}
-
-+(NSString *)getDataType {
-    return @"NSString";
-}
-
-
--(void)setData:(id)data {
-    NSString *fixedData = nil;
-    if(data && ![data isKindOfClass:NSClassFromString(@"MFKeyNotFound")]) {
-        fixedData = data;
-    }
-    else {
-        NSString *defaultValue = NSStringFromClass(self.class);
-        //PROTODO : Valeur par défaut i18n
-        fixedData = defaultValue;
-    }
-    fixedData = [self insertOrRemoveMandatoryIndicator:fixedData];
-    [self setDisplayComponentValue:fixedData];
-}
-
--(id)getData {
-    return [self displayComponentValue];
-}
-
--(NSString *)displayComponentValue {
-    return self.text;
-}
-
--(void)setDisplayComponentValue:(id)value {
-    if([value isKindOfClass:[NSString class]]) {
-        self.text = value;
-    }
-    else if([value isKindOfClass:[NSAttributedString class]]){
-        self.attributedText = value;
-    }
-}
-
-//-(NSInteger)validateWithParameters:(NSDictionary *)parameters {
-//    
-//    [self.errors removeAllObjects];
-//    if(parameters) {
-//        // Do some treatments with specific
-//    }
-//    NSInteger length = [[self displayComponentValue] length];
-//    NSError *error = nil;
-//    // Control's errros init or reinit
-//    NSInteger nbOfErrors = 0;
-//    
-//
-//    
-//    return nbOfErrors;
-//    
-//}
-
--(void)setEditable:(NSNumber *)editable {
-    _editable = editable;
-    self.userInteractionEnabled = [editable boolValue];
-}
-
+#pragma mark - Custom Methods
 -(NSString *) insertOrRemoveMandatoryIndicator:(NSString *)data {
     NSString *fixedString = data;
     if([self.mandatory isEqual: @1] && [data rangeOfString:self.mandatoryIndicator].location == NSNotFound) {
@@ -177,15 +132,76 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
     return fixedString;
 }
 
+-(NSString *)mandatoryIndicator {
+    if(!_mandatoryIndicator) {
+        _mandatoryIndicator = @"*";
+    }
+    return _mandatoryIndicator;
+}
+
+-(void) postInvalidate {
+    [self setData:[self getData]];
+}
+
+- (void)setI18nKey:(NSString *) defaultValue {
+    [self setData:defaultValue];
+}
 
 
-#pragma mark - Forwarding to binding delegate
 
 
+#pragma mark - Control Data Protocol
+-(void)setData:(id)data {
+    id fixedData = nil;
+    if(data && ![data isKindOfClass:NSClassFromString(@"MFKeyNotFound")]) {
+        fixedData = data;
+    }
+    else {
+        NSString *defaultValue = NSStringFromClass(self.class);
+        fixedData = defaultValue;
+    }
+    fixedData = [self insertOrRemoveMandatoryIndicator:fixedData];
+    
+    if([fixedData isKindOfClass:[NSString class]]) {
+        self.text = fixedData;
+    }
+    else if([fixedData isKindOfClass:[NSAttributedString class]]){
+        self.attributedText = fixedData;
+    }
+}
+
+-(id)getData {
+    return self.text;
+}
+
++(NSString *)getDataType {
+    return @"NSString";
+}
+
+
+
+
+
+#pragma mark - Validation
 -(BOOL) isValid {
     return ([self validate] == 0);
 }
 
+-(void)setIsValid:(BOOL) isValid {
+    [self.controlDelegate setIsValid:isValid];
+}
+
+-(NSInteger)validate {
+    return [self.controlDelegate validate];
+}
+
+-(NSArray *)controlValidators {
+    return  @[];
+}
+
+
+
+#pragma mark - Errors
 -(NSArray *)getErrors {
     return [self.controlDelegate getErrors];
 }
@@ -202,6 +218,46 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
     [self.controlDelegate setIsValid:!showError];
 }
 
+-(void)onErrorButtonClick:(id)sender {
+    [self.controlDelegate onErrorButtonClick:sender];
+}
+
+
+
+#pragma mark - Control Attributes
+-(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key {
+    [self.controlDelegate addControlAttribute:controlAttribute forKey:key];
+}
+
+
+
+#pragma mark - Control Properties Protocol
+-(void)setEditable:(NSNumber *)editable {
+    _editable = editable;
+    self.userInteractionEnabled = [editable boolValue];
+}
+
+-(void)setMandatory:(NSNumber *)mandatory {
+    _mandatory = mandatory;
+    [self postInvalidate];
+}
+
+-(void)setVisible:(NSNumber *)visible {
+    _visible = visible;
+    [self.controlDelegate setVisible:visible];
+}
+
+
+
+#pragma mark - Style
+-(void)setCustomStyleClass:(Class)customStyleClass {
+    _customStyleClass = customStyleClass;
+    [self.controlDelegate setCustomStyleClass:customStyleClass];
+}
+
+
+
+#pragma mark - Live Rendering
 -(void)prepareForInterfaceBuilder {
     [self.styleClass applyStandardStyleOnComponent:self];
     
@@ -213,44 +269,9 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
     }
 }
 
--(void)setMandatory:(NSNumber *)mandatory {
-    _mandatory = mandatory;
-    [self postInvalidate];
-}
 
--(void) postInvalidate {
-    [self setData:[self getData]];
-}
 
--(void)setVisible:(NSNumber *)visible {
-    _visible = visible;
-    [self.controlDelegate setVisible:visible];
-}
 
--(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key {
-    [self.controlDelegate addControlAttribute:controlAttribute forKey:key];
-}
 
--(void)onErrorButtonClick:(id)sender {
-    [self.controlDelegate onErrorButtonClick:sender];
-}
 
--(NSInteger)validate {
-    return [self.controlDelegate validate];
-}
-
--(NSArray *)controlValidators {
-    return  @[];
-}
-
--(void)addAccessories:(NSDictionary *)accessoryViews {
-    //nothing
-}
-
--(NSString *)mandatoryIndicator {
-    if(!_mandatoryIndicator) {
-        _mandatoryIndicator = @"*";
-    }
-    return _mandatoryIndicator;
-}
 @end

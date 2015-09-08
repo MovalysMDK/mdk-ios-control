@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E8219649-9A52-4F67-B54B-C78D92E7C4A4</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MDKControl</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2AB43D0650D84CD236235FDA2B1FF6CFEB4A86B0</key>
 		<string>git.ptx.fr.sopra:mdkcontrol.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MDKControl.xcodeproj</string>
+	<string>MDKControl.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2AB43D0650D84CD236235FDA2B1FF6CFEB4A86B0</key>

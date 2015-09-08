@@ -31,25 +31,51 @@
 @end
 
 @implementation MDKTextField
+
+/******************************************************/
+/* SYNTHESIZE                                         */
+/******************************************************/
+
+#pragma mark - Synthesize
+#pragma mark Style
 @synthesize styleClass = _styleClass;
-@synthesize componentInCellAtIndexPath = _componentInCellAtIndexPath;
-@synthesize localizedFieldDisplayName = _localizedFieldDisplayName;
-@synthesize inInitMode = _inInitMode;
-@synthesize controlDelegate = _bindingDelegate;
-@synthesize isValid = _isValid;
+@synthesize customStyleClass = _customStyleClass;
+@synthesize styleClassName = styleClassName;
+
+#pragma mark Properties
 @synthesize mandatory = _mandatory;
 @synthesize visible = _visible;
 @synthesize editable = _editable;
+
+#pragma mark Validation
+@synthesize isValid = _isValid;
+
+#pragma mark Error
 @synthesize tooltipView= _tooltipView;
-@synthesize styleClassName = _styleClassName;
-@synthesize componentValidation = _componentValidation;
-@synthesize controlAttributes = _controlAttributes;
-@synthesize associatedLabel = _associatedLabel;
-@synthesize targetDescriptors = _targetDescriptors;
 @synthesize errors = _errors;
-@synthesize lastUpdateSender = _lastUpdateSender;
+
+#pragma mark AssociatedLabel
+@synthesize associatedLabel = _associatedLabel;
+
+#pragma mark Attributes
+@synthesize controlAttributes = _controlAttributes;
+
+#pragma mark Data
 @synthesize privateData = _privateData;
-@synthesize customStyleClass = _customStyleClass;
+
+#pragma mark Common
+@synthesize inInitMode = _inInitMode;
+@synthesize controlDelegate = _controlDelegate;
+@synthesize lastUpdateSender = _lastUpdateSender;
+
+#pragma mark Changes
+@synthesize targetDescriptors = _targetDescriptors;
+
+
+/******************************************************/
+/* IMPLEMENTATION                                     */
+/******************************************************/
+
 
 #pragma mark - Initialization and deallocation
 -(instancetype)init {
@@ -80,13 +106,12 @@
     self.controlDelegate = [[MDKControlDelegate alloc] initWithControl:self];
     self.errors = [NSMutableArray new];
     self.extension = [[MDKTextFieldExtension alloc] init];
-   
+    
 #if !TARGET_INTERFACE_BUILDER
     if(!self.sender) {
         self.sender = self;
     }
     self.initializing = YES;
-    self.componentValidation = YES;
     [self addTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged|UIControlEventValueChanged];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignFirstResponder) name:ALERTVIEW_FAILED_SAVE_ACTION object:nil];
@@ -97,7 +122,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self removeTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged|UIControlEventValueChanged];
     self.targetDescriptors = nil;
-
+    
 }
 
 #pragma mark - TextField Methods
@@ -128,18 +153,8 @@
     
 }
 
-#pragma mark - Target Actions
--(void)textDidChange:(id)sender {
-    //    [self valueChanged:sender];
-}
 
--(void)innerTextDidChange:(id)sender {
-    [self valueChanged:sender];
-}
-
-#pragma mark - MDK
-
-
+#pragma mark - Custom methods
 -(void) addAccessories:(NSDictionary *) accessoryViews {
     for(UIView *view in accessoryViews.allValues) {
         [self addSubview:view];
@@ -150,15 +165,8 @@
     }
 }
 
-
-
-+(NSString *)getDataType {
-    return @"NSString";
-}
-
-
+#pragma mark - Control Data Protocol
 -(void)setData:(id)data {
-    
     id fixedData = data;
     if(data && ![data isKindOfClass:NSClassFromString(@"MFKeyNotFound")]) {
         NSString *stringData = (NSString *)data;
@@ -168,37 +176,21 @@
         fixedData = @"";
     }
     self.text = fixedData;
-        [self validate];
-
-        self.initializing = NO;
+    [self validate];
+    self.initializing = NO;
 }
 
 -(id)getData {
-    return [self displayComponentValue];
-}
-
--(NSString *)displayComponentValue {
     return self.text;
 }
 
--(void)setDisplayComponentValue:(id)value {
-    if([value isKindOfClass:[NSString class]]) {
-        self.text = value;
-    }
-    else if([value isKindOfClass:[NSAttributedString class]]){
-        self.attributedText = value;
-    }
++(NSString *) getDataType {
+    return @"NSString";
 }
 
 
--(void)setEditable:(NSNumber *)editable {
-    _editable = editable;
-    self.userInteractionEnabled = [editable boolValue];
-    [self applyStandardStyle];
-}
 
-#pragma mark - Forwarding to binding delegate
-
+#pragma mark - Validation
 -(void)setIsValid:(BOOL) isValid {
     [self.controlDelegate setIsValid:isValid];
 }
@@ -207,6 +199,17 @@
     return ([self validate] == 0);
 }
 
+-(NSArray *)controlValidators {
+    return @[];
+}
+
+-(NSInteger)validate {
+    return [self.controlDelegate validate];
+}
+
+
+
+#pragma mark - Errors
 -(NSArray *)getErrors {
     return [self.controlDelegate getErrors];
 }
@@ -228,11 +231,7 @@
 }
 
 
--(void)setVisible:(NSNumber *)visible {
-    _visible = visible;
-    [self.controlDelegate setVisible:visible];
-}
-
+#pragma mark - Control attributes
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
     _controlAttributes = controlAttributes;
     self.mandatory = controlAttributes[@"mandatory"] ? controlAttributes[@"mandatory"] : @1;
@@ -243,17 +242,49 @@
     self.visible = controlAttributes[@"visible"] ? controlAttributes[@"visible"] : @1;
 }
 
+-(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key {
+    [self.controlDelegate addControlAttribute:controlAttribute forKey:key];
+}
+
+
+#pragma mark - Properties
 -(void)setMandatory:(NSNumber *)mandatory {
     _mandatory = mandatory;
     if(self.associatedLabel) {
         self.associatedLabel.mandatory = _mandatory;
     }
 }
+-(void)setEditable:(NSNumber *)editable {
+    _editable = editable;
+    self.userInteractionEnabled = [editable boolValue];
+    [self applyStandardStyle];
+}
+
+-(void)setVisible:(NSNumber *)visible {
+    _visible = visible;
+    [self.controlDelegate setVisible:visible];
+}
 
 
+#pragma mark - Associated Label
 -(void)setAssociatedLabel:(MDKLabel *)associatedLabel {
     _associatedLabel = associatedLabel;
     self.associatedLabel.mandatory = self.mandatory;
+}
+
+
+
+#pragma mark - Style
+-(void)setCustomStyleClass:(Class)customStyleClass {
+    _customStyleClass = customStyleClass;
+    [self.controlDelegate setCustomStyleClass:customStyleClass];
+}
+
+
+
+#pragma mark - Changes
+-(void)innerTextDidChange:(id)sender {
+    [self valueChanged:sender];
 }
 
 -(void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
@@ -280,18 +311,7 @@
 #pragma clang diagnostic pop
 
 
--(NSArray *)controlValidators {
-    return @[];
-}
-
--(NSInteger)validate {
-    return [self.controlDelegate validate];
-}
-
--(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key {
-    [self.controlDelegate addControlAttribute:controlAttribute forKey:key];
-}
-
+#pragma mark - Live Rendering
 -(void)prepareForInterfaceBuilder {
     [self applyStandardStyle];
     
@@ -303,9 +323,7 @@
     }
 }
 
--(void)setCustomStyleClass:(Class)customStyleClass {
-    _customStyleClass = customStyleClass;
-    [self.controlDelegate setCustomStyleClass:customStyleClass];
-}
+
+
 
 @end

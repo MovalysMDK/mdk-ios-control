@@ -80,6 +80,8 @@
 		B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */; };
 		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0308D521B9F1673000817D3 /* MDKControlCustomStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */; };
+		B0308D581B9F1C64000817D3 /* MDKContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B0308D561B9F1C64000817D3 /* MDKContext.h */; };
+		B0308D591B9F1C64000817D3 /* MDKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B0308D571B9F1C64000817D3 /* MDKContext.m */; };
 		B044B1BE1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B044B1BF1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */; };
 		B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -208,6 +210,8 @@
 		B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCommandHandler.m; sourceTree = "<group>"; };
 		B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandProtocol.h; sourceTree = "<group>"; };
 		B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlCustomStyleProtocol.h; sourceTree = "<group>"; };
+		B0308D561B9F1C64000817D3 /* MDKContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKContext.h; sourceTree = "<group>"; };
+		B0308D571B9F1C64000817D3 /* MDKContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKContext.m; sourceTree = "<group>"; };
 		B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSequentialTooltipManager.h; sourceTree = "<group>"; };
 		B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSequentialTooltipManager.m; sourceTree = "<group>"; };
 		B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTooltipManager.h; sourceTree = "<group>"; };
@@ -479,6 +483,8 @@
 				B08C18F01B9DD1AC00D6F93A /* MDKConstants.h */,
 				B08C18F11B9DD1AC00D6F93A /* MDKConstants.m */,
 				B08C18F51B9DDA9000D6F93A /* Utils.h */,
+				B0308D561B9F1C64000817D3 /* MDKContext.h */,
+				B0308D571B9F1C64000817D3 /* MDKContext.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -683,6 +689,7 @@
 				B02157631B9DAEEA001860B5 /* MDKLengthFieldValidator.h in Headers */,
 				B08C193E1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.h in Headers */,
 				B02157B71B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.h in Headers */,
+				B0308D581B9F1C64000817D3 /* MDKContext.h in Headers */,
 				B02156C71B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h in Headers */,
 				B02157C51B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.h in Headers */,
 				B0FFDA6C1B33FAFB00CA6E5E /* MDKControl.h in Headers */,
@@ -844,6 +851,7 @@
 				B02156CE1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.m in Sources */,
 				B02157B81B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.m in Sources */,
 				B02157C21B9DAF30001860B5 /* MDKInvalidUrlValueUIValidationError.m in Sources */,
+				B0308D591B9F1C64000817D3 /* MDKContext.m in Sources */,
 				B02157DA1B9DAFA0001860B5 /* MDKSimpleComponentProvider.m in Sources */,
 				B08C19341B9DE9A500D6F93A /* MDKBaseControl.m in Sources */,
 				B08C19031B9DE37300D6F93A /* MDKTags.m in Sources */,

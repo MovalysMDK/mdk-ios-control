@@ -35,34 +35,9 @@
 @property (nonatomic, strong) MDKControlDelegate *controlDelegate;
 
 /*!
- * @brief UI control display name.
- */
-@property(nonatomic, strong) NSString *localizedFieldDisplayName;
-
-/*!
- * @brief The name of the custom class to use to render component style
- */
-@property (nonatomic, strong) NSString *styleClassName;
-
-/*!
- * @brief The instance of the style lass to use to render the component style.
- */
-@property (nonatomic, strong) NSObject<MDKStyleProtocol> *styleClass;
-
-/*!
- * @brief Indicates if the component self-validation is active
- */
-@property (nonatomic) BOOL componentValidation;
-
-/*!
  * @brief initialisation
  */
 @property (nonatomic) BOOL inInitMode;
-
-/*!
- * @brief L'IndexPath de la cellule dans laquelle se trouve ce composant.
- */
-@property (nonatomic, strong) NSIndexPath *componentInCellAtIndexPath;
 
 /*!
  * @brief The last object that updates the valus of this control.
