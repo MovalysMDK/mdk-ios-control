@@ -16,11 +16,6 @@
 
 #import "Utils.h"
 
-//#import <MFCore/MFCoreFoundationExt.h>
-//#import <MFCore/MFCoreBean.h>
-//#import <MFCore/MFCoreLog.h>
-//#import <MFCore/MFCoreError.h>
-
 #import "Protocol.h"
 
 #import "MDKBaseControl.h"
@@ -156,7 +151,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 
 -(id)getData {
     
-//    MFCoreLogError(@"The component %@ should have implemented the method called \"getData\"",self.class);
+    NSLog(@"The component %@ should have implemented the method called \"getData\"",self.class);
     return nil;
 }
 
@@ -169,7 +164,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 }
 
 + (NSString *) getDataType {
-//    MFCoreLogError(@"The component %@ should have implemented the method called \"getDataType\"",self.class);
+    NSLog(@"The component %@ should have implemented the method called \"getDataType\"",self.class);
     return nil;
 }
 
