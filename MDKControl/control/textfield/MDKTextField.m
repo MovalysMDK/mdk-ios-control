@@ -181,7 +181,7 @@
 }
 
 -(id)getData {
-    return self.text;
+    return self.attributedText ? self.attributedText : self.text;
 }
 
 +(NSString *) getDataType {

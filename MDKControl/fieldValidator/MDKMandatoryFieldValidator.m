@@ -38,7 +38,7 @@ NSString *FIELD_VALIDATOR_ATTRIBUTE_MANDATORY = @"mandatory";
 
 -(NSError *)validate:(id)value withCurrentState:(NSDictionary *)currentState withParameters:(NSDictionary *)parameters {
     NSError *result = nil;
-    if([parameters[FIELD_VALIDATOR_ATTRIBUTE_MANDATORY] boolValue] && [value isKindOfClass:[NSString class]]) {
+    if([parameters[FIELD_VALIDATOR_ATTRIBUTE_MANDATORY] boolValue] && ([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSAttributedString class]])) {
         NSString *stringValue = (NSString *)value;
         if(!stringValue || stringValue.length == 0) {
             result = [[MDKMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
