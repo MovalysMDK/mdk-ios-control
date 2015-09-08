@@ -25,5 +25,8 @@
     [super tearDown];
 }
 
+-testDefault {
+    XCTAssertNil(nil);
+}
 
 @end
