@@ -110,6 +110,5 @@ NSString * REGEX_BUTTON_RIGHT_CONSTRAINT = @"REGEX_BUTTON_RIGHT_CONSTRAINT";
 
 -(NSString *) accessoryButtonImageName {
     @throw [[NSException alloc] initWithName:@"Unimplemented" reason:@"You should implement \"accessoryButtonName\"" userInfo:nil];
-    return nil;
 }
 @end

@@ -12,26 +12,41 @@
  * GNU Lesser General Public License for more details.
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ *
+ * Copyright (c) 2014 Joe Fryer <joe.d.fryer@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
-//
-//  JDFSequentialTooltipManager.m
-//  JoeTooltips
-//
-//  Created by Joe Fryer on 17/11/2014.
-//  Copyright (c) 2014 Joe Fryer. All rights reserved.
-//
 
-#import "JDFSequentialTooltipManager.h"
+#import "MDKSequentialTooltipManager.h"
 
 
-@interface JDFSequentialTooltipManager ()
+@interface MDKSequentialTooltipManager ()
 
-@property (nonatomic, strong) JDFTooltipView *currentlyShowingTooltip;
+@property (nonatomic, strong) MDKTooltipView *currentlyShowingTooltip;
 
 @end
 
 
-@implementation JDFSequentialTooltipManager
+@implementation MDKSequentialTooltipManager
 
 #pragma mark - Showing Tooltips
 
@@ -60,7 +75,7 @@
     }
 }
 
-- (void)showTooltip:(JDFTooltipView *)tooltip
+- (void)showTooltip:(MDKTooltipView *)tooltip
 {
     if (self.showsBackdropView) {
         [tooltip showInView:self.backdropView];

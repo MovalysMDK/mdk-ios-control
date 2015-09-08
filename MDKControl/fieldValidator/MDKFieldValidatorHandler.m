@@ -35,10 +35,8 @@
     
     [attributes enumerateObjectsUsingBlock:^(NSString *attribute, NSUInteger idx, BOOL *stop) {
         id<MDKFieldValidatorProtocol> fieldValidatorInstance = completeFieldValidatorDictionary[attribute];
-        if(fieldValidatorInstance) {
-            if([fieldValidatorInstance canValidControl:control]) {
-                [result addObject:fieldValidatorInstance];
-            }
+        if(fieldValidatorInstance && [fieldValidatorInstance canValidControl:control]) {
+            [result addObject:fieldValidatorInstance];
         }
     }];
     

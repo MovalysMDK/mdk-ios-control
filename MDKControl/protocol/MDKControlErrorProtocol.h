@@ -15,7 +15,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "JDFTooltipView.h"
+#import "MDKTooltipView.h"
 
 @protocol MDKControlErrorProtocol <NSObject>
 
@@ -30,7 +30,7 @@
 /*!
  * @brief The tooltip displayed when the user taps on the buttonError of the errorView
  */
-@property (nonatomic, strong) JDFTooltipView *tooltipView;
+@property (nonatomic, strong) MDKTooltipView *tooltipView;
 
 #pragma mark - Methods
 

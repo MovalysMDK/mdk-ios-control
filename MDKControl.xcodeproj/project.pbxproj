@@ -81,17 +81,17 @@
 		B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */; };
 		B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */; };
 		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; };
-		B044B1BE1B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B31B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.h */; };
-		B044B1BF1B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B41B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.m */; };
-		B044B1C01B9DF3D900A4CCF3 /* JDFTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B51B9DF3D900A4CCF3 /* JDFTooltipManager.h */; };
-		B044B1C11B9DF3D900A4CCF3 /* JDFTooltipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B61B9DF3D900A4CCF3 /* JDFTooltipManager.m */; };
-		B044B1C21B9DF3D900A4CCF3 /* JDFTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B71B9DF3D900A4CCF3 /* JDFTooltips.h */; };
-		B044B1C31B9DF3D900A4CCF3 /* JDFTooltipView.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B81B9DF3D900A4CCF3 /* JDFTooltipView.h */; };
-		B044B1C41B9DF3D900A4CCF3 /* JDFTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B91B9DF3D900A4CCF3 /* JDFTooltipView.m */; };
-		B044B1C51B9DF3D900A4CCF3 /* UILabel+JDFTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1BA1B9DF3D900A4CCF3 /* UILabel+JDFTooltips.h */; };
-		B044B1C61B9DF3D900A4CCF3 /* UILabel+JDFTooltips.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1BB1B9DF3D900A4CCF3 /* UILabel+JDFTooltips.m */; };
-		B044B1C71B9DF3D900A4CCF3 /* UIView+JDFTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1BC1B9DF3D900A4CCF3 /* UIView+JDFTooltips.h */; };
-		B044B1C81B9DF3D900A4CCF3 /* UIView+JDFTooltips.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1BD1B9DF3D900A4CCF3 /* UIView+JDFTooltips.m */; };
+		B044B1BE1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */; };
+		B044B1BF1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */; };
+		B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */; };
+		B044B1C11B9DF3D900A4CCF3 /* MDKTooltipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B61B9DF3D900A4CCF3 /* MDKTooltipManager.m */; };
+		B044B1C21B9DF3D900A4CCF3 /* MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B71B9DF3D900A4CCF3 /* MDKTooltips.h */; };
+		B044B1C31B9DF3D900A4CCF3 /* MDKTooltipView.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B81B9DF3D900A4CCF3 /* MDKTooltipView.h */; };
+		B044B1C41B9DF3D900A4CCF3 /* MDKTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B91B9DF3D900A4CCF3 /* MDKTooltipView.m */; };
+		B044B1C51B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1BA1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h */; };
+		B044B1C61B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1BB1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m */; };
+		B044B1C71B9DF3D900A4CCF3 /* UIView+MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1BC1B9DF3D900A4CCF3 /* UIView+MDKTooltips.h */; };
+		B044B1C81B9DF3D900A4CCF3 /* UIView+MDKTooltips.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1BD1B9DF3D900A4CCF3 /* UIView+MDKTooltips.m */; };
 		B08C18F21B9DD1AC00D6F93A /* MDKConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C18F01B9DD1AC00D6F93A /* MDKConstants.h */; };
 		B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C18F11B9DD1AC00D6F93A /* MDKConstants.m */; };
 		B08C18FB1B9DDC5700D6F93A /* MDKControlEventsDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C18F91B9DDC5700D6F93A /* MDKControlEventsDescriptor.h */; };
@@ -210,17 +210,17 @@
 		B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandHandler.h; sourceTree = "<group>"; };
 		B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCommandHandler.m; sourceTree = "<group>"; };
 		B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandProtocol.h; sourceTree = "<group>"; };
-		B044B1B31B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFSequentialTooltipManager.h; sourceTree = "<group>"; };
-		B044B1B41B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFSequentialTooltipManager.m; sourceTree = "<group>"; };
-		B044B1B51B9DF3D900A4CCF3 /* JDFTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFTooltipManager.h; sourceTree = "<group>"; };
-		B044B1B61B9DF3D900A4CCF3 /* JDFTooltipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFTooltipManager.m; sourceTree = "<group>"; };
-		B044B1B71B9DF3D900A4CCF3 /* JDFTooltips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFTooltips.h; sourceTree = "<group>"; };
-		B044B1B81B9DF3D900A4CCF3 /* JDFTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDFTooltipView.h; sourceTree = "<group>"; };
-		B044B1B91B9DF3D900A4CCF3 /* JDFTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDFTooltipView.m; sourceTree = "<group>"; };
-		B044B1BA1B9DF3D900A4CCF3 /* UILabel+JDFTooltips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+JDFTooltips.h"; sourceTree = "<group>"; };
-		B044B1BB1B9DF3D900A4CCF3 /* UILabel+JDFTooltips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+JDFTooltips.m"; sourceTree = "<group>"; };
-		B044B1BC1B9DF3D900A4CCF3 /* UIView+JDFTooltips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JDFTooltips.h"; sourceTree = "<group>"; };
-		B044B1BD1B9DF3D900A4CCF3 /* UIView+JDFTooltips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JDFTooltips.m"; sourceTree = "<group>"; };
+		B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSequentialTooltipManager.h; sourceTree = "<group>"; };
+		B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSequentialTooltipManager.m; sourceTree = "<group>"; };
+		B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTooltipManager.h; sourceTree = "<group>"; };
+		B044B1B61B9DF3D900A4CCF3 /* MDKTooltipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKTooltipManager.m; sourceTree = "<group>"; };
+		B044B1B71B9DF3D900A4CCF3 /* MDKTooltips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTooltips.h; sourceTree = "<group>"; };
+		B044B1B81B9DF3D900A4CCF3 /* MDKTooltipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTooltipView.h; sourceTree = "<group>"; };
+		B044B1B91B9DF3D900A4CCF3 /* MDKTooltipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKTooltipView.m; sourceTree = "<group>"; };
+		B044B1BA1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MDKTooltips.h"; sourceTree = "<group>"; };
+		B044B1BB1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MDKTooltips.m"; sourceTree = "<group>"; };
+		B044B1BC1B9DF3D900A4CCF3 /* UIView+MDKTooltips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MDKTooltips.h"; sourceTree = "<group>"; };
+		B044B1BD1B9DF3D900A4CCF3 /* UIView+MDKTooltips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDKTooltips.m"; sourceTree = "<group>"; };
 		B044B1C91B9DF3ED00A4CCF3 /* Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
 		B044B1CA1B9DF45400A4CCF3 /* ErrorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorView.h; sourceTree = "<group>"; };
 		B044B1CB1B9DF47500A4CCF3 /* ErrorViewTooltip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorViewTooltip.h; sourceTree = "<group>"; };
@@ -423,18 +423,18 @@
 		B021576F1B9DAF30001860B5 /* tooltip */ = {
 			isa = PBXGroup;
 			children = (
-				B044B1B31B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.h */,
-				B044B1B41B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.m */,
-				B044B1B51B9DF3D900A4CCF3 /* JDFTooltipManager.h */,
-				B044B1B61B9DF3D900A4CCF3 /* JDFTooltipManager.m */,
-				B044B1B71B9DF3D900A4CCF3 /* JDFTooltips.h */,
-				B044B1B81B9DF3D900A4CCF3 /* JDFTooltipView.h */,
-				B044B1B91B9DF3D900A4CCF3 /* JDFTooltipView.m */,
-				B044B1BA1B9DF3D900A4CCF3 /* UILabel+JDFTooltips.h */,
-				B044B1BB1B9DF3D900A4CCF3 /* UILabel+JDFTooltips.m */,
-				B044B1BC1B9DF3D900A4CCF3 /* UIView+JDFTooltips.h */,
-				B044B1BD1B9DF3D900A4CCF3 /* UIView+JDFTooltips.m */,
 				B044B1CB1B9DF47500A4CCF3 /* ErrorViewTooltip.h */,
+				B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */,
+				B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */,
+				B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */,
+				B044B1B61B9DF3D900A4CCF3 /* MDKTooltipManager.m */,
+				B044B1B71B9DF3D900A4CCF3 /* MDKTooltips.h */,
+				B044B1B81B9DF3D900A4CCF3 /* MDKTooltipView.h */,
+				B044B1B91B9DF3D900A4CCF3 /* MDKTooltipView.m */,
+				B044B1BA1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h */,
+				B044B1BB1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m */,
+				B044B1BC1B9DF3D900A4CCF3 /* UIView+MDKTooltips.h */,
+				B044B1BD1B9DF3D900A4CCF3 /* UIView+MDKTooltips.m */,
 			);
 			path = tooltip;
 			sourceTree = "<group>";
@@ -644,33 +644,33 @@
 				B02156E51B9DAD59001860B5 /* MDKControlAttributesProtocol.h in Headers */,
 				B02156CF1B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h in Headers */,
 				B08C19461B9DE9A500D6F93A /* MDKTextField.h in Headers */,
-				B044B1C21B9DF3D900A4CCF3 /* JDFTooltips.h in Headers */,
+				B044B1C21B9DF3D900A4CCF3 /* MDKTooltips.h in Headers */,
 				B08C19371B9DE9A500D6F93A /* MDKControlProtocol.h in Headers */,
 				B02157BB1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.h in Headers */,
 				B08C18F21B9DD1AC00D6F93A /* MDKConstants.h in Headers */,
-				B044B1BE1B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.h in Headers */,
+				B044B1BE1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h in Headers */,
 				B02157C31B9DAF30001860B5 /* MDKMandatoryFieldUIValidationError.h in Headers */,
 				B02156E81B9DAD59001860B5 /* MDKControlPropertiesProtocol.h in Headers */,
 				B08C193D1B9DE9A500D6F93A /* MDKRegexTextExtensionProtocol.h in Headers */,
 				B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */,
 				B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */,
 				B08C19331B9DE9A500D6F93A /* MDKBaseControl.h in Headers */,
-				B044B1C01B9DF3D900A4CCF3 /* JDFTooltipManager.h in Headers */,
+				B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */,
 				B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */,
 				B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */,
 				B021575C1B9DAEEA001860B5 /* MDKFieldValidatorHandler.h in Headers */,
 				B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */,
-				B044B1C31B9DF3D900A4CCF3 /* JDFTooltipView.h in Headers */,
+				B044B1C31B9DF3D900A4CCF3 /* MDKTooltipView.h in Headers */,
 				B02157C11B9DAF30001860B5 /* MDKInvalidUrlValueUIValidationError.h in Headers */,
 				B02156E61B9DAD59001860B5 /* MDKControlDataProtocol.h in Headers */,
 				B08C18FB1B9DDC5700D6F93A /* MDKControlEventsDescriptor.h in Headers */,
 				B02158091B9DB27D001860B5 /* MDKAlertView.h in Headers */,
 				B02157BF1B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.h in Headers */,
-				B044B1C71B9DF3D900A4CCF3 /* UIView+JDFTooltips.h in Headers */,
+				B044B1C71B9DF3D900A4CCF3 /* UIView+MDKTooltips.h in Headers */,
 				B02156E31B9DAD59001860B5 /* MDKBackgroundViewProtocol.h in Headers */,
 				B02156E71B9DAD59001860B5 /* MDKControlErrorProtocol.h in Headers */,
 				B08C19401B9DE9A500D6F93A /* MDKTextFieldExtension.h in Headers */,
-				B044B1C51B9DF3D900A4CCF3 /* UILabel+JDFTooltips.h in Headers */,
+				B044B1C51B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h in Headers */,
 				B02156BC1B9DAC6E001860B5 /* Style.h in Headers */,
 				B02157CB1B9DAF30001860B5 /* MDKValidationError.h in Headers */,
 				B02157B31B9DAF30001860B5 /* MDKTooLongStringUIValidationError.h in Headers */,
@@ -808,11 +808,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B021575D1B9DAEEA001860B5 /* MDKFieldValidatorHandler.m in Sources */,
-				B044B1C41B9DF3D900A4CCF3 /* JDFTooltipView.m in Sources */,
+				B044B1C41B9DF3D900A4CCF3 /* MDKTooltipView.m in Sources */,
 				B021580A1B9DB27D001860B5 /* MDKAlertView.m in Sources */,
-				B044B1C11B9DF3D900A4CCF3 /* JDFTooltipManager.m in Sources */,
+				B044B1C11B9DF3D900A4CCF3 /* MDKTooltipManager.m in Sources */,
 				B08C195B1B9DEEED00D6F93A /* MDKLabel.m in Sources */,
-				B044B1C81B9DF3D900A4CCF3 /* UIView+JDFTooltips.m in Sources */,
+				B044B1C81B9DF3D900A4CCF3 /* UIView+MDKTooltips.m in Sources */,
 				B08C193F1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.m in Sources */,
 				B08C19471B9DE9A500D6F93A /* MDKTextField.m in Sources */,
 				B08C19391B9DE9A500D6F93A /* MDKRenderableControl.m in Sources */,
@@ -821,7 +821,7 @@
 				B02156C81B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m in Sources */,
 				B02157C01B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.m in Sources */,
 				B08C19511B9DE9A500D6F93A /* MDKRegexTextField.m in Sources */,
-				B044B1C61B9DF3D900A4CCF3 /* UILabel+JDFTooltips.m in Sources */,
+				B044B1C61B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m in Sources */,
 				B021579F1B9DAF30001860B5 /* MDKErrorView.m in Sources */,
 				B02156BA1B9DAC6E001860B5 /* MDKLabelStyle.m in Sources */,
 				B02157661B9DAEEA001860B5 /* MDKMandatoryFieldValidator.m in Sources */,
@@ -840,7 +840,7 @@
 				B02156D21B9DAC6E001860B5 /* MDKTextFieldStyle.m in Sources */,
 				B02157641B9DAEEA001860B5 /* MDKLengthFieldValidator.m in Sources */,
 				B02156B81B9DAC6E001860B5 /* UIView+Styleable.m in Sources */,
-				B044B1BF1B9DF3D900A4CCF3 /* JDFSequentialTooltipManager.m in Sources */,
+				B044B1BF1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m in Sources */,
 				B02157B41B9DAF30001860B5 /* MDKTooLongStringUIValidationError.m in Sources */,
 				B02156B41B9DAC6E001860B5 /* MDKDefaultStyle.m in Sources */,
 				B02157B61B9DAF30001860B5 /* MDKTooShortStringUIValidationError.m in Sources */,

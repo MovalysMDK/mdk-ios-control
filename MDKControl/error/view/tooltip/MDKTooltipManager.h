@@ -12,34 +12,49 @@
  * GNU Lesser General Public License for more details.
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ *
+ * Copyright (c) 2014 Joe Fryer <joe.d.fryer@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
-//
-//  JDFTooltipManager.h
-//  JoeTooltips
-//
-//  Created by Joe Fryer on 12/11/2014.
-//  Copyright (c) 2014 Joe Fryer. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 
 // Tooltips
-#import "JDFTooltipView.h"
+#import "MDKTooltipView.h"
 
 
 /*!
- *  JDFTooltipManager manages a set of JDFTooltipViews. It assists in showing the tooltips, and provides the option to show a backdrop behind the tooltips while they are showing.
+ *  MDKTooltipManager manages a set of MDKTooltipViews. It assists in showing the tooltips, and provides the option to show a backdrop behind the tooltips while they are showing.
  
     Add tooltips to the manager either by creating them yourself then using addTooltip:/addTooltips:, or by using one of the convenience methods provided.
  
-    Calling showAllTooltips: will show all of the tooltips at once. If you wish to show them sequentially instead, you should use JDFTSequentialTooltipManager instead. Use hideAllTooltipsAnimated: to hide all tooltips.
+    Calling showAllTooltips: will show all of the tooltips at once. If you wish to show them sequentially instead, you should use MDKTSequentialTooltipManager instead. Use hideAllTooltipsAnimated: to hide all tooltips.
  */
-@interface JDFTooltipManager : NSObject
+@interface MDKTooltipManager : NSObject
 
 #pragma mark Views
 
 /*!
- *  The tooltips currently being managed by the JDFTooltipManager
+ *  The tooltips currently being managed by the MDKTooltipManager
  */
 @property (nonatomic, readonly) NSArray *tooltips;
 
@@ -74,7 +89,7 @@
 @property (nonatomic) CGFloat backdropAlpha;
 
 /*!
- *  Indicates whether a tap on the backdropView triggers an action. For JDFTooltipManager, this action is hideAllTooltipsAnimated:. Default is YES.
+ *  Indicates whether a tap on the backdropView triggers an action. For MDKTooltipManager, this action is hideAllTooltipsAnimated:. Default is YES.
  */
 @property (nonatomic) BOOL backdropTapActionEnabled;
 
@@ -127,21 +142,21 @@
 #pragma mark Initialisation
 
 /*!
- *  Returns an initialised JDFTooltipManager for use showing tooltips in the specified view.
+ *  Returns an initialised MDKTooltipManager for use showing tooltips in the specified view.
  *
  *  @param view The view in which tooltips will be shown (as well as the backdropView).
  *
- *  @return An initialised JDFTooltipManager.
+ *  @return An initialised MDKTooltipManager.
  */
 - (instancetype)initWithHostView:(UIView *)view;
 
 /*!
- *  Returns an initialised JDFTooltipManager for use showing tooltips in the specified view, with the supplied tooltips.
+ *  Returns an initialised MDKTooltipManager for use showing tooltips in the specified view, with the supplied tooltips.
  *
  *  @param view     The view in which tooltips will be shown (as well as the backdropView).
- *  @param tooltips An array of JDFTooltipViews to be added to the manager
+ *  @param tooltips An array of MDKTooltipViews to be added to the manager
  *
- *  @return An initialised JDFTooltipManager.
+ *  @return An initialised MDKTooltipManager.
  */
 - (instancetype)initWithHostView:(UIView *)view tooltips:(NSArray *)tooltips NS_DESIGNATED_INITIALIZER;
 
@@ -151,19 +166,19 @@
 /*!
  *  Adds the supplied tooltips to the manager.
  *
- *  @param tooltips An array of JDFToolipViews.
+ *  @param tooltips An array of MDKToolipViews.
  */
 - (void)addTooltips:(NSArray *)tooltips;
 
 /*!
  *  Adds the supplied tooltip to the manager.
  *
- *  @param tooltip The JDFTooltipView to be added to the manager.
+ *  @param tooltip The MDKTooltipView to be added to the manager.
  */
-- (void)addTooltip:(JDFTooltipView *)tooltip;
+- (void)addTooltip:(MDKTooltipView *)tooltip;
 
 /*!
- *  Initialises a JDFTooltipView with @c initWithTargetPoint:hostView:tooltipText:arrowDirection:width: and adds it to the manager.
+ *  Initialises a MDKTooltipView with @c initWithTargetPoint:hostView:tooltipText:arrowDirection:width: and adds it to the manager.
  *
  *  @param targetPoint    The target point for the arrow.
  *  @param tooltipText    The tooltip text.
@@ -171,10 +186,10 @@
  *  @param hostView       The Host View that the tooltip will be shown in.
  *  @param width          The width of the tooltip. If the text goes beyond this width, the tooltip will be resized vertically to accomodate it.
  */
-- (void)addTooltipWithTargetPoint:(CGPoint)targetPoint tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection hostView:(UIView *)hostView width:(CGFloat)width;
+- (void)addTooltipWithTargetPoint:(CGPoint)targetPoint tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection hostView:(UIView *)hostView width:(CGFloat)width;
 
 /*!
- *  Initialises a JDFTooltipView with @c initWithTargetPoint:hostView:tooltipText:arrowDirection:width:showCompletionBlock:hideCompletionBlock: and adds it to the manager.
+ *  Initialises a MDKTooltipView with @c initWithTargetPoint:hostView:tooltipText:arrowDirection:width:showCompletionBlock:hideCompletionBlock: and adds it to the manager.
  *
  *  @param targetPoint          The target point for the arrow.
  *  @param tooltipText          The tooltip text.
@@ -184,10 +199,10 @@
  *  @param showCompletionBlock  Completion block that is executed after the tooltip is shown.
  *  @param hideCompletionBlock  Completion block that is executed after the tooltip is hidden.
  */
-- (void)addTooltipWithTargetPoint:(CGPoint)targetPoint tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection hostView:(UIView *)hostView width:(CGFloat)width showCompletionBlock:(JDFTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(JDFTooltipViewCompletionBlock)hideCompletionBlock;
+- (void)addTooltipWithTargetPoint:(CGPoint)targetPoint tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection hostView:(UIView *)hostView width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock;
 
 /*!
- *  Initialises a JDFTooltipView with @c initWithTargetView:hostView:tooltipText:arrowDirection:width: and adds it to the manager.
+ *  Initialises a MDKTooltipView with @c initWithTargetView:hostView:tooltipText:arrowDirection:width: and adds it to the manager.
  *
  *  @param targetView     The target view that the tooltip will point towards.
  *  @param hostView       The Host View that the tooltip will be shown in.
@@ -195,10 +210,10 @@
  *  @param arrowDirection The direction of the arrow.
  *  @param width          The width of the tooltip. If the text goes beyond this width, the tooltip will be resized vertically to accomodate it.
  */
-- (void)addTooltipWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
+- (void)addTooltipWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
 
 /*!
- *  Initialises a JDFTooltipView with @c initWithTargetView:hostView:tooltipText:arrowDirection:width:showCompletionBlock:hideCompletionBlock: and adds it to the manager.
+ *  Initialises a MDKTooltipView with @c initWithTargetView:hostView:tooltipText:arrowDirection:width:showCompletionBlock:hideCompletionBlock: and adds it to the manager.
  *
  *  @param targetView           The target view that the tooltip will point towards.
  *  @param hostView             The Host View that the tooltip will be shown in.
@@ -208,10 +223,10 @@
  *  @param showCompletionBlock  Completion block that is executed after the tooltip is shown.
  *  @param hideCompletionBlock  Completion block that is executed after the tooltip is hidden.
  */
-- (void)addTooltipWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(JDFTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(JDFTooltipViewCompletionBlock)hideCompletionBlock;
+- (void)addTooltipWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock;
 
 /*!
- *  Initialises a JDFTooltipView with @c initWithTargetBarButtonItem:hostView:tooltipText:arrowDirection:width: and adds it to the manager.
+ *  Initialises a MDKTooltipView with @c initWithTargetBarButtonItem:hostView:tooltipText:arrowDirection:width: and adds it to the manager.
  *
  *  @param barButtonItem        The target bar button item that the tooltip will point towards.
  *  @param hostView             The Host View that the tooltip will be shown in.
@@ -219,10 +234,10 @@
  *  @param arrowDirection       The direction of the arrow.
  *  @param width                The width of the tooltip. If the text goes beyond this width, the tooltip will be resized vertically to accomodate it.
  */
-- (void)addTooltipWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
+- (void)addTooltipWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
 
 /*!
- *  Initialises a JDFTooltipView with @c initWithTargetBarButtonItem:hostView:tooltipText:arrowDirection:width:showCompletionBlock:hideCompletionBlock and adds it to the manager.
+ *  Initialises a MDKTooltipView with @c initWithTargetBarButtonItem:hostView:tooltipText:arrowDirection:width:showCompletionBlock:hideCompletionBlock and adds it to the manager.
  *
  *  @param barButtonItem        The target bar button item that the tooltip will point towards.
  *  @param hostView             The Host View that the tooltip will be shown in.
@@ -232,7 +247,7 @@
  *  @param showCompletionBlock  Completion block that is executed after the tooltip is shown.
  *  @param hideCompletionBlock  Completion block that is executed after the tooltip is hidden.
  */
-- (void)addTooltipWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(JDFTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(JDFTooltipViewCompletionBlock)hideCompletionBlock;
+- (void)addTooltipWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock;
 
 
 #pragma mark Showing/Hiding Tooltips

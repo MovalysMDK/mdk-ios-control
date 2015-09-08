@@ -51,7 +51,7 @@ IB_DESIGNABLE
 /*! 
  * Info-bulle affichant la liste des erreurs
  */
-@property (nonatomic, strong) JDFTooltipView *baseTooltipView;
+@property (nonatomic, strong) MDKTooltipView *baseTooltipView;
 
 
 /*!

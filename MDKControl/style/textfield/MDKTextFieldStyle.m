@@ -26,10 +26,8 @@ NSInteger DEFAULT_ACCESSORIES_MARGIN = 2;
 #pragma mark - Standard Style
 -(void)applyStandardStyleOnComponent:(MDKTextField *)component {
     [super applyStandardStyleOnComponent:component];
-    if([component.editable isEqualToNumber:@1]) {
-        if([component.backgroundColor isEqual:[UIColor clearColor]]) {
-            component.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
-        }
+    if([component.editable isEqualToNumber:@1] && [component.backgroundColor isEqual:[UIColor clearColor]]) {
+        component.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
     }
 }
 

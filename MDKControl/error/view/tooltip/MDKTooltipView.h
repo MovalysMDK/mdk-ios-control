@@ -12,59 +12,74 @@
  * GNU Lesser General Public License for more details.
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ *
+ * Copyright (c) 2014 Joe Fryer <joe.d.fryer@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
-//
-//  JDFTooltipView.h
-//  JoeTooltips
-//
-//  Created by Joe Fryer on 12/11/2014.
-//  Copyright (c) 2014 Joe Fryer. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 
 
-#pragma mark - JDFTooltipViewArrowDirection
+#pragma mark - MDKTooltipViewArrowDirection
 /*!
- *  Possible directions in which a JDFTooltipView's arrow will point.
+ *  Possible directions in which a MDKTooltipView's arrow will point.
  */
-typedef NS_ENUM(NSInteger, JDFTooltipViewArrowDirection){
+typedef NS_ENUM(NSInteger, MDKTooltipViewArrowDirection){
     /*!
      *  The arrow is on top of the tooltip, pointing up.
      */
-    JDFTooltipViewArrowDirectionUp,
+    MDKTooltipViewArrowDirectionUp,
     /*!
      *  The arrow is on the right of the tooltip, pointing to the right.
      */
-    JDFTooltipViewArrowDirectionRight,
+    MDKTooltipViewArrowDirectionRight,
     /*!
      *  The arrow is on the bottom of the tooltip, pointing down.
      */
-    JDFTooltipViewArrowDirectionDown,
+    MDKTooltipViewArrowDirectionDown,
     /*!
      *  The arrow is on the left of the tooltip, pointing to the left.
      */
-    JDFTooltipViewArrowDirectionLeft
+    MDKTooltipViewArrowDirectionLeft
 };
 
 
-#pragma mark - JDFTooltipViewCompletionBlock
+#pragma mark - MDKTooltipViewCompletionBlock
 /*!
- *  Completion block for JDFTooltipView animation completions. No paramaters, no return value.
+ *  Completion block for MDKTooltipView animation completions. No paramaters, no return value.
  */
-typedef void (^JDFTooltipViewCompletionBlock)();
+typedef void (^MDKTooltipViewCompletionBlock)();
 
 
 
 // *****
 // ****************************************************
-            #pragma mark - JDFTooltipView
+            #pragma mark - MDKTooltipView
 // ****************************************************
 // *****
 /*!
- *  JDFTooltipView is a UIView subclass that allows you to easily show a 'tooltip' style view to the user. The tooltips look like a small popover containing some text, with an arrow on one of the edges that points to a point of interest (typically another view) to which the text refers.
+ *  MDKTooltipView is a UIView subclass that allows you to easily show a 'tooltip' style view to the user. The tooltips look like a small popover containing some text, with an arrow on one of the edges that points to a point of interest (typically another view) to which the text refers.
  */
-@interface JDFTooltipView : UIView
+@interface MDKTooltipView : UIView
 
 #pragma mark Tooltip Text
 
@@ -95,7 +110,7 @@ typedef void (^JDFTooltipViewCompletionBlock)();
 /*!
  *  The direction that the tooltip's arrow will point
  */
-@property (nonatomic) JDFTooltipViewArrowDirection arrowDirection;
+@property (nonatomic) MDKTooltipViewArrowDirection arrowDirection;
 
 /*!
  *  Indicates whether or not the tooltip has a shadow. Default is @c YES.
@@ -115,7 +130,7 @@ typedef void (^JDFTooltipViewCompletionBlock)();
 
 #pragma mark Initialisation
 /*!
- *  Initialises A JDFTooltipView with the arrow at the specified point. If you want to support interface orientation, you will need to do so manually for a tooltip created with this initialiser. If you want rotation to be handled automatically, you should use one of the initWithTargetView: or initWithTargetBarButtonItem: methods instead.
+ *  Initialises A MDKTooltipView with the arrow at the specified point. If you want to support interface orientation, you will need to do so manually for a tooltip created with this initialiser. If you want rotation to be handled automatically, you should use one of the initWithTargetView: or initWithTargetBarButtonItem: methods instead.
  *
  *  @param targetPoint    The point at which the tooltip's arrow points.
  *  @param hostView       The view in which the tooltip will be displayed.
@@ -123,12 +138,12 @@ typedef void (^JDFTooltipViewCompletionBlock)();
  *  @param arrowDirection The direction of the tooltip's arrow.
  *  @param width          The width of the tooltip. If the text goes beyond this width, the tooltip will be resized vertically to accomodate it.
  *
- *  @return An initialised JDFTooltipView.
+ *  @return An initialised MDKTooltipView.
  */
-- (instancetype)initWithTargetPoint:(CGPoint)targetPoint hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
+- (instancetype)initWithTargetPoint:(CGPoint)targetPoint hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
 
 /*!
- *  Initialises A JDFTooltipView with the arrow at the specified point. If you want to support interface orientation, you will need to do so manually for a tooltip created with this initialiser. If you want rotation to be handled automatically, you should use one of the initWithTargetView: or initWithTargetBarButtonItem: methods instead.
+ *  Initialises A MDKTooltipView with the arrow at the specified point. If you want to support interface orientation, you will need to do so manually for a tooltip created with this initialiser. If you want rotation to be handled automatically, you should use one of the initWithTargetView: or initWithTargetBarButtonItem: methods instead.
  *
  *  @param targetPoint         The point at which the tooltip's arrow points.
  *  @param hostView            The view in which the tooltip will be displayed.
@@ -138,12 +153,12 @@ typedef void (^JDFTooltipViewCompletionBlock)();
  *  @param showCompletionBlock A block that gets executed after the tooltip is shown.
  *  @param hideCompletionBlock A block that gets executed after the tooltip has been dismissed.
  *
- *  @return An initialised JDFTooltipView.
+ *  @return An initialised MDKTooltipView.
  */
-- (instancetype)initWithTargetPoint:(CGPoint)targetPoint hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(JDFTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(JDFTooltipViewCompletionBlock)hideCompletionBlock;
+- (instancetype)initWithTargetPoint:(CGPoint)targetPoint hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock;
 
 /*!
- *  Initialises a JDFTooltipView. The tooltip will try to position the arrow pointing towards the targetView, in the specified direction.
+ *  Initialises a MDKTooltipView. The tooltip will try to position the arrow pointing towards the targetView, in the specified direction.
  *
  *  @param targetView     The focus of the tooltip. The tooltip will attempt to point the arrow towards the targetView.
  *  @param hostView       The view in which the tooltip will be displayed.
@@ -151,12 +166,12 @@ typedef void (^JDFTooltipViewCompletionBlock)();
  *  @param arrowDirection The direction of the tooltip's arrow.
  *  @param width          The width of the tooltip. If the text goes beyond this width, the tooltip will be resized vertically to accomodate it.
  *
- *  @return An initialised JDFTooltipView.
+ *  @return An initialised MDKTooltipView.
  */
-- (instancetype)initWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
+- (instancetype)initWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
 
 /*!
- *  Initialises a JDFTooltipView. The tooltip will try to position the arrow pointing towards the targetView, in the specified direction.
+ *  Initialises a MDKTooltipView. The tooltip will try to position the arrow pointing towards the targetView, in the specified direction.
  *
  *  @param targetView     The focus of the tooltip. The tooltip will attempt to point the arrow towards the targetView.
  *  @param hostView       The view in which the tooltip will be displayed.
@@ -166,12 +181,12 @@ typedef void (^JDFTooltipViewCompletionBlock)();
  *  @param showCompletionBlock A block that gets executed after the tooltip is shown.
  *  @param hideCompletionBlock A block that gets executed after the tooltip has been dismissed.
  *
- *  @return An initialised JDFTooltipView.
+ *  @return An initialised MDKTooltipView.
  */
-- (instancetype)initWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(JDFTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(JDFTooltipViewCompletionBlock)hideCompletionBlock NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock NS_DESIGNATED_INITIALIZER;
 
 /*!
- *  Initialises a JDFTooltipView. The tooltip will try to position the arrow pointing towards the barButtonItem, in the specified direction.
+ *  Initialises a MDKTooltipView. The tooltip will try to position the arrow pointing towards the barButtonItem, in the specified direction.
  *
  *  @param barButtonItem  The focus of the tooltip. The tooltip will attempt to point the arrow towards the targetView.
  *  @param hostView       The view in which the tooltip will be displayed.
@@ -179,12 +194,12 @@ typedef void (^JDFTooltipViewCompletionBlock)();
  *  @param arrowDirection The direction of the tooltip's arrow.
  *  @param width          The width of the tooltip. If the text goes beyond this width, the tooltip will be resized vertically to accomodate it.
  *
- *  @return An initialised JDFTooltipView.
+ *  @return An initialised MDKTooltipView.
  */
-- (instancetype)initWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
+- (instancetype)initWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width;
 
 /*!
- *  Initialises a JDFTooltipView. The tooltip will try to position the arrow pointing towards the barButtonItem, in the specified direction.
+ *  Initialises a MDKTooltipView. The tooltip will try to position the arrow pointing towards the barButtonItem, in the specified direction.
  *
  *  @param barButtonItem  The focus of the tooltip. The tooltip will attempt to point the arrow towards the targetView.
  *  @param hostView       The view in which the tooltip will be displayed.
@@ -194,9 +209,9 @@ typedef void (^JDFTooltipViewCompletionBlock)();
  *  @param showCompletionBlock A block that gets executed after the tooltip is shown.
  *  @param hideCompletionBlock A block that gets executed after the tooltip has been dismissed.
  *
- *  @return An initialised JDFTooltipView.
+ *  @return An initialised MDKTooltipView.
  */
-- (instancetype)initWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(JDFTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(JDFTooltipViewCompletionBlock)hideCompletionBlock;
+- (instancetype)initWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock;
 
 #pragma mark Showing/Hiding Tooltips
 /*!

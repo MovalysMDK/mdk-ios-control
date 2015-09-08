@@ -17,11 +17,11 @@
 #ifndef MDKControl_ErrorViewTooltip_h
 #define MDKControl_ErrorViewTooltip_h
 
-#import "JDFSequentialTooltipManager.h"
-#import "JDFTooltipManager.h"
-#import "JDFTooltipView.h"
-#import "JDFTooltips.h"
-#import "UILabel+JDFTooltips.h"
-#import "UIView+JDFTooltips.h"
+#import "MDKSequentialTooltipManager.h"
+#import "MDKTooltipManager.h"
+#import "MDKTooltipView.h"
+#import "MDKTooltips.h"
+#import "UILabel+MDKTooltips.h"
+#import "UIView+MDKTooltips.h"
 
 #endif

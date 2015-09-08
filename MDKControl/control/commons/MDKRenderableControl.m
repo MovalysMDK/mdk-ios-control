@@ -18,7 +18,7 @@
 
 #import "MDKRenderableControl.h"
 #import "MDKDefaultStyle.h"
-#import "JDFTooltipView.h"
+#import "MDKTooltipView.h"
 
 @interface MDKRenderableControl ()
 
@@ -77,10 +77,10 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
         }
         @try {
             Class bundleClass = [[self retrieveCustomXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MFUIApplication") : NSClassFromString(@"AppDelegate");
-
+            
             
             self.internalView = [[[NSBundle bundleForClass:bundleClass] loadNibNamed:[self retrieveCustomXIB] owner:self options:nil] firstObject];
-
+            
             [self.internalView performSelector:@selector(setExternalView:) withObject:self];
             
         }
@@ -122,7 +122,7 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     //    [self commonInit];
 }
 
-#pragma mark - Drawing component
+#pragma mark - Internal/External Views contraints
 
 
 /**
@@ -135,46 +135,16 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     self.rightConstraint = nil;
     self.topConstraint = nil;
     
+    //S'il y a internalView, alors on applique les contraintes entre la vue externe et la vue interne
     if(self.internalView) {
-#if TARGET_INTERFACE_BUILDER
-        if(!self.leftConstraint) {
-            self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft
-                                                               relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
-                                                              multiplier:1 constant:![self onError_MDK] ? 0 : self.errorView.frame.size.width];
-            [self addConstraint:self.leftConstraint];
-        }
-#else
-        if(!self.leftConstraint) {
-            self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft
-                                                               relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
-                                                              multiplier:1 constant:[self isValid] ? 0 : self.errorView.frame.size.width];
-            [self addConstraint:self.leftConstraint];
-        }
-#endif
+        [self computeInternalLeftConstraint];
+        [self computeInternalRightConstraint];
+        [self computeInternalTopConstraint];
+        [self computeInternalBottomConstraint];
         
-        if(!self.topConstraint) {
-            self.topConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeTop
-                                                              relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop
-                                                             multiplier:1 constant:0];
-            [self addConstraint:self.topConstraint];
-        }
-        
-        if(!self.rightConstraint) {
-            self.rightConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeRight
-                                                                relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
-                                                               multiplier:1 constant:0];
-            [self addConstraint:self.rightConstraint];
-        }
-        
-        if(!self.bottomConstraint) {
-            self.bottomConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeBottom
-                                                                 relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom
-                                                                multiplier:1 constant:0];
-            [self addConstraint:self.bottomConstraint];
-        }
     }
-    //    self.internalView.translatesAutoresizingMaskIntoConstraints = NO;
     
+    //Animation des changements
     [UIView animateWithDuration:0.0
                      animations:^{
                          self.errorView.alpha = 1.0;
@@ -182,6 +152,52 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
                      }];
 }
 
+-(void) computeInternalLeftConstraint {
+#if TARGET_INTERFACE_BUILDER
+    if(!self.leftConstraint) {
+        self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft
+                                                           relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
+                                                          multiplier:1 constant:![self onError_MDK] ? 0 : self.errorView.frame.size.width];
+        [self addConstraint:self.leftConstraint];
+    }
+#else
+    if(!self.leftConstraint) {
+        self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft
+                                                           relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
+                                                          multiplier:1 constant:[self isValid] ? 0 : self.errorView.frame.size.width];
+        [self addConstraint:self.leftConstraint];
+    }
+#endif
+}
+
+-(void) computeInternalTopConstraint {
+    if(!self.topConstraint) {
+        self.topConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeTop
+                                                          relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop
+                                                         multiplier:1 constant:0];
+        [self addConstraint:self.topConstraint];
+    }
+}
+
+-(void) computeInternalRightConstraint {
+    if(!self.rightConstraint) {
+        self.rightConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeRight
+                                                            relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
+                                                           multiplier:1 constant:0];
+        [self addConstraint:self.rightConstraint];
+    }
+}
+
+-(void) computeInternalBottomConstraint {
+    if(!self.bottomConstraint) {
+        self.bottomConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeBottom
+                                                             relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom
+                                                            multiplier:1 constant:0];
+        [self addConstraint:self.bottomConstraint];
+    }
+}
+
+#pragma mark - Error View Constraints
 /**
  * @brief Defines the constraints of the error view in the external view
  */
@@ -203,7 +219,7 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     if(!self.errorHeightConstraint) {
         self.errorHeightConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeHeight
                                                                   relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute
-                                                                multiplier:0 constant:self.errorView.frame.size.height];
+                                                                 multiplier:0 constant:self.errorView.frame.size.height];
     }
     
     if(!self.errorWidthConstraint) {
@@ -379,9 +395,8 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
  * @param showErrorView A BOOL value that indicates if the component is in an invalid state or not
  */
 -(void) showError:(BOOL)showError {
-
+    
     if([self conformsToProtocol:@protocol(MFExternalComponent) ]) {
-        
         if(showError) {
             if(!self.errorView) {
                 Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MFUIApplication") : NSClassFromString(@"AppDelegate");
@@ -389,82 +404,55 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
             }
             self.errorView.userInteractionEnabled = YES;
             [self addSubview:self.errorView];
-            self.tooltipView = [[JDFTooltipView alloc] initWithTargetView:self.errorView.errorButton
+            self.tooltipView = [[MDKTooltipView alloc] initWithTargetView:self.errorView.errorButton
                                                                  hostView:self tooltipText:@""
-                                                           arrowDirection:JDFTooltipViewArrowDirectionUp
+                                                           arrowDirection:MDKTooltipViewArrowDirectionUp
                                                                     width:self.frame.size.width];
             
             if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
 #if !TARGET_INTERFACE_BUILDER
-                NSDictionary *errorPositionParameters = [NSDictionary
-                                                         dictionaryWithObjects:@[self.errorView,
-                                                                                 self,
-                                                                                 self.leftConstraint,
-                                                                                 self.topConstraint,
-                                                                                 self.rightConstraint,
-                                                                                 self.bottomConstraint]
-                                                         forKeys:@[ErrorPositionParameters.ErrorView,
-                                                                   ErrorPositionParameters.ParentView,
-                                                                   ErrorPositionParameters.InternalViewLeftConstraint,
-                                                                   ErrorPositionParameters.InternalViewTopConstraint,
-                                                                   ErrorPositionParameters.InternalViewRightConstraint,
-                                                                   ErrorPositionParameters.InternalViewBottomConstraint]];
-                
+                NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
                 [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
 #endif
-
             }
             else {
                 [self defineErrorViewConstraints];
                 self.leftConstraint.constant  = self.errorView.frame.size.width;
             }
-            
-            self.errorView.alpha = 0.0;
-            
-            [UIView animateWithDuration:0.25
-                             animations:^{
-                                 self.errorView.alpha = 1.0;
-                                 [self layoutIfNeeded]; // Called on parent view
-                             }];
+
         }
         else {
             [self.tooltipView hideAnimated:YES];
             [self.errorView removeFromSuperview];
             if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
 #if !TARGET_INTERFACE_BUILDER
-                NSDictionary *errorPositionParameters = [NSDictionary
-                                                         dictionaryWithObjects:@[self.errorView,
-                                                                                 self,
-                                                                                 self.leftConstraint,
-                                                                                 self.topConstraint,
-                                                                                 self.rightConstraint,
-                                                                                 self.bottomConstraint]
-                                                         forKeys:@[ErrorPositionParameters.ErrorView,
-                                                                   ErrorPositionParameters.ParentView,
-                                                                   ErrorPositionParameters.InternalViewLeftConstraint,
-                                                                   ErrorPositionParameters.InternalViewTopConstraint,
-                                                                   ErrorPositionParameters.InternalViewRightConstraint,
-                                                                   ErrorPositionParameters.InternalViewBottomConstraint]];
-                
+                NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
                 [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
 #endif
             }
             else {
                 [self removeErrorViewConstraints];
             }
-
-            
-
-            [UIView animateWithDuration:0.25
-                             animations:^{
-                                 [self layoutIfNeeded];
-                             }
-             ];
         }
         [self bringSubviewToFront:self.errorView];
     }
-    
 }
+
+-(NSDictionary *) createErrorPositionParameters {
+    return [NSDictionary dictionaryWithObjects:@[self.errorView,
+                                                 self,
+                                                 self.leftConstraint,
+                                                 self.topConstraint,
+                                                 self.rightConstraint,
+                                                 self.bottomConstraint]
+                                       forKeys:@[ErrorPositionParameters.ErrorView,
+                                                 ErrorPositionParameters.ParentView,
+                                                 ErrorPositionParameters.InternalViewLeftConstraint,
+                                                 ErrorPositionParameters.InternalViewTopConstraint,
+                                                 ErrorPositionParameters.InternalViewRightConstraint,
+                                                 ErrorPositionParameters.InternalViewBottomConstraint]];
+}
+
 
 -(void) removeErrorViewConstraints {
     if(self.errorWidthConstraint) [self removeConstraint:self.errorWidthConstraint];
@@ -477,7 +465,7 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     self.errorLeftConstraint = nil;
     self.errorWidthConstraint = nil;
     self.leftConstraint.constant  = 0;
-
+    
 }
 
 /**

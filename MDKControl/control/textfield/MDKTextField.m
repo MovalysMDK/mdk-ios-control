@@ -33,9 +33,7 @@
 @implementation MDKTextField
 @synthesize styleClass = _styleClass;
 @synthesize componentInCellAtIndexPath = _componentInCellAtIndexPath;
-
 @synthesize localizedFieldDisplayName = _localizedFieldDisplayName;
-
 @synthesize inInitMode = _inInitMode;
 @synthesize controlDelegate = _bindingDelegate;
 @synthesize isValid = _isValid;
@@ -53,7 +51,7 @@
 @synthesize privateData = _privateData;
 
 
-#pragma mark - Initialization
+#pragma mark - Initialization and deallocation
 -(instancetype)init {
     self = [super init];
     if(self) {
@@ -101,10 +99,6 @@
 
 #pragma mark - TextField Methods
 
--(void)setIsValid:(BOOL) isValid {
-    [self.controlDelegate setIsValid:isValid];
-}
-
 -(CGRect)textRectForBounds:(CGRect)bounds {
     [super textRectForBounds:bounds];
     return [((MDKTextFieldStyle *)self.styleClass) textRectForBounds:bounds onComponent:self];
@@ -130,7 +124,6 @@
     return [((MDKTextFieldStyle *)self.styleClass) borderRectForBounds:superBounds onComponent:self];
     
 }
-
 
 #pragma mark - Target Actions
 -(void)textDidChange:(id)sender {
@@ -203,6 +196,9 @@
 
 #pragma mark - Forwarding to binding delegate
 
+-(void)setIsValid:(BOOL) isValid {
+    [self.controlDelegate setIsValid:isValid];
+}
 
 -(BOOL) isValid {
     return ([self validate] == 0);

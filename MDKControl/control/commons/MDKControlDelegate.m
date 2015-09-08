@@ -106,9 +106,9 @@
         } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG);
         
         //Création et affichage de la bulle
-        self.control.tooltipView = [[JDFTooltipView alloc] initWithTargetView:((id<MDKErrorViewProtocol>)self.control.styleClass).errorView
+        self.control.tooltipView = [[MDKTooltipView alloc] initWithTargetView:((id<MDKErrorViewProtocol>)self.control.styleClass).errorView
                                                                      hostView:currentView tooltipText:@""
-                                                               arrowDirection:JDFTooltipViewArrowDirectionUp
+                                                               arrowDirection:MDKTooltipViewArrowDirectionUp
                                                                         width:self.control.frame.size.width];
         
         [currentView bringSubviewToFront:self.control.tooltipView];
@@ -159,6 +159,8 @@
     }
 }
 
+
+#pragma mark - Validation
 -(NSInteger)validate {
     [self clearErrors];
     NSMutableArray *validators = [NSMutableArray array];
@@ -173,38 +175,7 @@
         mandatoryError = [mandatoryValidator validate:[self.control getData] withCurrentState:validationState withParameters:@{FIELD_VALIDATOR_ATTRIBUTE_MANDATORY : self.control.mandatory}];
     }
     if(!mandatoryError && self.control.controlAttributes) {
-        
-        //Component Validators
-        [validators addObjectsFromArray:[self.control controlValidators]];
-        
-        //Other validatos
-        [validators addObjectsFromArray:[MDKFieldValidatorHandler fieldValidatorsForAttributes:self.control.controlAttributes.allKeys forControl:[self control]]];
-        
-        
-        for(id<MDKFieldValidatorProtocol> fieldValidator in validators) {
-            if(validationState[NSStringFromClass([fieldValidator class])]) {
-                continue;
-            }
-            NSMutableDictionary *validatorParameters = [NSMutableDictionary dictionary];
-            for(NSString *recognizedAttribute in [fieldValidator recognizedAttributes]) {
-                if(self.control.controlAttributes[recognizedAttribute]) {
-                    validatorParameters[recognizedAttribute] = self.control.controlAttributes[recognizedAttribute];
-                }
-            }
-            
-            //On ajoute le nom du composant
-//            if([self.control bindedName]) {
-//                validatorParameters[@"componentName"] = [self.control bindedName];
-//            }
-            id errorResult = [fieldValidator validate:[self.control getData] withCurrentState:validationState withParameters:validatorParameters];
-            if(errorResult) {
-                validationState[NSStringFromClass([fieldValidator class])] = errorResult;
-                if([fieldValidator isBlocking]) { break; }
-            }
-            else {
-                validationState[NSStringFromClass([fieldValidator class])] = [NSNull null];
-            }
-        }
+        [self processValidationWithValidators:validators withValidationState:validationState];
     }
     else {
         if(mandatoryError) {
@@ -212,7 +183,11 @@
         }
     }
     
-    int numberOfErrors = 0;
+    return [self computeNumberOfErrorsFromValidationState:validationState];
+}
+
+-(NSInteger) computeNumberOfErrorsFromValidationState:(NSDictionary *)validationState {
+    NSInteger numberOfErrors = 0;
     [self clearErrors];
     for(id result in validationState.allValues) {
         if(![result isKindOfClass:[NSNull class]]) {
@@ -220,13 +195,43 @@
             [self addErrors:@[result]];
         }
     }
-    
     return numberOfErrors;
 }
 
+
+-(void)processValidationWithValidators:(NSMutableArray *)validators withValidationState:(NSMutableDictionary *)validationState {
+    for(id<MDKFieldValidatorProtocol> fieldValidator in validators) {
+        if(validationState[NSStringFromClass([fieldValidator class])]) {
+            continue;
+        }
+        NSMutableDictionary *validatorParameters = [NSMutableDictionary dictionary];
+        for(NSString *recognizedAttribute in [fieldValidator recognizedAttributes]) {
+            if(self.control.controlAttributes[recognizedAttribute]) {
+                validatorParameters[recognizedAttribute] = self.control.controlAttributes[recognizedAttribute];
+            }
+        }
+        
+        //On ajoute le nom du composant
+        //            if([self.control bindedName]) {
+        //                validatorParameters[@"componentName"] = [self.control bindedName];
+        //            }
+        id errorResult = [fieldValidator validate:[self.control getData] withCurrentState:validationState withParameters:validatorParameters];
+        if(errorResult) {
+            validationState[NSStringFromClass([fieldValidator class])] = errorResult;
+            if([fieldValidator isBlocking]) { break; }
+        }
+        else {
+            validationState[NSStringFromClass([fieldValidator class])] = [NSNull null];
+        }
+    }
+}
+
+#pragma mark - Control Attributes
 -(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key {
     NSMutableDictionary *mutableControlAttributes = [self.control.controlAttributes mutableCopy];
     mutableControlAttributes[key] = controlAttribute;
     self.control.controlAttributes = mutableControlAttributes;
 }
+
+
 @end

@@ -27,15 +27,11 @@
 }
 
 -(void)applyErrorStyleOnComponent:(UIView *)component {
-    if(component) {
 
-    }
 }
 
 -(void)applyValidStyleOnComponent:(UIView *)component {
-    if(component) {
 
-    }
 }
 
 @end

@@ -12,24 +12,38 @@
  * GNU Lesser General Public License for more details.
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+ * 
+ *
+ *
+ * Copyright (c) 2014 Joe Fryer <joe.d.fryer@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
-//
-//  JDFTooltipView.m
-//  JoeTooltips
-//
-//  Created by Joe Fryer on 12/11/2014.
-//  Copyright (c) 2014 Joe Fryer. All rights reserved.
-//
 
-#import "JDFTooltipView.h"
+
+#import "MDKTooltipView.h"
 
 // Categories
-#import "UILabel+JDFTooltips.h"
-#import "UIView+JDFTooltips.h"
+#import "UILabel+MDKTooltips.h"
+#import "UIView+MDKTooltips.h"
 
-
-
-@interface JDFTooltipView ()
+@interface MDKTooltipView ()
 
 @property (nonatomic, strong) UILabel *tooltipTextLabel;
 
@@ -48,31 +62,27 @@
 @end
 
 
-@implementation JDFTooltipView
+@implementation MDKTooltipView
 
 
 #pragma mark - Setters
 
-- (void)setTooltipText:(NSString *)tooltipText
-{
+- (void)setTooltipText:(NSString *)tooltipText { 
     _tooltipText = tooltipText;
     self.tooltipTextLabel.text = tooltipText;
 }
 
-- (void)setFont:(UIFont *)font
-{
+- (void)setFont:(UIFont *)font { 
     _font = font;
     self.tooltipTextLabel.font = font;
 }
 
-- (void)setTextColour:(UIColor *)textColour
-{
+- (void)setTextColour:(UIColor *)textColour { 
     _textColour = textColour;
     self.tooltipTextLabel.textColor = textColour;
 }
 
-- (void)setShadowEnabled:(BOOL)shadowEnabled
-{
+- (void)setShadowEnabled:(BOOL)shadowEnabled { 
     _shadowEnabled = shadowEnabled;
     
     if (shadowEnabled) {
@@ -88,8 +98,7 @@
     }
 }
 
-- (void)setShadowColour:(UIColor *)shadowColour
-{
+- (void)setShadowColour:(UIColor *)shadowColour { 
     _shadowColour = shadowColour;
     self.layer.shadowColor = shadowColour.CGColor;
 }
@@ -97,12 +106,9 @@
 
 #pragma mark - Getters
 
-- (UIView *)targetView
-{
-    if (!_targetView) {
-        if (self.targetBarButtonItem) {
-            return [self.targetBarButtonItem performSelector:@selector(view)];
-        }
+- (UIView *)targetView {
+    if (!_targetView && self.targetBarButtonItem) {
+        return [self.targetBarButtonItem performSelector:@selector(view)];
     }
     return _targetView;
 }
@@ -110,14 +116,12 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithTargetPoint:(CGPoint)targetPoint hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width
-{
+- (instancetype)initWithTargetPoint:(CGPoint)targetPoint hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width { 
     self = [self initWithTargetPoint:targetPoint hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width showCompletionBlock:nil hideCompletionBlock:nil];
     return self;
 }
 
-- (instancetype)initWithTargetPoint:(CGPoint)targetPoint hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(JDFTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(JDFTooltipViewCompletionBlock)hideCompletionBlock;
-{
+- (instancetype)initWithTargetPoint:(CGPoint)targetPoint hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock; { 
     self = [self initWithTargetView:nil hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width showCompletionBlock:showCompletionBlock hideCompletionBlock:hideCompletionBlock];
     if (self) {
         self.arrowPoint = targetPoint;
@@ -125,14 +129,12 @@
     return self;
 }
 
-- (instancetype)initWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width
-{
+- (instancetype)initWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width { 
     self = [self initWithTargetView:targetView hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width showCompletionBlock:nil hideCompletionBlock:nil];
     return self;
 }
 
-- (instancetype)initWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(void (^)())showCompletionBlock hideCompletionBlock:(void (^)())hideCompletionBlock
-{
+- (instancetype)initWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(void (^)())showCompletionBlock hideCompletionBlock:(void (^)())hideCompletionBlock { 
     self = [super initWithFrame:CGRectZero];
     if (self) {
         [self commonInit];
@@ -148,13 +150,11 @@
     return self;
 }
 
-- (instancetype)initWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width
-{
+- (instancetype)initWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width { 
     return [self initWithTargetBarButtonItem:barButtonItem hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width showCompletionBlock:nil hideCompletionBlock:nil];
 }
 
-- (instancetype)initWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(JDFTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(JDFTooltipViewCompletionBlock)hideCompletionBlock
-{
+- (instancetype)initWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock { 
     self = [self initWithTargetView:nil hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width showCompletionBlock:showCompletionBlock hideCompletionBlock:hideCompletionBlock];
     if (self) {
         self.targetBarButtonItem = barButtonItem;
@@ -163,11 +163,10 @@
     return self;
 }
 
-- (void)commonInit
-{
+- (void)commonInit { 
     // Options
     self.dismissOnTouch = YES;
-    self.arrowDirection = JDFTooltipViewArrowDirectionUp;
+    self.arrowDirection = MDKTooltipViewArrowDirectionUp;
     
     self.backgroundColor = [UIColor clearColor];
     self.tooltipBackgroundColour = [UIColor darkGrayColor];
@@ -195,23 +194,20 @@
 
 #pragma mark - Gesture Recognisers
 
-- (void)handleTapGesture:(UIGestureRecognizer *)gestureRecogniser
-{
+- (void)handleTapGesture:(UIGestureRecognizer *)gestureRecogniser { 
     if (self.dismissOnTouch) {
         [self hideAnimated:YES];
     }
 }
 
-- (void)addTapTarget:(id)target action:(SEL)action
-{
+- (void)addTapTarget:(id)target action:(SEL)action { 
     [self.tapGestureRecogniser addTarget:target action:action];
 }
 
 
 #pragma mark - Showing the Tooltip
 
-- (void)showAtPoint:(CGPoint)point inView:(UIView *)view width:(CGFloat)width arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection
-{
+- (void)showAtPoint:(CGPoint)point inView:(UIView *)view width:(CGFloat)width arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection { 
     self.arrowDirection = arrowDirection;
     self.arrowPoint = point;
     self.alpha = 1.0f;
@@ -223,13 +219,13 @@
     labelFrame.size.width = width - [self arrowHeight] - [self labelPadding]; // arrowHeight and labelPadding should be doubled before subtracting?
     labelFrame.origin.y = [self arrowHeight] + [self labelPadding];
     self.tooltipTextLabel.frame = labelFrame;
-    [self.tooltipTextLabel jdftt_resizeHeightToFitTextContents];
+    [self.tooltipTextLabel MDKtt_resizeHeightToFitTextContents];
     
     CGRect tooltipFrame = [self tooltipFrameForArrowPoint:point width:(self.tooltipTextLabel.frame.size.width + [self arrowHeight] + [self labelPadding]) labelFrame:labelFrame arrowDirection:self.arrowDirection hostViewSize:self.superview.frame.size];
     self.frame = tooltipFrame;
     
-    [self.tooltipTextLabel jdftt_centerHorizontallyInSuperview];
-    [self.tooltipTextLabel jdftt_centerVerticallyInSuperview];
+    [self.tooltipTextLabel MDKtt_centerHorizontallyInSuperview];
+    [self.tooltipTextLabel MDKtt_centerVerticallyInSuperview];
     
     [self sanitiseArrowPointWithWidth:width];
     
@@ -250,21 +246,18 @@
     }];
 }
 
-- (void)show
-{
+- (void)show { 
     [self showAtPoint:self.arrowPoint inView:self.tooltipSuperview width:self.width arrowDirection:self.arrowDirection];
 }
 
-- (void)showInView:(UIView *)view
-{
+- (void)showInView:(UIView *)view { 
     [self showAtPoint:self.arrowPoint inView:view width:self.width arrowDirection:self.arrowDirection];
 }
 
 
 #pragma mark - Hiding the Tooltip
 
-- (void)hideAnimated:(BOOL)animated
-{
+- (void)hideAnimated:(BOOL)animated { 
     if (animated) {
         [UIView animateWithDuration:0.1 animations:^{
             self.tooltipTextLabel.alpha = 0.0f;
@@ -294,8 +287,7 @@
 
 #pragma mark - Layout (Public)
 
-- (void)setTooltipNeedsLayoutWithHostViewSize:(CGSize)hostViewSize
-{
+- (void)setTooltipNeedsLayoutWithHostViewSize:(CGSize)hostViewSize { 
     // We can only try to layout ourselves out if we have a targetView.
     if (self.targetView) {
         self.arrowPoint = [self pointForTargetView:self.targetView arrowDirection:self.arrowDirection];
@@ -308,47 +300,43 @@
 
 #pragma mark - Layout (Internal)
 
-- (CGPoint)pointForTargetView:(UIView *)targetView arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection
-{
+- (CGPoint)pointForTargetView:(UIView *)targetView arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection { 
     CGPoint point = CGPointZero;
     CGRect targetViewFrame = [targetView.superview convertRect:targetView.frame toView:self.tooltipSuperview];
-    if (arrowDirection == JDFTooltipViewArrowDirectionLeft) {
+    if (arrowDirection == MDKTooltipViewArrowDirectionLeft) {
         point.x = CGRectGetMaxX(targetViewFrame);
         point.y = targetViewFrame.origin.y + (targetViewFrame.size.height / 2);
-    } else if (arrowDirection == JDFTooltipViewArrowDirectionRight) {
+    } else if (arrowDirection == MDKTooltipViewArrowDirectionRight) {
         point.x = targetViewFrame.origin.x;
         point.y = targetViewFrame.origin.y + (targetViewFrame.size.height / 2);
-    } else if (arrowDirection == JDFTooltipViewArrowDirectionUp) {
+    } else if (arrowDirection == MDKTooltipViewArrowDirectionUp) {
         point.x = targetViewFrame.origin.x + (targetViewFrame.size.width / 2);
         point.y = CGRectGetMaxY(targetViewFrame);
-    } else if (arrowDirection == JDFTooltipViewArrowDirectionDown) {
+    } else if (arrowDirection == MDKTooltipViewArrowDirectionDown) {
         point.x = targetViewFrame.origin.x + (targetViewFrame.size.width / 2);
         point.y = targetViewFrame.origin.y;
     }
     return point;
 }
 
-- (CGRect)tooltipFrameForArrowPoint:(CGPoint)point width:(CGFloat)width labelFrame:(CGRect)labelFrame arrowDirection:(JDFTooltipViewArrowDirection)arrowDirection hostViewSize:(CGSize)hostViewSize
-{
+- (CGRect)tooltipFrameForArrowPoint:(CGPoint)point width:(CGFloat)width labelFrame:(CGRect)labelFrame arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection hostViewSize:(CGSize)hostViewSize { 
     CGRect tooltipFrame = CGRectZero;
     tooltipFrame.origin = point;
     tooltipFrame.size.width = width;
     tooltipFrame.origin.x = tooltipFrame.origin.x - [self overflowAdjustmentForFrame:tooltipFrame withHostViewSize:hostViewSize];
     tooltipFrame.size.height = self.tooltipTextLabel.frame.size.height + [self labelPadding] + [self arrowHeight];
 
-    if (arrowDirection == JDFTooltipViewArrowDirectionUp) {
-        
-    } else if (arrowDirection == JDFTooltipViewArrowDirectionRight) {
+    if (arrowDirection == MDKTooltipViewArrowDirectionRight) {
         tooltipFrame.origin.x = point.x - tooltipFrame.size.width - ([self arrowHeight] * 1.5);
         tooltipFrame.origin.y = point.y - [self arrowWidth] - [self minimumArrowPadding];
-    } else if (arrowDirection == JDFTooltipViewArrowDirectionDown) {
+    } else if (arrowDirection == MDKTooltipViewArrowDirectionDown) {
         tooltipFrame.origin.y = point.y - tooltipFrame.size.height;
-    } else if (arrowDirection == JDFTooltipViewArrowDirectionLeft) {
+    } else if (arrowDirection == MDKTooltipViewArrowDirectionLeft) {
         tooltipFrame.origin.x = point.x;
         tooltipFrame.origin.y = point.y - [self arrowWidth] - [self minimumArrowPadding];
     }
     
-    if (arrowDirection == JDFTooltipViewArrowDirectionUp || arrowDirection == JDFTooltipViewArrowDirectionDown) {
+    if (arrowDirection == MDKTooltipViewArrowDirectionUp || arrowDirection == MDKTooltipViewArrowDirectionDown) {
         CGFloat minOffset = [self arrowHeight] + [self minimumArrowPadding];
         CGFloat offset = point.x - tooltipFrame.origin.x;
         if (offset < minOffset) {
@@ -359,8 +347,7 @@
     return tooltipFrame;
 }
 
-- (CGFloat)overflowAdjustmentForFrame:(CGRect)frame withHostViewSize:(CGSize)hostViewSize
-{
+- (CGFloat)overflowAdjustmentForFrame:(CGRect)frame withHostViewSize:(CGSize)hostViewSize { 
     CGFloat maxX = CGRectGetMaxX(frame);
     CGFloat hostViewWidth = hostViewSize.width;
     if (maxX > hostViewWidth) {
@@ -370,34 +357,28 @@
     return 30.0f;
 }
 
-- (CGFloat)arrowHeight
-{
+- (CGFloat)arrowHeight { 
     return 14.0f;
 }
 
-- (CGFloat)arrowWidth
-{
+- (CGFloat)arrowWidth { 
     return 14.0f;
 }
 
-- (CGFloat)minimumArrowPadding
-{
+- (CGFloat)minimumArrowPadding { 
     return 10.0f;
 }
 
-- (CGFloat)labelPadding
-{
+- (CGFloat)labelPadding { 
     return 20.0f;
 }
 
-- (CGFloat)minimumPaddingToSuperview
-{
+- (CGFloat)minimumPaddingToSuperview { 
     return 5.0f;
 }
 
-- (void)sanitiseArrowPointWithWidth:(CGFloat)width
-{
-    if (self.arrowDirection != JDFTooltipViewArrowDirectionLeft) {
+- (void)sanitiseArrowPointWithWidth:(CGFloat)width { 
+    if (self.arrowDirection != MDKTooltipViewArrowDirectionLeft) {
         CGFloat maximumX = fmin(self.superview.frame.size.width - [self minimumArrowPadding] - ([self arrowWidth] / 2) - [self minimumPaddingToSuperview], CGRectGetMaxX(self.frame));
         if (self.arrowPoint.x > maximumX) {
             CGPoint point = self.arrowPoint;
@@ -407,37 +388,33 @@
     }
 }
 
-- (CGFloat)arrowAngle
-{
+- (CGFloat)arrowAngle {
+    CGFloat angle = 0.0f;
     switch (self.arrowDirection) {
-        case JDFTooltipViewArrowDirectionUp:
-            return 0.0f;
+        case MDKTooltipViewArrowDirectionUp:
+            angle = 0.0f;
             break;
-        case JDFTooltipViewArrowDirectionLeft:
-            return 90.0f;
+        case MDKTooltipViewArrowDirectionLeft:
+            angle = 90.0f;
             break;
-        case JDFTooltipViewArrowDirectionDown:
-            return 180.0f;
+        case MDKTooltipViewArrowDirectionDown:
+            angle = 180.0f;
             break;
-        case JDFTooltipViewArrowDirectionRight:
-            return 270.0f;
-            break;
-        default:
-            return 0.0f;
+        case MDKTooltipViewArrowDirectionRight:
+            angle = 270.0f;
             break;
     }
+    return angle;
 }
 
 
 #pragma mark - Drawing
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect { 
     [self drawCanvas1WithFrame:rect];
 }
 
-- (void)drawCanvas1WithFrame:(CGRect)frame;
-{
+- (void)drawCanvas1WithFrame:(CGRect)frame; { 
     UIColor *backgroundColour = self.tooltipBackgroundColour;
     
     //// General Declarations

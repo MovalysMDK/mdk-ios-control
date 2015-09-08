@@ -12,24 +12,38 @@
  * GNU Lesser General Public License for more details.
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *
+ *
+ * Copyright (c) 2014 Joe Fryer <joe.d.fryer@gmail.com>
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  */
-//
-//  JDFTooltips.h
-//  JoeTooltips
-//
-//  Created by Joe Fryer on 10/12/2014.
-//  Copyright (c) 2014 Joe Fryer. All rights reserved.
-//
-
-#ifndef JoeTooltips_JDFTooltips_h
-#define JoeTooltips_JDFTooltips_h
+#ifndef JoeTooltips_MDKTooltips_h
+#define JoeTooltips_MDKTooltips_h
 
 
 #endif
 
-#import "JDFTooltipView.h"
-#import "JDFSequentialTooltipManager.h"
-#import "JDFTooltipManager.h"
+#import "MDKTooltipView.h"
+#import "MDKSequentialTooltipManager.h"
+#import "MDKTooltipManager.h"
 
 
 /*!
@@ -55,7 +69,7 @@
  - More shadow customisation options?
  - setTooltipNeedsLayoutWithHostViewSize: - do we need to supply the size here?
  - Add the ability to adjust the positioning relative to a view (move further up by x etc)
- - JDFTooltipSequentialManager (sequentially show all in one go, with kind of quick bubbling effect as well?)
+ - MDKTooltipSequentialManager (sequentially show all in one go, with kind of quick bubbling effect as well?)
  - Managers - Completion blocks (on hide etc.)
 
  */
