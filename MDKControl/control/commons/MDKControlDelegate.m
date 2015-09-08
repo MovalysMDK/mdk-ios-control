@@ -106,7 +106,11 @@
         } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG);
         
         //Création et affichage de la bulle
-        self.control.tooltipView = [[JDFTooltipView alloc] initWithTargetView:((id<MDKErrorViewProtocol>)self.control.styleClass).errorView hostView:currentView tooltipText:@"" arrowDirection:JDFTooltipViewArrowDirectionUp width:self.control.frame.size.width];
+        self.control.tooltipView = [[JDFTooltipView alloc] initWithTargetView:((id<MDKErrorViewProtocol>)self.control.styleClass).errorView
+                                                                     hostView:currentView tooltipText:@""
+                                                               arrowDirection:JDFTooltipViewArrowDirectionUp
+                                                                        width:self.control.frame.size.width];
+        
         [currentView bringSubviewToFront:self.control.tooltipView];
         self.control.tooltipView.tooltipText = errorText;
         self.control.tooltipView.tooltipBackgroundColour = [self defaultTooltipBackgroundColor];

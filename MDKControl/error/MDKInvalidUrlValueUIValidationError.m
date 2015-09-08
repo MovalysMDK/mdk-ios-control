@@ -25,7 +25,10 @@ NSString *const INVALID_URL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MD
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *)technicalFieldName
 {
-    self = [super initWithCode:INVALID_URL_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_URL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:INVALID_URL_VALUE_UI_VALIDATION_ERROR_CODE
+       localizedDescriptionKey:INVALID_URL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
+            localizedFieldName:fieldName
+            technicalFieldName:technicalFieldName];
     return self;
 }
 

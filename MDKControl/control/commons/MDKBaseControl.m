@@ -267,7 +267,8 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 //            
 //            // We calculate the tooltip's anchor point
 //            
-//            CGPoint point = [((id<MDKErrorViewProtocol>)self.styleClass).errorView convertPoint:CGPointMake(0.0, ((id<MDKErrorViewProtocol>)self.styleClass).errorView.frame.size.height - 4.0) toView:self];
+//            CGPoint point = [((id<MDKErrorViewProtocol>)self.styleClass).errorView
+//              convertPoint:CGPointMake(0.0, ((id<MDKErrorViewProtocol>)self.styleClass).errorView.frame.size.height - 4.0) toView:self];
 //            
 //            // We calculate the tooltip' size
 //            CGRect tooltipViewFrame = CGRectMake(-10, point.y, self.sender.frame.size.width, self.baseTooltipView.frame.size.height);

@@ -116,18 +116,18 @@
 }
 
 -(CGRect)clearButtonRectForBounds:(CGRect)bounds {
-    bounds = [super clearButtonRectForBounds:bounds];
-    return [((MDKTextFieldStyle *)self.styleClass) clearButtonRectForBounds:bounds onComponent:self];
+    CGRect superBounds = [super clearButtonRectForBounds:bounds];
+    return [((MDKTextFieldStyle *)self.styleClass) clearButtonRectForBounds:superBounds onComponent:self];
 }
 
 - (CGRect)placeholderRectForBounds:(CGRect)bounds {
-    bounds = [super textRectForBounds:bounds];
-    return [((MDKTextFieldStyle *)self.styleClass) placeholderRectForBounds:bounds onComponent:self];
+    CGRect superBounds = [super textRectForBounds:bounds];
+    return [((MDKTextFieldStyle *)self.styleClass) placeholderRectForBounds:superBounds onComponent:self];
 }
 
 -(CGRect)borderRectForBounds:(CGRect)bounds {
-    bounds = [super borderRectForBounds:bounds];
-    return [((MDKTextFieldStyle *)self.styleClass) borderRectForBounds:bounds onComponent:self];
+    CGRect superBounds = [super borderRectForBounds:bounds];
+    return [((MDKTextFieldStyle *)self.styleClass) borderRectForBounds:superBounds onComponent:self];
     
 }
 
@@ -273,14 +273,14 @@
 }
 
 -(void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
-    if(![self isEqual:target]) {
+    if([self isEqual:target]) {
+        [super addTarget:target action:action forControlEvents:controlEvents];
+    }
+    else {
         MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
         commonCCTD.target = target;
         commonCCTD.action = action;
         self.targetDescriptors = @{@(self.hash) : commonCCTD};
-    }
-    else {
-        [super addTarget:target action:action forControlEvents:controlEvents];
     }
 }
 

@@ -389,7 +389,10 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
             }
             self.errorView.userInteractionEnabled = YES;
             [self addSubview:self.errorView];
-            self.tooltipView = [[JDFTooltipView alloc] initWithTargetView:self.errorView.errorButton hostView:self tooltipText:@"" arrowDirection:JDFTooltipViewArrowDirectionUp width:self.frame.size.width];
+            self.tooltipView = [[JDFTooltipView alloc] initWithTargetView:self.errorView.errorButton
+                                                                 hostView:self tooltipText:@""
+                                                           arrowDirection:JDFTooltipViewArrowDirectionUp
+                                                                    width:self.frame.size.width];
             
             if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
 #if !TARGET_INTERFACE_BUILDER
@@ -429,7 +432,6 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
             [self.errorView removeFromSuperview];
             if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
 #if !TARGET_INTERFACE_BUILDER
-
                 NSDictionary *errorPositionParameters = [NSDictionary
                                                          dictionaryWithObjects:@[self.errorView,
                                                                                  self,
@@ -448,16 +450,7 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
 #endif
             }
             else {
-                if(self.errorWidthConstraint) [self removeConstraint:self.errorWidthConstraint];
-                if(self.errorLeftConstraint) [self removeConstraint:self.errorLeftConstraint];
-                if(self.errorHeightConstraint) [self removeConstraint:self.errorHeightConstraint];
-                if(self.errorCenterYConstraint) [self removeConstraint:self.errorCenterYConstraint];
-                
-                self.errorCenterYConstraint = nil;
-                self.errorHeightConstraint = nil;
-                self.errorLeftConstraint = nil;
-                self.errorWidthConstraint = nil;
-                self.leftConstraint.constant  = 0;
+                [self removeErrorViewConstraints];
             }
 
             
@@ -471,6 +464,20 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
         [self bringSubviewToFront:self.errorView];
     }
     
+}
+
+-(void) removeErrorViewConstraints {
+    if(self.errorWidthConstraint) [self removeConstraint:self.errorWidthConstraint];
+    if(self.errorLeftConstraint) [self removeConstraint:self.errorLeftConstraint];
+    if(self.errorHeightConstraint) [self removeConstraint:self.errorHeightConstraint];
+    if(self.errorCenterYConstraint) [self removeConstraint:self.errorCenterYConstraint];
+    
+    self.errorCenterYConstraint = nil;
+    self.errorHeightConstraint = nil;
+    self.errorLeftConstraint = nil;
+    self.errorWidthConstraint = nil;
+    self.leftConstraint.constant  = 0;
+
 }
 
 /**

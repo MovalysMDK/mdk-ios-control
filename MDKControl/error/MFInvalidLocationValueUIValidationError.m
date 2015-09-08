@@ -24,7 +24,10 @@ NSString *const INVALID_LOCATION_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY =
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
 {
-    self = [super initWithCode:INVALID_LOCATION_VALUE_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:INVALID_LOCATION_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:INVALID_LOCATION_VALUE_UI_VALIDATION_ERROR_CODE
+       localizedDescriptionKey:INVALID_LOCATION_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
+            localizedFieldName:fieldName
+            technicalFieldName:technicalFieldName];
     return self;
 }
 

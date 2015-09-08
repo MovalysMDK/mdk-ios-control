@@ -26,7 +26,10 @@ NSString *const TOO_LONG_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKT
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
 {
-    self = [super initWithCode:TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:TOO_LONG_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE
+       localizedDescriptionKey:TOO_LONG_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
+            localizedFieldName:fieldName
+            technicalFieldName:technicalFieldName];
     return self;
 }
 

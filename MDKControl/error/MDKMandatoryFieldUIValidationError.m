@@ -25,7 +25,10 @@ NSString *const MANDATORY_FIELD_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKM
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
 {
-    self = [super initWithCode:MANDATORY_FIELD_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:MANDATORY_FIELD_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:MANDATORY_FIELD_UI_VALIDATION_ERROR_CODE
+       localizedDescriptionKey:MANDATORY_FIELD_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
+            localizedFieldName:fieldName
+            technicalFieldName:technicalFieldName];
     return self;
 }
 

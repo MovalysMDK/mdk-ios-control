@@ -25,7 +25,10 @@ NSString *const TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDK
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
 {
-    self = [super initWithCode:TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE localizedDescriptionKey:TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY localizedFieldName:fieldName technicalFieldName:technicalFieldName];
+    self = [super initWithCode:TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE
+       localizedDescriptionKey:TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
+            localizedFieldName:fieldName
+            technicalFieldName:technicalFieldName];
     return self;
 }
 

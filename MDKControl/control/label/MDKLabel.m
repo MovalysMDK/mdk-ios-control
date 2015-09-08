@@ -169,14 +169,14 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 }
 
 -(NSString *) insertOrRemoveMandatoryIndicator:(NSString *)data {
-    //Vérification de l'état actuel du label (mandatory affiché ou non) et mise à jour du contenu du label
+    NSString *fixedString = data;
     if([self.mandatory isEqual: @1] && [data rangeOfString:self.mandatoryIndicator].location == NSNotFound) {
-        data = [data stringByAppendingString:[NSString stringWithFormat:@" %@",self.mandatoryIndicator]];
+        fixedString = [data stringByAppendingString:[NSString stringWithFormat:@" %@",self.mandatoryIndicator]];
     }
     else if ([self.mandatory isEqual: @0] && [self  .text rangeOfString:self.mandatoryIndicator].location != NSNotFound ) {
-        data = [data stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" %@",self.mandatoryIndicator] withString:@""];
+        fixedString = [data stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" %@",self.mandatoryIndicator] withString:@""];
     }
-    return data;
+    return fixedString;
 }
 
 
