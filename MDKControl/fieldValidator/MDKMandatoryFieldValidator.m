@@ -61,7 +61,7 @@ NSString *FIELD_VALIDATOR_ATTRIBUTE_MANDATORY = @"mandatory";
 
 -(BOOL)canValidControl:(UIView *)control {
     BOOL canValid = YES;
-    canValid = canValid && ([control isKindOfClass:NSClassFromString(@"MFTextField")] ||
+    canValid = canValid && ([control isKindOfClass:NSClassFromString(@"MDKTextField")] ||
                             [control isKindOfClass:NSClassFromString(@"MFUIOldBaseComponent")] ||
                             [control isKindOfClass:NSClassFromString(@"MFUIBaseComponent")]);
     return canValid;

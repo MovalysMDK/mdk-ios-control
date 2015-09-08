@@ -49,7 +49,7 @@
 @synthesize errors = _errors;
 @synthesize lastUpdateSender = _lastUpdateSender;
 @synthesize privateData = _privateData;
-
+@synthesize customStyleClass = _customStyleClass;
 
 #pragma mark - Initialization and deallocation
 -(instancetype)init {
@@ -80,6 +80,8 @@
     self.controlDelegate = [[MDKControlDelegate alloc] initWithControl:self];
     self.errors = [NSMutableArray new];
     self.extension = [[MDKTextFieldExtension alloc] init];
+   
+#if !TARGET_INTERFACE_BUILDER
     if(!self.sender) {
         self.sender = self;
     }
@@ -88,6 +90,7 @@
     [self addTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged|UIControlEventValueChanged];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignFirstResponder) name:ALERTVIEW_FAILED_SAVE_ACTION object:nil];
+#endif
 }
 
 -(void)dealloc {
@@ -225,21 +228,6 @@
 }
 
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-#pragma clang diagnostic ignored "-Wundeclared-selector"
--(void)setUseCustomBackgroundView_MDK:(BOOL)useCustomBackgroundView_MDK {
-    _useCustomBackgroundView_MDK = useCustomBackgroundView_MDK;
-    if(_useCustomBackgroundView_MDK) {
-        [self.styleClass performSelector:@selector(displayBackgroundViewOnComponent:) withObject:self];
-    }
-    else {
-        [self.styleClass performSelector:@selector(removeBackgroundViewOnComponent:) withObject:self];
-    }
-}
-#pragma clang diagnostic pop
-
-
 -(void)setVisible:(NSNumber *)visible {
     _visible = visible;
     [self.controlDelegate setVisible:visible];
@@ -313,16 +301,11 @@
     else {
         [self applyValidStyle];
     }
-    
-    
-    UILabel *innerDescriptionLabel = [[UILabel alloc] initWithFrame:self.bounds];
-    innerDescriptionLabel.text = [[self class] description];
-    innerDescriptionLabel.textAlignment = NSTextAlignmentCenter;
-    innerDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
-    innerDescriptionLabel.backgroundColor = [UIColor colorWithWhite:0.91 alpha:0.75];
-    [self addSubview:innerDescriptionLabel];
 }
 
-
+-(void)setCustomStyleClass:(Class)customStyleClass {
+    _customStyleClass = customStyleClass;
+    [self.controlDelegate setCustomStyleClass:customStyleClass];
+}
 
 @end

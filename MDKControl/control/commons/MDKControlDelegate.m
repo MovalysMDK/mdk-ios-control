@@ -21,8 +21,6 @@
 #import "MDKControlDelegate.h"
 #import "MDKStyleProtocol.h"
 #import "UIView+Styleable.h"
-//#import "MFUIOldBaseComponent.h"
-//#import "UIView+Binding.h"
 
 @interface MDKControlDelegate ()
 
@@ -103,7 +101,7 @@
             [superView setClipsToBounds:NO];
             [superView bringSubviewToFront:currentView];
             currentView = superView;
-        } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG);
+        } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG && currentView.superview);
         
         //Création et affichage de la bulle
         self.control.tooltipView = [[MDKTooltipView alloc] initWithTargetView:((id<MDKErrorViewProtocol>)self.control.styleClass).errorView
@@ -172,7 +170,7 @@
     if([self.control mandatory]) {
         
         mandatoryValidator = [[MDKFieldValidatorHandler fieldValidatorsForAttributes:@[FIELD_VALIDATOR_ATTRIBUTE_MANDATORY] forControl:[self control]] firstObject];
-        mandatoryError = [mandatoryValidator validate:[self.control getData] withCurrentState:validationState withParameters:@{FIELD_VALIDATOR_ATTRIBUTE_MANDATORY : self.control.mandatory}];
+        mandatoryError = [mandatoryValidator validate:[self.control getData] withCurrentState:validationState withParameters:@{FIELD_VALIDATOR_ATTRIBUTE_MANDATORY : self.control.mandatory, @"componentName" : NSStringFromClass(self.control.class)}];
     }
     if(!mandatoryError && self.control.controlAttributes) {
         [self processValidationWithValidators:validators withValidationState:validationState];
@@ -212,9 +210,7 @@
         }
         
         //On ajoute le nom du composant
-        //            if([self.control bindedName]) {
-        //                validatorParameters[@"componentName"] = [self.control bindedName];
-        //            }
+        validatorParameters[@"componentName"] = NSStringFromClass([self.control class]);
         id errorResult = [fieldValidator validate:[self.control getData] withCurrentState:validationState withParameters:validatorParameters];
         if(errorResult) {
             validationState[NSStringFromClass([fieldValidator class])] = errorResult;
@@ -231,6 +227,10 @@
     NSMutableDictionary *mutableControlAttributes = [self.control.controlAttributes mutableCopy];
     mutableControlAttributes[key] = controlAttribute;
     self.control.controlAttributes = mutableControlAttributes;
+}
+
+-(void)setCustomStyleClass:(Class)customStyleClass {
+    self.control.styleClass = [customStyleClass new];
 }
 
 

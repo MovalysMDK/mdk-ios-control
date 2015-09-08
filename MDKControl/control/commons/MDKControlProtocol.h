@@ -28,7 +28,7 @@
  * @brief This is the main protocol to describes a MDK Control.
  * @discussion It gives all properties and methods needed to make a view a MDK Control.
  */
-@protocol MDKControlProtocol <MDKControlDataProtocol, MDKControlErrorProtocol, MDKControlPropertiesProtocol, MDKControlValidationProtocol, MDKControlAttributesProtocol, MDKControlAssociatedLabelProtocol>
+@protocol MDKControlProtocol <MDKControlDataProtocol, MDKControlErrorProtocol, MDKControlPropertiesProtocol, MDKControlValidationProtocol, MDKControlAttributesProtocol, MDKControlAssociatedLabelProtocol, MDKControlCustomStyleProtocol>
 
 #pragma mark - Properties
 

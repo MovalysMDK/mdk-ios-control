@@ -41,7 +41,7 @@
         fieldValidator = [fieldValidatorClass sharedInstance];
     }
     else {
-        @throw [NSException exceptionWithName:@"Field validator not found" reason:[NSString stringWithFormat:@"No field validator found for key %@", baseKey] userInfo:nil];
+//        @throw [NSException exceptionWithName:@"Field validator not found" reason:[NSString stringWithFormat:@"No field validator found for key %@", baseKey] userInfo:nil];
     }
     return fieldValidator;
 }
@@ -51,12 +51,12 @@
 -(Class)classWithKey:(NSString *)baseKey withQualifier:(NSString *)qualifier{
     Class commandClass = nil;
     if(qualifier) {
-        Class commandClass = NSClassFromString([NSString stringWithFormat:@"MF%@_%@", baseKey, qualifier]);
+        commandClass = NSClassFromString([NSString stringWithFormat:@"MDK%@_%@", baseKey, qualifier]);
         if(!commandClass) {
-            commandClass = NSClassFromString([NSString stringWithFormat:@"MF%@", baseKey]);
+            commandClass = NSClassFromString([NSString stringWithFormat:@"MDK%@", baseKey]);
         }
         else {
-            commandClass = NSClassFromString([NSString stringWithFormat:@"MF%@", baseKey]);
+            commandClass = NSClassFromString([NSString stringWithFormat:@"MDK%@", baseKey]);
         }
     }
     return commandClass;

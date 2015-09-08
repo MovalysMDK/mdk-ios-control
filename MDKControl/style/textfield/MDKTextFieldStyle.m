@@ -26,9 +26,6 @@ NSInteger DEFAULT_ACCESSORIES_MARGIN = 2;
 #pragma mark - Standard Style
 -(void)applyStandardStyleOnComponent:(MDKTextField *)component {
     [super applyStandardStyleOnComponent:component];
-    if([component.editable isEqualToNumber:@1] && [component.backgroundColor isEqual:[UIColor clearColor]]) {
-        component.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
-    }
 }
 
 #pragma mark - Error Style
@@ -38,8 +35,7 @@ NSInteger DEFAULT_ACCESSORIES_MARGIN = 2;
 #pragma clang diagnostic ignored "-Wundeclared-selector"
 -(void)applyErrorStyleOnComponent:(MDKTextField *)component {
     [super applyErrorStyleOnComponent:component];
-    [self performSelector:@selector(addErrorViewOnComponent:) withObject:component];
-    
+    [self performSelector:@selector(addErrorViewOnComponent:) withObject:component];    
 }
 
 -(void)applyValidStyleOnComponent:(MDKTextField *) component {

@@ -33,8 +33,6 @@ IB_DESIGNABLE
 
 @property (nonatomic) IBInspectable BOOL onError_MDK;
 
-@property (nonatomic) Class customStyleClass;
-
 @property (nonatomic, strong) NSMutableArray *errors;
 
 

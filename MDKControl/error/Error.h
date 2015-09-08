@@ -23,7 +23,6 @@
 #import "MDKInvalidDoubleValueUIValidationError.h"
 #import "MDKInvalidIntegerValueUIValidationError.h"
 #import "MDKInvalidEmailValueUIValidationError.h"
-#import "MFInvalidLocationValueUIValidationError.h"
 #import "MDKInvalidPhoneNumberValueUIValidationError.h"
 #import "MDKInvalidUrlValueUIValidationError.h"
 #import "MDKMandatoryFieldUIValidationError.h"

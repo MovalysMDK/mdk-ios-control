@@ -7,117 +7,116 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B02156B31B9DAC6E001860B5 /* MDKDefaultStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568A1B9DAC6E001860B5 /* MDKDefaultStyle.h */; };
+		B02156B31B9DAC6E001860B5 /* MDKDefaultStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568A1B9DAC6E001860B5 /* MDKDefaultStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156B41B9DAC6E001860B5 /* MDKDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B021568B1B9DAC6E001860B5 /* MDKDefaultStyle.m */; };
-		B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568C1B9DAC6E001860B5 /* MDKStyleProtocol.h */; };
-		B02156B61B9DAC6E001860B5 /* StyleCommons.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568D1B9DAC6E001860B5 /* StyleCommons.h */; };
-		B02156B71B9DAC6E001860B5 /* UIView+Styleable.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568E1B9DAC6E001860B5 /* UIView+Styleable.h */; };
+		B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568C1B9DAC6E001860B5 /* MDKStyleProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156B61B9DAC6E001860B5 /* StyleCommons.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568D1B9DAC6E001860B5 /* StyleCommons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156B71B9DAC6E001860B5 /* UIView+Styleable.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568E1B9DAC6E001860B5 /* UIView+Styleable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156B81B9DAC6E001860B5 /* UIView+Styleable.m in Sources */ = {isa = PBXBuildFile; fileRef = B021568F1B9DAC6E001860B5 /* UIView+Styleable.m */; };
-		B02156B91B9DAC6E001860B5 /* MDKLabelStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156911B9DAC6E001860B5 /* MDKLabelStyle.h */; };
+		B02156B91B9DAC6E001860B5 /* MDKLabelStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156911B9DAC6E001860B5 /* MDKLabelStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156BA1B9DAC6E001860B5 /* MDKLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156921B9DAC6E001860B5 /* MDKLabelStyle.m */; };
-		B02156BC1B9DAC6E001860B5 /* Style.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156941B9DAC6E001860B5 /* Style.h */; };
-		B02156C71B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A01B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h */; };
+		B02156BC1B9DAC6E001860B5 /* Style.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156941B9DAC6E001860B5 /* Style.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156C71B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A01B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156C81B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A11B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m */; };
-		B02156C91B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A21B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h */; };
+		B02156C91B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A21B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156CA1B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A31B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m */; };
-		B02156CB1B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A41B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.h */; };
+		B02156CB1B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A41B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156CC1B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A51B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.m */; };
-		B02156CD1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A61B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h */; };
+		B02156CD1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A61B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156CE1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A71B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.m */; };
-		B02156CF1B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A81B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h */; };
+		B02156CF1B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A81B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156D01B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A91B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m */; };
-		B02156D11B9DAC6E001860B5 /* MDKTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156AA1B9DAC6E001860B5 /* MDKTextFieldStyle.h */; };
+		B02156D11B9DAC6E001860B5 /* MDKTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156AA1B9DAC6E001860B5 /* MDKTextFieldStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156D21B9DAC6E001860B5 /* MDKTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156AB1B9DAC6E001860B5 /* MDKTextFieldStyle.m */; };
-		B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156AC1B9DAC6E001860B5 /* StyleTextField.h */; };
-		B02156E31B9DAD59001860B5 /* MDKBackgroundViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DA1B9DAD59001860B5 /* MDKBackgroundViewProtocol.h */; };
-		B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DB1B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h */; };
-		B02156E51B9DAD59001860B5 /* MDKControlAttributesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DC1B9DAD59001860B5 /* MDKControlAttributesProtocol.h */; };
-		B02156E61B9DAD59001860B5 /* MDKControlDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DD1B9DAD59001860B5 /* MDKControlDataProtocol.h */; };
-		B02156E71B9DAD59001860B5 /* MDKControlErrorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DE1B9DAD59001860B5 /* MDKControlErrorProtocol.h */; };
-		B02156E81B9DAD59001860B5 /* MDKControlPropertiesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DF1B9DAD59001860B5 /* MDKControlPropertiesProtocol.h */; };
-		B02156E91B9DAD59001860B5 /* MDKControlValidationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156E01B9DAD59001860B5 /* MDKControlValidationProtocol.h */; };
-		B02156EA1B9DAD59001860B5 /* MDKErrorViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156E11B9DAD59001860B5 /* MDKErrorViewProtocol.h */; };
-		B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157231B9DAE4C001860B5 /* MDKControlChangesProtocol.h */; };
-		B021575C1B9DAEEA001860B5 /* MDKFieldValidatorHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157481B9DAEEA001860B5 /* MDKFieldValidatorHandler.h */; };
+		B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156AC1B9DAC6E001860B5 /* StyleTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156E31B9DAD59001860B5 /* MDKBackgroundViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DA1B9DAD59001860B5 /* MDKBackgroundViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DB1B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156E51B9DAD59001860B5 /* MDKControlAttributesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DC1B9DAD59001860B5 /* MDKControlAttributesProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156E61B9DAD59001860B5 /* MDKControlDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DD1B9DAD59001860B5 /* MDKControlDataProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156E71B9DAD59001860B5 /* MDKControlErrorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DE1B9DAD59001860B5 /* MDKControlErrorProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156E81B9DAD59001860B5 /* MDKControlPropertiesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DF1B9DAD59001860B5 /* MDKControlPropertiesProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156E91B9DAD59001860B5 /* MDKControlValidationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156E01B9DAD59001860B5 /* MDKControlValidationProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02156EA1B9DAD59001860B5 /* MDKErrorViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156E11B9DAD59001860B5 /* MDKErrorViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157231B9DAE4C001860B5 /* MDKControlChangesProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B021575C1B9DAEEA001860B5 /* MDKFieldValidatorHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157481B9DAEEA001860B5 /* MDKFieldValidatorHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B021575D1B9DAEEA001860B5 /* MDKFieldValidatorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157491B9DAEEA001860B5 /* MDKFieldValidatorHandler.m */; };
-		B021575E1B9DAEEA001860B5 /* MDKFieldValidatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021574A1B9DAEEA001860B5 /* MDKFieldValidatorProtocol.h */; };
-		B02157631B9DAEEA001860B5 /* MDKLengthFieldValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B021574F1B9DAEEA001860B5 /* MDKLengthFieldValidator.h */; };
+		B021575E1B9DAEEA001860B5 /* MDKFieldValidatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021574A1B9DAEEA001860B5 /* MDKFieldValidatorProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02157631B9DAEEA001860B5 /* MDKLengthFieldValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B021574F1B9DAEEA001860B5 /* MDKLengthFieldValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157641B9DAEEA001860B5 /* MDKLengthFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157501B9DAEEA001860B5 /* MDKLengthFieldValidator.m */; };
-		B02157651B9DAEEA001860B5 /* MDKMandatoryFieldValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157511B9DAEEA001860B5 /* MDKMandatoryFieldValidator.h */; };
+		B02157651B9DAEEA001860B5 /* MDKMandatoryFieldValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157511B9DAEEA001860B5 /* MDKMandatoryFieldValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157661B9DAEEA001860B5 /* MDKMandatoryFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157521B9DAEEA001860B5 /* MDKMandatoryFieldValidator.m */; };
-		B021579E1B9DAF30001860B5 /* MDKErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = B021576D1B9DAF30001860B5 /* MDKErrorView.h */; };
+		B021579E1B9DAF30001860B5 /* MDKErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = B021576D1B9DAF30001860B5 /* MDKErrorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B021579F1B9DAF30001860B5 /* MDKErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B021576E1B9DAF30001860B5 /* MDKErrorView.m */; };
-		B02157B31B9DAF30001860B5 /* MDKTooLongStringUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157841B9DAF30001860B5 /* MDKTooLongStringUIValidationError.h */; };
+		B02157B31B9DAF30001860B5 /* MDKTooLongStringUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157841B9DAF30001860B5 /* MDKTooLongStringUIValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157B41B9DAF30001860B5 /* MDKTooLongStringUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157851B9DAF30001860B5 /* MDKTooLongStringUIValidationError.m */; };
-		B02157B51B9DAF30001860B5 /* MDKTooShortStringUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157861B9DAF30001860B5 /* MDKTooShortStringUIValidationError.h */; };
+		B02157B51B9DAF30001860B5 /* MDKTooShortStringUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157861B9DAF30001860B5 /* MDKTooShortStringUIValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157B61B9DAF30001860B5 /* MDKTooShortStringUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157871B9DAF30001860B5 /* MDKTooShortStringUIValidationError.m */; };
-		B02157B71B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157881B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.h */; };
+		B02157B71B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157881B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157B81B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157891B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.m */; };
-		B02157B91B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B021578A1B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.h */; };
+		B02157B91B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B021578A1B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157BA1B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B021578B1B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.m */; };
-		B02157BB1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B021578C1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.h */; };
+		B02157BB1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B021578C1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157BC1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B021578D1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.m */; };
-		B02157BD1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B021578E1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.h */; };
-		B02157BE1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B021578F1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.m */; };
-		B02157BF1B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157901B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.h */; };
+		B02157BF1B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157901B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157C01B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157911B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.m */; };
-		B02157C11B9DAF30001860B5 /* MDKInvalidUrlValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157921B9DAF30001860B5 /* MDKInvalidUrlValueUIValidationError.h */; };
+		B02157C11B9DAF30001860B5 /* MDKInvalidUrlValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157921B9DAF30001860B5 /* MDKInvalidUrlValueUIValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157C21B9DAF30001860B5 /* MDKInvalidUrlValueUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157931B9DAF30001860B5 /* MDKInvalidUrlValueUIValidationError.m */; };
-		B02157C31B9DAF30001860B5 /* MDKMandatoryFieldUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157941B9DAF30001860B5 /* MDKMandatoryFieldUIValidationError.h */; };
+		B02157C31B9DAF30001860B5 /* MDKMandatoryFieldUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157941B9DAF30001860B5 /* MDKMandatoryFieldUIValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157C41B9DAF30001860B5 /* MDKMandatoryFieldUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157951B9DAF30001860B5 /* MDKMandatoryFieldUIValidationError.m */; };
-		B02157C51B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157961B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.h */; };
+		B02157C51B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157961B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157C61B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157971B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.m */; };
-		B02157CB1B9DAF30001860B5 /* MDKValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B021579C1B9DAF30001860B5 /* MDKValidationError.h */; };
+		B02157CB1B9DAF30001860B5 /* MDKValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B021579C1B9DAF30001860B5 /* MDKValidationError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157CC1B9DAF30001860B5 /* MDKValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B021579D1B9DAF30001860B5 /* MDKValidationError.m */; };
-		B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D01B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h */; };
-		B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D11B9DAFA0001860B5 /* MDKComponentProviderProtocol.h */; };
-		B02157D91B9DAFA0001860B5 /* MDKSimpleComponentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D21B9DAFA0001860B5 /* MDKSimpleComponentProvider.h */; };
+		B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D01B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D11B9DAFA0001860B5 /* MDKComponentProviderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02157D91B9DAFA0001860B5 /* MDKSimpleComponentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D21B9DAFA0001860B5 /* MDKSimpleComponentProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157DA1B9DAFA0001860B5 /* MDKSimpleComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157D31B9DAFA0001860B5 /* MDKSimpleComponentProvider.m */; };
-		B02157DB1B9DAFA0001860B5 /* ComponentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D41B9DAFA0001860B5 /* ComponentProvider.h */; };
-		B02158091B9DB27D001860B5 /* MDKAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158041B9DB27D001860B5 /* MDKAlertView.h */; };
+		B02157DB1B9DAFA0001860B5 /* ComponentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D41B9DAFA0001860B5 /* ComponentProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B02158091B9DB27D001860B5 /* MDKAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158041B9DB27D001860B5 /* MDKAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B021580A1B9DB27D001860B5 /* MDKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158051B9DB27D001860B5 /* MDKAlertView.m */; };
-		B021580B1B9DB27D001860B5 /* MDKAlertViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158061B9DB27D001860B5 /* MDKAlertViewManager.h */; };
+		B021580B1B9DB27D001860B5 /* MDKAlertViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158061B9DB27D001860B5 /* MDKAlertViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158071B9DB27D001860B5 /* MDKAlertViewManager.m */; };
-		B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */; };
+		B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */; };
-		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; };
-		B044B1BE1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */; };
+		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0308D521B9F1673000817D3 /* MDKControlCustomStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */; };
+		B044B1BE1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B044B1BF1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */; };
-		B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */; };
+		B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B044B1C11B9DF3D900A4CCF3 /* MDKTooltipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B61B9DF3D900A4CCF3 /* MDKTooltipManager.m */; };
-		B044B1C21B9DF3D900A4CCF3 /* MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B71B9DF3D900A4CCF3 /* MDKTooltips.h */; };
-		B044B1C31B9DF3D900A4CCF3 /* MDKTooltipView.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B81B9DF3D900A4CCF3 /* MDKTooltipView.h */; };
+		B044B1C21B9DF3D900A4CCF3 /* MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B71B9DF3D900A4CCF3 /* MDKTooltips.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B044B1C31B9DF3D900A4CCF3 /* MDKTooltipView.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B81B9DF3D900A4CCF3 /* MDKTooltipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B044B1C41B9DF3D900A4CCF3 /* MDKTooltipView.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B91B9DF3D900A4CCF3 /* MDKTooltipView.m */; };
-		B044B1C51B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1BA1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h */; };
+		B044B1C51B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1BA1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B044B1C61B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1BB1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m */; };
-		B044B1C71B9DF3D900A4CCF3 /* UIView+MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1BC1B9DF3D900A4CCF3 /* UIView+MDKTooltips.h */; };
+		B044B1C71B9DF3D900A4CCF3 /* UIView+MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1BC1B9DF3D900A4CCF3 /* UIView+MDKTooltips.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B044B1C81B9DF3D900A4CCF3 /* UIView+MDKTooltips.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1BD1B9DF3D900A4CCF3 /* UIView+MDKTooltips.m */; };
-		B08C18F21B9DD1AC00D6F93A /* MDKConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C18F01B9DD1AC00D6F93A /* MDKConstants.h */; };
+		B08C18F21B9DD1AC00D6F93A /* MDKConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C18F01B9DD1AC00D6F93A /* MDKConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C18F11B9DD1AC00D6F93A /* MDKConstants.m */; };
-		B08C18FB1B9DDC5700D6F93A /* MDKControlEventsDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C18F91B9DDC5700D6F93A /* MDKControlEventsDescriptor.h */; };
+		B08C18FB1B9DDC5700D6F93A /* MDKControlEventsDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C18F91B9DDC5700D6F93A /* MDKControlEventsDescriptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C18FC1B9DDC5700D6F93A /* MDKControlEventsDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C18FA1B9DDC5700D6F93A /* MDKControlEventsDescriptor.m */; };
-		B08C19021B9DE37300D6F93A /* MDKTags.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19001B9DE37300D6F93A /* MDKTags.h */; };
+		B08C19021B9DE37300D6F93A /* MDKTags.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19001B9DE37300D6F93A /* MDKTags.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C19031B9DE37300D6F93A /* MDKTags.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C19011B9DE37300D6F93A /* MDKTags.m */; };
-		B08C19331B9DE9A500D6F93A /* MDKBaseControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C190E1B9DE9A500D6F93A /* MDKBaseControl.h */; };
+		B08C19331B9DE9A500D6F93A /* MDKBaseControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C190E1B9DE9A500D6F93A /* MDKBaseControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C19341B9DE9A500D6F93A /* MDKBaseControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C190F1B9DE9A500D6F93A /* MDKBaseControl.m */; };
-		B08C19351B9DE9A500D6F93A /* MDKControlDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19101B9DE9A500D6F93A /* MDKControlDelegate.h */; };
+		B08C19351B9DE9A500D6F93A /* MDKControlDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19101B9DE9A500D6F93A /* MDKControlDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C19361B9DE9A500D6F93A /* MDKControlDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C19111B9DE9A500D6F93A /* MDKControlDelegate.m */; };
-		B08C19371B9DE9A500D6F93A /* MDKControlProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19121B9DE9A500D6F93A /* MDKControlProtocol.h */; };
-		B08C19381B9DE9A500D6F93A /* MDKRenderableControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19131B9DE9A500D6F93A /* MDKRenderableControl.h */; };
+		B08C19371B9DE9A500D6F93A /* MDKControlProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19121B9DE9A500D6F93A /* MDKControlProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B08C19381B9DE9A500D6F93A /* MDKRenderableControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19131B9DE9A500D6F93A /* MDKRenderableControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C19391B9DE9A500D6F93A /* MDKRenderableControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C19141B9DE9A500D6F93A /* MDKRenderableControl.m */; };
-		B08C193A1B9DE9A500D6F93A /* Control.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19151B9DE9A500D6F93A /* Control.h */; };
-		B08C193B1B9DE9A500D6F93A /* ControlExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19171B9DE9A500D6F93A /* ControlExtension.h */; };
-		B08C193C1B9DE9A500D6F93A /* MDKBaseTextExtensionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19181B9DE9A500D6F93A /* MDKBaseTextExtensionProtocol.h */; };
-		B08C193D1B9DE9A500D6F93A /* MDKRegexTextExtensionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19191B9DE9A500D6F93A /* MDKRegexTextExtensionProtocol.h */; };
-		B08C193E1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C191A1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.h */; };
+		B08C193A1B9DE9A500D6F93A /* Control.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19151B9DE9A500D6F93A /* Control.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B08C193B1B9DE9A500D6F93A /* ControlExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19171B9DE9A500D6F93A /* ControlExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B08C193C1B9DE9A500D6F93A /* MDKBaseTextExtensionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19181B9DE9A500D6F93A /* MDKBaseTextExtensionProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B08C193D1B9DE9A500D6F93A /* MDKRegexTextExtensionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19191B9DE9A500D6F93A /* MDKRegexTextExtensionProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B08C193E1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C191A1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C193F1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C191B1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.m */; };
-		B08C19401B9DE9A500D6F93A /* MDKTextFieldExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C191C1B9DE9A500D6F93A /* MDKTextFieldExtension.h */; };
+		B08C19401B9DE9A500D6F93A /* MDKTextFieldExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C191C1B9DE9A500D6F93A /* MDKTextFieldExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C19411B9DE9A500D6F93A /* MDKTextFieldExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C191D1B9DE9A500D6F93A /* MDKTextFieldExtension.m */; };
-		B08C19461B9DE9A500D6F93A /* MDKTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19241B9DE9A500D6F93A /* MDKTextField.h */; };
+		B08C19461B9DE9A500D6F93A /* MDKTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19241B9DE9A500D6F93A /* MDKTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C19471B9DE9A500D6F93A /* MDKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C19251B9DE9A500D6F93A /* MDKTextField.m */; };
-		B08C19501B9DE9A500D6F93A /* MDKRegexTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C192F1B9DE9A500D6F93A /* MDKRegexTextField.h */; };
+		B08C19501B9DE9A500D6F93A /* MDKRegexTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C192F1B9DE9A500D6F93A /* MDKRegexTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C19511B9DE9A500D6F93A /* MDKRegexTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C19301B9DE9A500D6F93A /* MDKRegexTextField.m */; };
-		B08C195A1B9DEEED00D6F93A /* MDKLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19581B9DEEED00D6F93A /* MDKLabel.h */; };
+		B08C195A1B9DEEED00D6F93A /* MDKLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B08C19581B9DEEED00D6F93A /* MDKLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B08C195B1B9DEEED00D6F93A /* MDKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B08C19591B9DEEED00D6F93A /* MDKLabel.m */; };
 		B0FFDA6C1B33FAFB00CA6E5E /* MDKControl.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFDA6B1B33FAFB00CA6E5E /* MDKControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0FFDA721B33FAFB00CA6E5E /* MDKControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */; };
@@ -186,8 +185,6 @@
 		B021578B1B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKInvalidEmailValueUIValidationError.m; sourceTree = "<group>"; };
 		B021578C1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKInvalidIntegerValueUIValidationError.h; sourceTree = "<group>"; };
 		B021578D1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKInvalidIntegerValueUIValidationError.m; sourceTree = "<group>"; };
-		B021578E1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFInvalidLocationValueUIValidationError.h; sourceTree = "<group>"; };
-		B021578F1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFInvalidLocationValueUIValidationError.m; sourceTree = "<group>"; };
 		B02157901B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKInvalidPhoneNumberValueUIValidationError.h; sourceTree = "<group>"; };
 		B02157911B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKInvalidPhoneNumberValueUIValidationError.m; sourceTree = "<group>"; };
 		B02157921B9DAF30001860B5 /* MDKInvalidUrlValueUIValidationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKInvalidUrlValueUIValidationError.h; sourceTree = "<group>"; };
@@ -210,6 +207,7 @@
 		B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandHandler.h; sourceTree = "<group>"; };
 		B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCommandHandler.m; sourceTree = "<group>"; };
 		B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandProtocol.h; sourceTree = "<group>"; };
+		B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlCustomStyleProtocol.h; sourceTree = "<group>"; };
 		B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSequentialTooltipManager.h; sourceTree = "<group>"; };
 		B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSequentialTooltipManager.m; sourceTree = "<group>"; };
 		B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTooltipManager.h; sourceTree = "<group>"; };
@@ -349,6 +347,7 @@
 		B02156D91B9DAD59001860B5 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
+				B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */,
 				B02157231B9DAE4C001860B5 /* MDKControlChangesProtocol.h */,
 				B02156DA1B9DAD59001860B5 /* MDKBackgroundViewProtocol.h */,
 				B02156DB1B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h */,
@@ -387,8 +386,6 @@
 				B02157871B9DAF30001860B5 /* MDKTooShortStringUIValidationError.m */,
 				B021579C1B9DAF30001860B5 /* MDKValidationError.h */,
 				B021579D1B9DAF30001860B5 /* MDKValidationError.m */,
-				B021578E1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.h */,
-				B021578F1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.m */,
 				B021576C1B9DAF30001860B5 /* view */,
 			);
 			path = error;
@@ -648,6 +645,7 @@
 				B08C19371B9DE9A500D6F93A /* MDKControlProtocol.h in Headers */,
 				B02157BB1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.h in Headers */,
 				B08C18F21B9DD1AC00D6F93A /* MDKConstants.h in Headers */,
+				B0308D521B9F1673000817D3 /* MDKControlCustomStyleProtocol.h in Headers */,
 				B044B1BE1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h in Headers */,
 				B02157C31B9DAF30001860B5 /* MDKMandatoryFieldUIValidationError.h in Headers */,
 				B02156E81B9DAD59001860B5 /* MDKControlPropertiesProtocol.h in Headers */,
@@ -687,7 +685,6 @@
 				B02157B71B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.h in Headers */,
 				B02156C71B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h in Headers */,
 				B02157C51B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.h in Headers */,
-				B02157BD1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.h in Headers */,
 				B0FFDA6C1B33FAFB00CA6E5E /* MDKControl.h in Headers */,
 				B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */,
 				B02156CD1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h in Headers */,
@@ -833,7 +830,6 @@
 				B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */,
 				B08C18FC1B9DDC5700D6F93A /* MDKControlEventsDescriptor.m in Sources */,
 				B02156CA1B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m in Sources */,
-				B02157BE1B9DAF30001860B5 /* MFInvalidLocationValueUIValidationError.m in Sources */,
 				B02156D01B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m in Sources */,
 				B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */,
 				B02157C61B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.m in Sources */,

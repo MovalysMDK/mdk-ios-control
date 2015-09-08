@@ -82,4 +82,10 @@
  * @return 0 if the component is valid, the number of errors on the component otherwhise.
  */
 -(NSInteger)validate;
+
+/*!
+ * @brief Sets the custom style class of the control
+ * @param customStyleClass The custom Style Class to set
+ */
+-(void)setCustomStyleClass:(Class)customStyleClass ;
 @end

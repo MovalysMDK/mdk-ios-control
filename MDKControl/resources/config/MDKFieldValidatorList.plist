@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mandatoryFieldValidator</key>
+	<string>MDKMandatoryFieldValidator</string>
+	<key>lengthFieldValidator</key>
+	<string>MDKLengthValidator</string>
+	<key>urlFieldValidator</key>
+	<string>MDKUrlFieldValidator</string>
+	<key>emailFieldValidator</key>
+	<string>MDKEmailFieldValidator</string>
+	<key>phoneFieldValidator</key>
+	<string>MDKPhoneFieldValidator</string>
+	<key>fixedListContentFieldValidator</key>
+	<string>MDKFixedListContentFieldValidator</string>
+	<key>doubleFieldValidator</key>
+	<string>MDKDoubleFieldValidator</string>
+	<key>integerFieldValidator</key>
+	<string>MDKIntegerFieldValidator</string>
+</dict>
+</plist>

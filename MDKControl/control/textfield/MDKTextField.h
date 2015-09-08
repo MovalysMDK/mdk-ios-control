@@ -31,10 +31,6 @@ IB_DESIGNABLE
 #pragma mark - Properties
 
 @property (nonatomic) IBInspectable BOOL onError_MDK;
-@property (nonatomic) IBInspectable BOOL useCustomBackgroundView_MDK;
-
-@property (nonatomic) Class customStyleClass;
-
 
 @property (nonatomic, weak) id<MDKControlProtocol> sender;
 

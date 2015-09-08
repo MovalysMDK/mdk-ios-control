@@ -13,32 +13,20 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFUIValidationBusinessError.m
-//  MFCore
-//
-//
 
-#import "MFUIValidationBusinessError.h"
+#import <Foundation/Foundation.h>
 
-@implementation MFUIValidationBusinessError
-
-+ (NSString *) getDomainBase
-{
-    return [[super getDomainBase] stringByAppendingString:@".uiValidation"];
-}
-
--(NSString *) domainBase
-{
-    return [MFUIValidationBusinessError getDomainBase];
-}
-
-/*
- Designated initializer. dict may be nil if no userInfo desired.
+/*!
+ * @protocol MDKControlCustomStyleProtocol
+ * @brief This protocol adds a property to customize the style class of a control.
  */
-+ (id)errorWithCode:(NSInteger)code userInfo:(NSDictionary *)dict{
-    return [NSError errorWithDomain:[MFUIValidationBusinessError getDomainBase] code:code userInfo:dict];
-}
+@protocol MDKControlCustomStyleProtocol <NSObject>
 
+#pragma mark - Properties
+
+/*!
+ * @brief The custom Style Class for a control
+ */
+@property (nonatomic) Class customStyleClass;
 
 @end

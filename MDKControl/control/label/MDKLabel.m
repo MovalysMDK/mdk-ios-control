@@ -17,10 +17,6 @@
 #import "MDKLabel.h"
 #import "MDKLabelStyle.h"
 #import "MDKControlProtocol.h"
-//#import "MFUIError.h"
-//#import "MFConfigurationHandler.h"
-//#import "MFLocalizedString.h"
-
 
 @interface MDKLabel ()
 
@@ -51,6 +47,7 @@
 @synthesize lastUpdateSender = _lastUpdateSender;
 @synthesize componentValidation = _componentValidation;
 @synthesize privateData = _privateData;
+@synthesize customStyleClass = _customStyleClass;
 
 NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 
@@ -80,6 +77,8 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 }
 
 -(void) initializeComponent {
+#if !TARGET_INTERFACE_BUILDER
+
     self.controlDelegate = [[MDKControlDelegate alloc] initWithControl:self];
 //    [self.baseStyleClass applyStandardStyleOnComponent:self];
     self.errors = [NSMutableArray new];
@@ -87,7 +86,6 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
         self.sender = self;
     }
     
-#if !TARGET_INTERFACE_BUILDER
 //    MFConfigurationHandler *registry = [[MFBeanLoader getInstance] getBeanWithKey:BEAN_KEY_CONFIGURATION_HANDLER];
 //    self.mandatoryIndicator = [registry getStringProperty:MF_MANDATORY_INDICATOR];
 #endif
@@ -103,7 +101,7 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 
 -(void)setCustomStyleClass:(Class)customStyleClass {
     _customStyleClass = customStyleClass;
-    self.styleClass = [customStyleClass new];
+    [self.controlDelegate setCustomStyleClass:customStyleClass];
 }
 
 - (void)setI18nKey:(NSString *) defaultValue {
@@ -173,7 +171,7 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
     if([self.mandatory isEqual: @1] && [data rangeOfString:self.mandatoryIndicator].location == NSNotFound) {
         fixedString = [data stringByAppendingString:[NSString stringWithFormat:@" %@",self.mandatoryIndicator]];
     }
-    else if ([self.mandatory isEqual: @0] && [self  .text rangeOfString:self.mandatoryIndicator].location != NSNotFound ) {
+    else if ([self.mandatory isEqual: @0] && [self.text rangeOfString:self.mandatoryIndicator].location != NSNotFound ) {
         fixedString = [data stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@" %@",self.mandatoryIndicator] withString:@""];
     }
     return fixedString;
@@ -213,8 +211,6 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
     else {
         [self.styleClass applyValidStyleOnComponent:self];
     }
-    self.text = @"Label";
-//    self.backgroundColor = [UIColor clearColor];
 }
 
 -(void)setMandatory:(NSNumber *)mandatory {
@@ -249,5 +245,12 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 
 -(void)addAccessories:(NSDictionary *)accessoryViews {
     //nothing
+}
+
+-(NSString *)mandatoryIndicator {
+    if(!_mandatoryIndicator) {
+        _mandatoryIndicator = @"*";
+    }
+    return _mandatoryIndicator;
 }
 @end
