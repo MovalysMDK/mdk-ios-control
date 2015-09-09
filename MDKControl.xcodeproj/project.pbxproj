@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00C4DF01BA06B4C003CBB16 /* MDKCreateEmailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4DEC1BA06B4C003CBB16 /* MDKCreateEmailViewController.h */; };
+		B00C4DF11BA06B4C003CBB16 /* MDKCreateEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00C4DED1BA06B4C003CBB16 /* MDKCreateEmailViewController.m */; };
+		B00C4DF21BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4DEE1BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h */; };
 		B018BE911BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE851BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m */; };
 		B018BE921BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE861BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h */; };
 		B018BE931BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE871BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h */; };
@@ -160,6 +163,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B00C4DEC1BA06B4C003CBB16 /* MDKCreateEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCreateEmailViewController.h; sourceTree = "<group>"; };
+		B00C4DED1BA06B4C003CBB16 /* MDKCreateEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCreateEmailViewController.m; sourceTree = "<group>"; };
+		B00C4DEE1BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCreateEmailViewControllerDelegate.h; sourceTree = "<group>"; };
+		B00C4DF41BA06BCB003CBB16 /* ViewControllerEmail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerEmail.h; sourceTree = "<group>"; };
+		B00C4DF51BA06BFB003CBB16 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B018BE851BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKBarCodeScanTextFieldStyle.m; sourceTree = "<group>"; };
 		B018BE861BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBarCodeScanTextFieldStyle.h; sourceTree = "<group>"; };
 		B018BE871BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKDoubleTextFieldStyle.h; sourceTree = "<group>"; };
@@ -341,6 +349,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B00C4DEA1BA06B4C003CBB16 /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				B00C4DEB1BA06B4C003CBB16 /* email */,
+				B00C4DF51BA06BFB003CBB16 /* ViewController.h */,
+			);
+			path = viewcontroller;
+			sourceTree = "<group>";
+		};
+		B00C4DEB1BA06B4C003CBB16 /* email */ = {
+			isa = PBXGroup;
+			children = (
+				B00C4DEC1BA06B4C003CBB16 /* MDKCreateEmailViewController.h */,
+				B00C4DED1BA06B4C003CBB16 /* MDKCreateEmailViewController.m */,
+				B00C4DEE1BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h */,
+				B00C4DF41BA06BCB003CBB16 /* ViewControllerEmail.h */,
+			);
+			path = email;
+			sourceTree = "<group>";
+		};
 		B02156881B9DAC6E001860B5 /* style */ = {
 			isa = PBXGroup;
 			children = (
@@ -663,6 +691,7 @@
 		B0FFDA681B33FAFB00CA6E5E /* MDKControl */ = {
 			isa = PBXGroup;
 			children = (
+				B00C4DEA1BA06B4C003CBB16 /* viewcontroller */,
 				B08C190C1B9DE9A500D6F93A /* control */,
 				B02158031B9DB27D001860B5 /* alertview */,
 				B02158191B9DBC8C001860B5 /* command */,
@@ -736,6 +765,7 @@
 				B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */,
 				B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */,
 				B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */,
+				B00C4DF21BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h in Headers */,
 				B021575C1B9DAEEA001860B5 /* MDKFieldValidatorHandler.h in Headers */,
 				B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */,
 				B018BE991BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.h in Headers */,
@@ -769,6 +799,7 @@
 				B05C93701B9F3D1C00487CFB /* MDKEmailFieldValidator.h in Headers */,
 				B02157B71B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.h in Headers */,
 				B0308D581B9F1C64000817D3 /* MDKContext.h in Headers */,
+				B00C4DF01BA06B4C003CBB16 /* MDKCreateEmailViewController.h in Headers */,
 				B018BE9F1BA02C6000EF1D87 /* MDKSendEmailCommand.h in Headers */,
 				B02156C71B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h in Headers */,
 				B05C93661B9F3BF900487CFB /* MDKEmail.h in Headers */,
@@ -938,6 +969,7 @@
 				B02156B41B9DAC6E001860B5 /* MDKDefaultStyle.m in Sources */,
 				B02157B61B9DAF30001860B5 /* MDKTooShortStringUIValidationError.m in Sources */,
 				B018BE911BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m in Sources */,
+				B00C4DF11BA06B4C003CBB16 /* MDKCreateEmailViewController.m in Sources */,
 				B02156CC1B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.m in Sources */,
 				B02156CE1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.m in Sources */,
 				B02157B81B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.m in Sources */,

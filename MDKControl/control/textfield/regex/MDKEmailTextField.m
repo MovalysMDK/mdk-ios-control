@@ -34,8 +34,8 @@
         canSendMail = YES;
         // Create and show composer
         MDKEmail *email = [MDKEmail new];
-        email.to = [self getData];
-        [[MDKCommandHandler commandWithKey:@"SendEmailCommand" withQualifier:nil] executeFromViewController:[self parentViewController] withParameters:email, nil];
+        email.to = [[self getData] isKindOfClass:[NSAttributedString class]] ? [[self getData] string] : [self getData];
+        [[MDKCommandHandler commandWithKey:@"SendEmailCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:email, nil];
     }
     if(!canSendMail)
     {

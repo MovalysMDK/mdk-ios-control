@@ -14,9 +14,10 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "ViewControllerEmail.h"
+
 #import "MDKSendEmailCommand.h"
-#import "MFCreateEmailViewController.h"
-#import "MFEmail.h"
+#import "MDKEmail.h"
 
 @implementation MDKSendEmailCommand
 
@@ -35,8 +36,10 @@
     va_list args;
     va_start(args, parameters);
     MDKEmail *email = parameters;
-    MFCreateEmailViewController *emailController = [MFCreateEmailViewController new];
+    MDKCreateEmailViewController *emailController = [MDKCreateEmailViewController new];
     [emailController setToRecipients:@[email.to]];
+    [emailController setSubject:email.object];
+    [emailController setMessageBody:email.body isHTML:NO];
     [viewController presentViewController:emailController animated:YES completion:nil];
     return nil;
 }
