@@ -14,10 +14,12 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import "MDKRegexTextFieldStyle.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
+/*!
+ * @class MDKBarCodeScanTextFieldStyle
+ * @brief The style class for the MDKBarCodeScanTextField control
+ */
+@interface MDKBarCodeScanTextFieldStyle : MDKRegexTextFieldStyle
 
-#endif
+@end

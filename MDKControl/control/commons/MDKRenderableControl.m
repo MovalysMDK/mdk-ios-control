@@ -14,11 +14,10 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "Utils.h"
-
 #import "MDKRenderableControl.h"
 #import "MDKDefaultStyle.h"
 #import "MDKTooltipView.h"
+#import "Utils.h"
 
 @interface MDKRenderableControl ()
 

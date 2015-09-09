@@ -14,10 +14,14 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
-
 #import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
 
-#endif
+/*!
+ * @class MDKEmailTextField
+ * @brief This class represents the Email Text Field component.
+ * @discussion This component inherits from MFRegexTextField and must contains
+ * a valid "mail value" to be validated (ex : abcd@movalys.com )
+ */
+@interface MDKEmailTextField : MDKRegexTextField
+
+@end

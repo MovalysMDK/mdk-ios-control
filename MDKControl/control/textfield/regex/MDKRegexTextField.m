@@ -26,13 +26,13 @@
 -(void)initializeComponent {
     [super initializeComponent];
     [self.styleClass performSelector:@selector(addButtonOnTextField:) withObject:self];
-    [self addTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self addTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
 #pragma clang diagnostic pop
 
 
 -(void)dealloc {
-    [self removeTarget:self action:@selector(textDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [self removeTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
 -(void) doAction {
 //    [MFException throwNotImplementedExceptionOfMethodName:@"doAction" inClass:[self class] andUserInfo:nil];

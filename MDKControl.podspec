@@ -19,6 +19,6 @@ Pod::Spec.new do |s|
   s.author       = "Sopra Steria"
   s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdkcontrol", :tag => "0.0.1" }
   s.source_files = 'MDKControl/**/*.{h,m}'
-  s.resources = 'MDKControl/**/*.{plist,xib}'
+  s.resources = 'MDKControl/**/*.{plist,xib,pch,png}'
 
 end

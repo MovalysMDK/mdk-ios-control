@@ -14,10 +14,8 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import "MDKEmail.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
+@implementation MDKEmail
 
-#endif
+@end

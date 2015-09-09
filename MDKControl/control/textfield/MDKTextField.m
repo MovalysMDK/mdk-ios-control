@@ -106,7 +106,6 @@
     self.controlDelegate = [[MDKControlDelegate alloc] initWithControl:self];
     self.errors = [NSMutableArray new];
     self.extension = [[MDKTextFieldExtension alloc] init];
-    
 #if !TARGET_INTERFACE_BUILDER
     if(!self.sender) {
         self.sender = self;

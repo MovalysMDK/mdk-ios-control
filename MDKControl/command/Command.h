@@ -19,5 +19,6 @@
 
 #import "MDKCommandHandler.h"
 #import "MDKCommandProtocol.h"
+#import "MDKEmail.h"
 
 #endif

@@ -20,5 +20,6 @@
 #import "MDKConstants.h"
 #import "MDKTags.h"
 #import "MDKContext.h"
+#import "UIView+ViewController.h"
 
 #endif

@@ -14,10 +14,17 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import "MDKBarCodeScanTextFieldStyle.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
+@implementation MDKBarCodeScanTextFieldStyle
 
-#endif
+-(NSString *)accessoryButtonImageName {
+    return @"qrcode_icon";
+}
+
+-(BOOL)hasAccessoryButton {
+    return YES;
+}
+
+
+@end

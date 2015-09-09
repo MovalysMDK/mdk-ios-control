@@ -14,10 +14,38 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import <Foundation/Foundation.h>
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
+/*!
+ * @class MDKEmail
+ * @brief This class describes an email content
+ */
+@interface MDKEmail : NSObject
 
-#endif
+/*!
+ * @brief "To" field of the email
+ */
+@property (nonatomic, strong) NSString *to;
+
+/*!
+ * @brief "cc" field of the email
+ */
+@property (nonatomic, strong) NSString *cc;
+
+/*!
+ * @brief "bcc" field of the email
+ */
+@property (nonatomic, strong) NSString *bcc;
+
+/*!
+ * @brief "object" field of the email
+ */
+@property (nonatomic, strong) NSString *object;
+
+/*!
+ * @brief "The body content of the email
+ */
+@property (nonatomic, strong) NSString *body;
+
+
+@end

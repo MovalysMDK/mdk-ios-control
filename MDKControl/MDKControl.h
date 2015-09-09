@@ -25,7 +25,6 @@ FOUNDATION_EXPORT const unsigned char MDKControlVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <MDKControl/PublicHeader.h>
 
 #import "FieldValidator.h"
-#import "Utils.h"
 #import "Command.h"
 #import "AlertView.h"
 #import "ComponentProvider.h"

@@ -21,5 +21,6 @@
 #import "MDKFieldValidatorProtocol.h"
 #import "MDKLengthFieldValidator.h"
 #import "MDKMandatoryFieldValidator.h"
+#import "MDKEmailFieldValidator.h"
 
 #endif

@@ -14,10 +14,16 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import <Foundation/Foundation.h>
+#import "MDKCommandProtocol.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
+/*!
+ * @class MDKSendEmailCommand
+ * @brief The class describing the command to execute to send an email
+ * (from MDKEmailTextField)
+ */
+@interface MDKSendEmailCommand : NSObject <MDKCommandProtocol>
 
-#endif
+@end
+
+

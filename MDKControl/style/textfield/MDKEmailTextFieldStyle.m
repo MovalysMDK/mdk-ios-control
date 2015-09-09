@@ -1,3 +1,4 @@
+
 /**
  * Copyright (C) 2010 Sopra (support_movalys@sopra.com)
  *
@@ -14,10 +15,13 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import "MDKEmailTextFieldStyle.h"
+#import "MDKRegexTextFieldStyle+Button.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
+@implementation MDKEmailTextFieldStyle
 
-#endif
+-(NSString *)accessoryButtonImageName {
+    return @"mail";
+}
+
+@end

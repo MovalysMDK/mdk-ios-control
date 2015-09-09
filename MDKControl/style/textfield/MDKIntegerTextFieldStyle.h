@@ -1,3 +1,4 @@
+
 /**
  * Copyright (C) 2010 Sopra (support_movalys@sopra.com)
  *
@@ -13,11 +14,12 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
+#import "MDKRegexTextFieldStyle.h"
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+/*!
+ * @class MDKIntegerTextFieldStyle
+ * @brief This class manages the syle of a MDKIntegerTextField component
+ */
+@interface MDKIntegerTextFieldStyle : MDKRegexTextFieldStyle
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-
-#endif
+@end

@@ -23,5 +23,10 @@
 #import "MDKTextFieldStyle+ErrorView.h"
 #import "MDKTextFieldStyle+TextLayouting.h"
 #import "MDKTextFieldStyle.h"
+#import "MDKBarCodeScanTextFieldStyle.h"
+#import "MDKDoubleTextFieldStyle.h"
+#import "MDKEmailTextFieldStyle.h"
+#import "MDKIntegerTextFieldStyle.h"
+#import "MDKUrlTextFieldStyle.h"
 
 #endif
