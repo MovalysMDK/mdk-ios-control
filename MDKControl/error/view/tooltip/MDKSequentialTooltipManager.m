@@ -64,9 +64,9 @@
     } else {
         [self.currentlyShowingTooltip hideAnimated:YES];
         
-        NSUInteger i = [self.tooltips indexOfObject:self.currentlyShowingTooltip] + 1;
-        if (i < self.tooltips.count) {
-            self.currentlyShowingTooltip = self.tooltips[i];
+        NSUInteger index = [self.tooltips indexOfObject:self.currentlyShowingTooltip] + 1;
+        if (index < self.tooltips.count) {
+            self.currentlyShowingTooltip = self.tooltips[index];
             [self.currentlyShowingTooltip addTapTarget:self action:@selector(handleTooltipTap:)];
             [self showTooltip:self.currentlyShowingTooltip];
         } else {

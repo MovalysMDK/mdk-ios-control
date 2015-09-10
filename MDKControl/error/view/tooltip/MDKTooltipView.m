@@ -351,8 +351,7 @@
     CGFloat maxX = CGRectGetMaxX(frame);
     CGFloat hostViewWidth = hostViewSize.width;
     if (maxX > hostViewWidth) {
-        CGFloat padding = maxX - hostViewWidth;
-        return padding;
+        return maxX - hostViewWidth;
     }
     return 30.0f;
 }

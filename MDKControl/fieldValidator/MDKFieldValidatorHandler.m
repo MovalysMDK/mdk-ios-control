@@ -25,16 +25,16 @@
     NSMutableArray *result = [NSMutableArray array];
     
     id<UIApplicationDelegate> appDelegate =  [[UIApplication sharedApplication] delegate];
-    NSDictionary *completeFieldValidatorDictionary = nil;
+    NSDictionary *completeFieldValidatorDict = nil;
     if([appDelegate conformsToProtocol:@protocol(MDKComponentApplicationProtocol)]) {
-        completeFieldValidatorDictionary = ((id<MDKComponentApplicationProtocol>)appDelegate).fieldValidatorsByAttributes;
+        completeFieldValidatorDict = ((id<MDKComponentApplicationProtocol>)appDelegate).fieldValidatorsByAttributes;
     }
-    if(!completeFieldValidatorDictionary){
-        completeFieldValidatorDictionary = [MDKFieldValidatorHandler loadFieldValidatorByAttributes];
+    if(!completeFieldValidatorDict){
+        completeFieldValidatorDict = [MDKFieldValidatorHandler loadFieldValidatorByAttributes];
     }
     
     [attributes enumerateObjectsUsingBlock:^(NSString *attribute, NSUInteger idx, BOOL *stop) {
-        id<MDKFieldValidatorProtocol> fieldValidatorInstance = completeFieldValidatorDictionary[attribute];
+        id<MDKFieldValidatorProtocol> fieldValidatorInstance = completeFieldValidatorDict[attribute];
         if(fieldValidatorInstance && [fieldValidatorInstance canValidControl:control]) {
             [result addObject:fieldValidatorInstance];
         }
@@ -81,7 +81,8 @@
                 }
             }
             else {
-                @throw [NSException exceptionWithName:@"Incorrect FieldValidator" reason:[NSString stringWithFormat:@"The declared FieldValidator with key %@ does not conform MFFieldValidatorProtocol", fieldValidatorKey]userInfo:nil];
+                @throw [NSException exceptionWithName:@"Incorrect FieldValidator"
+                                               reason:[NSString stringWithFormat:@"The declared FieldValidator with key %@ does not conform MFFieldValidatorProtocol", fieldValidatorKey]userInfo:nil];
             }
         }
     }

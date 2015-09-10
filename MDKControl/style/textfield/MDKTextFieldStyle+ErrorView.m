@@ -75,11 +75,29 @@ NSString * ERROR_VIEW_RIGHT_CONSTRAINT = @"ERROR_VIEW_RIGHT_CONSTRAINT";
     component.translatesAutoresizingMaskIntoConstraints = NO;
     self.errorView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:component attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:component attribute:NSLayoutAttributeRight multiplier:1 constant:-DEFAULT_ACCESSORIES_MARGIN];
-    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0 constant:DEFAULT_ERROR_VIEW_SQUARE_SIZE];
-    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0 constant:DEFAULT_ERROR_VIEW_SQUARE_SIZE];
+    NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:self.errorView
+                                                               attribute:NSLayoutAttributeCenterY
+                                                               relatedBy:NSLayoutRelationEqual toItem:component
+                                                               attribute:NSLayoutAttributeCenterY
+                                                              multiplier:1 constant:0];
     
+    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.errorView
+                                                             attribute:NSLayoutAttributeRight
+                                                             relatedBy:NSLayoutRelationEqual toItem:component
+                                                             attribute:NSLayoutAttributeRight
+                                                            multiplier:1 constant:-DEFAULT_ACCESSORIES_MARGIN];
+    
+    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.errorView
+                                                             attribute:NSLayoutAttributeWidth
+                                                             relatedBy:NSLayoutRelationEqual toItem:nil
+                                                             attribute:NSLayoutAttributeNotAnAttribute
+                                                            multiplier:0 constant:DEFAULT_ERROR_VIEW_SQUARE_SIZE];
+    
+    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self.errorView
+                                                              attribute:NSLayoutAttributeHeight
+                                                              relatedBy:NSLayoutRelationEqual toItem:nil
+                                                              attribute:NSLayoutAttributeNotAnAttribute
+                                                             multiplier:0 constant:DEFAULT_ERROR_VIEW_SQUARE_SIZE];
     NSDictionary *errorViewConstraints = @{
                              ERROR_VIEW_CENTER_Y_CONSTRAINT:centerY,
                              ERROR_VIEW_HEIGHT_CONSTRAINT:height,

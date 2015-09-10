@@ -116,39 +116,85 @@
     self.tooltips = [self.tooltips arrayByAddingObject:tooltip];
 }
 
-- (void)addTooltipWithTargetPoint:(CGPoint)targetPoint tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection hostView:(UIView *)hostView width:(CGFloat)width
+- (void)addTooltipWithTargetPoint:(CGPoint)targetPoint tooltipText:(NSString *)tooltipText
+                   arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection hostView:(UIView *)hostView width:(CGFloat)width
 {
-    MDKTooltipView *tooltip = [[MDKTooltipView alloc] initWithTargetPoint:targetPoint hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width];
+    MDKTooltipView *tooltip = [[MDKTooltipView alloc]
+                               initWithTargetPoint:targetPoint
+                               hostView:hostView
+                               tooltipText:tooltipText
+                               arrowDirection:arrowDirection
+                               width:width];
     [self addTooltip:tooltip];
 }
 
-- (void)addTooltipWithTargetPoint:(CGPoint)targetPoint tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection hostView:(UIView *)hostView width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock
+- (void)addTooltipWithTargetPoint:(CGPoint)targetPoint tooltipText:(NSString *)tooltipText
+                   arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection hostView:(UIView *)hostView
+                            width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock
+              hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock
 {
-    MDKTooltipView *tooltip = [[MDKTooltipView alloc] initWithTargetPoint:targetPoint hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width showCompletionBlock:showCompletionBlock hideCompletionBlock:hideCompletionBlock];
+    MDKTooltipView *tooltip = [[MDKTooltipView alloc]
+                               initWithTargetPoint:targetPoint
+                               hostView:hostView
+                               tooltipText:tooltipText
+                               arrowDirection:arrowDirection
+                               width:width
+                               showCompletionBlock:showCompletionBlock
+                               hideCompletionBlock:hideCompletionBlock];
     [self addTooltip:tooltip];
 }
 
-- (void)addTooltipWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width
+- (void)addTooltipWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText
+                  arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width
 {
-    MDKTooltipView *tooltip = [[MDKTooltipView alloc] initWithTargetView:targetView hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width];
+    MDKTooltipView *tooltip = [[MDKTooltipView alloc]
+                               initWithTargetView:targetView
+                               hostView:hostView
+                               tooltipText:tooltipText
+                               arrowDirection:arrowDirection
+                               width:width];
     [self addTooltip:tooltip];
 }
 
-- (void)addTooltipWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock
+- (void)addTooltipWithTargetView:(UIView *)targetView hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText
+                  arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width
+             showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock
+             hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock
 {
-    MDKTooltipView *tooltip = [[MDKTooltipView alloc] initWithTargetView:targetView hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width showCompletionBlock:showCompletionBlock hideCompletionBlock:hideCompletionBlock];
+    MDKTooltipView *tooltip = [[MDKTooltipView alloc]
+                               initWithTargetView:targetView
+                               hostView:hostView tooltipText:tooltipText
+                               arrowDirection:arrowDirection
+                               width:width
+                               showCompletionBlock:showCompletionBlock
+                               hideCompletionBlock:hideCompletionBlock];
     [self addTooltip:tooltip];
 }
 
-- (void)addTooltipWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width
+- (void)addTooltipWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView
+                              tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection
+                                    width:(CGFloat)width
 {
-    MDKTooltipView *tooltip = [[MDKTooltipView alloc] initWithTargetBarButtonItem:barButtonItem hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width];
+    MDKTooltipView *tooltip = [[MDKTooltipView alloc]
+                               initWithTargetBarButtonItem:barButtonItem
+                               hostView:hostView tooltipText:tooltipText
+                               arrowDirection:arrowDirection
+                               width:width];
     [self addTooltip:tooltip];
 }
 
-- (void)addTooltipWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock
+- (void)addTooltipWithTargetBarButtonItem:(UIBarButtonItem *)barButtonItem hostView:(UIView *)hostView
+                              tooltipText:(NSString *)tooltipText arrowDirection:(MDKTooltipViewArrowDirection)arrowDirection
+                                    width:(CGFloat)width showCompletionBlock:(MDKTooltipViewCompletionBlock)showCompletionBlock
+                      hideCompletionBlock:(MDKTooltipViewCompletionBlock)hideCompletionBlock
 {
-    MDKTooltipView *tooltip = [[MDKTooltipView alloc] initWithTargetBarButtonItem:barButtonItem hostView:hostView tooltipText:tooltipText arrowDirection:arrowDirection width:width showCompletionBlock:showCompletionBlock hideCompletionBlock:hideCompletionBlock];
+    MDKTooltipView *tooltip = [[MDKTooltipView alloc]
+                               initWithTargetBarButtonItem:barButtonItem
+                               hostView:hostView tooltipText:tooltipText
+                               arrowDirection:arrowDirection
+                               width:width
+                               showCompletionBlock:showCompletionBlock
+                               hideCompletionBlock:hideCompletionBlock];
     [self addTooltip:tooltip];
 }
 

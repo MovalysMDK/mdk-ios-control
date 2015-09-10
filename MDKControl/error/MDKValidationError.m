@@ -26,20 +26,11 @@
 
 @implementation MDKValidationError
 
-//+ (NSString *) getDomainBase
-//{
-//    return [[super getDomainBase] stringByAppendingString:@".uiValidation"];
-//}
-//
-//-(NSString *) domainBase
-//{
-//    return [MFUIValidationError getDomainBase];
-//}
 
-/*
- Designated initializer.
- @param code Error unique code.
- @param dict may be nil if no userInfo desired.
+/*!
+ * @brief Designated initializer.
+ * @param code Error unique code.
+ * @param dict may be nil if no userInfo desired.
  */
 - (id)initWithCode:(NSInteger)code userInfo:(NSDictionary *)dict localizedFieldName: (NSString *) fieldName
 technicalFieldName:(NSString *)technicalFieldName
@@ -55,11 +46,13 @@ technicalFieldName:(NSString *)technicalFieldName
     return self;
 }
 
-/*
- Designated initializer.
- @param code Error unique code.
- @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
- @param failureReasonKey The string that can be displayed as the "informative" (aka "secondary") message on an alert panel
+/*!
+ * @brief Designated initializer.
+ * @param code Error unique code.
+ * @param descriptionKey complete sentence which describes why the operation failed.
+ * In many cases this will be just the "because" part of the error message (but as a complete sentence, 
+ * which makes localization easier).
+ * @param failureReasonKey The string that can be displayed as the "informative" (aka "secondary") message on an alert panel
  */
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFailureReasonErrorKey:(NSString *) failureReasonKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName
@@ -74,10 +67,12 @@ localizedFailureReasonErrorKey:(NSString *) failureReasonKey localizedFieldName:
     return self;
 }
 
-/*
- Designated initializer.
- @param code Error unique code.
- @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just the "because" part of the error message (but as a complete sentence, which makes localization easier).
+/*!
+ * Designated initializer.
+ * @param code Error unique code.
+ * @param descriptionKey complete sentence which describes why the operation failed.
+ * In many cases this will be just the "because" part of the error message (but as a complete sentence,
+ * which makes localization easier).
  */
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName{
@@ -92,8 +87,8 @@ localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)techni
 }
 
 
-/*
- Designated initializer. dict may be nil if no userInfo desired.
+/*!
+ * @brief Designated initializer. dict may be nil if no userInfo desired.
  */
 + (id)errorWithCode:(NSInteger)code userInfo:(NSDictionary *)dict localizedFieldName: (NSString *) fieldName
  technicalFieldName:(NSString *)technicalFieldName{

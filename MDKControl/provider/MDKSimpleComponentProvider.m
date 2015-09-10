@@ -35,13 +35,14 @@
 
 -(id<MDKFieldValidatorProtocol>)fieldValidatorWithKey:(NSString *)baseKey {
     id<MDKFieldValidatorProtocol> fieldValidator = nil;
-    baseKey = [[[baseKey substringToIndex:1] uppercaseString] stringByAppendingString:[baseKey substringFromIndex:1]];
-    Class fieldValidatorClass = [self classWithKey:baseKey withQualifier:@""];
+    NSString *fixedBaseKey = [[[baseKey substringToIndex:1] uppercaseString] stringByAppendingString:[baseKey substringFromIndex:1]];
+    Class fieldValidatorClass = [self classWithKey:fixedBaseKey withQualifier:@""];
     if(fieldValidatorClass) {
         fieldValidator = [fieldValidatorClass sharedInstance];
     }
     else {
-//        @throw [NSException exceptionWithName:@"Field validator not found" reason:[NSString stringWithFormat:@"No field validator found for key %@", baseKey] userInfo:nil];
+        NSException *exception = [NSException exceptionWithName:@"Field validator not found" reason:[NSString stringWithFormat:@"No field validator found for key %@", fixedBaseKey] userInfo:nil];
+        @throw exception;
     }
     return fieldValidator;
 }
@@ -53,9 +54,6 @@
     if(qualifier) {
         commandClass = NSClassFromString([NSString stringWithFormat:@"MDK%@_%@", baseKey, qualifier]);
         if(!commandClass) {
-            commandClass = NSClassFromString([NSString stringWithFormat:@"MDK%@", baseKey]);
-        }
-        else {
             commandClass = NSClassFromString([NSString stringWithFormat:@"MDK%@", baseKey]);
         }
     }

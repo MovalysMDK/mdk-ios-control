@@ -86,11 +86,29 @@ NSString * REGEX_BUTTON_RIGHT_CONSTRAINT = @"REGEX_BUTTON_RIGHT_CONSTRAINT";
     
     button.translatesAutoresizingMaskIntoConstraints = NO;
     if(button) {
-        NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:component attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-        NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:component attribute:NSLayoutAttributeRight multiplier:1 constant:-DEFAULT_ACCESSORIES_MARGIN];
-        NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0 constant:REGEX_BUTTON_SQUARE_SIZE];
-        NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:button attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:0 constant:REGEX_BUTTON_SQUARE_SIZE];
+        NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:button
+                                                                   attribute:NSLayoutAttributeCenterY
+                                                                   relatedBy:NSLayoutRelationEqual toItem:component
+                                                                   attribute:NSLayoutAttributeCenterY
+                                                                  multiplier:1 constant:0];
         
+        NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:button
+                                                                 attribute:NSLayoutAttributeRight
+                                                                 relatedBy:NSLayoutRelationEqual toItem:component
+                                                                 attribute:NSLayoutAttributeRight
+                                                                multiplier:1 constant:-DEFAULT_ACCESSORIES_MARGIN];
+        
+        NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:button
+                                                                 attribute:NSLayoutAttributeWidth
+                                                                 relatedBy:NSLayoutRelationEqual toItem:nil
+                                                                 attribute:NSLayoutAttributeNotAnAttribute
+                                                                multiplier:0 constant:REGEX_BUTTON_SQUARE_SIZE];
+        
+        NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:button
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationEqual toItem:nil
+                                                                  attribute:NSLayoutAttributeNotAnAttribute
+                                                                 multiplier:0 constant:REGEX_BUTTON_SQUARE_SIZE];
         buttonConstraints = @{
                               REGEX_BUTTON_CENTER_Y_CONSTRAINT:centerY,
                               REGEX_BUTTON_HEIGHT_CONSTRAINT:height,

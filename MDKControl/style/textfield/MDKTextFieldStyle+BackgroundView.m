@@ -45,12 +45,29 @@ const NSString * BACKGROUND_VIEW_LEFT_CONSTRAINT = @"BACKGROUND_VIEW_LEFT_CONSTR
 -(NSDictionary *)defineBackgroundViewConstraintsOnComponent:(UIView *)component {    
     self.backgroundView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:component attribute:NSLayoutAttributeCenterY multiplier:1 constant:0];
-    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:component attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
-    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:component attribute:NSLayoutAttributeHeight multiplier:1 constant:0];
-    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.backgroundView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:component attribute:NSLayoutAttributeWidth multiplier:1 constant:0];
+    NSLayoutConstraint *centerY = [NSLayoutConstraint constraintWithItem:self.backgroundView
+                                                               attribute:NSLayoutAttributeCenterY
+                                                               relatedBy:NSLayoutRelationEqual toItem:component
+                                                               attribute:NSLayoutAttributeCenterY
+                                                              multiplier:1 constant:0];
     
+    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.backgroundView
+                                                            attribute:NSLayoutAttributeLeft
+                                                            relatedBy:NSLayoutRelationEqual toItem:component
+                                                            attribute:NSLayoutAttributeLeft
+                                                           multiplier:1 constant:0];
     
+    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self.backgroundView
+                                                              attribute:NSLayoutAttributeHeight
+                                                              relatedBy:NSLayoutRelationEqual toItem:component
+                                                              attribute:NSLayoutAttributeHeight
+                                                             multiplier:1 constant:0];
+    
+    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.backgroundView
+                                                             attribute:NSLayoutAttributeWidth
+                                                             relatedBy:NSLayoutRelationEqual toItem:component
+                                                             attribute:NSLayoutAttributeWidth
+                                                            multiplier:1 constant:0];
     NSDictionary *backgroundViewConstraints = @{
                              BACKGROUND_VIEW_WIDTH_CONSTRAINT:width,
                              BACKGROUND_VIEW_HEIGHT_CONSTRAINT:height,

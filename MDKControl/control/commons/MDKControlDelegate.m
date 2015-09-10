@@ -170,15 +170,14 @@
     if([self.control mandatory]) {
         
         mandatoryValidator = [[MDKFieldValidatorHandler fieldValidatorsForAttributes:@[FIELD_VALIDATOR_ATTRIBUTE_MANDATORY] forControl:[self control]] firstObject];
-        mandatoryError = [mandatoryValidator validate:[self.control getData] withCurrentState:validationState withParameters:@{FIELD_VALIDATOR_ATTRIBUTE_MANDATORY : self.control.mandatory, @"componentName" : NSStringFromClass(self.control.class)}];
+        mandatoryError = [mandatoryValidator validate:[self.control getData] withCurrentState:validationState
+                                       withParameters:@{FIELD_VALIDATOR_ATTRIBUTE_MANDATORY : self.control.mandatory, @"componentName" : NSStringFromClass(self.control.class)}];
     }
-    if(!mandatoryError) {
-        [self processValidationWithValidators:validators withValidationState:validationState];
+    if(mandatoryError) {
+        validationState[NSStringFromClass([mandatoryValidator class])] = mandatoryError;
     }
     else {
-        if(mandatoryError) {
-            validationState[NSStringFromClass([mandatoryValidator class])] = mandatoryError;
-        }
+        [self processValidationWithValidators:validators withValidationState:validationState];
     }
     
     return [self computeNumberOfErrorsFromValidationState:validationState];
