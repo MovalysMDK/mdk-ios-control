@@ -14,14 +14,28 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import <Foundation/Foundation.h>
+#import "MDKFieldValidatorProtocol.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
+/*!
+ * @class MDKPhoneFieldValidator
+ * @brief The FieldValidator for phone
+ * @discussion This validator checks the valid phone value
+ */
+@interface MDKPhoneFieldValidator : NSObject <MDKFieldValidatorProtocol>
 
-#endif
+/*!
+ * @brief Returns the regular expression that should be matched
+ * @return The regular expression that should be matched
+ */
+-(NSString *) regex;
+
+/*!
+ * @brief Indicates if the value match the given pattern
+ * @param checkString The pattern to match
+ * @return A BOOL value that is YES if the component is matching the pattern, NO otherwhise.
+ */
+-(BOOL) matchPattern:(NSString *)checkString;
+
+
+@end

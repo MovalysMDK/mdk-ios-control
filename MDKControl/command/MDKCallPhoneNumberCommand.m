@@ -14,19 +14,31 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Command_h
-#define MDKControl_Command_h
-
-#import "MDKCommandHandler.h"
-#import "MDKCommandProtocol.h"
-
-#import "MDKEmail.h"
-#import "MDKSendEmailCommand.h"
-
-#import "MDKPhoneNumber.h"
 #import "MDKCallPhoneNumberCommand.h"
+#import "MDKPhoneNumber.h"
 
-#import "MDKURL.h"
-#import "MDKOpenURLCommand.h"
+@implementation MDKCallPhoneNumberCommand
 
-#endif
+#pragma mark - Initialization
+
++(MDKCallPhoneNumberCommand *)sharedInstance{
+    static MDKCallPhoneNumberCommand *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc]init];
+    });
+    return instance;
+}
+
+- (id) executeFromViewController:(UIViewController *)viewController withParameters:(id)parameters, ... NS_REQUIRES_NIL_TERMINATION {
+    
+    va_list args;
+    va_start(args, parameters);
+    MDKPhoneNumber *phone = parameters;
+    
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [phone buildPhoneString]]];
+    [[UIApplication sharedApplication] openURL:url];
+    return nil;
+}
+
+@end

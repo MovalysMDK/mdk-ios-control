@@ -164,6 +164,10 @@
     }
 }
 
+-(NSString *) stringData {
+    return [[self getData] isKindOfClass:[NSAttributedString class]] ? [[self getData] string] : [self getData];
+}
+
 #pragma mark - Control Data Protocol
 -(void)setData:(id)data {
     id fixedData = data;
@@ -225,10 +229,9 @@
     [self.controlDelegate setIsValid:!showError];
 }
 
--(void) onErrorButtonClick:(id)sender {
+-(void)onErrorButtonClick:(id)sender {
     [self.controlDelegate onErrorButtonClick:sender];
 }
-
 
 #pragma mark - Control attributes
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {

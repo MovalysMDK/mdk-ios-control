@@ -147,7 +147,9 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
     [self setData:defaultValue];
 }
 
-
+-(void)addAccessories:(NSDictionary *)accessoryViews {
+    //Nothing to do by default
+}
 
 
 #pragma mark - Control Data Protocol
@@ -268,7 +270,6 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
         [self.styleClass applyValidStyleOnComponent:self];
     }
 }
-
 
 
 

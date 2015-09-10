@@ -14,14 +14,29 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import "MDKOpenURLCommand.h"
+#import "MDKURL.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
+@implementation MDKOpenURLCommand
 
-#endif
++(MDKOpenURLCommand *)sharedInstance{
+    static MDKOpenURLCommand *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc]init];
+    });
+    return instance;
+}
+
+- (id) executeFromViewController:(UIViewController *)viewController withParameters:(id)parameters, ... NS_REQUIRES_NIL_TERMINATION {
+    
+    va_list args;
+    va_start(args, parameters);
+    MDKURL *url = parameters;
+    
+    [[UIApplication sharedApplication] openURL:[url absoluteURL]];
+
+    return nil;
+}
+
+@end

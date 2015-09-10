@@ -14,14 +14,20 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import <Foundation/Foundation.h>
+#import "MDKFieldValidatorProtocol.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
+FOUNDATION_EXPORT NSString *FIELD_VALIDATOR_INTEGER_PART_MIN_DIGITS;
+FOUNDATION_EXPORT NSString *FIELD_VALIDATOR_INTEGER_PART_MAX_DIGITS;
+FOUNDATION_EXPORT NSString *FIELD_VALIDATOR_DECIMAL_PART_MIN_DIGITS;
+FOUNDATION_EXPORT NSString *FIELD_VALIDATOR_DECIMAL_PART_MAX_DIGITS;
 
-#endif
+/*!
+ * @class MDKDoubleFieldValidator
+ * @brief The FieldValidator for double
+ * @discussion This validator checks the valid double value
+ */
+@interface MDKDoubleFieldValidator : NSObject <MDKFieldValidatorProtocol>
+
+
+@end

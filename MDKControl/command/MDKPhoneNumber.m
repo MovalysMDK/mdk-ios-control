@@ -14,14 +14,13 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import "MDKPhoneNumber.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
+@implementation MDKPhoneNumber
 
-#endif
+
+-(NSString *)buildPhoneString {
+    return [NSString stringWithFormat:@"%@%@%@", self.symbolPrefix ? self.symbolPrefix : @"" , self.internationalPrefix ? self.internationalPrefix : @"", self.baseNumber];
+}
+
+@end

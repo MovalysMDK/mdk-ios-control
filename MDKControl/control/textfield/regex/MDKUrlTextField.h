@@ -14,14 +14,14 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
-
 #import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
 
-#endif
+/*!
+ * @class MDKUrlTextField
+ * @brief This class represents the URL Text Field component.
+ * @discussion This component inherits from MFRegexTextField and must contains
+ * a valid "URL value" to be validated (ex : http://www.soprasteria.com )
+ */
+@interface MDKUrlTextField : MDKRegexTextField
+
+@end

@@ -14,14 +14,14 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
-
 #import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
 
-#endif
+/*!
+ * @class MDKIntegerTextField
+ * @brief This class represents the Double Text Field component.
+ * @discussion This component inherits from MDKRegexTextField and must contains
+ * a valid "double value" to be validated (ex : -45.8)
+ */
+@interface MDKIntegerTextField : MDKRegexTextField
+
+@end

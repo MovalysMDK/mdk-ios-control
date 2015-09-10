@@ -30,8 +30,16 @@ IB_DESIGNABLE
 
 #pragma mark - Properties
 
+
+/*!
+ * @brief An IBInscpectable properties that allows to show the error 
+ * button on InterfaceBuilder
+ */
 @property (nonatomic) IBInspectable BOOL onError_MDK;
 
+/*!
+ * @brief A MDK Control that hold this MDKTextField instance
+ */
 @property (nonatomic, weak) id<MDKControlProtocol> sender;
 
 
@@ -44,6 +52,13 @@ IB_DESIGNABLE
  */
 -(void) initializeComponent;
 
+/*!
+ * @brief Gets the string data of the component
+ * @discussion This method should be used when the data managed by the component is a 
+ * of Kind 'NSAttributedString'.
+ * @return The data of the component as NSSring.
+ */
+-(NSString *) stringData;
 
 /*!
  * @brief This method allows to add some views to the TextField
@@ -56,7 +71,11 @@ IB_DESIGNABLE
  */
 -(void) addAccessories:(NSDictionary *) accessoryViews;
 
-
+/*!
+ * @brief The event called when the error button is clicked
+ * @discussion This method is sometimes called by validators to force the error to display
+ * @param sender The sender of the event
+ */
 -(void) onErrorButtonClick:(id)sender;
 @end
 

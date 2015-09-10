@@ -14,14 +14,14 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import <Foundation/Foundation.h>
+#import "MDKCommandProtocol.h"
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
+/*!
+ * @class MDKCallPhoneNumberCommand
+ * @brief The class describing the command to execute to call a phone number
+ * (from MDKPhoneTextField)
+ */
+@interface MDKCallPhoneNumberCommand : NSObject <MDKCommandProtocol>
 
-#endif
+@end

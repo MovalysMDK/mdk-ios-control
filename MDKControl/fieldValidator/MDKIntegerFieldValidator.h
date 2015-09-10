@@ -13,15 +13,17 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
+#import <Foundation/Foundation.h>
+#import "MDKFieldValidatorProtocol.h"
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+FOUNDATION_EXPORT NSString *FIELD_VALIDATOR_MIN_DIGITS;
+FOUNDATION_EXPORT NSString *FIELD_VALIDATOR_MAX_DIGITS;
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
+/*!
+ * @class MDKIntegerFieldValidator
+ * @brief The FieldValidator for integer
+ * @discussion This validator checks the valid integer value
+ */
+@interface MDKIntegerFieldValidator : NSObject <MDKFieldValidatorProtocol>
 
-#endif
+@end

@@ -14,14 +14,35 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import <Foundation/Foundation.h>
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
+/*!
+ * @class MDKPhoneNumber
+ * @brief This class describes a phone number
+ */
+@interface MDKPhoneNumber : NSObject
 
-#endif
+#pragma mark - Properties
+/*!
+ * @brief The base phone number
+ */
+@property (nonatomic, strong) NSString *baseNumber;
+
+/*!
+ * @brief The international prefix number, like '33' for France
+ */
+@property (nonatomic, strong) NSString *internationalPrefix;
+
+/*!
+ * @brief The potential symbol prefix ('+');
+ */
+@property (nonatomic, strong) NSString *symbolPrefix;
+
+#pragma mark - Methods
+
+/**
+ * @brief Builds an returns a string that represents this phone number
+ * @return A phone number as string
+ */
+-(NSString *) buildPhoneString;
+@end

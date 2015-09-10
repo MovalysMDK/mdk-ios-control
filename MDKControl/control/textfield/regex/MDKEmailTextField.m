@@ -29,19 +29,24 @@
 @implementation MDKEmailTextField
 
 -(void) doAction {
-    BOOL canSendMail = NO;
-    if ([MFMailComposeViewController canSendMail] && ([self validate] == 0)){
-        canSendMail = YES;
-        // Create and show composer
-        MDKEmail *email = [MDKEmail new];
-        email.to = [[self getData] isKindOfClass:[NSAttributedString class]] ? [[self getData] string] : [self getData];
-        [[MDKCommandHandler commandWithKey:@"SendEmailCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:email, nil];
+    if([self validate] == 0) {
+        BOOL canSendMail = NO;
+        if ([MFMailComposeViewController canSendMail] && ([self validate] == 0)){
+            canSendMail = YES;
+            // Create and show composer
+            MDKEmail *email = [MDKEmail new];
+            email.to = [[self getData] isKindOfClass:[NSAttributedString class]] ? [[self getData] string] : [self getData];
+            [[MDKCommandHandler commandWithKey:@"SendEmailCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:email, nil];
+        }
+        if(!canSendMail)
+        {
+            
+            [self clearErrors];
+            [self addErrors:@[[[MDKInvalidEmailValueUIValidationError alloc] initWithCode:500 localizedDescriptionKey:@"MFCantSendMailTechnicalError"localizedFieldName:NSStringFromClass(self.class) technicalFieldName:NSStringFromClass(self.class)]]];
+        }
     }
-    if(!canSendMail)
-    {
-        
-        [self clearErrors];
-        [self addErrors:@[[[MDKInvalidEmailValueUIValidationError alloc] initWithCode:500 localizedDescriptionKey:@"MFCantSendMailTechnicalError"localizedFieldName:NSStringFromClass(self.class) technicalFieldName:NSStringFromClass(self.class)]]];
+    else {
+        [self onErrorButtonClick:self];
     }
 }
 

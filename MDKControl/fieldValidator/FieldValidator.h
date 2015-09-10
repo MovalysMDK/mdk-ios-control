@@ -22,5 +22,9 @@
 #import "MDKLengthFieldValidator.h"
 #import "MDKMandatoryFieldValidator.h"
 #import "MDKEmailFieldValidator.h"
+#import "MDKPhoneFieldValidator.h"
+#import "MDKUrlFieldValidator.h"
+#import "MDKDoubleFieldValidator.h"
+#import "MDKIntegerFieldValidator.h"
 
 #endif

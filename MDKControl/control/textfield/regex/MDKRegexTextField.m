@@ -35,7 +35,7 @@
     [self removeTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
 -(void) doAction {
-//    [MFException throwNotImplementedExceptionOfMethodName:@"doAction" inClass:[self class] andUserInfo:nil];
+//    [MFEMDKxception throwNotImplementedExceptionOfMethodName:@"doAction" inClass:[self class] andUserInfo:nil];
 }
 
 
