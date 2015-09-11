@@ -39,4 +39,14 @@
  */
 -(void) applyErrorStyle;
 
+/*!
+ * @brief Applies the enabled style on this view.
+ */
+-(void) applyEnabledStyle;
+
+/*!
+ * @brief Applies the disabled style on this view.
+ */
+-(void) applyDisabledStyle;
+
 @end

@@ -53,4 +53,27 @@
 @required
 -(void) applyStandardStyleOnComponent:(id)component;
 
+
+/*!
+ * @brief This method should be called when the component that uses this
+ * style class in an enabled state
+ * @param component The component that is in an enabled state.
+ * @discussion A enabled state does not mean valid/invalid state.
+ * This method should be always called before any method that applies a style,
+ * even if the component has a valid or an invalid state.
+ */
+@optional
+-(void) applyEnabledStyleOnComponent:(id)component;
+
+/*!
+ * @brief This method should be called when the component that uses this
+ * style class in an disabled state
+ * @param component The component that is in an disabled state.
+ * @discussion A disabled state does not mean valid/invalid state.
+ * This method should be always called before any method that applies a style,
+ * even if the component has a valid or an invalid state.
+ */
+@optional
+-(void) applyDisabledStyleOnComponent:(id)component;
+
 @end

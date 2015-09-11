@@ -27,6 +27,7 @@
 @property (nonatomic, strong) MDKTextFieldExtension *extension;
 
 @property (nonatomic) BOOL initializing;
+@property (nonatomic, strong) NSMutableArray *userFieldValidators;
 
 @end
 
@@ -110,6 +111,7 @@
     if(!self.sender) {
         self.sender = self;
     }
+    self.userFieldValidators = [NSMutableArray new];
     self.initializing = YES;
     [self addTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged|UIControlEventValueChanged];
     
@@ -324,8 +326,5 @@
         [self applyValidStyle];
     }
 }
-
-
-
 
 @end

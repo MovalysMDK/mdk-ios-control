@@ -14,7 +14,10 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+
 #import <Foundation/Foundation.h>
+
+#import "FieldValidator.h"
 
 /*!
  * @protocol MDKControlValidationProtocol
@@ -42,10 +45,16 @@
 
 /*!
  * Returns an array of field validators specific to this control only.
- * @retur
- n An array of field validators specific to this control only.
+ * @return An array of field validators specific to this control only.
  */
 @optional
 -(NSArray *) controlValidators;
+
+@optional
+/*!
+ * @brief Adds a field validator on the control
+ * @param fieldValidator The field validator to add
+ */
+-(void) addFieldValidator:(id<MDKFieldValidatorProtocol>)fieldValidator;
 
 @end

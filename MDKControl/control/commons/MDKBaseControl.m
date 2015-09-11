@@ -35,6 +35,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 
 @interface MDKBaseControl()
 
+@property (nonatomic, strong) NSMutableArray *userFieldValidators;
 
 @end
 
@@ -56,6 +57,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 @synthesize controlDelegate = _controlDelegate;
 @synthesize tooltipView = _tooltipView;
 @synthesize privateData = _privateData;
+@synthesize customStyleClass = _customStyleClass;
 
 
 #pragma mark - Constructeurs et initialisation
@@ -106,20 +108,14 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 -(void)initialize {
     
     self.controlDelegate = [[MDKControlDelegate alloc] initWithControl:self];
-//    if([self conformsToProtocol:@protocol(MFDefaultConstraintsProtocol)]) {
-//        [self performSelector:@selector(applyDefaultConstraints) withObject:nil];
-//    }
+
 #if !TARGET_INTERFACE_BUILDER
-    
-    //    self.tag = [MFApplication getViewTag];
+    self.userFieldValidators = [NSMutableArray new];
     [self initErrors];
-    
     
     //Par défaut tout composant est éditable.
     self.editable = @1;
     self.sender = self;
-    //Ajout du bouton à la vue du composant
-    //    [self addSubview:self.baseErrorButton];
     
 #endif
 }
@@ -139,6 +135,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 
 
 -(NSInteger)validate {
+    [self showError:NO];
     return [self.controlDelegate validate];
 }
 
@@ -152,10 +149,10 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 
 -(void)setData:(id)data {
     //Here the data has been potentially fixed by the component
-    self.componentData = data;
+    self.controlData = data;
     
     //Update the component with this value
-    [self performSelector:@selector(setDisplayComponentValue:) withObject:self.componentData];
+    [self performSelector:@selector(setDisplayComponentValue:) withObject:self.controlData];
 }
 
 + (NSString *) getDataType {
@@ -224,10 +221,6 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
     }
 }
 
--(void)setVisible:(NSNumber *)visible {
-    [self setHidden:[visible isEqual:@0]];
-    [self setNeedsDisplay];
-}
 
 - (void)dealloc
 {
@@ -251,47 +244,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 }
 
 -(void)showErrorTooltips {
-    
-//    if( (self.errors != nil) &&  [self.errors count] >0) {
-//        if(nil == self.baseTooltipView.text){
-//            
-//            // We calculate the tooltip's anchor point
-//            
-//            CGPoint point = [((id<MDKErrorViewProtocol>)self.styleClass).errorView
-//              convertPoint:CGPointMake(0.0, ((id<MDKErrorViewProtocol>)self.styleClass).errorView.frame.size.height - 4.0) toView:self];
-//            
-//            // We calculate the tooltip' size
-//            CGRect tooltipViewFrame = CGRectMake(-10, point.y, self.sender.frame.size.width, self.baseTooltipView.frame.size.height);
-//            
-//            // We create the tooltip' size
-//            self.baseTooltipView = [[InvalidTooltipView alloc] init];
-//            self.baseTooltipView.frame = tooltipViewFrame;
-//            
-//            // We build the tooltip's message : one message per line
-//            int errorNumber = 0;
-//            for (NSError *error in self.errors) {
-//                if(errorNumber > 0){
-//                    self.baseTooltipView.text = [self.baseTooltipView.text stringByAppendingString: @"\n"];
-//                }
-//                errorNumber++;
-//                self.baseTooltipView.text = [self.baseTooltipView.text stringByAppendingString: [error localizedDescription]];
-//            }
-            // We add tooltip to view
-//            [self addSubview:self.baseTooltipView];
-//            
-//            
-//            //Passage de la vue au premier plan
-//            UIView *currentView = self;
-//            do {
-//                UIView *superView = currentView.superview;
-//                [superView setClipsToBounds:NO];
-//                [superView bringSubviewToFront:currentView];
-//                currentView = superView;
-//            } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG);
-//            [currentView bringSubviewToFront:self.baseTooltipView];
-//            [currentView bringSubviewToFront:self.baseErrorButton];
-//        }
-//    }
+    [self.tooltipView show];
 }
 
 -(UIView *) baseErrorButton {
@@ -308,6 +261,9 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
     self.visible = controlAttributes[@"visible"] ? controlAttributes[@"visible"] : @1;
 }
 
+
+
+#pragma mark - Properties
 -(void)setMandatory:(NSNumber *)mandatory {
     _mandatory = mandatory;
     if(self.associatedLabel) {
@@ -315,10 +271,32 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
     }
 }
 
+-(void)setEditable:(NSNumber *)editable {
+    _editable = editable;
+    if([@0 isEqualToNumber:editable]) {
+        [self applyDisabledStyle];
+    }
+    else {
+        [self applyEnabledStyle];
+    }
+    self.userInteractionEnabled = ([editable isEqualToNumber:@1]) ? YES : NO;
+}
+
+-(void)setVisible:(NSNumber *)visible {
+    _visible = visible;
+    [self setHidden:[visible isEqualToNumber:@0]];
+    [self setNeedsDisplay];
+}
+
+
+
+
+#pragma mark - Associated Label
 -(void)setAssociatedLabel:(MDKLabel *)associatedLabel {
     _associatedLabel = associatedLabel;
     self.associatedLabel.mandatory = self.mandatory;
 }
+
 
 -(NSArray *)controlValidators {
     return @[];
@@ -327,4 +305,9 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 -(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key {
     [self.controlDelegate addControlAttribute:controlAttribute forKey:key];
 }
+
+-(void)addFieldValidator:(id<MDKFieldValidatorProtocol>)fieldValidator {
+    [self.userFieldValidators addObject:fieldValidator];
+}
+
 @end

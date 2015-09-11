@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="719" height="107"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="38i-2N-7gW">
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="45" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="38i-2N-7gW">
                     <rect key="frame" x="6" y="39" width="653" height="31"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="O5d-o2-0Zm"/>

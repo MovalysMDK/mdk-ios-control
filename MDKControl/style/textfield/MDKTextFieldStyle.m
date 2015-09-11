@@ -49,4 +49,16 @@ NSInteger DEFAULT_ACCESSORIES_MARGIN = 2;
 -(NSArray *)defineConstraintsForAccessoryView:(UIView *)accessory withIdentifier:(NSString *)identifier onControl:(MDKTextField *)control {
     return @[];
 }
+
+-(void)applyDisabledStyleOnComponent:(MDKTextField *)component {
+    [super applyDisabledStyleOnComponent:component];
+    component.enabled = NO;
+}
+
+-(void)applyEnabledStyleOnComponent:(MDKTextField *)component {
+    [super applyEnabledStyleOnComponent:component];
+    component.enabled = YES;
+}
+
 @end
+

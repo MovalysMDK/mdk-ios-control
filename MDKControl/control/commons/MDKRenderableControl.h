@@ -15,12 +15,14 @@
  */
 
 #import <UIKit/UIKit.h>
-#import <objc/runtime.h>
 
+
+#import "ControlLabel.h"
 #import "Style.h"
 
 #import "MDKBaseControl.h"
 
+#import <objc/runtime.h>
 
 #pragma mark MFUIBaseRenderableComponent
 

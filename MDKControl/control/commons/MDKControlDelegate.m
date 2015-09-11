@@ -198,6 +198,7 @@
 
 -(void)processValidationWithValidators:(NSMutableArray *)validators withValidationState:(NSMutableDictionary *)validationState {
     //Component Validators
+    [validators addObjectsFromArray:[self.control performSelector:@selector(userFieldValidators)]];
     [validators addObjectsFromArray:[self.control controlValidators]];
     
     //Other validatos

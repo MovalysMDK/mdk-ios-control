@@ -32,4 +32,11 @@
 
 }
 
+-(void)applyEnabledStyleOnComponent:(id)component {
+    
+}
+
+-(void)applyDisabledStyleOnComponent:(id)component {
+    
+}
 @end

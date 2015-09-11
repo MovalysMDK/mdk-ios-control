@@ -14,12 +14,9 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Style_h
-#define MDKControl_Style_h
+#ifndef MDKControl_StyleSlider_h
+#define MDKControl_StyleSlider_h
 
-#import "StyleCommons.h"
-#import "StyleLabel.h"
-#import "StyleTextField.h"
-#import "StyleSlider.h"
+#import "MDKSliderStyle.h"
 
 #endif

@@ -32,7 +32,7 @@
     if(self.errorView) {
         width -= (2*DEFAULT_ACCESSORIES_MARGIN + DEFAULT_ERROR_VIEW_SQUARE_SIZE);
     }
-    return CGRectMake(0, 0 , width, bounds.size.height);
+    return CGRectMake(DEFAULT_ACCESSORIES_MARGIN, 0 , width-DEFAULT_ACCESSORIES_MARGIN, bounds.size.height);
 }
 
 -(CGRect) editingRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component{

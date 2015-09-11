@@ -48,23 +48,28 @@ IB_DESIGNABLE
 @property (nonatomic, weak) MDKBaseControl *sender;
 
 /*! 
- * Info-bulle affichant la liste des erreurs
+ * @brief Info-bulle affichant la liste des erreurs
  */
 @property (nonatomic, strong) MDKTooltipView *baseTooltipView;
 
 
 /*!
- * MF Parent Composant
+ * @brief MF Parent Composant
  */
 @property (nonatomic, weak) MDKBaseControl *mfParent;
 
 
 /*!
- * initialisation
+ * @brief initialisation
  */
 @property (nonatomic, strong) NSNumber *parentEditable;
 
-@property (nonatomic, strong) id componentData;
+/*!
+ * @brief The data manged by the control.
+ * @discussion This property is set by the setdata method.
+ * @see MDKControlDataProtocol
+ */
+@property (nonatomic, strong) id controlData;
 
 
 #pragma mark - Methods

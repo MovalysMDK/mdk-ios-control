@@ -26,7 +26,6 @@
  */
 @property (nonatomic, strong) MDKErrorView *errorView;
 
-
 /**
  * @brief This dictionary contains the name of the XIBs used to load base MDK iOS components.
  * @discussion It is loaded from the "Framework-components.plist" file from the generated project
@@ -44,15 +43,13 @@
  * @brief The constraints applied to the errorView to this component
  * @discussion These constraints can be modified by this class to display/hide the errorView
  */
-@property (nonatomic, weak) NSLayoutConstraint *errorLeftConstraint, *errorCenterYConstraint, *errorWidthConstraint, *errorHeightConstraint;
+@property (nonatomic, weak) NSLayoutConstraint *errorRightConstraint, *errorCenterYConstraint, *errorWidthConstraint, *errorHeightConstraint;
 
 @end
 
-
-@implementation MDKRenderableControl
-@synthesize editable = _editable;
-@synthesize styleClass = _styleClass;
-@synthesize tooltipView = _tooltipView;
+/******************************************************/
+/* CONSTANTS                                          */
+/******************************************************/
 
 const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     .ErrorView = @"ErrorView",
@@ -63,6 +60,24 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     .InternalViewBottomConstraint = @"InternalViewbottomConstraint"
 };
 
+
+@implementation MDKRenderableControl
+
+/******************************************************/
+/* SYNTHESIZE                                         */
+/******************************************************/
+
+#pragma mark - Synthesize
+@synthesize editable = _editable;
+@synthesize styleClass = _styleClass;
+@synthesize tooltipView = _tooltipView;
+
+
+/******************************************************/
+/* INITITALISATION                                    */
+/******************************************************/
+
+#pragma mark - Initialization and deallocation
 -(void)initialize {
     NSMutableDictionary *xibFrameworkDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[NSBundle bundleForClass:NSClassFromString(@"MDKRenderableControl")] pathForResource:@"Framework-components" ofType:@"plist"]];
     
@@ -99,7 +114,7 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
         if(self.internalView) {
             [self setNeedsUpdateConstraints];
         }
-        [self setDisplayComponentValue:self.componentData];
+        [self setDisplayComponentValue:self.controlData];
         [self forwardBaseRenderableProperties];
         [self forwardSpecificRenderableProperties];
         
@@ -110,7 +125,10 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
         self.translatesAutoresizingMaskIntoConstraints = NO;
     }
     [self computeStyleClass];
-    
+}
+
+-(void) didInitializeOutlets {
+    NSLog(@"[MDKControl - INFO] : \"didInitializeOutlets\" method is unimplement for the class %@", [self class]);
 }
 
 -(void)awakeFromNib {
@@ -120,18 +138,39 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
 }
 
 
--(void)updateConstraints {
-    [self defineInternalViewConstraints];
-    [super updateConstraints];
+
+
+/******************************************************/
+/* CUSTOM METHODES                                    */
+/******************************************************/
+
+#pragma mark - Custom Methods
+
+-(NSString *)className {
+    return [self respondsToSelector:@selector(defaultXIBName)] ? [[self performSelector:@selector(defaultXIBName)] stringByReplacingOccurrencesOfString:MDK_XIB_IDENTIFIER withString:@""] : nil;
 }
 
--(void) didInitializeOutlets {
-    //    [self commonInit];
+-(void)setEditable:(NSNumber *)editable {
+    [super setEditable:editable];
+    self.internalView.userInteractionEnabled = [editable isEqual:@1];
 }
 
-#pragma mark - Internal/External Views contraints
+-(void)setDisplayComponentValue:(id)value {
+    NSLog(@"[MDKControl - WARNING] : \"setDisplayComponentValue:\" method is unimplemend for the control %@", [self class]);
+}
+
+-(id)displayComponentValue {
+    NSLog(@"[MDKControl - WARNING] : \"displayComponentValue\" method is unimplemend for the control %@", [self class]);
+    return nil;
+}
 
 
+/******************************************************/
+/* CONTRAINTES INT/EXT                                */
+/******************************************************/
+
+
+#pragma mark - Constraints
 /**
  * @brief Defines the constraints of the internal view in the external view
  */
@@ -159,22 +198,27 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
                      }];
 }
 
+-(void) removeErrorViewConstraints {
+    if(self.errorWidthConstraint) [self removeConstraint:self.errorWidthConstraint];
+    if(self.errorRightConstraint) [self removeConstraint:self.errorRightConstraint];
+    if(self.errorHeightConstraint) [self removeConstraint:self.errorHeightConstraint];
+    if(self.errorCenterYConstraint) [self removeConstraint:self.errorCenterYConstraint];
+    
+    self.errorCenterYConstraint = nil;
+    self.errorHeightConstraint = nil;
+    self.errorRightConstraint = nil;
+    self.errorWidthConstraint = nil;
+    self.rightConstraint.constant  = 0;
+}
+
 -(void) computeInternalLeftConstraint {
-#if TARGET_INTERFACE_BUILDER
+
     if(!self.leftConstraint) {
         self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft
                                                            relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
-                                                          multiplier:1 constant:![self onError_MDK] ? 0 : self.errorView.frame.size.width];
+                                                          multiplier:1 constant:0];
         [self addConstraint:self.leftConstraint];
     }
-#else
-    if(!self.leftConstraint) {
-        self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft
-                                                           relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
-                                                          multiplier:1 constant:[self isValid] ? 0 : self.errorView.frame.size.width];
-        [self addConstraint:self.leftConstraint];
-    }
-#endif
 }
 
 -(void) computeInternalTopConstraint {
@@ -204,16 +248,16 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     }
 }
 
-#pragma mark - Error View Constraints
 /**
  * @brief Defines the constraints of the error view in the external view
  */
 -(void) defineErrorViewConstraints {
-#if !TARGET_INTERFACE_BUILDER
+//#if !TARGET_INTERFACE_BUILDER
     self.errorView.translatesAutoresizingMaskIntoConstraints = NO;
-    if(!self.errorLeftConstraint) {
-        self.errorLeftConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeLeft
-                                                                relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
+    
+    if(!self.errorRightConstraint) {
+        self.errorRightConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeRight
+                                                                relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
                                                                multiplier:1 constant:0];
     }
     
@@ -225,8 +269,8 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     
     if(!self.errorHeightConstraint) {
         self.errorHeightConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeHeight
-                                                                  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute
-                                                                 multiplier:0 constant:self.errorView.frame.size.height];
+                                                                  relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeHeight
+                                                                 multiplier:1 constant:0];
     }
     
     if(!self.errorWidthConstraint) {
@@ -237,13 +281,23 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
         [self addConstraint:self.errorWidthConstraint];
         [self addConstraint:self.errorHeightConstraint];
         [self addConstraint:self.errorCenterYConstraint];
-        [self addConstraint:self.errorLeftConstraint];
+        [self addConstraint:self.errorRightConstraint];
     }
-#else
-    self.internalView.frame = self.bounds;
-#endif
 }
 
+-(void)updateConstraints {
+    [self defineInternalViewConstraints];
+    [super updateConstraints];
+}
+
+
+
+
+/******************************************************/
+/* XIBs                                               */
+/******************************************************/
+
+#pragma mark - Retrieving XIBs
 /**
  * @brief Retrieves a custom XIB if defined in InterfaceBuilder.
  * @return The name of the custom XIB to load
@@ -270,14 +324,22 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     }
 }
 
-
 /**
  * @brief Returns the name of the default XIB file to render the error view
  */
 -(NSString *)defaultErrorXIBName {
-    return @"MDK_MFUIErrorView";
+    return @"MDK_MDKErrorView";
 }
 
+-(NSString *)defaultXIBName {
+    return NSStringFromClass(self.class);
+}
+
+
+
+/******************************************************/
+/* LIVE RENDERING                                     */
+/******************************************************/
 
 #pragma mark - Live Rendering
 /**
@@ -333,7 +395,6 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     [self.internalView renderComponent:self.internalView];
 }
 
-
 -(void)prepareForInterfaceBuilder {
     
     [super prepareForInterfaceBuilder];
@@ -350,9 +411,14 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     [self showError:self.onError_MDK];
 }
 
+
+
+/******************************************************/
+/* STYLE                                              */
+/******************************************************/
+
+
 #pragma mark - Style
-
-
 -(void) computeStyleClass {
     /**
      * Style priority :
@@ -375,28 +441,23 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     }
 }
 
-
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 #pragma clang diagnostic ignored "-Wundeclared-selector"
--(void)setStyleClass:(NSString *)styleClass {
-    _styleClass = styleClass;
-    if(_styleClass) {
-        [[[NSClassFromString(self.styleClass) alloc] init] performSelector:@selector(applyStyleOnView:) withObject:self];
-    }
-}
+//-(void)setStyleClass:(NSString *)styleClass {
+//    _styleClass = styleClass;
+//    if(_styleClass) {
+//        [[[NSClassFromString(self.styleClass) alloc] init] performSelector:@selector(applyStyleOnView:) withObject:self];
+//    }
+//}
 #pragma clang diagnostic pop
 
 
--(void)setEditable:(NSNumber *)editable {
-    _editable = editable;
-    self.internalView.userInteractionEnabled = [editable isEqual:@1];
-}
-
-#pragma mark - Generic methods for ExternalComponent
+/******************************************************/
+/* ERROR                                              */
+/******************************************************/
 
 #pragma mark - Managing error
-
 /**
  * @brief Allows to display or not the view that indicates that the component is in an invalid state
  * @param showErrorView A BOOL value that indicates if the component is in an invalid state or not
@@ -424,7 +485,6 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
             }
             else {
                 [self defineErrorViewConstraints];
-                self.leftConstraint.constant  = self.errorView.frame.size.width;
             }
 
         }
@@ -433,6 +493,11 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
             [self.errorView removeFromSuperview];
             if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
 #if !TARGET_INTERFACE_BUILDER
+                if(!self.errorView) {
+                    Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
+                    self.errorView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomErrorXIB] owner:nil options:nil] firstObject];
+                }
+
                 NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
                 [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
 #endif
@@ -460,21 +525,6 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
                                                  ErrorPositionParameters.InternalViewBottomConstraint]];
 }
 
-
--(void) removeErrorViewConstraints {
-    if(self.errorWidthConstraint) [self removeConstraint:self.errorWidthConstraint];
-    if(self.errorLeftConstraint) [self removeConstraint:self.errorLeftConstraint];
-    if(self.errorHeightConstraint) [self removeConstraint:self.errorHeightConstraint];
-    if(self.errorCenterYConstraint) [self removeConstraint:self.errorCenterYConstraint];
-    
-    self.errorCenterYConstraint = nil;
-    self.errorHeightConstraint = nil;
-    self.errorLeftConstraint = nil;
-    self.errorWidthConstraint = nil;
-    self.leftConstraint.constant  = 0;
-    
-}
-
 /**
  * @brief This method describes the treatment to do when the user click the error button of this component
  * @discussion By default, this method displays the error information
@@ -498,7 +548,7 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
             [superView setClipsToBounds:NO];
             [superView bringSubviewToFront:currentView];
             currentView = superView;
-        } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG);
+        } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG && currentView.superview != nil);
         [currentView bringSubviewToFront:self.tooltipView];
         [currentView bringSubviewToFront:self.errorView];
         self.tooltipView.tooltipText = errorText;
@@ -517,11 +567,6 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     return [UIColor colorWithRed:0.8 green:0.1 blue:0.1 alpha:1];
 }
 
-
--(NSString *)className {
-    return [self respondsToSelector:@selector(defaultXIBName)] ? [[self performSelector:@selector(defaultXIBName)] stringByReplacingOccurrencesOfString:MDK_XIB_IDENTIFIER withString:@""] : nil;
-}
-
 -(void)addErrors:(NSArray *)errors {
     [super addErrors:errors];
     [self applyErrorStyle];
@@ -532,18 +577,5 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     [self applyValidStyle];
 }
 
-
--(NSString *)defaultXIBName {
-    return NSStringFromClass(self.class);
-}
-
--(void)setDisplayComponentValue:(id)value {
-    
-}
-
--(void)definePositionOfErrorViewWithParameters:(NSDictionary *)parameters whenShown:(BOOL)isShown {
-    
-}
-#pragma mark - LiveRendering
 
 @end

@@ -35,13 +35,27 @@
     }
 }
 
-
 -(void)applyValidStyle {
     NSObject<MDKStyleProtocol> *baseStyleClass = [self performSelector:@selector(styleClass)];
     if([baseStyleClass respondsToSelector:@selector(applyValidStyleOnComponent:)]) {
         [baseStyleClass performSelector:@selector(applyValidStyleOnComponent:) withObject:self];
     }
 }
+
+-(void)applyEnabledStyle {
+    NSObject<MDKStyleProtocol> *baseStyleClass = [self performSelector:@selector(styleClass)];
+    if([baseStyleClass respondsToSelector:@selector(applyEnabledStyleOnComponent:)]) {
+        [baseStyleClass performSelector:@selector(applyEnabledStyleOnComponent:) withObject:self];
+    }
+}
+
+-(void)applyDisabledStyle {
+    NSObject<MDKStyleProtocol> *baseStyleClass = [self performSelector:@selector(styleClass)];
+    if([baseStyleClass respondsToSelector:@selector(applyDisabledStyleOnComponent:)]) {
+        [baseStyleClass performSelector:@selector(applyDisabledStyleOnComponent:) withObject:self];
+    }
+}
+
 #pragma clang diagnostic pop
 
 @end

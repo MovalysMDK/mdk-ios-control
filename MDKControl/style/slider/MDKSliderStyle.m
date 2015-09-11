@@ -14,12 +14,19 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Style_h
-#define MDKControl_Style_h
+#import "MDKSliderStyle.h"
+#import "MDKUISlider.h"
 
-#import "StyleCommons.h"
-#import "StyleLabel.h"
-#import "StyleTextField.h"
-#import "StyleSlider.h"
+@implementation MDKSliderStyle
 
-#endif
+
+-(void)applyDisabledStyleOnComponent:(id)component {
+    ((MDKUISlider *)component).innerSlider.enabled= NO;
+    ((MDKUISlider *)component).innerSliderValueLabel.enabled= NO;
+}
+
+-(void)applyEnabledStyleOnComponent:(id)component {
+    ((MDKUISlider *)component).innerSlider.enabled= YES;
+    ((MDKUISlider *)component).innerSliderValueLabel.enabled= YES;
+}
+@end

@@ -162,6 +162,10 @@
 		B09CE7DC1BA17C220017CCA2 /* MDKDoubleFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B09CE7D81BA17C220017CCA2 /* MDKDoubleFieldValidator.m */; };
 		B09CE7DD1BA17C220017CCA2 /* MDKIntegerFieldValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B09CE7D91BA17C220017CCA2 /* MDKIntegerFieldValidator.h */; };
 		B09CE7DE1BA17C220017CCA2 /* MDKIntegerFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B09CE7DA1BA17C220017CCA2 /* MDKIntegerFieldValidator.m */; };
+		B0A52E561BA31EFF00EF6947 /* ControlSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A52E551BA31EFF00EF6947 /* ControlSlider.h */; };
+		B0A52E581BA31F0700EF6947 /* MDK_MDKErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A52E571BA31F0700EF6947 /* MDK_MDKErrorView.xib */; };
+		B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A52E5A1BA31F4F00EF6947 /* MDKSliderStyle.h */; };
+		B0A52E5D1BA31F4F00EF6947 /* MDKSliderStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A52E5B1BA31F4F00EF6947 /* MDKSliderStyle.m */; };
 		B0A74C7C1BA081F40002A66B /* MDKURL.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A74C781BA081F40002A66B /* MDKURL.h */; };
 		B0A74C7D1BA081F40002A66B /* MDKURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A74C791BA081F40002A66B /* MDKURL.m */; };
 		B0A74C7E1BA081F40002A66B /* MDKOpenURLCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A74C7A1BA081F40002A66B /* MDKOpenURLCommand.h */; };
@@ -182,14 +186,12 @@
 		B0C6BAB31BA1D9830087C4D3 /* ios_ic_nav_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BAA31BA1D9830087C4D3 /* ios_ic_nav_active@2x.png */; };
 		B0C6BAB41BA1D9830087C4D3 /* ios_ic_nav_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BAA41BA1D9830087C4D3 /* ios_ic_nav_pressed@2x.png */; };
 		B0C6BAB51BA1D9830087C4D3 /* ios_ic_nav_unactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BAA51BA1D9830087C4D3 /* ios_ic_nav_unactive@2x.png */; };
-		B0C6BAB61BA1D9830087C4D3 /* MDK_MFUIErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BAA71BA1D9830087C4D3 /* MDK_MFUIErrorView.xib */; };
 		B0C6BABA1BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BAB91BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib */; };
 		B0C6BABC1BA1DBF60087C4D3 /* Framework-components.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BABB1BA1DBF60087C4D3 /* Framework-components.plist */; };
 		B0FFB6A91BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6A41BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.h */; };
 		B0FFB6AA1BA1CB5F00258B9D /* MDKUISlider+UISliderForwarding.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFB6A51BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.m */; };
 		B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6A61BA1CB5E00258B9D /* MDKUISlider.h */; };
 		B0FFB6AC1BA1CB5F00258B9D /* MDKUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFB6A71BA1CB5E00258B9D /* MDKUISlider.m */; };
-		B0FFB6AD1BA1CB5F00258B9D /* MFUIControlSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6A81BA1CB5E00258B9D /* MFUIControlSlider.h */; };
 		B0FFB6B91BA1CD4800258B9D /* MDKConverterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6AF1BA1CD4800258B9D /* MDKConverterProtocol.h */; };
 		B0FFB6BA1BA1CD4800258B9D /* MDKDateConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6B01BA1CD4800258B9D /* MDKDateConverter.h */; };
 		B0FFB6BB1BA1CD4800258B9D /* MDKDateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFB6B11BA1CD4800258B9D /* MDKDateConverter.m */; };
@@ -387,6 +389,11 @@
 		B09CE7D81BA17C220017CCA2 /* MDKDoubleFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKDoubleFieldValidator.m; sourceTree = "<group>"; };
 		B09CE7D91BA17C220017CCA2 /* MDKIntegerFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKIntegerFieldValidator.h; sourceTree = "<group>"; };
 		B09CE7DA1BA17C220017CCA2 /* MDKIntegerFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKIntegerFieldValidator.m; sourceTree = "<group>"; };
+		B0A52E551BA31EFF00EF6947 /* ControlSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlSlider.h; sourceTree = "<group>"; };
+		B0A52E571BA31F0700EF6947 /* MDK_MDKErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKErrorView.xib; sourceTree = "<group>"; };
+		B0A52E5A1BA31F4F00EF6947 /* MDKSliderStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSliderStyle.h; sourceTree = "<group>"; };
+		B0A52E5B1BA31F4F00EF6947 /* MDKSliderStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSliderStyle.m; sourceTree = "<group>"; };
+		B0A52E5E1BA3227E00EF6947 /* StyleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleSlider.h; sourceTree = "<group>"; };
 		B0A74C781BA081F40002A66B /* MDKURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKURL.h; sourceTree = "<group>"; };
 		B0A74C791BA081F40002A66B /* MDKURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKURL.m; sourceTree = "<group>"; };
 		B0A74C7A1BA081F40002A66B /* MDKOpenURLCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKOpenURLCommand.h; sourceTree = "<group>"; };
@@ -408,14 +415,12 @@
 		B0C6BAA31BA1D9830087C4D3 /* ios_ic_nav_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios_ic_nav_active@2x.png"; sourceTree = "<group>"; };
 		B0C6BAA41BA1D9830087C4D3 /* ios_ic_nav_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios_ic_nav_pressed@2x.png"; sourceTree = "<group>"; };
 		B0C6BAA51BA1D9830087C4D3 /* ios_ic_nav_unactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios_ic_nav_unactive@2x.png"; sourceTree = "<group>"; };
-		B0C6BAA71BA1D9830087C4D3 /* MDK_MFUIErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MFUIErrorView.xib; sourceTree = "<group>"; };
 		B0C6BAB91BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUISlider.xib; sourceTree = "<group>"; };
 		B0C6BABB1BA1DBF60087C4D3 /* Framework-components.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Framework-components.plist"; sourceTree = "<group>"; };
 		B0FFB6A41BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDKUISlider+UISliderForwarding.h"; sourceTree = "<group>"; };
 		B0FFB6A51BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MDKUISlider+UISliderForwarding.m"; sourceTree = "<group>"; };
 		B0FFB6A61BA1CB5E00258B9D /* MDKUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUISlider.h; sourceTree = "<group>"; };
 		B0FFB6A71BA1CB5E00258B9D /* MDKUISlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUISlider.m; sourceTree = "<group>"; };
-		B0FFB6A81BA1CB5E00258B9D /* MFUIControlSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFUIControlSlider.h; sourceTree = "<group>"; };
 		B0FFB6AF1BA1CD4800258B9D /* MDKConverterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKConverterProtocol.h; sourceTree = "<group>"; };
 		B0FFB6B01BA1CD4800258B9D /* MDKDateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKDateConverter.h; sourceTree = "<group>"; };
 		B0FFB6B11BA1CD4800258B9D /* MDKDateConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKDateConverter.m; sourceTree = "<group>"; };
@@ -479,6 +484,7 @@
 		B02156881B9DAC6E001860B5 /* style */ = {
 			isa = PBXGroup;
 			children = (
+				B0A52E591BA31F3C00EF6947 /* slider */,
 				B02156891B9DAC6E001860B5 /* commons */,
 				B02156901B9DAC6E001860B5 /* label */,
 				B02156941B9DAC6E001860B5 /* Style.h */,
@@ -800,6 +806,16 @@
 			path = label;
 			sourceTree = "<group>";
 		};
+		B0A52E591BA31F3C00EF6947 /* slider */ = {
+			isa = PBXGroup;
+			children = (
+				B0A52E5A1BA31F4F00EF6947 /* MDKSliderStyle.h */,
+				B0A52E5B1BA31F4F00EF6947 /* MDKSliderStyle.m */,
+				B0A52E5E1BA3227E00EF6947 /* StyleSlider.h */,
+			);
+			path = slider;
+			sourceTree = "<group>";
+		};
 		B0C6BA931BA1D9830087C4D3 /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -872,7 +888,7 @@
 		B0C6BAA61BA1D9830087C4D3 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				B0C6BAA71BA1D9830087C4D3 /* MDK_MFUIErrorView.xib */,
+				B0A52E571BA31F0700EF6947 /* MDK_MDKErrorView.xib */,
 				B0C6BAB91BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib */,
 			);
 			path = xib;
@@ -881,11 +897,11 @@
 		B0FFB6A31BA1CB5E00258B9D /* slider */ = {
 			isa = PBXGroup;
 			children = (
+				B0A52E551BA31EFF00EF6947 /* ControlSlider.h */,
 				B0FFB6A41BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.h */,
 				B0FFB6A51BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.m */,
 				B0FFB6A61BA1CB5E00258B9D /* MDKUISlider.h */,
 				B0FFB6A71BA1CB5E00258B9D /* MDKUISlider.m */,
-				B0FFB6A81BA1CB5E00258B9D /* MFUIControlSlider.h */,
 			);
 			path = slider;
 			sourceTree = "<group>";
@@ -1036,6 +1052,7 @@
 				B018BE951BA01F3300EF1D87 /* MDKEmailTextFieldStyle.h in Headers */,
 				B02157CB1B9DAF30001860B5 /* MDKValidationError.h in Headers */,
 				B02157B31B9DAF30001860B5 /* MDKTooLongStringUIValidationError.h in Headers */,
+				B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */,
 				B09CE7DB1BA17C220017CCA2 /* MDKDoubleFieldValidator.h in Headers */,
 				B05C936C1B9F3CA300487CFB /* UIView+ViewController.h in Headers */,
 				B018BE9B1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.h in Headers */,
@@ -1046,7 +1063,6 @@
 				B02156B31B9DAC6E001860B5 /* MDKDefaultStyle.h in Headers */,
 				B021575E1B9DAEEA001860B5 /* MDKFieldValidatorProtocol.h in Headers */,
 				B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */,
-				B0FFB6AD1BA1CB5F00258B9D /* MFUIControlSlider.h in Headers */,
 				B08C19381B9DE9A500D6F93A /* MDKRenderableControl.h in Headers */,
 				B02157DB1B9DAFA0001860B5 /* ComponentProvider.h in Headers */,
 				B02157631B9DAEEA001860B5 /* MDKLengthFieldValidator.h in Headers */,
@@ -1085,6 +1101,7 @@
 				B02156C91B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h in Headers */,
 				B021579E1B9DAF30001860B5 /* MDKErrorView.h in Headers */,
 				B02156B71B9DAC6E001860B5 /* UIView+Styleable.h in Headers */,
+				B0A52E561BA31EFF00EF6947 /* ControlSlider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1168,8 +1185,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0C6BAAF1BA1D9830087C4D3 /* ios_ic_phone_pressed@2x.png in Resources */,
-				B0C6BAB61BA1D9830087C4D3 /* MDK_MFUIErrorView.xib in Resources */,
 				B0C6BABA1BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib in Resources */,
+				B0A52E581BA31F0700EF6947 /* MDK_MDKErrorView.xib in Resources */,
 				B0C6BAAC1BA1D9830087C4D3 /* ios_ic_mail_pressed@2x.png in Resources */,
 				B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */,
 				B0C6BAB01BA1D9830087C4D3 /* ios_ic_phone_unactive@2x.png in Resources */,
@@ -1207,6 +1224,7 @@
 				B08C195B1B9DEEED00D6F93A /* MDKLabel.m in Sources */,
 				B044B1C81B9DF3D900A4CCF3 /* UIView+MDKTooltips.m in Sources */,
 				B0FFB6BB1BA1CD4800258B9D /* MDKDateConverter.m in Sources */,
+				B0A52E5D1BA31F4F00EF6947 /* MDKSliderStyle.m in Sources */,
 				B08C193F1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.m in Sources */,
 				B018BEA01BA02C6000EF1D87 /* MDKSendEmailCommand.m in Sources */,
 				B05C93711B9F3D1C00487CFB /* MDKEmailFieldValidator.m in Sources */,

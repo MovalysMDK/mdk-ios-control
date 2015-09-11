@@ -20,8 +20,6 @@
 @implementation MDKErrorView
 
 
-
-
 - (IBAction)onErrorButtonClick:(id)sender {
     //Forwarding this event on MFUIBaseRenderableComponent parent
     UIView *currentView = self;

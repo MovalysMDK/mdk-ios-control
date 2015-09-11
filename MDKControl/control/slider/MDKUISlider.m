@@ -15,11 +15,12 @@
  */
 
 
+#import "Utils.h"
 
 #import "MDKUISlider.h"
 #import "MDKUISlider+UISliderForwarding.h"
+
 #include <math.h>
-#import "Utils.h"
 
 @implementation MDKUISlider
 @synthesize targetDescriptors = _targetDescriptors;
@@ -29,15 +30,8 @@ NSString *const SLIDER_PARAMETER_MAX_VALUE_KEY = @"maxValue";
 NSString *const SLIDER_PARAMETER_MIN_VALUE_KEY = @"minValue";
 NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
 
+#pragma mark - Initialization and deallocation
 
 -(void)initialize {
     [super initialize];
@@ -49,22 +43,19 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
     [self.innerSlider addTarget:self action:@selector(sliderValueChangedAction:) forControlEvents:UIControlEventValueChanged];
 }
 
-/**
- * @brief Cette méthode est appelée à chaque changement de valeur du slider
- */
 
+
+
+#pragma mark - Custom methods
 -(void)sliderValueChangedAction:(id)sender {
     
     //On récupère la valeur en fonction de l'steple spécifié
     //self.slider.value = [self adjustValue:self.slider.value Withstep:self.step];
     //self.sliderValue.text = [NSString stringWithFormat:@"%d", (int)self.slider.value];
     //[self setValue:self.slider.value];
-    [self setValue:self.innerSlider.value];
+    [self setDisplayComponentValue:@(self.innerSlider.value)];
+    [self becomeFirstResponder];
 }
-
-/**
- * @brief Cette méthode permet d'ajuster la valeur du slider en fonction du pas spécifié.
- */
 
 - (float) adjustValue:(float)value withStep:(float)step {
     
@@ -90,21 +81,7 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
     
 }
 
-
-#pragma mark - Tags for automatic testing
--(void) setAllTags {
-    if (self.innerSlider.tag == 0) {
-        [self.innerSlider setTag:TAG_MFSLIDER_SLIDER];
-    }
-    if (self.innerSliderValueLabel.tag == 0) {
-        [self.innerSliderValueLabel setTag:TAG_MFSLIDER_SLIDERVALUE];
-    }
-}
-
-#pragma mark - Custom implementation
-
 - (void)setValue:(float)value animated:(BOOL)animated {
-    
     //Mise à jour du slider
     if (animated == YES)
     {
@@ -122,58 +99,63 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
     //Blocage à 3 décimales car le nombre est un float avec un grand nombre de décimales
     numberFormatter.maximumFractionDigits = 3;
     [self.innerSliderValueLabel setText:[MDKNumberConverter toString:number withFormatter:numberFormatter]];
+    [self validate];
 }
 
-#pragma mark - MFUIComponentProtocol implementation
 
+
+#pragma mark - Control Data protocol
 +(NSString *)getDataType {
     return @"NSNumber";
 }
 
-- (void) setValue:(float)value {
-    [self setValue:value animated:NO];
-}
-
-- (float) getValue {
-    return (int)self.innerSlider.value;
-}
-
 -(void)setData:(id)data {
     if(data) {
-        [self setValue:[(NSNumber *)data floatValue]];
+        [self setDisplayComponentValue:(NSNumber *)data];
     }
+    [super setData:data];
 }
 
 -(id)getData {
-    return [NSNumber numberWithFloat: [self getValue]];
+    return [self displayComponentValue];
 }
 
--(BOOL) isActive
-{
-    return self.innerSlider.enabled;
+-(id)displayComponentValue {
+    return @(self.innerSlider.value);
 }
 
--(void) setIsActive:(BOOL)isActive{
-    self.innerSlider.enabled = isActive;
+-(void)setDisplayComponentValue:(id)value {
+    [self setValue:[value floatValue] animated:NO];
 }
 
--(void)setEditable:(NSNumber *)editable {
-    [super setEditable:editable];
-    self.innerSlider.userInteractionEnabled = ([editable isEqualToNumber:@1]) ? YES : NO;
+
+
+#pragma mark - Tags for automatic testing
+-(void) setAllTags {
+    if (self.innerSlider.tag == 0) {
+        [self.innerSlider setTag:TAG_MFSLIDER_SLIDER];
+    }
+    if (self.innerSliderValueLabel.tag == 0) {
+        [self.innerSliderValueLabel setTag:TAG_MFSLIDER_SLIDERVALUE];
+    }
 }
 
+
+#pragma mark - Control attribute
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
     [super setControlAttributes:controlAttributes];
+    
     self.maximumValue = self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] integerValue] : 100;
     self.minimumValue = self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] integerValue] : 0;
     self.step = self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] integerValue] : 1;
 }
 
 
+
+
 #pragma mark - Control changes
 
 -(void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
-    
     [self.innerSlider addTarget:self action:@selector(valueChanged:) forControlEvents:controlEvents];
     [self.innerSlider addTarget:self action:@selector(valueChanged:) forControlEvents:controlEvents];
     MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
@@ -181,6 +163,7 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
     commonCCTD.action = action;
     self.targetDescriptors = @{@(self.innerSlider.hash) : commonCCTD};
 }
+
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
@@ -195,16 +178,16 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 @end
 
 
-@implementation MDKUIExternalSlider
 
+
+/******************************************************/
+/* INTERNAL/EXTERNAL                                  */
+/******************************************************/
+
+@implementation MDKUIExternalSlider
 -(NSString *)defaultXIBName {
     return @"MDKUISlider";
 }
 @end
 
-
-@implementation MDKUIInternalSlider
-
-
-
-@end
+@implementation MDKUIInternalSlider @end
