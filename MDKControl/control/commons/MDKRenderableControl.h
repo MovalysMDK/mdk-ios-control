@@ -184,15 +184,15 @@ extern const struct ErrorPositionParameters_Struct
 
 
 #pragma mark -
-#pragma mark MFInternalComponent
+#pragma mark MDKInternalComponent
 
 /*!
- * @protocol MFInternalComponent
- * @brief This protocol is used to specify that a MFBaseRenderableComponent
+ * @protocol MDKInternalComponent
+ * @brief This protocol is used to specify that a MDKBaseRenderableComponent
  * is used an "InternalView".
- * @see MFBaseRenderableComponent
+ * @see MDKBaseRenderableComponent
  */
-@protocol MFInternalComponent <NSObject>
+@protocol MDKInternalComponent <NSObject>
 
 @optional
 /*!
@@ -208,13 +208,13 @@ extern const struct ErrorPositionParameters_Struct
 
 
 #pragma mark -
-#pragma mark MFExternalComponent
+#pragma mark MDKExternalComponent
 /*!
- * @protocol MFInternalComponent
- * @brief This protocol is used to specify that a MFBaseRenderableComponent
+ * @protocol MDKExternalComponent
+ * @brief This protocol is used to specify that a MDKBaseRenderableComponent
  * is used an "ExternalView".
  */
-@protocol MFExternalComponent <NSObject>
+@protocol MDKExternalComponent <NSObject>
 
 #pragma mark - Methods
 /*!

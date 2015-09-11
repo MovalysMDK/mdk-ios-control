@@ -64,18 +64,26 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
 };
 
 -(void)initialize {
-    self.baseMDKComponentsXIBsName = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle bundleForClass:NSClassFromString(@"AppDelegate")] pathForResource:@"Framework-components" ofType:@"plist"]];
+    NSMutableDictionary *xibFrameworkDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[NSBundle bundleForClass:NSClassFromString(@"MDKRenderableControl")] pathForResource:@"Framework-components" ofType:@"plist"]];
+    
+    NSMutableDictionary *xibProjectDict = [NSMutableDictionary dictionaryWithContentsOfFile:[[NSBundle bundleForClass:NSClassFromString(@"AppDelegate")] pathForResource:@"Project-components" ofType:@"plist"]];
+    
+    if(xibProjectDict) {
+        [xibFrameworkDict addEntriesFromDictionary:xibProjectDict];
+    }
+    
+    self.baseMDKComponentsXIBsName = xibFrameworkDict;
     [super initialize];
 }
 
 -(void) commonInit {
-    if([self conformsToProtocol:@protocol(MFExternalComponent)]) {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
         
         if(self.internalView) {
             [self.internalView removeFromSuperview];
         }
         @try {
-            Class bundleClass = [[self retrieveCustomXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MFUIApplication") : NSClassFromString(@"AppDelegate");
+            Class bundleClass = [[self retrieveCustomXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
             
             
             self.internalView = [[[NSBundle bundleForClass:bundleClass] loadNibNamed:[self retrieveCustomXIB] owner:self options:nil] firstObject];
@@ -96,7 +104,7 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
         [self forwardSpecificRenderableProperties];
         
     }
-    else if([self conformsToProtocol:@protocol(MFInternalComponent)]){
+    else if([self conformsToProtocol:@protocol(MDKInternalComponent)]){
         [self applyStandardStyle];
         [self renderComponent:self];
         self.translatesAutoresizingMaskIntoConstraints = NO;
@@ -241,11 +249,11 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
  * @return The name of the custom XIB to load
  */
 -(NSString *)retrieveCustomXIB {
-    if([((id<MFExternalComponent>)self) customXIBName]) {
-        return [((id<MFExternalComponent>)self) customXIBName];
+    if([((id<MDKExternalComponent>)self) customXIBName]) {
+        return [((id<MDKExternalComponent>)self) customXIBName];
     }
     else {
-        return [self.baseMDKComponentsXIBsName objectForKey:[((id<MFExternalComponent>)self) defaultXIBName]];
+        return [self.baseMDKComponentsXIBsName objectForKey:[((id<MDKExternalComponent>)self) defaultXIBName]];
     }
 }
 
@@ -254,11 +262,11 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
  * @return The name of the custom XIB to load
  */
 -(NSString *)retrieveCustomErrorXIB {
-    if([((id<MFExternalComponent>)self) customErrorXIBName]) {
-        return [((id<MFExternalComponent>)self) customErrorXIBName];
+    if([((id<MDKExternalComponent>)self) customErrorXIBName]) {
+        return [((id<MDKExternalComponent>)self) customErrorXIBName];
     }
     else {
-        return [((id<MFExternalComponent>)self) defaultErrorXIBName];
+        return [((id<MDKExternalComponent>)self) defaultErrorXIBName];
     }
 }
 
@@ -395,10 +403,10 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
  */
 -(void) showError:(BOOL)showError {
     
-    if([self conformsToProtocol:@protocol(MFExternalComponent) ]) {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent) ]) {
         if(showError) {
             if(!self.errorView) {
-                Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MFUIApplication") : NSClassFromString(@"AppDelegate");
+                Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
                 self.errorView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomErrorXIB] owner:nil options:nil] firstObject];
             }
             self.errorView.userInteractionEnabled = YES;

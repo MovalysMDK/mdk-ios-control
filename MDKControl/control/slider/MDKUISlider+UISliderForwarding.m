@@ -14,13 +14,26 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
+#import "MDKUISlider+UISliderForwarding.h"
 
-#endif
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wincomplete-implementation"
+
+@implementation MDKUISlider (UISliderForwarding)
+
+#pragma clang diagnostic pop
+
+@dynamic minimumValue;
+@dynamic maximumValue;
+@dynamic continuous;
+@dynamic minimumValueImage;
+@dynamic maximumValueImage;
+@dynamic minimumTrackTintColor;
+@dynamic maximumTrackTintColor;
+@dynamic currentMinimumTrackImage;
+@dynamic currentMaximumTrackImage;
+@dynamic thumbTintColor;
+@dynamic currentThumbImage;
+
+@end

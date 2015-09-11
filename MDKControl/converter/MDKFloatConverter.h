@@ -14,13 +14,17 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
 
-#endif
+#import "MDKConverterProtocol.h"
+
+@interface MDKFloatConverter : NSObject <MDKConverterProtocol>
+
+
+
+/*
+FOUNDATION_EXPORT NSString *const CONVERTER_FLOAT_DEFAULT_REGISTRY_KEY;
+FOUNDATION_EXPORT NSString *const CONVERTER_FLOAT_NB_DIGITS_PARAMETER;
+*/
+
+@end

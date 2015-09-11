@@ -14,13 +14,25 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
+//Protocol
+#import "MDKConverterProtocol.h"
 
-#endif
+/*!
+ * @class MDKNumberConverter
+ * @brief Class of static methods to convert number into other types and other types into number
+ */
+@interface MDKNumberConverter : NSObject <MDKConverterProtocol>
+
+
+#pragma mark - Methods
+
+/*!
+ * @brief Converts a number into a string
+ * @param value The value to convert
+ * @param numberFormatter The numberFormatter to use to convert the given number
+ * @return The converted value string of the given number
+ */
++(NSString *)toString:(id)value withFormatter:(NSNumberFormatter *)numberFormatter;
+
+@end

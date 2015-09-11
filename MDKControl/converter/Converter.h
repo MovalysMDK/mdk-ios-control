@@ -14,13 +14,13 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
+#ifndef MDKControl_Converter_h
+#define MDKControl_Converter_h
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
+#import "MDKConverterProtocol.h"
+#import "MDKDateConverter.h"
+#import "MDKFloatConverter.h"
+#import "MDKStringConverter.h"
+#import "MDKNumberConverter.h"
 
 #endif

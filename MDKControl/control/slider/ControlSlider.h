@@ -14,13 +14,10 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
+#ifndef Pods_ControlSlider_h
+#define Pods_ControlSlider_h
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
+#import "MDKUISlider.h"
+#import "MDKUISlider+UISliderForwarding.h"
 
 #endif

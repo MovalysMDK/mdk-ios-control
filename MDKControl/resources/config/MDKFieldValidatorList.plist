@@ -12,8 +12,6 @@
 	<string>MDKEmailFieldValidator</string>
 	<key>phoneFieldValidator</key>
 	<string>MDKPhoneFieldValidator</string>
-	<key>fixedListContentFieldValidator</key>
-	<string>MDKFixedListContentFieldValidator</string>
 	<key>doubleFieldValidator</key>
 	<string>MDKDoubleFieldValidator</string>
 	<key>integerFieldValidator</key>
