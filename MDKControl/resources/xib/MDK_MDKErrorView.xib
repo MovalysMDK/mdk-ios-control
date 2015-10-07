@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,40 +10,25 @@
             <rect key="frame" x="0.0" y="0.0" width="31" height="86"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NBT-le-g9f">
-                    <rect key="frame" x="26" y="0.0" width="5" height="86"/>
-                    <color key="backgroundColor" red="0.80488708939999998" green="0.0" blue="0.02169921121" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="5" id="Qfi-zE-EJ7"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="qbg-cJ-9Bs"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="qbg-cJ-9Bs"/>
-                        </mask>
-                    </variation>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzg-7h-LWv">
-                    <rect key="frame" x="2" y="32" width="22" height="22"/>
+                    <rect key="frame" x="4" y="32" width="22" height="22"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="22" id="4gk-vS-5rP"/>
                         <constraint firstAttribute="height" constant="22" id="8pr-hz-w8y"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="MzT-nb-aPl"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="fUg-Po-B2r"/>
                     </constraints>
+                    <color key="tintColor" red="0.823142767" green="0.23479450800000001" blue="0.076583136910000002" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="onErrorButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="LFK-aW-hVo"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.80488708939999998" green="0.0" blue="0.02169921121" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Pzg-7h-LWv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="2" id="2fe-z9-kPL"/>
-                <constraint firstAttribute="bottom" secondItem="NBT-le-g9f" secondAttribute="bottom" id="9ad-1R-Nqf"/>
+                <constraint firstItem="Pzg-7h-LWv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="2fe-z9-kPL"/>
                 <constraint firstAttribute="centerY" secondItem="Pzg-7h-LWv" secondAttribute="centerY" id="NMh-Mo-POM"/>
-                <constraint firstAttribute="trailing" secondItem="NBT-le-g9f" secondAttribute="trailing" id="YJa-sf-KEI"/>
-                <constraint firstItem="NBT-le-g9f" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bPE-mt-yPX"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

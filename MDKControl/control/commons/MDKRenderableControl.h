@@ -170,6 +170,14 @@ IB_DESIGNABLE
 
 -(void) definePositionOfErrorViewWithParameters:(NSDictionary *)parameters whenShown:(BOOL)isShown;
 
+/*!
+ * @brief Declares renderable properties name specific to this control
+ * @discussion This method is used to forward specific renderable properties from internalView
+ * to externalView
+ * @return An array containing specific control renderable properties name
+ */
+-(NSArray *) controlRenderableProperties;
+
 extern const struct ErrorPositionParameters_Struct
 {
     __unsafe_unretained NSString *ErrorView;

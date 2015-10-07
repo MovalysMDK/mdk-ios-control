@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1098FF43102E42899A244E7D /* libPods-MDKControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E4040AFDF1A54801A50B45 /* libPods-MDKControl.a */; };
 		B00C4DF01BA06B4C003CBB16 /* MDKCreateEmailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4DEC1BA06B4C003CBB16 /* MDKCreateEmailViewController.h */; };
 		B00C4DF11BA06B4C003CBB16 /* MDKCreateEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00C4DED1BA06B4C003CBB16 /* MDKCreateEmailViewController.m */; };
 		B00C4DF21BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4DEE1BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h */; };
@@ -107,6 +108,12 @@
 		B0308D521B9F1673000817D3 /* MDKControlCustomStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */; };
 		B0308D581B9F1C64000817D3 /* MDKContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B0308D561B9F1C64000817D3 /* MDKContext.h */; };
 		B0308D591B9F1C64000817D3 /* MDKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B0308D571B9F1C64000817D3 /* MDKContext.m */; };
+		B03AD4791BC3CDFF00A96F5D /* MDKUIDateTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B03AD4771BC3CDFF00A96F5D /* MDKUIDateTime.h */; };
+		B03AD47A1BC3CDFF00A96F5D /* MDKUIDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = B03AD4781BC3CDFF00A96F5D /* MDKUIDateTime.m */; };
+		B03AD47E1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03AD47D1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib */; };
+		B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B03AD47F1BC4008400A96F5D /* MDKUIDateTimePickerView.h */; };
+		B03AD4821BC4008400A96F5D /* MDKUIDateTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B03AD4801BC4008400A96F5D /* MDKUIDateTimePickerView.m */; };
+		B03AD4841BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03AD4831BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib */; };
 		B044B1BE1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B044B1BF1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */; };
 		B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -218,6 +225,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48E4040AFDF1A54801A50B45 /* libPods-MDKControl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MDKControl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		903B5F1A7C02E3B3EC891D4E /* Pods-MDKControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDKControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDKControl/Pods-MDKControl.release.xcconfig"; sourceTree = "<group>"; };
 		B00C4DEC1BA06B4C003CBB16 /* MDKCreateEmailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCreateEmailViewController.h; sourceTree = "<group>"; };
 		B00C4DED1BA06B4C003CBB16 /* MDKCreateEmailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCreateEmailViewController.m; sourceTree = "<group>"; };
 		B00C4DEE1BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCreateEmailViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -320,6 +329,13 @@
 		B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlCustomStyleProtocol.h; sourceTree = "<group>"; };
 		B0308D561B9F1C64000817D3 /* MDKContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKContext.h; sourceTree = "<group>"; };
 		B0308D571B9F1C64000817D3 /* MDKContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKContext.m; sourceTree = "<group>"; };
+		B03AD4771BC3CDFF00A96F5D /* MDKUIDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIDateTime.h; sourceTree = "<group>"; };
+		B03AD4781BC3CDFF00A96F5D /* MDKUIDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIDateTime.m; sourceTree = "<group>"; };
+		B03AD47C1BC3CF2700A96F5D /* ControlDateTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlDateTime.h; sourceTree = "<group>"; };
+		B03AD47D1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIDateTime.xib; sourceTree = "<group>"; };
+		B03AD47F1BC4008400A96F5D /* MDKUIDateTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIDateTimePickerView.h; sourceTree = "<group>"; };
+		B03AD4801BC4008400A96F5D /* MDKUIDateTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIDateTimePickerView.m; sourceTree = "<group>"; };
+		B03AD4831BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIDateTimePicker.xib; sourceTree = "<group>"; };
 		B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSequentialTooltipManager.h; sourceTree = "<group>"; };
 		B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSequentialTooltipManager.m; sourceTree = "<group>"; };
 		B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTooltipManager.h; sourceTree = "<group>"; };
@@ -438,6 +454,7 @@
 		B0FFDA781B33FAFB00CA6E5E /* MDKControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDKControlTests.m; sourceTree = "<group>"; };
 		B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0FFDA911B33FBEB00CA6E5E /* MDKControl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDKControl-Prefix.pch"; sourceTree = "<group>"; };
+		C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDKControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDKControl/Pods-MDKControl.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +464,7 @@
 			files = (
 				B05C93691B9F3C3E00487CFB /* MessageUI.framework in Frameworks */,
 				B0FFDA901B33FBB800CA6E5E /* UIKit.framework in Frameworks */,
+				1098FF43102E42899A244E7D /* libPods-MDKControl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +479,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		689E3EA16B74FF8D7FBC7D0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */,
+				903B5F1A7C02E3B3EC891D4E /* Pods-MDKControl.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B00C4DEA1BA06B4C003CBB16 /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
@@ -697,6 +724,18 @@
 			path = command;
 			sourceTree = "<group>";
 		};
+		B03AD4761BC3CDFF00A96F5D /* date */ = {
+			isa = PBXGroup;
+			children = (
+				B03AD4771BC3CDFF00A96F5D /* MDKUIDateTime.h */,
+				B03AD4781BC3CDFF00A96F5D /* MDKUIDateTime.m */,
+				B03AD47C1BC3CF2700A96F5D /* ControlDateTime.h */,
+				B03AD47F1BC4008400A96F5D /* MDKUIDateTimePickerView.h */,
+				B03AD4801BC4008400A96F5D /* MDKUIDateTimePickerView.m */,
+			);
+			path = date;
+			sourceTree = "<group>";
+		};
 		B08C18EF1B9DD1AC00D6F93A /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -726,6 +765,7 @@
 		B08C190C1B9DE9A500D6F93A /* control */ = {
 			isa = PBXGroup;
 			children = (
+				B03AD4761BC3CDFF00A96F5D /* date */,
 				B0FFB6A31BA1CB5E00258B9D /* slider */,
 				B08C19571B9DEEED00D6F93A /* label */,
 				B08C190D1B9DE9A500D6F93A /* commons */,
@@ -888,6 +928,8 @@
 		B0C6BAA61BA1D9830087C4D3 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				B03AD4831BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib */,
+				B03AD47D1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib */,
 				B0A52E571BA31F0700EF6947 /* MDK_MDKErrorView.xib */,
 				B0C6BAB91BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib */,
 			);
@@ -931,6 +973,8 @@
 				B0FFDA681B33FAFB00CA6E5E /* MDKControl */,
 				B0FFDA751B33FAFB00CA6E5E /* MDKControlTests */,
 				B0FFDA671B33FAFB00CA6E5E /* Products */,
+				689E3EA16B74FF8D7FBC7D0F /* Pods */,
+				CF7E721A69041C6157D2ADBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -989,6 +1033,14 @@
 				B0FFDA771B33FAFB00CA6E5E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CF7E721A69041C6157D2ADBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48E4040AFDF1A54801A50B45 /* libPods-MDKControl.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1059,7 +1111,9 @@
 				B02156EA1B9DAD59001860B5 /* MDKErrorViewProtocol.h in Headers */,
 				B09CE7DD1BA17C220017CCA2 /* MDKIntegerFieldValidator.h in Headers */,
 				B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */,
+				B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */,
 				B02156D11B9DAC6E001860B5 /* MDKTextFieldStyle.h in Headers */,
+				B03AD4791BC3CDFF00A96F5D /* MDKUIDateTime.h in Headers */,
 				B02156B31B9DAC6E001860B5 /* MDKDefaultStyle.h in Headers */,
 				B021575E1B9DAEEA001860B5 /* MDKFieldValidatorProtocol.h in Headers */,
 				B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */,
@@ -1112,10 +1166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0FFDA7C1B33FAFB00CA6E5E /* Build configuration list for PBXNativeTarget "MDKControl" */;
 			buildPhases = (
+				A52DD6E52FB44FB7CCE9682A /* Check Pods Manifest.lock */,
 				B0FFDA611B33FAFB00CA6E5E /* Sources */,
 				B0FFDA621B33FAFB00CA6E5E /* Frameworks */,
 				B0FFDA631B33FAFB00CA6E5E /* Headers */,
 				B0FFDA641B33FAFB00CA6E5E /* Resources */,
+				7083793D2F7BBDBD0363E0AE /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1150,7 +1206,7 @@
 		B0FFDA5D1B33FAFB00CA6E5E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Sopra Steria";
 				TargetAttributes = {
 					B0FFDA651B33FAFB00CA6E5E = {
@@ -1187,11 +1243,13 @@
 				B0C6BAAF1BA1D9830087C4D3 /* ios_ic_phone_pressed@2x.png in Resources */,
 				B0C6BABA1BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib in Resources */,
 				B0A52E581BA31F0700EF6947 /* MDK_MDKErrorView.xib in Resources */,
+				B03AD4841BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib in Resources */,
 				B0C6BAAC1BA1D9830087C4D3 /* ios_ic_mail_pressed@2x.png in Resources */,
 				B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */,
 				B0C6BAB01BA1D9830087C4D3 /* ios_ic_phone_unactive@2x.png in Resources */,
 				B0C6BAAD1BA1D9830087C4D3 /* ios_ic_mail_unactive@2x.png in Resources */,
 				B0C6BABC1BA1DBF60087C4D3 /* Framework-components.plist in Resources */,
+				B03AD47E1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib in Resources */,
 				B0C6BAAE1BA1D9830087C4D3 /* ios_ic_phone_active@2x.png in Resources */,
 				B0C6BAB11BA1D9830087C4D3 /* ios_ic_qrcode_icon_active.png in Resources */,
 				B0C6BAB51BA1D9830087C4D3 /* ios_ic_nav_unactive@2x.png in Resources */,
@@ -1210,6 +1268,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7083793D2F7BBDBD0363E0AE /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDKControl/Pods-MDKControl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A52DD6E52FB44FB7CCE9682A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0FFDA611B33FAFB00CA6E5E /* Sources */ = {
@@ -1256,6 +1347,7 @@
 				B08C19361B9DE9A500D6F93A /* MDKControlDelegate.m in Sources */,
 				B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */,
 				B08C18FC1B9DDC5700D6F93A /* MDKControlEventsDescriptor.m in Sources */,
+				B03AD47A1BC3CDFF00A96F5D /* MDKUIDateTime.m in Sources */,
 				B05C936D1B9F3CA300487CFB /* UIView+ViewController.m in Sources */,
 				B02156CA1B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m in Sources */,
 				B02156D01B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m in Sources */,
@@ -1267,6 +1359,7 @@
 				B02156B81B9DAC6E001860B5 /* UIView+Styleable.m in Sources */,
 				B09CE7D31BA17C110017CCA2 /* MDKDoubleTextField.m in Sources */,
 				B044B1BF1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m in Sources */,
+				B03AD4821BC4008400A96F5D /* MDKUIDateTimePickerView.m in Sources */,
 				B018BE961BA01F3300EF1D87 /* MDKEmailTextFieldStyle.m in Sources */,
 				B018BE941BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.m in Sources */,
 				B02157B41B9DAF30001860B5 /* MDKTooLongStringUIValidationError.m in Sources */,
@@ -1335,6 +1428,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1403,6 +1497,7 @@
 		};
 		B0FFDA7D1B33FAFB00CA6E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1413,6 +1508,7 @@
 				INFOPLIST_FILE = MDKControl/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1420,6 +1516,7 @@
 		};
 		B0FFDA7E1B33FAFB00CA6E5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 903B5F1A7C02E3B3EC891D4E /* Pods-MDKControl.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1430,6 +1527,7 @@
 				INFOPLIST_FILE = MDKControl/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -1448,6 +1546,7 @@
 				);
 				INFOPLIST_FILE = MDKControlTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1461,6 +1560,7 @@
 				);
 				INFOPLIST_FILE = MDKControlTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

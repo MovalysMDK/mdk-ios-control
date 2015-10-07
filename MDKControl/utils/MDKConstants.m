@@ -47,6 +47,7 @@ NSString *const PICKER_NOTIFICATION_SHOW = @"pickerViewShow";
 NSString *const PICKER_NOTIFICATION_HIDE = @"pickerViewHide";
 NSString *const PICKER_NOTIFICATION_BUTTON_SAVE_TITLE = @"MFPickerListSaveButtonTitle";
 NSString *const PICKER_NOTIFICATION_BUTTON_CANCEL_TITLE = @"MFPickerListCancelButtonTitle";
+NSString *const ASK_HIDE_KEYBOARD = @"ASK_HIDE_KEYBOARD";
 
 //Constants
 const int PICKER_VIEW_TAG = INT16_MAX;

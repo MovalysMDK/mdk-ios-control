@@ -20,5 +20,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdkcontrol", :tag => "0.0.1" }
   s.source_files = 'MDKControl/**/*.{h,m}'
   s.resources = 'MDKControl/**/*.{plist,xib,pch,png}'
+  s.dependency 'IQKeyboardManager', '3.3.2'
 
 end

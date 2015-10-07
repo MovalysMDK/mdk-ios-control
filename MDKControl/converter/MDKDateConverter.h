@@ -16,6 +16,7 @@
 
 
 #import "MDKConverterProtocol.h"
+#import "ControlDateTime.h"
 
 /*!
  * @class MDKDateConverter
@@ -45,7 +46,7 @@
  * @param mode The MFDatePickerMode to use to format the converted string value
  * @return The string converted value
  */
-//+(NSString *)toString:(id)value withMode:(MFDatePickerMode)mode;
++(NSString *)toString:(id)value withMode:(MDKDateTimeMode)mode;
 
 /*!
  * @brief Convert a datetime to a string

@@ -43,6 +43,10 @@
 - (CGRect)minimumValueImageRectForBounds:(CGRect)bounds;
 - (CGRect)trackRectForBounds:(CGRect)bounds;
 - (CGRect)thumbRectForBounds:(CGRect)bounds trackRect:(CGRect)rect value:(float)value;
+- (float)minimumValue;
+- (float)maximumValue;
+- (void) setMaximumValue:(float)maximumValue;
+- (void) setMinimumValue:(float)minimumValue;
 
 
 

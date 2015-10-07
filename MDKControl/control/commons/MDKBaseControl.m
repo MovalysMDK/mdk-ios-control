@@ -112,7 +112,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 #if !TARGET_INTERFACE_BUILDER
     self.userFieldValidators = [NSMutableArray new];
     [self initErrors];
-    
+    self.controlAttributes = [NSMutableDictionary dictionary];
     //Par défaut tout composant est éditable.
     self.editable = @1;
     self.sender = self;
@@ -259,6 +259,9 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
     }
     self.editable = controlAttributes[@"editable"] ? controlAttributes[@"editable"] : @1;
     self.visible = controlAttributes[@"visible"] ? controlAttributes[@"visible"] : @1;
+    if([self isKindOfClass:NSClassFromString(@"MDKRenderableControl")]) {
+        [self performSelector:@selector(forwardSpecificRenderableProperties)];
+    }
 }
 
 

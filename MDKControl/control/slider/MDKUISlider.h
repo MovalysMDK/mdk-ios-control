@@ -19,10 +19,12 @@
 #import "Converter.h"
 #import "MDKRenderableControl.h"
 
+/******************************************************/
+/* MAIN CONTROL                                       */
+/******************************************************/
+
 IB_DESIGNABLE
 @interface MDKUISlider : MDKRenderableControl <MDKControlChangesProtocol>
-
-
 
 #pragma mark - Properties
 /*!
@@ -35,14 +37,12 @@ IB_DESIGNABLE
  */
 @property (nonatomic, strong) IBOutlet  UILabel *innerSliderValueLabel;
 
-/*!
- * @brief The setp of the slider
- */
-@property (nonatomic) float step;
-
-
 @end
 
+
+/******************************************************/
+/* INTERNAL VIEW                                      */
+/******************************************************/
 
 IB_DESIGNABLE
 @interface MDKUIInternalSlider : MDKUISlider <MDKInternalComponent>
@@ -50,15 +50,23 @@ IB_DESIGNABLE
 @end
 
 
+/******************************************************/
+/* EXTERNAL VIEW                                      */
+/******************************************************/
+
 IB_DESIGNABLE
 @interface MDKUIExternalSlider : MDKUISlider <MDKExternalComponent>
 
+/*!
+ * @brief custom XIB name
+ */
 @property (nonatomic, strong) IBInspectable NSString *customXIBName;
+
+/*!
+ * @brief custom Error XIB Name
+ */
 @property (nonatomic, strong) IBInspectable NSString *customErrorXIBName;
 
 @end
 
-// on met le header à la fin car la classe doit être déclarée avant la categorie.
-// ne pas déplacer
 
-#import "MDKUISlider+UISliderForwarding.h"

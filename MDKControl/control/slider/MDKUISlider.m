@@ -22,6 +22,18 @@
 
 #include <math.h>
 
+
+@interface MDKUISlider ()
+
+/*!
+ * @brief The setp of the slider
+ */
+@property (nonatomic) float step;
+
+@end
+
+
+
 @implementation MDKUISlider
 @synthesize targetDescriptors = _targetDescriptors;
 
@@ -54,6 +66,7 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
     //self.sliderValue.text = [NSString stringWithFormat:@"%d", (int)self.slider.value];
     //[self setValue:self.slider.value];
     [self setDisplayComponentValue:@(self.innerSlider.value)];
+    [self valueChanged:sender];
     [self becomeFirstResponder];
 }
 
@@ -144,13 +157,15 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 #pragma mark - Control attribute
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
     [super setControlAttributes:controlAttributes];
-    
-    self.maximumValue = self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] integerValue] : 100;
-    self.minimumValue = self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] integerValue] : 0;
-    self.step = self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] integerValue] : 1;
+    float value =  self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] floatValue] : 100.0f;;
+//    self.maximumValue = self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] floatValue] : 100.0f;
+//    self.minimumValue = self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] floatValue] : 0.0f;
+//    self.step = self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] floatValue] : 1.0f;
 }
 
-
+-(id)forwardingTargetForSelector:(SEL)aSelector {
+    return self.innerSlider;
+}
 
 
 #pragma mark - Control changes
@@ -172,11 +187,13 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
     [self setData:@(((UISlider *)sender).value)];
     MDKControlEventsDescriptor *cctd = self.targetDescriptors[@(sender.hash)];
     [cctd.target performSelector:cctd.action withObject:self];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ASK_HIDE_KEYBOARD object:nil];
 }
 #pragma clang diagnostic pop
 
 @end
 
+#import "MDKUISlider+UISliderForwarding.h"
 
 
 

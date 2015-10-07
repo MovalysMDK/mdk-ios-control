@@ -14,14 +14,10 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
+#ifndef ControlDateTime_h
+#define ControlDateTime_h
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
-#import "ControlDateTime.h"
+#import "MDKUIDateTime.h"
 
-#endif
+#endif 
+

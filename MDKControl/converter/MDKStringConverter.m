@@ -19,29 +19,18 @@
 
 @implementation MDKStringConverter
 
-- (id)initWithParameters:(NSDictionary *)parameters
-{
-    if(self) {
-    }
-    return self;
-}
 
-
-+ (NSDate *)toDate:(id)value
-{
++ (NSDate *)toDate:(id)value {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     return [dateFormatter dateFromString:value];
 }
 
 
-+ (NSDate *)toDate:(id)value withFormatter:(NSDateFormatter *)dateFormatter
-{
++ (NSDate *)toDate:(id)value withFormatter:(NSDateFormatter *)dateFormatter {
     return [dateFormatter dateFromString:value];
 }
 
-
-+ (NSNumber *)toNumber:(id)value
-{
++ (NSNumber *)toNumber:(id)value {
     //Le formatter permet d'obtenir un nombre en gérant automatiquement le séparateur
     //décimal qui dépend des réglages linguistiques de l'appareil.
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
@@ -49,14 +38,11 @@
     return number;
 }
 
-
-+ (NSNumber *)toNumber:(id)value withFormatter:(NSNumberFormatter *)numberFormatter
-{
++ (NSNumber *)toNumber:(id)value withFormatter:(NSNumberFormatter *)numberFormatter {
     return [numberFormatter numberFromString:value];
 }
 
-+ (NSString *)toString:(id)value
-{
++ (NSString *)toString:(id)value {
     return [value description];
 }
 

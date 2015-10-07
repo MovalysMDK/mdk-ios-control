@@ -35,6 +35,9 @@
     while (!navigationController && firstViewController.parentViewController) {
         navigationController = firstViewController.parentViewController.navigationController;
     }
+    if(!navigationController) {
+        return firstViewController;
+    }
     return navigationController;
 }
 

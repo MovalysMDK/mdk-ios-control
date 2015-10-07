@@ -369,7 +369,13 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
  * @discussion This method is called when this MFBaseRenderableComponent is an external view only.
  */
 -(void)forwardSpecificRenderableProperties {
-    //Exception
+    if([self controlRenderableProperties]) {
+        for(NSString* propertyName in [self controlRenderableProperties]) {
+            NSString *firstCharUppercasedPropertyName = [NSString stringWithFormat:@"%@%@", [[propertyName substringToIndex:1] uppercaseString], [propertyName substringFromIndex:1]];
+            NSString *selectorAsString = [NSString stringWithFormat:@"set%@:", firstCharUppercasedPropertyName];
+            [self.internalView performSelector:NSSelectorFromString(selectorAsString) withObject:[self performSelector:NSSelectorFromString(propertyName)]];
+        }
+    }
 }
 
 
@@ -392,7 +398,14 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     if(self.styleClass) {
         self.internalView.styleClass = self.styleClass;
     }
+    [self forwardSpecificRenderableProperties];
     [self.internalView renderComponent:self.internalView];
+}
+
+-(NSArray *)controlRenderableProperties {
+    //Default return is nil.
+    //Should be implemented in subclasses to decalres specific renderable properties name.
+    return nil;
 }
 
 -(void)prepareForInterfaceBuilder {

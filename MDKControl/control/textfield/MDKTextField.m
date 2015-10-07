@@ -18,6 +18,7 @@
 #import "Style.h"
 #import "ControlExtension.h"
 #import "ControlCommons.h"
+#import "Utils.h"
 
 #import "MDKTextField.h"
 #import "MDKLabel.h"
@@ -116,6 +117,7 @@
     [self addTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged|UIControlEventValueChanged];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignFirstResponder) name:ALERTVIEW_FAILED_SAVE_ACTION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resignFirstResponder) name:ASK_HIDE_KEYBOARD object:nil];
 #endif
 }
 
@@ -123,8 +125,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self removeTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged|UIControlEventValueChanged];
     self.targetDescriptors = nil;
-    
 }
+
 
 #pragma mark - TextField Methods
 
