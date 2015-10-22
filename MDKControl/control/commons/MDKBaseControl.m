@@ -150,6 +150,9 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 -(void)setData:(id)data {
     //Here the data has been potentially fixed by the component
     self.controlData = data;
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        
+    }
     
     //Update the component with this value
     [self performSelector:@selector(setDisplayComponentValue:) withObject:self.controlData];
@@ -261,6 +264,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
     self.visible = controlAttributes[@"visible"] ? controlAttributes[@"visible"] : @1;
     if([self isKindOfClass:NSClassFromString(@"MDKRenderableControl")]) {
         [self performSelector:@selector(forwardSpecificRenderableProperties)];
+        [self performSelector:@selector(setDisplayComponentValue:) withObject:[self getData]];
     }
 }
 
