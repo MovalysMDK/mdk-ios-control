@@ -14,15 +14,30 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
+#import "MDKUIFixedList.h"
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
-#import "ControlDateTime.h"
-#import "ControlFixedList.h"
+@implementation MDKUIFixedList
 
-#endif
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
+
+@end
+
+
+
+/******************************************************/
+/* INTERNAL/EXTERNAL                                  */
+/******************************************************/
+
+@implementation MDKUIExternalFixedList
+-(NSString *)defaultXIBName {
+    return @"MDKUIFixedList";
+}
+@end
+
+@implementation MDKUIInternalFixedList @end

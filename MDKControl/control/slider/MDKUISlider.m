@@ -32,8 +32,6 @@
 
 @end
 
-
-
 @implementation MDKUISlider
 @synthesize targetDescriptors = _targetDescriptors;
 
@@ -54,8 +52,6 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 -(void)didInitializeOutlets {
     [self.innerSlider addTarget:self action:@selector(sliderValueChangedAction:) forControlEvents:UIControlEventValueChanged];
 }
-
-
 
 
 #pragma mark - Custom methods

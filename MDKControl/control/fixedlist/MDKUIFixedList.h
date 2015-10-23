@@ -14,15 +14,27 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
+#import "MDKRenderableControl.h"
+IB_DESIGNABLE
+@interface MDKUIFixedList : MDKRenderableControl
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
-#import "ControlDateTime.h"
-#import "ControlFixedList.h"
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-#endif
+@end
+
+
+
+IB_DESIGNABLE
+@interface MDKUIInternalFixedList : MDKUIFixedList <MDKInternalComponent>
+
+@end
+
+
+IB_DESIGNABLE
+@interface MDKUIExternalFixedList : MDKUIFixedList <MDKExternalComponent>
+
+@property (nonatomic, strong) IBInspectable NSString *customXIBName;
+@property (nonatomic, strong) IBInspectable NSString *customErrorXIBName;
+
+@end
