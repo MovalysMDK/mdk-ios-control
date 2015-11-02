@@ -230,7 +230,8 @@
 
 #pragma mark - Control Attributes
 -(void)addControlAttribute:(id)controlAttribute forKey:(NSString *)key {
-    NSMutableDictionary *mutableControlAttributes = [self.control.controlAttributes mutableCopy];
+    NSMutableDictionary *mutableControlAttributes = [NSMutableDictionary dictionary];
+    [mutableControlAttributes addEntriesFromDictionary:self.control.controlAttributes];
     mutableControlAttributes[key] = controlAttribute;
     self.control.controlAttributes = mutableControlAttributes;
 }

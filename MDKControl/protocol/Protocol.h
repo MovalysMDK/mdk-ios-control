@@ -27,5 +27,6 @@
 #import "MDKControlValidationProtocol.h"
 #import "MDKControlCustomStyleProtocol.h"
 #import "MDKErrorViewProtocol.h"
+#import "MDKEnumHelperProtocol.h"
 
 #endif

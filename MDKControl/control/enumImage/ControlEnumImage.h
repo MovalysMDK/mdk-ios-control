@@ -14,22 +14,10 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <UIKit/UIKit.h>
 
-//! Project version number for MDKControl.
-FOUNDATION_EXPORT double MDKControlVersionNumber;
+#ifndef Pods_ControlEnumImage_h
+#define Pods_ControlEnumImage_h
 
-//! Project version string for MDKControl.
-FOUNDATION_EXPORT const unsigned char MDKControlVersionString[];
+#import "MDKUIEnumImage.h"
 
-// In this header, you should import all the public headers of your framework using statements like #import <MDKControl/PublicHeader.h>
-
-#import "FieldValidator.h"
-#import "Command.h"
-#import "AlertView.h"
-#import "ComponentProvider.h"
-#import "Events.h"
-#import "Protocol.h"
-#import "Style.h"
-#import "Control.h"
-#import "Helper.h"
+#endif

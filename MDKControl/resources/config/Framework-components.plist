@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MDKUIEnumImage</key>
+	<string>MDK_MDKUIEnumImage</string>
 	<key>MDKUISlider</key>
 	<string>MDK_MDKUISlider</string>
 	<key>MDKUIDateTime</key>

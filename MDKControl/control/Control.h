@@ -24,5 +24,6 @@
 #import "ControlSlider.h"
 #import "ControlDateTime.h"
 #import "ControlFixedList.h"
+#import "ControlEnumImage.h"
 
 #endif
