@@ -16,15 +16,53 @@
 
 #import "MDKUIFixedList.h"
 
+@interface MDKUIFixedList ()
+
+@property (nonatomic, strong) NSMutableArray *source;
+
+@end
+
+
 @implementation MDKUIFixedList
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+#pragma mark - Initialization and deallocation
+
+-(void)initialize {
+    [super initialize];
+//    self.source = [NSMutableArray array];
 }
-*/
+
+-(void)didInitializeOutlets {
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+}
+
+
+#pragma mark - Control Data protocol
++(NSString *)getDataType {
+    return @"NSArray";
+}
+
+-(void)setData:(id)data {
+    if(data) {
+        self.source = [data mutableCopy];
+        [self setDisplayComponentValue:(NSArray *)data];
+    }
+    [super setData:data];
+}
+
+-(id)getData {
+    return [self displayComponentValue];
+}
+
+-(id)displayComponentValue {
+    return self.source;
+}
+
+-(void)setDisplayComponentValue:(id)value {
+    [self.tableView reloadData];
+}
+
 
 @end
 
