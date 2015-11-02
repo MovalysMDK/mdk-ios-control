@@ -14,19 +14,10 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Protocol_h
-#define MDKControl_Protocol_h
 
-#import "MDKControlChangesProtocol.h"
-#import "MDKBackgroundViewProtocol.h"
-#import "MDKControlAssociatedLabelProtocol.h"
-#import "MDKControlAttributesProtocol.h"
-#import "MDKControlDataProtocol.h"
-#import "MDKControlErrorProtocol.h"
-#import "MDKControlPropertiesProtocol.h"
-#import "MDKControlValidationProtocol.h"
-#import "MDKControlCustomStyleProtocol.h"
-#import "MDKErrorViewProtocol.h"
-#import "MDKEnumHelperProtocol.h"
+#ifndef Pods_ControlEnumImage_h
+#define Pods_ControlEnumImage_h
+
+#import "MDKUIEnumImage.h"
 
 #endif

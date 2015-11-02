@@ -23,5 +23,6 @@
 #import "ControlLabel.h"
 #import "ControlSlider.h"
 #import "ControlDateTime.h"
+#import "ControlEnumImage.h"
 
 #endif

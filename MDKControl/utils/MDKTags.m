@@ -46,7 +46,9 @@ NSInteger const TAG_MFDATEPICKER_CONFIRMBUTTON                = 10510;
 NSInteger const TAG_MFDATEPICKER_CANCELBUTTON                 = 10515;
 
 // /MFUI/control/image
-NSInteger const TAG_MFENUMIMAGE_IMAGEVIEW                     = 11000;
+NSInteger const TAG_MKENUMIMAGE_IMAGEVIEW                     = 11000;
+NSInteger const TAG_MKENUMIMAGE_LABEL                         = 11005;
+
 
 // /MFUI/control/label
 NSInteger const TAG_MDKLABEL_LABEL                             = 11500;
