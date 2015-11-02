@@ -18,6 +18,7 @@
 //Tags
 #import "Protocol.h"
 #import "Error.h"
+#import "Utils.h"
 
 #import "MDKControlProtocol.h"
 

@@ -77,10 +77,10 @@ NSString *const MDKUIEnumImageKey = @"MDKUIEnumImageKey";
 
 - (void) setAllTags {
     if (self.imageView.tag == 0) {
-//        self.imageView.tag = TAG_MKENUMIMAGE_IMAGEVIEW;
+        self.imageView.tag = TAG_MDKENUMIMAGE_IMAGEVIEW;
     }
     if (self.label.tag == 0) {
-//        self.label.tag = TAG_MKENUMIMAGE_LABEL;
+        self.label.tag = TAG_MDKENUMIMAGE_LABEL;
     }
 }
 
