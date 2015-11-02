@@ -128,6 +128,17 @@ NSString *const MDKUIEnumImageKey = @"MDKUIEnumImageKey";
 }
 
 
+#pragma mark - Live Rendering
+
+- (void)prepareForInterfaceBuilder {
+    UILabel *innerDescriptionLabel = [[UILabel alloc] initWithFrame:self.bounds];
+    innerDescriptionLabel.text = [[self class] description];
+    innerDescriptionLabel.textAlignment = NSTextAlignmentCenter;
+    innerDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
+    [self addSubview:innerDescriptionLabel];
+    self.backgroundColor = [UIColor colorWithRed:0.98f green:0.98f blue:0.34f alpha:0.5f];
+}
+
 
 #pragma mark - Custom methods
 
