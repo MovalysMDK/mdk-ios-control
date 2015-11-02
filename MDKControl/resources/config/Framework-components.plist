@@ -8,5 +8,7 @@
 	<string>MDK_MDKUISlider</string>
 	<key>MDKUIDateTime</key>
 	<string>MDK_MDKUIDateTime</string>
+	<key>MDKUIFixedList</key>
+	<string>MDK_MDKUIFixedList</string>
 </dict>
 </plist>

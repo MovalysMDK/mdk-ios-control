@@ -590,5 +590,9 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
     [self applyValidStyle];
 }
 
+-(void) refreshControl {
+//    [self.externalView setData:self.externalView.privateData];
+    [self.internalView setData:self.internalView.controlData];
+}
 
 @end
