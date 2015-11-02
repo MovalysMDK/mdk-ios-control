@@ -31,9 +31,14 @@
 #pragma clang diagnostic pop
 
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 -(void)dealloc {
     [self removeTarget:self action:@selector(innerTextDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
+#pragma clang diagnostic pop
+
 -(void) doAction {
 //    [MFEMDKxception throwNotImplementedExceptionOfMethodName:@"doAction" inClass:[self class] andUserInfo:nil];
 }
