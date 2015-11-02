@@ -101,6 +101,7 @@ NSString *const MDKUIEnumImageKey = @"MDKUIEnumImageKey";
 - (void)setData:(id)data {
     if (data && ![self.currentData isEqual:data]) {
         self.currentData = data;
+        [self displayData];
     }
     [super setData:data];
 }
@@ -120,21 +121,23 @@ NSString *const MDKUIEnumImageKey = @"MDKUIEnumImageKey";
 
 #pragma mark - Control attribute
 
--(void)setControlAttributes:(NSDictionary *)controlAttributes {
+- (void)setControlAttributes:(NSDictionary *)controlAttributes {
     if (controlAttributes && [controlAttributes objectForKey:MDKUIEnumImageKey]) {
-        self.currentEnumClassName      = [controlAttributes valueForKey:MDKUIEnumImageKey];
-        NSString *sEnumClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:self.currentEnumClassName];
-        Class cEnumHelper              = NSClassFromString(sEnumClassHelperName);
-        
-        if ([cEnumHelper respondsToSelector:@selector(textFromEnum:)]) {
-            NSString *text = [cEnumHelper performSelector:@selector(textFromEnum:) withObject:self.currentData];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self updateDisplayFromText:text];
-            });
-        }
+        self.currentEnumClassName = [controlAttributes valueForKey:MDKUIEnumImageKey];
     }
 }
 
+
+#pragma mark - Live Rendering
+
+- (void)prepareForInterfaceBuilder {
+    UILabel *innerDescriptionLabel = [[UILabel alloc] initWithFrame:self.bounds];
+    innerDescriptionLabel.text = [[self class] description];
+    innerDescriptionLabel.textAlignment = NSTextAlignmentCenter;
+    innerDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
+    [self addSubview:innerDescriptionLabel];
+    self.backgroundColor = [UIColor colorWithRed:0.98f green:0.98f blue:0.34f alpha:0.5f];
+}
 
 
 #pragma mark - Custom methods
@@ -147,9 +150,16 @@ NSString *const MDKUIEnumImageKey = @"MDKUIEnumImageKey";
     return ( self.imageView.image ? NO : YES );
 }
 
-- (void)initializeImageViewWithText:(NSString *)text {
-    NSString *imageName  = [[NSString stringWithFormat:@"enum_%@_%@", self.currentEnumClassName, text] lowercaseString];
-    self.imageView.image = [UIImage imageNamed:imageName];
+- (void)displayData {
+    NSString *sEnumClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:self.currentEnumClassName];
+    Class cEnumHelper              = NSClassFromString(sEnumClassHelperName);
+    
+    if ([cEnumHelper respondsToSelector:@selector(textFromEnum:)]) {
+        NSString *text = [cEnumHelper performSelector:@selector(textFromEnum:) withObject:self.currentData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self updateDisplayFromText:text];
+        });
+    }
 }
 
 - (void)updateDisplayFromText:(NSString *)text {
@@ -161,6 +171,11 @@ NSString *const MDKUIEnumImageKey = @"MDKUIEnumImageKey";
     if(self.imageView.hidden) {
         self.label.text = text;
     }
+}
+
+- (void)initializeImageViewWithText:(NSString *)text {
+    NSString *imageName  = [[NSString stringWithFormat:@"enum_%@_%@", self.currentEnumClassName, text] lowercaseString];
+    self.imageView.image = [UIImage imageNamed:imageName];
 }
 
 @end
