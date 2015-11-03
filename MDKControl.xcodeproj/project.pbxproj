@@ -218,6 +218,9 @@
 		B0FFDA721B33FAFB00CA6E5E /* MDKControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */; };
 		B0FFDA791B33FAFB00CA6E5E /* MDKControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFDA781B33FAFB00CA6E5E /* MDKControlTests.m */; };
 		B0FFDA901B33FBB800CA6E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */; };
+		F91971531BE8AF4B00B94F8A /* MDKEnumImageStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */; };
+		F91971541BE8AF4B00B94F8A /* MDKEnumImageStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */; };
+		F91971561BE8AF6E00B94F8A /* StyleEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */; };
 		F965F9301BE7BF070060A93D /* MDK_MDKUIEnumImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F965F92F1BE7BF070060A93D /* MDK_MDKUIEnumImage.xib */; };
 		F965F9351BE7BF3B0060A93D /* ControlEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F965F9321BE7BF3B0060A93D /* ControlEnumImage.h */; };
 		F965F9361BE7BF3B0060A93D /* MDKUIEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F965F9331BE7BF3B0060A93D /* MDKUIEnumImage.h */; };
@@ -476,6 +479,9 @@
 		B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0FFDA911B33FBEB00CA6E5E /* MDKControl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDKControl-Prefix.pch"; sourceTree = "<group>"; };
 		C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDKControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDKControl/Pods-MDKControl.debug.xcconfig"; sourceTree = "<group>"; };
+		F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKEnumImageStyle.h; path = enumImage/MDKEnumImageStyle.h; sourceTree = "<group>"; };
+		F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKEnumImageStyle.m; path = enumImage/MDKEnumImageStyle.m; sourceTree = "<group>"; };
+		F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyleEnumImage.h; path = enumImage/StyleEnumImage.h; sourceTree = "<group>"; };
 		F965F92F1BE7BF070060A93D /* MDK_MDKUIEnumImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIEnumImage.xib; sourceTree = "<group>"; };
 		F965F9321BE7BF3B0060A93D /* ControlEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlEnumImage.h; path = enumImage/ControlEnumImage.h; sourceTree = "<group>"; };
 		F965F9331BE7BF3B0060A93D /* MDKUIEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIEnumImage.h; path = enumImage/MDKUIEnumImage.h; sourceTree = "<group>"; };
@@ -540,6 +546,7 @@
 		B02156881B9DAC6E001860B5 /* style */ = {
 			isa = PBXGroup;
 			children = (
+				F91971501BE8AEBD00B94F8A /* enumImage */,
 				B0A52E591BA31F3C00EF6947 /* slider */,
 				B02156891B9DAC6E001860B5 /* commons */,
 				B02156901B9DAC6E001860B5 /* label */,
@@ -1099,6 +1106,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F91971501BE8AEBD00B94F8A /* enumImage */ = {
+			isa = PBXGroup;
+			children = (
+				F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */,
+				F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */,
+				F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */,
+			);
+			name = enumImage;
+			sourceTree = "<group>";
+		};
 		F965F9311BE7BF210060A93D /* enumImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1148,6 +1165,7 @@
 				B044B1BE1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h in Headers */,
 				B02157C31B9DAF30001860B5 /* MDKMandatoryFieldUIValidationError.h in Headers */,
 				B018BE931BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h in Headers */,
+				F91971531BE8AF4B00B94F8A /* MDKEnumImageStyle.h in Headers */,
 				B09CE7D61BA17C110017CCA2 /* MDKIntegerTextField.h in Headers */,
 				B02156E81B9DAD59001860B5 /* MDKControlPropertiesProtocol.h in Headers */,
 				B09CE7D51BA17C110017CCA2 /* MDKDoubleTextField.h in Headers */,
@@ -1190,6 +1208,7 @@
 				B018BE9B1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.h in Headers */,
 				B02156EA1B9DAD59001860B5 /* MDKErrorViewProtocol.h in Headers */,
 				B09CE7DD1BA17C220017CCA2 /* MDKIntegerFieldValidator.h in Headers */,
+				F91971561BE8AF6E00B94F8A /* StyleEnumImage.h in Headers */,
 				B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */,
 				B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */,
 				B02156D11B9DAC6E001860B5 /* MDKTextFieldStyle.h in Headers */,
@@ -1439,6 +1458,7 @@
 				B05C936D1B9F3CA300487CFB /* UIView+ViewController.m in Sources */,
 				B02156CA1B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m in Sources */,
 				B02156D01B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m in Sources */,
+				F91971541BE8AF4B00B94F8A /* MDKEnumImageStyle.m in Sources */,
 				B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */,
 				B0FFB6AA1BA1CB5F00258B9D /* MDKUISlider+UISliderForwarding.m in Sources */,
 				B02157C61B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.m in Sources */,

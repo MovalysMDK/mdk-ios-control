@@ -14,13 +14,12 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Style_h
-#define MDKControl_Style_h
+#import "MDKEnumImageStyle.h"
+#import "MDKUIEnumImage.h"
 
-#import "StyleCommons.h"
-#import "StyleLabel.h"
-#import "StyleTextField.h"
-#import "StyleSlider.h"
-#import "StyleEnumImage.h"
+@implementation MDKEnumImageStyle
 
-#endif
+- (void)applyStandardStyleOnComponent:(id)component {}
+- (void)applyEnabledStyleOnComponent:(id)component {}
+
+@end
