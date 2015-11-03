@@ -15,12 +15,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-@class MDKUIFixedList;
 
-@interface MDKUIFixedListDataDelegate : NSObject <UITableViewDataSource, UITableViewDelegate>
+#import "Protocol.h"
 
-
-@property (nonatomic, weak) MDKUIFixedList *fixedList;
+/*!
+ * @class MDKUIFixedListBaseDelegate
+ * @brief This class is the base FixedList Delegate to manage a FixedList.
+ * @discussion It must me inherited in the user-project to make the FixedList working
+ */
+@interface MDKUIFixedListBaseDelegate : NSObject <MDKUIFixedListDataProtocol>
 
 @end

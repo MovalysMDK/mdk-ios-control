@@ -14,25 +14,13 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MDKUIFixedListDataDelegate.h"
-#import "MDKUIFixedList.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+@class MDKUIFixedList;
 
-@implementation MDKUIFixedListDataDelegate
+@interface MDKUIFixedListTableViewDelegate : NSObject <UITableViewDataSource, UITableViewDelegate>
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
+-(instancetype) initWithFixedList:(MDKUIFixedList *)fixedList;
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [((NSArray *)[self.fixedList getData]) count];
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat height = 44.0f;
-    [self.fixedList itemView];
-}
-
-
--(UITableViewCell *)
 
 @end

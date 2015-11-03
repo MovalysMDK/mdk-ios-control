@@ -15,12 +15,16 @@
  */
 
 #import "MDKRenderableControl.h"
+
+FOUNDATION_EXPORT NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY;
+
 IB_DESIGNABLE
 @interface MDKUIFixedList : MDKRenderableControl
 
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+-(id<MDKUIFixedListDataProtocol>) fixedListeDelegate;
 @end
 
 

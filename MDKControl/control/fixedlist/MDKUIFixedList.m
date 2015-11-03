@@ -15,10 +15,19 @@
  */
 
 #import "MDKUIFixedList.h"
+#import "MDKUIFixedListTableViewDelegate.h"
+#import "MDKUIFixedListBaseDelegate.h"
+
+
+NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY = @"dataDelegate";
+
 
 @interface MDKUIFixedList ()
 
 @property (nonatomic, strong) NSMutableArray *source;
+@property (nonatomic, strong) MDKUIFixedListTableViewDelegate *tableDelegate;
+@property (nonatomic, strong) id<MDKUIFixedListDataProtocol> fixedListDelegate;
+@property (nonatomic, strong) id<MDKUIFixedListDataProtocol> baseFixedListDelegate;
 
 @end
 
@@ -29,13 +38,15 @@
 
 -(void)initialize {
     [super initialize];
-//    self.source = [NSMutableArray array];
 }
 
 -(void)didInitializeOutlets {
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    self.baseFixedListDelegate = [[MDKUIFixedListBaseDelegate alloc] init];
+    self.tableDelegate = [[MDKUIFixedListTableViewDelegate alloc] initWithFixedList:self];
+    self.tableView.delegate = self.tableDelegate;
+    self.tableView.dataSource = self.tableDelegate;
 }
+
 
 
 #pragma mark - Control Data protocol
@@ -63,6 +74,18 @@
     [self.tableView reloadData];
 }
 
+-(id<MDKUIFixedListDataProtocol>) fixedListeDelegate {
+    if(!_fixedListDelegate) {
+        if(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) {
+            _fixedListDelegate = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] init];
+        }
+        else {
+            _fixedListDelegate = self.baseFixedListDelegate;
+        }
+    }
+    
+    return _fixedListDelegate;
+}
 
 @end
 

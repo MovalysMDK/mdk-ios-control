@@ -14,11 +14,24 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ControlFixedList_h
-#define ControlFixedList_h
-
-#import "MDKUIFixedList.h"
-#import "MDKUIFixedListTableViewDelegate.h"
 #import "MDKUIFixedListBaseDelegate.h"
 
-#endif
+@implementation MDKUIFixedListBaseDelegate
+
+-(NSInteger)fixedList:(MDKUIFixedList *)fixedList numberOfRows:(NSInteger)totalNumberOfRows {
+    return totalNumberOfRows;
+}
+
+-(void)fixedList:(MDKUIFixedList *)fixedList mapCell:(UITableViewCell *)cell withObject:(id)object atIndexPath:(NSIndexPath *)indexPath {
+    //Default does notinhg
+}
+
+-(CGFloat)fixedList:(MDKUIFixedList *)fixedList heightForFixedListCells:(NSInteger)originalCellHeight {
+    return originalCellHeight;
+}
+
+-(NSString *)xibNameForFixedListCells {
+    return nil;
+}
+
+@end
