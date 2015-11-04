@@ -20,13 +20,16 @@
 
 
 NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY = @"dataDelegate";
+NSString *const FIXEDLIST_PARAMETER_CAN_MOVE_KEY = @"canMove";
+NSString *const FIXEDLIST_PARAMETER_CAN_DELETE_KEY = @"canDelete";
+NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 
 
 @interface MDKUIFixedList ()
 
 @property (nonatomic, strong) NSMutableArray *source;
 @property (nonatomic, strong) MDKUIFixedListTableViewDelegate *tableDelegate;
-@property (nonatomic, strong) id<MDKUIFixedListDataProtocol> fixedListDelegate;
+@property (nonatomic, strong) id<MDKUIFixedListDataProtocol> privateFixedListDataDelegate;
 @property (nonatomic, strong) id<MDKUIFixedListDataProtocol> baseFixedListDelegate;
 
 @end
@@ -45,6 +48,7 @@ NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY = @"dataDelegate";
     self.tableDelegate = [[MDKUIFixedListTableViewDelegate alloc] initWithFixedList:self];
     self.tableView.delegate = self.tableDelegate;
     self.tableView.dataSource = self.tableDelegate;
+    [self.addButton addTarget:self.privateFixedListDataDelegate action:@selector(addItemOnFixedList:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -74,18 +78,24 @@ NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY = @"dataDelegate";
     [self.tableView reloadData];
 }
 
--(id<MDKUIFixedListDataProtocol>) fixedListeDelegate {
-    if(!_fixedListDelegate) {
+-(void)setControlAttributes:(NSDictionary *)controlAttributes {
+    [super setControlAttributes:controlAttributes];
+    [self.tableDelegate refreshEditionProperties];
+}
+
+-(id<MDKUIFixedListDataProtocol>) fixedListDelegate {
+    if(!_privateFixedListDataDelegate) {
         if(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) {
-            _fixedListDelegate = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] init];
+            _privateFixedListDataDelegate = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] init];
         }
         else {
-            _fixedListDelegate = self.baseFixedListDelegate;
+            _privateFixedListDataDelegate = self.baseFixedListDelegate;
         }
     }
-    
-    return _fixedListDelegate;
+    return _privateFixedListDataDelegate;
 }
+
+
 
 @end
 
@@ -99,6 +109,7 @@ NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY = @"dataDelegate";
 -(NSString *)defaultXIBName {
     return @"MDKUIFixedList";
 }
+
 @end
 
 @implementation MDKUIInternalFixedList @end

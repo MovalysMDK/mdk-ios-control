@@ -23,6 +23,10 @@
 
 @property (nonatomic) CGFloat cellHeight;
 
+@property (nonatomic) BOOL canMove;
+@property (nonatomic) BOOL canDelete;
+@property (nonatomic) BOOL canSelect;
+
 @end
 
 @implementation MDKUIFixedListTableViewDelegate
@@ -34,8 +38,21 @@
     if(self) {
         self.fixedList = fixedList;
         self.cellHeight = CGFLOAT_MIN;
+        [[self.fixedList tableView] setEditing:YES animated:YES];
+        
     }
     return self;
+}
+
+
+#pragma mark - Custom Methods
+-(void)refreshEditionProperties {
+    [self.fixedList.tableView beginUpdates];
+    self.canMove = [self.fixedList.controlAttributes[FIXEDLIST_PARAMETER_CAN_MOVE_KEY] isEqualToNumber:@1];
+    self.canDelete = [self.fixedList.controlAttributes[FIXEDLIST_PARAMETER_CAN_DELETE_KEY] isEqualToNumber:@1];
+    self.canSelect = [self.fixedList.controlAttributes[FIXEDLIST_PARAMETER_CAN_SELECT_KEY] isEqualToNumber:@1];
+    self.fixedList.tableView.editing = self.canDelete || self.canMove;
+    [self.fixedList.tableView endUpdates];
 }
 
 
@@ -47,15 +64,15 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger totalNumberOfRows = [[self.fixedList getData] count];
-    return [[self.fixedList fixedListeDelegate] fixedList:self.fixedList numberOfRows:totalNumberOfRows];
+    return [[self.fixedList fixedListDelegate] fixedList:self.fixedList numberOfRows:totalNumberOfRows];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 44.0f;
     if(self.cellHeight == CGFLOAT_MIN) {
-        if([[self.fixedList fixedListeDelegate] xibNameForFixedListCells]) {
+        if([[self.fixedList fixedListDelegate] xibNameForFixedListCells]) {
             UITableViewCell *aCell = [[[NSBundle bundleForClass:NSClassFromString(@"AppDelegate")]
-                                       loadNibNamed:[[self.fixedList fixedListeDelegate] xibNameForFixedListCells]
+                                       loadNibNamed:[[self.fixedList fixedListDelegate] xibNameForFixedListCells]
                                        owner:self
                                        options:nil] firstObject];
             self.cellHeight = aCell.frame.size.height;
@@ -64,7 +81,7 @@
     else {
         height = self.cellHeight;
     }
-    return [[self.fixedList fixedListeDelegate] fixedList:self.fixedList heightForFixedListCells:height];
+    return [[self.fixedList fixedListDelegate] fixedList:self.fixedList heightForFixedListCells:height];
 }
 
 
@@ -73,17 +90,68 @@
     id object = [self.fixedList getData][indexPath.row];
     
     //No re-use in fixedList
-    if([[self.fixedList fixedListeDelegate] xibNameForFixedListCells]) {
+    if([[self.fixedList fixedListDelegate] xibNameForFixedListCells]) {
         cell = [[[NSBundle bundleForClass:NSClassFromString(@"AppDelegate")]
-                 loadNibNamed:[[self.fixedList fixedListeDelegate] xibNameForFixedListCells]
+                 loadNibNamed:[[self.fixedList fixedListDelegate] xibNameForFixedListCells]
                  owner:self
                  options:nil] firstObject];
     }
     else {
         cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     }
-    [[self.fixedList fixedListeDelegate] fixedList:self.fixedList mapCell:cell withObject:object atIndexPath:indexPath];
+    [[self.fixedList fixedListDelegate] fixedList:self.fixedList mapCell:cell withObject:object atIndexPath:indexPath];
+    cell.showsReorderControl = YES;
+    if(self.canSelect) {
+        cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+    }
+    else {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.canDelete) {
+        return UITableViewCellEditingStyleDelete;
+    }
+    else {
+        return UITableViewCellEditingStyleNone;
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableview shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.canDelete;
+}
+
+
+- (BOOL)tableView:(UITableView *)tableview canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return self.canMove;
+}
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    NSMutableArray *mutableData = [[self.fixedList getData] mutableCopy];
+    id retainObject = mutableData[sourceIndexPath.row];
+    [mutableData removeObjectAtIndex:sourceIndexPath.row];
+    [mutableData insertObject:retainObject atIndex:destinationIndexPath.row];
+    [self.fixedList setData:mutableData];
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(editingStyle == UITableViewCellEditingStyleDelete) {
+        NSMutableArray *mutableData = [[self.fixedList getData] mutableCopy];
+        [mutableData removeObjectAtIndex:indexPath.row];
+        [self.fixedList setData:mutableData];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [[self.fixedList fixedListDelegate] fixedList:self.fixedList didSelectRowAtIndexPath:indexPath withObject:[self.fixedList getData][indexPath.row]];
+    
+}
 @end

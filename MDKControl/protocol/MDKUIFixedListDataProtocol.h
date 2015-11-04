@@ -49,7 +49,6 @@
 @required
 -(void)fixedList:(MDKUIFixedList *)fixedList mapCell:(UITableViewCell *)cell withObject:(id)object atIndexPath:(NSIndexPath *)indexPath;
 
-
 #pragma mark - Optional methods
 /*!
  * @brief Returns the number of rows that should be shown in the fixedList.
@@ -57,15 +56,33 @@
  * @param totalNumberOfRows The total number of rows that can actually be displayed in the FixedList
  * @return the number of rows to show in the FixedList
  */
+@optional
 -(NSInteger)fixedList:(MDKUIFixedList *)fixedList numberOfRows:(NSInteger)totalNumberOfRows;
-
 
 /*!
  * @brief Returns the cell height of items of the FixedList
  * @param originalCellHeight The original cell height computed by the given XIB item cells.
  * @return The hight of the items of FixedList
  */
+@optional
 -(CGFloat)fixedList:(MDKUIFixedList *)fixedList heightForFixedListCells:(NSInteger)originalCellHeight;
+
+/**
+ * @brief Event called when the addButton of the Fixed List is tapped
+ * @discussion The method must be implemented in the user project.
+ */
+@optional
+-(void) addItemOnFixedList:(id)sender;
+
+/*!
+ * @brief Event called when a row is selected
+ * @param fixedList The fixedList managed by the delegate that implements this protocol.
+ * @param indexPath The indexPath of the selected row
+ * @param object The object asscoated to this row.
+ */
+@optional
+-(void)fixedList:(MDKUIFixedList *)fixedList didSelectRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
+
 
 
 @end
