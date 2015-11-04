@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MDKControl"
-  s.version      = "0.0.1"
+  s.version      = "1.0.0"
   s.summary      = "MDKControl is the independant control library for Movalys MDK"
   s.description  = "MDKControl gives you a base of controls to use in you application.
                     The controls are designed to be used with Movalys MDK, but they are
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.homepage     = "http://www.soprasteria.com/"
   s.license      = "MIT (example)"
   s.author       = "Sopra Steria"
-  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdkcontrol", :tag => "0.0.1" }
+  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdkcontrol", :tag => "1.0.0" }
   s.source_files = 'MDKControl/**/*.{h,m}'
   s.resources = 'MDKControl/**/*.{plist,xib,pch,png}'
   s.dependency 'IQKeyboardManager', '3.3.2'
