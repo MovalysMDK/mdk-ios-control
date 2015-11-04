@@ -354,6 +354,8 @@
 		B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlCustomStyleProtocol.h; sourceTree = "<group>"; };
 		B0308D561B9F1C64000817D3 /* MDKContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKContext.h; sourceTree = "<group>"; };
 		B0308D571B9F1C64000817D3 /* MDKContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKContext.m; sourceTree = "<group>"; };
+		B0334D9C1BEA15FD00CCBAE8 /* libPods-MDKControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-MDKControl.a"; path = "Pods/../build/Debug-iphoneos/libPods-MDKControl.a"; sourceTree = "<group>"; };
+		B0334D9E1BEA160100CCBAE8 /* libIQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIQKeyboardManager.a; path = "Pods/../build/Debug-iphoneos/libIQKeyboardManager.a"; sourceTree = "<group>"; };
 		B03AD4771BC3CDFF00A96F5D /* MDKUIDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIDateTime.h; sourceTree = "<group>"; };
 		B03AD4781BC3CDFF00A96F5D /* MDKUIDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIDateTime.m; sourceTree = "<group>"; };
 		B03AD47C1BC3CF2700A96F5D /* ControlDateTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlDateTime.h; sourceTree = "<group>"; };
@@ -1114,6 +1116,8 @@
 		CF7E721A69041C6157D2ADBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0334D9E1BEA160100CCBAE8 /* libIQKeyboardManager.a */,
+				B0334D9C1BEA15FD00CCBAE8 /* libPods-MDKControl.a */,
 				B05C93681B9F3C3E00487CFB /* MessageUI.framework */,
 				B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */,
 				48E4040AFDF1A54801A50B45 /* libPods-MDKControl.a */,
@@ -1665,6 +1669,7 @@
 		};
 		B0FFDA801B33FAFB00CA6E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1676,6 +1681,10 @@
 				);
 				INFOPLIST_FILE = MDKControlTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1683,6 +1692,7 @@
 		};
 		B0FFDA811B33FAFB00CA6E5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 903B5F1A7C02E3B3EC891D4E /* Pods-MDKControl.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1690,6 +1700,10 @@
 				);
 				INFOPLIST_FILE = MDKControlTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
