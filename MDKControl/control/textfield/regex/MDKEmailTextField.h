@@ -22,6 +22,7 @@
  * @discussion This component inherits from MFRegexTextField and must contains
  * a valid "mail value" to be validated (ex : abcd@movalys.com )
  */
+IB_DESIGNABLE
 @interface MDKEmailTextField : MDKRegexTextField
 
 @end
