@@ -49,6 +49,15 @@ NSInteger const TAG_MFDATEPICKER_CANCELBUTTON                 = 10515;
 NSInteger const TAG_MDKENUMIMAGE_IMAGEVIEW                    = 11000;
 NSInteger const TAG_MDKENUMIMAGE_LABEL                        = 11005;
 
+// /MFUI/control/position
+// /MFUI/control/position
+NSInteger const TAG_MDKPOSITION_LATITUDE                       = 14500;
+NSInteger const TAG_MDKPOSITION_LONGITUDE                      = 14505;
+NSInteger const TAG_MDKPOSITION_MAP                            = 14510;
+NSInteger const TAG_MDKPOSITION_NAVIGATION                     = 14515;
+NSInteger const TAG_MDKPOSITION_LOCATION_FOUNDED               = 14520;
+NSInteger const TAG_MDKPOSITION_LOCATION_NOT_FOUND             = 14525;
+NSInteger const TAG_MDKPOSITION_CANCEL                         = 14530;
 
 // /MFUI/control/label
 NSInteger const TAG_MDKLABEL_LABEL                             = 11500;
@@ -77,12 +86,6 @@ NSInteger const TAG_MFPHOTOTHUMBNAIL_PHOTOVIEW                = 14000;
 NSInteger const TAG_MFPHOTOTHUMBNAIL_DATE                     = 14005;
 NSInteger const TAG_MFPHOTOTHUMBNAIL_TITRE                    = 14010;
 NSInteger const TAG_MFPHOTOTHUMBNAIL_DESCRIPTION              = 14015;
-
-// /MFUI/control/position
-NSInteger const TAG_MFPOSITION_LATITUDE                       = 14500;
-NSInteger const TAG_MFPOSITION_LONGITUDE                      = 14505;
-NSInteger const TAG_MFPOSITION_GPSBUTTON                      = 14510;
-NSInteger const TAG_MFPOSITION_MAPBUTTON                      = 14515;
 
 // /MFUI/control/processing
 
