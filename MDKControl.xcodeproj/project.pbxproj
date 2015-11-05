@@ -221,6 +221,16 @@
 		F91971531BE8AF4B00B94F8A /* MDKEnumImageStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */; };
 		F91971541BE8AF4B00B94F8A /* MDKEnumImageStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */; };
 		F91971561BE8AF6E00B94F8A /* StyleEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */; };
+		F919715A1BE8B84600B94F8A /* MDKUIPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971581BE8B84600B94F8A /* MDKUIPosition.h */; };
+		F919715B1BE8B84600B94F8A /* MDKUIPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F91971591BE8B84600B94F8A /* MDKUIPosition.m */; };
+		F919715D1BE8C5BB00B94F8A /* ControlPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = F919715C1BE8C5BB00B94F8A /* ControlPosition.h */; };
+		F919715F1BE8C61500B94F8A /* MDK_MDKUIPosition.xib in Resources */ = {isa = PBXBuildFile; fileRef = F919715E1BE8C61500B94F8A /* MDK_MDKUIPosition.xib */; };
+		F924E8D61BEA4473006119EF /* MDKManagerPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = F924E8D41BEA4473006119EF /* MDKManagerPosition.h */; };
+		F924E8D71BEA4473006119EF /* MDKManagerPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F924E8D51BEA4473006119EF /* MDKManagerPosition.m */; };
+		F924E8E11BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F924E8DD1BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png */; };
+		F924E8E21BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F924E8DE1BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png */; };
+		F924E8E31BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F924E8DF1BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png */; };
+		F924E8E41BEA70F9006119EF /* mdkuiposition_location_btn_notfound@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F924E8E01BEA70F9006119EF /* mdkuiposition_location_btn_notfound@3x.png */; };
 		F965F9301BE7BF070060A93D /* MDK_MDKUIEnumImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F965F92F1BE7BF070060A93D /* MDK_MDKUIEnumImage.xib */; };
 		F965F9351BE7BF3B0060A93D /* ControlEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F965F9321BE7BF3B0060A93D /* ControlEnumImage.h */; };
 		F965F9361BE7BF3B0060A93D /* MDKUIEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F965F9331BE7BF3B0060A93D /* MDKUIEnumImage.h */; };
@@ -229,6 +239,18 @@
 		F965F93E1BE7BF7A0060A93D /* Helper.h in Headers */ = {isa = PBXBuildFile; fileRef = F965F93B1BE7BF7A0060A93D /* Helper.h */; };
 		F965F93F1BE7BF7A0060A93D /* MDKHelperType.h in Headers */ = {isa = PBXBuildFile; fileRef = F965F93C1BE7BF7A0060A93D /* MDKHelperType.h */; };
 		F965F9401BE7BF7A0060A93D /* MDKHelperType.m in Sources */ = {isa = PBXBuildFile; fileRef = F965F93D1BE7BF7A0060A93D /* MDKHelperType.m */; };
+		F98D77E51BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77E11BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@2x.png */; };
+		F98D77E61BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77E21BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@3x.png */; };
+		F98D77E71BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77E31BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png */; };
+		F98D77E81BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77E41BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@3x.png */; };
+		F98D77F51BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77F11BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png */; };
+		F98D77F61BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77F21BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@3x.png */; };
+		F98D77F71BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77F31BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@2x.png */; };
+		F98D77F81BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77F41BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@3x.png */; };
+		F98D77FD1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77F91BE9165A00CD4458 /* mdkuiposition_map_btn_disable@2x.png */; };
+		F98D77FE1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77FA1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png */; };
+		F98D77FF1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77FB1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png */; };
+		F98D78001BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77FC1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -482,6 +504,16 @@
 		F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKEnumImageStyle.h; path = enumImage/MDKEnumImageStyle.h; sourceTree = "<group>"; };
 		F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKEnumImageStyle.m; path = enumImage/MDKEnumImageStyle.m; sourceTree = "<group>"; };
 		F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyleEnumImage.h; path = enumImage/StyleEnumImage.h; sourceTree = "<group>"; };
+		F91971581BE8B84600B94F8A /* MDKUIPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIPosition.h; path = position/MDKUIPosition.h; sourceTree = "<group>"; };
+		F91971591BE8B84600B94F8A /* MDKUIPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIPosition.m; path = position/MDKUIPosition.m; sourceTree = "<group>"; };
+		F919715C1BE8C5BB00B94F8A /* ControlPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlPosition.h; path = position/ControlPosition.h; sourceTree = "<group>"; };
+		F919715E1BE8C61500B94F8A /* MDK_MDKUIPosition.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIPosition.xib; sourceTree = "<group>"; };
+		F924E8D41BEA4473006119EF /* MDKManagerPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKManagerPosition.h; path = position/manager/MDKManagerPosition.h; sourceTree = "<group>"; };
+		F924E8D51BEA4473006119EF /* MDKManagerPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKManagerPosition.m; path = position/manager/MDKManagerPosition.m; sourceTree = "<group>"; };
+		F924E8DD1BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_location_btn_founded@2x.png"; path = "position/location/mdkuiposition_location_btn_founded@2x.png"; sourceTree = "<group>"; };
+		F924E8DE1BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_location_btn_founded@3x.png"; path = "position/location/mdkuiposition_location_btn_founded@3x.png"; sourceTree = "<group>"; };
+		F924E8DF1BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_location_btn_notfound@2x.png"; path = "position/location/mdkuiposition_location_btn_notfound@2x.png"; sourceTree = "<group>"; };
+		F924E8E01BEA70F9006119EF /* mdkuiposition_location_btn_notfound@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_location_btn_notfound@3x.png"; path = "position/location/mdkuiposition_location_btn_notfound@3x.png"; sourceTree = "<group>"; };
 		F965F92F1BE7BF070060A93D /* MDK_MDKUIEnumImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIEnumImage.xib; sourceTree = "<group>"; };
 		F965F9321BE7BF3B0060A93D /* ControlEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlEnumImage.h; path = enumImage/ControlEnumImage.h; sourceTree = "<group>"; };
 		F965F9331BE7BF3B0060A93D /* MDKUIEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIEnumImage.h; path = enumImage/MDKUIEnumImage.h; sourceTree = "<group>"; };
@@ -490,6 +522,18 @@
 		F965F93B1BE7BF7A0060A93D /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = helper/Helper.h; sourceTree = "<group>"; };
 		F965F93C1BE7BF7A0060A93D /* MDKHelperType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKHelperType.h; path = helper/MDKHelperType.h; sourceTree = "<group>"; };
 		F965F93D1BE7BF7A0060A93D /* MDKHelperType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKHelperType.m; path = helper/MDKHelperType.m; sourceTree = "<group>"; };
+		F98D77E11BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_cancel_btn_disable@2x.png"; path = "position/cancel/mdkuiposition_cancel_btn_disable@2x.png"; sourceTree = "<group>"; };
+		F98D77E21BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_cancel_btn_disable@3x.png"; path = "position/cancel/mdkuiposition_cancel_btn_disable@3x.png"; sourceTree = "<group>"; };
+		F98D77E31BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_cancel_btn_enable@2x.png"; path = "position/cancel/mdkuiposition_cancel_btn_enable@2x.png"; sourceTree = "<group>"; };
+		F98D77E41BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_cancel_btn_enable@3x.png"; path = "position/cancel/mdkuiposition_cancel_btn_enable@3x.png"; sourceTree = "<group>"; };
+		F98D77F11BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_navigation_btn_disable@2x.png"; path = "position/navigation/mdkuiposition_navigation_btn_disable@2x.png"; sourceTree = "<group>"; };
+		F98D77F21BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_navigation_btn_disable@3x.png"; path = "position/navigation/mdkuiposition_navigation_btn_disable@3x.png"; sourceTree = "<group>"; };
+		F98D77F31BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_navigation_btn_enable@2x.png"; path = "position/navigation/mdkuiposition_navigation_btn_enable@2x.png"; sourceTree = "<group>"; };
+		F98D77F41BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_navigation_btn_enable@3x.png"; path = "position/navigation/mdkuiposition_navigation_btn_enable@3x.png"; sourceTree = "<group>"; };
+		F98D77F91BE9165A00CD4458 /* mdkuiposition_map_btn_disable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_map_btn_disable@2x.png"; path = "position/map/mdkuiposition_map_btn_disable@2x.png"; sourceTree = "<group>"; };
+		F98D77FA1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_map_btn_disable@3x.png"; path = "position/map/mdkuiposition_map_btn_disable@3x.png"; sourceTree = "<group>"; };
+		F98D77FB1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_map_btn_enable@2x.png"; path = "position/map/mdkuiposition_map_btn_enable@2x.png"; sourceTree = "<group>"; };
+		F98D77FC1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_map_btn_enable@3x.png"; path = "position/map/mdkuiposition_map_btn_enable@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -822,6 +866,7 @@
 		B08C190C1B9DE9A500D6F93A /* control */ = {
 			isa = PBXGroup;
 			children = (
+				F91971571BE8B80C00B94F8A /* position */,
 				F965F9311BE7BF210060A93D /* enumImage */,
 				B06120221BD933570012F82F /* fixedlist */,
 				B03AD4761BC3CDFF00A96F5D /* date */,
@@ -937,6 +982,7 @@
 		B0C6BA961BA1D9830087C4D3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F91971601BE8CB3600B94F8A /* position */,
 				B06120271BD938310012F82F /* fixedlist */,
 				B0C6BA971BA1D9830087C4D3 /* mail */,
 				B0C6BA9B1BA1D9830087C4D3 /* phone */,
@@ -994,6 +1040,7 @@
 				B0A52E571BA31F0700EF6947 /* MDK_MDKErrorView.xib */,
 				B0C6BAB91BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib */,
 				B061202E1BD9387A0012F82F /* MDK_MDKUIFixedList.xib */,
+				F919715E1BE8C61500B94F8A /* MDK_MDKUIPosition.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -1116,6 +1163,37 @@
 			name = enumImage;
 			sourceTree = "<group>";
 		};
+		F91971571BE8B80C00B94F8A /* position */ = {
+			isa = PBXGroup;
+			children = (
+				F924E8D21BEA4423006119EF /* manager */,
+				F919715C1BE8C5BB00B94F8A /* ControlPosition.h */,
+				F91971581BE8B84600B94F8A /* MDKUIPosition.h */,
+				F91971591BE8B84600B94F8A /* MDKUIPosition.m */,
+			);
+			name = position;
+			sourceTree = "<group>";
+		};
+		F91971601BE8CB3600B94F8A /* position */ = {
+			isa = PBXGroup;
+			children = (
+				F98D77E01BE9162C00CD4458 /* cancel */,
+				F98D77DF1BE9162500CD4458 /* location */,
+				F98D77DE1BE9161E00CD4458 /* navigation */,
+				F98D77DD1BE9161900CD4458 /* map */,
+			);
+			name = position;
+			sourceTree = "<group>";
+		};
+		F924E8D21BEA4423006119EF /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				F924E8D41BEA4473006119EF /* MDKManagerPosition.h */,
+				F924E8D51BEA4473006119EF /* MDKManagerPosition.m */,
+			);
+			name = manager;
+			sourceTree = "<group>";
+		};
 		F965F9311BE7BF210060A93D /* enumImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,6 +1214,50 @@
 			name = helper;
 			sourceTree = "<group>";
 		};
+		F98D77DD1BE9161900CD4458 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				F98D77F91BE9165A00CD4458 /* mdkuiposition_map_btn_disable@2x.png */,
+				F98D77FA1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png */,
+				F98D77FB1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png */,
+				F98D77FC1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png */,
+			);
+			name = map;
+			sourceTree = "<group>";
+		};
+		F98D77DE1BE9161E00CD4458 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F98D77F11BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png */,
+				F98D77F21BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@3x.png */,
+				F98D77F31BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@2x.png */,
+				F98D77F41BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@3x.png */,
+			);
+			name = navigation;
+			sourceTree = "<group>";
+		};
+		F98D77DF1BE9162500CD4458 /* location */ = {
+			isa = PBXGroup;
+			children = (
+				F924E8DD1BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png */,
+				F924E8DE1BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png */,
+				F924E8DF1BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png */,
+				F924E8E01BEA70F9006119EF /* mdkuiposition_location_btn_notfound@3x.png */,
+			);
+			name = location;
+			sourceTree = "<group>";
+		};
+		F98D77E01BE9162C00CD4458 /* cancel */ = {
+			isa = PBXGroup;
+			children = (
+				F98D77E11BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@2x.png */,
+				F98D77E21BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@3x.png */,
+				F98D77E31BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png */,
+				F98D77E41BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@3x.png */,
+			);
+			name = cancel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1148,10 +1270,12 @@
 				B08C19351B9DE9A500D6F93A /* MDKControlDelegate.h in Headers */,
 				B00C4DF91BA07C38003CBB16 /* MDKPhoneTextField.h in Headers */,
 				B02156E51B9DAD59001860B5 /* MDKControlAttributesProtocol.h in Headers */,
+				F924E8D61BEA4473006119EF /* MDKManagerPosition.h in Headers */,
 				B02156CF1B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h in Headers */,
 				B08C19461B9DE9A500D6F93A /* MDKTextField.h in Headers */,
 				B044B1C21B9DF3D900A4CCF3 /* MDKTooltips.h in Headers */,
 				B08C19371B9DE9A500D6F93A /* MDKControlProtocol.h in Headers */,
+				F919715D1BE8C5BB00B94F8A /* ControlPosition.h in Headers */,
 				B0FFB6A91BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.h in Headers */,
 				B02157BB1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.h in Headers */,
 				B018BE921BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h in Headers */,
@@ -1172,6 +1296,7 @@
 				B08C193D1B9DE9A500D6F93A /* MDKRegexTextExtensionProtocol.h in Headers */,
 				B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */,
 				B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */,
+				F919715A1BE8B84600B94F8A /* MDKUIPosition.h in Headers */,
 				F965F9391BE7BF4F0060A93D /* MDKEnumHelperProtocol.h in Headers */,
 				B08C19331B9DE9A500D6F93A /* MDKBaseControl.h in Headers */,
 				B0FFB6BC1BA1CD4800258B9D /* MDKFloatConverter.h in Headers */,
@@ -1344,22 +1469,39 @@
 				B061202C1BD938310012F82F /* fixedlist_add@2x.png in Resources */,
 				B0C6BAAF1BA1D9830087C4D3 /* ios_ic_phone_pressed@2x.png in Resources */,
 				B0C6BABA1BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib in Resources */,
+				F924E8E31BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png in Resources */,
 				B061202F1BD9387A0012F82F /* MDK_MDKUIFixedList.xib in Resources */,
+				F98D77E81BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@3x.png in Resources */,
+				F98D78001BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png in Resources */,
+				F98D77F81BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@3x.png in Resources */,
 				B0A52E581BA31F0700EF6947 /* MDK_MDKErrorView.xib in Resources */,
+				F924E8E11BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png in Resources */,
 				B03AD4841BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib in Resources */,
 				B0C6BAAC1BA1D9830087C4D3 /* ios_ic_mail_pressed@2x.png in Resources */,
+				F98D77FE1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png in Resources */,
 				B061202D1BD938310012F82F /* fixedlist_add@3x.png in Resources */,
 				B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */,
+				F98D77F61BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@3x.png in Resources */,
 				B0C6BAB01BA1D9830087C4D3 /* ios_ic_phone_unactive@2x.png in Resources */,
+				F98D77E71BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png in Resources */,
 				B0C6BAAD1BA1D9830087C4D3 /* ios_ic_mail_unactive@2x.png in Resources */,
 				B061202B1BD938310012F82F /* fixedlist_add.png in Resources */,
 				F965F9301BE7BF070060A93D /* MDK_MDKUIEnumImage.xib in Resources */,
+				F98D77E61BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@3x.png in Resources */,
+				F924E8E41BEA70F9006119EF /* mdkuiposition_location_btn_notfound@3x.png in Resources */,
 				B0C6BABC1BA1DBF60087C4D3 /* Framework-components.plist in Resources */,
+				F98D77E51BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@2x.png in Resources */,
 				B03AD47E1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib in Resources */,
+				F919715F1BE8C61500B94F8A /* MDK_MDKUIPosition.xib in Resources */,
 				B0C6BAAE1BA1D9830087C4D3 /* ios_ic_phone_active@2x.png in Resources */,
 				B0C6BAB11BA1D9830087C4D3 /* ios_ic_qrcode_icon_active.png in Resources */,
+				F98D77F71BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@2x.png in Resources */,
 				B0C6BAB51BA1D9830087C4D3 /* ios_ic_nav_unactive@2x.png in Resources */,
+				F924E8E21BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png in Resources */,
+				F98D77FF1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png in Resources */,
 				B0C6BAB41BA1D9830087C4D3 /* ios_ic_nav_pressed@2x.png in Resources */,
+				F98D77FD1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@2x.png in Resources */,
+				F98D77F51BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png in Resources */,
 				B0C6BAAB1BA1D9830087C4D3 /* ios_ic_mail_active@2x.png in Resources */,
 				B0C6BAB31BA1D9830087C4D3 /* ios_ic_nav_active@2x.png in Resources */,
 				B0C6BAB21BA1D9830087C4D3 /* ios_ic_qrcode_icon_active@2x.png in Resources */,
@@ -1436,6 +1578,7 @@
 				B0A74C7D1BA081F40002A66B /* MDKURL.m in Sources */,
 				B00C4E091BA07D3D003CBB16 /* MDKPhoneFieldValidator.m in Sources */,
 				B044B1C61B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m in Sources */,
+				F924E8D71BEA4473006119EF /* MDKManagerPosition.m in Sources */,
 				B021579F1B9DAF30001860B5 /* MDKErrorView.m in Sources */,
 				F965F9401BE7BF7A0060A93D /* MDKHelperType.m in Sources */,
 				B02156BA1B9DAC6E001860B5 /* MDKLabelStyle.m in Sources */,
@@ -1474,6 +1617,7 @@
 				B02156B41B9DAC6E001860B5 /* MDKDefaultStyle.m in Sources */,
 				B0FFB6BF1BA1CD4800258B9D /* MDKNumberConverter.m in Sources */,
 				B0FFB6BD1BA1CD4800258B9D /* MDKFloatConverter.m in Sources */,
+				F919715B1BE8B84600B94F8A /* MDKUIPosition.m in Sources */,
 				B09CE7DE1BA17C220017CCA2 /* MDKIntegerFieldValidator.m in Sources */,
 				B02157B61B9DAF30001860B5 /* MDKTooShortStringUIValidationError.m in Sources */,
 				B06120261BD9336F0012F82F /* MDKUIFixedList.m in Sources */,
