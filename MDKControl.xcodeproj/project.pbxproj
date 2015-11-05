@@ -33,6 +33,9 @@
 		B018BE9C1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE901BA01F3300EF1D87 /* MDKUrlTextFieldStyle.m */; };
 		B018BE9F1BA02C6000EF1D87 /* MDKSendEmailCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE9D1BA02C6000EF1D87 /* MDKSendEmailCommand.h */; };
 		B018BEA01BA02C6000EF1D87 /* MDKSendEmailCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE9E1BA02C6000EF1D87 /* MDKSendEmailCommand.m */; };
+		B021169D1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021169C1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h */; };
+		B02116A01BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B021169E1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h */; };
+		B02116A11BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B021169F1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m */; };
 		B02156B31B9DAC6E001860B5 /* MDKDefaultStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568A1B9DAC6E001860B5 /* MDKDefaultStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156B41B9DAC6E001860B5 /* MDKDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B021568B1B9DAC6E001860B5 /* MDKDefaultStyle.m */; };
 		B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568C1B9DAC6E001860B5 /* MDKStyleProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -187,6 +190,8 @@
 		B0A74C831BA081FC0002A66B /* MDKUrlFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A74C811BA081FC0002A66B /* MDKUrlFieldValidator.m */; };
 		B0A74C861BA082210002A66B /* MDKUrlTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A74C841BA082210002A66B /* MDKUrlTextField.m */; };
 		B0A74C871BA082210002A66B /* MDKUrlTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A74C851BA082210002A66B /* MDKUrlTextField.h */; };
+		B0C18B481BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B0C18B461BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h */; };
+		B0C18B491BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C18B471BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m */; };
 		B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BA951BA1D9830087C4D3 /* MDKFieldValidatorList.plist */; };
 		B0C6BAAB1BA1D9830087C4D3 /* ios_ic_mail_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BA981BA1D9830087C4D3 /* ios_ic_mail_active@2x.png */; };
 		B0C6BAAC1BA1D9830087C4D3 /* ios_ic_mail_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BA991BA1D9830087C4D3 /* ios_ic_mail_pressed@2x.png */; };
@@ -293,6 +298,9 @@
 		B018BE901BA01F3300EF1D87 /* MDKUrlTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUrlTextFieldStyle.m; sourceTree = "<group>"; };
 		B018BE9D1BA02C6000EF1D87 /* MDKSendEmailCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSendEmailCommand.h; sourceTree = "<group>"; };
 		B018BE9E1BA02C6000EF1D87 /* MDKSendEmailCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSendEmailCommand.m; sourceTree = "<group>"; };
+		B021169C1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIFixedListDataProtocol.h; sourceTree = "<group>"; };
+		B021169E1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIFixedListBaseDelegate.h; sourceTree = "<group>"; };
+		B021169F1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIFixedListBaseDelegate.m; sourceTree = "<group>"; };
 		B021568A1B9DAC6E001860B5 /* MDKDefaultStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKDefaultStyle.h; sourceTree = "<group>"; };
 		B021568B1B9DAC6E001860B5 /* MDKDefaultStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKDefaultStyle.m; sourceTree = "<group>"; };
 		B021568C1B9DAC6E001860B5 /* MDKStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKStyleProtocol.h; sourceTree = "<group>"; };
@@ -368,6 +376,8 @@
 		B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlCustomStyleProtocol.h; sourceTree = "<group>"; };
 		B0308D561B9F1C64000817D3 /* MDKContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKContext.h; sourceTree = "<group>"; };
 		B0308D571B9F1C64000817D3 /* MDKContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKContext.m; sourceTree = "<group>"; };
+		B0334D9C1BEA15FD00CCBAE8 /* libPods-MDKControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-MDKControl.a"; path = "Pods/../build/Debug-iphoneos/libPods-MDKControl.a"; sourceTree = "<group>"; };
+		B0334D9E1BEA160100CCBAE8 /* libIQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIQKeyboardManager.a; path = "Pods/../build/Debug-iphoneos/libIQKeyboardManager.a"; sourceTree = "<group>"; };
 		B03AD4771BC3CDFF00A96F5D /* MDKUIDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIDateTime.h; sourceTree = "<group>"; };
 		B03AD4781BC3CDFF00A96F5D /* MDKUIDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIDateTime.m; sourceTree = "<group>"; };
 		B03AD47C1BC3CF2700A96F5D /* ControlDateTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlDateTime.h; sourceTree = "<group>"; };
@@ -464,6 +474,8 @@
 		B0A74C811BA081FC0002A66B /* MDKUrlFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUrlFieldValidator.m; sourceTree = "<group>"; };
 		B0A74C841BA082210002A66B /* MDKUrlTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUrlTextField.m; sourceTree = "<group>"; };
 		B0A74C851BA082210002A66B /* MDKUrlTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUrlTextField.h; sourceTree = "<group>"; };
+		B0C18B461BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIFixedListTableViewDelegate.h; sourceTree = "<group>"; };
+		B0C18B471BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIFixedListTableViewDelegate.m; sourceTree = "<group>"; };
 		B0C6BA8E1BA1D6E00087C4D3 /* Converter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
 		B0C6BA951BA1D9830087C4D3 /* MDKFieldValidatorList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MDKFieldValidatorList.plist; sourceTree = "<group>"; };
 		B0C6BA981BA1D9830087C4D3 /* ios_ic_mail_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ios_ic_mail_active@2x.png"; sourceTree = "<group>"; };
@@ -670,6 +682,7 @@
 				B02156E01B9DAD59001860B5 /* MDKControlValidationProtocol.h */,
 				B02156E11B9DAD59001860B5 /* MDKErrorViewProtocol.h */,
 				B08C18FE1B9DDCA300D6F93A /* Protocol.h */,
+				B021169C1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -820,9 +833,13 @@
 		B06120221BD933570012F82F /* fixedlist */ = {
 			isa = PBXGroup;
 			children = (
+				B0C18B461BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h */,
+				B0C18B471BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m */,
 				B06120231BD9336F0012F82F /* MDKUIFixedList.h */,
 				B06120241BD9336F0012F82F /* MDKUIFixedList.m */,
 				B06120301BD9421C0012F82F /* ControlFixedList.h */,
+				B021169E1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h */,
+				B021169F1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m */,
 			);
 			path = fixedlist;
 			sourceTree = "<group>";
@@ -1146,6 +1163,8 @@
 		CF7E721A69041C6157D2ADBD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B0334D9E1BEA160100CCBAE8 /* libIQKeyboardManager.a */,
+				B0334D9C1BEA15FD00CCBAE8 /* libPods-MDKControl.a */,
 				B05C93681B9F3C3E00487CFB /* MessageUI.framework */,
 				B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */,
 				48E4040AFDF1A54801A50B45 /* libPods-MDKControl.a */,
@@ -1301,9 +1320,11 @@
 				B08C19331B9DE9A500D6F93A /* MDKBaseControl.h in Headers */,
 				B0FFB6BC1BA1CD4800258B9D /* MDKFloatConverter.h in Headers */,
 				B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */,
+				B021169D1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h in Headers */,
 				B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */,
 				B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */,
 				B00C4DF21BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h in Headers */,
+				B0C18B481BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h in Headers */,
 				B021575C1B9DAEEA001860B5 /* MDKFieldValidatorHandler.h in Headers */,
 				B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */,
 				B018BE991BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.h in Headers */,
@@ -1333,6 +1354,7 @@
 				B018BE9B1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.h in Headers */,
 				B02156EA1B9DAD59001860B5 /* MDKErrorViewProtocol.h in Headers */,
 				B09CE7DD1BA17C220017CCA2 /* MDKIntegerFieldValidator.h in Headers */,
+				B02116A01BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h in Headers */,
 				F91971561BE8AF6E00B94F8A /* StyleEnumImage.h in Headers */,
 				B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */,
 				B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */,
@@ -1573,6 +1595,7 @@
 				B02157CC1B9DAF30001860B5 /* MDKValidationError.m in Sources */,
 				B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */,
 				B02156C81B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m in Sources */,
+				B0C18B491BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m in Sources */,
 				B02157C01B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.m in Sources */,
 				B08C19511B9DE9A500D6F93A /* MDKRegexTextField.m in Sources */,
 				B0A74C7D1BA081F40002A66B /* MDKURL.m in Sources */,
@@ -1582,6 +1605,7 @@
 				B021579F1B9DAF30001860B5 /* MDKErrorView.m in Sources */,
 				F965F9401BE7BF7A0060A93D /* MDKHelperType.m in Sources */,
 				B02156BA1B9DAC6E001860B5 /* MDKLabelStyle.m in Sources */,
+				B02116A11BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m in Sources */,
 				B05C93671B9F3BF900487CFB /* MDKEmail.m in Sources */,
 				B02157661B9DAEEA001860B5 /* MDKMandatoryFieldValidator.m in Sources */,
 				B02157BA1B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.m in Sources */,
@@ -1698,7 +1722,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1739,7 +1763,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1761,6 +1785,7 @@
 				GCC_PREFIX_HEADER = "MDKControl/MDKControl-Prefix.pch";
 				INFOPLIST_FILE = MDKControl/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1780,6 +1805,7 @@
 				GCC_PREFIX_HEADER = "MDKControl/MDKControl-Prefix.pch";
 				INFOPLIST_FILE = MDKControl/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1789,6 +1815,7 @@
 		};
 		B0FFDA801B33FAFB00CA6E5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1800,6 +1827,10 @@
 				);
 				INFOPLIST_FILE = MDKControlTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1807,6 +1838,7 @@
 		};
 		B0FFDA811B33FAFB00CA6E5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 903B5F1A7C02E3B3EC891D4E /* Pods-MDKControl.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1814,6 +1846,10 @@
 				);
 				INFOPLIST_FILE = MDKControlTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

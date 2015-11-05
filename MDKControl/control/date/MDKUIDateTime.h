@@ -47,9 +47,14 @@ typedef enum {
  */
 @property (nonatomic, strong) IBOutlet UIButton *dateButton;
 
-
+/*!
+ * @brief The date format the component must adopt
+ */
 @property (nonatomic, strong) IBInspectable NSString *MDK_dateFormat;
 
+/*!
+ * @brief The time mode the component must adopt
+ */
 @property (nonatomic) IBInspectable MDKDateTimeMode MDK_dateTimeMode;
 
 @end
@@ -65,7 +70,14 @@ IB_DESIGNABLE
 IB_DESIGNABLE
 @interface MDKUIExternalDateTime : MDKUIDateTime <MDKExternalComponent>
 
+/*!
+ * @brief custom XIB name
+ */
 @property (nonatomic, strong) IBInspectable NSString *customXIBName;
+
+/*!
+ * @brief custom Error XIB Name
+ */
 @property (nonatomic, strong) IBInspectable NSString *customErrorXIBName;
 
 @end

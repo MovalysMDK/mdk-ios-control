@@ -23,8 +23,8 @@ FOUNDATION_EXPORT NSString *ALERTVIEW_FAILED_SAVE_ACTION;
  * @brief An enumeration that allow to identify the AlertViews to show
  * @constant kFailedSavedAction Idneitifes the AlertView to show when a save action failed
  */
-typedef NS_ENUM(NSUInteger, MFAlertViewIdentifier) {
-    kFailedSavedAction
+typedef NS_ENUM(NSUInteger, MDKAlertViewIdentifier) {
+    mdkFailedSavedAction
 };
 
 

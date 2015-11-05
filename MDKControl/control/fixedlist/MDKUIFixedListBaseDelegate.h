@@ -14,11 +14,15 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ControlFixedList_h
-#define ControlFixedList_h
+#import <Foundation/Foundation.h>
 
-#import "MDKUIFixedList.h"
-#import "MDKUIFixedListTableViewDelegate.h"
-#import "MDKUIFixedListBaseDelegate.h"
+#import "Protocol.h"
 
-#endif
+/*!
+ * @class MDKUIFixedListBaseDelegate
+ * @brief This class is the base FixedList Delegate to manage a FixedList.
+ * @discussion It must me inherited in the user-project to make the FixedList working
+ */
+@interface MDKUIFixedListBaseDelegate : NSObject <MDKUIFixedListDataProtocol>
+
+@end

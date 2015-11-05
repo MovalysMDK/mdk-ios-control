@@ -14,11 +14,29 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef ControlFixedList_h
-#define ControlFixedList_h
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+@class MDKUIFixedList;
 
-#import "MDKUIFixedList.h"
-#import "MDKUIFixedListTableViewDelegate.h"
-#import "MDKUIFixedListBaseDelegate.h"
+/*!
+ * @class MDKUIFixedListTableViewDelegate
+ * @brief The TableView delegate that manages the content of the FixedList
+ */
+@interface MDKUIFixedListTableViewDelegate : NSObject <UITableViewDataSource, UITableViewDelegate>
 
-#endif
+#pragma mark - Methods
+
+/*!
+ * @brief Initializes a new TableViewDelegate based on the given FixedList
+ * @param fixedList The FixedList the TableView will be managed by this delegate
+ * @return A new instance of a TableViewDelegate
+ */
+-(instancetype) initWithFixedList:(MDKUIFixedList *)fixedList;
+
+
+/*!
+ * @brief Refresh the edition properties of the tableView
+ */
+-(void)refreshEditionProperties;
+
+@end

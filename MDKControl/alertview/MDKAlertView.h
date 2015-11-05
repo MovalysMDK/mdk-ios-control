@@ -28,7 +28,7 @@
 /*!
  * @brief An identifier used to identify this AlertView
  */
-@property (nonatomic) MFAlertViewIdentifier identifier;
+@property (nonatomic) MDKAlertViewIdentifier identifier;
 
 
 #pragma mark - Methods

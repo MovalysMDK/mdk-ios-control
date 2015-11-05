@@ -28,5 +28,6 @@
 #import "MDKControlCustomStyleProtocol.h"
 #import "MDKErrorViewProtocol.h"
 #import "MDKEnumHelperProtocol.h"
+#import "MDKUIFixedListDataProtocol.h"
 
 #endif

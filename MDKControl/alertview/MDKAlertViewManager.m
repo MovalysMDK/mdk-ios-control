@@ -57,7 +57,7 @@ NSString *ALERTVIEW_FAILED_SAVE_ACTION = @"ALERTVIEW_FAILED_SAVE_ACTION";
  * @param alertview The AlertView that will be shown after som treatments
  */
 -(void) treatBefore:(MDKAlertView *)alertview {
-    if(alertview.identifier == kFailedSavedAction) {
+    if(alertview.identifier == mdkFailedSavedAction) {
         [[NSNotificationCenter defaultCenter] postNotificationName:ALERTVIEW_FAILED_SAVE_ACTION object:nil];
     }
 }

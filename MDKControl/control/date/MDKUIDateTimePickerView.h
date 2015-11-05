@@ -18,15 +18,42 @@
 
 #import "MDKUIDateTime.h"
 
+/*!
+ * @class MDKUIDateTimePickerView
+ * @brief This view is shown to pick a date/time, when the user 
+ * tap on DateTime component
+ */
 @interface MDKUIDateTimePickerView : UIView
+
+#pragma mark - Properties
+
+/*!
+ * @brief The content view of the picker
+ */
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
+/*!
+ * @brief The inner DatePicker
+ */
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
+/*!
+ * @brief The source DateTime component that shows this picker
+ */
 @property (weak, nonatomic) MDKUIDateTime *sourceComponent;
 
+
+#pragma mark - Methods
+/*!
+ * @brief Refreshs the picker given a date and a mode
+ * @param date The date to display
+ * @param mode The mode to use to show the date
+ */
 -(void) refreshWithDate:(NSDate *)date andMode:(MDKDateTimeMode)mode;
 
+/*!
+ * @brief Dismiss the picker
+ */
 -(void)dismiss;
 
 @end

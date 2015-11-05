@@ -24,6 +24,12 @@
 /******************************************************/
 
 IB_DESIGNABLE
+/*!
+ * @class MDKUISlider
+ * @brief The Slider Framework Component.
+ * @discussion This components allows to choose a numeric value form a slider.
+ * By default, the selected value is displayed on the component.
+ */
 @interface MDKUISlider : MDKRenderableControl <MDKControlChangesProtocol>
 
 #pragma mark - Properties

@@ -15,15 +15,56 @@
  */
 
 #import "MDKRenderableControl.h"
+
+FOUNDATION_EXPORT NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY;
+FOUNDATION_EXPORT NSString *const FIXEDLIST_PARAMETER_CAN_MOVE_KEY;
+FOUNDATION_EXPORT NSString *const FIXEDLIST_PARAMETER_CAN_ADD_KEY;
+FOUNDATION_EXPORT NSString *const FIXEDLIST_PARAMETER_CAN_DELETE_KEY;
+FOUNDATION_EXPORT NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY;
+
+
+/******************************************************/
+/* MAIN CONTROL                                       */
+/******************************************************/
+
+
 IB_DESIGNABLE
+
+/*!
+ * @class MDKUIFixedList
+ * @brief The FixedList framework component
+ * @discussion This components allows to show a list that could be edited :
+ * each item of the liste can be edited, deleted, moved. It is also possible
+ * to add a new item.
+ */
 @interface MDKUIFixedList : MDKRenderableControl
 
+#pragma mark - Properties
+
+/*!
+ * @brief the AddItem button of the FixedList
+ */
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
+
+/*!
+ * @brief The TableView of theFixedList
+ */
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+
+#pragma mark - Methods
+
+/*!
+ * @brief Returns the FixedList delegate that manages this control
+ * @return The delegate that manages this FixedList.
+ */
+-(id<MDKUIFixedListDataProtocol>) fixedListDelegate;
 
 @end
 
-
+/******************************************************/
+/* INTERNAL VIEW                                      */
+/******************************************************/
 
 IB_DESIGNABLE
 @interface MDKUIInternalFixedList : MDKUIFixedList <MDKInternalComponent>
@@ -31,10 +72,21 @@ IB_DESIGNABLE
 @end
 
 
+/******************************************************/
+/* EXTERNAL VIEW                                      */
+/******************************************************/
+
 IB_DESIGNABLE
 @interface MDKUIExternalFixedList : MDKUIFixedList <MDKExternalComponent>
 
+/*!
+ * @brief custom XIB name
+ */
 @property (nonatomic, strong) IBInspectable NSString *customXIBName;
+
+/*!
+ * @brief custom Error XIB Name
+ */
 @property (nonatomic, strong) IBInspectable NSString *customErrorXIBName;
 
 @end

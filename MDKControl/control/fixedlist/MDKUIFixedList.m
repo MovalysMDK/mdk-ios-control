@@ -15,16 +15,87 @@
  */
 
 #import "MDKUIFixedList.h"
+#import "MDKUIFixedListTableViewDelegate.h"
+#import "MDKUIFixedListBaseDelegate.h"
+
+
+NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY = @"dataDelegate";
+NSString *const FIXEDLIST_PARAMETER_CAN_MOVE_KEY = @"canMove";
+NSString *const FIXEDLIST_PARAMETER_CAN_DELETE_KEY = @"canDelete";
+NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
+
+
+@interface MDKUIFixedList ()
+
+@property (nonatomic, strong) NSMutableArray *source;
+@property (nonatomic, strong) MDKUIFixedListTableViewDelegate *tableDelegate;
+@property (nonatomic, strong) id<MDKUIFixedListDataProtocol> privateFixedListDataDelegate;
+@property (nonatomic, strong) id<MDKUIFixedListDataProtocol> baseFixedListDelegate;
+
+@end
+
 
 @implementation MDKUIFixedList
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+#pragma mark - Initialization and deallocation
+
+-(void)initialize {
+    [super initialize];
 }
-*/
+
+-(void)didInitializeOutlets {
+    self.baseFixedListDelegate = [[MDKUIFixedListBaseDelegate alloc] init];
+    self.tableDelegate = [[MDKUIFixedListTableViewDelegate alloc] initWithFixedList:self];
+    self.tableView.delegate = self.tableDelegate;
+    self.tableView.dataSource = self.tableDelegate;
+    [self.addButton addTarget:self.privateFixedListDataDelegate action:@selector(addItemOnFixedList:) forControlEvents:UIControlEventTouchUpInside];
+}
+
+
+
+#pragma mark - Control Data protocol
++(NSString *)getDataType {
+    return @"NSArray";
+}
+
+-(void)setData:(id)data {
+    if(data) {
+        self.source = [data mutableCopy];
+        [self setDisplayComponentValue:(NSArray *)data];
+    }
+    [super setData:data];
+}
+
+-(id)getData {
+    return [self displayComponentValue];
+}
+
+-(id)displayComponentValue {
+    return self.source;
+}
+
+-(void)setDisplayComponentValue:(id)value {
+    [self.tableView reloadData];
+}
+
+-(void)setControlAttributes:(NSDictionary *)controlAttributes {
+    [super setControlAttributes:controlAttributes];
+    [self.tableDelegate refreshEditionProperties];
+}
+
+-(id<MDKUIFixedListDataProtocol>) fixedListDelegate {
+    if(!_privateFixedListDataDelegate) {
+        if(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) {
+            _privateFixedListDataDelegate = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] init];
+        }
+        else {
+            _privateFixedListDataDelegate = self.baseFixedListDelegate;
+        }
+    }
+    return _privateFixedListDataDelegate;
+}
+
+
 
 @end
 
@@ -38,6 +109,7 @@
 -(NSString *)defaultXIBName {
     return @"MDKUIFixedList";
 }
+
 @end
 
 @implementation MDKUIInternalFixedList @end
