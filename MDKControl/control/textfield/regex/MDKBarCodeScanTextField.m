@@ -14,15 +14,28 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
-
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
 #import "MDKBarCodeScanTextField.h"
 
-#endif
+@implementation MDKBarCodeScanTextField
+
+-(UIKeyboardType)keyboardType {
+    return UIKeyboardTypeDefault;
+}
+
+-(void) doAction {
+//    if([self validate] == 0) {
+//        // Create and MDKURL composer
+//        NSString *urlString = [[self getData] isKindOfClass:[NSAttributedString class]] ? [[self getData] string] : [self getData];
+//        MDKURL *url = [[MDKURL alloc] initWithString:urlString];
+//        [[MDKCommandHandler commandWithKey:@"OpenURLCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:url, nil];
+//    }
+//    else {
+//        [self onErrorButtonClick:self];
+//    }
+        //TODO
+}
+
+-(NSArray *)controlValidators {
+    return @[];
+}
+@end

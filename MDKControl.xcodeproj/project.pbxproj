@@ -117,6 +117,8 @@
 		B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B03AD47F1BC4008400A96F5D /* MDKUIDateTimePickerView.h */; };
 		B03AD4821BC4008400A96F5D /* MDKUIDateTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B03AD4801BC4008400A96F5D /* MDKUIDateTimePickerView.m */; };
 		B03AD4841BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03AD4831BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib */; };
+		B03EFBFA1BEBB3F1002DAB18 /* MDKBarCodeScanTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B03EFBF81BEBB3F1002DAB18 /* MDKBarCodeScanTextField.h */; };
+		B03EFBFB1BEBB3F1002DAB18 /* MDKBarCodeScanTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B03EFBF91BEBB3F1002DAB18 /* MDKBarCodeScanTextField.m */; };
 		B044B1BE1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B044B1BF1B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */; };
 		B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -363,6 +365,8 @@
 		B03AD47F1BC4008400A96F5D /* MDKUIDateTimePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIDateTimePickerView.h; sourceTree = "<group>"; };
 		B03AD4801BC4008400A96F5D /* MDKUIDateTimePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIDateTimePickerView.m; sourceTree = "<group>"; };
 		B03AD4831BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIDateTimePicker.xib; sourceTree = "<group>"; };
+		B03EFBF81BEBB3F1002DAB18 /* MDKBarCodeScanTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBarCodeScanTextField.h; sourceTree = "<group>"; };
+		B03EFBF91BEBB3F1002DAB18 /* MDKBarCodeScanTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKBarCodeScanTextField.m; sourceTree = "<group>"; };
 		B044B1B31B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSequentialTooltipManager.h; sourceTree = "<group>"; };
 		B044B1B41B9DF3D900A4CCF3 /* MDKSequentialTooltipManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSequentialTooltipManager.m; sourceTree = "<group>"; };
 		B044B1B51B9DF3D900A4CCF3 /* MDKTooltipManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTooltipManager.h; sourceTree = "<group>"; };
@@ -908,6 +912,8 @@
 				B09CE7CF1BA17C110017CCA2 /* MDKDoubleTextField.m */,
 				B09CE7D21BA17C110017CCA2 /* MDKIntegerTextField.h */,
 				B09CE7D01BA17C110017CCA2 /* MDKIntegerTextField.m */,
+				B03EFBF81BEBB3F1002DAB18 /* MDKBarCodeScanTextField.h */,
+				B03EFBF91BEBB3F1002DAB18 /* MDKBarCodeScanTextField.m */,
 			);
 			path = regex;
 			sourceTree = "<group>";
@@ -1217,6 +1223,7 @@
 				B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */,
 				B02156E71B9DAD59001860B5 /* MDKControlErrorProtocol.h in Headers */,
 				B08C19401B9DE9A500D6F93A /* MDKTextFieldExtension.h in Headers */,
+				B03EFBFA1BEBB3F1002DAB18 /* MDKBarCodeScanTextField.h in Headers */,
 				B044B1C51B9DF3D900A4CCF3 /* UILabel+MDKTooltips.h in Headers */,
 				B02156BC1B9DAC6E001860B5 /* Style.h in Headers */,
 				B018BE951BA01F3300EF1D87 /* MDKEmailTextFieldStyle.h in Headers */,
@@ -1465,6 +1472,7 @@
 				B02116A11BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m in Sources */,
 				B05C93671B9F3BF900487CFB /* MDKEmail.m in Sources */,
 				B02157661B9DAEEA001860B5 /* MDKMandatoryFieldValidator.m in Sources */,
+				B03EFBFB1BEBB3F1002DAB18 /* MDKBarCodeScanTextField.m in Sources */,
 				B02157BA1B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.m in Sources */,
 				B018BE9A1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.m in Sources */,
 				B09CE7DC1BA17C220017CCA2 /* MDKDoubleFieldValidator.m in Sources */,

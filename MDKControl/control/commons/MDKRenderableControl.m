@@ -51,7 +51,7 @@
 /* CONSTANTS                                          */
 /******************************************************/
 
-const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
+const struct MDKErrorPositionParameters_Struct MDKErrorPositionParameters = {
     .ErrorView = @"ErrorView",
     .ParentView = @"ParentView",
     .InternalViewLeftConstraint = @"InternalViewLeftConstraint",
@@ -530,12 +530,12 @@ const struct ErrorPositionParameters_Struct ErrorPositionParameters = {
                                                  self.topConstraint,
                                                  self.rightConstraint,
                                                  self.bottomConstraint]
-                                       forKeys:@[ErrorPositionParameters.ErrorView,
-                                                 ErrorPositionParameters.ParentView,
-                                                 ErrorPositionParameters.InternalViewLeftConstraint,
-                                                 ErrorPositionParameters.InternalViewTopConstraint,
-                                                 ErrorPositionParameters.InternalViewRightConstraint,
-                                                 ErrorPositionParameters.InternalViewBottomConstraint]];
+                                       forKeys:@[MDKErrorPositionParameters.ErrorView,
+                                                 MDKErrorPositionParameters.ParentView,
+                                                 MDKErrorPositionParameters.InternalViewLeftConstraint,
+                                                 MDKErrorPositionParameters.InternalViewTopConstraint,
+                                                 MDKErrorPositionParameters.InternalViewRightConstraint,
+                                                 MDKErrorPositionParameters.InternalViewBottomConstraint]];
 }
 
 /**

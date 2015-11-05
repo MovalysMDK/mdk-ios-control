@@ -14,15 +14,14 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_ControlTextFieldRegex_h
-#define MDKControl_ControlTextFieldRegex_h
+#import <MDKControl/MDKControl.h>
 
-#import "MDKRegexTextField.h"
-#import "MDKEmailTextField.h"
-#import "MDKPhoneTextField.h"
-#import "MDKUrlTextField.h"
-#import "MDKDoubleTextField.h"
-#import "MDKIntegerTextField.h"
-#import "MDKBarCodeScanTextField.h"
+/*!
+ * @class MDKBarCodeScanTextField
+ * @brief This class represents the BarCode Scan Text Field component.
+ * @discussion This component inherits from MDKRegexTextField and must contains
+ * a valid "barcode value" to be validated
+ */
+@interface MDKBarCodeScanTextField : MDKRegexTextField
 
-#endif
+@end

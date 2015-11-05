@@ -177,7 +177,7 @@ IB_DESIGNABLE
  */
 -(NSArray *) controlRenderableProperties;
 
-extern const struct ErrorPositionParameters_Struct
+extern const struct MDKErrorPositionParameters_Struct
 {
     __unsafe_unretained NSString *ErrorView;
     __unsafe_unretained NSString *ParentView;
@@ -188,7 +188,7 @@ extern const struct ErrorPositionParameters_Struct
     
     //@non-generated-start[custom-structproperties][X]
     //@non-generated-end
-} ErrorPositionParameters;
+} MDKErrorPositionParameters;
 @end
 
 
