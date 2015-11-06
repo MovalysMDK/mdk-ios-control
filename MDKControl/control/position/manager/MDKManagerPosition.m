@@ -112,9 +112,13 @@
     });
 }
 
-- (void)searchAddressAccordingCurrentLocationWithCompletionHandler:(MDKManagerPositionCompletionHandler)completionHandler {
-    CLGeocoder *geocoder = [CLGeocoder new];
-    [geocoder reverseGeocodeLocation:self.currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+- (void)searchAddressAccordingLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude completionHandler:(MDKManagerPositionCompletionHandler)completionHandler {
+    CLLocationDegrees degreesLatitude  = [latitude floatValue];
+    CLLocationDegrees degreesLongitude = [longitude floatValue];
+    CLLocation *location               = [[CLLocation alloc] initWithLatitude:degreesLatitude longitude:degreesLongitude];
+    CLGeocoder *geocoder               = [CLGeocoder new];
+    
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         if (completionHandler && error) {
             completionHandler( nil, error );
             return;
@@ -144,13 +148,13 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    _countSearchLocation = _countSearchLocation + 1;
     self.currentLocation = locations.lastObject;
+    _countSearchLocation = _countSearchLocation + 1;
     
     if ([self.delegate respondsToSelector:@selector(locationUpdatedWithLongitude:latitude:)]) {
         self.lastLatitude    = @( self.currentLocation.coordinate.latitude );
         self.lastLongitude   = @( self.currentLocation.coordinate.longitude );
-        
+            
         [self.delegate locationUpdatedWithLongitude:self.lastLongitude latitude:self.lastLatitude];
         [manager stopUpdatingLocation];
     }
