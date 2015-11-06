@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDKUIExternalPosition">
@@ -18,16 +18,33 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="View" customClass="MDKUIInternalPosition">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="529" height="154"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DH-Tt-2b4" userLabel="navigation">
-                    <rect key="frame" x="220" y="10" width="60" height="60"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a37-em-gEI" userLabel="longitude">
+                    <rect key="frame" x="8" y="61" width="513" height="30"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="jHv-BM-k01"/>
-                        <constraint firstAttribute="height" constant="60" id="yT4-2y-hFP"/>
+                        <constraint firstAttribute="height" constant="30" id="5d8-xv-2WJ"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="vw2-Dd-Hef"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iz-uZ-msd" userLabel="latitude">
+                    <rect key="frame" x="8" y="99" width="513" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="M40-lS-cI1"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DH-Tt-2b4" userLabel="navigation">
+                    <rect key="frame" x="203" y="8" width="45" height="45"/>
+                    <animations/>
                     <state key="normal" image="mdkuiposition_navigation_btn_enable.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -37,12 +54,8 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcP-ii-45F" userLabel="cancel">
-                    <rect key="frame" x="420" y="10" width="60" height="60"/>
+                    <rect key="frame" x="363" y="8" width="45" height="45"/>
                     <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="Nhf-ai-K1r"/>
-                        <constraint firstAttribute="width" constant="60" id="dhr-WO-GUb"/>
-                    </constraints>
                     <state key="normal" image="mdkuiposition_cancel_btn_enable.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -52,11 +65,11 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-Nw-QaC" userLabel="map">
-                    <rect key="frame" x="120" y="10" width="60" height="60"/>
+                    <rect key="frame" x="123" y="8" width="45" height="45"/>
                     <animations/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" id="46g-wm-vmm"/>
-                        <constraint firstAttribute="height" constant="60" id="Ifb-uM-kh4"/>
+                        <constraint firstAttribute="height" constant="45" id="SQa-nf-4bC"/>
+                        <constraint firstAttribute="width" constant="45" id="bWs-Je-VRe"/>
                     </constraints>
                     <state key="normal" image="mdkuiposition_map_btn_enable.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,40 +79,9 @@
                         <action selector="userDidTapOnMapButton:" destination="-1" eventType="touchUpInside" id="thO-Lx-iQr"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a37-em-gEI" userLabel="longitude">
-                    <rect key="frame" x="125" y="104" width="350" height="30"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="VkV-Yy-IKw"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="vw2-Dd-Hef"/>
-                    </connections>
-                </textField>
-                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-6R-7T8" userLabel="location founded">
-                    <rect key="frame" x="320" y="10" width="60" height="60"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="Nm3-tg-ANh"/>
-                        <constraint firstAttribute="width" constant="60" id="fqj-O6-7gP"/>
-                    </constraints>
-                    <state key="normal" image="mdkuiposition_location_btn_founded.png">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="disabled" image="mdkuiposition_location_btn_disable.png"/>
-                    <connections>
-                        <action selector="userDidTapOnLocationButton:" destination="-1" eventType="touchUpInside" id="R1f-qn-Yf9"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-Sa-EZT" userLabel="location not founded">
-                    <rect key="frame" x="320" y="10" width="60" height="60"/>
+                    <rect key="frame" x="283" y="8" width="45" height="45"/>
                     <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="60" id="4rZ-El-gaa"/>
-                        <constraint firstAttribute="height" constant="60" id="IJH-Ul-GxX"/>
-                    </constraints>
                     <state key="normal" image="mdkuiposition_location_btn_notfound.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -108,42 +90,50 @@
                         <action selector="userDidTapOnLocationButton:" destination="-1" eventType="touchUpInside" id="Ijz-wY-Kpu"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iz-uZ-msd" userLabel="latitude">
-                    <rect key="frame" x="125" y="156" width="350" height="30"/>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-6R-7T8" userLabel="location founded">
+                    <rect key="frame" x="283" y="9" width="45" height="45"/>
                     <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="OHE-0Z-O17"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
+                    <state key="normal" image="mdkuiposition_location_btn_founded.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="disabled" image="mdkuiposition_location_btn_disable.png"/>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="M40-lS-cI1"/>
+                        <action selector="userDidTapOnLocationButton:" destination="-1" eventType="touchUpInside" id="R1f-qn-Yf9"/>
                     </connections>
-                </textField>
+                </button>
             </subviews>
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="0DH-Tt-2b4" secondAttribute="centerX" constant="50" id="9di-gZ-M6t"/>
-                <constraint firstAttribute="trailing" secondItem="a37-em-gEI" secondAttribute="trailing" constant="125" id="Lv7-zr-d4o"/>
-                <constraint firstAttribute="centerX" secondItem="Nkq-Sa-EZT" secondAttribute="centerX" constant="-50" id="OoP-hu-Owq"/>
-                <constraint firstItem="a37-em-gEI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="125" id="Q7A-TH-9dy"/>
-                <constraint firstAttribute="centerY" secondItem="8iz-uZ-msd" secondAttribute="centerY" constant="129" id="U6a-ss-pJZ"/>
-                <constraint firstAttribute="centerY" secondItem="A6c-Nw-QaC" secondAttribute="centerY" constant="260" id="VzR-eq-nVI"/>
-                <constraint firstAttribute="centerY" secondItem="jQe-6R-7T8" secondAttribute="centerY" constant="260" id="X8E-4R-MGk"/>
-                <constraint firstAttribute="centerY" secondItem="0DH-Tt-2b4" secondAttribute="centerY" constant="260" id="Xqf-Nh-0fm"/>
-                <constraint firstAttribute="trailing" secondItem="8iz-uZ-msd" secondAttribute="trailing" constant="125" id="Xu0-rh-m0L"/>
-                <constraint firstItem="8iz-uZ-msd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="125" id="Zru-RD-7bd"/>
-                <constraint firstAttribute="centerX" secondItem="jQe-6R-7T8" secondAttribute="centerX" constant="-50" id="aCK-9s-iTh"/>
-                <constraint firstAttribute="centerY" secondItem="Nkq-Sa-EZT" secondAttribute="centerY" constant="260" id="dtd-Hm-vmd"/>
-                <constraint firstAttribute="centerX" secondItem="xcP-ii-45F" secondAttribute="centerX" constant="-150" id="icN-rl-AF7"/>
-                <constraint firstAttribute="centerY" secondItem="xcP-ii-45F" secondAttribute="centerY" constant="260" id="jPz-hb-fDT"/>
-                <constraint firstAttribute="centerX" secondItem="A6c-Nw-QaC" secondAttribute="centerX" constant="150" id="p19-yn-7oZ"/>
-                <constraint firstAttribute="centerY" secondItem="a37-em-gEI" secondAttribute="centerY" constant="181" id="x3R-aQ-mXD"/>
+                <constraint firstItem="a37-em-gEI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="1uh-C8-you"/>
+                <constraint firstItem="Nkq-Sa-EZT" firstAttribute="width" secondItem="0DH-Tt-2b4" secondAttribute="width" id="4km-4f-Wik"/>
+                <constraint firstItem="xcP-ii-45F" firstAttribute="leading" secondItem="Nkq-Sa-EZT" secondAttribute="trailing" constant="35" id="ASr-32-1at"/>
+                <constraint firstItem="a37-em-gEI" firstAttribute="top" secondItem="0DH-Tt-2b4" secondAttribute="bottom" constant="8" id="DKj-oW-0fZ"/>
+                <constraint firstItem="0DH-Tt-2b4" firstAttribute="height" secondItem="A6c-Nw-QaC" secondAttribute="height" id="FYI-MP-gUE"/>
+                <constraint firstItem="jQe-6R-7T8" firstAttribute="centerX" secondItem="Nkq-Sa-EZT" secondAttribute="centerX" id="GhT-WK-PY8"/>
+                <constraint firstItem="8iz-uZ-msd" firstAttribute="leading" secondItem="a37-em-gEI" secondAttribute="leading" id="HJE-n6-bKd"/>
+                <constraint firstItem="xcP-ii-45F" firstAttribute="height" secondItem="Nkq-Sa-EZT" secondAttribute="height" id="J6b-cF-Dwn"/>
+                <constraint firstItem="0DH-Tt-2b4" firstAttribute="top" secondItem="Nkq-Sa-EZT" secondAttribute="top" id="QYn-Rb-HEP"/>
+                <constraint firstItem="Nkq-Sa-EZT" firstAttribute="leading" secondItem="0DH-Tt-2b4" secondAttribute="trailing" constant="35" id="Scf-pe-zi9"/>
+                <constraint firstItem="jQe-6R-7T8" firstAttribute="width" secondItem="Nkq-Sa-EZT" secondAttribute="width" id="TYH-qQ-ZjQ"/>
+                <constraint firstItem="Nkq-Sa-EZT" firstAttribute="height" secondItem="0DH-Tt-2b4" secondAttribute="height" id="V8j-aZ-LWY"/>
+                <constraint firstItem="Nkq-Sa-EZT" firstAttribute="top" secondItem="xcP-ii-45F" secondAttribute="top" id="Vkn-dZ-cbB"/>
+                <constraint firstItem="jQe-6R-7T8" firstAttribute="centerY" secondItem="Nkq-Sa-EZT" secondAttribute="centerY" id="Wbt-JW-Cr0"/>
+                <constraint firstItem="A6c-Nw-QaC" firstAttribute="top" secondItem="0DH-Tt-2b4" secondAttribute="top" id="ZTR-4O-0bx"/>
+                <constraint firstItem="Nkq-Sa-EZT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ZYY-C2-FMJ"/>
+                <constraint firstItem="xcP-ii-45F" firstAttribute="width" secondItem="Nkq-Sa-EZT" secondAttribute="width" id="bDp-bk-pTc"/>
+                <constraint firstItem="jQe-6R-7T8" firstAttribute="height" secondItem="Nkq-Sa-EZT" secondAttribute="height" id="hMU-b5-I8l"/>
+                <constraint firstItem="8iz-uZ-msd" firstAttribute="top" secondItem="a37-em-gEI" secondAttribute="bottom" constant="8" id="ivC-eK-i6f"/>
+                <constraint firstItem="Nkq-Sa-EZT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="41" id="j2i-v1-wxy"/>
+                <constraint firstItem="8iz-uZ-msd" firstAttribute="height" secondItem="a37-em-gEI" secondAttribute="height" id="jWr-jl-AYZ"/>
+                <constraint firstItem="a37-em-gEI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pT2-Eq-ya1"/>
+                <constraint firstItem="8iz-uZ-msd" firstAttribute="width" secondItem="a37-em-gEI" secondAttribute="width" id="u4v-IG-BWw"/>
+                <constraint firstItem="0DH-Tt-2b4" firstAttribute="leading" secondItem="A6c-Nw-QaC" secondAttribute="trailing" constant="35" id="wrQ-Qt-dLe"/>
+                <constraint firstItem="0DH-Tt-2b4" firstAttribute="width" secondItem="A6c-Nw-QaC" secondAttribute="width" id="zLO-23-4xV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="466" y="385"/>
+            <point key="canvasLocation" x="303.5" y="157"/>
         </view>
     </objects>
     <resources>
@@ -155,6 +145,6 @@
         <image name="mdkuiposition_map_btn_disable.png" width="40" height="40"/>
         <image name="mdkuiposition_map_btn_enable.png" width="40" height="40"/>
         <image name="mdkuiposition_navigation_btn_disable.png" width="40" height="40"/>
-        <image name="mdkuiposition_navigation_btn_enable.png" width="40" height="40"/>
+        <image name="mdkuiposition_navigation_btn_enable.png" width="80" height="80"/>
     </resources>
 </document>

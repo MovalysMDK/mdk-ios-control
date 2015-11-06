@@ -192,6 +192,14 @@
 		B0A74C831BA081FC0002A66B /* MDKUrlFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A74C811BA081FC0002A66B /* MDKUrlFieldValidator.m */; };
 		B0A74C861BA082210002A66B /* MDKUrlTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A74C841BA082210002A66B /* MDKUrlTextField.m */; };
 		B0A74C871BA082210002A66B /* MDKUrlTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A74C851BA082210002A66B /* MDKUrlTextField.h */; };
+		B0AC329C1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC329A1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_disable.png */; };
+		B0AC329D1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_enable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC329B1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_enable.png */; };
+		B0AC32A01BECBA350016B6B4 /* mdkuiposition_location_btn_founded.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC329E1BECBA350016B6B4 /* mdkuiposition_location_btn_founded.png */; };
+		B0AC32A11BECBA350016B6B4 /* mdkuiposition_location_btn_notfound.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC329F1BECBA350016B6B4 /* mdkuiposition_location_btn_notfound.png */; };
+		B0AC32A41BECBA3F0016B6B4 /* mdkuiposition_map_btn_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC32A21BECBA3F0016B6B4 /* mdkuiposition_map_btn_disable.png */; };
+		B0AC32A51BECBA3F0016B6B4 /* mdkuiposition_map_btn_enable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC32A31BECBA3F0016B6B4 /* mdkuiposition_map_btn_enable.png */; };
+		B0AC32A81BECBA490016B6B4 /* mdkuiposition_navigation_btn_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC32A61BECBA490016B6B4 /* mdkuiposition_navigation_btn_disable.png */; };
+		B0AC32A91BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC32A71BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png */; };
 		B0C18B481BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B0C18B461BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h */; };
 		B0C18B491BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C18B471BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m */; };
 		B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BA951BA1D9830087C4D3 /* MDKFieldValidatorList.plist */; };
@@ -478,6 +486,14 @@
 		B0A74C811BA081FC0002A66B /* MDKUrlFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUrlFieldValidator.m; sourceTree = "<group>"; };
 		B0A74C841BA082210002A66B /* MDKUrlTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUrlTextField.m; sourceTree = "<group>"; };
 		B0A74C851BA082210002A66B /* MDKUrlTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUrlTextField.h; sourceTree = "<group>"; };
+		B0AC329A1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_cancel_btn_disable.png; path = position/cancel/mdkuiposition_cancel_btn_disable.png; sourceTree = "<group>"; };
+		B0AC329B1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_cancel_btn_enable.png; path = position/cancel/mdkuiposition_cancel_btn_enable.png; sourceTree = "<group>"; };
+		B0AC329E1BECBA350016B6B4 /* mdkuiposition_location_btn_founded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_location_btn_founded.png; path = position/location/mdkuiposition_location_btn_founded.png; sourceTree = "<group>"; };
+		B0AC329F1BECBA350016B6B4 /* mdkuiposition_location_btn_notfound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_location_btn_notfound.png; path = position/location/mdkuiposition_location_btn_notfound.png; sourceTree = "<group>"; };
+		B0AC32A21BECBA3F0016B6B4 /* mdkuiposition_map_btn_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_map_btn_disable.png; path = position/map/mdkuiposition_map_btn_disable.png; sourceTree = "<group>"; };
+		B0AC32A31BECBA3F0016B6B4 /* mdkuiposition_map_btn_enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_map_btn_enable.png; path = position/map/mdkuiposition_map_btn_enable.png; sourceTree = "<group>"; };
+		B0AC32A61BECBA490016B6B4 /* mdkuiposition_navigation_btn_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_navigation_btn_disable.png; path = position/navigation/mdkuiposition_navigation_btn_disable.png; sourceTree = "<group>"; };
+		B0AC32A71BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_navigation_btn_enable.png; path = position/navigation/mdkuiposition_navigation_btn_enable.png; sourceTree = "<group>"; };
 		B0C18B461BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIFixedListTableViewDelegate.h; sourceTree = "<group>"; };
 		B0C18B471BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIFixedListTableViewDelegate.m; sourceTree = "<group>"; };
 		B0C6BA8E1BA1D6E00087C4D3 /* Converter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
@@ -1242,6 +1258,8 @@
 		F98D77DD1BE9161900CD4458 /* map */ = {
 			isa = PBXGroup;
 			children = (
+				B0AC32A61BECBA490016B6B4 /* mdkuiposition_navigation_btn_disable.png */,
+				B0AC32A71BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png */,
 				F98D77F91BE9165A00CD4458 /* mdkuiposition_map_btn_disable@2x.png */,
 				F98D77FA1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png */,
 				F98D77FB1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png */,
@@ -1253,6 +1271,8 @@
 		F98D77DE1BE9161E00CD4458 /* navigation */ = {
 			isa = PBXGroup;
 			children = (
+				B0AC32A21BECBA3F0016B6B4 /* mdkuiposition_map_btn_disable.png */,
+				B0AC32A31BECBA3F0016B6B4 /* mdkuiposition_map_btn_enable.png */,
 				F98D77F11BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png */,
 				F98D77F21BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@3x.png */,
 				F98D77F31BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@2x.png */,
@@ -1264,6 +1284,8 @@
 		F98D77DF1BE9162500CD4458 /* location */ = {
 			isa = PBXGroup;
 			children = (
+				B0AC329E1BECBA350016B6B4 /* mdkuiposition_location_btn_founded.png */,
+				B0AC329F1BECBA350016B6B4 /* mdkuiposition_location_btn_notfound.png */,
 				F924E8DD1BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png */,
 				F924E8DE1BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png */,
 				F924E8DF1BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png */,
@@ -1275,6 +1297,8 @@
 		F98D77E01BE9162C00CD4458 /* cancel */ = {
 			isa = PBXGroup;
 			children = (
+				B0AC329A1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_disable.png */,
+				B0AC329B1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_enable.png */,
 				F98D77E11BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@2x.png */,
 				F98D77E21BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@3x.png */,
 				F98D77E31BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png */,
@@ -1498,20 +1522,25 @@
 				B061202C1BD938310012F82F /* fixedlist_add@2x.png in Resources */,
 				B0C6BAAF1BA1D9830087C4D3 /* ios_ic_phone_pressed@2x.png in Resources */,
 				B0C6BABA1BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib in Resources */,
+				B0AC32A11BECBA350016B6B4 /* mdkuiposition_location_btn_notfound.png in Resources */,
 				F924E8E31BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png in Resources */,
 				B061202F1BD9387A0012F82F /* MDK_MDKUIFixedList.xib in Resources */,
 				F98D77E81BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@3x.png in Resources */,
 				F98D78001BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png in Resources */,
 				F98D77F81BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@3x.png in Resources */,
+				B0AC32A91BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png in Resources */,
 				B0A52E581BA31F0700EF6947 /* MDK_MDKErrorView.xib in Resources */,
+				B0AC329C1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_disable.png in Resources */,
 				F924E8E11BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png in Resources */,
 				B03AD4841BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib in Resources */,
 				B0C6BAAC1BA1D9830087C4D3 /* ios_ic_mail_pressed@2x.png in Resources */,
 				F98D77FE1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png in Resources */,
 				B061202D1BD938310012F82F /* fixedlist_add@3x.png in Resources */,
+				B0AC329D1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_enable.png in Resources */,
 				B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */,
 				F98D77F61BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@3x.png in Resources */,
 				B0C6BAB01BA1D9830087C4D3 /* ios_ic_phone_unactive@2x.png in Resources */,
+				B0AC32A01BECBA350016B6B4 /* mdkuiposition_location_btn_founded.png in Resources */,
 				F98D77E71BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png in Resources */,
 				B0C6BAAD1BA1D9830087C4D3 /* ios_ic_mail_unactive@2x.png in Resources */,
 				B061202B1BD938310012F82F /* fixedlist_add.png in Resources */,
@@ -1521,13 +1550,16 @@
 				B0C6BABC1BA1DBF60087C4D3 /* Framework-components.plist in Resources */,
 				F98D77E51BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@2x.png in Resources */,
 				B03AD47E1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib in Resources */,
+				B0AC32A41BECBA3F0016B6B4 /* mdkuiposition_map_btn_disable.png in Resources */,
 				F919715F1BE8C61500B94F8A /* MDK_MDKUIPosition.xib in Resources */,
 				B0C6BAAE1BA1D9830087C4D3 /* ios_ic_phone_active@2x.png in Resources */,
 				B0C6BAB11BA1D9830087C4D3 /* ios_ic_qrcode_icon_active.png in Resources */,
 				F98D77F71BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@2x.png in Resources */,
 				B0C6BAB51BA1D9830087C4D3 /* ios_ic_nav_unactive@2x.png in Resources */,
+				B0AC32A51BECBA3F0016B6B4 /* mdkuiposition_map_btn_enable.png in Resources */,
 				F924E8E21BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png in Resources */,
 				F98D77FF1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png in Resources */,
+				B0AC32A81BECBA490016B6B4 /* mdkuiposition_navigation_btn_disable.png in Resources */,
 				B0C6BAB41BA1D9830087C4D3 /* ios_ic_nav_pressed@2x.png in Resources */,
 				F98D77FD1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@2x.png in Resources */,
 				F98D77F51BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png in Resources */,

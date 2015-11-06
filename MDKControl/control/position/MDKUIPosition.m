@@ -75,8 +75,10 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 - (void)initialize {
     [super initialize];
     [self setAllTags];
-    [[MDKManagerPosition sharedManager] searchCurrentLocation];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
+    
+#if !TARGET_INTERFACE_BUILDER
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
+#endif
 }
 
 - (void)didInitializeOutlets {
@@ -84,9 +86,11 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
     [self displayLocationFoundedIfNeeded];
 }
 
-//- (void)dealloc {
-//    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIKeyboardWillHideNotification];
-//}
+#if !TARGET_INTERFACE_BUILDER
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIKeyboardWillHideNotification];
+}
+#endif
 
 
 #pragma mark - Tags for automatic testing

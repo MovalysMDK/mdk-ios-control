@@ -122,7 +122,7 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
     MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
     commonCCTD.target = target;
     commonCCTD.action = action;
-    self.targetDescriptors = @{@(self.dateButton.hash) : commonCCTD, @(self.pickerView.hash) : commonCCTD};
+    self.targetDescriptors = @{@(self.dateButton.hash) : commonCCTD};
 }
 
 

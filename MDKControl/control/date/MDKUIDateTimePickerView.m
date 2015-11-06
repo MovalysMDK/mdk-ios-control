@@ -38,7 +38,7 @@
 
 - (IBAction)didSelectDate:(id)sender {
     [self.sourceComponent setData:self.datePicker.date];
-    [self.sourceComponent valueChanged:self];
+    [self.sourceComponent valueChanged:self.sourceComponent.dateButton];
     [self dismiss];
 }
 
