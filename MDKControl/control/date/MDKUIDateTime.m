@@ -119,12 +119,10 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
 
 #pragma mark - Control changes
 -(void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
-    [self.dateButton addTarget:self action:@selector(valueChanged:) forControlEvents:controlEvents];
-    [self.dateButton addTarget:self action:@selector(valueChanged:) forControlEvents:controlEvents];
     MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
     commonCCTD.target = target;
     commonCCTD.action = action;
-    self.targetDescriptors = @{@(self.dateButton.hash) : commonCCTD};
+    self.targetDescriptors = @{@(self.dateButton.hash) : commonCCTD, @(self.pickerView.hash) : commonCCTD};
 }
 
 
@@ -173,4 +171,7 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
 }
 @end
 
-@implementation MDKUIInternalDateTime @end
+@implementation MDKUIInternalDateTime
+
+
+@end

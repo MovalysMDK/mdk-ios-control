@@ -76,7 +76,7 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
     [super initialize];
     [self setAllTags];
     [[MDKManagerPosition sharedManager] searchCurrentLocation];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)didInitializeOutlets {
@@ -84,9 +84,9 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
     [self displayLocationFoundedIfNeeded];
 }
 
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIKeyboardWillHideNotification];
-}
+//- (void)dealloc {
+//    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIKeyboardWillHideNotification];
+//}
 
 
 #pragma mark - Tags for automatic testing
@@ -171,17 +171,6 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
     }
 }
 
-
-#pragma mark - Live Rendering
-
-- (void)prepareForInterfaceBuilder {
-    UILabel *innerDescriptionLabel = [[UILabel alloc] initWithFrame:self.bounds];
-    innerDescriptionLabel.text = [[self class] description];
-    innerDescriptionLabel.textAlignment = NSTextAlignmentCenter;
-    innerDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
-    [self addSubview:innerDescriptionLabel];
-    self.backgroundColor = [UIColor colorWithRed:0.98f green:0.98f blue:0.34f alpha:0.5f];
-}
 
 
 #pragma mark - Handle user event

@@ -23,6 +23,8 @@
 
 #import <objc/runtime.h>
 
+
+
 #pragma mark MFUIBaseRenderableComponent
 
 /*!
@@ -177,6 +179,14 @@ IB_DESIGNABLE
  */
 -(NSArray *) controlRenderableProperties;
 
+/**
+ * @brief Allows to forward a property from the internal view to the external view or 
+ * the contrary, depending on the given direction
+ * @param propertyName The propertyName to forward
+ * @param direction The direction of the forward
+ */
+-(void)forwardProperty:(NSString *)propertyName withDirection:(NSString *)direction;
+
 extern const struct MDKErrorPositionParameters_Struct
 {
     __unsafe_unretained NSString *ErrorView;
@@ -185,10 +195,14 @@ extern const struct MDKErrorPositionParameters_Struct
     __unsafe_unretained NSString *InternalViewTopConstraint;
     __unsafe_unretained NSString *InternalViewRightConstraint;
     __unsafe_unretained NSString *InternalViewBottomConstraint;
-    
-    //@non-generated-start[custom-structproperties][X]
-    //@non-generated-end
 } MDKErrorPositionParameters;
+
+
+extern const struct MDKRenderableForwarding_Struct
+{
+    __unsafe_unretained NSString *ToInternal;
+    __unsafe_unretained NSString *ToExternal;
+} MDKRenderableForwarding;
 @end
 
 

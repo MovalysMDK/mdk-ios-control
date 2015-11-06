@@ -19,6 +19,7 @@
 #import "MDKTooltipView.h"
 #import "Utils.h"
 
+
 @interface MDKRenderableControl ()
 
 /**
@@ -58,6 +59,11 @@ const struct MDKErrorPositionParameters_Struct MDKErrorPositionParameters = {
     .InternalViewTopConstraint = @"InternalViewTopConstraint",
     .InternalViewRightConstraint = @"InternalViewRightConstraint",
     .InternalViewBottomConstraint = @"InternalViewbottomConstraint"
+};
+
+const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
+    .ToInternal = @"ToInternal",
+    .ToExternal = @"ToExternal"
 };
 
 
@@ -164,6 +170,22 @@ const struct MDKErrorPositionParameters_Struct MDKErrorPositionParameters = {
     return nil;
 }
 
+-(void)forwardProperty:(NSString *)propertyName withDirection:(NSString *)direction {
+    NSString *firstCharUppercasedPropertyName = [NSString stringWithFormat:@"%@%@", [[propertyName substringToIndex:1] uppercaseString], [propertyName substringFromIndex:1]];
+    NSString *selectorAsString = [NSString stringWithFormat:@"set%@:", firstCharUppercasedPropertyName];
+    
+    if([direction isEqualToString:MDKRenderableForwarding.ToInternal]) {
+        id object = [self.externalView performSelector:NSSelectorFromString(propertyName)];
+
+        [self.internalView performSelector:NSSelectorFromString(selectorAsString) withObject:object];
+    }
+    else {
+        id object = [self.internalView performSelector:NSSelectorFromString(propertyName)];
+
+        [self.externalView performSelector:NSSelectorFromString(selectorAsString) withObject:object];
+    }
+}
+
 
 /******************************************************/
 /* CONTRAINTES INT/EXT                                */
@@ -212,7 +234,7 @@ const struct MDKErrorPositionParameters_Struct MDKErrorPositionParameters = {
 }
 
 -(void) computeInternalLeftConstraint {
-
+    
     if(!self.leftConstraint) {
         self.leftConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeLeft
                                                            relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeft
@@ -252,13 +274,13 @@ const struct MDKErrorPositionParameters_Struct MDKErrorPositionParameters = {
  * @brief Defines the constraints of the error view in the external view
  */
 -(void) defineErrorViewConstraints {
-//#if !TARGET_INTERFACE_BUILDER
+    //#if !TARGET_INTERFACE_BUILDER
     self.errorView.translatesAutoresizingMaskIntoConstraints = NO;
     
     if(!self.errorRightConstraint) {
         self.errorRightConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeRight
-                                                                relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
-                                                               multiplier:1 constant:0];
+                                                                 relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
+                                                                multiplier:1 constant:0];
     }
     
     if(!self.errorCenterYConstraint) {
@@ -499,7 +521,7 @@ const struct MDKErrorPositionParameters_Struct MDKErrorPositionParameters = {
             else {
                 [self defineErrorViewConstraints];
             }
-
+            
         }
         else {
             [self.tooltipView hideAnimated:YES];
@@ -510,7 +532,7 @@ const struct MDKErrorPositionParameters_Struct MDKErrorPositionParameters = {
                     Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
                     self.errorView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomErrorXIB] owner:nil options:nil] firstObject];
                 }
-
+                
                 NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
                 [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
 #endif
@@ -591,7 +613,7 @@ const struct MDKErrorPositionParameters_Struct MDKErrorPositionParameters = {
 }
 
 -(void) refreshControl {
-//    [self.externalView setData:self.externalView.privateData];
+    //    [self.externalView setData:self.externalView.privateData];
     [self.internalView setData:self.internalView.controlData];
 }
 
