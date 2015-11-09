@@ -93,7 +93,11 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 
 #if !TARGET_INTERFACE_BUILDER
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIKeyboardWillHideNotification];
+    @try{
+        [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIKeyboardWillHideNotification];
+    } @catch(id anException){
+        // Nothing ...
+    }
 }
 #endif
 
