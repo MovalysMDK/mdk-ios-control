@@ -246,6 +246,15 @@
 		F924E8E21BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F924E8DE1BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png */; };
 		F924E8E31BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F924E8DF1BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png */; };
 		F924E8E41BEA70F9006119EF /* mdkuiposition_location_btn_notfound@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F924E8E01BEA70F9006119EF /* mdkuiposition_location_btn_notfound@3x.png */; };
+		F95BF3C01BF099E8002F2EE7 /* MDKUIMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F95BF3BE1BF099E8002F2EE7 /* MDKUIMedia.h */; };
+		F95BF3C11BF099E8002F2EE7 /* MDKUIMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = F95BF3BF1BF099E8002F2EE7 /* MDKUIMedia.m */; };
+		F95BF3C31BF09A03002F2EE7 /* ControlMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F95BF3C21BF09A03002F2EE7 /* ControlMedia.h */; };
+		F95BF3C51BF09DDC002F2EE7 /* MDK_MDKUIMedia.xib in Resources */ = {isa = PBXBuildFile; fileRef = F95BF3C41BF09DDC002F2EE7 /* MDK_MDKUIMedia.xib */; };
+		F95BF3D11BF0DA2D002F2EE7 /* MDKHelperImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F95BF3CF1BF0DA2D002F2EE7 /* MDKHelperImage.h */; };
+		F95BF3D21BF0DA2D002F2EE7 /* MDKHelperImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F95BF3D01BF0DA2D002F2EE7 /* MDKHelperImage.m */; };
+		F95BF3D71BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = F95BF3D41BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn.png */; };
+		F95BF3D81BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F95BF3D51BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@2x.png */; };
+		F95BF3D91BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F95BF3D61BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@3x.png */; };
 		F965F9301BE7BF070060A93D /* MDK_MDKUIEnumImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = F965F92F1BE7BF070060A93D /* MDK_MDKUIEnumImage.xib */; };
 		F965F9351BE7BF3B0060A93D /* ControlEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F965F9321BE7BF3B0060A93D /* ControlEnumImage.h */; };
 		F965F9361BE7BF3B0060A93D /* MDKUIEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F965F9331BE7BF3B0060A93D /* MDKUIEnumImage.h */; };
@@ -546,6 +555,15 @@
 		F924E8DE1BEA70F9006119EF /* mdkuiposition_location_btn_founded@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_location_btn_founded@3x.png"; path = "position/location/mdkuiposition_location_btn_founded@3x.png"; sourceTree = "<group>"; };
 		F924E8DF1BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_location_btn_notfound@2x.png"; path = "position/location/mdkuiposition_location_btn_notfound@2x.png"; sourceTree = "<group>"; };
 		F924E8E01BEA70F9006119EF /* mdkuiposition_location_btn_notfound@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_location_btn_notfound@3x.png"; path = "position/location/mdkuiposition_location_btn_notfound@3x.png"; sourceTree = "<group>"; };
+		F95BF3BE1BF099E8002F2EE7 /* MDKUIMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIMedia.h; path = media/MDKUIMedia.h; sourceTree = "<group>"; };
+		F95BF3BF1BF099E8002F2EE7 /* MDKUIMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIMedia.m; path = media/MDKUIMedia.m; sourceTree = "<group>"; };
+		F95BF3C21BF09A03002F2EE7 /* ControlMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlMedia.h; path = media/ControlMedia.h; sourceTree = "<group>"; };
+		F95BF3C41BF09DDC002F2EE7 /* MDK_MDKUIMedia.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIMedia.xib; sourceTree = "<group>"; };
+		F95BF3CF1BF0DA2D002F2EE7 /* MDKHelperImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKHelperImage.h; path = helper/MDKHelperImage.h; sourceTree = "<group>"; };
+		F95BF3D01BF0DA2D002F2EE7 /* MDKHelperImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKHelperImage.m; path = helper/MDKHelperImage.m; sourceTree = "<group>"; };
+		F95BF3D41BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuimedia_placeholder_btn.png; path = media/mdkuimedia_placeholder_btn.png; sourceTree = "<group>"; };
+		F95BF3D51BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuimedia_placeholder_btn@2x.png"; path = "media/mdkuimedia_placeholder_btn@2x.png"; sourceTree = "<group>"; };
+		F95BF3D61BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuimedia_placeholder_btn@3x.png"; path = "media/mdkuimedia_placeholder_btn@3x.png"; sourceTree = "<group>"; };
 		F965F92F1BE7BF070060A93D /* MDK_MDKUIEnumImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIEnumImage.xib; sourceTree = "<group>"; };
 		F965F9321BE7BF3B0060A93D /* ControlEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlEnumImage.h; path = enumImage/ControlEnumImage.h; sourceTree = "<group>"; };
 		F965F9331BE7BF3B0060A93D /* MDKUIEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIEnumImage.h; path = enumImage/MDKUIEnumImage.h; sourceTree = "<group>"; };
@@ -903,6 +921,7 @@
 		B08C190C1B9DE9A500D6F93A /* control */ = {
 			isa = PBXGroup;
 			children = (
+				F95BF3BD1BF098D5002F2EE7 /* media */,
 				F91971571BE8B80C00B94F8A /* position */,
 				F965F9311BE7BF210060A93D /* enumImage */,
 				B06120221BD933570012F82F /* fixedlist */,
@@ -1021,6 +1040,7 @@
 		B0C6BA961BA1D9830087C4D3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F95BF3D31BF0E132002F2EE7 /* media */,
 				F91971601BE8CB3600B94F8A /* position */,
 				B06120271BD938310012F82F /* fixedlist */,
 				B0C6BA971BA1D9830087C4D3 /* mail */,
@@ -1080,6 +1100,7 @@
 				B0C6BAB91BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib */,
 				B061202E1BD9387A0012F82F /* MDK_MDKUIFixedList.xib */,
 				F919715E1BE8C61500B94F8A /* MDK_MDKUIPosition.xib */,
+				F95BF3C41BF09DDC002F2EE7 /* MDK_MDKUIMedia.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -1235,6 +1256,26 @@
 			name = manager;
 			sourceTree = "<group>";
 		};
+		F95BF3BD1BF098D5002F2EE7 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				F95BF3C21BF09A03002F2EE7 /* ControlMedia.h */,
+				F95BF3BE1BF099E8002F2EE7 /* MDKUIMedia.h */,
+				F95BF3BF1BF099E8002F2EE7 /* MDKUIMedia.m */,
+			);
+			name = media;
+			sourceTree = "<group>";
+		};
+		F95BF3D31BF0E132002F2EE7 /* media */ = {
+			isa = PBXGroup;
+			children = (
+				F95BF3D41BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn.png */,
+				F95BF3D51BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@2x.png */,
+				F95BF3D61BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@3x.png */,
+			);
+			name = media;
+			sourceTree = "<group>";
+		};
 		F965F9311BE7BF210060A93D /* enumImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1248,6 +1289,8 @@
 		F965F93A1BE7BF5C0060A93D /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				F95BF3CF1BF0DA2D002F2EE7 /* MDKHelperImage.h */,
+				F95BF3D01BF0DA2D002F2EE7 /* MDKHelperImage.m */,
 				F965F93B1BE7BF7A0060A93D /* Helper.h */,
 				F965F93C1BE7BF7A0060A93D /* MDKHelperType.h */,
 				F965F93D1BE7BF7A0060A93D /* MDKHelperType.m */,
@@ -1315,8 +1358,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B08C193B1B9DE9A500D6F93A /* ControlExtension.h in Headers */,
+				F95BF3D11BF0DA2D002F2EE7 /* MDKHelperImage.h in Headers */,
 				F965F9351BE7BF3B0060A93D /* ControlEnumImage.h in Headers */,
 				B08C19351B9DE9A500D6F93A /* MDKControlDelegate.h in Headers */,
+				F95BF3C31BF09A03002F2EE7 /* ControlMedia.h in Headers */,
 				B00C4DF91BA07C38003CBB16 /* MDKPhoneTextField.h in Headers */,
 				B02156E51B9DAD59001860B5 /* MDKControlAttributesProtocol.h in Headers */,
 				F924E8D61BEA4473006119EF /* MDKManagerPosition.h in Headers */,
@@ -1348,6 +1393,7 @@
 				F919715A1BE8B84600B94F8A /* MDKUIPosition.h in Headers */,
 				F965F9391BE7BF4F0060A93D /* MDKEnumHelperProtocol.h in Headers */,
 				B08C19331B9DE9A500D6F93A /* MDKBaseControl.h in Headers */,
+				F95BF3C01BF099E8002F2EE7 /* MDKUIMedia.h in Headers */,
 				B0FFB6BC1BA1CD4800258B9D /* MDKFloatConverter.h in Headers */,
 				B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */,
 				B021169D1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h in Headers */,
@@ -1527,6 +1573,7 @@
 				B061202F1BD9387A0012F82F /* MDK_MDKUIFixedList.xib in Resources */,
 				F98D77E81BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@3x.png in Resources */,
 				F98D78001BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png in Resources */,
+				F95BF3C51BF09DDC002F2EE7 /* MDK_MDKUIMedia.xib in Resources */,
 				F98D77F81BE9165000CD4458 /* mdkuiposition_navigation_btn_enable@3x.png in Resources */,
 				B0AC32A91BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png in Resources */,
 				B0A52E581BA31F0700EF6947 /* MDK_MDKErrorView.xib in Resources */,
@@ -1535,6 +1582,7 @@
 				B03AD4841BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib in Resources */,
 				B0C6BAAC1BA1D9830087C4D3 /* ios_ic_mail_pressed@2x.png in Resources */,
 				F98D77FE1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png in Resources */,
+				F95BF3D81BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@2x.png in Resources */,
 				B061202D1BD938310012F82F /* fixedlist_add@3x.png in Resources */,
 				B0AC329D1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_enable.png in Resources */,
 				B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */,
@@ -1550,6 +1598,7 @@
 				B0C6BABC1BA1DBF60087C4D3 /* Framework-components.plist in Resources */,
 				F98D77E51BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@2x.png in Resources */,
 				B03AD47E1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib in Resources */,
+				F95BF3D71BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn.png in Resources */,
 				B0AC32A41BECBA3F0016B6B4 /* mdkuiposition_map_btn_disable.png in Resources */,
 				F919715F1BE8C61500B94F8A /* MDK_MDKUIPosition.xib in Resources */,
 				B0C6BAAE1BA1D9830087C4D3 /* ios_ic_phone_active@2x.png in Resources */,
@@ -1562,6 +1611,7 @@
 				B0AC32A81BECBA490016B6B4 /* mdkuiposition_navigation_btn_disable.png in Resources */,
 				B0C6BAB41BA1D9830087C4D3 /* ios_ic_nav_pressed@2x.png in Resources */,
 				F98D77FD1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@2x.png in Resources */,
+				F95BF3D91BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@3x.png in Resources */,
 				F98D77F51BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png in Resources */,
 				B0C6BAAB1BA1D9830087C4D3 /* ios_ic_mail_active@2x.png in Resources */,
 				B0C6BAB31BA1D9830087C4D3 /* ios_ic_nav_active@2x.png in Resources */,
@@ -1638,6 +1688,7 @@
 				B02157C01B9DAF30001860B5 /* MDKInvalidPhoneNumberValueUIValidationError.m in Sources */,
 				B08C19511B9DE9A500D6F93A /* MDKRegexTextField.m in Sources */,
 				B0A74C7D1BA081F40002A66B /* MDKURL.m in Sources */,
+				F95BF3C11BF099E8002F2EE7 /* MDKUIMedia.m in Sources */,
 				B00C4E091BA07D3D003CBB16 /* MDKPhoneFieldValidator.m in Sources */,
 				B044B1C61B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m in Sources */,
 				F924E8D71BEA4473006119EF /* MDKManagerPosition.m in Sources */,
@@ -1669,6 +1720,7 @@
 				B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */,
 				B0FFB6AA1BA1CB5F00258B9D /* MDKUISlider+UISliderForwarding.m in Sources */,
 				B02157C61B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.m in Sources */,
+				F95BF3D21BF0DA2D002F2EE7 /* MDKHelperImage.m in Sources */,
 				B02156D21B9DAC6E001860B5 /* MDKTextFieldStyle.m in Sources */,
 				B02157641B9DAEEA001860B5 /* MDKLengthFieldValidator.m in Sources */,
 				B02156B81B9DAC6E001860B5 /* UIView+Styleable.m in Sources */,

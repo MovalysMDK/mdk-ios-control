@@ -10,5 +10,6 @@
 #define MDKControl_Helper_h
 
 #import "MDKHelperType.h"
+#import "MDKHelperImage.h"
 
 #endif

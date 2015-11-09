@@ -82,10 +82,7 @@ NSInteger const TAG_MFNUMBERPICKER_CONFIRMBUTTON              = 13510;
 NSInteger const TAG_MFNUMBERPICKER_CANCELBUTTON               = 13515;
 
 // /MFUI/control/photo
-NSInteger const TAG_MFPHOTOTHUMBNAIL_PHOTOVIEW                = 14000;
-NSInteger const TAG_MFPHOTOTHUMBNAIL_DATE                     = 14005;
-NSInteger const TAG_MFPHOTOTHUMBNAIL_TITRE                    = 14010;
-NSInteger const TAG_MFPHOTOTHUMBNAIL_DESCRIPTION              = 14015;
+NSInteger const TAG_MDKMEDIA_PICTURE_BUTTON                   = 14000;
 
 // /MFUI/control/processing
 
