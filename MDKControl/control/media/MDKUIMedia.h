@@ -26,6 +26,9 @@ IB_DESIGNABLE
 
 #pragma mark - Properties
 
+/*!
+ * @brief This button allow to take a picture
+ */
 @property (nonatomic, weak) IBOutlet UIButton *buttonPicture;
 
 @end
