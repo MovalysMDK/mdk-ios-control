@@ -21,5 +21,6 @@ Pod::Spec.new do |s|
   s.source_files = 'MDKControl/**/*.{h,m}'
   s.resources = 'MDKControl/**/*.{plist,xib,pch,png}'
   s.dependency 'IQKeyboardManager', '3.3.2'
+  s.dependency 'MBProgressHUD', '~> 0.9'
 
 end

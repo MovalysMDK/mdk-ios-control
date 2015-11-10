@@ -125,5 +125,5 @@ NSInteger const TAG_MFTEXTVIEW_TEXTVIEW                       = 20000;
 // /MFUI/control/tooltip
 
 // /MFUI/control/webview
-NSInteger const TAG_MFWEBVIEW_WEBVIEW                         = 20500;
-NSInteger const TAG_MFWEBVIEW_SPINNER                         = 20505;
+NSInteger const TAG_MDKWEBVIEW_WEBVIEW                         = 20500;
+NSInteger const TAG_MDKWEBVIEW_SPINNER                         = 20505;
