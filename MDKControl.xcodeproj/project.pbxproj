@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1098FF43102E42899A244E7D /* libPods-MDKControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E4040AFDF1A54801A50B45 /* libPods-MDKControl.a */; };
-		6CBCCDACCFD0343F7946527E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE3AD71423C57338299F1F8 /* libPods.a */; };
 		B00C4DF01BA06B4C003CBB16 /* MDKCreateEmailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4DEC1BA06B4C003CBB16 /* MDKCreateEmailViewController.h */; };
 		B00C4DF11BA06B4C003CBB16 /* MDKCreateEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00C4DED1BA06B4C003CBB16 /* MDKCreateEmailViewController.m */; };
 		B00C4DF21BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4DEE1BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h */; };
@@ -603,8 +601,6 @@
 			files = (
 				B05C93691B9F3C3E00487CFB /* MessageUI.framework in Frameworks */,
 				B0FFDA901B33FBB800CA6E5E /* UIKit.framework in Frameworks */,
-				1098FF43102E42899A244E7D /* libPods-MDKControl.a in Frameworks */,
-				6CBCCDACCFD0343F7946527E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
