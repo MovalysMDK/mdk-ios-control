@@ -61,6 +61,11 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
  */
 @property (nonatomic, strong) NSString *dataLongitude;
 
+/*!
+ * @brief Know the search location mode
+ */
+@property (nonatomic, assign) BOOL navigationMode;
+
 @end
 
 
@@ -75,7 +80,7 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 - (void)initialize {
     [super initialize];
     [self setAllTags];
-    
+    self.navigationMode = NO;
 #if !TARGET_INTERFACE_BUILDER
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
 #endif
@@ -88,7 +93,11 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 
 #if !TARGET_INTERFACE_BUILDER
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIKeyboardWillHideNotification];
+    @try{
+        [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:UIKeyboardWillHideNotification];
+    } @catch(id anException){
+        // Nothing ...
+    }
 }
 #endif
 
@@ -176,11 +185,13 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 }
 
 
-
 #pragma mark - Handle user event
 
 - (IBAction)userDidTapOnMapButton:(id)sender {
-    [[MDKManagerPosition sharedManager] searchAddressAccordingCurrentLocationWithCompletionHandler:^(NSString *address, NSError *error) {
+    NSNumber *numberLongitude = [NSNumber numberWithFloat:[self.textFieldLongitude.text floatValue]];
+    NSNumber *numberLatitude  = [NSNumber numberWithFloat:[self.textFieldLatitude.text floatValue]];
+    
+    [[MDKManagerPosition sharedManager] searchAddressAccordingLatitude:numberLatitude longitude:numberLongitude completionHandler:^(NSString *address, NSError *error) {
         if (error) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"We cannot retrieve your address" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
@@ -199,14 +210,9 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
         return;
     }
     
-    CLLocation *userLocation  = [[MDKManagerPosition sharedManager] currentLocation];
-    
-    NSNumber *numberLongitude = [NSNumber numberWithFloat:[self.dataLongitude floatValue]];
-    NSNumber *numberLatitude  = [NSNumber numberWithFloat:[self.dataLatitude floatValue]];
-    NSString *stringNavigation = [NSString stringWithFormat:@"http://maps.apple.com/?saddr=%f,%f&daddr=%f,%f", userLocation.coordinate.latitude, userLocation.coordinate.longitude, numberLatitude.floatValue, numberLongitude.floatValue];
-    NSURL *urlNavigation = [NSURL URLWithString:stringNavigation];
-    
-    [[UIApplication sharedApplication] openURL:urlNavigation];
+    self.navigationMode = YES;
+    [[MDKManagerPosition sharedManager] setDelegate:self];
+    [[MDKManagerPosition sharedManager] searchCurrentLocation];
 }
 
 - (IBAction)userDidTapOnLocationButton:(id)sender {
@@ -214,6 +220,7 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
         return;
     }
     
+    self.navigationMode = NO;
     [self startLocationButtonAnimation];
     [[MDKManagerPosition sharedManager] setDelegate:self];
     [[MDKManagerPosition sharedManager] searchCurrentLocation];
@@ -235,10 +242,18 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 #pragma mark - MDKManagerPositionDelegate implementation
 
 - (void)locationUpdatedWithLongitude:(NSNumber *)longitude latitude:(NSNumber *)latitude {
-    self.textFieldLongitude.text = [longitude stringValue];
-    self.textFieldLatitude.text  = [latitude stringValue];
-        
-    [self stopLocationButtonAnimation];
+    if (self.navigationMode) {
+        NSNumber *numberLongitude = [NSNumber numberWithFloat:[self.dataLongitude floatValue]];
+        NSNumber *numberLatitude  = [NSNumber numberWithFloat:[self.dataLatitude floatValue]];
+        NSString *stringNavigation = [NSString stringWithFormat:@"http://maps.apple.com/?saddr=%f,%f&daddr=%f,%f", latitude.floatValue, longitude.floatValue, numberLatitude.floatValue, numberLongitude.floatValue];
+        NSURL *urlNavigation = [NSURL URLWithString:stringNavigation];
+        [[UIApplication sharedApplication] openURL:urlNavigation];
+    }
+    else {
+        self.textFieldLongitude.text = [longitude stringValue];
+        self.textFieldLatitude.text  = [latitude stringValue];
+        [self stopLocationButtonAnimation];
+    }
 }
 
 - (void)searchLocationFailed {

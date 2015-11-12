@@ -21,6 +21,7 @@
 #pragma mark - MDKManagerPosition - Completion Handler
 
 typedef void(^MDKManagerPositionCompletionHandler)(NSString *address, NSError *error);
+typedef void(^MDKManagerLocationCompletionHandler)(CLLocation *location, NSError *error);
 
 
 #pragma mark - MDKManagerPosition - Protocol
@@ -76,8 +77,8 @@ typedef void(^MDKManagerPositionCompletionHandler)(NSString *address, NSError *e
 - (void)searchCurrentLocation;
 
 /*!
- * @brief Retrieve address if current location has already detected
+ * @brief Retrieve address with latitude and longitude
  */
-- (void)searchAddressAccordingCurrentLocationWithCompletionHandler:(MDKManagerPositionCompletionHandler)completionHandler;
+- (void)searchAddressAccordingLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude completionHandler:(MDKManagerPositionCompletionHandler)completionHandler;
 
 @end

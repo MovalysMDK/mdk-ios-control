@@ -82,10 +82,7 @@ NSInteger const TAG_MFNUMBERPICKER_CONFIRMBUTTON              = 13510;
 NSInteger const TAG_MFNUMBERPICKER_CANCELBUTTON               = 13515;
 
 // /MFUI/control/photo
-NSInteger const TAG_MFPHOTOTHUMBNAIL_PHOTOVIEW                = 14000;
-NSInteger const TAG_MFPHOTOTHUMBNAIL_DATE                     = 14005;
-NSInteger const TAG_MFPHOTOTHUMBNAIL_TITRE                    = 14010;
-NSInteger const TAG_MFPHOTOTHUMBNAIL_DESCRIPTION              = 14015;
+NSInteger const TAG_MDKMEDIA_PICTURE_BUTTON                   = 14000;
 
 // /MFUI/control/processing
 
@@ -128,5 +125,5 @@ NSInteger const TAG_MFTEXTVIEW_TEXTVIEW                       = 20000;
 // /MFUI/control/tooltip
 
 // /MFUI/control/webview
-NSInteger const TAG_MFWEBVIEW_WEBVIEW                         = 20500;
-NSInteger const TAG_MFWEBVIEW_SPINNER                         = 20505;
+NSInteger const TAG_MDKWEBVIEW_WEBVIEW                         = 20500;
+NSInteger const TAG_MDKWEBVIEW_SPINNER                         = 20505;
