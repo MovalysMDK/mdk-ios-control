@@ -18,11 +18,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="View" customClass="MDKUIInternalPosition">
-            <rect key="frame" x="0.0" y="0.0" width="529" height="154"/>
+            <rect key="frame" x="0.0" y="0.0" width="587" height="201"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a37-em-gEI" userLabel="longitude">
-                    <rect key="frame" x="8" y="61" width="513" height="30"/>
+                    <rect key="frame" x="8" y="61" width="571" height="30"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="5d8-xv-2WJ"/>
@@ -34,7 +34,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iz-uZ-msd" userLabel="latitude">
-                    <rect key="frame" x="8" y="99" width="513" height="30"/>
+                    <rect key="frame" x="8" y="99" width="571" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
@@ -43,7 +43,7 @@
                     </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DH-Tt-2b4" userLabel="navigation">
-                    <rect key="frame" x="203" y="8" width="45" height="45"/>
+                    <rect key="frame" x="232" y="8" width="45" height="45"/>
                     <animations/>
                     <state key="normal" image="mdkuiposition_navigation_btn_enable.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,7 +54,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcP-ii-45F" userLabel="cancel">
-                    <rect key="frame" x="363" y="8" width="45" height="45"/>
+                    <rect key="frame" x="392" y="8" width="45" height="45"/>
                     <animations/>
                     <state key="normal" image="mdkuiposition_cancel_btn_enable.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,7 +65,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-Nw-QaC" userLabel="map">
-                    <rect key="frame" x="123" y="8" width="45" height="45"/>
+                    <rect key="frame" x="152" y="8" width="45" height="45"/>
                     <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="SQa-nf-4bC"/>
@@ -80,7 +80,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-Sa-EZT" userLabel="location not founded">
-                    <rect key="frame" x="283" y="8" width="45" height="45"/>
+                    <rect key="frame" x="312" y="8" width="45" height="45"/>
                     <animations/>
                     <state key="normal" image="mdkuiposition_location_btn_notfound.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -90,8 +90,8 @@
                         <action selector="userDidTapOnLocationButton:" destination="-1" eventType="touchUpInside" id="Ijz-wY-Kpu"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-6R-7T8" userLabel="location founded">
-                    <rect key="frame" x="283" y="9" width="45" height="45"/>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-6R-7T8" userLabel="location founded">
+                    <rect key="frame" x="312" y="8" width="45" height="45"/>
                     <animations/>
                     <state key="normal" image="mdkuiposition_location_btn_founded.png">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -133,7 +133,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="303.5" y="157"/>
+            <point key="canvasLocation" x="332.5" y="180.5"/>
         </view>
     </objects>
     <resources>

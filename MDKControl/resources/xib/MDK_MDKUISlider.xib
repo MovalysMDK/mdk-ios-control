@@ -5,24 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDKUIExternalSlider">
-            <connections>
-                <outlet property="innerSlider" destination="38i-2N-7gW" id="gDc-jn-r2e"/>
-                <outlet property="innerSliderValueLabel" destination="eA1-cX-Coh" id="rz7-Gi-CFO"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDKUIExternalSlider"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MDKUIInternalSlider">
             <rect key="frame" x="0.0" y="0.0" width="719" height="107"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="45" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="38i-2N-7gW">
-                    <rect key="frame" x="6" y="39" width="626" height="31"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="O5d-o2-0Zm"/>
-                    </constraints>
-                </slider>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TOTO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eA1-cX-Coh">
                     <rect key="frame" x="638" y="43" width="45" height="21"/>
                     <animations/>
@@ -33,6 +21,13 @@
                     <color key="textColor" cyan="0.96645948670000004" magenta="0.0" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="45" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="38i-2N-7gW">
+                    <rect key="frame" x="6" y="39" width="626" height="31"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="O5d-o2-0Zm"/>
+                    </constraints>
+                </slider>
             </subviews>
             <animations/>
             <constraints>
@@ -46,22 +41,15 @@
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth_MDK">
-                    <integer key="value" value="4"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius_MDK">
-                    <integer key="value" value="7"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="color" keyPath="borderColor_MDK">
-                    <color key="value" red="0.80488708939999998" green="0.0" blue="0.02169921121" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
-                </userDefinedRuntimeAttribute>
-            </userDefinedRuntimeAttributes>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="H40-My-Juo"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="innerSlider" destination="38i-2N-7gW" id="9Df-cQ-fe2"/>
+                <outlet property="innerSliderValueLabel" destination="eA1-cX-Coh" id="6yb-yP-o60"/>
+            </connections>
             <point key="canvasLocation" x="502.5" y="131.5"/>
         </view>
     </objects>

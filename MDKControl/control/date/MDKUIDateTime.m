@@ -81,6 +81,7 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
 
 -(void)setData:(id)data {
     [super setData:data];
+    [self setDisplayComponentValue:data];
 }
 
 -(id)getData {
@@ -113,9 +114,6 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
         [self.dateButton setTag:TAG_MFDATEPICKER_DATEBUTTON];
     }
 }
-
-
-
 
 #pragma mark - Control changes
 -(void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
