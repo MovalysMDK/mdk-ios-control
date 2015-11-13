@@ -276,6 +276,8 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 
 #pragma mark - Custom methods
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
 - (void)displayData {
     NSString *sEnumClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:self.currentDataClassName];
     Class cHelper                  = NSClassFromString(sEnumClassHelperName);
@@ -288,6 +290,7 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
         });
     }
 }
+#pragma clang diagnostic pop
 
 - (void)updateDisplayFromLatitude:(NSString *)latitude longitude:(NSString *)longitude {
     self.dataLatitude  = latitude;
