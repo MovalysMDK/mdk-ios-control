@@ -18,6 +18,16 @@
 
 
 /******************************************************/
+/* CONSTANTES KEY                                     */
+/******************************************************/
+
+/*!
+ * @brief The key for MDKUIMedia allowing to add control attribute
+ */
+FOUNDATION_EXTERN NSString *const MDKUIMediaKey;
+
+
+/******************************************************/
 /* MAIN CONTROL                                       */
 /******************************************************/
 
