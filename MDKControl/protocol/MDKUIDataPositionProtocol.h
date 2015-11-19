@@ -14,21 +14,22 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Protocol_h
-#define MDKControl_Protocol_h
+#import <Foundation/Foundation.h>
 
-#import "MDKControlChangesProtocol.h"
-#import "MDKBackgroundViewProtocol.h"
-#import "MDKControlAssociatedLabelProtocol.h"
-#import "MDKControlAttributesProtocol.h"
-#import "MDKControlDataProtocol.h"
-#import "MDKControlErrorProtocol.h"
-#import "MDKControlPropertiesProtocol.h"
-#import "MDKControlValidationProtocol.h"
-#import "MDKControlCustomStyleProtocol.h"
-#import "MDKErrorViewProtocol.h"
-#import "MDKEnumHelperProtocol.h"
-#import "MDKUIFixedListDataProtocol.h"
-#import "MDKUIDataPositionProtocol.h"
+/*!
+ * @protocol MDKUIDataPositionProtocol
+ * @brief This protocol describes a MDK position data object
+ */
+@protocol MDKUIDataPositionProtocol <NSObject>
 
-#endif
+/*!
+ * @brief The latitude property
+ */
+@property (nonatomic, strong) NSString *latitude;
+
+/*!
+ * @brief The longitude property
+ */
+@property (nonatomic, strong) NSString *longitude;
+
+@end

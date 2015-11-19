@@ -17,15 +17,6 @@
 #import "MDKRenderableControl.h"
 
 
-/******************************************************/
-/* CONSTANTES KEY                                     */
-/******************************************************/
-
-/*!
- * @brief The key for MDKUIPosition allowing to add control attribute
- */
-FOUNDATION_EXTERN NSString *const MDKUIPositionKey;
-
 
 /******************************************************/
 /* MAIN CONTROL                                       */

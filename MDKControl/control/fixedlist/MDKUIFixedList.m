@@ -52,7 +52,6 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 }
 
 
-
 #pragma mark - Control Data protocol
 +(NSString *)getDataType {
     return @"NSArray";
@@ -80,22 +79,26 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
     [super setControlAttributes:controlAttributes];
-    [self.tableDelegate refreshEditionProperties];
+//    [self.tableDelegate refreshEditionProperties];
 }
 
 -(id<MDKUIFixedListDataProtocol>) fixedListDelegate {
     if(!_privateFixedListDataDelegate) {
         if(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) {
-            _privateFixedListDataDelegate = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] init];
+            id object = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] initWithFixedList:self];
+            if([object isKindOfClass:NSClassFromString(@"MFFixedListDataDelegate")]) {
+                self.tableDelegate = object;
+            }
+            else {
+                _privateFixedListDataDelegate = object;
+            }
         }
         else {
-            _privateFixedListDataDelegate = self.baseFixedListDelegate;
+            return self.baseFixedListDelegate;
         }
     }
     return _privateFixedListDataDelegate;
 }
-
-
 
 @end
 

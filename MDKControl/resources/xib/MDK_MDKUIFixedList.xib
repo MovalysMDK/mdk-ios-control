@@ -5,12 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDKUIExternalFixedList">
-            <connections>
-                <outlet property="addButton" destination="y82-mS-80r" id="6Au-kP-cAH"/>
-                <outlet property="tableView" destination="YIs-zc-VrG" id="YHh-vr-htv"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDKUIExternalFixedList"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MDKUIInternalFixedList">
             <rect key="frame" x="0.0" y="0.0" width="676" height="405"/>
@@ -45,7 +40,11 @@
                 <constraint firstItem="y82-mS-80r" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="dQn-zr-fK9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="732" y="436.5"/>
+            <connections>
+                <outlet property="addButton" destination="y82-mS-80r" id="P6U-t4-DTv"/>
+                <outlet property="tableView" destination="YIs-zc-VrG" id="bGa-tg-bib"/>
+            </connections>
+            <point key="canvasLocation" x="470" y="258.5"/>
         </view>
     </objects>
     <resources>

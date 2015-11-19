@@ -77,7 +77,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 @synthesize editable = _editable;
 @synthesize styleClass = _styleClass;
 @synthesize tooltipView = _tooltipView;
-
+@synthesize controlAttributes = _controlAttributes;
 
 /******************************************************/
 /* INITITALISATION                                    */
@@ -616,5 +616,24 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     //    [self.externalView setData:self.externalView.privateData];
     [self.internalView setData:self.internalView.controlData];
 }
+
+
+#pragma mark - FOWARDING
+-(void)setControlAttributes:(NSDictionary *)controlAttributes {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        [self.internalView setControlAttributes:controlAttributes];
+    }
+    else {
+        _controlAttributes = controlAttributes;
+    }
+}
+
+-(NSDictionary *)controlAttributes {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        return [self.internalView controlAttributes];
+    }
+    else {
+        return _controlAttributes;
+    }}
 
 @end
