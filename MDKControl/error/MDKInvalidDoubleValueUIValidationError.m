@@ -18,7 +18,7 @@
 
 @implementation MDKInvalidDoubleValueUIValidationError
 
-NSInteger const INVALID_DOUBLE_VALUE_UI_VALIDATION_ERROR_CODE = 10004;
+NSInteger const INVALID_DOUBLE_VALUE_UI_VALIDATION_ERROR_CODE = 1002;
 
 NSString *const INVALID_DOUBLE_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_invalid_double";
 

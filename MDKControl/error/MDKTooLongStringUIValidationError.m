@@ -20,7 +20,7 @@
 @implementation MDKTooLongStringUIValidationError
 @synthesize localizedFieldName;
 
-NSInteger const TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE = 10000;
+NSInteger const TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE = 3000;
 
 NSString *const TOO_LONG_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_too_long_value";
 

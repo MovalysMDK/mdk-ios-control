@@ -19,7 +19,7 @@
 
 @implementation MDKInvalidEmailValueUIValidationError
 
-NSInteger const INVALID_EMAIL_VALUE_UI_VALIDATION_ERROR_CODE = 10004;
+NSInteger const INVALID_EMAIL_VALUE_UI_VALIDATION_ERROR_CODE = 1004;
 
 NSString *const INVALID_EMAIL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_invalid_email_address";
 
