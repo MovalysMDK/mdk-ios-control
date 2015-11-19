@@ -66,9 +66,21 @@
 /*!
  * @brief Designated initializer.
  * @param code Error unique code.
+ * @param descriptionKey complete sentence which describes why the operation failed. In many cases this will be just
+ * the "because" part of the error message (but as a complete sentence, which makes localization easier).
+ * @param object An object to pass in the error
+ * @return The new built instance on MDKValidationError
+ */
+- (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
+localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName withObject:(id)object;
+
+/*!
+ * @brief Designated initializer.
+ * @param code Error unique code.
  * @param dict May be nil if no userInfo desired.
  * @return The new built instance on MDKValidationError
  */
 + (id)errorWithCode:(NSInteger)code userInfo:(NSDictionary *)dict localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *) technicalFieldName;
+
 
 @end

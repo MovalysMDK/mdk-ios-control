@@ -21,14 +21,15 @@
 
 NSInteger const TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE = 10001;
 
-NSString *const TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKTooShortStringUIValidationError";
+NSString *const TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_too_short_value";
 
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object
 {
     self = [super initWithCode:TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE
        localizedDescriptionKey:TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
             localizedFieldName:fieldName
-            technicalFieldName:technicalFieldName];
+            technicalFieldName:technicalFieldName
+                    withObject:object];
     return self;
 }
 

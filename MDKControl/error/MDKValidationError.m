@@ -57,7 +57,7 @@ technicalFieldName:(NSString *)technicalFieldName
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFailureReasonErrorKey:(NSString *) failureReasonKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName
 {
-    self = [super initWithDomain:fieldName code:code userInfo:nil];
+    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_errors", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"")}];
     if(self)
     {
         self.localizedFieldName = fieldName;
@@ -76,7 +76,29 @@ localizedFailureReasonErrorKey:(NSString *) failureReasonKey localizedFieldName:
  */
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName{
-    self = [super initWithDomain:fieldName code:code userInfo:nil];
+    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_errors", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"")}];
+    if(self)
+    {
+        self.localizedFieldName = fieldName;
+        self.technicalFieldName = technicalFieldName;
+        NSLog(@"Error domain : %@ - code : %ld - localizedFieldName : %@ - technicalFieldName : %@", descriptionKey, (long)self.code, self.localizedFieldName, self.technicalFieldName);
+    }
+    return self;
+}
+
+/*!
+ * Designated initializer.
+ * @param code Error unique code.
+ * @param descriptionKey complete sentence which describes why the operation failed.
+ * In many cases this will be just the "because" part of the error message (but as a complete sentence,
+ * which makes localization easier).
+ */
+- (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
+localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName withObject:(id)object {
+    NSString *errorFormat= NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_errors", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"");
+    NSString *errorContent = [NSString stringWithFormat:errorFormat, object];
+                                                              
+    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :errorContent}];
     if(self)
     {
         self.localizedFieldName = fieldName;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03B4E2237012DAEEEC0529F5 /* libPods-MDKControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E4040AFDF1A54801A50B45 /* libPods-MDKControl.a */; };
 		B00C4DF01BA06B4C003CBB16 /* MDKCreateEmailViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4DEC1BA06B4C003CBB16 /* MDKCreateEmailViewController.h */; };
 		B00C4DF11BA06B4C003CBB16 /* MDKCreateEmailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00C4DED1BA06B4C003CBB16 /* MDKCreateEmailViewController.m */; };
 		B00C4DF21BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4DEE1BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h */; };
@@ -216,6 +217,7 @@
 		B0C6BABA1BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BAB91BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib */; };
 		B0C6BABC1BA1DBF60087C4D3 /* Framework-components.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BABB1BA1DBF60087C4D3 /* Framework-components.plist */; };
 		B0CEFF611BF4E246007AEBB4 /* MDKUIDataPositionProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B0CEFF601BF4E246007AEBB4 /* MDKUIDataPositionProtocol.h */; };
+		B0F531FD1BFE3EA700482B2E /* mdk_errors.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0F531FA1BFE3EA700482B2E /* mdk_errors.strings */; };
 		B0FFB6A91BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6A41BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.h */; };
 		B0FFB6AA1BA1CB5F00258B9D /* MDKUISlider+UISliderForwarding.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFB6A51BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.m */; };
 		B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6A61BA1CB5E00258B9D /* MDKUISlider.h */; };
@@ -526,6 +528,8 @@
 		B0C6BAB91BA1D9CB0087C4D3 /* MDK_MDKUISlider.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUISlider.xib; sourceTree = "<group>"; };
 		B0C6BABB1BA1DBF60087C4D3 /* Framework-components.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Framework-components.plist"; sourceTree = "<group>"; };
 		B0CEFF601BF4E246007AEBB4 /* MDKUIDataPositionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIDataPositionProtocol.h; sourceTree = "<group>"; };
+		B0F531FB1BFE3EA700482B2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/mdk_errors.strings; sourceTree = "<group>"; };
+		B0F531FC1BFE3EA700482B2E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/mdk_errors.strings; sourceTree = "<group>"; };
 		B0FFB6A41BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDKUISlider+UISliderForwarding.h"; sourceTree = "<group>"; };
 		B0FFB6A51BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MDKUISlider+UISliderForwarding.m"; sourceTree = "<group>"; };
 		B0FFB6A61BA1CB5E00258B9D /* MDKUISlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUISlider.h; sourceTree = "<group>"; };
@@ -603,6 +607,7 @@
 			files = (
 				B05C93691B9F3C3E00487CFB /* MessageUI.framework in Frameworks */,
 				B0FFDA901B33FBB800CA6E5E /* UIKit.framework in Frameworks */,
+				03B4E2237012DAEEEC0529F5 /* libPods-MDKControl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1032,6 +1037,7 @@
 		B0C6BA931BA1D9830087C4D3 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				B0F531F91BFE3EA700482B2E /* strings */,
 				B0C6BA941BA1D9830087C4D3 /* config */,
 				B0C6BA961BA1D9830087C4D3 /* images */,
 				B0C6BAA61BA1D9830087C4D3 /* xib */,
@@ -1115,6 +1121,14 @@
 				F9E3B0091BF1F2F70042CFD4 /* MDK_MDKUIWebView.xib */,
 			);
 			path = xib;
+			sourceTree = "<group>";
+		};
+		B0F531F91BFE3EA700482B2E /* strings */ = {
+			isa = PBXGroup;
+			children = (
+				B0F531FA1BFE3EA700482B2E /* mdk_errors.strings */,
+			);
+			path = strings;
 			sourceTree = "<group>";
 		};
 		B0FFB6A31BA1CB5E00258B9D /* slider */ = {
@@ -1574,6 +1588,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				fr,
 			);
 			mainGroup = B0FFDA5C1B33FAFB00CA6E5E;
 			productRefGroup = B0FFDA671B33FAFB00CA6E5E /* Products */;
@@ -1621,6 +1636,7 @@
 				F965F9301BE7BF070060A93D /* MDK_MDKUIEnumImage.xib in Resources */,
 				F98D77E61BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@3x.png in Resources */,
 				F924E8E41BEA70F9006119EF /* mdkuiposition_location_btn_notfound@3x.png in Resources */,
+				B0F531FD1BFE3EA700482B2E /* mdk_errors.strings in Resources */,
 				B0C6BABC1BA1DBF60087C4D3 /* Framework-components.plist in Resources */,
 				F98D77E51BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@2x.png in Resources */,
 				B03AD47E1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib in Resources */,
@@ -1802,6 +1818,18 @@
 			targetProxy = B0FFDA731B33FAFB00CA6E5E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B0F531FA1BFE3EA700482B2E /* mdk_errors.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F531FB1BFE3EA700482B2E /* en */,
+				B0F531FC1BFE3EA700482B2E /* fr */,
+			);
+			name = mdk_errors.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B0FFDA7A1B33FAFB00CA6E5E /* Debug */ = {

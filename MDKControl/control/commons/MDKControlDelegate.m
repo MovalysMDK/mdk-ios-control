@@ -93,6 +93,7 @@
             }
             errorNumber++;
             errorText= [errorText stringByAppendingString: [error localizedDescription]];
+        
         }
         //Passage de la vue au premier plan
         UIView *controllerView = [self.control parentViewController].view;

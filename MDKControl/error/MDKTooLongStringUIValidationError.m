@@ -22,15 +22,18 @@
 
 NSInteger const TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE = 10000;
 
-NSString *const TOO_LONG_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKTooLongStringUIValidationError";
+NSString *const TOO_LONG_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_too_long_value";
 
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object
 {
     self = [super initWithCode:TOO_LONG_STRING_UI_VALIDATION_ERROR_CODE
        localizedDescriptionKey:TOO_LONG_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
             localizedFieldName:fieldName
-            technicalFieldName:technicalFieldName];
+            technicalFieldName:technicalFieldName
+            withObject:object];
     return self;
 }
+
+
 
 @end
