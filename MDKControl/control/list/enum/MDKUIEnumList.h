@@ -22,9 +22,9 @@
 /******************************************************/
 
 /*!
- * @brief The key for MDKUIMedia allowing to add control attribute
+ * @brief The key for MDKUIEnumListKey allowing to add control attributes
  */
-FOUNDATION_EXTERN NSString *const MDKUIMediaKey;
+FOUNDATION_EXTERN NSString *const MDKUIEnumListKey;
 
 
 /******************************************************/
@@ -32,17 +32,16 @@ FOUNDATION_EXTERN NSString *const MDKUIMediaKey;
 /******************************************************/
 
 IB_DESIGNABLE
-@interface MDKUIMedia : MDKRenderableControl <MDKControlChangesProtocol>
+@interface MDKUIEnumList : MDKRenderableControl <MDKControlChangesProtocol>
 
 #pragma mark - Properties
 
 /*!
- * @brief This button allow to take a picture
+ * @brief button action
  */
-@property (nonatomic, weak) IBOutlet UIButton *buttonPicture;
+@property (nonatomic, weak) IBOutlet UIButton *button;
 
 @end
-
 
 
 /******************************************************/
@@ -50,8 +49,7 @@ IB_DESIGNABLE
 /******************************************************/
 
 IB_DESIGNABLE
-@interface MDKUIInternalMedia : MDKUIMedia <MDKInternalComponent>
-
+@interface MDKUIInternalEnumList : MDKUIEnumList <MDKInternalComponent>
 @end
 
 
@@ -60,7 +58,7 @@ IB_DESIGNABLE
 /******************************************************/
 
 IB_DESIGNABLE
-@interface MDKUIExternalMedia : MDKUIMedia <MDKExternalComponent>
+@interface MDKUIExternalEnumList : MDKUIEnumList <MDKExternalComponent>
 
 /*!
  * @brief custom XIB name

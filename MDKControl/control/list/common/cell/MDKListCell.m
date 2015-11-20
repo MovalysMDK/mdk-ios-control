@@ -14,20 +14,23 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
+#import "MDKListCell.h"
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
-#import "ControlDateTime.h"
-#import "ControlFixedList.h"
-#import "ControlEnumImage.h"
-#import "ControlPosition.h"
-#import "ControlMedia.h"
-#import "ControlWebView.h"
-#import "ControlList.h"
 
-#endif
+NSString *const MDKListCellIdentifier = @"MDKListCell";
+
+
+@interface MDKListCell()
+
+@property (nonatomic, weak) IBOutlet UILabel *labelEnum;
+
+@end
+
+
+@implementation MDKListCell
+
+- (void)updateCellWithText:(NSString *)text {
+    self.labelEnum.text = text;
+}
+
+@end

@@ -263,6 +263,7 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 
 #pragma mark - Custom methods
 
+
 - (void)startLocationButtonAnimation {
     self.animationForLocationButton                = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
     self.animationForLocationButton.delegate       = self;
