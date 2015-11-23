@@ -76,6 +76,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 #pragma mark - Synthesize
 @synthesize editable = _editable;
 @synthesize styleClass = _styleClass;
+@synthesize controlData = _controlData;
 @synthesize tooltipView = _tooltipView;
 @synthesize controlAttributes = _controlAttributes;
 
@@ -634,6 +635,14 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     }
     else {
         return _controlAttributes;
-    }}
+    }
+}
+
+-(id)controlData {
+    if([self conformsToProtocol:@protocol(MDKInternalComponent)]) {
+        return (id<MDKInternalComponent>)self.externalView.controlData;
+    }
+    return _controlData;
+}
 
 @end

@@ -27,7 +27,6 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 
 @interface MDKUIFixedList ()
 
-@property (nonatomic, strong) NSMutableArray *source;
 @property (nonatomic, strong) MDKUIFixedListTableViewDelegate *tableDelegate;
 @property (nonatomic, strong) id<MDKUIFixedListDataProtocol> privateFixedListDataDelegate;
 @property (nonatomic, strong) id<MDKUIFixedListDataProtocol> baseFixedListDelegate;
@@ -59,7 +58,6 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 
 -(void)setData:(id)data {
     if(data) {
-        self.source = [data mutableCopy];
         [self setDisplayComponentValue:(NSArray *)data];
     }
     [super setData:data];
@@ -70,7 +68,7 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 }
 
 -(id)displayComponentValue {
-    return self.source;
+    return self.controlData;
 }
 
 -(void)setDisplayComponentValue:(id)value {
@@ -79,19 +77,14 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
     [super setControlAttributes:controlAttributes];
-//    [self.tableDelegate refreshEditionProperties];
+    [self.tableDelegate refreshEditionProperties];
 }
 
 -(id<MDKUIFixedListDataProtocol>) fixedListDelegate {
     if(!_privateFixedListDataDelegate) {
         if(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) {
-            id object = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] initWithFixedList:self];
-            if([object isKindOfClass:NSClassFromString(@"MFFixedListDataDelegate")]) {
-                self.tableDelegate = object;
-            }
-            else {
-                _privateFixedListDataDelegate = object;
-            }
+            id object = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] init];
+            _privateFixedListDataDelegate = object;
         }
         else {
             return self.baseFixedListDelegate;
