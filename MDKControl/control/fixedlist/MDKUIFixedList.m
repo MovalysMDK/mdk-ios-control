@@ -83,7 +83,7 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 -(id<MDKUIFixedListDataProtocol>) fixedListDelegate {
     if(!_privateFixedListDataDelegate) {
         if(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) {
-            id object = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] init];
+            id object = [[NSClassFromString(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) alloc] initWithFixedList:self];
             _privateFixedListDataDelegate = object;
         }
         else {

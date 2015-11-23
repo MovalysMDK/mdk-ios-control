@@ -645,4 +645,11 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     return _controlData;
 }
 
+-(void)setControlData:(id)controlData {
+    if([self conformsToProtocol:@protocol(MDKInternalComponent)]) {
+        [((MDKRenderableControl *)self.externalView) setControlData:controlData];
+    }
+    _controlData = controlData;
+}
+
 @end

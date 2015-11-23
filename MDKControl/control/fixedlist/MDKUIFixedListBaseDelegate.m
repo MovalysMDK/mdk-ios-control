@@ -16,7 +16,21 @@
 
 #import "MDKUIFixedListBaseDelegate.h"
 
+@interface MDKUIFixedListBaseDelegate ()
+
+@property (nonatomic, strong) MDKUIFixedList *fixedList;
+
+@end
+
 @implementation MDKUIFixedListBaseDelegate
+
+-(instancetype)initWithFixedList:(MDKUIFixedList *)fixedList {
+    self = [super init];
+    if(self) {
+        self.fixedList = fixedList;        
+    }
+    return self;
+}
 
 -(NSInteger)fixedList:(MDKUIFixedList *)fixedList numberOfRows:(NSInteger)totalNumberOfRows {
     return totalNumberOfRows;

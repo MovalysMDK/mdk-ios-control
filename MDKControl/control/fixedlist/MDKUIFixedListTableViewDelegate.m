@@ -154,4 +154,6 @@
     [[self.fixedList fixedListDelegate] fixedList:self.fixedList didSelectRowAtIndexPath:indexPath withObject:[self.fixedList getData][indexPath.row]];
     
 }
+
+
 @end

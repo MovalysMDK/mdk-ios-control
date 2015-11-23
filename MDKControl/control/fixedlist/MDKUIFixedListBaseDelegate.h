@@ -25,5 +25,6 @@
  */
 @interface MDKUIFixedListBaseDelegate : NSObject <MDKUIFixedListDataProtocol>
 
+-(instancetype)initWithFixedList:(MDKUIFixedList *)fixedList;
 
 @end
