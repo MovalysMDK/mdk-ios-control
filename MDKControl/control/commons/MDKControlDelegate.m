@@ -209,6 +209,7 @@
                 validatorParameters[recognizedAttribute] = self.control.controlAttributes[recognizedAttribute];
             }
         }
+    
         
         //On ajoute le nom du composant
         validatorParameters[@"componentName"] = NSStringFromClass([self.control class]);

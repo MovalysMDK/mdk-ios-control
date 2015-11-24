@@ -143,10 +143,14 @@
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if(editingStyle == UITableViewCellEditingStyleDelete) {
+        id object = [self.fixedList getData][indexPath.row];
+        [[self.fixedList fixedListDelegate] fixedList:self.fixedList willDeleteRowAtIndexPath:indexPath withObject:object];
         NSMutableArray *mutableData = [[self.fixedList getData] mutableCopy];
         [mutableData removeObjectAtIndex:indexPath.row];
-        [self.fixedList setData:mutableData];
+        [self.fixedList setControlData:mutableData];
+        [[self.fixedList fixedListDelegate] fixedList:self.fixedList didDeleteRowAtIndexPath:indexPath withObject:object];
     }
+    [tableView reloadData];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

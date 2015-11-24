@@ -48,12 +48,21 @@
     return nil;
 }
 
--(void)addItemOnFixedList:(id)sender {
+-(id)addItemOnFixedList:(id)sender {
     NSLog(@"The method 'addItemOnFixedList' should be implemented in the user project. This one does nothing by default.");
+    return nil;
 }
 
 -(void)fixedList:(MDKUIFixedList *)fixedList didSelectRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
     //Default does nothing
+}
+
+-(void)fixedList:(MDKUIFixedList *)fixedList didDeleteRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
+    //Default does nothing
+}
+
+-(void)fixedList:(MDKUIFixedList *)fixedList willDeleteRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object {
+    //Default does notinhg
 }
 
 @end

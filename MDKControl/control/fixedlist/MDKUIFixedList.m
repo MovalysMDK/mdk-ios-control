@@ -19,6 +19,7 @@
 #import "MDKUIFixedListBaseDelegate.h"
 
 
+
 NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY = @"dataDelegate";
 NSString *const FIXEDLIST_PARAMETER_CAN_MOVE_KEY = @"canMove";
 NSString *const FIXEDLIST_PARAMETER_CAN_DELETE_KEY = @"canDelete";
@@ -35,6 +36,7 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 
 
 @implementation MDKUIFixedList
+@synthesize targetDescriptors = _targetDescriptors;
 
 #pragma mark - Initialization and deallocation
 
@@ -47,8 +49,11 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
     self.tableDelegate = [[MDKUIFixedListTableViewDelegate alloc] initWithFixedList:self];
     self.tableView.delegate = self.tableDelegate;
     self.tableView.dataSource = self.tableDelegate;
+    self.tableView.scrollEnabled = NO;
+
     [self.addButton addTarget:self.privateFixedListDataDelegate action:@selector(addItemOnFixedList:) forControlEvents:UIControlEventTouchUpInside];
 }
+
 
 
 #pragma mark - Control Data protocol
@@ -57,10 +62,12 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 }
 
 -(void)setData:(id)data {
+    [super setData:data];
+    
+    //Must be executed after super setData to adapt the tableView size to the current data
     if(data) {
         [self setDisplayComponentValue:(NSArray *)data];
     }
-    [super setData:data];
 }
 
 -(id)getData {
@@ -73,6 +80,9 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 
 -(void)setDisplayComponentValue:(id)value {
     [self.tableView reloadData];
+    if([[self fixedListDelegate] respondsToSelector:@selector(computeCellHeightAndDispatchToFormController)]) {
+        [[self fixedListDelegate] performSelector:@selector(computeCellHeightAndDispatchToFormController)];
+    }
 }
 
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
@@ -92,6 +102,27 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
     }
     return _privateFixedListDataDelegate;
 }
+
+
+
+#pragma mark - Control changes
+-(void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
+    MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
+    commonCCTD.target = target;
+    commonCCTD.action = action;
+    self.targetDescriptors = @{@(self.tableView.hash) : commonCCTD};
+}
+
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+-(void) valueChanged:(UIView *)sender {
+    MDKControlEventsDescriptor *cctd = self.targetDescriptors[@(sender.hash)];
+    [cctd.target performSelector:cctd.action withObject:self];
+}
+#pragma clang diagnostic pop
+
 
 @end
 
