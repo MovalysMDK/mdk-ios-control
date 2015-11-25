@@ -27,6 +27,8 @@
 @property (nonatomic) BOOL canDelete;
 @property (nonatomic) BOOL canSelect;
 
+@property (nonatomic) BOOL hasRegisterNib;
+
 @end
 
 @implementation MDKUIFixedListTableViewDelegate
@@ -36,16 +38,22 @@
 -(instancetype)initWithFixedList:(MDKUIFixedList *)fixedList {
     self = [super init];
     if(self) {
+        
+        //Intiailization
         self.fixedList = fixedList;
         self.cellHeight = CGFLOAT_MIN;
+        self.hasRegisterNib = NO;
         [[self.fixedList tableView] setEditing:YES animated:YES];
-        
     }
     return self;
 }
 
 
 #pragma mark - Custom Methods
+
+/**
+ * @brief This method is used to refresh the edition properties of the tableView in the FixedList.
+ */
 -(void)refreshEditionProperties {
     [self.fixedList.tableView beginUpdates];
     self.canMove = [self.fixedList.controlAttributes[FIXEDLIST_PARAMETER_CAN_MOVE_KEY] isEqualToNumber:@1];
@@ -55,10 +63,22 @@
     [self.fixedList.tableView endUpdates];
 }
 
+/**
+ * @brief Register the nib used to re-use cells if not already done
+ */
+-(void) registerNibWithCellIdentifier:(NSString *)cellIdentifier {
+    
+    //If a register hasn't already done, do it.
+    if(cellIdentifier && !self.hasRegisterNib) {
+        [self.fixedList.tableView registerNib:[UINib nibWithNibName:cellIdentifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellIdentifier];
+        self.hasRegisterNib = YES;
+    }
+}
 
 #pragma mark - TableView DataSource & Delegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    [self registerNibWithCellIdentifier:[[self.fixedList fixedListDelegate] xibNameForFixedListCells]];
     return 1;
 }
 
@@ -89,18 +109,26 @@
     UITableViewCell *cell = nil;
     id object = [self.fixedList getData][indexPath.row];
     
-    //No re-use in fixedList
+    //Get a cell : if a delegate specifies a custom XIB, use it, otherwhise use a default cell
     if([[self.fixedList fixedListDelegate] xibNameForFixedListCells]) {
-        cell = [[[NSBundle bundleForClass:NSClassFromString(@"AppDelegate")]
-                 loadNibNamed:[[self.fixedList fixedListDelegate] xibNameForFixedListCells]
-                 owner:self
-                 options:nil] firstObject];
+        //Try to dequeue a reusable cell
+        cell = [tableView dequeueReusableCellWithIdentifier:[[self.fixedList fixedListDelegate] xibNameForFixedListCells]];
+        if(!cell) {
+            cell = [[[NSBundle bundleForClass:NSClassFromString(@"AppDelegate")]
+                     loadNibNamed:[[self.fixedList fixedListDelegate] xibNameForFixedListCells]
+                     owner:self
+                     options:nil] firstObject];
+        }
     }
     else {
         cell =  [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     }
+    
+    //map the cell to the data for the given indexPath
     [[self.fixedList fixedListDelegate] fixedList:self.fixedList mapCell:cell withObject:object atIndexPath:indexPath];
     cell.showsReorderControl = YES;
+    
+    //Selection state of the current cell
     if(self.canSelect) {
         cell.selectionStyle = UITableViewCellSelectionStyleDefault;
     }

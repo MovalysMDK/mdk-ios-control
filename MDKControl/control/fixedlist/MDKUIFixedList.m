@@ -32,6 +32,7 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 @property (nonatomic, strong) id<MDKUIFixedListDataProtocol> privateFixedListDataDelegate;
 @property (nonatomic, strong) id<MDKUIFixedListDataProtocol> baseFixedListDelegate;
 
+- (IBAction)defaultAddItemAction:(id)sender;
 @end
 
 
@@ -124,6 +125,9 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 #pragma clang diagnostic pop
 
 
+- (IBAction)defaultAddItemAction:(id)sender {
+    [self.fixedListDelegate addItemOnFixedList:self.addButton];
+}
 @end
 
 
