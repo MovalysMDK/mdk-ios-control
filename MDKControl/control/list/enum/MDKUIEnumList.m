@@ -15,7 +15,7 @@
  */
 
 #import "MDKUIEnumList.h"
-#import "MDKDelegateList.h"
+#import "MDKDelegateEnumList.h"
 #import "MDKUIList.h"
 #import "Helper.h"
 
@@ -30,7 +30,7 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
 
 #pragma mark - MDKUIEnumList - Private interface
 
-@interface MDKUIEnumList() <MDKUIListDelegate>
+@interface MDKUIEnumList() <MDKUIEnumListProtocol>
 
 /*!
  * @brief The private current data allow to know if the update is necessary
@@ -41,6 +41,10 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
  * @brief This variable allow to know the current enum class name
  */
 @property (nonatomic, strong) NSString *currentEnumClassName;
+
+
+@property (nonatomic, strong) MDKDelegateEnumList *delegate;
+@property (nonatomic, strong) MDKUIList *uiList;
 
 @end
 
@@ -125,32 +129,36 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
 #pragma mark - Handle user event
 
 - (IBAction)userDidTapOnEnumButton:(id)sender {
+    // Perform delegate
+    self.delegate          = [[MDKDelegateEnumList alloc] initWithEnumClassName:self.currentEnumClassName];
+    self.delegate.protocol = self;
+    
     // Initialize: MDKUIList
-    MDKUIList *uiList = [[[NSBundle bundleForClass:[MDKUIList class]] loadNibNamed:MDKUIListIdentifier owner:self options:nil] firstObject];
-    [uiList initializeRowsWithEnumClassName:self.currentEnumClassName];
-    uiList.translatesAutoresizingMaskIntoConstraints = NO;
-    uiList.tableView.layer.cornerRadius = 10.0f;
-    uiList.delegate = self;
-    [self.parentNavigationController.view addSubview:uiList];
+    self.uiList = [[[NSBundle bundleForClass:[MDKUIList class]] loadNibNamed:MDKUIListIdentifier owner:nil options:nil] firstObject];
+    self.uiList.translatesAutoresizingMaskIntoConstraints = NO;
+    self.uiList.tableView.layer.cornerRadius = 10.0f;
+    self.uiList.tableView.delegate   = self.delegate;
+    self.uiList.tableView.dataSource = self.delegate;
+    [self.parentNavigationController.view addSubview:self.uiList];
     
     // Perform constraints
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:uiList attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
-    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:uiList attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeRight multiplier:1 constant:0];
-    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:uiList attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
-    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:uiList attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.uiList attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.uiList attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeRight multiplier:1 constant:0];
+    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.uiList attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
+    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.uiList attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
     [self.parentNavigationController.view addConstraints:@[right, left, bottom, top]];
     
     // Perform animation
-    CGRect finalFrame = uiList.tableView.frame;
-    CGRect startFrame = CGRectMake(finalFrame.origin.x, uiList.frame.size.height, finalFrame.size.width, finalFrame.size.height);
-    uiList.tableView.frame = startFrame;
+    CGRect finalFrame = self.uiList.tableView.frame;
+    CGRect startFrame = CGRectMake(finalFrame.origin.x, self.uiList.frame.size.height, finalFrame.size.width, finalFrame.size.height);
+    self.uiList.tableView.frame = startFrame;
     
     // Animation
     [UIView animateWithDuration:0.8f delay:0.0f usingSpringWithDamping:10.0f initialSpringVelocity:18.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        uiList.tableView.frame = finalFrame;
+        self.uiList.tableView.frame = finalFrame;
     } completion:^(BOOL finished) {
         if (finished) {
-            [uiList.tableView reloadData];
+            [self.uiList.tableView reloadData];
         }
     }];
 }
@@ -159,6 +167,7 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
 #pragma mark MDKUIListDelegate implementation
 
 - (void)userDidSelectCell:(NSString *)text {
+    [self.uiList dismiss];
     [self updateDisplayFromText:text];
 }
 

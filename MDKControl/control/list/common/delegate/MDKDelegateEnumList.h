@@ -14,29 +14,41 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+
 #import <UIKit/UIKit.h>
+@class MDKUIList;
 
 
 /******************************************************/
-/* CONSTANTES KEY                                     */
+/* PROTOCOLE                                          */
 /******************************************************/
 
-/*!
- * @brief The key for MDKUIListIdentifier allowing to name component identifier
- */
-FOUNDATION_EXTERN NSString *const MDKUIListIdentifier;
-
-
-@interface MDKUIList : UIView
+@protocol MDKUIEnumListProtocol <NSObject>
 
 /*!
- * @brief Table view for list all elements
+ * @brief Send notification if user did tap on cell
  */
-@property (nonatomic, strong) IBOutlet UITableView *tableView;
+- (void)userDidSelectCell:(NSString *)text;
+
+@end
+
+
+/******************************************************/
+/* MAIN CONTROL                                       */
+/******************************************************/
+
+@interface MDKDelegateEnumList : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 /*!
- * @brief Allow to dismiss this view
+ * @brief Initializes a new TableViewDelegate based on the given MDKUIList
+ * @param MDKUIList The list the TableView will be managed by this delegate
+ * @return A new instance of a TableViewDelegate
  */
-- (void) dismiss;
+- (instancetype)initWithEnumClassName:(NSString *)enumClassName;
+
+/*!
+ * @brief Delegate for MDKUIListDelegate protocol
+ */
+@property (nonatomic, weak) id<MDKUIEnumListProtocol> protocol;
 
 @end

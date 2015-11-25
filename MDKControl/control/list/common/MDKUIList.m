@@ -29,7 +29,7 @@ NSString *const MDKUIListIdentifier = @"MDK_MDKUIList";
 
 #pragma mark - MDKUIList - Private interface
 
-@interface MDKUIList() <UITableViewDataSource, UITableViewDelegate>
+@interface MDKUIList()
 
 // Model
 @property (nonatomic, strong) NSArray *rows;
@@ -44,17 +44,8 @@ NSString *const MDKUIListIdentifier = @"MDK_MDKUIList";
 
 #pragma mark Life cycle
 
-- (instancetype)initWithEnumClassName:(NSString *)enumClassName {
-    self = [super init];
-    if (self) {
-        [self initializeRowsWithEnumClassName:enumClassName];
-    }
-    return self;
-}
-
 - (void)awakeFromNib {
-    [self.tableView registerClass:[MDKListCell class] forCellReuseIdentifier:MDKListCellIdentifier];
-//    [self.tableView registerNib:[UINib nibWithNibName:MDKListCellIdentifier bundle:[NSBundle bundleForClass:NSClassFromString(@"MDKUIEnumList")]] forCellReuseIdentifier:MDKListCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:MDKListCellIdentifier bundle:[NSBundle bundleForClass:NSClassFromString(@"MDKListCell")]] forCellReuseIdentifier:MDKListCellIdentifier];
 }
 
 
@@ -65,31 +56,7 @@ NSString *const MDKUIListIdentifier = @"MDK_MDKUIList";
 }
 
 
-#pragma mark UITableViewDataSource implementation
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.rows.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MDKListCell *cell = [tableView dequeueReusableCellWithIdentifier:MDKListCellIdentifier];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    cell.textLabel.text = self.rows[indexPath.row];
-    return cell;
-}
-
-
-#pragma mark UITableViewDelegate implementation
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.delegate respondsToSelector:@selector(userDidSelectCell:)]) {
-        [self.delegate userDidSelectCell:self.rows[indexPath.row]];
-        [self dismiss];
-    }
-}
-
-
-#pragma mark Private methods
+#pragma mark Public API
 
 - (void) dismiss {
     // Perform animation
@@ -104,16 +71,5 @@ NSString *const MDKUIListIdentifier = @"MDK_MDKUIList";
         [self removeFromSuperview];
     }];
 }
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-- (void)initializeRowsWithEnumClassName:(NSString *)enumClassName {
-    NSString *sEnumClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:enumClassName];
-    Class cEnumHelper              = NSClassFromString(sEnumClassHelperName);
-    if ([cEnumHelper respondsToSelector:@selector(valuesToTexts)]) {
-        self.rows = [NSArray arrayWithArray:[cEnumHelper performSelector:@selector(valuesToTexts) withObject:nil]];
-    }
-}
-#pragma clang diagnostic pop
 
 @end
