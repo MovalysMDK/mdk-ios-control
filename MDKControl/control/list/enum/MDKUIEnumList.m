@@ -42,8 +42,14 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
  */
 @property (nonatomic, strong) NSString *currentEnumClassName;
 
-
+/*!
+ * @brief Delegate for enum list
+ */
 @property (nonatomic, strong) MDKDelegateEnumList *delegate;
+
+/*!
+ * @brief View allow to display the table view
+ */
 @property (nonatomic, strong) MDKUIList *uiList;
 
 @end
