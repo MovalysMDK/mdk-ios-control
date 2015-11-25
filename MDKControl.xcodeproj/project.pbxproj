@@ -281,6 +281,10 @@
 		F98D77FE1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77FA1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png */; };
 		F98D77FF1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77FB1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png */; };
 		F98D78001BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98D77FC1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png */; };
+		F994B58F1BFC7C9A0055C16C /* MDKUIPickerList.h in Headers */ = {isa = PBXBuildFile; fileRef = F994B58D1BFC7C9A0055C16C /* MDKUIPickerList.h */; };
+		F994B5901BFC7C9A0055C16C /* MDKUIPickerList.m in Sources */ = {isa = PBXBuildFile; fileRef = F994B58E1BFC7C9A0055C16C /* MDKUIPickerList.m */; };
+		F994B5921BFC7CF80055C16C /* ControlPickerList.h in Headers */ = {isa = PBXBuildFile; fileRef = F994B5911BFC7CF80055C16C /* ControlPickerList.h */; };
+		F9B6597D1C045E4800C1988B /* MDK_MDKUIPickerList.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B6597C1C045E4800C1988B /* MDK_MDKUIPickerList.xib */; };
 		F9D267351BFA180400B55A11 /* MDKUIList.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D267321BFA180400B55A11 /* MDKUIList.h */; };
 		F9D267361BFA180400B55A11 /* MDKUIList.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D267331BFA180400B55A11 /* MDKUIList.m */; };
 		F9D2673A1BFA181C00B55A11 /* MDKDelegateList.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D267381BFA181C00B55A11 /* MDKDelegateList.h */; };
@@ -608,6 +612,10 @@
 		F98D77FA1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_map_btn_disable@3x.png"; path = "position/map/mdkuiposition_map_btn_disable@3x.png"; sourceTree = "<group>"; };
 		F98D77FB1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_map_btn_enable@2x.png"; path = "position/map/mdkuiposition_map_btn_enable@2x.png"; sourceTree = "<group>"; };
 		F98D77FC1BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_map_btn_enable@3x.png"; path = "position/map/mdkuiposition_map_btn_enable@3x.png"; sourceTree = "<group>"; };
+		F994B58D1BFC7C9A0055C16C /* MDKUIPickerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIPickerList.h; path = list/picker/MDKUIPickerList.h; sourceTree = "<group>"; };
+		F994B58E1BFC7C9A0055C16C /* MDKUIPickerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIPickerList.m; path = list/picker/MDKUIPickerList.m; sourceTree = "<group>"; };
+		F994B5911BFC7CF80055C16C /* ControlPickerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlPickerList.h; path = list/picker/ControlPickerList.h; sourceTree = "<group>"; };
+		F9B6597C1C045E4800C1988B /* MDK_MDKUIPickerList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIPickerList.xib; sourceTree = "<group>"; };
 		F9D267321BFA180400B55A11 /* MDKUIList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIList.h; path = list/common/MDKUIList.h; sourceTree = "<group>"; };
 		F9D267331BFA180400B55A11 /* MDKUIList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIList.m; path = list/common/MDKUIList.m; sourceTree = "<group>"; };
 		F9D267381BFA181C00B55A11 /* MDKDelegateList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKDelegateList.h; path = list/common/delegate/MDKDelegateList.h; sourceTree = "<group>"; };
@@ -1141,6 +1149,7 @@
 				F919715E1BE8C61500B94F8A /* MDK_MDKUIPosition.xib */,
 				F95BF3C41BF09DDC002F2EE7 /* MDK_MDKUIMedia.xib */,
 				F9E3B0091BF1F2F70042CFD4 /* MDK_MDKUIWebView.xib */,
+				F9B6597C1C045E4800C1988B /* MDK_MDKUIPickerList.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -1344,6 +1353,7 @@
 			children = (
 				F9D267301BFA17E000B55A11 /* common */,
 				F97546E81BF4E06100B2E48B /* enum */,
+				F994B58C1BFC7C540055C16C /* picker */,
 				F97546E21BF4E05700B2E48B /* ControlList.h */,
 			);
 			name = list;
@@ -1411,6 +1421,16 @@
 			name = cancel;
 			sourceTree = "<group>";
 		};
+		F994B58C1BFC7C540055C16C /* picker */ = {
+			isa = PBXGroup;
+			children = (
+				F994B5911BFC7CF80055C16C /* ControlPickerList.h */,
+				F994B58D1BFC7C9A0055C16C /* MDKUIPickerList.h */,
+				F994B58E1BFC7C9A0055C16C /* MDKUIPickerList.m */,
+			);
+			name = picker;
+			sourceTree = "<group>";
+		};
 		F9D267301BFA17E000B55A11 /* common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1474,6 +1494,7 @@
 				B0FFB6A91BA1CB5E00258B9D /* MDKUISlider+UISliderForwarding.h in Headers */,
 				B02157BB1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.h in Headers */,
 				B018BE921BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h in Headers */,
+				F994B58F1BFC7C9A0055C16C /* MDKUIPickerList.h in Headers */,
 				B08C18F21B9DD1AC00D6F93A /* MDKConstants.h in Headers */,
 				B018BE971BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.h in Headers */,
 				B05C93631B9F3B6D00487CFB /* MDKEmailTextField.h in Headers */,
@@ -1499,6 +1520,7 @@
 				F95BF3C01BF099E8002F2EE7 /* MDKUIMedia.h in Headers */,
 				B0FFB6BC1BA1CD4800258B9D /* MDKFloatConverter.h in Headers */,
 				B044B1C01B9DF3D900A4CCF3 /* MDKTooltipManager.h in Headers */,
+				F994B5921BFC7CF80055C16C /* ControlPickerList.h in Headers */,
 				B021169D1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h in Headers */,
 				B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */,
 				B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */,
@@ -1697,6 +1719,7 @@
 				B0AC329D1BECBA2B0016B6B4 /* mdkuiposition_cancel_btn_enable.png in Resources */,
 				B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */,
 				F98D77F61BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@3x.png in Resources */,
+				F9B6597D1C045E4800C1988B /* MDK_MDKUIPickerList.xib in Resources */,
 				B0C6BAB01BA1D9830087C4D3 /* ios_ic_phone_unactive@2x.png in Resources */,
 				B0AC32A01BECBA350016B6B4 /* mdkuiposition_location_btn_founded.png in Resources */,
 				F98D77E71BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png in Resources */,
@@ -1823,6 +1846,7 @@
 				B00C4DFF1BA07C45003CBB16 /* MDKCallPhoneNumberCommand.m in Sources */,
 				B02157BC1B9DAF30001860B5 /* MDKInvalidIntegerValueUIValidationError.m in Sources */,
 				B0FFB6AC1BA1CB5F00258B9D /* MDKUISlider.m in Sources */,
+				F994B5901BFC7C9A0055C16C /* MDKUIPickerList.m in Sources */,
 				B018BE9C1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.m in Sources */,
 				B08C19361B9DE9A500D6F93A /* MDKControlDelegate.m in Sources */,
 				B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */,
