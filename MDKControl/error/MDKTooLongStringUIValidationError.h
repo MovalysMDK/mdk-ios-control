@@ -39,7 +39,8 @@ FOUNDATION_EXPORT NSString *const TOO_LONG_STRING_UI_VALIDATION_ERROR_LOCALIZED_
 /*!
  * @brief Init new instance.
  * @param fieldName - Associated displayed field name.
+ * @param object An object to pass in the error
  * @return New instance of MFTooLongStringUIValidationError.
  */
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName;
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object;
 @end

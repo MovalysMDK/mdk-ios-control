@@ -29,5 +29,6 @@
 #import "MDKErrorViewProtocol.h"
 #import "MDKEnumHelperProtocol.h"
 #import "MDKUIFixedListDataProtocol.h"
+#import "MDKUIDataPositionProtocol.h"
 
 #endif

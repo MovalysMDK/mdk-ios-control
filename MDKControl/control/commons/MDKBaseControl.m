@@ -264,7 +264,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
     self.visible = controlAttributes[@"visible"] ? controlAttributes[@"visible"] : @1;
     if([self isKindOfClass:NSClassFromString(@"MDKRenderableControl")]) {
         [self performSelector:@selector(forwardSpecificRenderableProperties)];
-        [self performSelector:@selector(refreshControl)];
+//        [self performSelector:@selector(refreshControl)];
     }
 }
 
@@ -316,5 +316,6 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 -(void)addFieldValidator:(id<MDKFieldValidatorProtocol>)fieldValidator {
     [self.userFieldValidators addObject:fieldValidator];
 }
+
 
 @end

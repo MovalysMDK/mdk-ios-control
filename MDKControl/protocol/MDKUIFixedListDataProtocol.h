@@ -72,7 +72,7 @@
  * @discussion The method must be implemented in the user project.
  */
 @optional
--(void) addItemOnFixedList:(id)sender;
+-(id) addItemOnFixedList:(id)sender;
 
 /*!
  * @brief Event called when a row is selected
@@ -82,6 +82,28 @@
  */
 @optional
 -(void)fixedList:(MDKUIFixedList *)fixedList didSelectRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
+
+
+
+/*!
+ * @brief Event called when a row will be deleted
+ * @param fixedList The fixedList managed by the delegate that implements this protocol.
+ * @param indexPath The indexPath of the deleted row
+ * @param object The object assciated to this row.
+ */
+@optional
+-(void)fixedList:(MDKUIFixedList *)fixedList willDeleteRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
+
+
+
+/*!
+ * @brief Event called when a row has been deleted
+ * @param fixedList The fixedList managed by the delegate that implements this protocol.
+ * @param indexPath The indexPath of the deleted row
+ * @param object The object asscoated to this row.
+ */
+@optional
+-(void)fixedList:(MDKUIFixedList *)fixedList didDeleteRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
 
 
 

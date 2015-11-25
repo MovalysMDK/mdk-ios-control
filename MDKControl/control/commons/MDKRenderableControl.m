@@ -76,8 +76,9 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 #pragma mark - Synthesize
 @synthesize editable = _editable;
 @synthesize styleClass = _styleClass;
+@synthesize controlData = _controlData;
 @synthesize tooltipView = _tooltipView;
-
+@synthesize controlAttributes = _controlAttributes;
 
 /******************************************************/
 /* INITITALISATION                                    */
@@ -615,6 +616,40 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 -(void) refreshControl {
     //    [self.externalView setData:self.externalView.privateData];
     [self.internalView setData:self.internalView.controlData];
+}
+
+
+#pragma mark - FOWARDING
+-(void)setControlAttributes:(NSDictionary *)controlAttributes {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        [self.internalView setControlAttributes:controlAttributes];
+    }
+    else {
+        _controlAttributes = controlAttributes;
+    }
+}
+
+-(NSDictionary *)controlAttributes {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        return [self.internalView controlAttributes];
+    }
+    else {
+        return _controlAttributes;
+    }
+}
+
+-(id)controlData {
+    if([self conformsToProtocol:@protocol(MDKInternalComponent)]) {
+        return (id<MDKInternalComponent>)self.externalView.controlData;
+    }
+    return _controlData;
+}
+
+-(void)setControlData:(id)controlData {
+    if([self conformsToProtocol:@protocol(MDKInternalComponent)]) {
+        [((MDKRenderableControl *)self.externalView) setControlData:controlData];
+    }
+    _controlData = controlData;
 }
 
 @end

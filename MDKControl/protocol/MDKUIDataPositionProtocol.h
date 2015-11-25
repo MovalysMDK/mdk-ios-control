@@ -14,23 +14,22 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import <Foundation/Foundation.h>
 
-#import "MDKTooShortStringUIValidationError.h"
+/*!
+ * @protocol MDKUIDataPositionProtocol
+ * @brief This protocol describes a MDK position data object
+ */
+@protocol MDKUIDataPositionProtocol <NSObject>
 
-@implementation MDKTooShortStringUIValidationError
+/*!
+ * @brief The latitude property
+ */
+@property (nonatomic, strong) NSString *latitude;
 
-NSInteger const TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE = 3001;
-
-NSString *const TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_too_short_value";
-
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object
-{
-    self = [super initWithCode:TOO_SHORT_STRING_UI_VALIDATION_ERROR_CODE
-       localizedDescriptionKey:TOO_SHORT_STRING_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
-            localizedFieldName:fieldName
-            technicalFieldName:technicalFieldName
-                    withObject:object];
-    return self;
-}
+/*!
+ * @brief The longitude property
+ */
+@property (nonatomic, strong) NSString *longitude;
 
 @end

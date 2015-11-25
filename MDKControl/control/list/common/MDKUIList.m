@@ -54,7 +54,7 @@ NSString *const MDKUIListIdentifier = @"MDK_MDKUIList";
 
 - (void)awakeFromNib {
     [self.tableView registerClass:[MDKListCell class] forCellReuseIdentifier:MDKListCellIdentifier];
-//    [self.tableView registerNib:[UINib nibWithNibName:MDKListCellIdentifier bundle:[NSBundle mainBundle]] forCellReuseIdentifier:MDKListCellIdentifier];
+//    [self.tableView registerNib:[UINib nibWithNibName:MDKListCellIdentifier bundle:[NSBundle bundleForClass:NSClassFromString(@"MDKUIEnumList")]] forCellReuseIdentifier:MDKListCellIdentifier];
 }
 
 

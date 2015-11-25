@@ -16,7 +16,9 @@
 
 #import "MDKUIPosition.h"
 #import "MDKManagerPosition.h"
+
 #import "Helper.h"
+#import "Protocol.h"
 
 
 #pragma mark - MDKUIPosition - Keys
@@ -26,11 +28,6 @@
  */
 NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 
-/*!
- * @brief The key for MDKUIPoistion allowing to add control attributes
- */
-NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
-
 
 #pragma mark - MDKUIPosition - Private interface
 
@@ -39,12 +36,7 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 /*!
  * @brief The private current data allow to know if the update is necessary
  */
-@property (nonatomic, strong) id currentData;
-
-/*!
- * @brief This variable allow to know the current data class name
- */
-@property (nonatomic, strong) NSString *currentDataClassName;
+@property (nonatomic, strong) id<MDKUIDataPositionProtocol> currentData;
 
 /*!
  * @brief The private animation for location button
@@ -52,21 +44,12 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 @property (nonatomic, strong) CABasicAnimation *animationForLocationButton;
 
 /*!
- * @brief The latitude retrived by data binding
- */
-@property (nonatomic, strong) NSString *dataLatitude;
-
-/*!
- * @brief The longitude retrived by data binding
- */
-@property (nonatomic, strong) NSString *dataLongitude;
-
-/*!
  * @brief Know the search location mode
  */
 @property (nonatomic, assign) BOOL navigationMode;
 
 @end
+
 
 
 #pragma mark - MDKUIPosition - Implementation
@@ -152,36 +135,41 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 #pragma mark - Control Data protocol
 
 + (NSString *)getDataType {
-    return @"MDKDataPosition";
+    return @"MDKUIDataPositionProtocol";
 }
 
 - (void)setData:(id)data {
     if ( data && ![self.currentData isEqual:data] ) {
         self.currentData = data;
-        [self displayData];
+        [self setDisplayComponentValue:self.currentData];
     }
     [super setData:data];
 }
 
 - (id)getData {
-    return self.currentData;
+    return [self displayComponentValue];
 }
 
 - (void)setEditable:(NSNumber *)editable {
     [super setEditable:editable];
 }
 
-- (void)setDisplayComponentValue:(id)value {
-    self.currentData = value;
+- (void)setDisplayComponentValue:(id<MDKUIDataPositionProtocol>)value {
+    self.textFieldLatitude.text  = value.latitude;
+    self.textFieldLongitude.text = value.longitude;
+    [self handleLocationEmpty];
 }
 
+-(id)displayComponentValue {
+    [self.currentData setLatitude:self.textFieldLatitude.text];
+    [self.currentData setLongitude:self.textFieldLongitude.text];
+    return self.currentData;
+}
 
 #pragma mark - Control attribute
 
 - (void)setControlAttributes:(NSDictionary *)controlAttributes {
-    if (controlAttributes && [controlAttributes objectForKey:MDKUIPositionKey]) {
-        self.currentDataClassName = [controlAttributes valueForKey:MDKUIPositionKey];
-    }
+    [super setControlAttributes:controlAttributes];
 }
 
 
@@ -243,9 +231,8 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 
 - (void)locationUpdatedWithLongitude:(NSNumber *)longitude latitude:(NSNumber *)latitude {
     if (self.navigationMode) {
-        NSNumber *numberLongitude = [NSNumber numberWithFloat:[self.dataLongitude floatValue]];
-        NSNumber *numberLatitude  = [NSNumber numberWithFloat:[self.dataLatitude floatValue]];
-        NSString *stringNavigation = [NSString stringWithFormat:@"http://maps.apple.com/?saddr=%f,%f&daddr=%f,%f", latitude.floatValue, longitude.floatValue, numberLatitude.floatValue, numberLongitude.floatValue];
+        
+        NSString *stringNavigation = [NSString stringWithFormat:@"http://maps.apple.com/?saddr=%f,%f&daddr=%f,%f", latitude.floatValue, longitude.floatValue, [latitude floatValue], [longitude floatValue]];
         NSURL *urlNavigation = [NSURL URLWithString:stringNavigation];
         [[UIApplication sharedApplication] openURL:urlNavigation];
     }
@@ -276,29 +263,6 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
 
 #pragma mark - Custom methods
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-- (void)displayData {
-    NSString *sEnumClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:self.currentDataClassName];
-    Class cHelper                  = NSClassFromString(sEnumClassHelperName);
-    
-    if ([cHelper respondsToSelector:@selector(longitudeWithPosition:)] && [cHelper respondsToSelector:@selector(latitudeWithPosition:)]) {
-        NSString *longitude = [cHelper performSelector:@selector(longitudeWithPosition:) withObject:self.currentData];
-        NSString *latitude  = [cHelper performSelector:@selector(latitudeWithPosition:) withObject:self.currentData];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self updateDisplayFromLatitude:latitude longitude:longitude];
-        });
-    }
-}
-#pragma clang diagnostic pop
-
-- (void)updateDisplayFromLatitude:(NSString *)latitude longitude:(NSString *)longitude {
-    self.dataLatitude  = latitude;
-    self.dataLongitude = longitude;
-    self.textFieldLatitude.text  = latitude;
-    self.textFieldLongitude.text = longitude;
-    [self handleLocationEmpty];
-}
 
 - (void)startLocationButtonAnimation {
     self.animationForLocationButton                = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
@@ -374,6 +338,7 @@ NSString *const MDKUIPositionKey = @"MDKUIPositionKey";
     [self displayLocationFoundedIfNeeded];
     [self stopLocationButtonAnimation];
 }
+
 
 @end
 

@@ -18,9 +18,9 @@
 
 @implementation MDKInvalidUrlValueUIValidationError
 
-NSInteger const INVALID_URL_VALUE_UI_VALIDATION_ERROR_CODE = 10005;
+NSInteger const INVALID_URL_VALUE_UI_VALIDATION_ERROR_CODE = 1003;
 
-NSString *const INVALID_URL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKInvalidUrlValueUIValidationError";
+NSString *const INVALID_URL_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_invalid_url";
 
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *)technicalFieldName

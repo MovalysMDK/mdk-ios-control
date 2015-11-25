@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.author       = "Sopra Steria"
   s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdkcontrol", :tag => "1.0.0" }
   s.source_files = 'MDKControl/**/*.{h,m}'
-  s.resources = 'MDKControl/**/*.{plist,xib,pch,png}'
+  s.resources = 'MDKControl/**/*.{plist,xib,pch,png,strings,lrpoj,bundle}'
   s.dependency 'IQKeyboardManager', '3.3.2'
   s.dependency 'MBProgressHUD', '0.9'
 

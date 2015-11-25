@@ -29,5 +29,6 @@
 #import "ControlMedia.h"
 #import "ControlWebView.h"
 #import "ControlList.h"
+#import "ControlFixedList.h"
 
 #endif

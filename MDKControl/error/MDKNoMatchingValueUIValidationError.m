@@ -21,9 +21,9 @@
 
 @implementation MDKNoMatchingValueUIValidationError
 
-NSInteger const NO_MATCHING_VALUE_UI_VALIDATION_ERROR_CODE = 10003;
+NSInteger const NO_MATCHING_VALUE_UI_VALIDATION_ERROR_CODE = 1000;
 
-NSString *const NO_MATCHING_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"MDKNoMatchingValueUIValidationError";
+NSString *const NO_MATCHING_VALUE_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_invalid_generic_value";
 
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName
 {

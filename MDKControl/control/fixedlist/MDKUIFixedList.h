@@ -37,7 +37,7 @@ IB_DESIGNABLE
  * each item of the liste can be edited, deleted, moved. It is also possible
  * to add a new item.
  */
-@interface MDKUIFixedList : MDKRenderableControl
+@interface MDKUIFixedList : MDKRenderableControl <MDKControlChangesProtocol>
 
 #pragma mark - Properties
 

@@ -40,13 +40,13 @@ NSString *FIELD_VALIDATOR_MAX_LENGTH = @"maxLength";
 }
 
 -(NSError *)validate:(id)value withCurrentState:(NSDictionary *)currentState withParameters:(NSDictionary *)parameters {
-    if([value isKindOfClass:[NSString class]]) {
+    if([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSAttributedString class]]) {
         NSString *stringValue = (NSString *)value;
         if(!stringValue || stringValue.length > [parameters[FIELD_VALIDATOR_MAX_LENGTH] intValue]) {
-            return [[MDKTooLongStringUIValidationError alloc] initWithLocalizedFieldName:@"ERREUR" technicalFieldName:@"ON VERRA PLUS TARD"];
+            return [[MDKTooLongStringUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"] withObject:parameters[FIELD_VALIDATOR_MAX_LENGTH]];
         }
         else if( stringValue.length < [parameters[FIELD_VALIDATOR_MIN_LENGTH] intValue]) {
-            return [[MDKTooShortStringUIValidationError alloc] initWithLocalizedFieldName:@"ERREUR" technicalFieldName:@"ON VERRA PLUS TARD"];
+            return [[MDKTooShortStringUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"] withObject:parameters[FIELD_VALIDATOR_MIN_LENGTH]];
         }
     }
     return nil;

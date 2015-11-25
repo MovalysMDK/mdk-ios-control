@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDKUIExternalPosition">
-            <connections>
-                <outlet property="buttonCancel" destination="xcP-ii-45F" id="hH0-L2-3f1"/>
-                <outlet property="buttonLocationFounded" destination="jQe-6R-7T8" id="LU8-cc-F0w"/>
-                <outlet property="buttonLocationNotFound" destination="Nkq-Sa-EZT" id="eCJ-ne-cKX"/>
-                <outlet property="buttonMap" destination="A6c-Nw-QaC" id="XKp-uD-UyZ"/>
-                <outlet property="buttonNavigation" destination="0DH-Tt-2b4" id="1ZZ-RW-rvi"/>
-                <outlet property="textFieldLatitude" destination="8iz-uZ-msd" id="h56-Vc-hWu"/>
-                <outlet property="textFieldLongitude" destination="a37-em-gEI" id="y17-P4-d33"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDKUIExternalPosition"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="View" customClass="MDKUIInternalPosition">
-            <rect key="frame" x="0.0" y="0.0" width="587" height="201"/>
+            <rect key="frame" x="0.0" y="0.0" width="587" height="140"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a37-em-gEI" userLabel="longitude">
@@ -28,18 +19,12 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="vw2-Dd-Hef"/>
-                    </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8iz-uZ-msd" userLabel="latitude">
                     <rect key="frame" x="8" y="99" width="571" height="30"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="done"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="M40-lS-cI1"/>
-                    </connections>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0DH-Tt-2b4" userLabel="navigation">
                     <rect key="frame" x="232" y="8" width="45" height="45"/>
@@ -49,7 +34,7 @@
                     </state>
                     <state key="disabled" image="mdkuiposition_navigation_btn_disable.png"/>
                     <connections>
-                        <action selector="userDidTapOnNavigationButton:" destination="-1" eventType="touchUpInside" id="8eb-S8-HfQ"/>
+                        <action selector="userDidTapOnNavigationButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Scn-Ry-CqD"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcP-ii-45F" userLabel="cancel">
@@ -60,7 +45,7 @@
                     </state>
                     <state key="disabled" image="mdkuiposition_cancel_btn_disable.png"/>
                     <connections>
-                        <action selector="userDidTapOnCancelButton:" destination="-1" eventType="touchUpInside" id="Phw-QT-gVQ"/>
+                        <action selector="userDidTapOnCancelButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Zl5-lC-Dfq"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6c-Nw-QaC" userLabel="map">
@@ -75,7 +60,7 @@
                     </state>
                     <state key="disabled" image="mdkuiposition_map_btn_disable.png"/>
                     <connections>
-                        <action selector="userDidTapOnMapButton:" destination="-1" eventType="touchUpInside" id="thO-Lx-iQr"/>
+                        <action selector="userDidTapOnMapButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="jJn-OL-AQ8"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkq-Sa-EZT" userLabel="location not founded">
@@ -85,7 +70,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="userDidTapOnLocationButton:" destination="-1" eventType="touchUpInside" id="Ijz-wY-Kpu"/>
+                        <action selector="userDidTapOnLocationButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="XbU-CB-TQ7"/>
                     </connections>
                 </button>
                 <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQe-6R-7T8" userLabel="location founded">
@@ -95,7 +80,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="userDidTapOnLocationButton:" destination="-1" eventType="touchUpInside" id="R1f-qn-Yf9"/>
+                        <action selector="userDidTapOnLocationButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="5wq-76-PVR"/>
                     </connections>
                 </button>
             </subviews>
@@ -130,7 +115,16 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="332.5" y="180.5"/>
+            <connections>
+                <outlet property="buttonCancel" destination="xcP-ii-45F" id="mSi-r6-lL6"/>
+                <outlet property="buttonLocationFounded" destination="jQe-6R-7T8" id="0bz-B8-8Ih"/>
+                <outlet property="buttonLocationNotFound" destination="Nkq-Sa-EZT" id="lXU-BQ-KvJ"/>
+                <outlet property="buttonMap" destination="A6c-Nw-QaC" id="Yqn-ig-vfo"/>
+                <outlet property="buttonNavigation" destination="0DH-Tt-2b4" id="Zha-Nb-oMs"/>
+                <outlet property="textFieldLatitude" destination="8iz-uZ-msd" id="fzY-vv-g8z"/>
+                <outlet property="textFieldLongitude" destination="a37-em-gEI" id="wnD-TF-1hg"/>
+            </connections>
+            <point key="canvasLocation" x="332.5" y="150"/>
         </view>
     </objects>
     <resources>
