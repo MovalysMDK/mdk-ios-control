@@ -14,12 +14,16 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MDKDelegateList.h"
+
+#import "MDKDelegateEnumList.h"
+#import "MDKUIList.h"
 #import "MDKListCell.h"
 #import "Helper.h"
 
 
-@interface MDKDelegateList()
+#pragma mark - MDKDelegateEnumList - Private interface
+
+@interface MDKDelegateEnumList()
 
 // Model
 @property (nonatomic, strong) NSArray *rows;
@@ -27,8 +31,9 @@
 @end
 
 
-@implementation MDKDelegateList
+#pragma mark - MDKDelegateEnumList - Implementation
 
+@implementation MDKDelegateEnumList
 
 
 #pragma mark - Life cycle
@@ -49,14 +54,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MDKListCell *cell = [tableView dequeueReusableCellWithIdentifier:MDKListCellIdentifier];
-//    [cell updateCellWithText:self.rows[indexPath.row]];
-    cell.textLabel.text = self.rows[indexPath.row];
+    MDKListCell *cell   = [tableView dequeueReusableCellWithIdentifier:MDKListCellIdentifier forIndexPath:indexPath];
+    [cell updateCellWithText:self.rows[ indexPath.row ]];
     return cell;
 }
 
 
-#pragma mark Private API
+#pragma mark UITableViewDelegate implementation
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.protocol respondsToSelector:@selector(userDidSelectCell:)]) {
+        [self.protocol userDidSelectCell:self.rows[indexPath.row]];
+    }
+}
+
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"

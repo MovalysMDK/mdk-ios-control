@@ -235,6 +235,8 @@
 		B0FFDA721B33FAFB00CA6E5E /* MDKControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */; };
 		B0FFDA791B33FAFB00CA6E5E /* MDKControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFDA781B33FAFB00CA6E5E /* MDKControlTests.m */; };
 		B0FFDA901B33FBB800CA6E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */; };
+		F913AC4E1C05BE47001293FD /* MDKDelegateEnumList.h in Headers */ = {isa = PBXBuildFile; fileRef = F913AC4C1C05BE47001293FD /* MDKDelegateEnumList.h */; };
+		F913AC4F1C05BE47001293FD /* MDKDelegateEnumList.m in Sources */ = {isa = PBXBuildFile; fileRef = F913AC4D1C05BE47001293FD /* MDKDelegateEnumList.m */; };
 		F91971531BE8AF4B00B94F8A /* MDKEnumImageStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */; };
 		F91971541BE8AF4B00B94F8A /* MDKEnumImageStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */; };
 		F91971561BE8AF6E00B94F8A /* StyleEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */; };
@@ -289,8 +291,6 @@
 		F9B6597D1C045E4800C1988B /* MDK_MDKUIPickerList.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B6597C1C045E4800C1988B /* MDK_MDKUIPickerList.xib */; };
 		F9D267351BFA180400B55A11 /* MDKUIList.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D267321BFA180400B55A11 /* MDKUIList.h */; };
 		F9D267361BFA180400B55A11 /* MDKUIList.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D267331BFA180400B55A11 /* MDKUIList.m */; };
-		F9D2673A1BFA181C00B55A11 /* MDKDelegateList.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D267381BFA181C00B55A11 /* MDKDelegateList.h */; };
-		F9D2673B1BFA181C00B55A11 /* MDKDelegateList.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D267391BFA181C00B55A11 /* MDKDelegateList.m */; };
 		F9D267401BFA186400B55A11 /* MDKListCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D2673D1BFA186400B55A11 /* MDKListCell.h */; };
 		F9D267411BFA186400B55A11 /* MDKListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D2673E1BFA186400B55A11 /* MDKListCell.m */; };
 		F9D267521BFA407700B55A11 /* MDKListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D267511BFA407700B55A11 /* MDKListCell.xib */; };
@@ -569,6 +569,8 @@
 		B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0FFDA911B33FBEB00CA6E5E /* MDKControl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDKControl-Prefix.pch"; sourceTree = "<group>"; };
 		C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDKControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDKControl/Pods-MDKControl.debug.xcconfig"; sourceTree = "<group>"; };
+		F913AC4C1C05BE47001293FD /* MDKDelegateEnumList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKDelegateEnumList.h; path = list/common/delegate/MDKDelegateEnumList.h; sourceTree = "<group>"; };
+		F913AC4D1C05BE47001293FD /* MDKDelegateEnumList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKDelegateEnumList.m; path = list/common/delegate/MDKDelegateEnumList.m; sourceTree = "<group>"; };
 		F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKEnumImageStyle.h; path = enumImage/MDKEnumImageStyle.h; sourceTree = "<group>"; };
 		F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKEnumImageStyle.m; path = enumImage/MDKEnumImageStyle.m; sourceTree = "<group>"; };
 		F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyleEnumImage.h; path = enumImage/StyleEnumImage.h; sourceTree = "<group>"; };
@@ -623,8 +625,6 @@
 		F9B6597C1C045E4800C1988B /* MDK_MDKUIPickerList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIPickerList.xib; sourceTree = "<group>"; };
 		F9D267321BFA180400B55A11 /* MDKUIList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIList.h; path = list/common/MDKUIList.h; sourceTree = "<group>"; };
 		F9D267331BFA180400B55A11 /* MDKUIList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIList.m; path = list/common/MDKUIList.m; sourceTree = "<group>"; };
-		F9D267381BFA181C00B55A11 /* MDKDelegateList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKDelegateList.h; path = list/common/delegate/MDKDelegateList.h; sourceTree = "<group>"; };
-		F9D267391BFA181C00B55A11 /* MDKDelegateList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKDelegateList.m; path = list/common/delegate/MDKDelegateList.m; sourceTree = "<group>"; };
 		F9D2673D1BFA186400B55A11 /* MDKListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKListCell.h; path = list/common/cell/MDKListCell.h; sourceTree = "<group>"; };
 		F9D2673E1BFA186400B55A11 /* MDKListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKListCell.m; path = list/common/cell/MDKListCell.m; sourceTree = "<group>"; };
 		F9D267511BFA407700B55A11 /* MDKListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MDKListCell.xib; path = list/common/cell/MDKListCell.xib; sourceTree = "<group>"; };
@@ -1468,8 +1468,8 @@
 		F9D267371BFA180E00B55A11 /* delegate */ = {
 			isa = PBXGroup;
 			children = (
-				F9D267381BFA181C00B55A11 /* MDKDelegateList.h */,
-				F9D267391BFA181C00B55A11 /* MDKDelegateList.m */,
+				F913AC4C1C05BE47001293FD /* MDKDelegateEnumList.h */,
+				F913AC4D1C05BE47001293FD /* MDKDelegateEnumList.m */,
 			);
 			name = delegate;
 			sourceTree = "<group>";
@@ -1504,6 +1504,7 @@
 				B08C193B1B9DE9A500D6F93A /* ControlExtension.h in Headers */,
 				F95BF3D11BF0DA2D002F2EE7 /* MDKHelperImage.h in Headers */,
 				F965F9351BE7BF3B0060A93D /* ControlEnumImage.h in Headers */,
+				F913AC4E1C05BE47001293FD /* MDKDelegateEnumList.h in Headers */,
 				B08C19351B9DE9A500D6F93A /* MDKControlDelegate.h in Headers */,
 				F95BF3C31BF09A03002F2EE7 /* ControlMedia.h in Headers */,
 				B00C4DF91BA07C38003CBB16 /* MDKPhoneTextField.h in Headers */,
@@ -1552,7 +1553,6 @@
 				B0C18B481BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h in Headers */,
 				B021575C1B9DAEEA001860B5 /* MDKFieldValidatorHandler.h in Headers */,
 				B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */,
-				F9D2673A1BFA181C00B55A11 /* MDKDelegateList.h in Headers */,
 				B018BE991BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.h in Headers */,
 				B044B1C31B9DF3D900A4CCF3 /* MDKTooltipView.h in Headers */,
 				B00C4DFE1BA07C45003CBB16 /* MDKCallPhoneNumberCommand.h in Headers */,
@@ -1838,6 +1838,7 @@
 				B0FFB6BB1BA1CD4800258B9D /* MDKDateConverter.m in Sources */,
 				B0A52E5D1BA31F4F00EF6947 /* MDKSliderStyle.m in Sources */,
 				B08C193F1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.m in Sources */,
+				F913AC4F1C05BE47001293FD /* MDKDelegateEnumList.m in Sources */,
 				B018BEA01BA02C6000EF1D87 /* MDKSendEmailCommand.m in Sources */,
 				B05C93711B9F3D1C00487CFB /* MDKEmailFieldValidator.m in Sources */,
 				B08C19471B9DE9A500D6F93A /* MDKTextField.m in Sources */,
@@ -1855,7 +1856,6 @@
 				B044B1C61B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m in Sources */,
 				F924E8D71BEA4473006119EF /* MDKManagerPosition.m in Sources */,
 				B021579F1B9DAF30001860B5 /* MDKErrorView.m in Sources */,
-				F9D2673B1BFA181C00B55A11 /* MDKDelegateList.m in Sources */,
 				F965F9401BE7BF7A0060A93D /* MDKHelperType.m in Sources */,
 				B02156BA1B9DAC6E001860B5 /* MDKLabelStyle.m in Sources */,
 				B02116A11BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m in Sources */,
