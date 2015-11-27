@@ -59,6 +59,7 @@ IB_DESIGNABLE
  * @return The delegate that manages this FixedList.
  */
 -(id<MDKUIFixedListDataProtocol>) fixedListDelegate;
+- (IBAction)addButtonAction:(id)sender;
 
 @end
 

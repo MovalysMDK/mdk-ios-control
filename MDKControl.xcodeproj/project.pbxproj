@@ -685,6 +685,13 @@
 			path = email;
 			sourceTree = "<group>";
 		};
+		B020D4E41C05F3CE00BB2B16 /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
 		B02156881B9DAC6E001860B5 /* style */ = {
 			isa = PBXGroup;
 			children = (
@@ -1072,6 +1079,7 @@
 		B0C6BA931BA1D9830087C4D3 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				B020D4E41C05F3CE00BB2B16 /* storyboard */,
 				B0F531F91BFE3EA700482B2E /* strings */,
 				B0C6BA941BA1D9830087C4D3 /* config */,
 				B0C6BA961BA1D9830087C4D3 /* images */,

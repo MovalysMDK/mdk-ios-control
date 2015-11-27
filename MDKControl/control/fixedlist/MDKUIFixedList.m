@@ -32,7 +32,6 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 @property (nonatomic, strong) id<MDKUIFixedListDataProtocol> privateFixedListDataDelegate;
 @property (nonatomic, strong) id<MDKUIFixedListDataProtocol> baseFixedListDelegate;
 
-- (IBAction)defaultAddItemAction:(id)sender;
 @end
 
 
@@ -51,8 +50,6 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
     self.tableView.delegate = self.tableDelegate;
     self.tableView.dataSource = self.tableDelegate;
     self.tableView.scrollEnabled = NO;
-
-    [self.addButton addTarget:self.privateFixedListDataDelegate action:@selector(addItemOnFixedList:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -86,11 +83,15 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
     }
 }
 
+#pragma mark - Control Attributes
+
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
     [super setControlAttributes:controlAttributes];
     [self.tableDelegate refreshEditionProperties];
 }
 
+
+#pragma mark - FixedList Data Delegate
 -(id<MDKUIFixedListDataProtocol>) fixedListDelegate {
     if(!_privateFixedListDataDelegate) {
         if(self.controlAttributes[FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY]) {
@@ -125,9 +126,11 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
 #pragma clang diagnostic pop
 
 
-- (IBAction)defaultAddItemAction:(id)sender {
-    [self.fixedListDelegate addItemOnFixedList:self.addButton];
+#pragma mark - Add Item action
+- (IBAction)addButtonAction:(id)sender {
+    [[self fixedListDelegate] fixedList:self addItemFromSender:sender];
 }
+
 @end
 
 

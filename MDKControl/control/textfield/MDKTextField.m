@@ -182,13 +182,18 @@
     else if(!data) {
         fixedData = @"";
     }
-    self.text = fixedData;
+    if([fixedData isKindOfClass:[NSAttributedString class]]) {
+        self.attributedText = fixedData;
+    }
+    else {
+        self.text = fixedData;
+    }
     [self validate];
     self.initializing = NO;
 }
 
 -(id)getData {
-    return self.attributedText ? self.attributedText : self.text;
+    return self.attributedText ? [self.attributedText string] : self.text;
 }
 
 +(NSString *) getDataType {

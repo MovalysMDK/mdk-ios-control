@@ -25,6 +25,12 @@
  */
 @interface MDKUIFixedListBaseDelegate : NSObject <MDKUIFixedListDataProtocol>
 
+#pragma mark - Methods
+/*!
+ * @brief Create a new instance of MDKUIFixedListBaseDelegate based on a FixedList instance.
+ * @param fixedList The FixedList control that will be managed by this delegate
+ * @return The new created instance of MDKUIFixedListBaseDelegate
+ */
 -(instancetype)initWithFixedList:(MDKUIFixedList *)fixedList;
 
 @end

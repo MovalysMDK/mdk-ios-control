@@ -652,4 +652,11 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     _controlData = controlData;
 }
 
+-(NSUInteger)hash {
+    NSUInteger result = [super hash];
+    if([self conformsToProtocol:@protocol(MDKInternalComponent)]) {
+        result = self.externalView.hash;
+    }
+    return result;
+}
 @end
