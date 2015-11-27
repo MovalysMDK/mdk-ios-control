@@ -14,6 +14,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feb-On-aQG" userLabel="enum">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <animations/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <state key="normal">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </state>
@@ -23,7 +24,7 @@
                 </button>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="feb-On-aQG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1O8-Xc-tTx"/>
                 <constraint firstAttribute="trailing" secondItem="feb-On-aQG" secondAttribute="trailing" id="NT5-EX-Lvy"/>

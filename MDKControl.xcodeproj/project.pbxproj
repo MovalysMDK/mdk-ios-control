@@ -771,20 +771,20 @@
 		B02156D91B9DAD59001860B5 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				F965F9381BE7BF4F0060A93D /* MDKEnumHelperProtocol.h */,
-				B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */,
-				B02157231B9DAE4C001860B5 /* MDKControlChangesProtocol.h */,
 				B02156DA1B9DAD59001860B5 /* MDKBackgroundViewProtocol.h */,
 				B02156DB1B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h */,
 				B02156DC1B9DAD59001860B5 /* MDKControlAttributesProtocol.h */,
+				B02157231B9DAE4C001860B5 /* MDKControlChangesProtocol.h */,
+				B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */,
 				B02156DD1B9DAD59001860B5 /* MDKControlDataProtocol.h */,
 				B02156DE1B9DAD59001860B5 /* MDKControlErrorProtocol.h */,
 				B02156DF1B9DAD59001860B5 /* MDKControlPropertiesProtocol.h */,
 				B02156E01B9DAD59001860B5 /* MDKControlValidationProtocol.h */,
+				F965F9381BE7BF4F0060A93D /* MDKEnumHelperProtocol.h */,
 				B02156E11B9DAD59001860B5 /* MDKErrorViewProtocol.h */,
-				B08C18FE1B9DDCA300D6F93A /* Protocol.h */,
-				B021169C1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h */,
 				B0CEFF601BF4E246007AEBB4 /* MDKUIDataPositionProtocol.h */,
+				B021169C1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h */,
+				B08C18FE1B9DDCA300D6F93A /* Protocol.h */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
