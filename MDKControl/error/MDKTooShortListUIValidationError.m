@@ -15,23 +15,22 @@
  */
 
 
-#ifndef MDKControl_Error_h
-#define MDKControl_Error_h
-
-#import "MDKTooLongStringUIValidationError.h"
-#import "MDKTooShortStringUIValidationError.h"
-#import "MDKTooLongListUIValidationError.h"
 #import "MDKTooShortListUIValidationError.h"
 
-#import "MDKInvalidDoubleValueUIValidationError.h"
-#import "MDKInvalidIntegerValueUIValidationError.h"
-#import "MDKInvalidEmailValueUIValidationError.h"
-#import "MDKInvalidPhoneNumberValueUIValidationError.h"
-#import "MDKInvalidUrlValueUIValidationError.h"
-#import "MDKMandatoryFieldUIValidationError.h"
-#import "MDKNoMatchingValueUIValidationError.h"
-#import "MDKValidationError.h"
+@implementation MDKTooShortListUIValidationError
 
-#import "ErrorView.h"
+NSInteger const TOO_SHORT_LIST_UI_VALIDATION_ERROR_CODE = 3003;
 
-#endif
+NSString *const TOO_SHORT_LIST_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_too_short_list";
+
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object
+{
+    self = [super initWithCode:TOO_SHORT_LIST_UI_VALIDATION_ERROR_CODE
+       localizedDescriptionKey:TOO_SHORT_LIST_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
+            localizedFieldName:fieldName
+            technicalFieldName:technicalFieldName
+                    withObject:object];
+    return self;
+}
+
+@end

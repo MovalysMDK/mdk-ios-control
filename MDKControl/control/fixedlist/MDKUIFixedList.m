@@ -131,6 +131,10 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
     [[self fixedListDelegate] fixedList:self addItemFromSender:sender];
 }
 
+
+-(NSInteger)validate {
+    return [super validate];
+}
 @end
 
 

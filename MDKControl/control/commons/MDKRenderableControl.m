@@ -500,50 +500,53 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
  */
 -(void) showError:(BOOL)showError {
     
-    if([self conformsToProtocol:@protocol(MDKExternalComponent) ]) {
-        if(showError) {
-            if(!self.errorView) {
-                Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
-                self.errorView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomErrorXIB] owner:nil options:nil] firstObject];
-            }
-            self.errorView.userInteractionEnabled = YES;
-            [self addSubview:self.errorView];
-            self.tooltipView = [[MDKTooltipView alloc] initWithTargetView:self.errorView.errorButton
-                                                                 hostView:self tooltipText:@""
-                                                           arrowDirection:MDKTooltipViewArrowDirectionUp
-                                                                    width:self.frame.size.width];
-            
-            if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
-#if !TARGET_INTERFACE_BUILDER
-                NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
-                [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
-#endif
-            }
-            else {
-                [self defineErrorViewConstraints];
-            }
-            
-        }
-        else {
-            [self.tooltipView hideAnimated:YES];
-            [self.errorView removeFromSuperview];
-            if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
-#if !TARGET_INTERFACE_BUILDER
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if([self conformsToProtocol:@protocol(MDKExternalComponent) ]) {
+            if(showError) {
                 if(!self.errorView) {
                     Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
                     self.errorView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomErrorXIB] owner:nil options:nil] firstObject];
                 }
+                self.errorView.userInteractionEnabled = YES;
+                [self addSubview:self.errorView];
+                self.tooltipView = [[MDKTooltipView alloc] initWithTargetView:self.errorView.errorButton
+                                                                     hostView:[self parentViewController].view tooltipText:@""
+                                                               arrowDirection:MDKTooltipViewArrowDirectionUp
+                                                                        width:self.frame.size.width];
                 
-                NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
-                [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
+                if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
+#if !TARGET_INTERFACE_BUILDER
+                    NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
+                    [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
 #endif
+                }
+                else {
+                    [self defineErrorViewConstraints];
+                }
+                
             }
             else {
-                [self removeErrorViewConstraints];
+                [self.tooltipView hideAnimated:YES];
+                [self.errorView removeFromSuperview];
+                if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
+#if !TARGET_INTERFACE_BUILDER
+                    if(!self.errorView) {
+                        Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
+                        self.errorView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomErrorXIB] owner:nil options:nil] firstObject];
+                    }
+                    
+                    NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
+                    [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
+#endif
+                }
+                else {
+                    [self removeErrorViewConstraints];
+                }
             }
+            [self bringSubviewToFront:self.errorView];
         }
-        [self bringSubviewToFront:self.errorView];
-    }
+
+    });
 }
 
 -(NSDictionary *) createErrorPositionParameters {
@@ -578,25 +581,17 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
             errorText= [errorText stringByAppendingString: [error localizedDescription]];
         }
         //Passage de la vue au premier plan
-        UIView *currentView = self;
-        do {
-            UIView *superView = currentView.superview;
-            [superView setClipsToBounds:NO];
-            [superView bringSubviewToFront:currentView];
-            currentView = superView;
-        } while (currentView.tag != FORM_BASE_TABLEVIEW_TAG && currentView.tag != FORM_BASE_VIEW_TAG && currentView.superview != nil);
+        UIView *currentView = [self parentViewController].view;
+        
         [currentView bringSubviewToFront:self.tooltipView];
-        [currentView bringSubviewToFront:self.errorView];
         self.tooltipView.tooltipText = errorText;
         self.tooltipView.tooltipBackgroundColour = self.tooltipColor_MDK ? self.tooltipColor_MDK : [self defaultTooltipBackgroundColor];
         
         [self.tooltipView show];
-        [self bringSubviewToFront:self.tooltipView];
     }
     else {
         [self.tooltipView hideAnimated:YES];
     }
-    [self bringSubviewToFront:self.tooltipView];
 }
 
 -(UIColor *) defaultTooltipBackgroundColor {
@@ -621,6 +616,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 
 #pragma mark - FOWARDING
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
+    [super setControlAttributes:controlAttributes];
     if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
         [self.internalView setControlAttributes:controlAttributes];
     }

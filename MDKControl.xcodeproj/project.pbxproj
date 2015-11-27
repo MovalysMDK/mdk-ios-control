@@ -130,6 +130,10 @@
 		B044B1C61B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1BB1B9DF3D900A4CCF3 /* UILabel+MDKTooltips.m */; };
 		B044B1C71B9DF3D900A4CCF3 /* UIView+MDKTooltips.h in Headers */ = {isa = PBXBuildFile; fileRef = B044B1BC1B9DF3D900A4CCF3 /* UIView+MDKTooltips.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B044B1C81B9DF3D900A4CCF3 /* UIView+MDKTooltips.m in Sources */ = {isa = PBXBuildFile; fileRef = B044B1BD1B9DF3D900A4CCF3 /* UIView+MDKTooltips.m */; };
+		B057FD121C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B057FD0E1C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.h */; };
+		B057FD131C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B057FD0F1C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.m */; };
+		B057FD141C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.h in Headers */ = {isa = PBXBuildFile; fileRef = B057FD101C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.h */; };
+		B057FD151C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.m in Sources */ = {isa = PBXBuildFile; fileRef = B057FD111C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.m */; };
 		B05C93621B9F3B6D00487CFB /* MDKEmailTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C93601B9F3B6D00487CFB /* MDKEmailTextField.m */; };
 		B05C93631B9F3B6D00487CFB /* MDKEmailTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B05C93611B9F3B6D00487CFB /* MDKEmailTextField.h */; };
 		B05C93661B9F3BF900487CFB /* MDKEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = B05C93641B9F3BF900487CFB /* MDKEmail.h */; };
@@ -444,6 +448,10 @@
 		B044B1C91B9DF3ED00A4CCF3 /* Error.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Error.h; sourceTree = "<group>"; };
 		B044B1CA1B9DF45400A4CCF3 /* ErrorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorView.h; sourceTree = "<group>"; };
 		B044B1CB1B9DF47500A4CCF3 /* ErrorViewTooltip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorViewTooltip.h; sourceTree = "<group>"; };
+		B057FD0E1C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTooLongListUIValidationError.h; sourceTree = "<group>"; };
+		B057FD0F1C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKTooLongListUIValidationError.m; sourceTree = "<group>"; };
+		B057FD101C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTooShortListUIValidationError.h; sourceTree = "<group>"; };
+		B057FD111C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKTooShortListUIValidationError.m; sourceTree = "<group>"; };
 		B05C93601B9F3B6D00487CFB /* MDKEmailTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKEmailTextField.m; sourceTree = "<group>"; };
 		B05C93611B9F3B6D00487CFB /* MDKEmailTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKEmailTextField.h; sourceTree = "<group>"; };
 		B05C93641B9F3BF900487CFB /* MDKEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKEmail.h; sourceTree = "<group>"; };
@@ -784,6 +792,10 @@
 		B02156F11B9DADE5001860B5 /* error */ = {
 			isa = PBXGroup;
 			children = (
+				B057FD0E1C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.h */,
+				B057FD0F1C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.m */,
+				B057FD101C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.h */,
+				B057FD111C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.m */,
 				B044B1C91B9DF3ED00A4CCF3 /* Error.h */,
 				B02157881B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.h */,
 				B02157891B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.m */,
@@ -977,19 +989,19 @@
 		B08C190C1B9DE9A500D6F93A /* control */ = {
 			isa = PBXGroup;
 			children = (
-				F97546E11BF4E04B00B2E48B /* list */,
-				F9E3B0021BF1EF900042CFD4 /* webview */,
-				F95BF3BD1BF098D5002F2EE7 /* media */,
-				F91971571BE8B80C00B94F8A /* position */,
-				F965F9311BE7BF210060A93D /* enumImage */,
-				B06120221BD933570012F82F /* fixedlist */,
-				B03AD4761BC3CDFF00A96F5D /* date */,
-				B0FFB6A31BA1CB5E00258B9D /* slider */,
-				B08C19571B9DEEED00D6F93A /* label */,
 				B08C190D1B9DE9A500D6F93A /* commons */,
 				B08C19151B9DE9A500D6F93A /* Control.h */,
+				B03AD4761BC3CDFF00A96F5D /* date */,
+				F965F9311BE7BF210060A93D /* enumImage */,
 				B08C19161B9DE9A500D6F93A /* extension */,
+				B06120221BD933570012F82F /* fixedlist */,
+				B08C19571B9DEEED00D6F93A /* label */,
+				F97546E11BF4E04B00B2E48B /* list */,
+				F95BF3BD1BF098D5002F2EE7 /* media */,
+				F91971571BE8B80C00B94F8A /* position */,
+				B0FFB6A31BA1CB5E00258B9D /* slider */,
 				B08C19231B9DE9A500D6F93A /* textfield */,
+				F9E3B0021BF1EF900042CFD4 /* webview */,
 			);
 			path = control;
 			sourceTree = "<group>";
@@ -1577,6 +1589,8 @@
 				B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */,
 				B09CE7DB1BA17C220017CCA2 /* MDKDoubleFieldValidator.h in Headers */,
 				F9D267401BFA186400B55A11 /* MDKListCell.h in Headers */,
+				B057FD121C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.h in Headers */,
+				B057FD141C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.h in Headers */,
 				F965F9361BE7BF3B0060A93D /* MDKUIEnumImage.h in Headers */,
 				B05C936C1B9F3CA300487CFB /* UIView+ViewController.h in Headers */,
 				B018BE9B1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.h in Headers */,
@@ -1839,12 +1853,14 @@
 				B0A52E5D1BA31F4F00EF6947 /* MDKSliderStyle.m in Sources */,
 				B08C193F1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.m in Sources */,
 				F913AC4F1C05BE47001293FD /* MDKDelegateEnumList.m in Sources */,
+				B057FD131C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.m in Sources */,
 				B018BEA01BA02C6000EF1D87 /* MDKSendEmailCommand.m in Sources */,
 				B05C93711B9F3D1C00487CFB /* MDKEmailFieldValidator.m in Sources */,
 				B08C19471B9DE9A500D6F93A /* MDKTextField.m in Sources */,
 				B09CE7D41BA17C110017CCA2 /* MDKIntegerTextField.m in Sources */,
 				B08C19391B9DE9A500D6F93A /* MDKRenderableControl.m in Sources */,
 				B02157CC1B9DAF30001860B5 /* MDKValidationError.m in Sources */,
+				B057FD151C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.m in Sources */,
 				B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */,
 				B02156C81B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m in Sources */,
 				B0C18B491BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m in Sources */,

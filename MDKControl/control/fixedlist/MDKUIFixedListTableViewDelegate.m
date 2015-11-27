@@ -60,6 +60,7 @@
     self.canDelete = [self.fixedList.controlAttributes[FIXEDLIST_PARAMETER_CAN_DELETE_KEY] isEqualToNumber:@1];
     self.canSelect = [self.fixedList.controlAttributes[FIXEDLIST_PARAMETER_CAN_SELECT_KEY] isEqualToNumber:@1];
     self.fixedList.tableView.editing = self.canDelete || self.canMove;
+    self.fixedList.tableView.allowsSelectionDuringEditing = self.canSelect;
     [self.fixedList.tableView endUpdates];
 }
 
@@ -166,7 +167,8 @@
     id retainObject = mutableData[sourceIndexPath.row];
     [mutableData removeObjectAtIndex:sourceIndexPath.row];
     [mutableData insertObject:retainObject atIndex:destinationIndexPath.row];
-    [self.fixedList setData:mutableData];
+    [self.fixedList setControlData:mutableData];
+    [self.fixedList valueChanged:self.fixedList.tableView];
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {

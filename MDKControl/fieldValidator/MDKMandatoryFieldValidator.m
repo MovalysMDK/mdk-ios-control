@@ -43,25 +43,26 @@ NSString *FIELD_VALIDATOR_ATTRIBUTE_MANDATORY = @"mandatory";
         if(!stringValue || stringValue.length == 0) {
             result = [[MDKMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
         }
-        //        else if([value isKindOfClass:NSClassFromString(@"MFUIBaseListViewModel")]) {
-        //            MFUIBaseListViewModel *listViewModelValue = (MFUIBaseListViewModel *)value;
-        //            if(!listViewModelValue || listViewModelValue.viewModels.count == 0) {
-        //                result = [[MFMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
-        //            }
-        //        }
-        //        else if([value isKindOfClass:NSClassFromString(@"MFPhotoViewModel")]) {
-        //            MFPhotoViewModel *valueAsPhotoViewModel = (MFPhotoViewModel *)value;
-        //            if([valueAsPhotoViewModel isEmpty]) {
-        //                result = [[MFMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
-        //            }
-        //        }
     }
+    else if([value isKindOfClass:NSClassFromString(@"NSArray")]) {
+        if(!value || ((NSArray *)value).count == 0) {
+            result = [[MDKMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
+        }
+    }
+    //                else if([value isKindOfClass:NSClassFromString(@"MFPhotoViewModel")]) {
+    //                    MFPhotoViewModel *valueAsPhotoViewModel = (MFPhotoViewModel *)value;
+    //                    if([valueAsPhotoViewModel isEmpty]) {
+    //                        result = [[MFMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
+    //                    }
+    //                }
+    
     return result;
 }
 
 -(BOOL)canValidControl:(UIView *)control {
     BOOL canValid = YES;
     canValid = canValid && ([control isKindOfClass:NSClassFromString(@"MDKTextField")] ||
+                            [control isKindOfClass:NSClassFromString(@"MDKBaseControl")] ||
                             [control isKindOfClass:NSClassFromString(@"MFUIOldBaseComponent")] ||
                             [control isKindOfClass:NSClassFromString(@"MFUIBaseComponent")]);
     return canValid;
