@@ -35,11 +35,9 @@ IB_DESIGNABLE
 @interface MDKUIMedia : MDKRenderableControl <MDKControlChangesProtocol>
 
 #pragma mark - Properties
+@property (weak, nonatomic) IBOutlet UIImageView *picture;
 
-/*!
- * @brief This button allow to take a picture
- */
-@property (nonatomic, weak) IBOutlet UIButton *buttonPicture;
+
 
 @end
 

@@ -20,6 +20,9 @@
 
 #import "MDKTooLongStringUIValidationError.h"
 #import "MDKTooShortStringUIValidationError.h"
+#import "MDKTooLongListUIValidationError.h"
+#import "MDKTooShortListUIValidationError.h"
+
 #import "MDKInvalidDoubleValueUIValidationError.h"
 #import "MDKInvalidIntegerValueUIValidationError.h"
 #import "MDKInvalidEmailValueUIValidationError.h"

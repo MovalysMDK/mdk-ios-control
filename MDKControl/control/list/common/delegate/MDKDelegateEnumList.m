@@ -50,6 +50,9 @@
 #pragma mark UITableViewDataSource implementation
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    CGRect rect = tableView.frame;
+    rect.size.height = 44*self.rows.count;
+    tableView.frame = rect;
     return self.rows.count;
 }
 

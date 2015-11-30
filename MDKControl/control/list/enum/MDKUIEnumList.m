@@ -26,17 +26,13 @@
 /*!
  * @brief The key for MDKUIEnumList allowing to add control attributes
  */
-NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
+NSString *const MDKUIEnumListKey = @"enumClassName";
 
 
 #pragma mark - MDKUIEnumList - Private interface
 
 @interface MDKUIEnumList() <MDKUIEnumListProtocol>
 
-/*!
- * @brief The private current data allow to know if the update is necessary
- */
-@property (nonatomic, strong) id currentData;
 
 /*!
  * @brief This variable allow to know the current enum class name
@@ -71,10 +67,11 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
 }
 
 - (void)initializeVars {
-    self.currentData = @(0);
+    self.controlData = @(0);
 }
 
-- (void)didInitializeOutlets {}
+- (void)didInitializeOutlets {
+}
 
 
 #pragma mark - Tags for automatic testing
@@ -89,18 +86,48 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
 #pragma mark - Control attribute
 
 - (void)setControlAttributes:(NSDictionary *)controlAttributes {
+    [super setControlAttributes:controlAttributes];
     if (controlAttributes && [controlAttributes objectForKey:MDKUIEnumListKey]) {
         self.currentEnumClassName = [controlAttributes valueForKey:MDKUIEnumListKey];
     }
+    [self displayData];
 }
 
 
 #pragma mark MDKControlChangesProtocol implementation
 
-- (void)valueChanged:(UIView *)sender {
-    NSLog(@"Value changed: %@", sender);
+- (void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
+    MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
+    commonCCTD.target = target;
+    commonCCTD.action = action;
+    self.targetDescriptors = @{@(self.button.hash) : commonCCTD, @(self.uiList.tableView.hash) : commonCCTD};
 }
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+- (void) valueChanged:(UIView *)sender {
+    MDKControlEventsDescriptor *cctd = self.targetDescriptors[@(sender.hash)];
+    [cctd.target performSelector:cctd.action withObject:self];
+}
+#pragma clang diagnostic pop
+
+
+-(NSDictionary *)targetDescriptors {
+    id result = _targetDescriptors;
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        result = [((MDKRenderableControl <MDKControlChangesProtocol>*)self.internalView) targetDescriptors];
+    }
+    return result;
+}
+
+-(void)setTargetDescriptors:(NSDictionary *)targetDescriptors {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        [((MDKRenderableControl <MDKControlChangesProtocol>*)self.internalView) setTargetDescriptors:targetDescriptors];
+    }
+    else {
+        _targetDescriptors = targetDescriptors;
+    }
+}
 
 #pragma mark - Control Data protocol
 
@@ -109,15 +136,15 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
 }
 
 - (void)setData:(id)data {
-    if (data && ![self.currentData isEqual:data]) {
-        self.currentData = data;
+    if (data && ![self.controlData isEqual:data]) {
+        self.controlData = data;
         [self displayData];
     }
     [super setData:data];
 }
 
 - (id)getData {
-    return self.currentData;
+    return self.controlData;
 }
 
 - (void)setEditable:(NSNumber *)editable {
@@ -129,7 +156,7 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
 }
 
 - (void)setValue:(id)value {
-    self.currentData = value;
+    self.controlData = value;
 }
 
 
@@ -180,6 +207,7 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
 - (void)userDidSelectCell:(NSString *)text {
     [self.uiList dismiss];
     [self updateDisplayFromText:text];
+    [self valueChanged:self.button];
 }
 
 
@@ -202,7 +230,7 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
     Class cEnumHelper              = NSClassFromString(sEnumClassHelperName);
     
     if ([cEnumHelper respondsToSelector:@selector(textFromEnum:)]) {
-        NSString *text = [cEnumHelper performSelector:@selector(textFromEnum:) withObject:self.currentData];
+        NSString *text = [cEnumHelper performSelector:@selector(textFromEnum:) withObject:self.controlData];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self updateDisplayFromText:text];
         });
@@ -220,6 +248,12 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
     else {
         [self.button setImage:nil forState:UIControlStateNormal];
         [self.button setTitle:text forState:UIControlStateNormal];
+    }
+    NSString *sEnumClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:self.currentEnumClassName];
+    Class cEnumHelper              = NSClassFromString(sEnumClassHelperName);
+    
+    if ([cEnumHelper respondsToSelector:@selector(enumFromText:)]) {
+        self.controlData = @([cEnumHelper enumFromText:text]);
     }
 }
 

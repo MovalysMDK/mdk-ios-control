@@ -17,6 +17,8 @@
 #import "MDKLengthFieldValidator.h"
 #import "MDKTooLongStringUIValidationError.h"
 #import "MDKTooShortStringUIValidationError.h"
+#import "MDKTooLongListUIValidationError.h"
+#import "MDKTooShortListUIValidationError.h"
 
 
 NSString *FIELD_VALIDATOR_MIN_LENGTH = @"minLength";
@@ -42,19 +44,30 @@ NSString *FIELD_VALIDATOR_MAX_LENGTH = @"maxLength";
 -(NSError *)validate:(id)value withCurrentState:(NSDictionary *)currentState withParameters:(NSDictionary *)parameters {
     if([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSAttributedString class]]) {
         NSString *stringValue = (NSString *)value;
-        if(!stringValue || stringValue.length > [parameters[FIELD_VALIDATOR_MAX_LENGTH] intValue]) {
+        if(!stringValue || parameters[FIELD_VALIDATOR_MAX_LENGTH] && stringValue.length > [parameters[FIELD_VALIDATOR_MAX_LENGTH] intValue]) {
             return [[MDKTooLongStringUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"] withObject:parameters[FIELD_VALIDATOR_MAX_LENGTH]];
         }
-        else if( stringValue.length < [parameters[FIELD_VALIDATOR_MIN_LENGTH] intValue]) {
+        else if( parameters[FIELD_VALIDATOR_MIN_LENGTH] && stringValue.length < [parameters[FIELD_VALIDATOR_MIN_LENGTH] intValue]) {
             return [[MDKTooShortStringUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"] withObject:parameters[FIELD_VALIDATOR_MIN_LENGTH]];
         }
+    }
+    else if([value isKindOfClass:NSClassFromString(@"NSArray")]) {
+        NSArray *arrayValue = (NSArray *)value;
+        if(!arrayValue || parameters[FIELD_VALIDATOR_MAX_LENGTH] && arrayValue.count > [parameters[FIELD_VALIDATOR_MAX_LENGTH] intValue]) {
+            return [[MDKTooLongListUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"] withObject:parameters[FIELD_VALIDATOR_MAX_LENGTH]];
+        }
+        else if(parameters[FIELD_VALIDATOR_MIN_LENGTH] && arrayValue.count < [parameters[FIELD_VALIDATOR_MIN_LENGTH] intValue]) {
+            return [[MDKTooShortListUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"] withObject:parameters[FIELD_VALIDATOR_MIN_LENGTH]];
+        }
+        
     }
     return nil;
 }
 
 -(BOOL)canValidControl:(UIView *)control {
     BOOL canValid = YES;
-    canValid = canValid && [control isKindOfClass:NSClassFromString(@"UITextField")];
+    canValid = canValid && ([control isKindOfClass:NSClassFromString(@"UITextField")] ||
+    [control isKindOfClass:NSClassFromString(@"MDKUIFixedList")]);
     return canValid;
 }
 

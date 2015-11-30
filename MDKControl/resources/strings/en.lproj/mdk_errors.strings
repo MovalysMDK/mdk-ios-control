@@ -26,6 +26,8 @@
 //Mandatory [2000]
 "mdk_error_mandatory_value" = "This value is mandatory";
 
-//Size errors [3000 - 3001]
-"mdk_error_too_long_value" = "This value is too long";
-"mdk_error_too_short_value" = "This value is too short";
+//Size errors [3000 - 3003]
+"mdk_error_too_long_value" = "This value is too long, max required size is : %@";
+"mdk_error_too_short_value" = "This value is too short, min required size is : %@";
+"mdk_error_too_long_list" = "This list is too long, max required size is : %@";
+"mdk_error_too_short_list" = "This list is too short, min required size is : %@";

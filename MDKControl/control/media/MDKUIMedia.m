@@ -14,6 +14,8 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import <AssetsLibrary/AssetsLibrary.h>
+
 #import "MDKUIMedia.h"
 #import "Helper.h"
 
@@ -31,14 +33,14 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 @interface MDKUIMedia() <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 /*!
- * @brief The private current data allow to know if the update is necessary
- */
-@property (nonatomic, strong) id currentData;
-
-/*!
  * @brief This variable allow to know the current data class name
  */
-@property (nonatomic, strong) NSString *currentDataClassName;
+@property (nonatomic, strong) NSString *controlDataClassName;
+
+/*!
+ * @brief This button allow to take a picture
+ */
+@property (nonatomic, weak) IBOutlet UIButton *buttonPicture;
 
 @end
 
@@ -68,18 +70,6 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 }
 
 
-#pragma mark - Live Rendering
-
-- (void)prepareForInterfaceBuilder {
-    UILabel *innerDescriptionLabel = [[UILabel alloc] initWithFrame:self.bounds];
-    innerDescriptionLabel.text = [[self class] description];
-    innerDescriptionLabel.textAlignment = NSTextAlignmentCenter;
-    innerDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
-    [self addSubview:innerDescriptionLabel];
-    self.backgroundColor = [UIColor colorWithRed:0.98f green:0.98f blue:0.34f alpha:0.5f];
-}
-
-
 #pragma mark MDKControlChangesProtocol implementation
 
 - (void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
@@ -87,7 +77,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
     MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
     commonCCTD.target = target;
     commonCCTD.action = action;
-    self.targetDescriptors = @{@(self.buttonPicture.hash) : commonCCTD};
+    self.targetDescriptors = @{@(self.picture.hash) : commonCCTD};
 }
 
 #pragma clang diagnostic push
@@ -98,23 +88,38 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 }
 #pragma clang diagnostic pop
 
+-(NSDictionary *)targetDescriptors {
+    id result = _targetDescriptors;
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        result = [((MDKRenderableControl <MDKControlChangesProtocol>*)self.internalView) targetDescriptors];
+    }
+    return result;
+}
+
+-(void)setTargetDescriptors:(NSDictionary *)targetDescriptors {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        [((MDKRenderableControl <MDKControlChangesProtocol>*)self.internalView) setTargetDescriptors:targetDescriptors];
+    }
+    else {
+        _targetDescriptors = targetDescriptors;
+    }
+}
 
 #pragma mark - Control Data protocol
 
 + (NSString *)getDataType {
-    return @"MDKDataMedia";
+    return @"NSString";
 }
 
 - (void)setData:(id)data {
     if ( data ) {
-        self.currentData = data;
-        [self displayData];
+        [self setDisplayComponentValue:data];
     }
     [super setData:data];
 }
 
 - (id)getData {
-    return self.currentData;
+    return self.controlData;
 }
 
 - (void)setEditable:(NSNumber *)editable {
@@ -122,7 +127,45 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 }
 
 - (void)setDisplayComponentValue:(id)value {
-    self.currentData = value;
+    NSString *uri = (NSString *)value;
+    
+    if(uri) {
+        //Affichage de la photo à partir de son URI
+        ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
+        {
+            CGImageRef iref = [myasset aspectRatioThumbnail];
+            if (iref) {
+                self.picture.image = [UIImage imageWithCGImage:iref];
+            } else {
+                UIImage* image = [self defaultImage];
+                self.picture.image = image;
+            }
+        };
+        
+        //Echec de chargement de la photo
+        ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror)
+        {
+            UIImage* image = [self defaultImage];
+            self.picture.image = image;
+        };
+        
+        
+        ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+        NSURL *asseturl = [NSURL URLWithString:uri];
+        [assetslibrary assetForURL:asseturl
+                       resultBlock:resultblock
+                      failureBlock:failureblock];
+    }
+    else {
+        UIImage* image = [self defaultImage];
+        self.picture.image = image;
+    }
+    
+}
+
+
+-(UIImage *) defaultImage {
+    return [UIImage imageNamed:@"mdkuimedia_placeholder_btn" inBundle:[NSBundle bundleForClass:NSClassFromString(@"MDKUIMedia")] compatibleWithTraitCollection:nil];
 }
 
 
@@ -130,7 +173,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 
 - (void)setControlAttributes:(NSDictionary *)controlAttributes {
     if (controlAttributes && [controlAttributes objectForKey:MDKUIMediaKey]) {
-        self.currentDataClassName = [controlAttributes valueForKey:MDKUIMediaKey];
+        self.controlDataClassName = [controlAttributes valueForKey:MDKUIMediaKey];
     }
 }
 
@@ -161,9 +204,44 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 #pragma mark - UIImagePickerControllerDelegate implementation
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
     UIImage *image = info[@"UIImagePickerControllerOriginalImage"];
+    
+    if ([picker sourceType] == UIImagePickerControllerSourceTypeCamera) {
+        //Sauvegarde de la photo dans l'album
+        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+        ALAssetsLibraryWriteImageCompletionBlock imageWriteCompletionBlock =^(NSURL *assetURL, NSError *error) {
+            if (error) {
+                UIAlertView *alert = [[UIAlertView alloc]
+                                      initWithTitle: @"Error"
+                                      message:@"Saving image has failed"
+                                      delegate: nil
+                                      cancelButtonTitle:@"OK"
+                                      otherButtonTitles:nil];
+                
+                [alert show];
+            }
+            else {
+                self.controlData = [assetURL absoluteString];
+            }
+        };
+        
+        NSMutableDictionary *imageMetadata = [info[UIImagePickerControllerMediaMetadata] mutableCopy];
+
+        //Sauvegarde de la photo avec ses données EXIF + ses éventuelles données de localisation
+        [library writeImageToSavedPhotosAlbum:[image CGImage] metadata:imageMetadata completionBlock:imageWriteCompletionBlock];
+        
+    }
+    else if([picker sourceType] == UIImagePickerControllerSourceTypePhotoLibrary) {
+        self.controlData = [info[UIImagePickerControllerReferenceURL] absoluteString];
+        
+    }
+    
+    
+    
     [self handleImage:image];
     [picker dismissViewControllerAnimated:YES completion:NULL];
+    [self valueChanged:self.picture];
 }
 
 
@@ -172,16 +250,16 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
 - (void)displayData {
-    NSString *sMediaClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:self.currentDataClassName];
+    NSString *sMediaClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:self.controlDataClassName];
     Class cHelper                   = NSClassFromString(sMediaClassHelperName);
     
     if ([cHelper respondsToSelector:@selector(imageWithMedia:)] && [cHelper respondsToSelector:@selector(noteWithMedia:)] && [cHelper respondsToSelector:@selector(dateWithMedia:)]
         && [cHelper respondsToSelector:@selector(titleWithMedia:)]) {
-        UIImage *image  = [cHelper performSelector:@selector(imageWithMedia:) withObject:self.currentData];
-        NSString *note  = [cHelper performSelector:@selector(noteWithMedia:)  withObject:self.currentData];
-        NSDate *date    = [cHelper performSelector:@selector(dateWithMedia:)  withObject:self.currentData];
-        NSString *title = [cHelper performSelector:@selector(titleWithMedia:) withObject:self.currentData];
-
+        UIImage *image  = [cHelper performSelector:@selector(imageWithMedia:) withObject:self.controlData];
+        NSString *note  = [cHelper performSelector:@selector(noteWithMedia:)  withObject:self.controlData];
+        NSDate *date    = [cHelper performSelector:@selector(dateWithMedia:)  withObject:self.controlData];
+        NSString *title = [cHelper performSelector:@selector(titleWithMedia:) withObject:self.controlData];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self updateDisplayMediaWithImage:image note:note date:date title:title];
         });
@@ -208,8 +286,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 }
 
 - (void)handleImage:(UIImage *)image {
-    UIImage *imageCropped = [image squareCropImageWithSideLength:self.buttonPicture.frame.size.height];
-    [self.buttonPicture setBackgroundImage:imageCropped forState:UIControlStateNormal];
+    [self.picture setImage:image];
 }
 
 @end

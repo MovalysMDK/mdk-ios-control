@@ -14,23 +14,23 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <Foundation/Foundation.h>
 
-#import "Protocol.h"
+#import "MDKTooShortListUIValidationError.h"
 
-/*!
- * @class MDKUIFixedListBaseDelegate
- * @brief This class is the base FixedList Delegate to manage a FixedList.
- * @discussion It must me inherited in the user-project to make the FixedList working
- */
-@interface MDKUIFixedListBaseDelegate : NSObject <MDKUIFixedListDataProtocol>
+@implementation MDKTooShortListUIValidationError
 
-#pragma mark - Methods
-/*!
- * @brief Create a new instance of MDKUIFixedListBaseDelegate based on a FixedList instance.
- * @param fixedList The FixedList control that will be managed by this delegate
- * @return The new created instance of MDKUIFixedListBaseDelegate
- */
--(instancetype)initWithFixedList:(MDKUIFixedList *)fixedList;
+NSInteger const TOO_SHORT_LIST_UI_VALIDATION_ERROR_CODE = 3003;
+
+NSString *const TOO_SHORT_LIST_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_too_short_list";
+
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object
+{
+    self = [super initWithCode:TOO_SHORT_LIST_UI_VALIDATION_ERROR_CODE
+       localizedDescriptionKey:TOO_SHORT_LIST_UI_VALIDATION_LOCALIZED_DESCRIPTION_KEY
+            localizedFieldName:fieldName
+            technicalFieldName:technicalFieldName
+                    withObject:object];
+    return self;
+}
 
 @end
