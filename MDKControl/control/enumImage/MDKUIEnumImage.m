@@ -24,7 +24,7 @@
 /*!
  * @brief The key for MDKUIEnumImage allowing to add control attributes
  */
-NSString *const MDKUIEnumImageKey = @"MDKUIEnumImageKey";
+NSString *const MDKUIEnumImageKey = @"enumClassName";
 
 
 #pragma mark - MDKUIEnumImage - Private interface
@@ -122,6 +122,7 @@ NSString *const MDKUIEnumImageKey = @"MDKUIEnumImageKey";
 #pragma mark - Control attribute
 
 - (void)setControlAttributes:(NSDictionary *)controlAttributes {
+    [super setControlAttributes:controlAttributes];
     if (controlAttributes && [controlAttributes objectForKey:MDKUIEnumImageKey]) {
         self.currentEnumClassName = [controlAttributes valueForKey:MDKUIEnumImageKey];
     }
@@ -168,7 +169,7 @@ NSString *const MDKUIEnumImageKey = @"MDKUIEnumImageKey";
     self.imageView.hidden = [self checkIfImageViewNeeded];
     self.label.hidden     = ( !self.imageView.hidden );
     
-    if(self.imageView.hidden) {
+    if(!self.label.hidden) {
         self.label.text = text;
     }
 }
