@@ -216,6 +216,7 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 
 - (IBAction)userDidTapOnCancelButton:(id)sender {
     [self removeCurrentLocation];
+    [self reset];
 }
 
 
@@ -226,13 +227,22 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
     return YES;
 }
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (textField.text.length == 1 && range.location == 0) {
+        [self reset];
+    }
+    else {
+        [self handleLocationEmpty];
+    }
+    return YES;
+}
 
 #pragma mark - MDKManagerPositionDelegate implementation
 
 - (void)locationUpdatedWithLongitude:(NSNumber *)longitude latitude:(NSNumber *)latitude {
     if (self.navigationMode) {
         
-        NSString *stringNavigation = [NSString stringWithFormat:@"http://maps.apple.com/?saddr=%f,%f&daddr=%f,%f", latitude.floatValue, longitude.floatValue, [latitude floatValue], [longitude floatValue]];
+        NSString *stringNavigation = [NSString stringWithFormat:@"http://maps.apple.com/?saddr=%f,%f&daddr=%f,%f", latitude.floatValue, longitude.floatValue, self.textFieldLatitude.text.floatValue, self.textFieldLongitude.text.floatValue];
         NSURL *urlNavigation = [NSURL URLWithString:stringNavigation];
         [[UIApplication sharedApplication] openURL:urlNavigation];
     }
@@ -324,17 +334,14 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
     self.buttonCancel.enabled     = NO;
     self.buttonMap.enabled        = NO;
     self.buttonNavigation.enabled = NO;
-    self.textFieldLongitude.text  = @"";
-    self.textFieldLatitude.text   = @"";
 }
 
 - (BOOL)textFieldEmpty {
-    return ( [@"" isEqualToString:self.textFieldLatitude.text] && [@"" isEqualToString:self.textFieldLongitude.text] );
+    return ( [@"" isEqualToString:self.textFieldLatitude.text] || [@"" isEqualToString:self.textFieldLongitude.text] );
 }
 
 - (void)removeCurrentLocation {
     [[MDKManagerPosition sharedManager] resetCurrentLocation];
-    [self reset];
     [self displayLocationFoundedIfNeeded];
     [self stopLocationButtonAnimation];
 }
