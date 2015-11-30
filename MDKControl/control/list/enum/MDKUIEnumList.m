@@ -15,6 +15,7 @@
  */
 
 #import "MDKUIEnumList.h"
+#import "MDKListCell.h"
 #import "MDKDelegateEnumList.h"
 #import "MDKUIList.h"
 #import "Helper.h"
@@ -153,6 +154,10 @@ NSString *const MDKUIEnumListKey = @"MDKUIEnumListKey";
     NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.uiList attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
     NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.uiList attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
     [self.parentNavigationController.view addConstraints:@[right, left, bottom, top]];
+    
+    
+    [self.uiList.tableView registerNib:[UINib nibWithNibName:MDKListCellIdentifier bundle:[NSBundle bundleForClass:NSClassFromString(@"MDKListCell")]] forCellReuseIdentifier:MDKListCellIdentifier];
+
     
     // Perform animation
     CGRect finalFrame = self.uiList.tableView.frame;

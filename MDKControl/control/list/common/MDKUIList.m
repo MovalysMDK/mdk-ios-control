@@ -15,7 +15,6 @@
  */
 
 #import "MDKUIList.h"
-#import "MDKListCell.h"
 #import "Helper.h"
 
 
@@ -27,26 +26,9 @@
 NSString *const MDKUIListIdentifier = @"MDK_MDKUIList";
 
 
-#pragma mark - MDKUIList - Private interface
-
-@interface MDKUIList()
-
-// Model
-@property (nonatomic, strong) NSArray *rows;
-
-@end
-
-
 #pragma mark - MDKUIList - Implementation
 
 @implementation MDKUIList
-
-
-#pragma mark Life cycle
-
-- (void)awakeFromNib {
-    [self.tableView registerNib:[UINib nibWithNibName:MDKListCellIdentifier bundle:[NSBundle bundleForClass:NSClassFromString(@"MDKListCell")]] forCellReuseIdentifier:MDKListCellIdentifier];
-}
 
 
 #pragma mark Handle user event
