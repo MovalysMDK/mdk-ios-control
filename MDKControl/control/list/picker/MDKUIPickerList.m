@@ -25,12 +25,12 @@
 /*!
  * @brief The key for MDKUIPickerListKey allowing to handle external delegate
  */
-NSString *const MDKUIPickerListDelegateKey = @"MDKUIPickerListDelegateKey";
+NSString *const MDKUIPickerListDelegateKey = @"listItemBindingDelegate";
 
 /*!
  * @brief The key for MDKUIPickerSelectedKey allowing to handle external delegate
  */
-NSString *const MDKUIPickerSelectedDelegateKey = @"MDKUIPickerSelectedDelegateKey";
+NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
 
 
 #pragma mark - MDKUIPickerList - Private interface
