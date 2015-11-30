@@ -14,10 +14,22 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef Pods_ControlList_h
-#define Pods_ControlList_h
+@protocol MDKUIPickerSelectedDataProtocol <NSObject>
 
-#import "ControlEnumList.h"
-#import "ControlPickerList.h"
+#pragma mark - Required Methods
+@required
 
-#endif
+/*!
+ * @brief The xib name to used for one item in view
+ * @discussion The XIB file pointed by this method must exist and contain an unique view that
+ * inherits from UIView.
+ * @return The xib name to used for one item in view
+ */
+- (NSString *)xibName;
+
+/*!
+ * @brief Mapping between view and object
+ */
+- (void)mappXibViewWithObject:(id)object;
+
+@end

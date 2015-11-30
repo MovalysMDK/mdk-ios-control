@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MDKUIPickerList</key>
+	<string>MDK_MDKUIPickerList</string>
 	<key>MDKUIEnumList</key>
 	<string>MDK_MDKUIEnumList</string>
 	<key>MDKUIWebView</key>

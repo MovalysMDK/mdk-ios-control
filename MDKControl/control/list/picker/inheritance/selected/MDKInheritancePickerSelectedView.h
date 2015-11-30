@@ -14,23 +14,32 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Protocol_h
-#define MDKControl_Protocol_h
 
-#import "MDKControlChangesProtocol.h"
-#import "MDKBackgroundViewProtocol.h"
-#import "MDKControlAssociatedLabelProtocol.h"
-#import "MDKControlAttributesProtocol.h"
-#import "MDKControlDataProtocol.h"
-#import "MDKControlErrorProtocol.h"
-#import "MDKControlPropertiesProtocol.h"
-#import "MDKControlValidationProtocol.h"
-#import "MDKControlCustomStyleProtocol.h"
-#import "MDKErrorViewProtocol.h"
-#import "MDKEnumHelperProtocol.h"
-#import "MDKUIFixedListDataProtocol.h"
-#import "MDKUIDataPositionProtocol.h"
-#import "MDKUIPickerListDataProtocol.h"
+#import <Foundation/Foundation.h>
 #import "MDKUIPickerSelectedDataProtocol.h"
 
-#endif
+
+@class MDKUIPickerList;
+
+
+/*!
+ * @class MDKInheritancePickerSelectedView
+ * @brief The MDKInheritancePickerSelectedView framework
+ * @discussion This object allow to simply user's life. You have to inherit of this object to
+ * initialize your selected view
+ */
+@interface MDKInheritancePickerSelectedView : NSObject <MDKUIPickerSelectedDataProtocol>
+
+#pragma mark - Properties
+/*!
+ * @brief Picker list property
+ */
+@property (nonatomic, weak) MDKUIPickerList *pickerList;
+
+#pragma mark - Methods
+/*!
+ * @brief This method is called on MDKUIPickerList - User can override it to implement his initialization of custom selected view
+ */
+- (instancetype)initWithPickerList:(MDKUIPickerList *)pickerList;
+
+@end

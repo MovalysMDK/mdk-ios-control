@@ -14,10 +14,29 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef Pods_ControlList_h
-#define Pods_ControlList_h
 
-#import "ControlEnumList.h"
-#import "ControlPickerList.h"
+#import <Foundation/Foundation.h>
+@class MDKUIPickerList;
 
-#endif
+
+/*!
+ * @protocol MDKUIPickerListDataProtocol
+ * @brief This protocol defines available methods to custom a PickerList component
+ * @discussion Some of methods declared in this protocol are required.
+ * It must be implemented in the project.
+ */
+@protocol MDKUIPickerListDataProtocol <NSObject>
+
+#pragma mark - Required Methods
+@required
+
+/*!
+ * @brief The xib name to used for all items of the PickerList
+ * @discussion The XIB file pointed by this method must exist and contain an unique view that
+ * inherits from UITableViewCell.
+ * @return The xib name to used for all items of the PickerList
+ */
+- (NSString *)xibNameForPickerListCells;
+
+
+@end

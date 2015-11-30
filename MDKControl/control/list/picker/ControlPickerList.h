@@ -17,5 +17,8 @@
 #ifndef Pods_ControlPickerList_h
 #define Pods_ControlPickerList_h
 
+#import "MDKUIPickerList.h"
+#import "MDKInheritancePickerList.h"
+#import "MDKInheritancePickerSelectedView.h"
 
 #endif /* ControlPickerList_h */

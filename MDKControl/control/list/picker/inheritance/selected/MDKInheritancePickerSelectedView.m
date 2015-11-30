@@ -14,10 +14,19 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef Pods_ControlList_h
-#define Pods_ControlList_h
 
-#import "ControlEnumList.h"
-#import "ControlPickerList.h"
+#import "MDKInheritancePickerSelectedView.h"
+#import "MDKUIPickerList.h"
 
-#endif
+
+@implementation MDKInheritancePickerSelectedView
+
+- (instancetype)initWithPickerList:(MDKUIPickerList *)pickerList {
+    self = [super init];
+    if (self) {
+        self.pickerList = pickerList;
+    }
+    return self;
+}
+
+@end

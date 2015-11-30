@@ -15,6 +15,7 @@
  */
 
 #import "MDKRenderableControl.h"
+#import "MDKUIList.h"
 
 
 /******************************************************/
@@ -22,9 +23,14 @@
 /******************************************************/
 
 /*!
- * @brief The key for MDKUIEnumListKey allowing to add control attributes
+ * @brief The key for MDKUIPickerViewKey allowing to handle external delegate
  */
-FOUNDATION_EXTERN NSString *const MDKUIPickerListKey;
+FOUNDATION_EXTERN NSString *const MDKUIPickerListDelegateKey;
+
+/*!
+ * @brief The key for MDKUIPickerListKey allowing to handle external delegate
+ */
+FOUNDATION_EXPORT NSString *const MDKUIPickerSelectedDelegateKey;
 
 
 /******************************************************/
@@ -40,6 +46,11 @@ IB_DESIGNABLE
  * @brief button action
  */
 @property (nonatomic, weak) IBOutlet UIButton *button;
+
+/*!
+ * @brief The view for table view
+ */
+@property (nonatomic, strong) MDKUIList *uiList;
 
 @end
 

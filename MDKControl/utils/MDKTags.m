@@ -75,7 +75,7 @@ NSInteger const TAG_MFPICKERLIST_CANCELBUTTON                 = 12510;
 //NSInteger const TAG_MFSIMPLEPICKERLIST_CONFIRMBUTTON          = 13010;
 //NSInteger const TAG_MFSIMPLEPICKERLIST_CANCELBUTTON           = 13015;
 
-FOUNDATION_EXPORT NSInteger const TAG_MDKUILIST_BUTTON        = 13000;
+NSInteger const TAG_MDKUILIST_BUTTON        = 13000;
 
 // /MFUI/control/number
 NSInteger const TAG_MFNUMBERPICKER_NUMBERBUTTON               = 13500;
@@ -129,3 +129,5 @@ NSInteger const TAG_MFTEXTVIEW_TEXTVIEW                       = 20000;
 // /MFUI/control/webview
 NSInteger const TAG_MDKWEBVIEW_WEBVIEW                         = 20500;
 NSInteger const TAG_MDKWEBVIEW_SPINNER                         = 20505;
+
+NSInteger const TAG_MDKPICKERLIST_BUTTON                       = 21000;

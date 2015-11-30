@@ -14,10 +14,29 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef Pods_ControlList_h
-#define Pods_ControlList_h
 
-#import "ControlEnumList.h"
-#import "ControlPickerList.h"
+#import <UIKit/UIKit.h>
+#import "MDKUIPickerListDataProtocol.h"
 
-#endif
+
+/*!
+ * @class MDKInheritancePickerList
+ * @brief The MDKInheritancePickerList framework
+ * @discussion This object allow to simply user's life. You have to inherit of this object to
+ * initialize your picker list
+ */
+@interface MDKInheritancePickerList : NSObject <UITableViewDelegate, UITableViewDataSource, MDKUIPickerListDataProtocol>
+
+#pragma mark - Properties
+/*!
+ * @brief Picker list property
+ */
+@property (nonatomic, weak) MDKUIPickerList *pickerList;
+
+#pragma mark - Methods
+/*!
+ * @brief This method is called on MDKUIPickerList - User can override it to implement his initialization of custom picker list
+ */
+- (instancetype)initWithPickerList:(MDKUIPickerList *)pickerList;
+
+@end

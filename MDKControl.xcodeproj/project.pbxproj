@@ -289,6 +289,12 @@
 		F994B5901BFC7C9A0055C16C /* MDKUIPickerList.m in Sources */ = {isa = PBXBuildFile; fileRef = F994B58E1BFC7C9A0055C16C /* MDKUIPickerList.m */; };
 		F994B5921BFC7CF80055C16C /* ControlPickerList.h in Headers */ = {isa = PBXBuildFile; fileRef = F994B5911BFC7CF80055C16C /* ControlPickerList.h */; };
 		F9B6597D1C045E4800C1988B /* MDK_MDKUIPickerList.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B6597C1C045E4800C1988B /* MDK_MDKUIPickerList.xib */; };
+		F9B70F571C08B930001C4F04 /* MDKInheritancePickerSelectedView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B70F551C08B930001C4F04 /* MDKInheritancePickerSelectedView.h */; };
+		F9B70F581C08B930001C4F04 /* MDKInheritancePickerSelectedView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B70F561C08B930001C4F04 /* MDKInheritancePickerSelectedView.m */; };
+		F9B70F5B1C08B976001C4F04 /* MDKInheritancePickerList.h in Headers */ = {isa = PBXBuildFile; fileRef = F9B70F591C08B976001C4F04 /* MDKInheritancePickerList.h */; };
+		F9B70F5C1C08B976001C4F04 /* MDKInheritancePickerList.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B70F5A1C08B976001C4F04 /* MDKInheritancePickerList.m */; };
+		F9CEAB5F1C07026900275754 /* MDKUIPickerListDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F9CEAB5E1C07026900275754 /* MDKUIPickerListDataProtocol.h */; };
+		F9CEAB811C073F8400275754 /* MDKUIPickerSelectedDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F9CEAB801C073F8400275754 /* MDKUIPickerSelectedDataProtocol.h */; };
 		F9D267351BFA180400B55A11 /* MDKUIList.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D267321BFA180400B55A11 /* MDKUIList.h */; };
 		F9D267361BFA180400B55A11 /* MDKUIList.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D267331BFA180400B55A11 /* MDKUIList.m */; };
 		F9D267401BFA186400B55A11 /* MDKListCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D2673D1BFA186400B55A11 /* MDKListCell.h */; };
@@ -623,6 +629,12 @@
 		F994B58E1BFC7C9A0055C16C /* MDKUIPickerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIPickerList.m; path = list/picker/MDKUIPickerList.m; sourceTree = "<group>"; };
 		F994B5911BFC7CF80055C16C /* ControlPickerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlPickerList.h; path = list/picker/ControlPickerList.h; sourceTree = "<group>"; };
 		F9B6597C1C045E4800C1988B /* MDK_MDKUIPickerList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIPickerList.xib; sourceTree = "<group>"; };
+		F9B70F551C08B930001C4F04 /* MDKInheritancePickerSelectedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKInheritancePickerSelectedView.h; path = list/picker/inheritance/selected/MDKInheritancePickerSelectedView.h; sourceTree = "<group>"; };
+		F9B70F561C08B930001C4F04 /* MDKInheritancePickerSelectedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKInheritancePickerSelectedView.m; path = list/picker/inheritance/selected/MDKInheritancePickerSelectedView.m; sourceTree = "<group>"; };
+		F9B70F591C08B976001C4F04 /* MDKInheritancePickerList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKInheritancePickerList.h; path = list/picker/inheritance/list/MDKInheritancePickerList.h; sourceTree = "<group>"; };
+		F9B70F5A1C08B976001C4F04 /* MDKInheritancePickerList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKInheritancePickerList.m; path = list/picker/inheritance/list/MDKInheritancePickerList.m; sourceTree = "<group>"; };
+		F9CEAB5E1C07026900275754 /* MDKUIPickerListDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIPickerListDataProtocol.h; sourceTree = "<group>"; };
+		F9CEAB801C073F8400275754 /* MDKUIPickerSelectedDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIPickerSelectedDataProtocol.h; sourceTree = "<group>"; };
 		F9D267321BFA180400B55A11 /* MDKUIList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIList.h; path = list/common/MDKUIList.h; sourceTree = "<group>"; };
 		F9D267331BFA180400B55A11 /* MDKUIList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIList.m; path = list/common/MDKUIList.m; sourceTree = "<group>"; };
 		F9D2673D1BFA186400B55A11 /* MDKListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKListCell.h; path = list/common/cell/MDKListCell.h; sourceTree = "<group>"; };
@@ -770,6 +782,8 @@
 				B08C18FE1B9DDCA300D6F93A /* Protocol.h */,
 				B021169C1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h */,
 				B0CEFF601BF4E246007AEBB4 /* MDKUIDataPositionProtocol.h */,
+				F9CEAB5E1C07026900275754 /* MDKUIPickerListDataProtocol.h */,
+				F9CEAB801C073F8400275754 /* MDKUIPickerSelectedDataProtocol.h */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -1439,11 +1453,39 @@
 		F994B58C1BFC7C540055C16C /* picker */ = {
 			isa = PBXGroup;
 			children = (
+				F9B70F521C08B869001C4F04 /* inheritance */,
 				F994B5911BFC7CF80055C16C /* ControlPickerList.h */,
 				F994B58D1BFC7C9A0055C16C /* MDKUIPickerList.h */,
 				F994B58E1BFC7C9A0055C16C /* MDKUIPickerList.m */,
 			);
 			name = picker;
+			sourceTree = "<group>";
+		};
+		F9B70F521C08B869001C4F04 /* inheritance */ = {
+			isa = PBXGroup;
+			children = (
+				F9B70F541C08B898001C4F04 /* selected */,
+				F9B70F531C08B892001C4F04 /* list */,
+			);
+			name = inheritance;
+			sourceTree = "<group>";
+		};
+		F9B70F531C08B892001C4F04 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				F9B70F591C08B976001C4F04 /* MDKInheritancePickerList.h */,
+				F9B70F5A1C08B976001C4F04 /* MDKInheritancePickerList.m */,
+			);
+			name = list;
+			sourceTree = "<group>";
+		};
+		F9B70F541C08B898001C4F04 /* selected */ = {
+			isa = PBXGroup;
+			children = (
+				F9B70F551C08B930001C4F04 /* MDKInheritancePickerSelectedView.h */,
+				F9B70F561C08B930001C4F04 /* MDKInheritancePickerSelectedView.m */,
+			);
+			name = selected;
 			sourceTree = "<group>";
 		};
 		F9D267301BFA17E000B55A11 /* common */ = {
@@ -1585,13 +1627,16 @@
 				F97546E31BF4E05700B2E48B /* ControlList.h in Headers */,
 				B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */,
 				B08C19381B9DE9A500D6F93A /* MDKRenderableControl.h in Headers */,
+				F9CEAB811C073F8400275754 /* MDKUIPickerSelectedDataProtocol.h in Headers */,
 				B02157DB1B9DAFA0001860B5 /* ComponentProvider.h in Headers */,
 				B02157631B9DAEEA001860B5 /* MDKLengthFieldValidator.h in Headers */,
 				B08C193E1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.h in Headers */,
 				B05C93701B9F3D1C00487CFB /* MDKEmailFieldValidator.h in Headers */,
+				F9B70F571C08B930001C4F04 /* MDKInheritancePickerSelectedView.h in Headers */,
 				B02157B71B9DAF30001860B5 /* MDKInvalidDoubleValueUIValidationError.h in Headers */,
 				B0308D581B9F1C64000817D3 /* MDKContext.h in Headers */,
 				F97546ED1BF4E06E00B2E48B /* MDKUIEnumList.h in Headers */,
+				F9B70F5B1C08B976001C4F04 /* MDKInheritancePickerList.h in Headers */,
 				B00C4DF01BA06B4C003CBB16 /* MDKCreateEmailViewController.h in Headers */,
 				B018BE9F1BA02C6000EF1D87 /* MDKSendEmailCommand.h in Headers */,
 				B06120251BD9336F0012F82F /* MDKUIFixedList.h in Headers */,
@@ -1611,6 +1656,7 @@
 				B08C193C1B9DE9A500D6F93A /* MDKBaseTextExtensionProtocol.h in Headers */,
 				B02157B91B9DAF30001860B5 /* MDKInvalidEmailValueUIValidationError.h in Headers */,
 				B0FFB6B91BA1CD4800258B9D /* MDKConverterProtocol.h in Headers */,
+				F9CEAB5F1C07026900275754 /* MDKUIPickerListDataProtocol.h in Headers */,
 				B00C4E001BA07C45003CBB16 /* MDKPhoneNumber.h in Headers */,
 				B02156E91B9DAD59001860B5 /* MDKControlValidationProtocol.h in Headers */,
 				F9D267351BFA180400B55A11 /* MDKUIList.h in Headers */,
@@ -1873,9 +1919,11 @@
 				B05C936D1B9F3CA300487CFB /* UIView+ViewController.m in Sources */,
 				B02156CA1B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m in Sources */,
 				B02156D01B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m in Sources */,
+				F9B70F5C1C08B976001C4F04 /* MDKInheritancePickerList.m in Sources */,
 				F91971541BE8AF4B00B94F8A /* MDKEnumImageStyle.m in Sources */,
 				B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */,
 				B0FFB6AA1BA1CB5F00258B9D /* MDKUISlider+UISliderForwarding.m in Sources */,
+				F9B70F581C08B930001C4F04 /* MDKInheritancePickerSelectedView.m in Sources */,
 				B02157C61B9DAF30001860B5 /* MDKNoMatchingValueUIValidationError.m in Sources */,
 				F95BF3D21BF0DA2D002F2EE7 /* MDKHelperImage.m in Sources */,
 				B02156D21B9DAC6E001860B5 /* MDKTextFieldStyle.m in Sources */,
