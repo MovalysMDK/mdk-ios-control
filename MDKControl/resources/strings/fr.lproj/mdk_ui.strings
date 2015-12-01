@@ -1,0 +1,13 @@
+//
+//  Localizable-framework.strings
+//
+//  Created by Movalys MDK.
+//  Copyright (c) 2012 Sopra Group. All rights reserved.
+//
+
+/*********************** General *************************/
+"clearButton" = "Effacer";
+"okButton" = "OK";
+"enterText" = "saisir un texte";
+"enterNumber" = "saisir un nombre";
+"mdk_navigate_to" = "Naviguer vers :";

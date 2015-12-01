@@ -263,6 +263,7 @@
 		F93DAC241C0C5BC00067E6AB /* MDKPickerListBaseDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F93DAC221C0C5BC00067E6AB /* MDKPickerListBaseDelegate.m */; };
 		F93DAC271C0C5BD80067E6AB /* MDKUIPickerListDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F93DAC251C0C5BD80067E6AB /* MDKUIPickerListDataProtocol.h */; };
 		F93DAC281C0C5BD80067E6AB /* MDKUIPickerSelectedDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = F93DAC261C0C5BD80067E6AB /* MDKUIPickerSelectedDataProtocol.h */; };
+		F942F6A51C0DD12400D75033 /* mdk_ui.strings in Resources */ = {isa = PBXBuildFile; fileRef = F942F6A31C0DD12400D75033 /* mdk_ui.strings */; };
 		F95BF3C01BF099E8002F2EE7 /* MDKUIMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F95BF3BE1BF099E8002F2EE7 /* MDKUIMedia.h */; };
 		F95BF3C11BF099E8002F2EE7 /* MDKUIMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = F95BF3BF1BF099E8002F2EE7 /* MDKUIMedia.m */; };
 		F95BF3C31BF09A03002F2EE7 /* ControlMedia.h in Headers */ = {isa = PBXBuildFile; fileRef = F95BF3C21BF09A03002F2EE7 /* ControlMedia.h */; };
@@ -610,6 +611,8 @@
 		F93DAC221C0C5BC00067E6AB /* MDKPickerListBaseDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKPickerListBaseDelegate.m; path = list/picker/inheritance/list/MDKPickerListBaseDelegate.m; sourceTree = "<group>"; };
 		F93DAC251C0C5BD80067E6AB /* MDKUIPickerListDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIPickerListDataProtocol.h; sourceTree = "<group>"; };
 		F93DAC261C0C5BD80067E6AB /* MDKUIPickerSelectedDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIPickerSelectedDataProtocol.h; sourceTree = "<group>"; };
+		F942F6A41C0DD12400D75033 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/mdk_ui.strings; sourceTree = "<group>"; };
+		F942F6A61C0DD12B00D75033 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/mdk_ui.strings; sourceTree = "<group>"; };
 		F95BF3BE1BF099E8002F2EE7 /* MDKUIMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIMedia.h; path = media/MDKUIMedia.h; sourceTree = "<group>"; };
 		F95BF3BF1BF099E8002F2EE7 /* MDKUIMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIMedia.m; path = media/MDKUIMedia.m; sourceTree = "<group>"; };
 		F95BF3C21BF09A03002F2EE7 /* ControlMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlMedia.h; path = media/ControlMedia.h; sourceTree = "<group>"; };
@@ -1223,6 +1226,7 @@
 		B0F531F91BFE3EA700482B2E /* strings */ = {
 			isa = PBXGroup;
 			children = (
+				F942F6A31C0DD12400D75033 /* mdk_ui.strings */,
 				B0F531FA1BFE3EA700482B2E /* mdk_errors.strings */,
 			);
 			path = strings;
@@ -1863,6 +1867,7 @@
 				F98D77F51BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png in Resources */,
 				B0C6BAAB1BA1D9830087C4D3 /* ios_ic_mail_active@2x.png in Resources */,
 				B0C6BAB31BA1D9830087C4D3 /* ios_ic_nav_active@2x.png in Resources */,
+				F942F6A51C0DD12400D75033 /* mdk_ui.strings in Resources */,
 				B0C6BAB21BA1D9830087C4D3 /* ios_ic_qrcode_icon_active@2x.png in Resources */,
 				F97546F51BF4EA9200B2E48B /* MDK_MDKUIList.xib in Resources */,
 			);
@@ -2043,6 +2048,15 @@
 				B0F531FC1BFE3EA700482B2E /* fr */,
 			);
 			name = mdk_errors.strings;
+			sourceTree = "<group>";
+		};
+		F942F6A31C0DD12400D75033 /* mdk_ui.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F942F6A41C0DD12400D75033 /* en */,
+				F942F6A61C0DD12B00D75033 /* fr */,
+			);
+			name = mdk_ui.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
