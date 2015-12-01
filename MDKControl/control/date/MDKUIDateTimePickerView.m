@@ -19,14 +19,15 @@
 
 @implementation MDKUIDateTimePickerView
 
--(void)drawRect:(CGRect)rect {
-    self.contentView.layer.cornerRadius = 10;
-    self.contentView.clipsToBounds = YES;
-}
-
--(void) dismiss {
-    [UIView animateWithDuration:0.25 animations:^{
-        self.alpha = 0;
+- (void) dismiss {
+    // Perform animation
+    CGRect startFrame = self.frame;
+    CGRect finalFrame = CGRectMake(startFrame.origin.x, self.frame.size.height, startFrame.size.width, startFrame.size.height);
+    self.frame = startFrame;
+    
+    // Animation
+    [UIView animateWithDuration:0.2f delay:0.0f usingSpringWithDamping:10.0f initialSpringVelocity:18.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.frame = finalFrame;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
     }];
@@ -43,7 +44,7 @@
 }
 
 
--(void) refreshWithDate:(NSDate *)date andMode:(MDKDateTimeMode)mode {
+- (void) refreshWithDate:(NSDate *)date andMode:(MDKDateTimeMode)mode {
     self.datePicker.date = date;
     [self setDateTimeMode:mode];
 }

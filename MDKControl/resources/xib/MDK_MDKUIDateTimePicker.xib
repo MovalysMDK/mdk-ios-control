@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -14,13 +14,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xh-9q-NuO">
                     <rect key="frame" x="0.0" y="152" width="320" height="263"/>
                     <subviews>
-                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="v5x-wU-PZI">
+                        <datePicker clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5x-wU-PZI">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                             <animations/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="216" id="f68-5H-eKY"/>
-                                <constraint firstAttribute="width" constant="320" id="oIt-lj-s5F"/>
-                            </constraints>
                             <date key="date" timeIntervalSinceReferenceDate="465835842.62232602">
                                 <!--2015-10-06 14:50:42 +0000-->
                             </date>
@@ -56,34 +52,23 @@
                         </button>
                     </subviews>
                     <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="f08-Nt-wWV" secondAttribute="trailing" id="3N4-yd-e5I"/>
-                        <constraint firstItem="ER9-rG-k4l" firstAttribute="top" secondItem="v5x-wU-PZI" secondAttribute="bottom" id="47P-Qx-AwZ"/>
-                        <constraint firstItem="v5x-wU-PZI" firstAttribute="top" secondItem="7xh-9q-NuO" secondAttribute="top" id="G9Q-3P-ClY"/>
+                        <constraint firstItem="v5x-wU-PZI" firstAttribute="centerY" secondItem="7xh-9q-NuO" secondAttribute="centerY" constant="-24" id="7iO-jl-S93"/>
                         <constraint firstAttribute="bottom" secondItem="f08-Nt-wWV" secondAttribute="bottom" id="HcD-zU-Gag"/>
                         <constraint firstItem="f08-Nt-wWV" firstAttribute="leading" secondItem="ER9-rG-k4l" secondAttribute="trailing" id="Iuu-fk-9zs"/>
-                        <constraint firstItem="v5x-wU-PZI" firstAttribute="leading" secondItem="7xh-9q-NuO" secondAttribute="leading" id="Nxs-d6-Zbv"/>
                         <constraint firstAttribute="bottom" secondItem="ER9-rG-k4l" secondAttribute="bottom" id="OEX-Fz-p5y"/>
                         <constraint firstItem="ER9-rG-k4l" firstAttribute="leading" secondItem="7xh-9q-NuO" secondAttribute="leading" id="PJm-UL-RMB"/>
-                        <constraint firstItem="f08-Nt-wWV" firstAttribute="top" secondItem="ER9-rG-k4l" secondAttribute="top" id="SOi-rd-kkG"/>
-                        <constraint firstAttribute="width" constant="320" id="ShT-OL-8Z9"/>
-                        <constraint firstItem="f08-Nt-wWV" firstAttribute="top" secondItem="v5x-wU-PZI" secondAttribute="bottom" id="X5F-md-8U6"/>
                         <constraint firstItem="f08-Nt-wWV" firstAttribute="height" secondItem="ER9-rG-k4l" secondAttribute="height" id="ZJ4-Nu-mYf"/>
                         <constraint firstItem="f08-Nt-wWV" firstAttribute="width" secondItem="ER9-rG-k4l" secondAttribute="width" id="gc2-QV-fKG"/>
+                        <constraint firstItem="v5x-wU-PZI" firstAttribute="centerX" secondItem="7xh-9q-NuO" secondAttribute="centerX" id="ncB-qe-bfS"/>
                         <constraint firstAttribute="height" constant="263" id="trv-iU-yXL"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="47P-Qx-AwZ"/>
-                            <exclude reference="SOi-rd-kkG"/>
-                            <exclude reference="X5F-md-8U6"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <animations/>
-            <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.33000000000000002" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="7xh-9q-NuO" firstAttribute="centerY" secondItem="iC5-WE-a7C" secondAttribute="centerY" id="aYN-kI-pRp"/>
                 <constraint firstItem="7xh-9q-NuO" firstAttribute="centerX" secondItem="iC5-WE-a7C" secondAttribute="centerX" id="bwH-aW-MvZ"/>
