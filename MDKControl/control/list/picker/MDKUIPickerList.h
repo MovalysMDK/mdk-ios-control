@@ -15,6 +15,7 @@
  */
 
 #import "MDKRenderableControl.h"
+#import "MDKPickerListBaseDelegate.h"
 #import "MDKUIList.h"
 
 
@@ -48,11 +49,28 @@ IB_DESIGNABLE
 @property (nonatomic, weak) IBOutlet UIButton *button;
 
 /*!
- * @brief The view for table view
+ * @brief The selected view that shows the selected item of the picker list
+ */
+@property (nonatomic, weak) UIView *selectedView;
+
+/*!
+ * @brief The view that shows a table view containing all the items of picker list
  */
 @property (nonatomic, strong) MDKUIList *uiList;
 
+/*!
+ * @brief The delegate used to manage the list.
+ */
+@property (nonatomic, strong) MDKPickerListBaseDelegate<MDKUIPickerListDataProtocol> *userListDelegate;
+
+/*!
+ * @brief The delegate used to manage the selected view.
+ */
+@property (nonatomic, strong) NSObject<MDKUIPickerSelectedDataProtocol> *userSelectedDelegate;
+
+
 @end
+
 
 
 /******************************************************/
@@ -62,6 +80,7 @@ IB_DESIGNABLE
 IB_DESIGNABLE
 @interface MDKUIInternalPickerList : MDKUIPickerList <MDKInternalComponent>
 @end
+
 
 
 /******************************************************/
@@ -82,3 +101,36 @@ IB_DESIGNABLE
 @property (nonatomic, strong) IBInspectable NSString *customErrorXIBName;
 
 @end
+
+
+
+
+/******************************************************/
+/* FILTER                                             */
+/******************************************************/
+
+/*!
+ * @protocol MDKPickerListFilterProtocol
+ * @brief A protocol that identfy a PickerList filter
+ * @discussion The class that implements this protocol can filter a list of picker items bu
+ * implementing the filterItems:withString: method
+ */
+@protocol MDKPickerListFilterProtocol <NSObject>
+
+/*!
+ * @brief Filters a given array of items with a given string
+ * @param items An array of items
+ * @param string The string used to filter
+ * @return An array of filtered items
+ */
+@required
+-(NSArray *)filterItems:(NSArray *)items withString:(NSString *)string;
+
+@end
+
+
+@interface MDKPickerListDefaultFilter : NSObject <MDKPickerListFilterProtocol>
+
+@end
+
+

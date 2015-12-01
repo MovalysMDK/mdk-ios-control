@@ -24,6 +24,7 @@
  * @brief The key for MDKUIListIdentifier allowing to name component identifier
  */
 NSString *const MDKUIListIdentifier = @"MDK_MDKUIList";
+NSString *const MDKUIListWithSearchIdentifier = @"MDK_MDKUIListSearch";
 
 
 #pragma mark - MDKUIList - Implementation

@@ -15,30 +15,21 @@
  */
 
 
-#import <Foundation/Foundation.h>
-#import "MDKUIPickerSelectedDataProtocol.h"
-
-
-@class MDKUIPickerList;
+#import <UIKit/UIKit.h>
+#import "MDKUIPickerListDataProtocol.h"
 
 
 /*!
- * @class MDKInheritancePickerSelectedView
- * @brief The MDKInheritancePickerSelectedView framework
+ * @class MDKPickerListBaseDelegate
+ * @brief The MDKInheritancePickerList framework
  * @discussion This object allow to simply user's life. You have to inherit of this object to
- * initialize your selected view
+ * initialize your picker list
  */
-@interface MDKInheritancePickerSelectedView : NSObject <MDKUIPickerSelectedDataProtocol>
-
-#pragma mark - Properties
-/*!
- * @brief Picker list property
- */
-@property (nonatomic, weak) MDKUIPickerList *pickerList;
+@interface MDKPickerListBaseDelegate : NSObject <MDKUIPickerListDataProtocol>
 
 #pragma mark - Methods
 /*!
- * @brief This method is called on MDKUIPickerList - User can override it to implement his initialization of custom selected view
+ * @brief This method is called on MDKUIPickerList - User can override it to implement his initialization of custom picker list
  */
 - (instancetype)initWithPickerList:(MDKUIPickerList *)pickerList;
 

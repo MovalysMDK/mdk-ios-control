@@ -15,16 +15,18 @@
  */
 
 
-#import "MDKInheritancePickerList.h"
+#import "MDKPickerListBaseDelegate.h"
 #import "MDKUIPickerList.h"
 
 
-@implementation MDKInheritancePickerList
+@implementation MDKPickerListBaseDelegate
+@synthesize picker = _picker;
+@synthesize list = _list;
 
 - (instancetype)initWithPickerList:(MDKUIPickerList *)pickerList {
     self = [super init];
     if (self) {
-        self.pickerList = pickerList;
+        self.picker = pickerList;
     }
     return self;
 }

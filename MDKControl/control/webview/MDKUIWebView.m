@@ -32,11 +32,6 @@ NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
 @interface MDKUIWebView() <UIWebViewDelegate>
 
 /*!
- * @brief The private current data allow to know if the update is necessary
- */
-@property (nonatomic, strong) id currentData;
-
-/*!
  * @brief This variable allow to know the current enum class name
  */
 @property (nonatomic, strong) NSString *currentEnumClassName;
@@ -108,15 +103,14 @@ NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
 }
 
 - (void)setData:(id)data {
-    if ( data && ![data isEqual:self.currentData]) {
-        self.currentData = data;
+    if ( data && ![data isEqual:self.controlData]) {
         [self displayData];
     }
     [super setData:data];
 }
 
 - (id)getData {
-    return self.currentData;
+    return self.controlData;
 }
 
 - (void)setEditable:(NSNumber *)editable {
@@ -143,6 +137,9 @@ NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
     [self.hud hide:YES];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Oopps, we cannot load your website ..." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    if(error) {
+        NSLog(@"ERROR : %@", error);
+    }
     [alert show];
 }
 
@@ -151,7 +148,7 @@ NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
 
 - (void)displayData {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self startLoadUrl:(NSURL *)self.currentData];
+        [self startLoadUrl:(NSURL *)self.controlData];
     });
 }
 

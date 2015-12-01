@@ -25,9 +25,11 @@
  * @brief The key for MDKUIListIdentifier allowing to name component identifier
  */
 FOUNDATION_EXTERN NSString *const MDKUIListIdentifier;
+FOUNDATION_EXTERN NSString *const MDKUIListWithSearchIdentifier;
 
 
 @interface MDKUIList : UIView
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 /*!
  * @brief Table view for list all elements
