@@ -32,11 +32,6 @@ NSString *const MDKUIEnumImageKey = @"enumClassName";
 @interface MDKUIEnumImage()
 
 /*!
- * @brief The private current data allow to know if the update is necessary
- */
-@property (nonatomic, strong) id currentData;
-
-/*!
  * @brief This variable allow to know the current enum class name
  */
 @property (nonatomic, strong) NSString *currentEnumClassName;
@@ -64,7 +59,7 @@ NSString *const MDKUIEnumImageKey = @"enumClassName";
 }
 
 - (void)initializeVars {
-    self.currentData = @(0);
+    self.controlData = @(0);
     self.imageMode   = NO;
 }
 
@@ -99,15 +94,15 @@ NSString *const MDKUIEnumImageKey = @"enumClassName";
 }
 
 - (void)setData:(id)data {
-    if (data && ![self.currentData isEqual:data]) {
-        self.currentData = data;
+    if (data && ![self.controlData isEqual:data]) {
+        self.controlData = data;
         [self displayData];
     }
     [super setData:data];
 }
 
 - (id)getData {
-    return self.currentData;
+    return self.controlData;
 }
 
 - (void)setEditable:(NSNumber *)editable {
@@ -144,7 +139,7 @@ NSString *const MDKUIEnumImageKey = @"enumClassName";
 #pragma mark - Custom methods
 
 - (void)setValue:(id)value {
-    self.currentData = value;
+    self.controlData = value;
 }
 
 - (BOOL)checkIfImageViewNeeded {
@@ -156,7 +151,7 @@ NSString *const MDKUIEnumImageKey = @"enumClassName";
     Class cEnumHelper              = NSClassFromString(sEnumClassHelperName);
     
     if ([cEnumHelper respondsToSelector:@selector(textFromEnum:)]) {
-        NSString *text = [cEnumHelper performSelector:@selector(textFromEnum:) withObject:self.currentData];
+        NSString *text = [cEnumHelper performSelector:@selector(textFromEnum:) withObject:self.controlData];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self updateDisplayFromText:text];
         });
@@ -177,6 +172,7 @@ NSString *const MDKUIEnumImageKey = @"enumClassName";
 - (void)initializeImageViewWithText:(NSString *)text {
     NSString *imageName  = [[NSString stringWithFormat:@"enum_%@_%@", self.currentEnumClassName, text] lowercaseString];
     self.imageView.image = [UIImage imageNamed:imageName];
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
 }
 
 @end
