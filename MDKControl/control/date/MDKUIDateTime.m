@@ -61,19 +61,27 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
     self.pickerView.translatesAutoresizingMaskIntoConstraints = NO;
     self.pickerView.sourceComponent = self;
     [self.pickerView refreshWithDate:[self getData] andMode:self.MDK_dateTimeMode];
-    [self.parentNavigationController.view addSubview:self.pickerView];
+    [[UITableView appearanceWhenContainedIn:self.parentViewController.view.superview.class, nil] setBackgroundColor:UIColor.clearColor];
+    [[UITableView appearanceWhenContainedIn:self.parentViewController.view.superview.class, nil] setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self.parentViewController.view addSubview:self.pickerView];
     
     
-    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.pickerView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
-    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.pickerView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeRight multiplier:1 constant:0];
-    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.pickerView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
-    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.pickerView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.parentNavigationController.view  attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
+    NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:self.pickerView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.parentViewController.view attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+    NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.pickerView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.parentViewController.view  attribute:NSLayoutAttributeRight multiplier:1 constant:0];
+    NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.pickerView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.parentViewController.view  attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
+    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.pickerView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.parentViewController.view  attribute:NSLayoutAttributeBottom multiplier:1 constant:0];
     
-    [self.parentNavigationController.view addConstraints:@[right, left, bottom, top]];
-    self.pickerView.alpha = 0;
-    [UIView animateWithDuration:0.25 animations:^{
-        self.pickerView.alpha = 1;
-    }];
+    [self.parentViewController.view addConstraints:@[right, left, bottom, top]];
+    
+    // Perform animation
+    CGRect finalFrame = self.pickerView.frame;
+    CGRect startFrame = CGRectMake(finalFrame.origin.x, finalFrame.size.height, finalFrame.size.width, finalFrame.size.height);
+    self.pickerView.frame = startFrame;
+    
+    // Animation
+    [UIView animateWithDuration:0.8f delay:0.0f usingSpringWithDamping:10.0f initialSpringVelocity:18.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        self.pickerView.frame = finalFrame;
+    } completion:NULL];
 }
 
 
