@@ -109,6 +109,8 @@
 		B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */; };
 		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02A81211C0CB39400580411 /* MDK_MDKUIListSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B02A81201C0CB39400580411 /* MDK_MDKUIListSearch.xib */; };
+		B02A81341C0E075500580411 /* MDKPickerListStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02A81321C0E075500580411 /* MDKPickerListStyle.h */; };
+		B02A81351C0E075500580411 /* MDKPickerListStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02A81331C0E075500580411 /* MDKPickerListStyle.m */; };
 		B0308D521B9F1673000817D3 /* MDKControlCustomStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */; };
 		B0308D581B9F1C64000817D3 /* MDKContext.h in Headers */ = {isa = PBXBuildFile; fileRef = B0308D561B9F1C64000817D3 /* MDKContext.h */; };
 		B0308D591B9F1C64000817D3 /* MDKContext.m in Sources */ = {isa = PBXBuildFile; fileRef = B0308D571B9F1C64000817D3 /* MDKContext.m */; };
@@ -428,6 +430,8 @@
 		B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCommandHandler.m; sourceTree = "<group>"; };
 		B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandProtocol.h; sourceTree = "<group>"; };
 		B02A81201C0CB39400580411 /* MDK_MDKUIListSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIListSearch.xib; sourceTree = "<group>"; };
+		B02A81321C0E075500580411 /* MDKPickerListStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKPickerListStyle.h; sourceTree = "<group>"; };
+		B02A81331C0E075500580411 /* MDKPickerListStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKPickerListStyle.m; sourceTree = "<group>"; };
 		B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlCustomStyleProtocol.h; sourceTree = "<group>"; };
 		B0308D561B9F1C64000817D3 /* MDKContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKContext.h; sourceTree = "<group>"; };
 		B0308D571B9F1C64000817D3 /* MDKContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKContext.m; sourceTree = "<group>"; };
@@ -717,6 +721,7 @@
 		B02156881B9DAC6E001860B5 /* style */ = {
 			isa = PBXGroup;
 			children = (
+				B02A81301C0E072C00580411 /* list */,
 				F91971501BE8AEBD00B94F8A /* enumImage */,
 				B0A52E591BA31F3C00EF6947 /* slider */,
 				B02156891B9DAC6E001860B5 /* commons */,
@@ -938,6 +943,23 @@
 				B08C18F61B9DDAB600D6F93A /* Command.h */,
 			);
 			path = command;
+			sourceTree = "<group>";
+		};
+		B02A81301C0E072C00580411 /* list */ = {
+			isa = PBXGroup;
+			children = (
+				B02A81311C0E072C00580411 /* picker */,
+			);
+			path = list;
+			sourceTree = "<group>";
+		};
+		B02A81311C0E072C00580411 /* picker */ = {
+			isa = PBXGroup;
+			children = (
+				B02A81321C0E075500580411 /* MDKPickerListStyle.h */,
+				B02A81331C0E075500580411 /* MDKPickerListStyle.m */,
+			);
+			path = picker;
 			sourceTree = "<group>";
 		};
 		B03AD4761BC3CDFF00A96F5D /* date */ = {
@@ -1607,6 +1629,7 @@
 				B021169D1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h in Headers */,
 				B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */,
 				B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */,
+				B02A81341C0E075500580411 /* MDKPickerListStyle.h in Headers */,
 				B00C4DF21BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h in Headers */,
 				B0C18B481BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h in Headers */,
 				B021575C1B9DAEEA001860B5 /* MDKFieldValidatorHandler.h in Headers */,
@@ -1911,6 +1934,7 @@
 				B08C19391B9DE9A500D6F93A /* MDKRenderableControl.m in Sources */,
 				F93DAC201C0C5BB40067E6AB /* MDKPickerItemBaseDelegate.m in Sources */,
 				B02157CC1B9DAF30001860B5 /* MDKValidationError.m in Sources */,
+				B02A81351C0E075500580411 /* MDKPickerListStyle.m in Sources */,
 				B057FD151C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.m in Sources */,
 				B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */,
 				B02156C81B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m in Sources */,
