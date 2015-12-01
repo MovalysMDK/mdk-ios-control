@@ -14,13 +14,38 @@ Pod::Spec.new do |s|
   s.description  = "MDKControl gives you a base of controls to use in you application.
                     The controls are designed to be used with Movalys MDK, but they are
                     fully independant and can be used in any iOS application develoment."
-  s.homepage     = "http://www.soprasteria.com/"
-  s.license      = "MIT (example)"
+  s.homepage     = "https://www.soprasteria.com/fr"
+  s.license      = { :type => 'LGPL', :text => <<-LICENSE
+    Copyright (C) 2010 Sopra (support_movalys@sopra.com)
+
+    This file is part of Movalys MDK.
+    Movalys MDK is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Lesser General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    Movalys MDK is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU Lesser General Public License for more details.
+    You should have received a copy of the GNU Lesser General Public License
+    along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+    LICENSE
+    }
   s.author       = "Sopra Steria"
-  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdkcontrol", :tag => "1.0.0" }
+  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdkcontrol.git", :tag => "1.0.0" }
   s.source_files = 'MDKControl/**/*.{h,m}'
-  s.resources = 'MDKControl/**/*.{plist,xib,pch,png,strings,lrpoj,bundle}'
-  s.dependency 'IQKeyboardManager', '3.3.2'
-  s.dependency 'MBProgressHUD', '0.9'
+  s.ios.framework = 'UIKit'
+  s.resources     = ["MDKControl/resources/images/**/*.png", 
+                     "MDKControl/resources/storyboard/**/*.storyboard",
+                     "MDKControl/resources/strings/**/*.strings",
+                     "MDKControl/resources/xib/**/*.xib",
+                     "MDKControl/resources/config/**/*.plist",
+                     "MDKControl/*.plist",
+                     "MDKControl/*.pch"
+                     ]
+  s.platform      = :ios
+  s.ios.deployment_target = "8.0"
+  s.ios.dependency 'IQKeyboardManager', '3.3.2'
+  s.ios.dependency 'MBProgressHUD', '0.9'
 
 end

@@ -19,10 +19,10 @@
 
 @implementation MDKUIDateTimePickerView
 
--(void)drawRect:(CGRect)rect {
-    self.contentView.layer.cornerRadius = 10;
-    self.contentView.clipsToBounds = YES;
-}
+//-(void)drawRect:(CGRect)rect {
+//    self.contentView.layer.cornerRadius = 10;
+//    self.contentView.clipsToBounds = YES;
+//}
 
 -(void) dismiss {
     [UIView animateWithDuration:0.25 animations:^{

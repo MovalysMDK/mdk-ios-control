@@ -17,7 +17,7 @@
 
 #import <Foundation/Foundation.h>
 @class MDKUIPickerList;
-
+@class MDKUIList;
 
 /*!
  * @protocol MDKUIPickerListDataProtocol
@@ -25,7 +25,22 @@
  * @discussion Some of methods declared in this protocol are required.
  * It must be implemented in the project.
  */
-@protocol MDKUIPickerListDataProtocol <NSObject>
+@protocol MDKUIPickerListDataProtocol <UITableViewDataSource, UITableViewDelegate>
+
+
+#pragma mark - Properties
+/*!
+ * @brief The picker managed by this delegate
+ */
+@property (nonatomic, strong) MDKUIPickerList *picker;
+
+/*!
+ * @brief The list displayed by the picker list
+ */
+@property (nonatomic, weak) MDKUIList *list;
+
+
+
 
 #pragma mark - Required Methods
 @required

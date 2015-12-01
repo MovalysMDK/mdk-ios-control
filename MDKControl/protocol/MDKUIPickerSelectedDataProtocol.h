@@ -14,7 +14,15 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+@class MDKUIPickerList;
+
 @protocol MDKUIPickerSelectedDataProtocol <NSObject>
+
+/*!
+ * @brief The pickerList control managed by this delegate
+ */
+@property (nonatomic, strong) MDKUIPickerList *picker;
+
 
 #pragma mark - Required Methods
 @required

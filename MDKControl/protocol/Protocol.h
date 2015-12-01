@@ -30,7 +30,6 @@
 #import "MDKEnumHelperProtocol.h"
 #import "MDKUIFixedListDataProtocol.h"
 #import "MDKUIDataPositionProtocol.h"
-#import "MDKUIPickerListDataProtocol.h"
 #import "MDKUIPickerSelectedDataProtocol.h"
-
+#import "MDKUIPickerListDataProtocol.h"
 #endif

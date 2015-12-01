@@ -15,28 +15,19 @@
  */
 
 
-#import <UIKit/UIKit.h>
-#import "MDKUIPickerListDataProtocol.h"
+#import "MDKPickerItemBaseDelegate.h"
+#import "MDKUIPickerList.h"
 
 
-/*!
- * @class MDKInheritancePickerList
- * @brief The MDKInheritancePickerList framework
- * @discussion This object allow to simply user's life. You have to inherit of this object to
- * initialize your picker list
- */
-@interface MDKInheritancePickerList : NSObject <UITableViewDelegate, UITableViewDataSource, MDKUIPickerListDataProtocol>
+@implementation MDKPickerItemBaseDelegate
+@synthesize picker = _picker;
 
-#pragma mark - Properties
-/*!
- * @brief Picker list property
- */
-@property (nonatomic, weak) MDKUIPickerList *pickerList;
-
-#pragma mark - Methods
-/*!
- * @brief This method is called on MDKUIPickerList - User can override it to implement his initialization of custom picker list
- */
-- (instancetype)initWithPickerList:(MDKUIPickerList *)pickerList;
+- (instancetype)initWithPickerList:(MDKUIPickerList *)pickerList {
+    self = [super init];
+    if (self) {
+        self.picker = pickerList;
+    }
+    return self;
+}
 
 @end
