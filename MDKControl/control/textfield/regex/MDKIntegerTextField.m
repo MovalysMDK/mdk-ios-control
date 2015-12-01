@@ -68,8 +68,8 @@
                                                            action:@selector(signButtonClick:)];
         self.minusButton.tintColor = [UIColor blackColor];
         
-        
-        UIBarButtonItem *okButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"okButton", @"")
+        NSString *string = NSLocalizedStringFromTableInBundle(@"okButton", @"mdk_ui", [NSBundle bundleForClass:NSClassFromString(@"MDKDoubleTextField")], @"");
+        UIBarButtonItem *okButton = [[UIBarButtonItem alloc] initWithTitle:string
                                                                      style:UIBarButtonItemStylePlain
                                                                     target:self
                                                                     action:@selector(okButtonClick:)];
