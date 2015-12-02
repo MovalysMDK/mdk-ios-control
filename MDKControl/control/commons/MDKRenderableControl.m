@@ -177,12 +177,12 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     
     if([direction isEqualToString:MDKRenderableForwarding.ToInternal]) {
         id object = [self.externalView performSelector:NSSelectorFromString(propertyName)];
-
+        
         [self.internalView performSelector:NSSelectorFromString(selectorAsString) withObject:object];
     }
     else {
         id object = [self.internalView performSelector:NSSelectorFromString(propertyName)];
-
+        
         [self.externalView performSelector:NSSelectorFromString(selectorAsString) withObject:object];
     }
 }
@@ -463,7 +463,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
      * 3. Class style defined as a bean base on the component class name
      * 4. Default Movalys style
      */
-    NSString *componentClassStyleName = [NSString stringWithFormat:@"%@Style", [self class]];
+    NSString *componentClassStyleName = [NSString stringWithFormat:@"%@Style", [self controlName]];
     
     if(self.styleClassName) {
         self.styleClass = [NSClassFromString(self.styleClassName) new];
@@ -474,6 +474,34 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     //TODO: Style via BeanLoader
     else {
         self.styleClass = [NSClassFromString(@"MFDefaultStyle") new];
+    }
+    [self applyStandardStyle];
+}
+
+-(NSString *)controlName {
+    Class c = self.class;
+    if([self conformsToProtocol:@protocol(MDKInternalComponent)]) {
+        c = self.externalView.class;
+    }
+    return NSStringFromClass(c);
+}
+
+
+-(void)setStyleClass:(NSString *)styleClass {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        self.internalView.styleClass = styleClass;
+    }
+    else {
+        _styleClass = styleClass;
+    }
+}
+
+-(NSString *)styleClass {
+    if ([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        return self.internalView.styleClass;
+    }
+    else {
+        return _styleClass;
     }
 }
 
@@ -487,6 +515,8 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 //    }
 //}
 #pragma clang diagnostic pop
+
+
 
 
 /******************************************************/
@@ -545,7 +575,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
             }
             [self bringSubviewToFront:self.errorView];
         }
-
+        
     });
 }
 

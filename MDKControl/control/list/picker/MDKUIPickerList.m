@@ -66,6 +66,11 @@ NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
     [super setData:data];
 }
 
+-(NSString *)controlName {
+    return @"MDKPickerList";
+}
+
+
 - (id)getData {
     return self.controlData;
 }
@@ -211,6 +216,7 @@ NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
                 [_selectedView removeFromSuperview];
             }
             _selectedView = selectedView;
+            _selectedView.backgroundColor = [UIColor clearColor];
             
             [self setNeedsDisplay];
             //Dans la vue sélectionnée, les champs ne sont pas éditables

@@ -30,7 +30,7 @@
                 </button>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="20x-eD-J91" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0N6-yF-QtU"/>
                 <constraint firstAttribute="trailing" secondItem="20x-eD-J91" secondAttribute="trailing" id="KV0-0w-7gT"/>

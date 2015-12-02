@@ -32,7 +32,7 @@
                 </tableView>
             </subviews>
             <animations/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="y82-mS-80r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2JP-1B-Nft"/>
                 <constraint firstAttribute="bottom" secondItem="YIs-zc-VrG" secondAttribute="bottom" id="JjY-JZ-GVe"/>
