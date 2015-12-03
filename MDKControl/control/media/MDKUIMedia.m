@@ -17,6 +17,8 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 
 #import "MDKUIMedia.h"
+#import "MDKUIDisplayController.h"
+#import "MediaDisplayTransition.h"
 #import "Helper.h"
 
 
@@ -30,7 +32,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 
 #pragma mark - MDKUIMedia - Private interface
 
-@interface MDKUIMedia() <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface MDKUIMedia() <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIViewControllerTransitioningDelegate, MDKUIDisplayControllerDelegate>
 
 /*!
  * @brief This variable allow to know the current data class name
@@ -41,6 +43,10 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
  * @brief This button allow to take a picture
  */
 @property (nonatomic, weak) IBOutlet UIButton *buttonPicture;
+
+@property (nonatomic, assign) BOOL userHasAlreadySetAnImage;
+
+@property (nonatomic, strong) MDKUIDisplayController *displayController;
 
 @end
 
@@ -55,6 +61,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 
 - (void)initialize {
     [super initialize];
+    self.userHasAlreadySetAnImage = NO;
 }
 
 - (void)didInitializeOutlets {
@@ -130,6 +137,8 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
     NSString *uri = (NSString *)value;
     
     if(uri) {
+        self.userHasAlreadySetAnImage = YES;
+        
         //Affichage de la photo à partir de son URI
         ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
         {
@@ -166,6 +175,8 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
   
     }
     else {
+        self.userHasAlreadySetAnImage = NO;
+        
         UIImage* image = [self defaultImage];
         [self handleImage:image];
     }
@@ -190,8 +201,17 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 #pragma mark - Handle user events
 
 - (IBAction)userDidTapOnPictureButton:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Select an action" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take a picture", @"Select a picture in your photos", nil];
-    [actionSheet showInView:self.parentViewController.view];
+    if (self.userHasAlreadySetAnImage) {
+        self.displayController = [[MDKUIDisplayController alloc] initWithNibName:@"MDK_MDKUIDisplayController" bundle:[NSBundle bundleForClass:MDKUIMedia.class] image:self.picture.image];
+        self.displayController.modalPresentationStyle = UIModalPresentationFormSheet;
+        self.displayController.transitioningDelegate  = self;
+        self.displayController.delegate               = self;
+        [self.parentNavigationController presentViewController:self.displayController animated:YES completion:NULL];
+    }
+    else {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Select an action" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take a picture", @"Select a picture in your photos", nil];
+        [actionSheet showInView:self.parentViewController.view];
+    }
 }
 
 
@@ -215,6 +235,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     UIImage *image = info[@"UIImagePickerControllerOriginalImage"];
+    
     
     if ([picker sourceType] == UIImagePickerControllerSourceTypeCamera) {
         //Sauvegarde de la photo dans l'album
@@ -243,14 +264,39 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
     }
     else if([picker sourceType] == UIImagePickerControllerSourceTypePhotoLibrary) {
         self.controlData = [info[UIImagePickerControllerReferenceURL] absoluteString];
-        
     }
     
-    
-    
+
     [self handleImage:image];
     [picker dismissViewControllerAnimated:YES completion:NULL];
     [self valueChanged:self.picture];
+}
+
+
+#pragma mark UIViewControllerTransitioningDelegate implementation
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+    MediaDisplayTransition *mediaDisplayTransition  = [[MediaDisplayTransition alloc] init];
+    mediaDisplayTransition.appearing                = YES;
+    mediaDisplayTransition.centerSource             = self.picture.center;
+    mediaDisplayTransition.frameSource              = self.picture.frame;
+    return mediaDisplayTransition;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    MediaDisplayTransition *mediaDisplayTransition  = [[MediaDisplayTransition alloc] init];
+    mediaDisplayTransition.appearing                = NO;
+    mediaDisplayTransition.centerSource             = self.picture.center;
+    mediaDisplayTransition.frameSource              = self.picture.frame;
+    return mediaDisplayTransition;
+}
+
+
+#pragma mark MDKUIDisplayControllerDelegate implementation
+
+- (void)userDeletePicture {
+    self.userHasAlreadySetAnImage = NO;
+    self.picture.image = [self defaultImage];
 }
 
 
@@ -295,6 +341,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 }
 
 - (void)handleImage:(UIImage *)image {
+    self.userHasAlreadySetAnImage = YES;
     if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
         ((MDKUIInternalMedia *)self.internalView).picture.image = image;
     }
