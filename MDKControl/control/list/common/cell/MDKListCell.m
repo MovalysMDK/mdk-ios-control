@@ -17,7 +17,7 @@
 #import "MDKListCell.h"
 
 
-NSString *const MDKListCellIdentifier = @"MDKListCell";
+NSString *const MDKListCellIdentifier = @"MDK_MDKUIListCell";
 
 
 @interface MDKListCell()
