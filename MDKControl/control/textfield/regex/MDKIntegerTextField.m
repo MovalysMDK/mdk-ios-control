@@ -36,7 +36,7 @@
 
 
 -(UIKeyboardType)keyboardType {
-    return UIKeyboardTypeDecimalPad;
+    return UIKeyboardTypeNumberPad;
 }
 
 -(void) customizeKeyboard {
