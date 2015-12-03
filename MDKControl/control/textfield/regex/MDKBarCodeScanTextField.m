@@ -17,6 +17,7 @@
 #import "MDKBarCodeScanTextField.h"
 
 @implementation MDKBarCodeScanTextField
+@synthesize editable = _editable;
 
 -(UIKeyboardType)keyboardType {
     return UIKeyboardTypeDefault;
@@ -37,5 +38,10 @@
 
 -(NSArray *)controlValidators {
     return @[];
+}
+
+-(void)setEditable:(NSNumber *)editable {
+    _editable = editable;
+    self.enabled = NO;
 }
 @end

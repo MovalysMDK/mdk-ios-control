@@ -135,10 +135,10 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
         {
             CGImageRef iref = [myasset aspectRatioThumbnail];
             if (iref) {
-                self.picture.image = [UIImage imageWithCGImage:iref];
+                [self handleImage:[UIImage imageWithCGImage:iref]];
             } else {
                 UIImage* image = [self defaultImage];
-                self.picture.image = image;
+                [self handleImage:image];
             }
         };
         
@@ -146,19 +146,28 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
         ALAssetsLibraryAccessFailureBlock failureblock  = ^(NSError *myerror)
         {
             UIImage* image = [self defaultImage];
-            self.picture.image = image;
+            [self handleImage:image];
         };
         
+        UIImage *localImage = [UIImage imageWithContentsOfFile:uri];
+    
+        //On vérifie si c'est une image locale, sinon une image du device
+        if(localImage) {
+               [self handleImage:localImage];
+        }
+        else {
+            ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+            NSURL *asseturl = [NSURL URLWithString:uri];
+            [assetslibrary assetForURL:asseturl
+                           resultBlock:resultblock
+                          failureBlock:failureblock];
+        }
         
-        ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
-        NSURL *asseturl = [NSURL URLWithString:uri];
-        [assetslibrary assetForURL:asseturl
-                       resultBlock:resultblock
-                      failureBlock:failureblock];
+  
     }
     else {
         UIImage* image = [self defaultImage];
-        self.picture.image = image;
+        [self handleImage:image];
     }
     
 }
@@ -286,8 +295,14 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 }
 
 - (void)handleImage:(UIImage *)image {
-    [self.picture setImage:image];
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        ((MDKUIInternalMedia *)self.internalView).picture.image = image;
+    }
+    else {
+        self.picture.image = image;
+    }
 }
+
 
 @end
 
