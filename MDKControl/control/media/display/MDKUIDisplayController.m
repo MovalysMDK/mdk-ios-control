@@ -52,7 +52,7 @@
 
 #pragma mark Handle user event
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
