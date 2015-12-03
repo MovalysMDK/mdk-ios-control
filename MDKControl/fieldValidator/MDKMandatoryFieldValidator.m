@@ -49,6 +49,11 @@ NSString *FIELD_VALIDATOR_ATTRIBUTE_MANDATORY = @"mandatory";
             result = [[MDKMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
         }
     }
+    else {
+        if(!value) {
+            result = [[MDKMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
+        }
+    }
     //                else if([value isKindOfClass:NSClassFromString(@"MFPhotoViewModel")]) {
     //                    MFPhotoViewModel *valueAsPhotoViewModel = (MFPhotoViewModel *)value;
     //                    if([valueAsPhotoViewModel isEmpty]) {

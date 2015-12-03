@@ -57,12 +57,14 @@ NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
 
 - (void)setData:(id)data {
     if (data) {
-        if([self.userSelectedDelegate respondsToSelector:@selector(computeCellHeightAndDispatchToFormController)]) {
-            [self.userSelectedDelegate performSelector:@selector(computeCellHeightAndDispatchToFormController)];
-        }
         [self validate];
         [self setDisplayComponentValue:data];
     }
+    
+    if([self.userSelectedDelegate respondsToSelector:@selector(computeCellHeightAndDispatchToFormController)]) {
+        [self.userSelectedDelegate performSelector:@selector(computeCellHeightAndDispatchToFormController)];
+    }
+    
     [super setData:data];
 }
 
@@ -246,6 +248,12 @@ NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
         [self addConstraints:@[topConstraint, leftConstraint, rightConstraint, bottomConstraint]];
         
     }
+}
+
+
+-(NSInteger)validate {
+    NSInteger result = [super validate];
+    return result;
 }
 
 

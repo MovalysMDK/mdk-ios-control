@@ -283,7 +283,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 
 - (void)openImagePickerControllerWithSourceType:(UIImagePickerControllerSourceType)sourceType {
     if (sourceType == UIImagePickerControllerSourceTypeCamera && ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"Camera is not available on simulator" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"Camera is not available on simulator" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
     }
