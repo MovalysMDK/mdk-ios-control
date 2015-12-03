@@ -203,9 +203,9 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 - (IBAction)userDidTapOnPictureButton:(id)sender {
     if (self.userHasAlreadySetAnImage) {
         self.displayController = [[MDKUIDisplayController alloc] initWithNibName:@"MDK_MDKUIDisplayController" bundle:[NSBundle bundleForClass:MDKUIMedia.class] image:self.picture.image];
-        self.displayController.modalPresentationStyle = UIModalPresentationFormSheet;
         self.displayController.transitioningDelegate  = self;
         self.displayController.delegate               = self;
+        self.displayController.modalPresentationStyle = UIModalPresentationCurrentContext;
         [self.parentNavigationController presentViewController:self.displayController animated:YES completion:NULL];
     }
     else {
@@ -217,7 +217,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 
 #pragma mark - UIActionSheetDelegate implementation
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0) {         // Take a picture
         [self openImagePickerControllerWithSourceType:UIImagePickerControllerSourceTypeCamera];
     }
@@ -253,6 +253,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
             }
             else {
                 self.controlData = [assetURL absoluteString];
+                [self valueChanged:self.picture];
             }
         };
         
@@ -297,6 +298,8 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 - (void)userDeletePicture {
     self.userHasAlreadySetAnImage = NO;
     self.picture.image = [self defaultImage];
+    self.controlData = nil;
+    [self valueChanged:self.picture];
 }
 
 
@@ -341,7 +344,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 }
 
 - (void)handleImage:(UIImage *)image {
-    self.userHasAlreadySetAnImage = YES;
+    self.userHasAlreadySetAnImage = (image && ![image isEqual:[self defaultImage]]);
     if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
         ((MDKUIInternalMedia *)self.internalView).picture.image = image;
     }
