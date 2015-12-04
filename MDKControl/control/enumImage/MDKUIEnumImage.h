@@ -33,6 +33,11 @@ FOUNDATION_EXTERN NSString *const MDKUIEnumImageKey;
 /* MAIN CONTROL                                       */
 /******************************************************/
 
+/*!
+ * @class MDKUIEnumImage
+ * @brief This component help us to create an enum with images.
+ * @discussion If image does not exist else system call a label
+ */
 IB_DESIGNABLE
 @interface MDKUIEnumImage : MDKRenderableControl <MDKControlChangesProtocol>
 

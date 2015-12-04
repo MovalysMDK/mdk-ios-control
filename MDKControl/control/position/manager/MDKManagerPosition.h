@@ -26,6 +26,10 @@ typedef void(^MDKManagerLocationCompletionHandler)(CLLocation *location, NSError
 
 #pragma mark - MDKManagerPosition - Protocol
 
+/*!
+ * @class MDKManagerPosition
+ * @brief This class allow to system notification for user position
+ */
 @protocol MDKManagerPositionDelegate <NSObject>
 
 @optional
@@ -44,6 +48,10 @@ typedef void(^MDKManagerLocationCompletionHandler)(CLLocation *location, NSError
 
 #pragma mark - MDKManagerPosition - Public interface
 
+/*!
+ * @class MDKManagerPosition
+ * @brief This class allow to handle user position for MDKUIPosition component
+ */
 @interface MDKManagerPosition : NSObject
 
 /*!

@@ -23,6 +23,10 @@
 /* PROTOCOLE                                          */
 /******************************************************/
 
+/*!
+ * @protocol MDKUIEnumListProtocol
+ * @brief Notify all object observe it when user made action on EnumList
+ */
 @protocol MDKUIEnumListProtocol <NSObject>
 
 /*!
@@ -37,6 +41,10 @@
 /* MAIN CONTROL                                       */
 /******************************************************/
 
+/*!
+ * @class MDKDelegateEnumList
+ * @brief This class allow to handle delegate of MDKUIEnumList or MDKUIPickerList
+ */
 @interface MDKDelegateEnumList : NSObject <UITableViewDataSource, UITableViewDelegate>
 
 /*!

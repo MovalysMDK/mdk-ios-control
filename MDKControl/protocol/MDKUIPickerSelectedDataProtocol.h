@@ -16,6 +16,10 @@
 
 @class MDKUIPickerList;
 
+/*!
+ * @protocol MDKUIPickerSelectedDataProtocol
+ * @brief This protocol defines available methods to custom a picker selected data
+ */
 @protocol MDKUIPickerSelectedDataProtocol <NSObject>
 
 /*!

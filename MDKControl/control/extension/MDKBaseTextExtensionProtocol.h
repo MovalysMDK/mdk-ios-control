@@ -16,8 +16,7 @@
 
 
 /*!
- * @protocol
-
+ * @protocol MDKBaseTextExtensionProtocol
  * @brief This protocol defines parameters that a component base on a UItextField can use.
  */
 @protocol MDKBaseTextExtensionProtocol

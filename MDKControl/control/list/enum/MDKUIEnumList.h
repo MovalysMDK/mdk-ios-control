@@ -31,6 +31,11 @@ FOUNDATION_EXTERN NSString *const MDKUIEnumListKey;
 /* MAIN CONTROL                                       */
 /******************************************************/
 
+
+/*!
+ * @class MDKUIEnumList
+ * @brief This component allow to launch the enum list
+ */
 IB_DESIGNABLE
 @interface MDKUIEnumList : MDKRenderableControl <MDKControlChangesProtocol>
 

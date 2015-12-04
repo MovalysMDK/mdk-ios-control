@@ -19,6 +19,10 @@
 
 FOUNDATION_EXTERN NSString *const MDKListCellIdentifier;
 
+/*!
+ * @class MDKListCell
+ * @brief This class allow to create an cell on UITableView
+ */
 @interface MDKListCell : UITableViewCell
 
 - (void)updateCellWithText:(NSString *)text;
