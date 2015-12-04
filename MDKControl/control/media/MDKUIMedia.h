@@ -31,6 +31,11 @@ FOUNDATION_EXTERN NSString *const MDKUIMediaKey;
 /* MAIN CONTROL                                       */
 /******************************************************/
 
+/*!
+ * @class MDKUIMedia
+ * @brief This component allow to display an image in thumbnail mode.
+ * @discussion When user tap on thumbnail mode, this component display image on full screen with a smooth animation.
+ */
 IB_DESIGNABLE
 @interface MDKUIMedia : MDKRenderableControl <MDKControlChangesProtocol>
 

@@ -18,10 +18,25 @@
 #import <Foundation/Foundation.h>
 
 
+/*!
+ * @class MediaDisplayTransition
+ * @brief This custom transition allow to show an animation during the resizing image.
+ */
 @interface MediaDisplayTransition : NSObject <UIViewControllerAnimatedTransitioning>
 
+/*!
+ * @brief Allow to know the transition mode
+ */
 @property (nonatomic, assign) BOOL appearing;
+
+/*!
+ * @brief The center point of uiview source
+ */
 @property (nonatomic, assign) CGPoint centerSource;
+
+/*!
+ * @brief The frame of uiview source
+ */
 @property (nonatomic, assign) CGRect frameSource;
 
 @end

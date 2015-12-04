@@ -23,7 +23,7 @@
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext {
-    return self.appearing ? 0.45f : 0.45f;
+    return self.appearing ? 0.55f : 0.45f;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
@@ -31,6 +31,8 @@
     // --------------------
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController   = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    
+    
     
     //  Presenting
     // ------------
@@ -40,6 +42,7 @@
         // Prepare transition animation
         CGRect viewFrame                = toViewController.view.frame;
         toViewController.view.alpha     = 0.0f;
+        toViewController.view.frame     = CGRectMake(self.frameSource.origin.x, self.frameSource.origin.y - self.frameSource.size.height/2, self.frameSource.size.width, self.frameSource.size.height);
         toViewController.view.center    = self.centerSource;
         toViewController.view.transform = CGAffineTransformMakeScale(self.frameSource.size.width/viewFrame.size.width, self.frameSource.size.height/viewFrame.size.height);
         
@@ -63,7 +66,6 @@
     //  Dismissing
     // ------------
     else {
-        [transitionContext.containerView addSubview:toViewController.view];
         [transitionContext.containerView addSubview:fromViewController.view];
         
         // Perform transition animation
@@ -74,6 +76,7 @@
             fromViewController.view.center      = self.centerSource;
             fromViewController.view.transform   = CGAffineTransformMakeScale(self.frameSource.size.width/viewFrame.size.width, self.frameSource.size.height/viewFrame.size.height);
             fromViewController.view.alpha       = 0.0f;
+            fromViewController.view.frame       = self.frameSource;
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
         }];

@@ -44,8 +44,14 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
  */
 @property (nonatomic, weak) IBOutlet UIButton *buttonPicture;
 
+/*!
+ * @brief Allow to know if user has already set his image (Select picture from library or take a picture)
+ */
 @property (nonatomic, assign) BOOL userHasAlreadySetAnImage;
 
+/*!
+ * @brief This controller allow to display image on full screen mode.
+ */
 @property (nonatomic, strong) MDKUIDisplayController *displayController;
 
 @end
@@ -203,9 +209,9 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 - (IBAction)userDidTapOnPictureButton:(id)sender {
     if (self.userHasAlreadySetAnImage) {
         self.displayController = [[MDKUIDisplayController alloc] initWithNibName:@"MDK_MDKUIDisplayController" bundle:[NSBundle bundleForClass:MDKUIMedia.class] image:self.picture.image];
+        self.displayController.modalPresentationStyle = UIModalPresentationCustom;
         self.displayController.transitioningDelegate  = self;
         self.displayController.delegate               = self;
-        self.displayController.modalPresentationStyle = UIModalPresentationCurrentContext;
         [self.parentNavigationController presentViewController:self.displayController animated:YES completion:NULL];
     }
     else {

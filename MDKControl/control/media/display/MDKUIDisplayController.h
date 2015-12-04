@@ -18,13 +18,19 @@
 #import <UIKit/UIKit.h>
 
 
+/*!
+ * @class MDKUIDisplayControllerDelegate
+ * @brief This protocol allow to inform that user tap on delete button
+ */
 @protocol MDKUIDisplayControllerDelegate <NSObject>
-
 - (void)userDeletePicture;
-
 @end
 
 
+/*!
+ * @class MDKUIDisplayControllerDelegate
+ * @brief This class allow to display image on MDKUIMedia in full screen
+ */
 @interface MDKUIDisplayController : UIViewController
 
 // View
