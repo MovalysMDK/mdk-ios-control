@@ -22,6 +22,10 @@
 /* MAIN CONTROL                                       */
 /******************************************************/
 
+/*!
+ * @class MDKUIPosition
+ * @brief This component allow to handle user position
+ */
 IB_DESIGNABLE
 @interface MDKUIPosition : MDKRenderableControl <MDKControlChangesProtocol>
 

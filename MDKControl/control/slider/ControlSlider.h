@@ -18,6 +18,5 @@
 #define Pods_ControlSlider_h
 
 #import "MDKUISlider.h"
-#import "MDKUISlider+UISliderForwarding.h"
 
 #endif

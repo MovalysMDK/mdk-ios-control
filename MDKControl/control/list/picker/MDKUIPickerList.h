@@ -38,6 +38,10 @@ FOUNDATION_EXPORT NSString *const MDKUIPickerSelectedDelegateKey;
 /* MAIN CONTROL                                       */
 /******************************************************/
 
+/*!
+ * @class MDKUIPickerList
+ * @brief This component allow to launch an enum list with custom view defined by user.
+ */
 IB_DESIGNABLE
 @interface MDKUIPickerList : MDKRenderableControl <MDKControlChangesProtocol>
 

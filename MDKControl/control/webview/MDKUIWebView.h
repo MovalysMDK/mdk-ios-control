@@ -31,6 +31,11 @@ FOUNDATION_EXTERN NSString *const MDKUIWebViewKey;
 /* MAIN CONTROL                                       */
 /******************************************************/
 
+/*!
+ * @class MDKUIWebView
+ * @brief This component allow to display an url
+ * @discussion You must implement this key NSAppTransportSecurity to accept https request
+ */
 IB_DESIGNABLE
 @interface MDKUIWebView : MDKRenderableControl <MDKControlChangesProtocol>
 

@@ -28,7 +28,16 @@ FOUNDATION_EXTERN NSString *const MDKUIListIdentifier;
 FOUNDATION_EXTERN NSString *const MDKUIListWithSearchIdentifier;
 
 
+/*!
+ * @class MDKUIList
+ * @brief UIView allow to add a table view
+ * @discussion This component does not handle delegate or any complex code.
+ */
 @interface MDKUIList : UIView
+
+/*!
+ * @brief Search an element
+ */
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 /*!

@@ -19,10 +19,13 @@
 
 
 /*!
- * @class MDKUIDisplayControllerDelegate
- * @brief This protocol allow to inform that user tap on delete button
+ * @protocol MDKUIDisplayControllerDelegate
+ * @brief This protocol allow to handle user action on picture
  */
 @protocol MDKUIDisplayControllerDelegate <NSObject>
+/*!
+ * @brief Notify when user want delete picture present on this controller
+ */
 - (void)userDeletePicture;
 @end
 

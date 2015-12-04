@@ -18,7 +18,6 @@
 #import "Utils.h"
 
 #import "MDKUISlider.h"
-#import "MDKUISlider+UISliderForwarding.h"
 
 #include <math.h>
 
@@ -55,6 +54,7 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 
 
 #pragma mark - Custom methods
+
 -(void)sliderValueChangedAction:(id)sender {
     
     //On récupère la valeur en fonction de l'steple spécifié
@@ -114,6 +114,7 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 
 
 #pragma mark - Control Data protocol
+
 +(NSString *)getDataType {
     return @"NSNumber";
 }
@@ -140,6 +141,7 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 
 
 #pragma mark - Tags for automatic testing
+
 -(void) setAllTags {
     if (self.innerSlider.tag == 0) {
         [self.innerSlider setTag:TAG_MFSLIDER_SLIDER];
@@ -151,14 +153,9 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 
 
 #pragma mark - Control attribute
+
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
     [super setControlAttributes:controlAttributes];
-//    CGFloat maximunValue = self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] floatValue] : 100.0f;
-//    CGFloat minimumValue = self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] floatValue] : 0.0f;
-//    self.step = self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] floatValue] : 1.0f;
-//    
-//    [self setMaximumValue:maximunValue];
-//    [self setMinimumValue:minimumValue];
 }
 
 -(id)forwardingTargetForSelector:(SEL)aSelector {
@@ -191,9 +188,6 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 #pragma clang diagnostic pop
 
 @end
-
-#import "MDKUISlider+UISliderForwarding.h"
-
 
 
 /******************************************************/
