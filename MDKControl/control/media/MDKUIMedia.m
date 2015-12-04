@@ -47,7 +47,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 /*!
  * @brief Allow to know if user has already set his image (Select picture from library or take a picture)
  */
-@property (nonatomic, assign) BOOL userHasAlreadySetAnImage;
+@property (nonatomic, strong) NSNumber *userHasAlreadySetAnImage;
 
 /*!
  * @brief This controller allow to display image on full screen mode.
@@ -61,13 +61,13 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 
 @implementation MDKUIMedia
 @synthesize targetDescriptors = _targetDescriptors;
-
+@synthesize userHasAlreadySetAnImage = _userHasAlreadySetAnImage;
 
 #pragma mark - Initialization and deallocation
 
 - (void)initialize {
     [super initialize];
-    self.userHasAlreadySetAnImage = NO;
+    self.userHasAlreadySetAnImage = @(0);
 }
 
 - (void)didInitializeOutlets {
@@ -125,10 +125,10 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 }
 
 - (void)setData:(id)data {
+    [super setData:data];
     if ( data ) {
         [self setDisplayComponentValue:data];
     }
-    [super setData:data];
 }
 
 - (id)getData {
@@ -143,8 +143,6 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
     NSString *uri = (NSString *)value;
     
     if(uri) {
-        self.userHasAlreadySetAnImage = YES;
-        
         //Affichage de la photo à partir de son URI
         ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *myasset)
         {
@@ -181,7 +179,6 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
   
     }
     else {
-        self.userHasAlreadySetAnImage = NO;
         
         UIImage* image = [self defaultImage];
         [self handleImage:image];
@@ -207,7 +204,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 #pragma mark - Handle user events
 
 - (IBAction)userDidTapOnPictureButton:(id)sender {
-    if (self.userHasAlreadySetAnImage) {
+    if ([self.userHasAlreadySetAnImage boolValue]) {
         self.displayController = [[MDKUIDisplayController alloc] initWithNibName:@"MDK_MDKUIDisplayController" bundle:[NSBundle bundleForClass:MDKUIMedia.class] image:self.picture.image];
         self.displayController.modalPresentationStyle = UIModalPresentationCustom;
         self.displayController.transitioningDelegate  = self;
@@ -302,9 +299,8 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 #pragma mark MDKUIDisplayControllerDelegate implementation
 
 - (void)userDeletePicture {
-    self.userHasAlreadySetAnImage = NO;
-    self.picture.image = [self defaultImage];
     self.controlData = nil;
+    [self handleImage:[self defaultImage]];
     [self valueChanged:self.picture];
 }
 
@@ -350,7 +346,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 }
 
 - (void)handleImage:(UIImage *)image {
-    self.userHasAlreadySetAnImage = (image && ![image isEqual:[self defaultImage]]);
+    self.userHasAlreadySetAnImage = @(self.controlData != nil);
     if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
         ((MDKUIInternalMedia *)self.internalView).picture.image = image;
     }
@@ -359,6 +355,23 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
     }
 }
 
+-(void)setUserHasAlreadySetAnImage:(NSNumber *)userHasAlreadySetAnImage {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        [self.internalView performSelector:@selector(setUserHasAlreadySetAnImage:) withObject:userHasAlreadySetAnImage];
+    }
+    else {
+        _userHasAlreadySetAnImage = userHasAlreadySetAnImage;
+    }
+}
+
+
+-(NSNumber *)userHasAlreadySetAnImage {
+    id result = _userHasAlreadySetAnImage;
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        [self.internalView performSelector:@selector(userHasAlreadySetAnImage)];
+    }
+    return result;
+}
 
 @end
 

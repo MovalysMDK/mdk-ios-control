@@ -186,6 +186,7 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
     MDKControlEventsDescriptor *cctd = self.targetDescriptors[@(sender.hash)];
     [cctd.target performSelector:cctd.action withObject:self];
     [[NSNotificationCenter defaultCenter] postNotificationName:ASK_HIDE_KEYBOARD object:nil];
+    [self validate];
 }
 #pragma clang diagnostic pop
 
