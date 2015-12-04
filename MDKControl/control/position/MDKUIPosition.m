@@ -204,10 +204,6 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 }
 
 - (IBAction)userDidTapOnLocationButton:(id)sender {
-    if ( [[MDKManagerPosition sharedManager] hasLocationAlreadyDetected] ) {
-        return;
-    }
-    
     self.navigationMode = NO;
     [self startLocationButtonAnimation];
     [[MDKManagerPosition sharedManager] setDelegate:self];
@@ -215,8 +211,9 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 }
 
 - (IBAction)userDidTapOnCancelButton:(id)sender {
-    [self removeCurrentLocation];
-    [self reset];
+    self.textFieldLatitude.text  = @"";
+    self.textFieldLongitude.text = @"";
+    [self setData:nil];
 }
 
 

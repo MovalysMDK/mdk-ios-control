@@ -152,9 +152,8 @@
     _countSearchLocation = _countSearchLocation + 1;
     
     if ([self.delegate respondsToSelector:@selector(locationUpdatedWithLongitude:latitude:)]) {
-        self.lastLatitude    = @( self.currentLocation.coordinate.latitude );
-        self.lastLongitude   = @( self.currentLocation.coordinate.longitude );
-            
+        self.lastLatitude  = @( self.currentLocation.coordinate.latitude  );
+        self.lastLongitude = @( self.currentLocation.coordinate.longitude );
         [self.delegate locationUpdatedWithLongitude:self.lastLongitude latitude:self.lastLatitude];
         [manager stopUpdatingLocation];
     }
