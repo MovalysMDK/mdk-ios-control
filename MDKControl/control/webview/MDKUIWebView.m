@@ -136,7 +136,7 @@ NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
     [self.hud hide:YES];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Oopps, we cannot load your website ..." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Oopps, we cannot load your website ... Please verify your App Transport Security" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     if(error) {
         NSLog(@"ERROR : %@", error);
     }

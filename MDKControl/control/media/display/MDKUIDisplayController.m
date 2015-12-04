@@ -44,14 +44,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.image       = self.image;
+    self.view.backgroundColor = [UIColor clearColor];
 }
 
 
 #pragma mark Handle user event
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

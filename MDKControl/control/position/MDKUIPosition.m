@@ -181,7 +181,7 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
     
     [[MDKManagerPosition sharedManager] searchAddressAccordingLatitude:numberLatitude longitude:numberLongitude completionHandler:^(NSString *address, NSError *error) {
         if (error) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"We cannot retrieve your address" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"We cannot retrieve your address" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alert show];
             return;
         }
@@ -193,7 +193,7 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 
 - (IBAction)userDidTapOnNavigationButton:(id)sender {
     if ([self textFieldEmpty]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"Please enter latitude longitude" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"Please enter latitude longitude" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
         return;
     }
@@ -254,7 +254,7 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 }
 
 - (void)searchLocationFailed {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"We cannot retrieve your location" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"We cannot retrieve your location" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
 
