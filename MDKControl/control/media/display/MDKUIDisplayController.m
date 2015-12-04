@@ -44,8 +44,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.image       = self.image;
+//    self.imageView.backgroundColor = [UIColor whiteColor];
 }
 
 
