@@ -103,11 +103,11 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
     }
     
     //Mise à jour de la valeur affichée
-    NSNumber *number = [NSNumber numberWithFloat:self.innerSlider.value];
+    NSNumber *number = [NSNumber numberWithFloat:value];
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     //Blocage à 3 décimales car le nombre est un float avec un grand nombre de décimales
     numberFormatter.maximumFractionDigits = 3;
-    [self.innerSliderValueLabel setText:[MDKNumberConverter toString:number withFormatter:numberFormatter]];
+    self.innerSliderValueLabel.text = [MDKNumberConverter toString:number withFormatter:numberFormatter];
     [self validate];
 }
 
@@ -153,9 +153,12 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 #pragma mark - Control attribute
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
     [super setControlAttributes:controlAttributes];
-//    self.maximumValue = self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] floatValue] : 100.0f;
-//    self.minimumValue = self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] floatValue] : 0.0f;
+//    CGFloat maximunValue = self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MAX_VALUE_KEY] floatValue] : 100.0f;
+//    CGFloat minimumValue = self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_MIN_VALUE_KEY] floatValue] : 0.0f;
 //    self.step = self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] ? [self.controlAttributes[SLIDER_PARAMETER_STEP_KEY] floatValue] : 1.0f;
+//    
+//    [self setMaximumValue:maximunValue];
+//    [self setMinimumValue:minimumValue];
 }
 
 -(id)forwardingTargetForSelector:(SEL)aSelector {
