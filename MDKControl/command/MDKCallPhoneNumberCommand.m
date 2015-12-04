@@ -35,9 +35,10 @@
     va_list args;
     va_start(args, parameters);
     MDKPhoneNumber *phone = parameters;
-    
-    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [phone buildPhoneString]]];
-    [[UIApplication sharedApplication] openURL:url];
+    if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tel://"]]) {
+        NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", [phone buildPhoneString]]];
+        [[UIApplication sharedApplication] openURL:url];
+    }
     return nil;
 }
 

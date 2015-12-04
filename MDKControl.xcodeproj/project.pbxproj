@@ -19,6 +19,8 @@
 		B00C4E011BA07C45003CBB16 /* MDKPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = B00C4DFD1BA07C45003CBB16 /* MDKPhoneNumber.m */; };
 		B00C4E081BA07D3D003CBB16 /* MDKPhoneFieldValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4E061BA07D3D003CBB16 /* MDKPhoneFieldValidator.h */; };
 		B00C4E091BA07D3D003CBB16 /* MDKPhoneFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B00C4E071BA07D3D003CBB16 /* MDKPhoneFieldValidator.m */; };
+		B01556A81C11DEC20017A90D /* MDKCanNotPerformActionError.h in Headers */ = {isa = PBXBuildFile; fileRef = B01556A61C11DEC20017A90D /* MDKCanNotPerformActionError.h */; };
+		B01556A91C11DEC20017A90D /* MDKCanNotPerformActionError.m in Sources */ = {isa = PBXBuildFile; fileRef = B01556A71C11DEC20017A90D /* MDKCanNotPerformActionError.m */; };
 		B018BE911BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE851BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m */; };
 		B018BE921BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE861BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h */; };
 		B018BE931BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE871BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h */; };
@@ -315,7 +317,6 @@
 		F9D267361BFA180400B55A11 /* MDKUIList.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D267331BFA180400B55A11 /* MDKUIList.m */; };
 		F9D267401BFA186400B55A11 /* MDKListCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D2673D1BFA186400B55A11 /* MDKListCell.h */; };
 		F9D267411BFA186400B55A11 /* MDKListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D2673E1BFA186400B55A11 /* MDKListCell.m */; };
-		F9D267521BFA407700B55A11 /* MDKListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D267511BFA407700B55A11 /* MDKListCell.xib */; };
 		F9E3B0051BF1EFD20042CFD4 /* MDKUIWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E3B0031BF1EFD20042CFD4 /* MDKUIWebView.h */; };
 		F9E3B0061BF1EFD20042CFD4 /* MDKUIWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E3B0041BF1EFD20042CFD4 /* MDKUIWebView.m */; };
 		F9E3B0081BF1F0060042CFD4 /* ControlWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E3B0071BF1F0060042CFD4 /* ControlWebView.h */; };
@@ -349,6 +350,8 @@
 		B00C4DFD1BA07C45003CBB16 /* MDKPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKPhoneNumber.m; sourceTree = "<group>"; };
 		B00C4E061BA07D3D003CBB16 /* MDKPhoneFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKPhoneFieldValidator.h; sourceTree = "<group>"; };
 		B00C4E071BA07D3D003CBB16 /* MDKPhoneFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKPhoneFieldValidator.m; sourceTree = "<group>"; };
+		B01556A61C11DEC20017A90D /* MDKCanNotPerformActionError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCanNotPerformActionError.h; sourceTree = "<group>"; };
+		B01556A71C11DEC20017A90D /* MDKCanNotPerformActionError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCanNotPerformActionError.m; sourceTree = "<group>"; };
 		B018BE851BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKBarCodeScanTextFieldStyle.m; sourceTree = "<group>"; };
 		B018BE861BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBarCodeScanTextFieldStyle.h; sourceTree = "<group>"; };
 		B018BE871BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKDoubleTextFieldStyle.h; sourceTree = "<group>"; };
@@ -672,7 +675,6 @@
 		F9D267331BFA180400B55A11 /* MDKUIList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIList.m; path = list/common/MDKUIList.m; sourceTree = "<group>"; };
 		F9D2673D1BFA186400B55A11 /* MDKListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKListCell.h; path = list/common/cell/MDKListCell.h; sourceTree = "<group>"; };
 		F9D2673E1BFA186400B55A11 /* MDKListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKListCell.m; path = list/common/cell/MDKListCell.m; sourceTree = "<group>"; };
-		F9D267511BFA407700B55A11 /* MDKListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MDKListCell.xib; path = list/common/cell/MDKListCell.xib; sourceTree = "<group>"; };
 		F9E3B0031BF1EFD20042CFD4 /* MDKUIWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIWebView.h; path = webview/MDKUIWebView.h; sourceTree = "<group>"; };
 		F9E3B0041BF1EFD20042CFD4 /* MDKUIWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIWebView.m; path = webview/MDKUIWebView.m; sourceTree = "<group>"; };
 		F9E3B0071BF1F0060042CFD4 /* ControlWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlWebView.h; path = webview/ControlWebView.h; sourceTree = "<group>"; };
@@ -832,6 +834,8 @@
 		B02156F11B9DADE5001860B5 /* error */ = {
 			isa = PBXGroup;
 			children = (
+				B01556A61C11DEC20017A90D /* MDKCanNotPerformActionError.h */,
+				B01556A71C11DEC20017A90D /* MDKCanNotPerformActionError.m */,
 				B057FD0E1C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.h */,
 				B057FD0F1C0890DC00DE1DB2 /* MDKTooLongListUIValidationError.m */,
 				B057FD101C0890DC00DE1DB2 /* MDKTooShortListUIValidationError.h */,
@@ -1600,7 +1604,6 @@
 		F9D2673C1BFA182000B55A11 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				F9D267511BFA407700B55A11 /* MDKListCell.xib */,
 				F9D2673D1BFA186400B55A11 /* MDKListCell.h */,
 				F9D2673E1BFA186400B55A11 /* MDKListCell.m */,
 			);
@@ -1742,6 +1745,7 @@
 				F9E3B0051BF1EFD20042CFD4 /* MDKUIWebView.h in Headers */,
 				B0A74C7C1BA081F40002A66B /* MDKURL.h in Headers */,
 				B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */,
+				B01556A81C11DEC20017A90D /* MDKCanNotPerformActionError.h in Headers */,
 				B02156CD1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h in Headers */,
 				B02156B91B9DAC6E001860B5 /* MDKLabelStyle.h in Headers */,
 				B021580B1B9DB27D001860B5 /* MDKAlertViewManager.h in Headers */,
@@ -1906,7 +1910,6 @@
 				B0C6BAB41BA1D9830087C4D3 /* ios_ic_nav_pressed@2x.png in Resources */,
 				F98D77FD1BE9165A00CD4458 /* mdkuiposition_map_btn_disable@2x.png in Resources */,
 				F95BF3D91BF0E1A1002F2EE7 /* mdkuimedia_placeholder_btn@3x.png in Resources */,
-				F9D267521BFA407700B55A11 /* MDKListCell.xib in Resources */,
 				F9E3B00A1BF1F2F70042CFD4 /* MDK_MDKUIWebView.xib in Resources */,
 				F98D77F51BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@2x.png in Resources */,
 				B0C6BAAB1BA1D9830087C4D3 /* ios_ic_mail_active@2x.png in Resources */,
@@ -2046,6 +2049,7 @@
 				F919715B1BE8B84600B94F8A /* MDKUIPosition.m in Sources */,
 				B09CE7DE1BA17C220017CCA2 /* MDKIntegerFieldValidator.m in Sources */,
 				B02157B61B9DAF30001860B5 /* MDKTooShortStringUIValidationError.m in Sources */,
+				B01556A91C11DEC20017A90D /* MDKCanNotPerformActionError.m in Sources */,
 				B06120261BD9336F0012F82F /* MDKUIFixedList.m in Sources */,
 				F9C4C90B1C1047D000C7CA66 /* MDKUIDisplayController.m in Sources */,
 				B018BE911BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m in Sources */,

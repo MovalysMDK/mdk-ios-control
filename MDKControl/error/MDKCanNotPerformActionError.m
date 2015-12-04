@@ -15,26 +15,22 @@
  */
 
 
-#ifndef MDKControl_Error_h
-#define MDKControl_Error_h
-
-#import "MDKTooLongStringUIValidationError.h"
-#import "MDKTooShortStringUIValidationError.h"
-#import "MDKTooLongListUIValidationError.h"
-#import "MDKTooShortListUIValidationError.h"
-
-#import "MDKInvalidDoubleValueUIValidationError.h"
-#import "MDKInvalidIntegerValueUIValidationError.h"
-#import "MDKInvalidEmailValueUIValidationError.h"
-#import "MDKInvalidPhoneNumberValueUIValidationError.h"
-#import "MDKInvalidUrlValueUIValidationError.h"
-#import "MDKMandatoryFieldUIValidationError.h"
-#import "MDKNoMatchingValueUIValidationError.h"
-
 #import "MDKCanNotPerformActionError.h"
 
-#import "MDKValidationError.h"
+@implementation MDKCanNotPerformActionError
 
-#import "ErrorView.h"
+NSInteger const CAN_NOT_PERFORM_ACTION_ERROR_CODE = 5000;
 
-#endif
+NSString *const CAN_NOT_PERFORM_ACTION_ERROR_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_can_not_perform_action";
+
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object
+{
+    self = [super initWithCode:CAN_NOT_PERFORM_ACTION_ERROR_CODE
+       localizedDescriptionKey:CAN_NOT_PERFORM_ACTION_ERROR_LOCALIZED_DESCRIPTION_KEY
+            localizedFieldName:fieldName
+            technicalFieldName:technicalFieldName
+                    withObject:object];
+    return self;
+}
+
+@end

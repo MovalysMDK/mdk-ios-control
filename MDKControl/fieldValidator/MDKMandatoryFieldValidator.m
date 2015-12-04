@@ -16,8 +16,7 @@
 
 #import "MDKMandatoryFieldValidator.h"
 #import "MDKMandatoryFieldUIValidationError.h"
-//#import "MFUIBaseListViewModel.h"
-//#import "MFPhotoViewModel.h"
+#import "MDKUIDataPositionProtocol.h"
 
 NSString *FIELD_VALIDATOR_ATTRIBUTE_MANDATORY = @"mandatory";
 
@@ -46,6 +45,12 @@ NSString *FIELD_VALIDATOR_ATTRIBUTE_MANDATORY = @"mandatory";
     }
     else if([value isKindOfClass:NSClassFromString(@"NSArray")]) {
         if(!value || ((NSArray *)value).count == 0) {
+            result = [[MDKMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
+        }
+    }
+    else if([value conformsToProtocol:@protocol(MDKUIDataPositionProtocol)]) {
+        if(!value || !((id<MDKUIDataPositionProtocol>) value).latitude || !((id<MDKUIDataPositionProtocol>) value).longitude
+           || [((id<MDKUIDataPositionProtocol>) value).latitude length] == 0 | [((id<MDKUIDataPositionProtocol>) value).longitude length] == 0) {
             result = [[MDKMandatoryFieldUIValidationError alloc] initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
         }
     }

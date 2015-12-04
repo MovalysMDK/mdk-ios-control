@@ -30,15 +30,28 @@
 
 
 -(void) doAction {
+    
     if([self validate] == 0) {
-        // Create and show composer
-        MDKPhoneNumber *phone = [MDKPhoneNumber new];
-        phone.baseNumber = [[self getData] isKindOfClass:[NSAttributedString class]] ? [[self getData] string] : [self getData];
-        [[MDKCommandHandler commandWithKey:@"CallPhoneNumberCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:phone, nil];
+        BOOL canSendMail = NO;
+        if (![[[UIDevice currentDevice] model] isEqualToString:@"iPad"] && ([self validate] == 0)){
+            MDKPhoneNumber *phone = [MDKPhoneNumber new];
+            phone.baseNumber = [[self getData] isKindOfClass:[NSAttributedString class]] ? [[self getData] string] : [self getData];
+            [[MDKCommandHandler commandWithKey:@"CallPhoneNumberCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:phone, nil];
+            canSendMail = YES;
+        }
+        if(!canSendMail)
+        {
+    
+            [self clearErrors];
+            MDKInvalidPhoneNumberValueUIValidationError *error = [[MDKCanNotPerformActionError alloc]  initWithLocalizedFieldName:NSStringFromClass([self class]) technicalFieldName:NSStringFromClass([self class]) withObject:@"Phone Call"];
+            [self addErrors:@[error]];
+        }
     }
     else {
         [self onErrorButtonClick:self];
     }
+    
+    
     
 }
 

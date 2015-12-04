@@ -31,3 +31,7 @@
 "mdk_error_too_short_value" = "Cette valeur ne peut pas avoir une taille inférieure à : %@";
 "mdk_error_too_long_list" = "Cette liste dépasse la taille autorisée de : %@";
 "mdk_error_too_short_list" = "Cette liste ne peut pas avoir une taille inférieure à : %@";
+
+
+//Actions error [5000]
+"mdk_error_can_not_perform_action" = "Cette action ne peut être réalisée sur cet appareil : %@";

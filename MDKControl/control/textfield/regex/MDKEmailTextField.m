@@ -42,7 +42,7 @@
         {
             
             [self clearErrors];
-            [self addErrors:@[[[MDKInvalidEmailValueUIValidationError alloc] initWithCode:500 localizedDescriptionKey:@"MFCantSendMailTechnicalError"localizedFieldName:NSStringFromClass(self.class) technicalFieldName:NSStringFromClass(self.class)]]];
+            MDKInvalidPhoneNumberValueUIValidationError *error = [[MDKCanNotPerformActionError alloc]  initWithLocalizedFieldName:NSStringFromClass([self class]) technicalFieldName:NSStringFromClass([self class]) withObject:@"Send Mail"];
         }
     }
     else {

@@ -34,11 +34,6 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 @interface MDKUIPosition() <UITextFieldDelegate, UIAlertViewDelegate, MDKManagerPositionDelegate>
 
 /*!
- * @brief The private current data allow to know if the update is necessary
- */
-@property (nonatomic, strong) id<MDKUIDataPositionProtocol> currentData;
-
-/*!
  * @brief The private animation for location button
  */
 @property (nonatomic, strong) CABasicAnimation *animationForLocationButton;
@@ -135,13 +130,12 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 #pragma mark - Control Data protocol
 
 + (NSString *)getDataType {
-    return @"MDKUIDataPositionProtocol";
+    return @"NSObject";
 }
 
 - (void)setData:(id)data {
-    if ( data && ![self.currentData isEqual:data] ) {
-        self.currentData = data;
-        [self setDisplayComponentValue:self.currentData];
+    if ( data && ![self.controlData isEqual:data] ) {
+        [self setDisplayComponentValue:data];
     }
     [super setData:data];
 }
@@ -161,15 +155,15 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 }
 
 -(id)displayComponentValue {
-    [self.currentData setLatitude:self.textFieldLatitude.text];
-    [self.currentData setLongitude:self.textFieldLongitude.text];
-    return self.currentData;
+    [self.controlData setLatitude:self.textFieldLatitude.text];
+    [self.controlData setLongitude:self.textFieldLongitude.text];
+    return self.controlData;
 }
 
 #pragma mark - Control attribute
 
 - (void)setControlAttributes:(NSDictionary *)controlAttributes {
-    [super setControlAttributes:controlAttributes];
+[super setControlAttributes:controlAttributes];
 }
 
 
@@ -213,7 +207,7 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 - (IBAction)userDidTapOnCancelButton:(id)sender {
     self.textFieldLatitude.text  = @"";
     self.textFieldLongitude.text = @"";
-    [self setData:nil];
+    [self valueChanged:self.textFieldLongitude];
 }
 
 
@@ -221,6 +215,7 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    [self valueChanged:self.textFieldLongitude];
     return YES;
 }
 
@@ -244,9 +239,16 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
         [[UIApplication sharedApplication] openURL:urlNavigation];
     }
     else {
-        self.textFieldLongitude.text = [longitude stringValue];
-        self.textFieldLatitude.text  = [latitude stringValue];
+        
+        NSNumberFormatter *numberFormatter = [NSNumberFormatter new];
+        [numberFormatter setLocale:[NSLocale currentLocale]];
+        [numberFormatter setFormatterBehavior:NSNumberFormatterBehavior10_4];
+        [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [numberFormatter setGroupingSeparator:@""];
+        self.textFieldLongitude.text = [numberFormatter stringFromNumber:longitude];
+        self.textFieldLatitude.text  = [numberFormatter stringFromNumber:latitude];
         [self stopLocationButtonAnimation];
+        [self valueChanged:self.textFieldLongitude];
     }
 }
 
@@ -267,6 +269,19 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
     [self handleLocationEmpty];
 }
 
+-(UITextField *)textFieldLongitude {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        return [((MDKUIInternalPosition *)[self internalView]) textFieldLongitude];
+    }
+    return _textFieldLongitude;
+}
+
+-(UITextField *)textFieldLatitude {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        return [((MDKUIInternalPosition *)[self internalView]) textFieldLatitude];
+    }
+    return _textFieldLatitude;
+}
 
 #pragma mark - Custom methods
 

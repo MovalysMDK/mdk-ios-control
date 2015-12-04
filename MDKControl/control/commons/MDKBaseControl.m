@@ -142,7 +142,6 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 
 
 -(id)getData {
-    
     NSLog(@"The component %@ should have implemented the method called \"getData\"",self.class);
     return nil;
 }

@@ -31,3 +31,8 @@
 "mdk_error_too_short_value" = "This value is too short, min required size is : %@";
 "mdk_error_too_long_list" = "This list is too long, max required size is : %@";
 "mdk_error_too_short_list" = "This list is too short, min required size is : %@";
+
+
+
+//Actions error [5000]
+"mdk_error_can_not_perform_action" = "This action can not be performed on this device : %@";
