@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     LICENSE
     }
   s.author       = "Sopra Steria"
-  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdkcontrol.git", :tag => "1.0.0" }
+  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdk-ios-controls.git", :tag => "1.0.0" }
   s.source_files = 'MDKControl/**/*.{h,m}'
   s.ios.framework = 'UIKit'
   s.resources     = ["MDKControl/resources/images/**/*.png", 
