@@ -16,11 +16,15 @@
 
 #import <UIKit/UIKit.h>
 
+/*!
+ * @category MDKHelperImage
+ * @brief Category on UIImage that allows to get a square croped image
+ */
 @interface UIImage (MDKHelperImage)
 
 /*!
  * @brief This method allow to crop an image with the side length of the final square
  */
-- (UIImage *)squareCropImageWithSideLength:(CGFloat)sideLength;
+-(UIImage *)squareCropImageWithSideLength:(CGFloat)sideLength;
 
 @end

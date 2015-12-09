@@ -14,10 +14,12 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-
 #import "MDKRegexTextExtensionProtocol.h"
 
+/*!
+ * @protocol MDKRegexTextExtensionProtocol
+ * @brief Defines a property used by control that validate its value following a regex pattern.
+ */
 @protocol MDKRegexTextExtensionProtocol <MDKBaseTextExtensionProtocol>
 
 #pragma mark - Properties
