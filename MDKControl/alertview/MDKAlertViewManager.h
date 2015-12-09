@@ -42,7 +42,7 @@ typedef NS_ENUM(NSUInteger, MDKAlertViewIdentifier) {
  * @brief Creates and return the singleton instance of the AlertViewManager
  * @return The singleton instance of the AlertViewManager
  */
-+(instancetype) getInstance;
++(instancetype)getInstance;
 
 /*!
  * @brief Shows the given alertView
@@ -50,6 +50,6 @@ typedef NS_ENUM(NSUInteger, MDKAlertViewIdentifier) {
  * and/or after showing the AlertView
  * @param alertView An AlertView to show
  */
--(void) showAlertView:(UIAlertView *)alertView ;
+-(void)showAlertView:(UIAlertView *)alertView ;
 
 @end

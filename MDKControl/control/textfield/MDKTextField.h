@@ -32,7 +32,7 @@ IB_DESIGNABLE
 
 
 /*!
- * @brief An IBInscpectable properties that allows to show the error 
+ * @brief An IBInscpectable properties that allows to show the error
  * button on InterfaceBuilder
  */
 @property (nonatomic) IBInspectable BOOL onError_MDK;
@@ -54,7 +54,7 @@ IB_DESIGNABLE
 
 /*!
  * @brief Gets the string data of the component
- * @discussion This method should be used when the data managed by the component is a 
+ * @discussion This method should be used when the data managed by the component is a
  * of Kind 'NSAttributedString'.
  * @return The data of the component as NSSring.
  */
@@ -63,9 +63,9 @@ IB_DESIGNABLE
 /*!
  * @brief This method allows to add some views to the TextField
  * @param accessoryViews A dictionary that contains key/value pairs as follow :
- * key is a NSString  custom identifier object that correspond to a 
- * UIView accessory view value to add to the component. 
- * @discussion The key NSString-typed identifiers should be defined 
+ * key is a NSString  custom identifier object that correspond to a
+ * UIView accessory view value to add to the component.
+ * @discussion The key NSString-typed identifiers should be defined
  * in a MDK style class (that implements MFStyleProtocol).
  * @see MFStyleProtocol
  */

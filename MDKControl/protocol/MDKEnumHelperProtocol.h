@@ -16,6 +16,11 @@
 
 #import <Foundation/Foundation.h>
 
+/*!
+ * @protocol MDKEnumHelperProtocol
+ * @brief This helper may be used to translates enumerations values into strings values,
+ * and vice versa
+ */
 @protocol MDKEnumHelperProtocol <NSObject>
 
 /*!
@@ -23,25 +28,25 @@
  * @param nsnEnum value for enumeration
  * @return text for enumeration value name
  */
-+ (NSString *) textFromEnum:(NSNumber *)nsnEnum;
++(NSString *)textFromEnum:(NSNumber *)nsnEnum;
 
 /*!
  * @brief return enumeration value matching text
  * @param nssText text for enumeration value name
  * @return int enumeration value matching text
  */
-+ (int) enumFromText:(NSString *)nssText;
++(int)enumFromText:(NSString *)nssText;
 
 /*!
  * @brief return array of strings for enumeration values names
  * @return NSArray of NSString for enumeration values names
  */
-+ (NSArray *) valuesToTexts;
++(NSArray *)valuesToTexts;
 
 /*!
  * @brief return count for enumeration values
  * @return NSUInteger for enumeration values count
  */
-+ (NSUInteger) valuesCount;
++(NSUInteger)valuesCount;
 
 @end

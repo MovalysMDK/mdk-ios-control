@@ -17,6 +17,10 @@
 #import <Foundation/Foundation.h>
 #import "MDKTooltipView.h"
 
+/*!
+ * @protocol MDKControlErrorProtocol
+ * @brief This protocol defines properties and methods to manage errors on controls
+ */
 @protocol MDKControlErrorProtocol <NSObject>
 
 #pragma mark - Properties
