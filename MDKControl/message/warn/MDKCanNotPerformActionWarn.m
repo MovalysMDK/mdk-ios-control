@@ -14,21 +14,19 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+
+#import "MDKCanNotPerformActionWarn.h"
 
 
-/*!
- * @protocol MDKErrorViewProtocol
- * @brief This protocol declares a errorView property
- */
-@protocol MDKErrorViewProtocol <NSObject>
+NSString *const CAN_NOT_PERFORM_ACTION_WARN_LOCALIZED_DESCRIPTION_KEY = @"mdk_warn_can_not_perform_action";
 
-#pragma mark - Properties
+@implementation MDKCanNotPerformActionWarn
 
-/*!
- * @brief A view that should be used as error indicator/button
- */
-@property (nonatomic, strong) UIView *errorView;
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object {
+    self = [super initWithDescriptionKey:CAN_NOT_PERFORM_ACTION_WARN_LOCALIZED_DESCRIPTION_KEY withLocalizedFieldName:fieldName technicalFieldName:technicalFieldName withTitle:@"WARN" withObject:object];
+    if(self) {
+    }
+    return self;
+}
 
 @end

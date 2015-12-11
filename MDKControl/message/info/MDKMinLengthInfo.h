@@ -14,33 +14,12 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "MDKMessageInfo.h"
 
-/*!
- * @brief Specific error code.
- */
-FOUNDATION_EXPORT NSInteger const CAN_NOT_PERFORM_ACTION_ERROR_CODE;
+FOUNDATION_EXPORT NSString *const MDK_INFO_MIN_LENGTH_DESCRIPTION_KEY;
 
-/*!
- * @brief Specific localized description key.
- */
-FOUNDATION_EXPORT NSString *const CAN_NOT_PERFORM_ACTION_ERROR_LOCALIZED_DESCRIPTION_KEY;
+@interface MDKMinLengthInfo : MDKMessageInfo
 
-#import "MDKValidationError.h"
-
-/*!
- * @class MDKCanNotPerformActionError
- * @brief Report a action that cannot be performed error.
- * @discussion An instance of this error type must be associated with a field name.
- */
-@interface MDKCanNotPerformActionError : MDKValidationError
-
-
-/*!
- * @brief Init new instance.
- * @param fieldName - Associated displayed field name.
- * @param object An object to pass in the error
- * @return New instance of MDKCanNotPerformActionError.
- */
 -(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object;
 
 @end

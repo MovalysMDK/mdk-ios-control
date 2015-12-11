@@ -72,6 +72,11 @@
     self.tooltipTextLabel.text = tooltipText;
 }
 
+-(void)setTooltipAttributedText:(NSAttributedString *)tooltipAttributedText {
+    _tooltipAttributedText = tooltipAttributedText;
+    self.tooltipTextLabel.attributedText = tooltipAttributedText;
+}
+
 - (void)setFont:(UIFont *)font { 
     _font = font;
     self.tooltipTextLabel.font = font;

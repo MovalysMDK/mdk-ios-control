@@ -113,13 +113,6 @@ NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
     else {
         self.userListDelegate.picker = self;
     }
-    
-    //        NSString *filter = controlAttributes[@"filter"];
-    //        if(filter && !self.mf.filter) {
-    //            self.mf.filter = [NSClassFromString(filter) new];
-    //            self.userListDelegate.filter = self.mf.filter;
-    //        }
-    //
 }
 
 

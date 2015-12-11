@@ -48,7 +48,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 @synthesize visible = _visible;
 @synthesize editable = _editable;
 @synthesize lastUpdateSender = _lastUpdateSender;
-@synthesize errors = _errors;
+@synthesize messages = _messages;
 @synthesize inInitMode = _inInitMode;
 @synthesize styleClass = _styleClass;
 @synthesize styleClassName = styleClassName;
@@ -111,7 +111,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 
 #if !TARGET_INTERFACE_BUILDER
     self.userFieldValidators = [NSMutableArray new];
-    [self initErrors];
+    [self initMessages];
     self.controlAttributes = [NSMutableDictionary dictionary];
     //Par défaut tout composant est éditable.
     self.editable = @1;
@@ -120,22 +120,27 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 #endif
 }
 
--(void) initErrors {
-    self.errors = [[NSMutableArray alloc] init];
+-(void) initMessages {
+    self.messages = [[NSMutableArray alloc] init];
 }
 
 #pragma mark - Méthodes communes à tous les composants
 
 -(void)setIsValid:(BOOL)isValid {
-    if (self.isValid != isValid) {
         _isValid = isValid;
-        [self showError:!isValid];
-    }
+        BOOL hasInfos = NO;
+        for(id<MDKMessageProtocol> message in self.messages) {
+            if(message.status == MDKMessageStatusInfo) {
+                hasInfos = YES;
+                break;
+            }
+        }
+        [self showMessage:(!isValid || hasInfos)];
 }
 
 
 -(NSInteger)validate {
-    [self showError:NO];
+    [self showMessage:NO];
     return [self.controlDelegate validate];
 }
 
@@ -169,7 +174,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 #pragma mark - Méthodes du protocole mais non implémentées ici
 
 
--(CGRect)getErrorButtonFrameForInvalid {
+-(CGRect)getMessageButtonFrameForInvalid {
     CGFloat errorButtonSize = MIN(MIN(self.bounds.size.width, self.bounds.size.height), ERROR_BUTTON_SIZE);
     
     return CGRectMake(0,
@@ -178,7 +183,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
                       errorButtonSize);
 }
 
--(CGRect)getErrorButtonFrameForValid {
+-(CGRect)getMessageButtonFrameForValid {
     CGFloat errorButtonSize = MIN(MIN(self.bounds.size.width, self.bounds.size.height), ERROR_BUTTON_SIZE);
     
     return CGRectMake(-errorButtonSize,
@@ -187,7 +192,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
                       errorButtonSize);
 }
 
--(void)hideErrorTooltips {
+-(void)hideMessageTooltips {
     if (nil != self.baseTooltipView)
     {
         [self.baseTooltipView removeFromSuperview];
@@ -195,31 +200,31 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
     }
 }
 
--(NSMutableArray *) getErrors {
-    return self.errors;
+-(NSMutableArray *) getMessages {
+    return self.messages;
 }
 
--(void) clearErrors{
-    [self clearErrors:YES];
+-(void) clearMessages{
+    [self clearMessages:YES];
 }
 
--(void) clearErrors:(BOOL)anim {
-    [self.errors removeAllObjects];
-    [self hideErrorTooltips];
+-(void) clearMessages:(BOOL)anim {
+    [self.messages removeAllObjects];
+    [self hideMessageTooltips];
     [self setIsValid:YES];
 }
 
--(void) addErrors:(NSArray *) errors{
+-(void) addMessages:(NSArray *) errors{
     if(errors != nil && [errors count]) {
         [self setIsValid:NO];
         
-        NSMutableArray *newErrors = [errors mutableCopy];
+        NSMutableArray *newMessages = [errors mutableCopy];
         for(NSError *error in errors) {
-            if([self.errors containsObject:error]) {
-                [newErrors removeObject:error];
+            if([self.messages containsObject:error]) {
+                [newMessages removeObject:error];
             }
         }
-        [self.errors addObjectsFromArray:newErrors];
+        [self.messages addObjectsFromArray:newMessages];
     }
 }
 
@@ -234,23 +239,23 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 }
 
 
--(void)showError:(BOOL)showErrorView {
+-(void)showMessage:(BOOL)showMessageView {
     if(![self isKindOfClass:[MDKRenderableControl class]]) {
-        if(showErrorView){
-            [self showErrorTooltips];
+        if(showMessageView){
+            [self showMessageTooltips];
         }
         else {
-            [self hideErrorTooltips];
+            [self hideMessageTooltips];
         }
     }
 }
 
--(void)showErrorTooltips {
+-(void)showMessageTooltips {
     [self.tooltipView show];
 }
 
--(UIView *) baseErrorButton {
-    return ((id<MDKErrorViewProtocol>)self.styleClass).errorView;
+-(UIView *) baseMessageButton {
+    return ((id<MDKMessageViewProtocol>)self.styleClass).messageView;
 }
 
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
@@ -315,6 +320,8 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
 -(void)addFieldValidator:(id<MDKFieldValidatorProtocol>)fieldValidator {
     [self.userFieldValidators addObject:fieldValidator];
 }
+
+
 
 
 @end

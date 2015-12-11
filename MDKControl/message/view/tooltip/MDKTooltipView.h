@@ -90,6 +90,11 @@ typedef void (^MDKTooltipViewCompletionBlock)();
 @property (nonatomic, copy) NSString *tooltipText;
 
 /*!
+ *  The text that is displayed in the tooltip.
+ */
+@property (nonatomic, copy) NSAttributedString *tooltipAttributedText;
+
+/*!
  *  The colour of the tooltip text. Default is @c white.
  */
 @property (nonatomic, strong) UIColor *textColour;

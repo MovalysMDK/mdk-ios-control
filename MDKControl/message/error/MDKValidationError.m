@@ -57,7 +57,7 @@ technicalFieldName:(NSString *)technicalFieldName
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFailureReasonErrorKey:(NSString *) failureReasonKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName
 {
-    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_errors", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"")}];
+    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_messages", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"")}];
     if(self)
     {
         self.localizedFieldName = fieldName;
@@ -76,7 +76,7 @@ localizedFailureReasonErrorKey:(NSString *) failureReasonKey localizedFieldName:
  */
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName{
-    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_errors", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"")}];
+    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_messages", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"")}];
     if(self)
     {
         self.localizedFieldName = fieldName;
@@ -95,7 +95,7 @@ localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)techni
  */
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName withObject:(id)object {
-    NSString *errorFormat= NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_errors", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"");
+    NSString *errorFormat= NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_messages", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"");
     NSString *errorContent = [NSString stringWithFormat:errorFormat, object];
                                                               
     self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :errorContent}];
@@ -117,4 +117,21 @@ localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)techni
     return [[MDKValidationError alloc] initWithCode:code userInfo:dict localizedFieldName:fieldName technicalFieldName:technicalFieldName];
 }
 
+#pragma mark - MDKMessageProtocol
+
+-(NSString *)messageContent {
+    return [self localizedDescription];
+}
+
+-(NSString *)messageTitle {
+    return @"ERROR";
+}
+
+-(NSInteger)messagerCode {
+    return [self code];
+}
+
+-(MDKMessageStatus)status {
+    return MDKMessageStatusError;
+}
 @end

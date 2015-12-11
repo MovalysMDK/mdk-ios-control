@@ -18,11 +18,14 @@
 #import "MDKFieldValidatorProtocol.h"
 #import "MDKComponentApplicationProtocol.h"
 #import "MDKSimpleComponentProvider.h"
+#import "MDKMessageInfo.h"
 
 @implementation MDKFieldValidatorHandler
 
 +(NSArray *)fieldValidatorsForAttributes:(NSArray *)attributes forControl:(UIView *)control{
     NSMutableArray *result = [NSMutableArray array];
+    
+    [MDKFieldValidatorHandler checkForMessagesInfoForAttributes:attributes onControl:control];
     
     id<UIApplicationDelegate> appDelegate =  [[UIApplication sharedApplication] delegate];
     NSDictionary *completeFieldValidatorDict = nil;
@@ -92,6 +95,27 @@
     }
     
     return result;
+}
+
++(void) checkForMessagesInfoForAttributes:(NSArray *)attributes onControl:(UIView *)control {
+    for(NSString *controlAttributeName in attributes) {
+        NSString *formatName = [NSString stringWithFormat:@"%@%@", [[controlAttributeName substringToIndex:1] uppercaseString], [controlAttributeName substringFromIndex:1]];
+        
+        NSString *messageInfoClassName = [NSString stringWithFormat:@"MDK%@Info", formatName];
+        if(NSClassFromString(messageInfoClassName)) {
+            NSString *componentName = ((NSDictionary *)[control performSelector:@selector(controlAttributes)])[@"componentName"];
+            MDKMessageInfo *messageInfo = [[NSClassFromString(messageInfoClassName) alloc] initWithLocalizedFieldName:componentName technicalFieldName:componentName withObject:((NSDictionary *)[control performSelector:@selector(controlAttributes)])[controlAttributeName]];
+            BOOL alreadyExist = NO;
+            for(id<MDKMessageProtocol> message in [control performSelector:@selector(messages)]) {
+                if(message.status == MDKMessageStatusInfo && [message.identifier isEqualToString:messageInfo.identifier]) {
+                    alreadyExist = YES;
+                }
+            }
+            if(!alreadyExist) {
+                [control performSelector:@selector(addMessages:) withObject:@[messageInfo]];
+            }
+        }
+    }
 }
 
 @end

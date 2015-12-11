@@ -29,7 +29,7 @@
        component.clearButtonMode == UITextFieldViewModeAlways) {
         width -= (2*DEFAULT_ACCESSORIES_MARGIN + DEFAULT_CLEAR_BUTTON_CONTAINER);
     }
-    if(self.errorView) {
+    if(self.messageView) {
         width -= (2*DEFAULT_ACCESSORIES_MARGIN + DEFAULT_ERROR_VIEW_SQUARE_SIZE);
     }
     return CGRectMake(DEFAULT_ACCESSORIES_MARGIN, 0 , width-DEFAULT_ACCESSORIES_MARGIN, bounds.size.height);
@@ -41,7 +41,7 @@
        component.clearButtonMode == UITextFieldViewModeAlways) {
         width -= (2*DEFAULT_ACCESSORIES_MARGIN + DEFAULT_CLEAR_BUTTON_CONTAINER);
     }
-    if(self.errorView) {
+    if(self.messageView) {
         width -= (2*DEFAULT_ACCESSORIES_MARGIN + DEFAULT_ERROR_VIEW_SQUARE_SIZE);
     }
     return CGRectMake(0, 0 , width, bounds.size.height);
@@ -49,7 +49,7 @@
 }
 
 -(CGRect) clearButtonRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component{
-    if(self.errorView) {
+    if(self.messageView) {
         bounds.origin.x -= (2*DEFAULT_ACCESSORIES_MARGIN + DEFAULT_ERROR_VIEW_SQUARE_SIZE);
     }
     return bounds;
@@ -57,7 +57,7 @@
 
 -(CGRect)placeholderRectForBounds:(CGRect)bounds onComponent:(MDKTextField *)component {
     NSInteger width = bounds.size.width;
-    if(self.errorView) {
+    if(self.messageView) {
         width -= (2*DEFAULT_ACCESSORIES_MARGIN + DEFAULT_ERROR_VIEW_SQUARE_SIZE);
     }
     return CGRectMake(0, 0 , width, bounds.size.height);

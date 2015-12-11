@@ -13,10 +13,24 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef MDKControl_ErrorView_h
-#define MDKControl_ErrorView_h
 
-#import "MDKErrorView.h"
-#import "ErrorViewTooltip.h"
+@class MDKMessageButton;
 
-#endif
+/*!
+ * @class MDKMessageUIManager
+ * @brief Class with statics methods to prepare message view and tooltip to be displayed
+ */
+@interface MDKMessageUIManager : NSObject
+
+#pragma mark - Methods
+
+/*!
+ * @brief Apply an automatic style on messageButton given the list of messages
+ * @param messageButton The message button to style
+ * @param messages The list of message
+ */
++(void)autoStyleMessageButton:(MDKMessageButton *)messageButton forMessages:(NSArray *)messages;
+
++(NSAttributedString *) formattedMessagesFromArray:(NSArray *)messages;
+
+@end

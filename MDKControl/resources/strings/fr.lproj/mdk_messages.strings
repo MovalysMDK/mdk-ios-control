@@ -34,4 +34,8 @@
 
 
 //Actions error [5000]
-"mdk_error_can_not_perform_action" = "Cette action ne peut être réalisée sur cet appareil : %@";
+"mdk_warn_can_not_perform_action" = "Cette action ne peut être réalisée sur cet appareil : %@";
+
+//INFOs
+"mdk_info_min_length" = "La longueur doit être supérieure à : %@";
+"mdk_info_max_length" = "La longueur doit être inférieure à : %@";

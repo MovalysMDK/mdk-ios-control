@@ -102,7 +102,7 @@ IB_DESIGNABLE
 /*!
  * @brief custom Error XIB Name
  */
-@property (nonatomic, strong) IBInspectable NSString *customErrorXIBName;
+@property (nonatomic, strong) IBInspectable NSString *customMessageXIBName;
 
 @end
 

@@ -25,7 +25,7 @@
 /**
  * @brief The view used to display that the component is in an invalid state
  */
-@property (nonatomic, strong) MDKErrorView *errorView;
+@property (nonatomic, strong) MDKMessageView *messageView;
 
 /**
  * @brief This dictionary contains the name of the XIBs used to load base MDK iOS components.
@@ -52,8 +52,8 @@
 /* CONSTANTS                                          */
 /******************************************************/
 
-const struct MDKErrorPositionParameters_Struct MDKErrorPositionParameters = {
-    .ErrorView = @"ErrorView",
+const struct MDKMessagePositionParameters_Struct MDKMessagePositionParameters = {
+    .MessageView = @"MessageView",
     .ParentView = @"ParentView",
     .InternalViewLeftConstraint = @"InternalViewLeftConstraint",
     .InternalViewTopConstraint = @"InternalViewTopConstraint",
@@ -214,14 +214,14 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     }
     
     //Animation des changements
-    [UIView animateWithDuration:0.0
+    [UIView animateWithDuration:0.25f
                      animations:^{
-                         self.errorView.alpha = 1.0;
-                         [self layoutIfNeeded]; // Called on parent view
+                         self.messageView.alpha = 1.0;
+                         [self.internalView layoutIfNeeded]; // Called on parent view
                      }];
 }
 
--(void) removeErrorViewConstraints {
+-(void) removeMessageViewConstraints {
     if(self.errorWidthConstraint) [self removeConstraint:self.errorWidthConstraint];
     if(self.errorRightConstraint) [self removeConstraint:self.errorRightConstraint];
     if(self.errorHeightConstraint) [self removeConstraint:self.errorHeightConstraint];
@@ -255,6 +255,11 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 
 -(void) computeInternalRightConstraint {
     if(!self.rightConstraint) {
+        
+        //Uncomment to improve the display of the message view.
+//        self.rightConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeRight
+//                                                            relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
+//                                                           multiplier:1 constant:(self.messageView != nil) ? -self.messageView.frame.size.width : 0];
         self.rightConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeRight
                                                             relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
                                                            multiplier:1 constant:0];
@@ -274,32 +279,32 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 /**
  * @brief Defines the constraints of the error view in the external view
  */
--(void) defineErrorViewConstraints {
+-(void) defineMessageViewConstraints {
     //#if !TARGET_INTERFACE_BUILDER
-    self.errorView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.messageView.translatesAutoresizingMaskIntoConstraints = NO;
     
     if(!self.errorRightConstraint) {
-        self.errorRightConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeRight
+        self.errorRightConstraint = [NSLayoutConstraint constraintWithItem:self.messageView attribute:NSLayoutAttributeRight
                                                                  relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
                                                                 multiplier:1 constant:0];
     }
     
     if(!self.errorCenterYConstraint) {
-        self.errorCenterYConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeCenterY
+        self.errorCenterYConstraint = [NSLayoutConstraint constraintWithItem:self.messageView attribute:NSLayoutAttributeCenterY
                                                                    relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY
                                                                   multiplier:1 constant:0];
     }
     
     if(!self.errorHeightConstraint) {
-        self.errorHeightConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeHeight
+        self.errorHeightConstraint = [NSLayoutConstraint constraintWithItem:self.messageView attribute:NSLayoutAttributeHeight
                                                                   relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeHeight
                                                                  multiplier:1 constant:0];
     }
     
     if(!self.errorWidthConstraint) {
-        self.errorWidthConstraint = [NSLayoutConstraint constraintWithItem:self.errorView attribute:NSLayoutAttributeWidth
+        self.errorWidthConstraint = [NSLayoutConstraint constraintWithItem:self.messageView attribute:NSLayoutAttributeWidth
                                                                  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute
-                                                                multiplier:0 constant:self.errorView.frame.size.width];
+                                                                multiplier:0 constant:self.messageView.frame.size.width];
         
         [self addConstraint:self.errorWidthConstraint];
         [self addConstraint:self.errorHeightConstraint];
@@ -338,20 +343,20 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
  * @brief Retrieves a custom XIB if defined in InterfaceBuilder.
  * @return The name of the custom XIB to load
  */
--(NSString *)retrieveCustomErrorXIB {
-    if([((id<MDKExternalComponent>)self) customErrorXIBName]) {
-        return [((id<MDKExternalComponent>)self) customErrorXIBName];
+-(NSString *)retrieveCustomMessageXIB {
+    if([((id<MDKExternalComponent>)self) customMessageXIBName]) {
+        return [((id<MDKExternalComponent>)self) customMessageXIBName];
     }
     else {
-        return [((id<MDKExternalComponent>)self) defaultErrorXIBName];
+        return [((id<MDKExternalComponent>)self) defaultMessageXIBName];
     }
 }
 
 /**
  * @brief Returns the name of the default XIB file to render the error view
  */
--(NSString *)defaultErrorXIBName {
-    return @"MDK_MDKErrorView";
+-(NSString *)defaultMessageXIBName {
+    return @"MDK_MDKMessageView";
 }
 
 -(NSString *)defaultXIBName {
@@ -444,7 +449,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
         [self applyStandardStyle];
         [self applyValidStyle];
     }
-    [self showError:self.onError_MDK];
+    [self showMessage:self.onError_MDK];
 }
 
 
@@ -473,7 +478,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     }
     //TODO: Style via BeanLoader
     else {
-        self.styleClass = [NSClassFromString(@"MFDefaultStyle") new];
+        self.styleClass = [NSClassFromString(@"MDKDefaultStyle") new];
     }
     [self applyStandardStyle];
 }
@@ -526,95 +531,100 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 #pragma mark - Managing error
 /**
  * @brief Allows to display or not the view that indicates that the component is in an invalid state
- * @param showErrorView A BOOL value that indicates if the component is in an invalid state or not
+ * @param showMessageView A BOOL value that indicates if the component is in an invalid state or not
  */
--(void) showError:(BOOL)showError {
+-(void) showMessage:(BOOL)showMessage {
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if([self conformsToProtocol:@protocol(MDKExternalComponent) ]) {
-            if(showError) {
-                if(!self.errorView) {
-                    Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
-                    self.errorView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomErrorXIB] owner:nil options:nil] firstObject];
+            if(showMessage) {
+                if(!self.messageView) {
+                    Class errorBundleClass = [[self retrieveCustomMessageXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
+                    self.messageView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomMessageXIB] owner:nil options:nil] firstObject];
                 }
-                self.errorView.userInteractionEnabled = YES;
-                [self addSubview:self.errorView];
-                self.tooltipView = [[MDKTooltipView alloc] initWithTargetView:self.errorView.errorButton
+                self.messageView.userInteractionEnabled = YES;
+                [self addSubview:self.messageView];
+                
+                [MDKMessageUIManager autoStyleMessageButton:self.messageView.messageButton forMessages:[self messages]];
+                self.tooltipView = [[MDKTooltipView alloc] initWithTargetView:self.messageView.messageButton
                                                                      hostView:[self parentViewController].view tooltipText:@""
                                                                arrowDirection:MDKTooltipViewArrowDirectionUp
                                                                         width:self.frame.size.width];
                 
-                if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
+                if([self respondsToSelector:@selector(definePositionOfMessageViewWithParameters:whenShown:)]) {
 #if !TARGET_INTERFACE_BUILDER
-                    NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
-                    [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
+                    NSDictionary *errorPositionParameters = [self createMessagePositionParameters];
+                    [self definePositionOfMessageViewWithParameters:errorPositionParameters whenShown:showMessage];
 #endif
                 }
                 else {
-                    [self defineErrorViewConstraints];
+                    [self defineMessageViewConstraints];
                 }
                 
             }
             else {
                 [self.tooltipView hideAnimated:YES];
-                [self.errorView removeFromSuperview];
-                if([self respondsToSelector:@selector(definePositionOfErrorViewWithParameters:whenShown:)]) {
+                [self.messageView removeFromSuperview];
+                if([self respondsToSelector:@selector(definePositionOfMessageViewWithParameters:whenShown:)]) {
 #if !TARGET_INTERFACE_BUILDER
-                    if(!self.errorView) {
-                        Class errorBundleClass = [[self retrieveCustomErrorXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
-                        self.errorView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomErrorXIB] owner:nil options:nil] firstObject];
+                    if(!self.messageView) {
+                        Class errorBundleClass = [[self retrieveCustomMessageXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
+                        self.messageView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomMessageXIB] owner:nil options:nil] firstObject];
                     }
                     
-                    NSDictionary *errorPositionParameters = [self createErrorPositionParameters];
-                    [self definePositionOfErrorViewWithParameters:errorPositionParameters whenShown:showError];
+                    NSDictionary *errorPositionParameters = [self createMessagePositionParameters];
+                    [self definePositionOfMessageViewWithParameters:errorPositionParameters whenShown:showMessage];
 #endif
                 }
                 else {
-                    [self removeErrorViewConstraints];
+                    [self removeMessageViewConstraints];
                 }
             }
-            [self bringSubviewToFront:self.errorView];
+            [self bringSubviewToFront:self.messageView];
+        }
+        else {
+            [self.externalView showMessage:showMessage];
         }
         
     });
 }
 
--(NSDictionary *) createErrorPositionParameters {
-    return [NSDictionary dictionaryWithObjects:@[self.errorView,
+-(NSDictionary *) createMessagePositionParameters {
+    return [NSDictionary dictionaryWithObjects:@[self.messageView,
                                                  self,
                                                  self.leftConstraint,
                                                  self.topConstraint,
                                                  self.rightConstraint,
                                                  self.bottomConstraint]
-                                       forKeys:@[MDKErrorPositionParameters.ErrorView,
-                                                 MDKErrorPositionParameters.ParentView,
-                                                 MDKErrorPositionParameters.InternalViewLeftConstraint,
-                                                 MDKErrorPositionParameters.InternalViewTopConstraint,
-                                                 MDKErrorPositionParameters.InternalViewRightConstraint,
-                                                 MDKErrorPositionParameters.InternalViewBottomConstraint]];
+                                       forKeys:@[MDKMessagePositionParameters.MessageView,
+                                                 MDKMessagePositionParameters.ParentView,
+                                                 MDKMessagePositionParameters.InternalViewLeftConstraint,
+                                                 MDKMessagePositionParameters.InternalViewTopConstraint,
+                                                 MDKMessagePositionParameters.InternalViewRightConstraint,
+                                                 MDKMessagePositionParameters.InternalViewBottomConstraint]];
 }
 
 /**
  * @brief This method describes the treatment to do when the user click the error button of this component
  * @discussion By default, this method displays the error information
  */
--(void)doOnErrorButtonClicked {
+-(void)doOnMessageButtonClicked {
     if(![self.tooltipView superview]) {
-        NSString *errorText = @"";
+        NSString *messageText = @"";
         
-        int errorNumber = 0;
-        for (NSError *error in self.errors) {
-            if(errorNumber > 0){
-                errorText = [errorText stringByAppendingString: @"\n"];
+        int messageNumber = 0;
+        for (id<MDKMessageProtocol> message in self.messages) {
+            if(messageNumber > 0){
+                messageText = [messageText stringByAppendingString: @"\n"];
             }
-            errorNumber++;
-            errorText= [errorText stringByAppendingString: [error localizedDescription]];
+            messageNumber++;
+            messageText= [messageText stringByAppendingString: [message messageContent]];
         }
         //Passage de la vue au premier plan
         UIView *currentView = [self parentViewController].view;
         
         [currentView bringSubviewToFront:self.tooltipView];
-        self.tooltipView.tooltipText = errorText;
+        self.tooltipView.tooltipText = messageText;
         self.tooltipView.tooltipBackgroundColour = self.tooltipColor_MDK ? self.tooltipColor_MDK : [self defaultTooltipBackgroundColor];
         
         [self.tooltipView show];
@@ -628,13 +638,13 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     return [UIColor colorWithRed:0.8 green:0.1 blue:0.1 alpha:1];
 }
 
--(void)addErrors:(NSArray *)errors {
-    [super addErrors:errors];
+-(void)addMessages:(NSArray *)errors {
+    [super addMessages:errors];
     [self applyErrorStyle];
 }
 
--(void)clearErrors {
-    [super clearErrors];
+-(void)clearMessages {
+    [super clearMessages];
     [self applyValidStyle];
 }
 
@@ -685,4 +695,6 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     }
     return result;
 }
+
+
 @end

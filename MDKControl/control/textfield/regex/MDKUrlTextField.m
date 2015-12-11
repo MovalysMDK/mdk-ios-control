@@ -34,7 +34,7 @@
         [[MDKCommandHandler commandWithKey:@"OpenURLCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:url, nil];
     }
     else {
-        [self onErrorButtonClick:self];
+        [self onMessageButtonClick:self];
     }
     
 }

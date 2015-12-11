@@ -38,19 +38,19 @@
 /*!
  * @brief Clears all the errros on the component
  */
--(void) clearErrors;
+-(void) clearMessages;
 
 /*!
  * @brief Returns an array of the errors own that hold the component
  * @return An Array containing all the errors of the component
  */
--(NSMutableArray *) getErrors;
+-(NSMutableArray *) getMessages;
 
 /*!
  * @brief Adds errors to the component
  * @param errors an array of errors to add on the component
  */
--(void)addErrors:(NSArray *)errors;
+-(void)addMessages:(NSArray *)errors;
 
 /*!
  * @brief Sets the validation state of the component
@@ -62,7 +62,7 @@
  * @brief Does an action when the error button is clicked
  * @param sender The sender of the action
  */
--(void)onErrorButtonClick:(id)sender;
+-(void)onMessageButtonClick:(id)sender;
 
 /*!
  * @brief Sets the visibility state of the component

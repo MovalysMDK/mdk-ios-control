@@ -18,21 +18,21 @@
 #import "MDKTooltipView.h"
 
 /*!
- * @protocol MDKControlErrorProtocol
+ * @protocol MDKControlMessageProtocol
  * @brief This protocol defines properties and methods to manage errors on controls
  */
-@protocol MDKControlErrorProtocol <NSObject>
+@protocol MDKControlMessageProtocol <NSObject>
 
 #pragma mark - Properties
 
 /*!
  * @brief The array of the errors of the component.
  */
-@property (nonatomic, strong) NSMutableArray *errors;
+@property (nonatomic, strong) NSMutableArray *messages;
 
 
 /*!
- * @brief The tooltip displayed when the user taps on the buttonError of the errorView
+ * @brief The tooltip displayed when the user taps on the buttonMessage of the errorView
  */
 @property (nonatomic, strong) MDKTooltipView *tooltipView;
 
@@ -41,24 +41,25 @@
 /*!
  * @brief Clean all component errors
  */
--(void) clearErrors;
+-(void) clearMessages;
 
 /*!
  * @brief Returns a array containing the error(s) of the component
  * @return  An array containing the error(s) of the component 
  */
--(NSArray *) getErrors;
+-(NSArray *) getMessages;
 
 /*!
  * @brief Adds an array of errors to the component
  * @param errors An array of errors 
  */
--(void) addErrors:(NSArray *) errors;
+-(void) addMessages:(NSArray *) errors;
 
 /*!
  * @brief Shows or hides the error view of the component
- * @param showError BOOL that is YES to show the error view, or NO to hide it.
+ * @param showMessage BOOL that is YES to show the error view, or NO to hide it.
  */
--(void) showError:(BOOL)showError;
+-(void) showMessage:(BOOL)showMessage;
+
 
 @end

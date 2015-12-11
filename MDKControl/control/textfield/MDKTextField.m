@@ -52,9 +52,9 @@
 #pragma mark Validation
 @synthesize isValid = _isValid;
 
-#pragma mark Error
+#pragma mark Message
 @synthesize tooltipView= _tooltipView;
-@synthesize errors = _errors;
+@synthesize messages = _messages;
 
 #pragma mark AssociatedLabel
 @synthesize associatedLabel = _associatedLabel;
@@ -106,7 +106,7 @@
 
 -(void) initializeComponent {
     self.controlDelegate = [[MDKControlDelegate alloc] initWithControl:self];
-    self.errors = [NSMutableArray new];
+    self.messages = [NSMutableArray new];
     self.extension = [[MDKTextFieldExtension alloc] init];
 #if !TARGET_INTERFACE_BUILDER
     if(!self.sender) {
@@ -221,25 +221,25 @@
 
 
 
-#pragma mark - Errors
--(NSArray *)getErrors {
-    return [self.controlDelegate getErrors];
+#pragma mark - Messages
+-(NSArray *)getMessages {
+    return [self.controlDelegate getMessages];
 }
 
--(void)addErrors:(NSArray *)errors {
-    [self.controlDelegate addErrors:errors];
+-(void)addMessages:(NSArray *)errors {
+    [self.controlDelegate addMessages:errors];
 }
 
--(void)clearErrors {
-    [self.controlDelegate clearErrors];
+-(void)clearMessages {
+    [self.controlDelegate clearMessages];
 }
 
--(void)showError:(BOOL)showError {
-    [self.controlDelegate setIsValid:!showError];
+-(void)showMessage:(BOOL)showMessage {
+    [self.controlDelegate setIsValid:!showMessage];
 }
 
--(void)onErrorButtonClick:(id)sender {
-    [self.controlDelegate onErrorButtonClick:sender];
+-(void)onMessageButtonClick:(id)sender {
+    [self.controlDelegate onMessageButtonClick:sender];
 }
 
 #pragma mark - Control attributes
@@ -327,7 +327,7 @@
     [self applyStandardStyle];
     
     if(self.onError_MDK) {
-        [self applyErrorStyle];
+        [self applyEnabledStyle];
     }
     else {
         [self applyValidStyle];

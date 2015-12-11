@@ -61,7 +61,7 @@ IB_DESIGNABLE
 -(void) addAccessories:(NSDictionary *) accessoryViews;
 
 
--(void) onErrorButtonClick:(id)sender;
+-(void) onMessageButtonClick:(id)sender;
 
 -(void) setSender:(id<MDKControlProtocol>)sender ;
 

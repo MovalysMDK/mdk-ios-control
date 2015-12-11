@@ -7,11 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" id="iN0-l3-epB" customClass="MDKErrorView">
+        <view userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" id="iN0-l3-epB" customClass="MDKMessageView">
             <rect key="frame" x="0.0" y="0.0" width="31" height="86"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzg-7h-LWv">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzg-7h-LWv" customClass="MDKMessageButton">
                     <rect key="frame" x="4" y="32" width="22" height="22"/>
                     <animations/>
                     <constraints>
@@ -20,9 +20,9 @@
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="MzT-nb-aPl"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="fUg-Po-B2r"/>
                     </constraints>
-                    <color key="tintColor" red="0.823142767" green="0.23479450800000001" blue="0.076583136910000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" cyan="0.96645948670000004" magenta="0.0" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                     <connections>
-                        <action selector="onErrorButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="LFK-aW-hVo"/>
+                        <action selector="onMessageButtonClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="ZbW-79-lvH"/>
                     </connections>
                 </button>
             </subviews>
@@ -36,7 +36,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="errorButton" destination="Pzg-7h-LWv" id="2Wh-8m-7oO"/>
+                <outlet property="messageButton" destination="Pzg-7h-LWv" id="3gj-c6-bTP"/>
             </connections>
             <point key="canvasLocation" x="106.5" y="133"/>
         </view>

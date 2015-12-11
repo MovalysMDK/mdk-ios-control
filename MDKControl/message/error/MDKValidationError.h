@@ -14,12 +14,13 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "MDKMessageProtocol.h"
 /*!
  * @class MDKValidationError
  * @brief Reports any validation error.
  * @discussion This class is the main class for any UI Validation error of MDK Controls.
  */
-@interface MDKValidationError : NSError
+@interface MDKValidationError : NSError <MDKMessageProtocol>
 
 #pragma mark - Properties
 

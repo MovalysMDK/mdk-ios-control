@@ -14,23 +14,12 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "MDKMessageInfo.h"
 
-#import "MDKCanNotPerformActionError.h"
+FOUNDATION_EXPORT NSString *const MDK_INFO_MAX_LENGTH_DESCRIPTION_KEY;
 
-@implementation MDKCanNotPerformActionError
+@interface MDKMaxLengthInfo : MDKMessageInfo
 
-NSInteger const CAN_NOT_PERFORM_ACTION_ERROR_CODE = 5000;
-
-NSString *const CAN_NOT_PERFORM_ACTION_ERROR_LOCALIZED_DESCRIPTION_KEY = @"mdk_error_can_not_perform_action";
-
--(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object
-{
-    self = [super initWithCode:CAN_NOT_PERFORM_ACTION_ERROR_CODE
-       localizedDescriptionKey:CAN_NOT_PERFORM_ACTION_ERROR_LOCALIZED_DESCRIPTION_KEY
-            localizedFieldName:fieldName
-            technicalFieldName:technicalFieldName
-                    withObject:object];
-    return self;
-}
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object;
 
 @end

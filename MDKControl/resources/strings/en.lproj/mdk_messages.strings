@@ -34,5 +34,9 @@
 
 
 
-//Actions error [5000]
-"mdk_error_can_not_perform_action" = "This action can not be performed on this device : %@";
+//WARNs
+"mdk_warn_can_not_perform_action" = "This action can not be performed on this device : %@";
+
+//INFOs
+"mdk_info_min_length" = "The length must be superior to : %@";
+"mdk_info_max_length" = "The length must be inferior to : %@";

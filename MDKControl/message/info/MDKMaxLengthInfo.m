@@ -14,27 +14,17 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "MDKMaxLengthInfo.h"
 
-#ifndef MDKControl_Error_h
-#define MDKControl_Error_h
+NSString *const MDK_INFO_MAX_LENGTH_DESCRIPTION_KEY = @"mdk_info_max_length";
 
-#import "MDKTooLongStringUIValidationError.h"
-#import "MDKTooShortStringUIValidationError.h"
-#import "MDKTooLongListUIValidationError.h"
-#import "MDKTooShortListUIValidationError.h"
+@implementation MDKMaxLengthInfo
 
-#import "MDKInvalidDoubleValueUIValidationError.h"
-#import "MDKInvalidIntegerValueUIValidationError.h"
-#import "MDKInvalidEmailValueUIValidationError.h"
-#import "MDKInvalidPhoneNumberValueUIValidationError.h"
-#import "MDKInvalidUrlValueUIValidationError.h"
-#import "MDKMandatoryFieldUIValidationError.h"
-#import "MDKNoMatchingValueUIValidationError.h"
+-(id)initWithLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withObject:(id)object {
+    self = [super initWithDescriptionKey:MDK_INFO_MAX_LENGTH_DESCRIPTION_KEY withLocalizedFieldName:fieldName technicalFieldName:technicalFieldName withTitle:@"INFO" withObject:object];
+    if(self) {
+    }
+    return self;
+}
 
-#import "MDKCanNotPerformActionError.h"
-
-#import "MDKValidationError.h"
-
-#import "ErrorView.h"
-
-#endif
+@end

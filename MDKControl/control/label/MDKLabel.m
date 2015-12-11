@@ -56,7 +56,7 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 #pragma mark Validation
 @synthesize isValid = _isValid;
 
-#pragma mark Error
+#pragma mark Message
 @synthesize tooltipView= _tooltipView;
 
 #pragma mark AssociatedLabel
@@ -203,25 +203,25 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 
 
 
-#pragma mark - Errors
--(NSArray *)getErrors {
-    return [self.controlDelegate getErrors];
+#pragma mark - Messages
+-(NSArray *)getMessages {
+    return [self.controlDelegate getMessages];
 }
 
--(void)addErrors:(NSArray *)errors {
-    [self.controlDelegate addErrors:errors];
+-(void)addMessages:(NSArray *)errors {
+    [self.controlDelegate addMessages:errors];
 }
 
--(void)clearErrors {
-    [self.controlDelegate clearErrors];
+-(void)clearMessages {
+    [self.controlDelegate clearMessages];
 }
 
--(void)showError:(BOOL)showError {
-    [self.controlDelegate setIsValid:!showError];
+-(void)showMessage:(BOOL)showMessage {
+    [self.controlDelegate setIsValid:!showMessage];
 }
 
--(void)onErrorButtonClick:(id)sender {
-    [self.controlDelegate onErrorButtonClick:sender];
+-(void)onMessageButtonClick:(id)sender {
+    [self.controlDelegate onMessageButtonClick:sender];
 }
 
 

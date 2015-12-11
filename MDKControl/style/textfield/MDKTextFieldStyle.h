@@ -29,7 +29,7 @@ FOUNDATION_EXPORT NSInteger DEFAULT_ACCESSORIES_MARGIN;
  * @class MDKTextFieldStyle
  * @brief This class manages the syle of a MDKTextFieldStyle control
  */
-@interface MDKTextFieldStyle : MDKDefaultStyle <MDKErrorViewProtocol, MDKBackgroundViewProtocol>
+@interface MDKTextFieldStyle : MDKDefaultStyle <MDKMessageViewProtocol, MDKBackgroundViewProtocol>
 
 #pragma mark - Methods
 

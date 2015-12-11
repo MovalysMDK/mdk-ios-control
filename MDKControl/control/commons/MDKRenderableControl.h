@@ -114,7 +114,7 @@ IB_DESIGNABLE
  * @brief Retrieves a custom XIB if defined in InterfaceBuilder.
  * @return The name of the custom XIB to load
  */
--(NSString *) retrieveCustomErrorXIB ;
+-(NSString *) retrieveCustomMessageXIB ;
 
 /*!
  * @brief Renders the component using the specific renderable properties.
@@ -155,7 +155,7 @@ IB_DESIGNABLE
  * @brief This method describes the treatment to do when the user click the error button of this component
  * @discussion By default, this method displays the error information
  */
--(void) doOnErrorButtonClicked;
+-(void) doOnMessageButtonClicked;
 
 /*!
  * @brief This method allows to do some treatments on outlets of this view
@@ -169,7 +169,7 @@ IB_DESIGNABLE
  */
 -(NSString *) className;
 
--(void) definePositionOfErrorViewWithParameters:(NSDictionary *)parameters whenShown:(BOOL)isShown;
+-(void) definePositionOfMessageViewWithParameters:(NSDictionary *)parameters whenShown:(BOOL)isShown;
 
 /*!
  * @brief Declares renderable properties name specific to this control
@@ -187,15 +187,15 @@ IB_DESIGNABLE
  */
 -(void)forwardProperty:(NSString *)propertyName withDirection:(NSString *)direction;
 
-extern const struct MDKErrorPositionParameters_Struct
+extern const struct MDKMessagePositionParameters_Struct
 {
-    __unsafe_unretained NSString *ErrorView;
+    __unsafe_unretained NSString *MessageView;
     __unsafe_unretained NSString *ParentView;
     __unsafe_unretained NSString *InternalViewLeftConstraint;
     __unsafe_unretained NSString *InternalViewTopConstraint;
     __unsafe_unretained NSString *InternalViewRightConstraint;
     __unsafe_unretained NSString *InternalViewBottomConstraint;
-} MDKErrorPositionParameters;
+} MDKMessagePositionParameters;
 
 
 extern const struct MDKRenderableForwarding_Struct
@@ -264,7 +264,7 @@ extern const struct MDKRenderableForwarding_Struct
  * the customXIBName inspectable attribute declared on classes that inherit this class
  */
 @optional
--(NSString *) defaultErrorXIBName;
+-(NSString *) defaultMessageXIBName;
 
 /*!
  * @brief This optional method must not be implemented. It only allows
@@ -272,7 +272,7 @@ extern const struct MDKRenderableForwarding_Struct
  * the customXIBName inspectable attribute declared on classes that inherit this class
  */
 @optional
--(NSString *) customErrorXIBName;
+-(NSString *) customMessageXIBName;
 
 @end
 

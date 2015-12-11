@@ -17,7 +17,7 @@
 
 //Tags
 #import "Protocol.h"
-#import "Error.h"
+#import "Message.h"
 #import "Utils.h"
 
 #import "MDKControlProtocol.h"
@@ -90,20 +90,20 @@ IB_DESIGNABLE
 
 /*!
  * @brief Allows to display or not the view that indicates that the component is in an invalid state
- * @param showErrorView A BOOL value that indicates if the component is in an invalid state or not
+ * @param showMessageView A BOOL value that indicates if the component is in an invalid state or not
  */
--(void) showError:(BOOL)showErrorView;
+-(void) showMessage:(BOOL)showMessageView;
 
 /*!
  * @brief Permet de vider la liste des erreurs
  */
--(void) clearErrors;
+-(void) clearMessages;
 
 /*!
  * @brief Permet d'ajouter des erreurs à la liste des erreurs
  * @param errors Une liste d'erreurs à ajouter
  */
--(void) addErrors:(NSArray *) errors;
+-(void) addMessages:(NSArray *) errors;
 
 
 /*!

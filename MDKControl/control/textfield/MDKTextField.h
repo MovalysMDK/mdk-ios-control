@@ -76,6 +76,6 @@ IB_DESIGNABLE
  * @discussion This method is sometimes called by validators to force the error to display
  * @param sender The sender of the event
  */
--(void) onErrorButtonClick:(id)sender;
+-(void) onMessageButtonClick:(id)sender;
 @end
 

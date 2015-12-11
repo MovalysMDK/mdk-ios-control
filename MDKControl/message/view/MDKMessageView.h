@@ -14,24 +14,31 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MDKErrorView.h"
-#import "MDKRenderableControl.h"
+#import <UIKit/UIKit.h>
+#import "MDKMessageButton.h"
 
-@implementation MDKErrorView
+/*! 
+ * @class MDKMessageView
+ * @brief This class represents the view that will display on MDK iOS 
+ * components when they are in an invalid state.
+ */
+IB_DESIGNABLE
+@interface MDKMessageView : UIView
+
+#pragma mark - Properties
+
+/*!
+ * @brief The error button the user will click to display error description
+ */
+@property (weak, nonatomic) IBOutlet MDKMessageButton *messageButton;
 
 
-- (IBAction)onErrorButtonClick:(id)sender {
-    //Forwarding this event on MFUIBaseRenderableComponent parent
-    UIView *currentView = self;
-    while (currentView && ![currentView isKindOfClass:[MDKRenderableControl class]]) {
-        currentView = [currentView superview];
-    }
-    
-    if(currentView) {
-        MDKRenderableControl *parentComponent = (MDKRenderableControl *)currentView;
-        [parentComponent doOnErrorButtonClicked];
-    }
-}
+#pragma mark - Methods
 
+/*!
+ * @brief The action called when the user clicks the errorButton 
+ * @param sender The sender of the action
+ */
+- (IBAction)onMessageButtonClick:(id)sender;
 
 @end

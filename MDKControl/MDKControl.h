@@ -33,3 +33,4 @@ FOUNDATION_EXPORT const unsigned char MDKControlVersionString[];
 #import "Style.h"
 #import "Control.h"
 #import "Helper.h"
+#import "Message.h"

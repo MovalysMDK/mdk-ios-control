@@ -20,7 +20,7 @@
 NSInteger DEFAULT_ACCESSORIES_MARGIN = 2;
 
 @implementation MDKTextFieldStyle
-@synthesize errorView;
+@synthesize messageView;
 @synthesize backgroundView;
 
 #pragma mark - Standard Style

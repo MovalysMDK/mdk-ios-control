@@ -15,7 +15,7 @@
  */
 
 #import "Command.h"
-#import "Error.h"
+#import "MessageWarn.h"
 #import "Utils.h"
 #import "FieldValidator.h"
 
@@ -41,12 +41,13 @@
         if(!canSendMail)
         {
             
-            [self clearErrors];
-            MDKInvalidPhoneNumberValueUIValidationError *error = [[MDKCanNotPerformActionError alloc]  initWithLocalizedFieldName:NSStringFromClass([self class]) technicalFieldName:NSStringFromClass([self class]) withObject:@"Send Mail"];
+            [self clearMessages];
+            MDKCanNotPerformActionWarn *warning = [[MDKCanNotPerformActionWarn alloc]  initWithLocalizedFieldName:NSStringFromClass([self class]) technicalFieldName:NSStringFromClass([self class]) withObject:@"Send Mail"];
+            [self addMessages:@[warning]];
         }
     }
     else {
-        [self onErrorButtonClick:self];
+        [self onMessageButtonClick:self];
     }
 }
 

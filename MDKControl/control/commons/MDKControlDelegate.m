@@ -16,6 +16,8 @@
 
 #import "Protocol.h"
 #import "Utils.h"
+#import "Message.h"
+
 #import "MDKControlProtocol.h"
 
 #import "MDKControlDelegate.h"
@@ -41,25 +43,33 @@
 }
 
 
--(void)clearErrors {
-    [self.control setIsValid:YES];
-    self.control.errors = [@[] mutableCopy];
+-(void)clearMessages {
+    NSMutableArray *modifiedCopy = [self.control.messages mutableCopy];
+    for(id<MDKMessageProtocol> message in self.control.messages) {
+        if([message status] > 0) {
+            [modifiedCopy removeObject:message];
+        }
+    }
+    
+    [self.control setIsValid:(modifiedCopy.count == 0)];
+    self.control.messages = modifiedCopy;
 }
 
--(NSMutableArray *) getErrors {
+-(NSMutableArray *) getMessages {
     return [@[] mutableCopy];
 }
 
--(void)addErrors:(NSArray *)errors {
+-(void)addMessages:(NSArray *)errors {
     if(errors) {
-        [self.control.errors addObjectsFromArray:errors];
+        [self.control.messages addObjectsFromArray:errors];
     }
     if([self.control isKindOfClass:NSClassFromString(@"MFUIOldBaseComponent")]) {
-        [self.control performSelector:@selector(showErrorButtons)];
+        [self.control performSelector:@selector(showMessageButtons)];
         
     }else {
-        [self.control showError:self.control.errors.count];
+        [self.control showMessage:self.control.messages.count];
     }
+    
     [self setIsValid:(errors.count == 0)];
 }
 
@@ -81,30 +91,23 @@
     }
 }
 
--(void) onErrorButtonClick:(id)sender {
+-(void) onMessageButtonClick:(id)sender {
     if(![self.control.tooltipView superview]){
         //Récupération du texte des erreurs
-        NSString *errorText = @"";
-        int errorNumber = 0;
-        for (NSError *error in self.control.errors) {
-            if(errorNumber > 0){
-                errorText = [errorText stringByAppendingString: @"\n"];
-            }
-            errorNumber++;
-            errorText= [errorText stringByAppendingString: [error localizedDescription]];
+        NSAttributedString *messageText = @"";
+        messageText = [MDKMessageUIManager formattedMessagesFromArray:self.control.messages];
         
-        }
         //Passage de la vue au premier plan
         UIView *controllerView = [self.control parentViewController].view;
         
         //Création et affichage de la bulle
-        self.control.tooltipView = [[MDKTooltipView alloc] initWithTargetView:((id<MDKErrorViewProtocol>)self.control.styleClass).errorView
+        self.control.tooltipView = [[MDKTooltipView alloc] initWithTargetView:((id<MDKMessageViewProtocol>)self.control.styleClass).messageView
                                                                      hostView:controllerView tooltipText:@""
                                                                arrowDirection:MDKTooltipViewArrowDirectionUp
                                                                         width:self.control.frame.size.width];
         
         [controllerView bringSubviewToFront:self.control.tooltipView];
-        self.control.tooltipView.tooltipText = errorText;
+        self.control.tooltipView.tooltipAttributedText = messageText;
         self.control.tooltipView.tooltipBackgroundColour = [self defaultTooltipBackgroundColor];
         [self.control.tooltipView show];
         [self.control.tooltipView performSelector:@selector(hideAnimated:) withObject:@1 afterDelay:2];
@@ -117,7 +120,7 @@
 
 
 -(UIColor *) defaultTooltipBackgroundColor {
-    return [UIColor colorWithRed:0.8 green:0.1 blue:0.1 alpha:1];
+    return [UIColor colorWithWhite:0.90 alpha:1];
 }
 
 -(void) computeStyleClass {
@@ -154,43 +157,43 @@
 
 #pragma mark - Validation
 -(NSInteger)validate {
-    [self clearErrors];
+    [self clearMessages];
     NSMutableArray *validators = [NSMutableArray array];
     NSMutableDictionary *validationState = [NSMutableDictionary dictionary];
     
     //Mandatory validator
-    id mandatoryError = nil;
+    id mandatoryMessage = nil;
     id<MDKFieldValidatorProtocol> mandatoryValidator = nil;
     if([self.control mandatory]) {
         
         mandatoryValidator = [[MDKFieldValidatorHandler fieldValidatorsForAttributes:@[FIELD_VALIDATOR_ATTRIBUTE_MANDATORY] forControl:[self control]] firstObject];
-        mandatoryError = [mandatoryValidator validate:[self.control getData] withCurrentState:validationState
+        mandatoryMessage = [mandatoryValidator validate:[self.control getData] withCurrentState:validationState
                                        withParameters:@{FIELD_VALIDATOR_ATTRIBUTE_MANDATORY : self.control.mandatory, @"componentName" : NSStringFromClass(self.control.class)}];
     }
-    if(mandatoryError) {
-        validationState[NSStringFromClass([mandatoryValidator class])] = mandatoryError;
+    if(mandatoryMessage) {
+        validationState[NSStringFromClass([mandatoryValidator class])] = mandatoryMessage;
     }
     else {
         [self processValidationWithValidators:validators withValidationState:validationState];
     }
-    
-    return [self computeNumberOfErrorsFromValidationState:validationState];
+    return [self computeNumberOfMessagesFromValidationState:validationState];
 }
 
--(NSInteger) computeNumberOfErrorsFromValidationState:(NSDictionary *)validationState {
-    NSInteger numberOfErrors = 0;
-    [self clearErrors];
+-(NSInteger) computeNumberOfMessagesFromValidationState:(NSDictionary *)validationState {
+    NSInteger numberOfMessages = 0;
+    [self clearMessages];
     for(id result in validationState.allValues) {
         if(![result isKindOfClass:[NSNull class]]) {
-            numberOfErrors++;
-            [self addErrors:@[result]];
+            numberOfMessages++;
+            [self addMessages:@[result]];
         }
     }
-    return numberOfErrors;
+    return numberOfMessages;
 }
 
 
 -(void)processValidationWithValidators:(NSMutableArray *)validators withValidationState:(NSMutableDictionary *)validationState {
+    
     //Component Validators
     [validators addObjectsFromArray:[self.control performSelector:@selector(userFieldValidators)]];
     [validators addObjectsFromArray:[self.control controlValidators]];

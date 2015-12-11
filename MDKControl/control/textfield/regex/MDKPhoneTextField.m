@@ -17,7 +17,7 @@
 
 #import "Command.h"
 #import "FieldValidator.h"
-#import "Error.h"
+#import "Message.h"
 #import "Utils.h"
 
 #import "MDKPhoneTextField.h"
@@ -33,7 +33,7 @@
     
     if([self validate] == 0) {
         BOOL canSendMail = NO;
-        if (![[[UIDevice currentDevice] model] isEqualToString:@"iPad"] && ([self validate] == 0)){
+        if (![[[UIDevice currentDevice] model] isEqualToString:@"iPad"] && ![[[UIDevice currentDevice] model] containsString:@"Simulator"] && ([self validate] == 0)){
             MDKPhoneNumber *phone = [MDKPhoneNumber new];
             phone.baseNumber = [[self getData] isKindOfClass:[NSAttributedString class]] ? [[self getData] string] : [self getData];
             [[MDKCommandHandler commandWithKey:@"CallPhoneNumberCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:phone, nil];
@@ -42,13 +42,13 @@
         if(!canSendMail)
         {
     
-            [self clearErrors];
-            MDKInvalidPhoneNumberValueUIValidationError *error = [[MDKCanNotPerformActionError alloc]  initWithLocalizedFieldName:NSStringFromClass([self class]) technicalFieldName:NSStringFromClass([self class]) withObject:@"Phone Call"];
-            [self addErrors:@[error]];
+            [self clearMessages];
+            MDKCanNotPerformActionWarn *warning = [[MDKCanNotPerformActionWarn alloc]  initWithLocalizedFieldName:NSStringFromClass([self class]) technicalFieldName:NSStringFromClass([self class]) withObject:@"Phone Call"];
+            [self addMessages:@[warning]];
         }
     }
     else {
-        [self onErrorButtonClick:self];
+        [self onMessageButtonClick:self];
     }
     
     

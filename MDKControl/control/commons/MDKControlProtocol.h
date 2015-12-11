@@ -17,7 +17,7 @@
 #import "Protocol.h"
 
 #import "MDKControlDelegate.h"
-#import "MDKErrorView.h"
+#import "MDKMessageView.h"
 
 @protocol MDKStyleProtocol;
 
@@ -28,7 +28,7 @@
  * @brief This is the main protocol to describes a MDK Control.
  * @discussion It gives all properties and methods needed to make a view a MDK Control.
  */
-@protocol MDKControlProtocol <MDKControlDataProtocol, MDKControlErrorProtocol, MDKControlPropertiesProtocol, MDKControlValidationProtocol, MDKControlAttributesProtocol, MDKControlAssociatedLabelProtocol, MDKControlCustomStyleProtocol>
+@protocol MDKControlProtocol <MDKControlDataProtocol, MDKControlMessageProtocol, MDKControlPropertiesProtocol, MDKControlValidationProtocol, MDKControlAttributesProtocol, MDKControlAssociatedLabelProtocol, MDKControlCustomStyleProtocol>
 
 #pragma mark - Properties
 

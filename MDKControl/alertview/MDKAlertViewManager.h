@@ -19,16 +19,6 @@
 FOUNDATION_EXPORT NSString *ALERTVIEW_FAILED_SAVE_ACTION;
 
 /**
- * @typedef MFAlertViewIdentifier
- * @brief An enumeration that allow to identify the AlertViews to show
- * @constant kFailedSavedAction Idneitifes the AlertView to show when a save action failed
- */
-typedef NS_ENUM(NSUInteger, MDKAlertViewIdentifier) {
-    mdkFailedSavedAction
-};
-
-
-/**
  * @class MFAlertViewManager
  * @brief This class allows to manage the MDK iOS AlertViews
  * @discussion The class allows to show an AlertView and to do some treatments
@@ -53,3 +43,13 @@ typedef NS_ENUM(NSUInteger, MDKAlertViewIdentifier) {
 -(void)showAlertView:(UIAlertView *)alertView ;
 
 @end
+
+
+/**
+ * @typedef MFAlertViewIdentifier
+ * @brief An enumeration that allow to identify the AlertViews to show
+ * @constant mdkFailedSavedAction Identify the AlertView to show when a save action failed
+ */
+typedef NS_ENUM(NSUInteger, MDKAlertViewIdentifier) {
+    mdkFailedSavedAction
+};
