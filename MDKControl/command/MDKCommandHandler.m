@@ -15,7 +15,7 @@
  */
 
 
-#import "ComponentProvider.h"
+#import "Provider.h"
 
 #import "MDKCommandHandler.h"
 

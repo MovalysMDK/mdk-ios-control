@@ -18,5 +18,6 @@
 #define MDKControl_ViewController_h
 
 #import "ViewControllerEmail.h"
+#import "ViewControllerScan.h"
 
 #endif

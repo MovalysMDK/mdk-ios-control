@@ -14,11 +14,11 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MFUI_MFUIComponentProvider_h
-#define MFUI_MFUIComponentProvider_h
+#ifndef MDKControl_Provider_h
+#define MDKControl_Provider_h
 
+#import "MDKComponentApplicationProtocol.h"
 #import "MDKComponentProviderProtocol.h"
 #import "MDKSimpleComponentProvider.h"
-#import "MDKComponentApplicationProtocol.h"
 
 #endif

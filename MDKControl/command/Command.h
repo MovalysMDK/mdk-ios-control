@@ -29,4 +29,6 @@
 #import "MDKURL.h"
 #import "MDKOpenURLCommand.h"
 
+#import "MDKOpenScanCommand.h"
+
 #endif

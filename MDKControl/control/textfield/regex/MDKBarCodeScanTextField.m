@@ -16,32 +16,44 @@
 
 #import "MDKBarCodeScanTextField.h"
 
+@interface MDKBarCodeScanTextField () <UITextFieldDelegate>
+
+@end
+
 @implementation MDKBarCodeScanTextField
 @synthesize editable = _editable;
+
+
+-(void)initializeComponent {
+    [super initializeComponent];
+    self.delegate = self;
+}
 
 -(UIKeyboardType)keyboardType {
     return UIKeyboardTypeDefault;
 }
 
 -(void) doAction {
-//    if([self validate] == 0) {
-//        // Create and MDKURL composer
-//        NSString *urlString = [[self getData] isKindOfClass:[NSAttributedString class]] ? [[self getData] string] : [self getData];
-//        MDKURL *url = [[MDKURL alloc] initWithString:urlString];
-//        [[MDKCommandHandler commandWithKey:@"OpenURLCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:url, nil];
-//    }
-//    else {
-//        [self onMessageButtonClick:self];
-//    }
-        //TODO
+    if([self validate] == 0) {
+        // Create and MDKURL composer
+        [[MDKCommandHandler commandWithKey:@"OpenScanCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:self, nil];
+    }
+    else {
+        [self onMessageButtonClick:self];
+    }
 }
 
 -(NSArray *)controlValidators {
     return @[];
 }
 
--(void)setEditable:(NSNumber *)editable {
-    _editable = editable;
-    self.enabled = NO;
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return NO;
 }
+
+-(void) updateValueFromExternalSource:(NSString *)string {
+    self.text = string;
+    [self valueChanged:self];
+}
+
 @end
