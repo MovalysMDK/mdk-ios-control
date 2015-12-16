@@ -19,7 +19,7 @@
 #import "MDKUIList.h"
 #import "MDKListCell.h"
 #import "Helper.h"
-
+#import "Protocol.h"
 
 #pragma mark - MDKDelegateEnumList - Private interface
 
@@ -27,6 +27,10 @@
 
 // Model
 @property (nonatomic, strong) NSArray *rows;
+
+//EnumHelper
+@property (nonatomic, strong) Class<MDKEnumHelperProtocol> enumHelper;
+
 
 @end
 
@@ -59,6 +63,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MDKListCell *cell   = [tableView dequeueReusableCellWithIdentifier:MDKListCellIdentifier forIndexPath:indexPath];
     [cell updateCellWithText:self.rows[ indexPath.row ]];
+    
+    if([[self.sourceControl getData] isEqualToNumber:@([self.enumHelper enumFromText:self.rows[ indexPath.row ]])]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    
     return cell;
 }
 
@@ -66,8 +79,8 @@
 #pragma mark UITableViewDelegate implementation
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.protocol respondsToSelector:@selector(userDidSelectCell:)]) {
-        [self.protocol userDidSelectCell:self.rows[indexPath.row]];
+    if ([self.sourceControl respondsToSelector:@selector(userDidSelectCell:)]) {
+        [self.sourceControl userDidSelectCell:self.rows[indexPath.row]];
     }
 }
 
@@ -76,10 +89,8 @@
 #pragma clang diagnostic ignored "-Wundeclared-selector"
 - (void)initializeRowsWithEnumClassName:(NSString *)enumClassName {
     NSString *sEnumClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:enumClassName];
-    Class cEnumHelper              = NSClassFromString(sEnumClassHelperName);
-    if ([cEnumHelper respondsToSelector:@selector(valuesToTexts)]) {
-        self.rows = [NSArray arrayWithArray:[cEnumHelper performSelector:@selector(valuesToTexts) withObject:nil]];
-    }
+    self.enumHelper = NSClassFromString(sEnumClassHelperName);
+    self.rows = [NSArray arrayWithArray:[self.enumHelper valuesToTexts]];
 }
 #pragma clang diagnostic pop
 

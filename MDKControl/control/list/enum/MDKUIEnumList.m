@@ -165,7 +165,7 @@ NSString *const MDKUIEnumListKey = @"enumClassName";
 - (IBAction)userDidTapOnEnumButton:(id)sender {
     // Perform delegate
     self.delegate          = [[MDKDelegateEnumList alloc] initWithEnumClassName:self.currentEnumClassName];
-    self.delegate.protocol = self;
+    self.delegate.sourceControl = self;
     
     // Initialize: MDKUIList
     self.uiList = [[[NSBundle bundleForClass:[MDKUIList class]] loadNibNamed:MDKUIListIdentifier owner:nil options:nil] firstObject];
@@ -238,17 +238,8 @@ NSString *const MDKUIEnumListKey = @"enumClassName";
 }
 
 - (void)updateDisplayFromText:(NSString *)text {
-    NSString *imageName  = [[NSString stringWithFormat:@"enum_%@_%@", self.currentEnumClassName, text] lowercaseString];
-    UIImage *image = [UIImage imageNamed:imageName];
-    
-    if (image) {
-        [self.button setTitle:@"" forState:UIControlStateNormal];
-        [self.button setImage:image forState:UIControlStateNormal];
-    }
-    else {
         [self.button setImage:nil forState:UIControlStateNormal];
         [self.button setTitle:text forState:UIControlStateNormal];
-    }
     NSString *sEnumClassHelperName = [MDKHelperType getClassHelperOfClassWithKey:self.currentEnumClassName];
     Class cEnumHelper              = NSClassFromString(sEnumClassHelperName);
     

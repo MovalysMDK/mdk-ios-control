@@ -16,6 +16,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import "MDKControlDataProtocol.h"
 @class MDKUIList;
 
 
@@ -57,6 +58,6 @@
 /*!
  * @brief Delegate for MDKUIListDelegate protocol
  */
-@property (nonatomic, weak) id<MDKUIEnumListProtocol> protocol;
+@property (nonatomic, weak) id<MDKControlDataProtocol ,MDKUIEnumListProtocol> sourceControl;
 
 @end
