@@ -83,6 +83,8 @@
 		B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */; };
 		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0261E2F1C22AA2D00685D1A /* MDKPickMediaCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B0261E2D1C22AA2D00685D1A /* MDKPickMediaCommand.h */; };
+		B0261E301C22AA2D00685D1A /* MDKPickMediaCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B0261E2E1C22AA2D00685D1A /* MDKPickMediaCommand.m */; };
 		B02A81211C0CB39400580411 /* MDK_MDKUIListSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B02A81201C0CB39400580411 /* MDK_MDKUIListSearch.xib */; };
 		B02A81341C0E075500580411 /* MDKPickerListStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02A81321C0E075500580411 /* MDKPickerListStyle.h */; };
 		B02A81351C0E075500580411 /* MDKPickerListStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02A81331C0E075500580411 /* MDKPickerListStyle.m */; };
@@ -435,6 +437,8 @@
 		B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandHandler.h; sourceTree = "<group>"; };
 		B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCommandHandler.m; sourceTree = "<group>"; };
 		B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandProtocol.h; sourceTree = "<group>"; };
+		B0261E2D1C22AA2D00685D1A /* MDKPickMediaCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKPickMediaCommand.h; sourceTree = "<group>"; };
+		B0261E2E1C22AA2D00685D1A /* MDKPickMediaCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKPickMediaCommand.m; sourceTree = "<group>"; };
 		B02A81201C0CB39400580411 /* MDK_MDKUIListSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIListSearch.xib; sourceTree = "<group>"; };
 		B02A81321C0E075500580411 /* MDKPickerListStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKPickerListStyle.h; sourceTree = "<group>"; };
 		B02A81331C0E075500580411 /* MDKPickerListStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKPickerListStyle.m; sourceTree = "<group>"; };
@@ -940,6 +944,8 @@
 				B0A74C7B1BA081F40002A66B /* MDKOpenURLCommand.m */,
 				B00C4DFC1BA07C45003CBB16 /* MDKPhoneNumber.h */,
 				B00C4DFD1BA07C45003CBB16 /* MDKPhoneNumber.m */,
+				B0261E2D1C22AA2D00685D1A /* MDKPickMediaCommand.h */,
+				B0261E2E1C22AA2D00685D1A /* MDKPickMediaCommand.m */,
 				B018BE9D1BA02C6000EF1D87 /* MDKSendEmailCommand.h */,
 				B018BE9E1BA02C6000EF1D87 /* MDKSendEmailCommand.m */,
 				B0A74C781BA081F40002A66B /* MDKURL.h */,
@@ -1143,7 +1149,6 @@
 			isa = PBXGroup;
 			children = (
 				B08C190D1B9DE9A500D6F93A /* commons */,
-				B08C19151B9DE9A500D6F93A /* Control.h */,
 				B03AD4761BC3CDFF00A96F5D /* date */,
 				F965F9311BE7BF210060A93D /* enumImage */,
 				B08C19161B9DE9A500D6F93A /* extension */,
@@ -1479,6 +1484,7 @@
 		F91971571BE8B80C00B94F8A /* position */ = {
 			isa = PBXGroup;
 			children = (
+				B08C19151B9DE9A500D6F93A /* Control.h */,
 				F924E8D21BEA4423006119EF /* manager */,
 				F919715C1BE8C5BB00B94F8A /* ControlPosition.h */,
 				F91971581BE8B84600B94F8A /* MDKUIPosition.h */,
@@ -1816,6 +1822,7 @@
 				B018BE951BA01F3300EF1D87 /* MDKEmailTextFieldStyle.h in Headers */,
 				B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */,
 				B09CE7DB1BA17C220017CCA2 /* MDKDoubleFieldValidator.h in Headers */,
+				B0261E2F1C22AA2D00685D1A /* MDKPickMediaCommand.h in Headers */,
 				F9D267401BFA186400B55A11 /* MDKListCell.h in Headers */,
 				F965F9361BE7BF3B0060A93D /* MDKUIEnumImage.h in Headers */,
 				B05454491C1991390020CF1B /* MDKCanNotPerformActionWarn.h in Headers */,
@@ -2093,6 +2100,7 @@
 				B05454631C19C1160020CF1B /* MDKMessageView.m in Sources */,
 				B08C193F1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.m in Sources */,
 				B062A11C1C19E5BC006B742A /* MDKMinLengthInfo.m in Sources */,
+				B0261E301C22AA2D00685D1A /* MDKPickMediaCommand.m in Sources */,
 				F913AC4F1C05BE47001293FD /* MDKDelegateEnumList.m in Sources */,
 				B0F533211C206E6B00CC38CF /* MDKBarCodeScanViewController.m in Sources */,
 				B018BEA01BA02C6000EF1D87 /* MDKSendEmailCommand.m in Sources */,

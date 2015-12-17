@@ -18,7 +18,6 @@
 
 @implementation MDKPhoneNumber
 
-
 -(NSString *)buildPhoneString {
     return [NSString stringWithFormat:@"%@%@%@", self.symbolPrefix ? self.symbolPrefix : @"" , self.internationalPrefix ? self.internationalPrefix : @"", self.baseNumber];
 }

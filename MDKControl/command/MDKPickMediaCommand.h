@@ -15,13 +15,14 @@
  */
 
 #import <Foundation/Foundation.h>
+
 #import "MDKCommandProtocol.h"
 
 /*!
- * @class MDKOpenScanCommand
- * @brief The class describing the command to execute to open the QRCode scanner
- * (from MDKBarCodeScanTextField)
+ * @class MDKPickMediaCommand
+ * @brief The class describing the command to execute to open the media picker
+ * (from MDKMedia)
  */
-@interface MDKOpenScanCommand : NSObject <MDKCommandProtocol>
+@interface MDKPickMediaCommand : NSObject <UIActionSheetDelegate, MDKCommandProtocol>
 
 @end

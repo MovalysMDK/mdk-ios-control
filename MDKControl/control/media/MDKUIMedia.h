@@ -18,7 +18,7 @@
 
 
 /******************************************************/
-/* CONSTANTES KEY                                     */
+/* CONSTANT KEYS                                      */
 /******************************************************/
 
 /*!
@@ -41,8 +41,6 @@ IB_DESIGNABLE
 
 #pragma mark - Properties
 @property (weak, nonatomic) IBOutlet UIImageView *picture;
-
-
 
 @end
 

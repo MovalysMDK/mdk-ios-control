@@ -30,5 +30,6 @@
 #import "MDKOpenURLCommand.h"
 
 #import "MDKOpenScanCommand.h"
+#import "MDKPickMediaCommand.h"
 
 #endif

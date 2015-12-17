@@ -24,6 +24,7 @@ NSString *const FIXEDLIST_PARAMETER_DATA_DELEGATE_KEY = @"dataDelegate";
 NSString *const FIXEDLIST_PARAMETER_CAN_MOVE_KEY = @"canMove";
 NSString *const FIXEDLIST_PARAMETER_CAN_DELETE_KEY = @"canDelete";
 NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
+NSString *const FIXEDLIST_PARAMETER_IS_PHOTO_KEY = @"isPhotoFixedList";
 
 
 @interface MDKUIFixedList ()
@@ -131,6 +132,9 @@ NSString *const FIXEDLIST_PARAMETER_CAN_SELECT_KEY = @"canSelect";
     [[self fixedListDelegate] fixedList:self addItemFromSender:sender];
 }
 
+-(BOOL)isPhotoFixedList {
+    return [self.controlAttributes[FIXEDLIST_PARAMETER_IS_PHOTO_KEY] isEqualToNumber:@1];
+}
 
 -(NSInteger)validate {
     return [super validate];

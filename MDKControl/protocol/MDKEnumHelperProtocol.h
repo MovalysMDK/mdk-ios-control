@@ -23,6 +23,7 @@
  */
 @protocol MDKEnumHelperProtocol <NSObject>
 
+@required
 /*!
  * @brief return text from enumeration value
  * @param nsnEnum value for enumeration

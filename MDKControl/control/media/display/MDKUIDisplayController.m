@@ -46,7 +46,7 @@
     [super viewDidLoad];
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.image       = self.image;
-//    self.imageView.backgroundColor = [UIColor whiteColor];
+    self.deleteButton.hidden = !self.isEditable;
 }
 
 

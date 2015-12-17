@@ -16,10 +16,12 @@
 
 #import <AssetsLibrary/AssetsLibrary.h>
 
+#import "Helper.h"
+#import "Command.h"
+
 #import "MDKUIMedia.h"
 #import "MDKUIDisplayController.h"
 #import "MediaDisplayTransition.h"
-#import "Helper.h"
 
 
 #pragma mark - MDKUIMedia - Keys
@@ -32,7 +34,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
 
 #pragma mark - MDKUIMedia - Private interface
 
-@interface MDKUIMedia() <UIActionSheetDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIViewControllerTransitioningDelegate, MDKUIDisplayControllerDelegate>
+@interface MDKUIMedia() <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIViewControllerTransitioningDelegate, MDKUIDisplayControllerDelegate>
 
 /*!
  * @brief This variable allow to know the current data class name
@@ -53,6 +55,11 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
  * @brief This controller allow to display image on full screen mode.
  */
 @property (nonatomic, strong) MDKUIDisplayController *displayController;
+
+/*!
+ * @brief The command used to show media picker
+ */
+@property (nonatomic, strong) id<MDKCommandProtocol> pickMediaCommand;
 
 @end
 
@@ -163,10 +170,10 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
         };
         
         UIImage *localImage = [UIImage imageWithContentsOfFile:uri];
-    
+        
         //On vérifie si c'est une image locale, sinon une image du device
         if(localImage) {
-               [self handleImage:localImage];
+            [self handleImage:localImage];
         }
         else {
             ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
@@ -176,7 +183,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
                           failureBlock:failureblock];
         }
         
-  
+        
     }
     else {
         
@@ -212,25 +219,13 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
         [self.parentNavigationController presentViewController:self.displayController animated:YES completion:NULL];
     }
     else {
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Select an action" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take a picture", @"Select a picture in your photos", nil];
-        [actionSheet showInView:self.parentViewController.view];
+        if(self.editable) {
+            self.pickMediaCommand = [[MDKCommandHandler commandWithKey:@"PickMediaCommand" withQualifier:@""] executeFromViewController:[self parentViewController] withParameters:self, nil];
+        }
     }
 }
 
 
-#pragma mark - UIActionSheetDelegate implementation
-
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {         // Take a picture
-        [self openImagePickerControllerWithSourceType:UIImagePickerControllerSourceTypeCamera];
-    }
-    else if(buttonIndex == 1) {     // Select a picture in your photos
-        [self openImagePickerControllerWithSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    }
-    else {                          // Cancel
-        // Nothing ...
-    }
-}
 
 
 #pragma mark - UIImagePickerControllerDelegate implementation
@@ -261,7 +256,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
         };
         
         NSMutableDictionary *imageMetadata = [info[UIImagePickerControllerMediaMetadata] mutableCopy];
-
+        
         //Sauvegarde de la photo avec ses données EXIF + ses éventuelles données de localisation
         [library writeImageToSavedPhotosAlbum:[image CGImage] metadata:imageMetadata completionBlock:imageWriteCompletionBlock];
         
@@ -270,7 +265,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
         self.controlData = [info[UIImagePickerControllerReferenceURL] absoluteString];
     }
     
-
+    
     [self handleImage:image];
     [picker dismissViewControllerAnimated:YES completion:NULL];
     [self valueChanged:self.picture];
@@ -332,18 +327,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
     [self handleImage:image];
 }
 
-- (void)openImagePickerControllerWithSourceType:(UIImagePickerControllerSourceType)sourceType {
-    if (sourceType == UIImagePickerControllerSourceTypeCamera && ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"Camera is not available on simulator" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-        return;
-    }
-    
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate                 = self;
-    picker.sourceType               = sourceType;
-    [self.parentViewController presentViewController:picker animated:YES completion:NULL];
-}
+
 
 - (void)handleImage:(UIImage *)image {
     self.userHasAlreadySetAnImage = @(self.controlData != nil);
@@ -372,6 +356,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
     }
     return result;
 }
+
 
 @end
 

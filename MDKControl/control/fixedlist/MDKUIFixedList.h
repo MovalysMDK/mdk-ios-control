@@ -59,7 +59,18 @@ IB_DESIGNABLE
  * @return The delegate that manages this FixedList.
  */
 -(id<MDKUIFixedListDataProtocol>) fixedListDelegate;
+
+/*!
+ * @brief Event called when the use taps on the add item button
+ * @param sender The sender of the event.
+ */
 - (IBAction)addButtonAction:(id)sender;
+
+/*!
+ * @brief Indicates is this FixedList is used as a PhotoFixedList
+ * @return YES is theis control is used as a PhotoFixedList, NO otherwise
+ */
+-(BOOL)isPhotoFixedList;
 
 @end
 
