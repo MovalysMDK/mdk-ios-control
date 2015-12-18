@@ -241,8 +241,8 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
         ALAssetsLibraryWriteImageCompletionBlock imageWriteCompletionBlock =^(NSURL *assetURL, NSError *error) {
             if (error) {
                 UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle: @"Error"
-                                      message:@"Saving image has failed"
+                                      initWithTitle: MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"")
+                                      message:MDKLocalizedStringFromTable(@"mdk_control_image_save_failed", @"mdk_ui", @"")
                                       delegate: nil
                                       cancelButtonTitle:@"OK"
                                       otherButtonTitles:nil];

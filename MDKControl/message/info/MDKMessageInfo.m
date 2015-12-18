@@ -14,6 +14,7 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "Utils.h"
 #import "MDKMessageInfo.h"
 
 @interface MDKMessageInfo ()
@@ -47,7 +48,7 @@
 -(instancetype)initWithDescriptionKey:(NSString *) descriptionKey withLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withTitle:(NSString *)title withObject:(id)object {
     self = [super init];
     if(self) {
-        NSString *infoFormat= NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_messages", [NSBundle bundleForClass:NSClassFromString(@"MDKMessageInfo")], @"");
+        NSString *infoFormat = MDKLocalizedStringFromTable(descriptionKey, @"mdk_messages", @"");
         NSString *infoContent = [NSString stringWithFormat:infoFormat, object];
         _localizedFieldName = fieldName;
         _technicalFieldName = technicalFieldName;

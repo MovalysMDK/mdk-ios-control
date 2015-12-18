@@ -14,6 +14,7 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "Utils.h"
 #import "MDKMessageWarn.h"
 
 @interface MDKMessageWarn ()
@@ -41,12 +42,13 @@
 @end
 
 @implementation MDKMessageWarn
+
 @synthesize status = _status;
 
 -(instancetype)initWithDescriptionKey:(NSString *) descriptionKey withLocalizedFieldName:(NSString *)fieldName technicalFieldName:(NSString *) technicalFieldName withTitle:(NSString *)title withObject:(id)object {
     self = [super init];
     if(self) {
-        NSString *warnFormat= NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_messages", [NSBundle bundleForClass:NSClassFromString(@"MDKMessageWarn")], @"");
+        NSString *warnFormat = MDKLocalizedStringFromTable(descriptionKey, @"mdk_messages", @"");
         NSString *warnContent = [NSString stringWithFormat:warnFormat, object];
         _localizedFieldName = fieldName;
         _technicalFieldName = technicalFieldName;

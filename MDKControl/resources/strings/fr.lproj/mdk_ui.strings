@@ -1,13 +1,42 @@
-//
-//  Localizable-framework.strings
-//
-//  Created by Movalys MDK.
-//  Copyright (c) 2012 Sopra Group. All rights reserved.
-//
+/**
+ * Copyright (C) 2010 Sopra (support_movalys@sopra.com)
+ *
+ * This file is part of Movalys MDK.
+ * Movalys MDK is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * Movalys MDK is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Lesser General Public License for more details.
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
+ */
 
-/*********************** General *************************/
-"clearButton" = "Effacer";
-"okButton" = "OK";
-"enterText" = "saisir un texte";
-"enterNumber" = "saisir un nombre";
-"mdk_navigate_to" = "Naviguer vers :";
+/*********************** GENERAL *************************/
+"mdk_general_ok_button" = "OK";
+
+/*********************** KEYBOARD *************************/
+"mdk_keyboard_clearbutton" = "Effacer";
+
+
+/*********************** HINT *************************/
+"mdk_control_hint_type_text" = "Saisir un texte";
+"mdk_control_hint_type_number" = "Saisir un nombre";
+
+
+/*********************** LABEL *************************/
+"mdk_control_label_go_to" = "Naviguer vers :";
+
+
+/*********************** ALERT/TITLE *************************/
+"mdk_control_error_title" = "Erreur";
+
+
+/*********************** ALERT/CONTENT *************************/
+"mdk_control_image_save_failed" = "L'enregistrement de l'image a échoué";
+"mdk_control_current_location_unavailable" = "Impossible de trouver la position actuelle";
+"mdk_control_please_enter_latitude_longitude" = "Vous devez saisir une latitude et une longitude";
+"mdk_control_loading_message" = "Chargement en cours...";
+"mdk_control_cannot_load_website" = "Impossible de charger le site. Merci de vérifier votre App Transport Security";

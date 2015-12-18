@@ -125,7 +125,7 @@ NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     self.hud            = [MBProgressHUD showHUDAddedTo:self.parentViewController.view animated:YES];
     self.hud.mode       = MBProgressHUDModeIndeterminate;
-    self.hud.labelText  = @"Loading...";
+    self.hud.labelText  = MDKLocalizedStringFromTable(@"mdk_control_loading_message", @"mdk_ui", @"");
     self.hud.removeFromSuperViewOnHide = YES;
 }
 
@@ -136,7 +136,12 @@ NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
     [self.hud hide:YES];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:@"Oopps, we cannot load your website ... Please verify your App Transport Security" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"")
+                          message:MDKLocalizedStringFromTable(@"mdk_control_cannot_load_website", @"mdk_ui", @"")
+                          delegate:nil
+                          cancelButtonTitle:MDKLocalizedStringFromTable(@"mdk_general_ok_button", @"mdk_ui", @"")
+                          otherButtonTitles:nil];
     if(error) {
         NSLog(@"ERROR : %@", error);
     }

@@ -176,7 +176,12 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
     
     [[MDKManagerPosition sharedManager] searchAddressAccordingLatitude:numberLatitude longitude:numberLongitude completionHandler:^(NSString *address, NSError *error) {
         if (error) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"We cannot retrieve your address" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *alert = [[UIAlertView alloc]
+                                  initWithTitle:MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"")
+                                  message:MDKLocalizedStringFromTable(@"mdk_control_current_location_unavailable", @"mdk_ui", @"")
+                                  delegate:self
+                                  cancelButtonTitle:MDKLocalizedStringFromTable(@"mdk_general_ok_button", @"mdk_ui", @"")
+                                  otherButtonTitles:nil];
             [alert show];
             return;
         }
@@ -188,7 +193,12 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 
 - (IBAction)userDidTapOnNavigationButton:(id)sender {
     if ([self textFieldEmpty]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"Please enter latitude longitude" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"")
+                              message:MDKLocalizedStringFromTable(@"mdk_control_please_enter_latitude_longitude", @"mdk_ui", @"")
+                              delegate:self
+                              cancelButtonTitle:MDKLocalizedStringFromTable(@"mdk_general_ok_button", @"mdk_ui", @"")
+                              otherButtonTitles:nil];
         [alert show];
         return;
     }
@@ -255,7 +265,12 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
 }
 
 - (void)searchLocationFailed {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"We cannot retrieve your location" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"")
+                          message:MDKLocalizedStringFromTable(@"mdk_control_current_location_unavailable", @"mdk_ui", @"")
+                          delegate:self
+                          cancelButtonTitle:MDKLocalizedStringFromTable(@"mdk_general_ok_button", @"mdk_ui", @"")
+                          otherButtonTitles:nil];
     [alert show];
 }
 

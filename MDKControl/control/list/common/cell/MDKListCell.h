@@ -25,6 +25,10 @@ FOUNDATION_EXTERN NSString *const MDKListCellIdentifier;
  */
 @interface MDKListCell : UITableViewCell
 
+/*!
+ * @brief Update the cell display given a text
+ * @param text The text to display
+ */
 - (void)updateCellWithText:(NSString *)text;
 
 @end

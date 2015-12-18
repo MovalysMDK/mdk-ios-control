@@ -14,6 +14,7 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import "Utils.h"
 #import "MDKValidationError.h"
 
 @interface MDKValidationError ()
@@ -57,7 +58,7 @@ technicalFieldName:(NSString *)technicalFieldName
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFailureReasonErrorKey:(NSString *) failureReasonKey localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName
 {
-    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_messages", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"")}];
+    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey:MDKLocalizedStringFromTable(descriptionKey, @"mdk_messages", @"")}];
     if(self)
     {
         self.localizedFieldName = fieldName;
@@ -76,7 +77,7 @@ localizedFailureReasonErrorKey:(NSString *) failureReasonKey localizedFieldName:
  */
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName{
-    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_messages", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"")}];
+    self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey:MDKLocalizedStringFromTable(descriptionKey, @"mdk_messages", @"")}];
     if(self)
     {
         self.localizedFieldName = fieldName;
@@ -95,7 +96,7 @@ localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)techni
  */
 - (id)initWithCode:(NSInteger)code localizedDescriptionKey:(NSString *)descriptionKey
 localizedFieldName: (NSString *) fieldName technicalFieldName:(NSString *)technicalFieldName withObject:(id)object {
-    NSString *errorFormat= NSLocalizedStringFromTableInBundle(descriptionKey, @"mdk_messages", [NSBundle bundleForClass:NSClassFromString(@"MDKValidationError")], @"");
+    NSString *errorFormat= MDKLocalizedStringFromTable(descriptionKey, @"mdk_messages", @"");
     NSString *errorContent = [NSString stringWithFormat:errorFormat, object];
                                                               
     self = [super initWithDomain:fieldName code:code userInfo:@{NSLocalizedDescriptionKey :errorContent}];

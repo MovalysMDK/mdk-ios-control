@@ -16,9 +16,8 @@
 
 #import "FieldValidator.h"
 #import "MessageError.h"
-
+#import "Utils.h"
 #import "MDKDoubleTextField.h"
-
 
 @interface MDKDoubleTextField ()
 
@@ -75,7 +74,7 @@
                                                                        action:@selector(signButtonClick:)];
         self.minusButton.tintColor = [UIColor blackColor];
         
-        NSString *string = NSLocalizedStringFromTableInBundle(@"okButton", @"mdk_ui", [NSBundle bundleForClass:NSClassFromString(@"MDKDoubleTextField")], @"");
+        NSString *string = MDKLocalizedStringFromTable(@"mdk_general_ok_button", @"mdk_ui", @"");
         UIBarButtonItem *okButton = [[UIBarButtonItem alloc] initWithTitle:string
                                                                      style:UIBarButtonItemStylePlain
                                                                     target:self

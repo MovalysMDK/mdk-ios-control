@@ -80,13 +80,6 @@ NSString *const MDKUIEnumImageKey = @"enumClassName";
 }
 
 
-#pragma mark MDKControlChangesProtocol implementation
-
-- (void)valueChanged:(UIView *)sender {
-    NSLog(@"Value changed: %@", sender);
-}
-
-
 #pragma mark - Control Data protocol
 
 + (NSString *)getDataType {
