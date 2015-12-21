@@ -14,58 +14,57 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import "MDKUISwitch.h"
+#import "MDKUINumberPicker.h"
 
-@implementation MDKUISwitch
+@implementation MDKUINumberPicker
 @synthesize targetDescriptors = _targetDescriptors;
+@synthesize stepper = _stepper;
 
 //Parameters keys
-NSString *const SWITCH_PARAMETER_FIXED_TEXT_KEY = @"fixedText";
-NSString *const SWITCH_PARAMETER_ON_TEXT_KEY = @"onText";
-NSString *const SWITCH_PARAMETER_OFF_TEXT_KEY = @"offText";
-
+NSString *const NUMBER_PICKER_PARAMETER_MAX_VALUE_KEY = @"maxValue";
+NSString *const NUMBER_PICKER_PARAMETER_MIN_VALUE_KEY = @"minValue";
+NSString *const NUMBER_PICKER_PARAMETER_STEP_KEY = @"step";
+NSString *const NUMBER_PICKER_PARAMETER_FORMAT_KEY = @"format";
 
 #pragma mark - Initialization and deallocation
 
 -(void)initialize {
     [super initialize];
-    self.uiswitch.on = NO;
+    self.stepper.value = 0.0f;
+    self.stepper.maximumValue = 1000.0f;
+    self.stepper.stepValue = 1.0f;
+    self.stepper.minimumValue = -1000.0f;
 }
 
 -(void)didInitializeOutlets {
     [super didInitializeOutlets];
-    [self.uiswitch addTarget:self action:@selector(switchValueChangedAction:) forControlEvents:UIControlEventValueChanged];
+    [self.stepper addTarget:self action:@selector(stepperValueChangedAction:) forControlEvents:UIControlEventValueChanged];
+    [self updateText];
 }
 
+-(void)forwardSpecificRenderableProperties {
+    [super forwardSpecificRenderableProperties];
+}
 
 #pragma mark - Custom methods
 
--(void)switchValueChangedAction:(id)sender {
+-(void)stepperValueChangedAction:(id)sender {
     
     //On récupère la valeur en fonction de l'steple spécifié
     //self.slider.value = [self adjustValue:self.slider.value Withstep:self.step];
     //self.sliderValue.text = [NSString stringWithFormat:@"%d", (int)self.slider.value];
     //[self setValue:self.slider.value];
-    [self setDisplayComponentValue:@(self.uiswitch.on)];
+    [self setDisplayComponentValue:@(self.stepper.value)];
     [self valueChanged:sender];
     [self becomeFirstResponder];
 }
 
 -(void) updateText {
-    NSString *fixedTextValue = self.controlAttributes[SWITCH_PARAMETER_FIXED_TEXT_KEY];
-    if(fixedTextValue) {
-        [self.label setText:MDKLocalizedString(fixedTextValue, @"")];
+    NSString *format = self.controlAttributes[NUMBER_PICKER_PARAMETER_FORMAT_KEY];
+    if(!format) {
+        format = @"%@";
     }
-    else {
-        NSString *onTextValue = self.controlAttributes[SWITCH_PARAMETER_ON_TEXT_KEY];
-        NSString *offTextValue = self.controlAttributes[SWITCH_PARAMETER_OFF_TEXT_KEY];
-        if([[self getData] boolValue] && onTextValue) {
-            [self.label setText:MDKLocalizedString(onTextValue, @"")];
-        }
-        else if(![[self getData] boolValue] && offTextValue) {
-            [self.label setText:MDKLocalizedString(offTextValue, @"")];
-        }
-    }
+    [self.label setText:[NSString stringWithFormat:format, @([@(self.stepper.value) integerValue])]];
 }
 
 
@@ -87,25 +86,44 @@ NSString *const SWITCH_PARAMETER_OFF_TEXT_KEY = @"offText";
 }
 
 -(void)setDisplayComponentValue:(NSNumber *)value {
-    [self.uiswitch setOn:[value boolValue] animated:YES];
+    [self.stepper setValue:[value doubleValue]];
     [self updateText];
 }
 
 -(id)displayComponentValue {
-    return @(self.uiswitch.on);
+    return @(self.stepper.value);
+}
+
+
+#pragma mark - Control Attributes 
+
+-(void)setControlAttributes:(NSDictionary *)controlAttributes {
+    [super setControlAttributes:controlAttributes];
+    
+    if(self.controlAttributes[NUMBER_PICKER_PARAMETER_MAX_VALUE_KEY]) {
+        self.stepper.maximumValue = [self.controlAttributes[NUMBER_PICKER_PARAMETER_MAX_VALUE_KEY] doubleValue];
+    }
+    
+    if(self.controlAttributes[NUMBER_PICKER_PARAMETER_MIN_VALUE_KEY]) {
+        self.stepper.minimumValue = [self.controlAttributes[NUMBER_PICKER_PARAMETER_MIN_VALUE_KEY] doubleValue];
+    }
+    
+    if(self.controlAttributes[NUMBER_PICKER_PARAMETER_STEP_KEY]) {
+        self.stepper.stepValue = [self.controlAttributes[NUMBER_PICKER_PARAMETER_STEP_KEY] doubleValue];
+    }
+    [self updateText];
 }
 
 
 
-
-#pragma mark - Control changes
+#pragma mark - Control Changes Protocol
 
 -(void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
-    [self.uiswitch addTarget:self action:@selector(valueChanged:) forControlEvents:controlEvents];
+    [self.stepper addTarget:self action:@selector(valueChanged:) forControlEvents:controlEvents];
     MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
     commonCCTD.target = target;
     commonCCTD.action = action;
-    self.targetDescriptors = @{@(self.uiswitch.hash) : commonCCTD};
+    self.targetDescriptors = @{@(self.stepper.hash) : commonCCTD};
 }
 
 
@@ -113,7 +131,7 @@ NSString *const SWITCH_PARAMETER_OFF_TEXT_KEY = @"offText";
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 #pragma clang diagnostic ignored "-Wundeclared-selector"
 -(void) valueChanged:(UIView *)sender {
-    [self setData:@(((UISwitch *)sender).on)];
+    [self setData:@(((UIStepper *)sender).value)];
     MDKControlEventsDescriptor *cctd = self.targetDescriptors[@(sender.hash)];
     [cctd.target performSelector:cctd.action withObject:self];
     [[NSNotificationCenter defaultCenter] postNotificationName:ASK_HIDE_KEYBOARD object:nil];
@@ -129,15 +147,18 @@ NSString *const SWITCH_PARAMETER_OFF_TEXT_KEY = @"offText";
 /* INTERNAL/EXTERNAL                                  */
 /******************************************************/
 
-@implementation MDKUIExternalSwitch
+@implementation MDKUIExternalNumberPicker
 -(NSString *)defaultXIBName {
-    return @"MDKUISwitch";
+    return @"MDKUINumberPicker";
 }
+
 @end
 
-@implementation MDKUIInternalSwitch
--(void)forwardOutlets:(MDKUIExternalSwitch *)receiver {
-    [receiver setUiswitch:self.uiswitch];
+@implementation MDKUIInternalNumberPicker
+-(void)forwardOutlets:(MDKUIExternalNumberPicker *)receiver {
+    [receiver setStepper:self.stepper];
     [receiver setLabel:self.label];
 }
 @end
+
+

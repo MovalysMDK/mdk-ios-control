@@ -22,5 +22,7 @@
 	<string>MDK_MDKUIFixedList</string>
 	<key>MDKUISwitch</key>
 	<string>MDK_MDKUISwitch</string>
+	<key>MDKUINumberPicker</key>
+	<string>MDK_MDKUINumberPicker</string>
 </dict>
 </plist>

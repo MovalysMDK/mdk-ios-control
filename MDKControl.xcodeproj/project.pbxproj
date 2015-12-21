@@ -19,6 +19,9 @@
 		B00C4E011BA07C45003CBB16 /* MDKPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = B00C4DFD1BA07C45003CBB16 /* MDKPhoneNumber.m */; };
 		B00C4E081BA07D3D003CBB16 /* MDKPhoneFieldValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = B00C4E061BA07D3D003CBB16 /* MDKPhoneFieldValidator.h */; };
 		B00C4E091BA07D3D003CBB16 /* MDKPhoneFieldValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = B00C4E071BA07D3D003CBB16 /* MDKPhoneFieldValidator.m */; };
+		B011AB7B1C28388200C7BA14 /* MDKUINumberPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = B011AB791C28388200C7BA14 /* MDKUINumberPicker.h */; };
+		B011AB7C1C28388200C7BA14 /* MDKUINumberPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B011AB7A1C28388200C7BA14 /* MDKUINumberPicker.m */; };
+		B011AB7F1C283BAE00C7BA14 /* MDK_MDKUINumberPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B011AB7E1C283BAE00C7BA14 /* MDK_MDKUINumberPicker.xib */; };
 		B018BE911BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE851BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m */; };
 		B018BE921BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE861BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h */; };
 		B018BE931BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE871BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h */; };
@@ -377,6 +380,10 @@
 		B00C4DFD1BA07C45003CBB16 /* MDKPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKPhoneNumber.m; sourceTree = "<group>"; };
 		B00C4E061BA07D3D003CBB16 /* MDKPhoneFieldValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKPhoneFieldValidator.h; sourceTree = "<group>"; };
 		B00C4E071BA07D3D003CBB16 /* MDKPhoneFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKPhoneFieldValidator.m; sourceTree = "<group>"; };
+		B011AB791C28388200C7BA14 /* MDKUINumberPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUINumberPicker.h; sourceTree = "<group>"; };
+		B011AB7A1C28388200C7BA14 /* MDKUINumberPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUINumberPicker.m; sourceTree = "<group>"; };
+		B011AB7D1C283B2100C7BA14 /* ControlNumberPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlNumberPicker.h; sourceTree = "<group>"; };
+		B011AB7E1C283BAE00C7BA14 /* MDK_MDKUINumberPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUINumberPicker.xib; sourceTree = "<group>"; };
 		B018BE851BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKBarCodeScanTextFieldStyle.m; sourceTree = "<group>"; };
 		B018BE861BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBarCodeScanTextFieldStyle.h; sourceTree = "<group>"; };
 		B018BE871BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKDoubleTextFieldStyle.h; sourceTree = "<group>"; };
@@ -789,6 +796,16 @@
 			path = email;
 			sourceTree = "<group>";
 		};
+		B011AB781C28386F00C7BA14 /* numberpicker */ = {
+			isa = PBXGroup;
+			children = (
+				B011AB791C28388200C7BA14 /* MDKUINumberPicker.h */,
+				B011AB7A1C28388200C7BA14 /* MDKUINumberPicker.m */,
+				B011AB7D1C283B2100C7BA14 /* ControlNumberPicker.h */,
+			);
+			path = numberpicker;
+			sourceTree = "<group>";
+		};
 		B020D4E41C05F3CE00BB2B16 /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -1161,7 +1178,7 @@
 		B08C190C1B9DE9A500D6F93A /* control */ = {
 			isa = PBXGroup;
 			children = (
-				B0BEE1941C2472B10057EC53 /* switch */,
+				B08C19151B9DE9A500D6F93A /* Control.h */,
 				B08C190D1B9DE9A500D6F93A /* commons */,
 				B03AD4761BC3CDFF00A96F5D /* date */,
 				F965F9311BE7BF210060A93D /* enumImage */,
@@ -1170,8 +1187,10 @@
 				B08C19571B9DEEED00D6F93A /* label */,
 				F97546E11BF4E04B00B2E48B /* list */,
 				F95BF3BD1BF098D5002F2EE7 /* media */,
+				B011AB781C28386F00C7BA14 /* numberpicker */,
 				F91971571BE8B80C00B94F8A /* position */,
 				B0FFB6A31BA1CB5E00258B9D /* slider */,
+				B0BEE1941C2472B10057EC53 /* switch */,
 				B08C19231B9DE9A500D6F93A /* textfield */,
 				F9E3B0021BF1EF900042CFD4 /* webview */,
 			);
@@ -1347,6 +1366,7 @@
 		B0C6BAA61BA1D9830087C4D3 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				B011AB7E1C283BAE00C7BA14 /* MDK_MDKUINumberPicker.xib */,
 				B02A81201C0CB39400580411 /* MDK_MDKUIListSearch.xib */,
 				F97546F41BF4EA9200B2E48B /* MDK_MDKUIList.xib */,
 				F97546DF1BF4E04700B2E48B /* MDK_MDKUIEnumList.xib */,
@@ -1509,7 +1529,6 @@
 		F91971571BE8B80C00B94F8A /* position */ = {
 			isa = PBXGroup;
 			children = (
-				B08C19151B9DE9A500D6F93A /* Control.h */,
 				F924E8D21BEA4423006119EF /* manager */,
 				F919715C1BE8C5BB00B94F8A /* ControlPosition.h */,
 				F91971581BE8B84600B94F8A /* MDKUIPosition.h */,
@@ -1899,6 +1918,7 @@
 				B05454231C198D8A0020CF1B /* MDKInvalidUrlValueUIValidationError.h in Headers */,
 				B08C193C1B9DE9A500D6F93A /* MDKBaseTextExtensionProtocol.h in Headers */,
 				B05454251C198D8A0020CF1B /* MDKMandatoryFieldUIValidationError.h in Headers */,
+				B011AB7B1C28388200C7BA14 /* MDKUINumberPicker.h in Headers */,
 				B0FFB6B91BA1CD4800258B9D /* MDKConverterProtocol.h in Headers */,
 				B00C4E001BA07C45003CBB16 /* MDKPhoneNumber.h in Headers */,
 				B02156E91B9DAD59001860B5 /* MDKControlValidationProtocol.h in Headers */,
@@ -2011,6 +2031,7 @@
 				B0AC32A11BECBA350016B6B4 /* mdkuiposition_location_btn_notfound.png in Resources */,
 				F97546E01BF4E04700B2E48B /* MDK_MDKUIEnumList.xib in Resources */,
 				F924E8E31BEA70F9006119EF /* mdkuiposition_location_btn_notfound@2x.png in Resources */,
+				B011AB7F1C283BAE00C7BA14 /* MDK_MDKUINumberPicker.xib in Resources */,
 				B061202F1BD9387A0012F82F /* MDK_MDKUIFixedList.xib in Resources */,
 				F98D77E81BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@3x.png in Resources */,
 				F98D78001BE9165A00CD4458 /* mdkuiposition_map_btn_enable@3x.png in Resources */,
@@ -2213,6 +2234,7 @@
 				B06120261BD9336F0012F82F /* MDKUIFixedList.m in Sources */,
 				F9C4C90B1C1047D000C7CA66 /* MDKUIDisplayController.m in Sources */,
 				B018BE911BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m in Sources */,
+				B011AB7C1C28388200C7BA14 /* MDKUINumberPicker.m in Sources */,
 				B00C4DF11BA06B4C003CBB16 /* MDKCreateEmailViewController.m in Sources */,
 				B05454261C198D8A0020CF1B /* MDKMandatoryFieldUIValidationError.m in Sources */,
 				B02156CC1B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.m in Sources */,

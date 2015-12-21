@@ -136,6 +136,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 
 -(void) didInitializeOutlets {
     NSLog(@"[MDKControl - INFO] : \"didInitializeOutlets\" method is unimplement for the class %@", [self class]);
+    [self.internalView forwardOutlets:self];
 }
 
 -(void)awakeFromNib {
@@ -696,5 +697,10 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     return result;
 }
 
+-(void) forwardOutlets:(id)external {
+    //Let empty
+}
 
 @end
+
+

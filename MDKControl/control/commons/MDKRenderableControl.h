@@ -16,9 +16,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MDKInternalComponent;
+@protocol MDKExternalComponent;
 
 #import "ControlLabel.h"
 #import "Style.h"
+#import "Protocol.h"
 #import "MDKBaseControl.h"
 
 #import <objc/runtime.h>
@@ -81,12 +84,12 @@ IB_DESIGNABLE
  * @discussion 2. An internal view loaded from a XIB file and displayed in an external view.
  * @discussion This property is nil if this component is already an internal view.
  */
-@property (nonatomic, strong) MDKRenderableControl *internalView;
+@property (nonatomic, strong) MDKRenderableControl<MDKInternalComponent> *internalView;
 
 /*!
  * @brief The parent container of this view
  */
-@property (nonatomic, weak) MDKRenderableControl *externalView;
+@property (nonatomic, weak) MDKRenderableControl<MDKExternalComponent> *externalView;
 
 /*!
  * @brief The style class that can be filled in Used Defined Runtime Attributes in InterfaceBuilder
@@ -159,7 +162,7 @@ IB_DESIGNABLE
 
 /*!
  * @brief This method allows to do some treatments on outlets of this view
- * @discussion It is called at the end of awakeFromNib method 
+ * @discussion It is called at the end of awakeFromNib method
  */
 -(void)didInitializeOutlets;
 
@@ -180,7 +183,7 @@ IB_DESIGNABLE
 -(NSArray *) controlRenderableProperties;
 
 /**
- * @brief Allows to forward a property from the internal view to the external view or 
+ * @brief Allows to forward a property from the internal view to the external view or
  * the contrary, depending on the given direction
  * @param propertyName The propertyName to forward
  * @param direction The direction of the forward
@@ -225,7 +228,7 @@ extern const struct MDKRenderableForwarding_Struct
  * unforwarded outlets.
  * @param receiver The receiver of the forward
  */
--(void) forwardOutlets:(MDKRenderableControl *)receiver;
+-(void) forwardOutlets:(MDKRenderableControl<MDKExternalComponent> *)receiver;
 
 @end
 

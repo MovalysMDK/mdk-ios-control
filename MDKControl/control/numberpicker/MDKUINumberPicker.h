@@ -13,8 +13,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-
-#import <UIKit/UIKit.h>
+#import <MDKControl/MDKControl.h>
 
 #import "MDKRenderableControl.h"
 
@@ -30,14 +29,14 @@ IB_DESIGNABLE
  * It allows to display a message following th check state of the control.
  * By default, the selected value is displayed on the component.
  */
-@interface MDKUISwitch : MDKRenderableControl <MDKControlChangesProtocol>
+@interface MDKUINumberPicker : MDKRenderableControl <MDKControlChangesProtocol>
 
 #pragma mark - Properties
 
 /*!
  * @brief The UISwitch control
  */
-@property (weak, nonatomic) IBOutlet UISwitch *uiswitch;
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
 
 /*!
  * @brief An associated label that tells more about the switch state
@@ -52,7 +51,7 @@ IB_DESIGNABLE
 /******************************************************/
 
 IB_DESIGNABLE
-@interface MDKUIInternalSwitch : MDKUISwitch <MDKInternalComponent>
+@interface MDKUIInternalNumberPicker : MDKUINumberPicker <MDKInternalComponent>
 
 @end
 
@@ -62,7 +61,7 @@ IB_DESIGNABLE
 /******************************************************/
 
 IB_DESIGNABLE
-@interface MDKUIExternalSwitch : MDKUISwitch <MDKExternalComponent>
+@interface MDKUIExternalNumberPicker : MDKUINumberPicker <MDKExternalComponent>
 
 /*!
  * @brief custom XIB name
@@ -75,5 +74,3 @@ IB_DESIGNABLE
 @property (nonatomic, strong) IBInspectable NSString *customMessageXIBName;
 
 @end
-
-

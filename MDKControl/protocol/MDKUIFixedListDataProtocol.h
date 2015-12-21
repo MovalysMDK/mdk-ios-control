@@ -30,15 +30,6 @@
 
 
 /*!
- * @brief The xib name to used for all items of the FixedList
- * @discussion The XIB file pointed by this method must exist and contain a unique view that
- * inherits from UITableViewCell.
- * @return The xib name to used for all items of the FixedList
- */
-@required
--(NSString *) xibNameForFixedListCells;
-
-/*!
  * @brief This method allows to map a cell of the FixedList to the associated object
  * @discussion It should be used to dispatch object values to the inner components of the given cell
  * @param fixedList The FixedList component managed by this delegate
@@ -102,5 +93,13 @@
 -(void)fixedList:(MDKUIFixedList *)fixedList didDeleteRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
 
 
+/*!
+ * @brief The xib name to used for all items of the FixedList
+ * @discussion The XIB file pointed by this method must exist and contain a unique view that
+ * inherits from UITableViewCell.
+ * @return The xib name to used for all items of the FixedList
+ */
+@optional
+-(NSString *) xibNameForFixedListCells;
 
 @end
