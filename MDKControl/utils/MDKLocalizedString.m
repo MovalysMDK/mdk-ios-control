@@ -13,12 +13,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
+
 #import "MDKLocalizedString.h"
 
 @implementation MDKLocalizedString
 
 +(NSString *)localizableStringFromKey:(NSString *)key {
-    NSString *string = [MDKLocalizedString localizableStringFromKey:key inTable:@"Localizable"];
+    NSString *string = [MDKLocalizedString localizableStringFromKey:key inTable:@"Localizable-project"];
+    
+    if ([string isEqualToString:key]) {
+        string = [MDKLocalizedString localizableStringFromKey:key inTable:@"Localizable-framework"];
+    }
+    
+    if ([string isEqualToString:key]) {
+        string = [MDKLocalizedString localizableStringFromKey:key inTable:@"Localizable"];
+    }
     return string;
 }
 
@@ -44,7 +53,7 @@
 
 +(NSString *)localizableStringFromKey:(NSString *)key inTable:(NSString *)table forClass:(Class)aClass{
     NSString *string = NSLocalizedStringFromTableInBundle(key, table, [NSBundle bundleForClass:aClass], "");
-
+    
     if ([string isEqualToString:key]) {
         string = NSLocalizedStringFromTableInBundle(key, table, [NSBundle bundleForClass:NSClassFromString(@"AppDelegate")], "");
     }

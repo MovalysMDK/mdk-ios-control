@@ -20,5 +20,7 @@
 	<string>MDK_MDKUIDateTime</string>
 	<key>MDKUIFixedList</key>
 	<string>MDK_MDKUIFixedList</string>
+	<key>MDKUISwitch</key>
+	<string>MDK_MDKUISwitch</string>
 </dict>
 </plist>

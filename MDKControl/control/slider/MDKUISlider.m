@@ -167,7 +167,6 @@ NSString *const SLIDER_PARAMETER_STEP_KEY = @"step";
 
 -(void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
     [self.innerSlider addTarget:self action:@selector(valueChanged:) forControlEvents:controlEvents];
-    [self.innerSlider addTarget:self action:@selector(valueChanged:) forControlEvents:controlEvents];
     MDKControlEventsDescriptor *commonCCTD = [MDKControlEventsDescriptor new];
     commonCCTD.target = target;
     commonCCTD.action = action;

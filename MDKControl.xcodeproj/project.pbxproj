@@ -229,6 +229,9 @@
 		B0AC32A91BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC32A71BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png */; };
 		B0B54E121C188FAF008C37C4 /* UIView+Styleable.h in Headers */ = {isa = PBXBuildFile; fileRef = B0B54E101C188FAF008C37C4 /* UIView+Styleable.h */; };
 		B0B54E131C188FAF008C37C4 /* UIView+Styleable.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B54E111C188FAF008C37C4 /* UIView+Styleable.m */; };
+		B0BEE1981C2472F40057EC53 /* MDKUISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = B0BEE1961C2472F40057EC53 /* MDKUISwitch.h */; };
+		B0BEE1991C2472F40057EC53 /* MDKUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BEE1971C2472F40057EC53 /* MDKUISwitch.m */; };
+		B0BEE19B1C2474BB0057EC53 /* MDK_MDKUISwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0BEE19A1C2474BB0057EC53 /* MDK_MDKUISwitch.xib */; };
 		B0C18B481BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B0C18B461BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h */; };
 		B0C18B491BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0C18B471BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m */; };
 		B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C6BA951BA1D9830087C4D3 /* MDKFieldValidatorList.plist */; };
@@ -603,6 +606,10 @@
 		B0AC32A71BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_navigation_btn_enable.png; path = position/navigation/mdkuiposition_navigation_btn_enable.png; sourceTree = "<group>"; };
 		B0B54E101C188FAF008C37C4 /* UIView+Styleable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Styleable.h"; sourceTree = "<group>"; };
 		B0B54E111C188FAF008C37C4 /* UIView+Styleable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Styleable.m"; sourceTree = "<group>"; };
+		B0BEE1951C2472BE0057EC53 /* ControlSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlSwitch.h; sourceTree = "<group>"; };
+		B0BEE1961C2472F40057EC53 /* MDKUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUISwitch.h; sourceTree = "<group>"; };
+		B0BEE1971C2472F40057EC53 /* MDKUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUISwitch.m; sourceTree = "<group>"; };
+		B0BEE19A1C2474BB0057EC53 /* MDK_MDKUISwitch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUISwitch.xib; sourceTree = "<group>"; };
 		B0C18B461BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIFixedListTableViewDelegate.h; sourceTree = "<group>"; };
 		B0C18B471BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIFixedListTableViewDelegate.m; sourceTree = "<group>"; };
 		B0C6BA8E1BA1D6E00087C4D3 /* Converter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Converter.h; sourceTree = "<group>"; };
@@ -1154,6 +1161,7 @@
 		B08C190C1B9DE9A500D6F93A /* control */ = {
 			isa = PBXGroup;
 			children = (
+				B0BEE1941C2472B10057EC53 /* switch */,
 				B08C190D1B9DE9A500D6F93A /* commons */,
 				B03AD4761BC3CDFF00A96F5D /* date */,
 				F965F9311BE7BF210060A93D /* enumImage */,
@@ -1252,6 +1260,16 @@
 			path = slider;
 			sourceTree = "<group>";
 		};
+		B0BEE1941C2472B10057EC53 /* switch */ = {
+			isa = PBXGroup;
+			children = (
+				B0BEE1951C2472BE0057EC53 /* ControlSwitch.h */,
+				B0BEE1961C2472F40057EC53 /* MDKUISwitch.h */,
+				B0BEE1971C2472F40057EC53 /* MDKUISwitch.m */,
+			);
+			path = switch;
+			sourceTree = "<group>";
+		};
 		B0C6BA931BA1D9830087C4D3 /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1343,6 +1361,7 @@
 				F9E3B0091BF1F2F70042CFD4 /* MDK_MDKUIWebView.xib */,
 				F9B6597C1C045E4800C1988B /* MDK_MDKUIPickerList.xib */,
 				F9C4C9121C105A4A00C7CA66 /* MDK_MDKUIDisplayController.xib */,
+				B0BEE19A1C2474BB0057EC53 /* MDK_MDKUISwitch.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -1788,6 +1807,7 @@
 				B054546C1C19C1160020CF1B /* MessageViewTooltip.h in Headers */,
 				B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */,
 				B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */,
+				B0BEE1981C2472F40057EC53 /* MDKUISwitch.h in Headers */,
 				F919715A1BE8B84600B94F8A /* MDKUIPosition.h in Headers */,
 				F9E3B0081BF1F0060042CFD4 /* ControlWebView.h in Headers */,
 				F965F9391BE7BF4F0060A93D /* MDKEnumHelperProtocol.h in Headers */,
@@ -2014,6 +2034,7 @@
 				B0AC32A01BECBA350016B6B4 /* mdkuiposition_location_btn_founded.png in Resources */,
 				F98D77E71BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png in Resources */,
 				B0C6BAAD1BA1D9830087C4D3 /* ios_ic_mail_unactive@2x.png in Resources */,
+				B0BEE19B1C2474BB0057EC53 /* MDK_MDKUISwitch.xib in Resources */,
 				B061202B1BD938310012F82F /* fixedlist_add.png in Resources */,
 				F965F9301BE7BF070060A93D /* MDK_MDKUIEnumImage.xib in Resources */,
 				F98D77E61BE9163A00CD4458 /* mdkuiposition_cancel_btn_disable@3x.png in Resources */,
@@ -2157,6 +2178,7 @@
 				B054542E1C198D8A0020CF1B /* MDKTooShortListUIValidationError.m in Sources */,
 				B03AD47A1BC3CDFF00A96F5D /* MDKUIDateTime.m in Sources */,
 				F93DAC241C0C5BC00067E6AB /* MDKPickerListBaseDelegate.m in Sources */,
+				B0BEE1991C2472F40057EC53 /* MDKUISwitch.m in Sources */,
 				B05C936D1B9F3CA300487CFB /* UIView+ViewController.m in Sources */,
 				B02156CA1B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m in Sources */,
 				B02156D01B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m in Sources */,
