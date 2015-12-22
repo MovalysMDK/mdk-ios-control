@@ -82,7 +82,7 @@ NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
         return;
     }
     self.userSelectedDelegate = [[NSClassFromString(self.controlAttributes[MDKUIPickerSelectedDelegateKey]) alloc] initWithPickerList:self];
-    [self.userSelectedDelegate mappXibViewWithObject:value];
+    [self.userSelectedDelegate mapXibViewWithObject:value];
 }
 
 
@@ -280,9 +280,9 @@ NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
     for(id object in items) {
         if([object respondsToSelector:@selector(getBindedProperties)]) {
             for(NSString *bindedProtperty in [object performSelector:@selector(getBindedProperties)]) {
-                id object = [object valueForKey:bindedProtperty];
-                if([object isKindOfClass:[NSString class]]) {
-                    if([(NSString *)object containsString:string]) {
+                id valueObject = [object valueForKey:bindedProtperty];
+                if([valueObject isKindOfClass:[NSString class]]) {
+                    if([(NSString *)valueObject containsString:string]) {
                         [result addObject:object];
                         break;
                     }

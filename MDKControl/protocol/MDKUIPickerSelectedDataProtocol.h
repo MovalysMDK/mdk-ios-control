@@ -42,6 +42,6 @@
 /*!
  * @brief Mapping between view and object
  */
-- (void)mappXibViewWithObject:(id)object;
+- (void)mapXibViewWithObject:(id)object;
 
 @end
