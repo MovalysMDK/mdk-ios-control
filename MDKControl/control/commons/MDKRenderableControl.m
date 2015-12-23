@@ -142,7 +142,9 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 -(void)awakeFromNib {
     [super awakeFromNib];
     [self commonInit];
-    [self didInitializeOutlets];
+    if([self conformsToProtocol:@protocol(MDKInternalComponent)]) {
+        [self didInitializeOutlets];
+    }
 }
 
 
@@ -258,9 +260,9 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     if(!self.rightConstraint) {
         
         //Uncomment to improve the display of the message view.
-//        self.rightConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeRight
-//                                                            relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
-//                                                           multiplier:1 constant:(self.messageView != nil) ? -self.messageView.frame.size.width : 0];
+        //        self.rightConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeRight
+        //                                                            relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
+        //                                                           multiplier:1 constant:(self.messageView != nil) ? -self.messageView.frame.size.width : 0];
         self.rightConstraint = [NSLayoutConstraint constraintWithItem:self.internalView attribute:NSLayoutAttributeRight
                                                             relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeRight
                                                            multiplier:1 constant:0];
