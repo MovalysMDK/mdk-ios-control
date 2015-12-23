@@ -216,6 +216,7 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
         self.displayController.modalPresentationStyle = UIModalPresentationCustom;
         self.displayController.transitioningDelegate  = self;
         self.displayController.delegate               = self;
+        self.displayController.isEditable = [self.editable boolValue];
         [self.parentNavigationController presentViewController:self.displayController animated:YES completion:NULL];
     }
     else {

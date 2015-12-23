@@ -157,6 +157,13 @@
 		B05454791C19D5A30020CF1B /* MDKAbstractStyle_MDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B05454771C19D5A30020CF1B /* MDKAbstractStyle_MDK.m */; };
 		B054547C1C19DB450020CF1B /* MDKMessageUIManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B054547A1C19DB450020CF1B /* MDKMessageUIManager.h */; };
 		B054547D1C19DB450020CF1B /* MDKMessageUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B054547B1C19DB450020CF1B /* MDKMessageUIManager.m */; };
+		B055B0DF1C2ADEC90093D147 /* MDKUISignature.h in Headers */ = {isa = PBXBuildFile; fileRef = B055B0DD1C2ADEC90093D147 /* MDKUISignature.h */; };
+		B055B0E01C2ADEC90093D147 /* MDKUISignature.m in Sources */ = {isa = PBXBuildFile; fileRef = B055B0DE1C2ADEC90093D147 /* MDKUISignature.m */; };
+		B055B0E21C2ADF5E0093D147 /* MDK_MDKUISignature.xib in Resources */ = {isa = PBXBuildFile; fileRef = B055B0E11C2ADF5E0093D147 /* MDK_MDKUISignature.xib */; };
+		B055B0E71C2AE0510093D147 /* MDKSignatureDrawing.h in Headers */ = {isa = PBXBuildFile; fileRef = B055B0E31C2AE0510093D147 /* MDKSignatureDrawing.h */; };
+		B055B0E81C2AE0510093D147 /* MDKSignatureDrawing.m in Sources */ = {isa = PBXBuildFile; fileRef = B055B0E41C2AE0510093D147 /* MDKSignatureDrawing.m */; };
+		B055B0E91C2AE0510093D147 /* MDKSignatureHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B055B0E51C2AE0510093D147 /* MDKSignatureHelper.h */; };
+		B055B0EA1C2AE0510093D147 /* MDKSignatureHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B055B0E61C2AE0510093D147 /* MDKSignatureHelper.m */; };
 		B05C93621B9F3B6D00487CFB /* MDKEmailTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B05C93601B9F3B6D00487CFB /* MDKEmailTextField.m */; };
 		B05C93631B9F3B6D00487CFB /* MDKEmailTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B05C93611B9F3B6D00487CFB /* MDKEmailTextField.h */; };
 		B05C93661B9F3BF900487CFB /* MDKEmail.h in Headers */ = {isa = PBXBuildFile; fileRef = B05C93641B9F3BF900487CFB /* MDKEmail.h */; };
@@ -531,6 +538,14 @@
 		B05454771C19D5A30020CF1B /* MDKAbstractStyle_MDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKAbstractStyle_MDK.m; sourceTree = "<group>"; };
 		B054547A1C19DB450020CF1B /* MDKMessageUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKMessageUIManager.h; sourceTree = "<group>"; };
 		B054547B1C19DB450020CF1B /* MDKMessageUIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKMessageUIManager.m; sourceTree = "<group>"; };
+		B055B0D81C2ADEA70093D147 /* ControlSignature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlSignature.h; sourceTree = "<group>"; };
+		B055B0DD1C2ADEC90093D147 /* MDKUISignature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUISignature.h; sourceTree = "<group>"; };
+		B055B0DE1C2ADEC90093D147 /* MDKUISignature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUISignature.m; sourceTree = "<group>"; };
+		B055B0E11C2ADF5E0093D147 /* MDK_MDKUISignature.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUISignature.xib; sourceTree = "<group>"; };
+		B055B0E31C2AE0510093D147 /* MDKSignatureDrawing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSignatureDrawing.h; sourceTree = "<group>"; };
+		B055B0E41C2AE0510093D147 /* MDKSignatureDrawing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSignatureDrawing.m; sourceTree = "<group>"; };
+		B055B0E51C2AE0510093D147 /* MDKSignatureHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSignatureHelper.h; sourceTree = "<group>"; };
+		B055B0E61C2AE0510093D147 /* MDKSignatureHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSignatureHelper.m; sourceTree = "<group>"; };
 		B05C93601B9F3B6D00487CFB /* MDKEmailTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKEmailTextField.m; sourceTree = "<group>"; };
 		B05C93611B9F3B6D00487CFB /* MDKEmailTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKEmailTextField.h; sourceTree = "<group>"; };
 		B05C93641B9F3BF900487CFB /* MDKEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKEmail.h; sourceTree = "<group>"; };
@@ -1144,6 +1159,20 @@
 			path = abstract;
 			sourceTree = "<group>";
 		};
+		B055B0D71C2ADE9F0093D147 /* signature */ = {
+			isa = PBXGroup;
+			children = (
+				B055B0E31C2AE0510093D147 /* MDKSignatureDrawing.h */,
+				B055B0E41C2AE0510093D147 /* MDKSignatureDrawing.m */,
+				B055B0E51C2AE0510093D147 /* MDKSignatureHelper.h */,
+				B055B0E61C2AE0510093D147 /* MDKSignatureHelper.m */,
+				B055B0D81C2ADEA70093D147 /* ControlSignature.h */,
+				B055B0DD1C2ADEC90093D147 /* MDKUISignature.h */,
+				B055B0DE1C2ADEC90093D147 /* MDKUISignature.m */,
+			);
+			path = signature;
+			sourceTree = "<group>";
+		};
 		B06120221BD933570012F82F /* fixedlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -1197,6 +1226,7 @@
 		B08C190C1B9DE9A500D6F93A /* control */ = {
 			isa = PBXGroup;
 			children = (
+				B055B0D71C2ADE9F0093D147 /* signature */,
 				B03B7FCF1C29AA5500CCA9AD /* scanner */,
 				B08C19151B9DE9A500D6F93A /* Control.h */,
 				B08C190D1B9DE9A500D6F93A /* commons */,
@@ -1386,6 +1416,7 @@
 		B0C6BAA61BA1D9830087C4D3 /* xib */ = {
 			isa = PBXGroup;
 			children = (
+				B055B0E11C2ADF5E0093D147 /* MDK_MDKUISignature.xib */,
 				B03B7FD71C29AB4E00CCA9AD /* MDK_MDKUIScanner.xib */,
 				B03B7FD51C29AB4600CCA9AD /* MDK_MDKUIListCell.xib */,
 				B011AB7E1C283BAE00C7BA14 /* MDK_MDKUINumberPicker.xib */,
@@ -1810,6 +1841,7 @@
 				F93DAC271C0C5BD80067E6AB /* MDKUIPickerListDataProtocol.h in Headers */,
 				F913AC4E1C05BE47001293FD /* MDKDelegateEnumList.h in Headers */,
 				B08C19351B9DE9A500D6F93A /* MDKControlDelegate.h in Headers */,
+				B055B0E71C2AE0510093D147 /* MDKSignatureDrawing.h in Headers */,
 				B05454311C198D8A0020CF1B /* MDKValidationError.h in Headers */,
 				F95BF3C31BF09A03002F2EE7 /* ControlMedia.h in Headers */,
 				B00C4DF91BA07C38003CBB16 /* MDKPhoneTextField.h in Headers */,
@@ -1879,6 +1911,7 @@
 				B05454671C19C1160020CF1B /* MDKTooltipManager.h in Headers */,
 				B054541B1C198D8A0020CF1B /* MDKInvalidDoubleValueUIValidationError.h in Headers */,
 				F93DAC281C0C5BD80067E6AB /* MDKUIPickerSelectedDataProtocol.h in Headers */,
+				B055B0E91C2AE0510093D147 /* MDKSignatureHelper.h in Headers */,
 				B02156E31B9DAD59001860B5 /* MDKBackgroundViewProtocol.h in Headers */,
 				F965F93E1BE7BF7A0060A93D /* Helper.h in Headers */,
 				B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */,
@@ -1891,6 +1924,7 @@
 				B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */,
 				B09CE7DB1BA17C220017CCA2 /* MDKDoubleFieldValidator.h in Headers */,
 				B0261E2F1C22AA2D00685D1A /* MDKPickMediaCommand.h in Headers */,
+				B055B0DF1C2ADEC90093D147 /* MDKUISignature.h in Headers */,
 				B0261E3B1C231F1B00685D1A /* MDKLocalizedString.h in Headers */,
 				F9D267401BFA186400B55A11 /* MDKListCell.h in Headers */,
 				F965F9361BE7BF3B0060A93D /* MDKUIEnumImage.h in Headers */,
@@ -2075,6 +2109,7 @@
 				B0C6BAAA1BA1D9830087C4D3 /* MDKFieldValidatorList.plist in Resources */,
 				F98D77F61BE9165000CD4458 /* mdkuiposition_navigation_btn_disable@3x.png in Resources */,
 				F9B6597D1C045E4800C1988B /* MDK_MDKUIPickerList.xib in Resources */,
+				B055B0E21C2ADF5E0093D147 /* MDK_MDKUISignature.xib in Resources */,
 				B0C6BAB01BA1D9830087C4D3 /* ios_ic_phone_unactive@2x.png in Resources */,
 				B0AC32A01BECBA350016B6B4 /* mdkuiposition_location_btn_founded.png in Resources */,
 				F98D77E71BE9163A00CD4458 /* mdkuiposition_cancel_btn_enable@2x.png in Resources */,
@@ -2189,6 +2224,7 @@
 				B062A1181C19E550006B742A /* MDKMessageInfo.m in Sources */,
 				B05454501C19940E0020CF1B /* MDKMessageWarn.m in Sources */,
 				B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */,
+				B055B0E81C2AE0510093D147 /* MDKSignatureDrawing.m in Sources */,
 				B02156C81B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m in Sources */,
 				B0C18B491BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m in Sources */,
 				B08C19511B9DE9A500D6F93A /* MDKRegexTextField.m in Sources */,
@@ -2206,6 +2242,7 @@
 				B02157661B9DAEEA001860B5 /* MDKMandatoryFieldValidator.m in Sources */,
 				B03EFBFB1BEBB3F1002DAB18 /* MDKBarCodeScanTextField.m in Sources */,
 				F9D267411BFA186400B55A11 /* MDKListCell.m in Sources */,
+				B055B0EA1C2AE0510093D147 /* MDKSignatureHelper.m in Sources */,
 				B018BE9A1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.m in Sources */,
 				B062A1201C19E803006B742A /* MDKMaxLengthInfo.m in Sources */,
 				B09CE7DC1BA17C220017CCA2 /* MDKDoubleFieldValidator.m in Sources */,
@@ -2239,6 +2276,7 @@
 				B054542C1C198D8A0020CF1B /* MDKTooLongStringUIValidationError.m in Sources */,
 				B02156D21B9DAC6E001860B5 /* MDKTextFieldStyle.m in Sources */,
 				B02157641B9DAEEA001860B5 /* MDKLengthFieldValidator.m in Sources */,
+				B055B0E01C2ADEC90093D147 /* MDKUISignature.m in Sources */,
 				B0261E3C1C231F1B00685D1A /* MDKLocalizedString.m in Sources */,
 				B09CE7D31BA17C110017CCA2 /* MDKDoubleTextField.m in Sources */,
 				B05454281C198D8A0020CF1B /* MDKNoMatchingValueUIValidationError.m in Sources */,

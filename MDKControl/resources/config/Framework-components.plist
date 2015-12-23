@@ -26,5 +26,7 @@
 	<string>MDK_MDKUINumberPicker</string>
 	<key>MDKUIScanner</key>
 	<string>MDK_MDKUIScanner</string>
+	<key>MDKUISignature</key>
+	<string>MDK_MDKUISignature</string>
 </dict>
 </plist>

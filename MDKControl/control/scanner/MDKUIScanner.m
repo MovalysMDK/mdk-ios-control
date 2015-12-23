@@ -161,6 +161,17 @@
 }
 #pragma clang diagnostic pop
 
+
+-(void)prepareForInterfaceBuilder {
+    [super prepareForInterfaceBuilder];
+    UILabel *innerDescriptionLabel = [[UILabel alloc] initWithFrame:self.bounds];
+    innerDescriptionLabel.text = [[self class] description];
+    innerDescriptionLabel.textAlignment = NSTextAlignmentCenter;
+    innerDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
+    [self addSubview:innerDescriptionLabel];
+    [self sendSubviewToBack:innerDescriptionLabel];
+    self.backgroundColor = [UIColor colorWithRed:0.57f green:0.98f blue:0.76f alpha:0.5f];
+}
 @end
 
 

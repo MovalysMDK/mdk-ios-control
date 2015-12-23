@@ -14,25 +14,9 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_Control_h
-#define MDKControl_Control_h
+#ifndef ControlSignature_h
+#define ControlSignature_h
 
-#import "ControlCommons.h"
-#import "ControlExtension.h"
-#import "ControlTextField.h"
-#import "ControlLabel.h"
-#import "ControlSlider.h"
-#import "ControlDateTime.h"
-#import "ControlFixedList.h"
-#import "ControlEnumImage.h"
-#import "ControlPosition.h"
-#import "ControlMedia.h"
-#import "ControlWebView.h"
-#import "ControlList.h"
-#import "ControlFixedList.h"
-#import "ControlSwitch.h"
-#import "ControlNumberPicker.h"
-#import "ControlScanner.h"
-#import "ControlSignature.h"
+#import "MDKUISignature.h"
 
 #endif

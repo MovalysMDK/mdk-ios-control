@@ -74,7 +74,6 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 /******************************************************/
 
 #pragma mark - Synthesize
-@synthesize editable = _editable;
 @synthesize styleClass = _styleClass;
 @synthesize controlData = _controlData;
 @synthesize tooltipView = _tooltipView;
