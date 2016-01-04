@@ -129,18 +129,18 @@
 }
 
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     if([self.editable isEqualToNumber:@1]) {
         self.signatureView.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f];
     }
 }
 
--(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+-(void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     self.signatureView.backgroundColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
     
 }
 
--(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     if([self.editable isEqualToNumber:@1]) {
         self.signatureView.backgroundColor = [UIColor colorWithWhite:0.8f alpha:1.0f];
     }
