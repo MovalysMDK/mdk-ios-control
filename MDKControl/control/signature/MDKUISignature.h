@@ -17,6 +17,7 @@
 #import <UIKit/UIKit.h>
 
 #import "MDKRenderableControl.h"
+#import "MDKSignatureView.h"
 
 /******************************************************/
 /* MAIN CONTROL                                       */
@@ -30,7 +31,20 @@ IB_DESIGNABLE
  * directly on the screen it is displayed.
  */
 @interface MDKUISignature : MDKRenderableControl <MDKControlChangesProtocol>
-@property (weak, nonatomic) IBOutlet UIView *signatureView;
+
+#pragma mark - Properties
+/*!
+ * @brief The main view where is painted the signature
+ */
+@property (weak, nonatomic) IBOutlet MDKSignatureView *signatureView;
+
+#pragma mark - Methods
+/*!
+ * @brief Returns the signature path as an array of points
+ * @return The signature as an array of points
+ */
+-(NSMutableArray *) signaturePath;
+
 
 @end
 

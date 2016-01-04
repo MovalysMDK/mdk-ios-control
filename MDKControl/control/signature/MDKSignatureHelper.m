@@ -47,6 +47,10 @@ static inline MDKLine translateLine(MDKLine line, float x0, float y0) {
 }
 
 + (NSString *) convertFromLinesToString:(NSMutableArray *) lines width:(float) width originX:(float) x0 originY:(float) y0 {
+    if(!lines) {
+        return nil;
+    }
+    
     NSMutableString *data = [[NSMutableString alloc] init];
     
     BOOL isFirstPoint = YES;
@@ -85,10 +89,10 @@ static inline MDKLine translateLine(MDKLine line, float x0, float y0) {
 // A signature is of mutiple lines {[(x0,y0)(x1,y1)...][...].....}
 // The goal here is to fill in an
 + (NSMutableArray *) convertFromStringToLines:(NSString *) string width:(float) width originX:(float) x0 originY:(float) y0 {
-    NSError *regexError = NULL;
+    NSError *regexError = nil;
     NSMutableArray *lines = [[NSMutableArray alloc] init];
     if (!string) {
-        return NULL;
+        return nil;
     }
     NSRegularExpression *lineRegex = [NSRegularExpression regularExpressionWithPattern:@"\\[[^\\[\\]]+\\]"
                                                                                options:NSRegularExpressionCaseInsensitive

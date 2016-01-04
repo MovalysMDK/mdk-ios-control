@@ -32,17 +32,19 @@
  * @param width The width of lines
  * @param x0 The x-axis origin of the signature
  * @param y0 The y-axis origin of the signature
- * @return A string that represents
+ * @return A string that represents a path
  */
 + (NSString *) convertFromLinesToString:(NSMutableArray *) lines width:(float) width originX:(float) x0 originY:(float) y0;
 
-
+/*!
+ * @brief Converts a given path as a string into a array of points
+ * @param string A string that describes a path
+ * @param width The width of lines
+ * @param x0 The x-axis origin of the signature
+ * @param y0 The y-axis origin of the signature
+ * @return An array of CGPoint that describes the path
+ */
 + (NSMutableArray *) convertFromStringToLines:(NSString *) string width:(float) width originX:(float) x0 originY:(float) y0;
 
-/*!
- * Save the context
- * @param context context to save
- * @return NSError if save technical failed
- */
 
 @end

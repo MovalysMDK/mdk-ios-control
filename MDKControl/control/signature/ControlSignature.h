@@ -18,5 +18,9 @@
 #define ControlSignature_h
 
 #import "MDKUISignature.h"
+#import "MDKSignatureDrawing.h"
+#import "MDKSignatureHelper.h"
+#import "MDKSignaturePopupView.h"
+#import "MDKSignatureView.h"
 
 #endif

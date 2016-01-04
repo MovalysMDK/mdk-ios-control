@@ -13,15 +13,15 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
-//
-//  MFSignatureDrawing.h
-//
-//
+
 
 
 #import "MDKSignatureDrawing.h"
 #import "MDKSignatureHelper.h"
 #import <QuartzCore/QuartzCore.h>
+
+
+
 
 
 @implementation MDKSignatureDrawing {
@@ -30,9 +30,6 @@
     CGPoint currentPoint;
 }
 
-@synthesize lineWidth;
-@synthesize strokeColor;
-@synthesize signaturePath;
 
 - (id) init {
     self = [super init];
@@ -58,24 +55,6 @@
     return self;
 }
 
-- (void) initialize {
-    signaturePath = [[NSMutableArray alloc] init];
-    self.lineWidth = 3.0f;
-    self.strokeColor = [UIColor blackColor];
-    
-    /*
-    topLeftCorner.x = super.bounds.size.width;
-    topLeftCorner.y = super.bounds.size.height;
-    bottomRightCorner.x = 0;
-    bottomRightCorner.y = 0;
-     */
-}
-
-- (void) clear {
-    signaturePath = [[NSMutableArray alloc] init];
-    [self setNeedsDisplay];
-}
-
 // Drawing has to be done here
 - (void) drawRect:(CGRect)rect {
     
@@ -83,12 +62,12 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     // Configure stroke style
-    CGContextSetStrokeColorWithColor(context, strokeColor.CGColor);
-    CGContextSetLineWidth(context, lineWidth);
+    CGContextSetStrokeColorWithColor(context, self.strokeColor.CGColor);
+    CGContextSetLineWidth(context, self.lineWidth);
     CGContextSetLineCap(context, kCGLineCapRound);
     
     // Draw lines
-    for (NSValue *nsLine in signaturePath) {
+    for (NSValue *nsLine in self.signaturePath) {
         struct MDKLine couple;
         [nsLine getValue:&couple];
         [self drawLineFrom:couple.from to:couple.to context:context];
@@ -101,6 +80,28 @@
     CGContextMoveToPoint(context, from.x, from.y);  // Start at this point
     CGContextAddLineToPoint(context, to.x, to.y);   // Draw to this point
 }
+
+
+
+- (void) initialize {
+    self.signaturePath = [[NSMutableArray alloc] init];
+    self.lineWidth = 3.0f;
+    self.strokeColor = [UIColor blackColor];
+    
+    /*
+    topLeftCorner.x = super.bounds.size.width;
+    topLeftCorner.y = super.bounds.size.height;
+    bottomRightCorner.x = 0;
+    bottomRightCorner.y = 0;
+     */
+}
+
+- (void) clear {
+    self.signaturePath = [[NSMutableArray alloc] init];
+    [self setNeedsDisplay];
+}
+
+
 
 
 /*
@@ -120,6 +121,9 @@
 }
 
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    if(!self.signaturePath) {
+        self.signaturePath = [NSMutableArray new];
+    }
     if (!self.userInteractionEnabled) {
         [super touchesBegan:touches withEvent:event];
         return;
@@ -145,7 +149,7 @@
     line.from = formerPoint;
     line.to = currentPoint;
     NSValue *nsLine = [NSValue valueWithBytes:&line objCType:@encode(struct MDKLine)];
-    [signaturePath addObject:nsLine];
+    [self.signaturePath addObject:nsLine];
     [self setNeedsDisplay];
  }
 
@@ -164,7 +168,7 @@
     line.from = formerPoint;
     line.to = currentPoint;
     NSValue *nsLine = [NSValue valueWithBytes:&line objCType:@encode(struct MDKLine)];
-    [signaturePath addObject:nsLine];
+    [self.signaturePath addObject:nsLine];
     [self setNeedsDisplay];
 }
 
@@ -176,6 +180,10 @@
     [self touchesEnded:touches withEvent:event];
 }
 
+
+-(void)setSignaturePath:(NSMutableArray *)signaturePath {
+    _signaturePath = signaturePath;
+}
 
 
 @end

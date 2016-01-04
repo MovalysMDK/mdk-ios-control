@@ -14,45 +14,28 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#import <UIKit/UIKit.h>
+#import "MDKSignatureDrawing.h"
 
-#import <QuartzCore/QuartzCore.h>
-
-typedef struct MDKLine {
-    CGPoint from, to;
-} MDKLine;
+@class MDKUISignature;
 
 /*!
- * @class MDKSignatureDrawing
- * @brief A view that allows the user to draw a signature
+ * @class MDKSignaturePopupView
+ * @brief The popup-view that allows to edit a signature for a MDKUISignature control
  * @discussion
  */
-@interface MDKSignatureDrawing : UIView 
+@interface MDKSignaturePopupView : UIView
 
 #pragma mark - Properties
 
 /*!
- * @brief The line width of the signature
+ * @brief The view used to draw
  */
-@property(nonatomic, assign) float lineWidth;
+@property (weak, nonatomic) IBOutlet MDKSignatureDrawing *signatureDrawing;
 
 /*!
- * @brief The stroke color of the signature
+ * @brief The source MDKUISignature control
  */
-@property(nonatomic, strong) UIColor *strokeColor;
-
-/*!
- * @brief An array describing the path of the signature
- */
-@property(nonatomic, strong) NSMutableArray *signaturePath;
-
-
-#pragma mark - Methods
-/*!
- * @brief Clears the current signature
- */
-- (void) clear;
+@property (weak, nonatomic) MDKUISignature *sourceControl;
 
 @end
-
-
-
