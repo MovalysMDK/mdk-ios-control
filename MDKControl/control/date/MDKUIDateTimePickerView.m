@@ -45,8 +45,10 @@
 
 
 - (void) refreshWithDate:(NSDate *)date andMode:(MDKDateTimeMode)mode {
-    self.datePicker.date = date;
-    [self setDateTimeMode:mode];
+    if(date) {
+        self.datePicker.date = date;
+        [self setDateTimeMode:mode];
+    }
 }
 
 
@@ -65,7 +67,7 @@
             self.datePicker.datePickerMode = UIDatePickerModeDate;
             break;
     }
-
+    
 }
 
 @end
