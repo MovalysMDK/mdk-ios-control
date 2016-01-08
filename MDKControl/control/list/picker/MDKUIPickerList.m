@@ -137,9 +137,14 @@ NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
 
 #pragma mark - Handle user event
 - (IBAction)userDidTapOnButton:(id)sender {
-    [self initializeMDKUIList];
-    [self performConstraintsForUiList];
-    [self initializeAnimationForAppearing];
+    if([self.externalView respondsToSelector:@selector(doOnClick)]) {
+        [self.externalView performSelector:@selector(doOnClick)];
+    }
+    else {
+        [self initializeMDKUIList];
+        [self performConstraintsForUiList];
+        [self initializeAnimationForAppearing];
+    }
 }
 
 - (void)initializeMDKUIList {
