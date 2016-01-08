@@ -43,7 +43,7 @@ NSString *FIELD_VALIDATOR_DECIMAL_PART_MAX_DIGITS = @"decimalPartMaxDigits";
 
 -(MDKInvalidDoubleValueUIValidationError *)validate:(id)value withCurrentState:(NSDictionary *)currentState withParameters:(NSDictionary *)parameters {
     MDKInvalidDoubleValueUIValidationError *result = nil;
-    if([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSAttributedString class]] ) {
+    if(([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSAttributedString class]]) && ![value isEmpty]) {
         if(![self matchPattern:value withParameters:parameters]) {
             result = [[MDKInvalidDoubleValueUIValidationError alloc]  initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
         }

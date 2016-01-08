@@ -39,7 +39,7 @@ NSString *FIELD_VALIDATOR_MAX_DIGITS = @"maxDigits";
 
 -(MDKInvalidIntegerValueUIValidationError *)validate:(id)value withCurrentState:(NSDictionary *)currentState withParameters:(NSDictionary *)parameters {
     MDKInvalidIntegerValueUIValidationError *result = nil;
-    if([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSAttributedString class]] ) {
+    if(([value isKindOfClass:[NSString class]] || [value isKindOfClass:[NSAttributedString class]]) && ![value isEmpty]) {
         if(![self matchPattern:value withParameters:parameters]) {
             result = [[MDKInvalidIntegerValueUIValidationError alloc]  initWithLocalizedFieldName:parameters[@"componentName"] technicalFieldName:parameters[@"componentName"]];
         }
