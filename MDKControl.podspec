@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MDKControl"
-  s.version      = "1.1.0"
+  s.version      = "1.2.0"
   s.summary      = "MDKControl is the independant control library for Movalys MDK"
   s.description  = "MDKControl gives you a base of controls to use in you application.
                     The controls are designed to be used with Movalys MDK, but they are
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     LICENSE
     }
   s.author       = "Sopra Steria"
-  s.source       = { :git => "gitmovalys@git.ptx.fr.sopra:mdk-ios-control.git", :tag => "1.1.0" }
+  s.source       = { :git => "", :tag => "1.2.0" }
   s.source_files = 'MDKControl/**/*.{h,m}'
   s.ios.framework = 'UIKit'
   s.resources     = ["MDKControl/resources/images/**/*.png", 
