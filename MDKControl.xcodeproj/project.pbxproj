@@ -299,6 +299,9 @@
 		F919715B1BE8B84600B94F8A /* MDKUIPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F91971591BE8B84600B94F8A /* MDKUIPosition.m */; };
 		F919715D1BE8C5BB00B94F8A /* ControlPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = F919715C1BE8C5BB00B94F8A /* ControlPosition.h */; };
 		F919715F1BE8C61500B94F8A /* MDK_MDKUIPosition.xib in Resources */ = {isa = PBXBuildFile; fileRef = F919715E1BE8C61500B94F8A /* MDK_MDKUIPosition.xib */; };
+		F91BF6AE1C6355730093809D /* MDKUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F91BF6AC1C6355730093809D /* MDKUIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F91BF6AF1C6355730093809D /* MDKUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F91BF6AD1C6355730093809D /* MDKUIButton.m */; };
+		F91BF6B11C6355D60093809D /* ControlButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F91BF6B01C6355D60093809D /* ControlButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F924E8D61BEA4473006119EF /* MDKManagerPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = F924E8D41BEA4473006119EF /* MDKManagerPosition.h */; };
 		F924E8D71BEA4473006119EF /* MDKManagerPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F924E8D51BEA4473006119EF /* MDKManagerPosition.m */; };
 		F924E8E11BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F924E8DD1BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png */; };
@@ -707,6 +710,9 @@
 		F91971591BE8B84600B94F8A /* MDKUIPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIPosition.m; path = position/MDKUIPosition.m; sourceTree = "<group>"; };
 		F919715C1BE8C5BB00B94F8A /* ControlPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlPosition.h; path = position/ControlPosition.h; sourceTree = "<group>"; };
 		F919715E1BE8C61500B94F8A /* MDK_MDKUIPosition.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIPosition.xib; sourceTree = "<group>"; };
+		F91BF6AC1C6355730093809D /* MDKUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIButton.h; path = button/MDKUIButton.h; sourceTree = "<group>"; };
+		F91BF6AD1C6355730093809D /* MDKUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIButton.m; path = button/MDKUIButton.m; sourceTree = "<group>"; };
+		F91BF6B01C6355D60093809D /* ControlButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlButton.h; path = button/ControlButton.h; sourceTree = "<group>"; };
 		F924E8D41BEA4473006119EF /* MDKManagerPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKManagerPosition.h; path = position/manager/MDKManagerPosition.h; sourceTree = "<group>"; };
 		F924E8D51BEA4473006119EF /* MDKManagerPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKManagerPosition.m; path = position/manager/MDKManagerPosition.m; sourceTree = "<group>"; };
 		F924E8DD1BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mdkuiposition_location_btn_founded@2x.png"; path = "position/location/mdkuiposition_location_btn_founded@2x.png"; sourceTree = "<group>"; };
@@ -1240,6 +1246,7 @@
 		B08C190C1B9DE9A500D6F93A /* control */ = {
 			isa = PBXGroup;
 			children = (
+				F91BF6AB1C6355410093809D /* button */,
 				B055B0D71C2ADE9F0093D147 /* signature */,
 				B03B7FCF1C29AA5500CCA9AD /* scanner */,
 				B08C19151B9DE9A500D6F93A /* Control.h */,
@@ -1616,6 +1623,16 @@
 			name = position;
 			sourceTree = "<group>";
 		};
+		F91BF6AB1C6355410093809D /* button */ = {
+			isa = PBXGroup;
+			children = (
+				F91BF6AC1C6355730093809D /* MDKUIButton.h */,
+				F91BF6AD1C6355730093809D /* MDKUIButton.m */,
+				F91BF6B01C6355D60093809D /* ControlButton.h */,
+			);
+			name = button;
+			sourceTree = "<group>";
+		};
 		F924E8D21BEA4423006119EF /* manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1847,6 +1864,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F91BF6B11C6355D60093809D /* ControlButton.h in Headers */,
+				F91BF6AE1C6355730093809D /* MDKUIButton.h in Headers */,
 				B08C193B1B9DE9A500D6F93A /* ControlExtension.h in Headers */,
 				F95BF3D11BF0DA2D002F2EE7 /* MDKHelperImage.h in Headers */,
 				B09EDFB81C20798000161E8E /* Provider.h in Headers */,
@@ -2251,6 +2270,7 @@
 				B05454661C19C1160020CF1B /* MDKSequentialTooltipManager.m in Sources */,
 				B054541E1C198D8A0020CF1B /* MDKInvalidEmailValueUIValidationError.m in Sources */,
 				F95BF3C11BF099E8002F2EE7 /* MDKUIMedia.m in Sources */,
+				F91BF6AF1C6355730093809D /* MDKUIButton.m in Sources */,
 				B00C4E091BA07D3D003CBB16 /* MDKPhoneFieldValidator.m in Sources */,
 				F924E8D71BEA4473006119EF /* MDKManagerPosition.m in Sources */,
 				F965F9401BE7BF7A0060A93D /* MDKHelperType.m in Sources */,

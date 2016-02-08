@@ -21,7 +21,6 @@
 #import "MDKRenderableControl.h"
 #import "MDKLabel.h"
 
-
 /**
  * Constante indiquant la durée de l'animation du bouton d'erreur
  */
