@@ -228,7 +228,7 @@
 		B09EDFB81C20798000161E8E /* Provider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D41B9DAFA0001860B5 /* Provider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0A52E561BA31EFF00EF6947 /* ControlSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A52E551BA31EFF00EF6947 /* ControlSlider.h */; };
 		B0A52E581BA31F0700EF6947 /* MDK_MDKMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A52E571BA31F0700EF6947 /* MDK_MDKMessageView.xib */; };
-		B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A52E5A1BA31F4F00EF6947 /* MDKSliderStyle.h */; };
+		B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A52E5A1BA31F4F00EF6947 /* MDKSliderStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0A52E5D1BA31F4F00EF6947 /* MDKSliderStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A52E5B1BA31F4F00EF6947 /* MDKSliderStyle.m */; };
 		B0A74C7C1BA081F40002A66B /* MDKURL.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A74C781BA081F40002A66B /* MDKURL.h */; };
 		B0A74C7D1BA081F40002A66B /* MDKURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A74C791BA081F40002A66B /* MDKURL.m */; };
@@ -275,7 +275,7 @@
 		B0F533211C206E6B00CC38CF /* MDKBarCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F5331F1C206E6B00CC38CF /* MDKBarCodeScanViewController.m */; };
 		B0F533241C206ECA00CC38CF /* MDKBarCodeScannerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B0F533221C206ECA00CC38CF /* MDKBarCodeScannerDelegate.h */; };
 		B0F533251C206ECA00CC38CF /* MDKBarCodeScannerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F533231C206ECA00CC38CF /* MDKBarCodeScannerDelegate.m */; };
-		B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6A61BA1CB5E00258B9D /* MDKUISlider.h */; };
+		B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6A61BA1CB5E00258B9D /* MDKUISlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0FFB6AC1BA1CB5F00258B9D /* MDKUISlider.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFB6A71BA1CB5E00258B9D /* MDKUISlider.m */; };
 		B0FFB6B91BA1CD4800258B9D /* MDKConverterProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6AF1BA1CD4800258B9D /* MDKConverterProtocol.h */; };
 		B0FFB6BA1BA1CD4800258B9D /* MDKDateConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = B0FFB6B01BA1CD4800258B9D /* MDKDateConverter.h */; };
@@ -1847,6 +1847,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */,
+				B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */,
 				B08C193B1B9DE9A500D6F93A /* ControlExtension.h in Headers */,
 				F95BF3D11BF0DA2D002F2EE7 /* MDKHelperImage.h in Headers */,
 				B09EDFB81C20798000161E8E /* Provider.h in Headers */,
@@ -1897,6 +1899,7 @@
 				B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */,
 				B0BEE1981C2472F40057EC53 /* MDKUISwitch.h in Headers */,
 				F919715A1BE8B84600B94F8A /* MDKUIPosition.h in Headers */,
+				B0A52E561BA31EFF00EF6947 /* ControlSlider.h in Headers */,
 				F9E3B0081BF1F0060042CFD4 /* ControlWebView.h in Headers */,
 				F965F9391BE7BF4F0060A93D /* MDKEnumHelperProtocol.h in Headers */,
 				B08C19331B9DE9A500D6F93A /* MDKBaseControl.h in Headers */,
@@ -1929,14 +1932,12 @@
 				B055B0E91C2AE0510093D147 /* MDKSignatureHelper.h in Headers */,
 				B02156E31B9DAD59001860B5 /* MDKBackgroundViewProtocol.h in Headers */,
 				F965F93E1BE7BF7A0060A93D /* Helper.h in Headers */,
-				B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */,
 				B02156E71B9DAD59001860B5 /* MDKControlMessageProtocol.h in Headers */,
 				B08C19401B9DE9A500D6F93A /* MDKTextFieldExtension.h in Headers */,
 				B05454211C198D8A0020CF1B /* MDKInvalidPhoneNumberValueUIValidationError.h in Headers */,
 				B03EFBFA1BEBB3F1002DAB18 /* MDKBarCodeScanTextField.h in Headers */,
 				B02156BC1B9DAC6E001860B5 /* Style.h in Headers */,
 				B018BE951BA01F3300EF1D87 /* MDKEmailTextFieldStyle.h in Headers */,
-				B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */,
 				B09CE7DB1BA17C220017CCA2 /* MDKDoubleFieldValidator.h in Headers */,
 				B0261E2F1C22AA2D00685D1A /* MDKPickMediaCommand.h in Headers */,
 				B055B0DF1C2ADEC90093D147 /* MDKUISignature.h in Headers */,
@@ -2013,7 +2014,6 @@
 				B0FFB6BA1BA1CD4800258B9D /* MDKDateConverter.h in Headers */,
 				B05454691C19C1160020CF1B /* MDKTooltips.h in Headers */,
 				B02156C91B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h in Headers */,
-				B0A52E561BA31EFF00EF6947 /* ControlSlider.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -178,6 +178,7 @@
         NSMutableArray *mutableData = [[self.fixedList getData] mutableCopy];
         [mutableData removeObjectAtIndex:indexPath.row];
         [self.fixedList setControlData:mutableData];
+        [self.fixedList valueChanged:self.fixedList.tableView];
         [[self.fixedList fixedListDelegate] fixedList:self.fixedList didDeleteRowAtIndexPath:indexPath withObject:object];
     }
     [tableView reloadData];
