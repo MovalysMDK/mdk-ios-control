@@ -112,7 +112,7 @@
  * @return Le nom du type primitf (int, unsigned, float, double etc ...)
  */
 +(NSString *)processViewTypeFromView:(id)view {
-    if([view isKindOfClass:NSClassFromString(@"UIButton")] || [view isKindOfClass:NSClassFromString(@"MFButton")]) {
+    if([view isKindOfClass:NSClassFromString(@"UIButton")] || [view isKindOfClass:NSClassFromString(@"MDKUIButton")]) {
         return @"Button";
     }
     else if([view isKindOfClass:NSClassFromString(@"UITextField")] || [view isKindOfClass:NSClassFromString(@"MFTextField")]) {
