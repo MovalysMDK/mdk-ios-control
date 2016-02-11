@@ -22,9 +22,5 @@
 
 -(void)applyStandardStyleOnComponent:(id)component {
     [super applyStandardStyleOnComponent:component];
-    ((MDKUIPickerList *)component).backgroundColor = [UIColor colorWithWhite:0.95f alpha:1.0f];
-    ((MDKUIPickerList *)component).layer.cornerRadius = 5.0f;
-    ((MDKUIPickerList *)component).clipsToBounds = YES;
 }
-
 @end

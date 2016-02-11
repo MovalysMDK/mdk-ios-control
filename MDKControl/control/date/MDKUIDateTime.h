@@ -57,6 +57,11 @@ typedef enum {
  */
 @property (nonatomic) IBInspectable MDKDateTimeMode MDK_dateTimeMode;
 
+/*!
+ * @brief The name of the XIB to use to show the picker
+ */
+@property (nonatomic, strong) IBInspectable NSString *MDK_pickerXibName;
+
 @end
 
 

@@ -112,6 +112,6 @@ IB_DESIGNABLE
  */
 -(void) selfCustomization;
 
-
+-(void)setNeedsDisplayData;
 
 @end

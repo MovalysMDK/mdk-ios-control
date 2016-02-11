@@ -17,15 +17,6 @@
 #import "MDKRenderableControl.h"
 
 
-/******************************************************/
-/* CONSTANTES KEY                                     */
-/******************************************************/
-
-/*!
- * @brief The key for MDKUIWebViewKey allowing to add control attributes
- */
-FOUNDATION_EXTERN NSString *const MDKUIWebViewKey;
-
 
 /******************************************************/
 /* MAIN CONTROL                                       */

@@ -482,7 +482,12 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     else {
         self.styleClass = [NSClassFromString(@"MDKDefaultStyle") new];
     }
-    [self applyStandardStyle];
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        [self.internalView applyStandardStyle];
+    }
+    else {
+        [self applyStandardStyle];
+    }
 }
 
 -(NSString *)controlName {
@@ -701,6 +706,13 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
 -(void) forwardOutlets:(id)external {
     //Let empty
 }
+
+-(void)setNeedsDisplayData {
+    [self refreshControl];
+    [super setNeedsDisplayData];
+}
+
+
 
 @end
 

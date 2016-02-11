@@ -56,8 +56,13 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
 #pragma mark - Custom methods
 
 -(void)onDateButtonClick:(id)sender {
-    NSString *xibIdentifier = @"MDK_MDKUIDateTimePicker";
-    self.pickerView = [[[NSBundle bundleForClass:[MDKUIDateTimePickerView class]] loadNibNamed:xibIdentifier owner:self options:nil] firstObject];
+    BOOL hasExternalXIB = NO;
+    NSString *xibIdentifier = [self xibIdentifier:&hasExternalXIB];
+    NSBundle *bundle = [NSBundle bundleForClass:[MDKUIDateTimePickerView class]];
+    if(hasExternalXIB) {
+        bundle = [NSBundle bundleForClass:NSClassFromString(@"AppDelegate")];
+    }
+    self.pickerView = [[bundle loadNibNamed:xibIdentifier owner:self options:nil] firstObject];
     self.pickerView.translatesAutoresizingMaskIntoConstraints = NO;
     self.pickerView.sourceComponent = self;
     [self.pickerView refreshWithDate:[self getData] andMode:self.MDK_dateTimeMode];
@@ -82,6 +87,14 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
     [UIView animateWithDuration:0.8f delay:0.0f usingSpringWithDamping:10.0f initialSpringVelocity:18.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
         self.pickerView.frame = finalFrame;
     } completion:NULL];
+}
+
+-(NSString *) xibIdentifier:(BOOL **)hasExternalXIB {
+    if(self.MDK_pickerXibName) {
+        *hasExternalXIB = YES;
+        return self.MDK_pickerXibName;
+    }
+    return @"MDK_MDKUIDateTimePicker";
 }
 
 
@@ -154,6 +167,7 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
         self.MDK_dateFormat = controlAttributes[PARAMETER_DATE_FORMAT];
     }
     [super setControlAttributes:controlAttributes];
+    
 }
 
 
@@ -161,6 +175,15 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
     return @[@"MDK_dateFormat", @"MDK_dateTimeMode"];
 }
 
+
+-(NSString *)MDK_pickerXibName {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        return _MDK_pickerXibName;
+    }
+    else {
+        return ((MDKUIInternalDateTime *)self.externalView).MDK_pickerXibName;
+    }
+}
 
 @end
 

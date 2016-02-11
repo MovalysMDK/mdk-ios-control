@@ -54,4 +54,8 @@ IB_DESIGNABLE
 @property (nonatomic, strong) NSMutableArray *errors;
 @property (nonatomic, weak) id<MDKControlCustomStyleProtocol> styleDelegate;
 
+//  Methods
+// ============
+- (void)initializeComponent;
+
 @end

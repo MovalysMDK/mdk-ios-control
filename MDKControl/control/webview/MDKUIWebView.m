@@ -19,22 +19,10 @@
 #import "Helper.h"
 
 
-#pragma mark - MDKUIWebViewKey - Keys
-
-/*!
- * @brief The key for MDKUIWebViewKey allowing to add control attributes
- */
-NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
-
 
 #pragma mark - MDKUIWebView - Private interface
 
 @interface MDKUIWebView() <UIWebViewDelegate>
-
-/*!
- * @brief This variable allow to know the current enum class name
- */
-@property (nonatomic, strong) NSString *currentEnumClassName;
 
 /*!
  * @brief Allow to wait while the loading website
@@ -84,14 +72,15 @@ NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
     innerDescriptionLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
     [self addSubview:innerDescriptionLabel];
     self.backgroundColor = [UIColor colorWithRed:0.98f green:0.98f blue:0.34f alpha:0.5f];
+    
 }
 
 
 #pragma mark - Control attribute
 
 - (void)setControlAttributes:(NSDictionary *)controlAttributes {
-    if (controlAttributes && [controlAttributes objectForKey:MDKUIWebViewKey]) {
-        self.currentEnumClassName = [controlAttributes valueForKey:MDKUIWebViewKey];
+    if (controlAttributes && [controlAttributes objectForKey:@"localUrl"]) {
+        [self setData:[controlAttributes objectForKey:@"localUrl"]];
     }
 }
 
@@ -160,6 +149,15 @@ NSString *const MDKUIWebViewKey = @"MDKUIWebViewKey";
 - (void)startLoadUrl:(NSURL *)url {
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlRequest];
+}
+
+-(UIWebView *)webView {
+    if([self conformsToProtocol:@protocol(MDKExternalComponent)]) {
+        return ((MDKUIExternalWebView *)self.internalView).webView;
+    }
+    else {
+        return _webView;
+    }
 }
 
 

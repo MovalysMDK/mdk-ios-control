@@ -269,6 +269,7 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
         [self performSelector:@selector(forwardSpecificRenderableProperties)];
 //        [self performSelector:@selector(refreshControl)];
     }
+    [self setNeedsDisplayData];
 }
 
 
@@ -320,6 +321,10 @@ CGFloat const ERROR_BUTTON_SIZE = 30;
     [self.userFieldValidators addObject:fieldValidator];
 }
 
+
+-(void)setNeedsDisplayData {
+    [self setNeedsDisplay];
+}
 
 
 

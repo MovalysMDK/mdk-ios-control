@@ -139,6 +139,11 @@ NSString *const FIXEDLIST_PARAMETER_IS_PHOTO_KEY = @"isPhotoFixedList";
 -(NSInteger)validate {
     return [super validate];
 }
+
+-(void)setTintColor:(UIColor *)tintColor {
+    self.addButton.tintColor = tintColor;
+    [super setTintColor:tintColor];
+}
 @end
 
 
