@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
   spec.homepage       = "http://www.movalys.org"
   spec.license        = { :type => 'LGPLv3', :file => 'LGPLv3-LICENSE.txt' }
   spec.author         = "Sopra Steria Group"
-  spec.source         = { :git => "gitmovalys@git.ptx.fr.sopra:mdk-ios-control.git", :tag => "1.1.0" }
+  spec.source         = { :git => "https://github.com/MovalysMDK/mdk-ios-control.git", :tag => "1.1.0" }
   spec.source_files   = 'MDKControl/**/*.{h,m}'
   spec.ios.framework  = 'UIKit'
   spec.resources      = ["MDKControl/resources/images/**/*.png",
