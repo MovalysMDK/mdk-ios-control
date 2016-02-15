@@ -1864,13 +1864,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */,
 				B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */,
-=======
-				F91BF6B11C6355D60093809D /* ControlButton.h in Headers */,
-				F91BF6AE1C6355730093809D /* MDKUIButton.h in Headers */,
->>>>>>> 8f76591b08b6941404c8309ad8d958a4615213ab
 				B08C193B1B9DE9A500D6F93A /* ControlExtension.h in Headers */,
 				F95BF3D11BF0DA2D002F2EE7 /* MDKHelperImage.h in Headers */,
 				B09EDFB81C20798000161E8E /* Provider.h in Headers */,
