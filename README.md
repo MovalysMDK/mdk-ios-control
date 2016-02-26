@@ -1,9 +1,8 @@
 # mdk-ios-control
-**Movalys MDK: IOS library's description**
 
 ## What?
 
-It is a library of reusable custom IOS control provided by the Movalys MDK framework.
+This is a library containing rich and configurable iOS controls, used by Movalys MDK.
 
 ## Documentation
 
