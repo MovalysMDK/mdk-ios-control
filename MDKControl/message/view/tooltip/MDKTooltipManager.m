@@ -253,7 +253,7 @@
 - (void)setBackgroundColourForAllTooltips:(UIColor *)colour
 {
     for (MDKTooltipView *tooltip in self.tooltips) {
-        tooltip.tooltipBackgroundColour = colour;
+        tooltip.tooltipBackgroundColor = colour;
     }
 }
 

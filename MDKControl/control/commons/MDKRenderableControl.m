@@ -386,7 +386,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     view.layer.borderColor = self.borderColor_MDK.CGColor;
     view.layer.cornerRadius = self.cornerRadius_MDK;
     view.layer.masksToBounds = YES;
-    view.tooltipView.tooltipBackgroundColour = self.tooltipColor_MDK;
+    view.tooltipView.tooltipBackgroundColor = self.tooltipColor_MDK;
 }
 
 /**
@@ -544,7 +544,7 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
     
     dispatch_async(dispatch_get_main_queue(), ^{
         if([self conformsToProtocol:@protocol(MDKExternalComponent) ]) {
-            if(showMessage) {
+            if(showMessage && self.messages.count != 0) {
                 if(!self.messageView) {
                     Class errorBundleClass = [[self retrieveCustomMessageXIB] hasPrefix:MDK_XIB_IDENTIFIER] ?  NSClassFromString(@"MDKRenderableControl") : NSClassFromString(@"AppDelegate");
                     self.messageView = [[[NSBundle bundleForClass:errorBundleClass] loadNibNamed:[self retrieveCustomMessageXIB] owner:nil options:nil] firstObject];
@@ -627,12 +627,13 @@ const struct MDKRenderableForwarding_Struct MDKRenderableForwarding = {
             messageNumber++;
             messageText= [messageText stringByAppendingString: [message messageContent]];
         }
+        
         //Passage de la vue au premier plan
         UIView *currentView = [self parentViewController].view;
         
         [currentView bringSubviewToFront:self.tooltipView];
         self.tooltipView.tooltipText = messageText;
-        self.tooltipView.tooltipBackgroundColour = self.tooltipColor_MDK ? self.tooltipColor_MDK : [self defaultTooltipBackgroundColor];
+        self.tooltipView.tooltipBackgroundColor = self.tooltipColor_MDK ? self.tooltipColor_MDK : [self defaultTooltipBackgroundColor];
         
         [self.tooltipView show];
     }

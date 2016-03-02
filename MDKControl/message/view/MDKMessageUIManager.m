@@ -22,6 +22,9 @@
 @implementation MDKMessageUIManager
 
 +(void)autoStyleMessageButton:(MDKMessageButton *)messageButton forMessages:(NSArray *)messages {
+    if (messages.count == 0) {
+        return; // No handle MDKMessageButton if no message
+    }
     
     NSInteger higherStatus = MDKMessageStatusInfo;
     for(id<MDKMessageProtocol> message in messages) {

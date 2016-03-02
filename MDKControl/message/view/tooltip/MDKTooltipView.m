@@ -174,7 +174,7 @@
     self.arrowDirection = MDKTooltipViewArrowDirectionUp;
     
     self.backgroundColor = [UIColor clearColor];
-    self.tooltipBackgroundColour = [UIColor darkGrayColor];
+    self.tooltipBackgroundColor = [UIColor darkGrayColor];
     self.textColour = [UIColor whiteColor];
     
     self.tooltipTextLabel = [[UILabel alloc] initWithFrame:self.bounds];
@@ -419,7 +419,7 @@
 }
 
 - (void)drawCanvas1WithFrame:(CGRect)frame; { 
-    UIColor *backgroundColour = self.tooltipBackgroundColour;
+    UIColor *backgroundColor = self.tooltipBackgroundColor;
     
     //// General Declarations
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -435,7 +435,7 @@
         //// Rectangle Drawing
         CGRect rect = CGRectMake(CGRectGetMinX(frame) + 14, CGRectGetMinY(frame) + 12, CGRectGetWidth(frame) - 28, CGRectGetHeight(frame) - 24);
         UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRoundedRect:rect  cornerRadius: 5];
-        [backgroundColour setFill];
+        [backgroundColor setFill];
         [rectanglePath fill];
         
         
@@ -450,7 +450,7 @@
         [bezierPath addLineToPoint: CGPointMake(7, arrowHeight)];
         [bezierPath addCurveToPoint: CGPointMake(-0, 0.02) controlPoint1: CGPointMake(7, arrowHeight) controlPoint2: CGPointMake(2, 0.02)];
         [bezierPath closePath];
-        [backgroundColour setFill];
+        [backgroundColor setFill];
         [bezierPath fill];
         
         CGContextRestoreGState(context);

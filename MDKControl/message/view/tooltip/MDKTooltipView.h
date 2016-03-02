@@ -110,7 +110,7 @@ typedef void (^MDKTooltipViewCompletionBlock)();
 /*!
  *  The background colour for the tooltip. Default is @c darkGray.
  */
-@property (nonatomic, strong) UIColor *tooltipBackgroundColour;
+@property (nonatomic, strong) UIColor *tooltipBackgroundColor;
 
 /*!
  *  The direction that the tooltip's arrow will point

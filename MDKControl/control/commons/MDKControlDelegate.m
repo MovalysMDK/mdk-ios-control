@@ -108,7 +108,7 @@
         
         [controllerView bringSubviewToFront:self.control.tooltipView];
         self.control.tooltipView.tooltipAttributedText = messageText;
-        self.control.tooltipView.tooltipBackgroundColour = [self defaultTooltipBackgroundColor];
+        self.control.tooltipView.tooltipBackgroundColor = [self defaultTooltipBackgroundColor];
         [self.control.tooltipView show];
         [self.control.tooltipView performSelector:@selector(hideAnimated:) withObject:@1 afterDelay:2];
     }
