@@ -43,8 +43,6 @@
 		B02156B41B9DAC6E001860B5 /* MDKDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B021568B1B9DAC6E001860B5 /* MDKDefaultStyle.m */; };
 		B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568C1B9DAC6E001860B5 /* MDKStyleProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156B61B9DAC6E001860B5 /* StyleCommons.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568D1B9DAC6E001860B5 /* StyleCommons.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156B91B9DAC6E001860B5 /* MDKLabelStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156911B9DAC6E001860B5 /* MDKLabelStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156BA1B9DAC6E001860B5 /* MDKLabelStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156921B9DAC6E001860B5 /* MDKLabelStyle.m */; };
 		B02156BC1B9DAC6E001860B5 /* Style.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156941B9DAC6E001860B5 /* Style.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156C71B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A01B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156C81B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A11B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m */; };
@@ -91,8 +89,6 @@
 		B0261E3B1C231F1B00685D1A /* MDKLocalizedString.h in Headers */ = {isa = PBXBuildFile; fileRef = B0261E391C231F1B00685D1A /* MDKLocalizedString.h */; };
 		B0261E3C1C231F1B00685D1A /* MDKLocalizedString.m in Sources */ = {isa = PBXBuildFile; fileRef = B0261E3A1C231F1B00685D1A /* MDKLocalizedString.m */; };
 		B02A81211C0CB39400580411 /* MDK_MDKUIListSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B02A81201C0CB39400580411 /* MDK_MDKUIListSearch.xib */; };
-		B02A81341C0E075500580411 /* MDKPickerListStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02A81321C0E075500580411 /* MDKPickerListStyle.h */; };
-		B02A81351C0E075500580411 /* MDKPickerListStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02A81331C0E075500580411 /* MDKPickerListStyle.m */; };
 		B0308D521B9F1673000817D3 /* MDKControlCustomStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */; };
 		B03AD4791BC3CDFF00A96F5D /* MDKUIDateTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B03AD4771BC3CDFF00A96F5D /* MDKUIDateTime.h */; };
 		B03AD47A1BC3CDFF00A96F5D /* MDKUIDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = B03AD4781BC3CDFF00A96F5D /* MDKUIDateTime.m */; };
@@ -292,16 +288,11 @@
 		B0FFDA901B33FBB800CA6E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */; };
 		F913AC4E1C05BE47001293FD /* MDKDelegateEnumList.h in Headers */ = {isa = PBXBuildFile; fileRef = F913AC4C1C05BE47001293FD /* MDKDelegateEnumList.h */; };
 		F913AC4F1C05BE47001293FD /* MDKDelegateEnumList.m in Sources */ = {isa = PBXBuildFile; fileRef = F913AC4D1C05BE47001293FD /* MDKDelegateEnumList.m */; };
-		F91971531BE8AF4B00B94F8A /* MDKEnumImageStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */; };
-		F91971541BE8AF4B00B94F8A /* MDKEnumImageStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */; };
-		F91971561BE8AF6E00B94F8A /* StyleEnumImage.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */; };
 		F919715A1BE8B84600B94F8A /* MDKUIPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971581BE8B84600B94F8A /* MDKUIPosition.h */; };
 		F919715B1BE8B84600B94F8A /* MDKUIPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F91971591BE8B84600B94F8A /* MDKUIPosition.m */; };
 		F919715D1BE8C5BB00B94F8A /* ControlPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = F919715C1BE8C5BB00B94F8A /* ControlPosition.h */; };
 		F919715F1BE8C61500B94F8A /* MDK_MDKUIPosition.xib in Resources */ = {isa = PBXBuildFile; fileRef = F919715E1BE8C61500B94F8A /* MDK_MDKUIPosition.xib */; };
-		F91BF6AE1C6355730093809D /* MDKUIButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F91BF6AC1C6355730093809D /* MDKUIButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F91BF6AF1C6355730093809D /* MDKUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F91BF6AD1C6355730093809D /* MDKUIButton.m */; };
-		F91BF6B11C6355D60093809D /* ControlButton.h in Headers */ = {isa = PBXBuildFile; fileRef = F91BF6B01C6355D60093809D /* ControlButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F924E8D61BEA4473006119EF /* MDKManagerPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = F924E8D41BEA4473006119EF /* MDKManagerPosition.h */; };
 		F924E8D71BEA4473006119EF /* MDKManagerPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F924E8D51BEA4473006119EF /* MDKManagerPosition.m */; };
 		F924E8E11BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F924E8DD1BEA70F9006119EF /* mdkuiposition_location_btn_founded@2x.png */; };
@@ -424,8 +415,6 @@
 		B021568B1B9DAC6E001860B5 /* MDKDefaultStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKDefaultStyle.m; sourceTree = "<group>"; };
 		B021568C1B9DAC6E001860B5 /* MDKStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKStyleProtocol.h; sourceTree = "<group>"; };
 		B021568D1B9DAC6E001860B5 /* StyleCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleCommons.h; sourceTree = "<group>"; };
-		B02156911B9DAC6E001860B5 /* MDKLabelStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKLabelStyle.h; sourceTree = "<group>"; };
-		B02156921B9DAC6E001860B5 /* MDKLabelStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKLabelStyle.m; sourceTree = "<group>"; };
 		B02156941B9DAC6E001860B5 /* Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Style.h; sourceTree = "<group>"; };
 		B02156A01B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDKRegexTextFieldStyle+Button.h"; sourceTree = "<group>"; };
 		B02156A11B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MDKRegexTextFieldStyle+Button.m"; sourceTree = "<group>"; };
@@ -473,8 +462,6 @@
 		B0261E391C231F1B00685D1A /* MDKLocalizedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKLocalizedString.h; sourceTree = "<group>"; };
 		B0261E3A1C231F1B00685D1A /* MDKLocalizedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKLocalizedString.m; sourceTree = "<group>"; };
 		B02A81201C0CB39400580411 /* MDK_MDKUIListSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUIListSearch.xib; sourceTree = "<group>"; };
-		B02A81321C0E075500580411 /* MDKPickerListStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKPickerListStyle.h; sourceTree = "<group>"; };
-		B02A81331C0E075500580411 /* MDKPickerListStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKPickerListStyle.m; sourceTree = "<group>"; };
 		B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlCustomStyleProtocol.h; sourceTree = "<group>"; };
 		B0334D9C1BEA15FD00CCBAE8 /* libPods-MDKControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-MDKControl.a"; path = "Pods/../build/Debug-iphoneos/libPods-MDKControl.a"; sourceTree = "<group>"; };
 		B0334D9E1BEA160100CCBAE8 /* libIQKeyboardManager.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libIQKeyboardManager.a; path = "Pods/../build/Debug-iphoneos/libIQKeyboardManager.a"; sourceTree = "<group>"; };
@@ -591,7 +578,6 @@
 		B08C18FA1B9DDC5700D6F93A /* MDKControlEventsDescriptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKControlEventsDescriptor.m; sourceTree = "<group>"; };
 		B08C18FD1B9DDC7F00D6F93A /* Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Events.h; sourceTree = "<group>"; };
 		B08C18FE1B9DDCA300D6F93A /* Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Protocol.h; sourceTree = "<group>"; };
-		B08C18FF1B9DDFD000D6F93A /* StyleLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleLabel.h; sourceTree = "<group>"; };
 		B08C19001B9DE37300D6F93A /* MDKTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTags.h; sourceTree = "<group>"; };
 		B08C19011B9DE37300D6F93A /* MDKTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKTags.m; sourceTree = "<group>"; };
 		B08C190E1B9DE9A500D6F93A /* MDKBaseControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBaseControl.h; sourceTree = "<group>"; };
@@ -703,9 +689,6 @@
 		C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDKControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDKControl/Pods-MDKControl.debug.xcconfig"; sourceTree = "<group>"; };
 		F913AC4C1C05BE47001293FD /* MDKDelegateEnumList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKDelegateEnumList.h; path = list/common/delegate/MDKDelegateEnumList.h; sourceTree = "<group>"; };
 		F913AC4D1C05BE47001293FD /* MDKDelegateEnumList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKDelegateEnumList.m; path = list/common/delegate/MDKDelegateEnumList.m; sourceTree = "<group>"; };
-		F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKEnumImageStyle.h; path = enumImage/MDKEnumImageStyle.h; sourceTree = "<group>"; };
-		F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKEnumImageStyle.m; path = enumImage/MDKEnumImageStyle.m; sourceTree = "<group>"; };
-		F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyleEnumImage.h; path = enumImage/StyleEnumImage.h; sourceTree = "<group>"; };
 		F91971581BE8B84600B94F8A /* MDKUIPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIPosition.h; path = position/MDKUIPosition.h; sourceTree = "<group>"; };
 		F91971591BE8B84600B94F8A /* MDKUIPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUIPosition.m; path = position/MDKUIPosition.m; sourceTree = "<group>"; };
 		F919715C1BE8C5BB00B94F8A /* ControlPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlPosition.h; path = position/ControlPosition.h; sourceTree = "<group>"; };
@@ -857,15 +840,13 @@
 			isa = PBXGroup;
 			children = (
 				B05454751C19D5790020CF1B /* abstract */,
-				B02A81301C0E072C00580411 /* list */,
-				F91971501BE8AEBD00B94F8A /* enumImage */,
 				B0A52E591BA31F3C00EF6947 /* slider */,
 				B02156891B9DAC6E001860B5 /* commons */,
-				B02156901B9DAC6E001860B5 /* label */,
 				B02156941B9DAC6E001860B5 /* Style.h */,
 				B02156951B9DAC6E001860B5 /* textfield */,
 			);
-			path = style;
+			name = style;
+			path = ../style;
 			sourceTree = "<group>";
 		};
 		B02156891B9DAC6E001860B5 /* commons */ = {
@@ -879,16 +860,6 @@
 				B021568D1B9DAC6E001860B5 /* StyleCommons.h */,
 			);
 			path = commons;
-			sourceTree = "<group>";
-		};
-		B02156901B9DAC6E001860B5 /* label */ = {
-			isa = PBXGroup;
-			children = (
-				B02156911B9DAC6E001860B5 /* MDKLabelStyle.h */,
-				B02156921B9DAC6E001860B5 /* MDKLabelStyle.m */,
-				B08C18FF1B9DDFD000D6F93A /* StyleLabel.h */,
-			);
-			path = label;
 			sourceTree = "<group>";
 		};
 		B02156951B9DAC6E001860B5 /* textfield */ = {
@@ -1022,23 +993,6 @@
 			path = command;
 			sourceTree = "<group>";
 		};
-		B02A81301C0E072C00580411 /* list */ = {
-			isa = PBXGroup;
-			children = (
-				B02A81311C0E072C00580411 /* picker */,
-			);
-			path = list;
-			sourceTree = "<group>";
-		};
-		B02A81311C0E072C00580411 /* picker */ = {
-			isa = PBXGroup;
-			children = (
-				B02A81321C0E075500580411 /* MDKPickerListStyle.h */,
-				B02A81331C0E075500580411 /* MDKPickerListStyle.m */,
-			);
-			path = picker;
-			sourceTree = "<group>";
-		};
 		B03AD4761BC3CDFF00A96F5D /* date */ = {
 			isa = PBXGroup;
 			children = (
@@ -1064,6 +1018,7 @@
 		B05453EA1C198D8A0020CF1B /* message */ = {
 			isa = PBXGroup;
 			children = (
+				B02156881B9DAC6E001860B5 /* style */,
 				B05454511C19C1160020CF1B /* view */,
 				B05454441C198FC40020CF1B /* info */,
 				B05454431C198F4F0020CF1B /* warn */,
@@ -1544,7 +1499,6 @@
 				B02156D91B9DAD59001860B5 /* protocol */,
 				B02157CD1B9DAFA0001860B5 /* provider */,
 				B0C6BA931BA1D9830087C4D3 /* resources */,
-				B02156881B9DAC6E001860B5 /* style */,
 				B0FFDA691B33FAFB00CA6E5E /* Supporting Files */,
 				B08C18EF1B9DD1AC00D6F93A /* utils */,
 				B00C4DEA1BA06B4C003CBB16 /* viewcontroller */,
@@ -1589,16 +1543,6 @@
 				2CE3AD71423C57338299F1F8 /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F91971501BE8AEBD00B94F8A /* enumImage */ = {
-			isa = PBXGroup;
-			children = (
-				F91971511BE8AF4B00B94F8A /* MDKEnumImageStyle.h */,
-				F91971521BE8AF4B00B94F8A /* MDKEnumImageStyle.m */,
-				F91971551BE8AF6E00B94F8A /* StyleEnumImage.h */,
-			);
-			name = enumImage;
 			sourceTree = "<group>";
 		};
 		F91971571BE8B80C00B94F8A /* position */ = {
@@ -1901,7 +1845,6 @@
 				B0A74C7E1BA081F40002A66B /* MDKOpenURLCommand.h in Headers */,
 				B018BE931BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h in Headers */,
 				F97546EC1BF4E06E00B2E48B /* ControlEnumList.h in Headers */,
-				F91971531BE8AF4B00B94F8A /* MDKEnumImageStyle.h in Headers */,
 				B054546A1C19C1160020CF1B /* MDKTooltipView.h in Headers */,
 				B05454641C19C1160020CF1B /* MessageView.h in Headers */,
 				B0CEFF611BF4E246007AEBB4 /* MDKUIDataPositionProtocol.h in Headers */,
@@ -1930,7 +1873,6 @@
 				B054542B1C198D8A0020CF1B /* MDKTooLongStringUIValidationError.h in Headers */,
 				B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */,
 				B054542D1C198D8A0020CF1B /* MDKTooShortListUIValidationError.h in Headers */,
-				B02A81341C0E075500580411 /* MDKPickerListStyle.h in Headers */,
 				B00C4DF21BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h in Headers */,
 				B0C18B481BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h in Headers */,
 				B054546D1C19C1160020CF1B /* UILabel+MDKTooltips.h in Headers */,
@@ -1969,7 +1911,6 @@
 				B02156EA1B9DAD59001860B5 /* MDKMessageViewProtocol.h in Headers */,
 				B09CE7DD1BA17C220017CCA2 /* MDKIntegerFieldValidator.h in Headers */,
 				B02116A01BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h in Headers */,
-				F91971561BE8AF6E00B94F8A /* StyleEnumImage.h in Headers */,
 				B054544F1C19940E0020CF1B /* MDKMessageWarn.h in Headers */,
 				B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */,
 				B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */,
@@ -2001,7 +1942,6 @@
 				B0A74C7C1BA081F40002A66B /* MDKURL.h in Headers */,
 				B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */,
 				B02156CD1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h in Headers */,
-				B02156B91B9DAC6E001860B5 /* MDKLabelStyle.h in Headers */,
 				B0F5331B1C206D8C00CC38CF /* MDKOpenScanCommand.h in Headers */,
 				B021580B1B9DB27D001860B5 /* MDKAlertViewManager.h in Headers */,
 				B02157D91B9DAFA0001860B5 /* MDKSimpleComponentProvider.h in Headers */,
@@ -2255,7 +2195,6 @@
 				B05454241C198D8A0020CF1B /* MDKInvalidUrlValueUIValidationError.m in Sources */,
 				B08C19391B9DE9A500D6F93A /* MDKRenderableControl.m in Sources */,
 				F93DAC201C0C5BB40067E6AB /* MDKPickerItemBaseDelegate.m in Sources */,
-				B02A81351C0E075500580411 /* MDKPickerListStyle.m in Sources */,
 				B062A1181C19E550006B742A /* MDKMessageInfo.m in Sources */,
 				B05454501C19940E0020CF1B /* MDKMessageWarn.m in Sources */,
 				B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */,
@@ -2272,7 +2211,6 @@
 				B00C4E091BA07D3D003CBB16 /* MDKPhoneFieldValidator.m in Sources */,
 				F924E8D71BEA4473006119EF /* MDKManagerPosition.m in Sources */,
 				F965F9401BE7BF7A0060A93D /* MDKHelperType.m in Sources */,
-				B02156BA1B9DAC6E001860B5 /* MDKLabelStyle.m in Sources */,
 				B02116A11BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m in Sources */,
 				B05C93671B9F3BF900487CFB /* MDKEmail.m in Sources */,
 				B02157661B9DAEEA001860B5 /* MDKMandatoryFieldValidator.m in Sources */,
@@ -2305,7 +2243,6 @@
 				B03B7FD41C29AA7A00CCA9AD /* MDKUIScanner.m in Sources */,
 				B054547D1C19DB450020CF1B /* MDKMessageUIManager.m in Sources */,
 				B05454221C198D8A0020CF1B /* MDKInvalidPhoneNumberValueUIValidationError.m in Sources */,
-				F91971541BE8AF4B00B94F8A /* MDKEnumImageStyle.m in Sources */,
 				B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */,
 				B054544A1C1991390020CF1B /* MDKCanNotPerformActionWarn.m in Sources */,
 				F95BF3D21BF0DA2D002F2EE7 /* MDKHelperImage.m in Sources */,

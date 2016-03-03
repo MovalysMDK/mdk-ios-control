@@ -15,7 +15,6 @@
  */
 
 #import "MDKLabel.h"
-#import "MDKLabelStyle.h"
 #import "MDKControlProtocol.h"
 
 

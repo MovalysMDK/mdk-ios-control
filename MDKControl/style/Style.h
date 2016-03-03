@@ -18,9 +18,7 @@
 #define MDKControl_Style_h
 
 #import "StyleCommons.h"
-#import "StyleLabel.h"
 #import "StyleTextField.h"
 #import "StyleSlider.h"
-#import "StyleEnumImage.h"
 
 #endif
