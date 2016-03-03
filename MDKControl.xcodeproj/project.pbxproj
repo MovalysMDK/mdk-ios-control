@@ -22,41 +22,11 @@
 		B011AB7B1C28388200C7BA14 /* MDKUINumberPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = B011AB791C28388200C7BA14 /* MDKUINumberPicker.h */; };
 		B011AB7C1C28388200C7BA14 /* MDKUINumberPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = B011AB7A1C28388200C7BA14 /* MDKUINumberPicker.m */; };
 		B011AB7F1C283BAE00C7BA14 /* MDK_MDKUINumberPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B011AB7E1C283BAE00C7BA14 /* MDK_MDKUINumberPicker.xib */; };
-		B018BE911BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE851BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m */; };
-		B018BE921BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE861BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h */; };
-		B018BE931BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE871BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h */; };
-		B018BE941BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE881BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.m */; };
-		B018BE951BA01F3300EF1D87 /* MDKEmailTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE891BA01F3300EF1D87 /* MDKEmailTextFieldStyle.h */; };
-		B018BE961BA01F3300EF1D87 /* MDKEmailTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE8A1BA01F3300EF1D87 /* MDKEmailTextFieldStyle.m */; };
-		B018BE971BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE8B1BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.h */; };
-		B018BE981BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE8C1BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.m */; };
-		B018BE991BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE8D1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.h */; };
-		B018BE9A1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE8E1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.m */; };
-		B018BE9B1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE8F1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.h */; };
-		B018BE9C1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE901BA01F3300EF1D87 /* MDKUrlTextFieldStyle.m */; };
 		B018BE9F1BA02C6000EF1D87 /* MDKSendEmailCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B018BE9D1BA02C6000EF1D87 /* MDKSendEmailCommand.h */; };
 		B018BEA01BA02C6000EF1D87 /* MDKSendEmailCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = B018BE9E1BA02C6000EF1D87 /* MDKSendEmailCommand.m */; };
 		B021169D1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021169C1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h */; };
 		B02116A01BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B021169E1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h */; };
 		B02116A11BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B021169F1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m */; };
-		B02156B31B9DAC6E001860B5 /* MDKDefaultStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568A1B9DAC6E001860B5 /* MDKDefaultStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156B41B9DAC6E001860B5 /* MDKDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B021568B1B9DAC6E001860B5 /* MDKDefaultStyle.m */; };
-		B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568C1B9DAC6E001860B5 /* MDKStyleProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156B61B9DAC6E001860B5 /* StyleCommons.h in Headers */ = {isa = PBXBuildFile; fileRef = B021568D1B9DAC6E001860B5 /* StyleCommons.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156BC1B9DAC6E001860B5 /* Style.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156941B9DAC6E001860B5 /* Style.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156C71B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A01B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156C81B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A11B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m */; };
-		B02156C91B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A21B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156CA1B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A31B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m */; };
-		B02156CB1B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A41B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156CC1B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A51B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.m */; };
-		B02156CD1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A61B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156CE1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A71B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.m */; };
-		B02156CF1B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156A81B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156D01B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156A91B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m */; };
-		B02156D11B9DAC6E001860B5 /* MDKTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156AA1B9DAC6E001860B5 /* MDKTextFieldStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B02156D21B9DAC6E001860B5 /* MDKTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B02156AB1B9DAC6E001860B5 /* MDKTextFieldStyle.m */; };
-		B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156AC1B9DAC6E001860B5 /* StyleTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156E31B9DAD59001860B5 /* MDKBackgroundViewProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DA1B9DAD59001860B5 /* MDKBackgroundViewProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DB1B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02156E51B9DAD59001860B5 /* MDKControlAttributesProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02156DC1B9DAD59001860B5 /* MDKControlAttributesProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -149,8 +119,6 @@
 		B05454701C19C1160020CF1B /* UIView+MDKTooltips.m in Sources */ = {isa = PBXBuildFile; fileRef = B05454611C19C1160020CF1B /* UIView+MDKTooltips.m */; };
 		B05454731C19C62F0020CF1B /* MDKMessageButton.h in Headers */ = {isa = PBXBuildFile; fileRef = B05454711C19C62F0020CF1B /* MDKMessageButton.h */; };
 		B05454741C19C62F0020CF1B /* MDKMessageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B05454721C19C62F0020CF1B /* MDKMessageButton.m */; };
-		B05454781C19D5A30020CF1B /* MDKAbstractStyle_MDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B05454761C19D5A30020CF1B /* MDKAbstractStyle_MDK.h */; };
-		B05454791C19D5A30020CF1B /* MDKAbstractStyle_MDK.m in Sources */ = {isa = PBXBuildFile; fileRef = B05454771C19D5A30020CF1B /* MDKAbstractStyle_MDK.m */; };
 		B054547C1C19DB450020CF1B /* MDKMessageUIManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B054547A1C19DB450020CF1B /* MDKMessageUIManager.h */; };
 		B054547D1C19DB450020CF1B /* MDKMessageUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B054547B1C19DB450020CF1B /* MDKMessageUIManager.m */; };
 		B055B0DF1C2ADEC90093D147 /* MDKUISignature.h in Headers */ = {isa = PBXBuildFile; fileRef = B055B0DD1C2ADEC90093D147 /* MDKUISignature.h */; };
@@ -224,8 +192,6 @@
 		B09EDFB81C20798000161E8E /* Provider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D41B9DAFA0001860B5 /* Provider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0A52E561BA31EFF00EF6947 /* ControlSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A52E551BA31EFF00EF6947 /* ControlSlider.h */; };
 		B0A52E581BA31F0700EF6947 /* MDK_MDKMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A52E571BA31F0700EF6947 /* MDK_MDKMessageView.xib */; };
-		B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A52E5A1BA31F4F00EF6947 /* MDKSliderStyle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0A52E5D1BA31F4F00EF6947 /* MDKSliderStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A52E5B1BA31F4F00EF6947 /* MDKSliderStyle.m */; };
 		B0A74C7C1BA081F40002A66B /* MDKURL.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A74C781BA081F40002A66B /* MDKURL.h */; };
 		B0A74C7D1BA081F40002A66B /* MDKURL.m in Sources */ = {isa = PBXBuildFile; fileRef = B0A74C791BA081F40002A66B /* MDKURL.m */; };
 		B0A74C7E1BA081F40002A66B /* MDKOpenURLCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = B0A74C7A1BA081F40002A66B /* MDKOpenURLCommand.h */; };
@@ -242,8 +208,6 @@
 		B0AC32A51BECBA3F0016B6B4 /* mdkuiposition_map_btn_enable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC32A31BECBA3F0016B6B4 /* mdkuiposition_map_btn_enable.png */; };
 		B0AC32A81BECBA490016B6B4 /* mdkuiposition_navigation_btn_disable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC32A61BECBA490016B6B4 /* mdkuiposition_navigation_btn_disable.png */; };
 		B0AC32A91BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png in Resources */ = {isa = PBXBuildFile; fileRef = B0AC32A71BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png */; };
-		B0B54E121C188FAF008C37C4 /* UIView+Styleable.h in Headers */ = {isa = PBXBuildFile; fileRef = B0B54E101C188FAF008C37C4 /* UIView+Styleable.h */; };
-		B0B54E131C188FAF008C37C4 /* UIView+Styleable.m in Sources */ = {isa = PBXBuildFile; fileRef = B0B54E111C188FAF008C37C4 /* UIView+Styleable.m */; };
 		B0BEE1981C2472F40057EC53 /* MDKUISwitch.h in Headers */ = {isa = PBXBuildFile; fileRef = B0BEE1961C2472F40057EC53 /* MDKUISwitch.h */; };
 		B0BEE1991C2472F40057EC53 /* MDKUISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BEE1971C2472F40057EC53 /* MDKUISwitch.m */; };
 		B0BEE19B1C2474BB0057EC53 /* MDK_MDKUISwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0BEE19A1C2474BB0057EC53 /* MDK_MDKUISwitch.xib */; };
@@ -286,6 +250,43 @@
 		B0FFDA721B33FAFB00CA6E5E /* MDKControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA661B33FAFB00CA6E5E /* MDKControl.framework */; };
 		B0FFDA791B33FAFB00CA6E5E /* MDKControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B0FFDA781B33FAFB00CA6E5E /* MDKControlTests.m */; };
 		B0FFDA901B33FBB800CA6E5E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */; };
+		DE8BEEAF1C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEE961C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h */; };
+		DE8BEEB01C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEE971C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m */; };
+		DE8BEEB11C887715008CA965 /* MDKDoubleTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEE981C887715008CA965 /* MDKDoubleTextFieldStyle.h */; };
+		DE8BEEB21C887715008CA965 /* MDKDoubleTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEE991C887715008CA965 /* MDKDoubleTextFieldStyle.m */; };
+		DE8BEEB31C887715008CA965 /* MDKEmailTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEE9A1C887715008CA965 /* MDKEmailTextFieldStyle.h */; };
+		DE8BEEB41C887715008CA965 /* MDKEmailTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEE9B1C887715008CA965 /* MDKEmailTextFieldStyle.m */; };
+		DE8BEEB51C887715008CA965 /* MDKIntegerTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEE9C1C887715008CA965 /* MDKIntegerTextFieldStyle.h */; };
+		DE8BEEB61C887715008CA965 /* MDKIntegerTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEE9D1C887715008CA965 /* MDKIntegerTextFieldStyle.m */; };
+		DE8BEEB71C887715008CA965 /* MDKPhoneTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEE9E1C887715008CA965 /* MDKPhoneTextFieldStyle.h */; };
+		DE8BEEB81C887715008CA965 /* MDKPhoneTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEE9F1C887715008CA965 /* MDKPhoneTextFieldStyle.m */; };
+		DE8BEEB91C887715008CA965 /* MDKRegexTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEA01C887715008CA965 /* MDKRegexTextFieldStyle.h */; };
+		DE8BEEBA1C887715008CA965 /* MDKRegexTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEEA11C887715008CA965 /* MDKRegexTextFieldStyle.m */; };
+		DE8BEEBB1C887715008CA965 /* MDKRegexTextFieldStyle+Button.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEA21C887715008CA965 /* MDKRegexTextFieldStyle+Button.h */; };
+		DE8BEEBC1C887715008CA965 /* MDKRegexTextFieldStyle+Button.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEEA31C887715008CA965 /* MDKRegexTextFieldStyle+Button.m */; };
+		DE8BEEBD1C887715008CA965 /* MDKTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEA41C887715008CA965 /* MDKTextFieldStyle.h */; };
+		DE8BEEBE1C887715008CA965 /* MDKTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEEA51C887715008CA965 /* MDKTextFieldStyle.m */; };
+		DE8BEEBF1C887715008CA965 /* MDKTextFieldStyle+BackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEA61C887715008CA965 /* MDKTextFieldStyle+BackgroundView.h */; };
+		DE8BEEC01C887715008CA965 /* MDKTextFieldStyle+BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEEA71C887715008CA965 /* MDKTextFieldStyle+BackgroundView.m */; };
+		DE8BEEC11C887715008CA965 /* MDKTextFieldStyle+ErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEA81C887715008CA965 /* MDKTextFieldStyle+ErrorView.h */; };
+		DE8BEEC21C887715008CA965 /* MDKTextFieldStyle+ErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEEA91C887715008CA965 /* MDKTextFieldStyle+ErrorView.m */; };
+		DE8BEEC31C887715008CA965 /* MDKTextFieldStyle+TextLayouting.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEAA1C887715008CA965 /* MDKTextFieldStyle+TextLayouting.h */; };
+		DE8BEEC41C887715008CA965 /* MDKTextFieldStyle+TextLayouting.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEEAB1C887715008CA965 /* MDKTextFieldStyle+TextLayouting.m */; };
+		DE8BEEC51C887715008CA965 /* MDKUrlTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEAC1C887715008CA965 /* MDKUrlTextFieldStyle.h */; };
+		DE8BEEC61C887715008CA965 /* MDKUrlTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEEAD1C887715008CA965 /* MDKUrlTextFieldStyle.m */; };
+		DE8BEEC71C887715008CA965 /* StyleTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEAE1C887715008CA965 /* StyleTextField.h */; };
+		DE8BEECE1C887729008CA965 /* MDKDefaultStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEC81C887729008CA965 /* MDKDefaultStyle.h */; };
+		DE8BEECF1C887729008CA965 /* MDKDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEEC91C887729008CA965 /* MDKDefaultStyle.m */; };
+		DE8BEED01C887729008CA965 /* MDKStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEECA1C887729008CA965 /* MDKStyleProtocol.h */; };
+		DE8BEED11C887729008CA965 /* StyleCommons.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEECB1C887729008CA965 /* StyleCommons.h */; };
+		DE8BEED21C887729008CA965 /* UIView+Styleable.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEECC1C887729008CA965 /* UIView+Styleable.h */; };
+		DE8BEED31C887729008CA965 /* UIView+Styleable.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEECD1C887729008CA965 /* UIView+Styleable.m */; };
+		DE8BEED71C887738008CA965 /* MDKSliderStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEED41C887738008CA965 /* MDKSliderStyle.h */; };
+		DE8BEED81C887738008CA965 /* MDKSliderStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEED51C887738008CA965 /* MDKSliderStyle.m */; };
+		DE8BEED91C887738008CA965 /* StyleSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEED61C887738008CA965 /* StyleSlider.h */; };
+		DE8BEEDC1C88774C008CA965 /* MDKAbstractStyle_MDK.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEDA1C88774C008CA965 /* MDKAbstractStyle_MDK.h */; };
+		DE8BEEDD1C88774C008CA965 /* MDKAbstractStyle_MDK.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEEDB1C88774C008CA965 /* MDKAbstractStyle_MDK.m */; };
+		DE8BEEDF1C887756008CA965 /* Style.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEEDE1C887756008CA965 /* Style.h */; };
 		F913AC4E1C05BE47001293FD /* MDKDelegateEnumList.h in Headers */ = {isa = PBXBuildFile; fileRef = F913AC4C1C05BE47001293FD /* MDKDelegateEnumList.h */; };
 		F913AC4F1C05BE47001293FD /* MDKDelegateEnumList.m in Sources */ = {isa = PBXBuildFile; fileRef = F913AC4D1C05BE47001293FD /* MDKDelegateEnumList.m */; };
 		F919715A1BE8B84600B94F8A /* MDKUIPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = F91971581BE8B84600B94F8A /* MDKUIPosition.h */; };
@@ -394,41 +395,11 @@
 		B011AB7A1C28388200C7BA14 /* MDKUINumberPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUINumberPicker.m; sourceTree = "<group>"; };
 		B011AB7D1C283B2100C7BA14 /* ControlNumberPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlNumberPicker.h; sourceTree = "<group>"; };
 		B011AB7E1C283BAE00C7BA14 /* MDK_MDKUINumberPicker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKUINumberPicker.xib; sourceTree = "<group>"; };
-		B018BE851BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKBarCodeScanTextFieldStyle.m; sourceTree = "<group>"; };
-		B018BE861BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBarCodeScanTextFieldStyle.h; sourceTree = "<group>"; };
-		B018BE871BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKDoubleTextFieldStyle.h; sourceTree = "<group>"; };
-		B018BE881BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKDoubleTextFieldStyle.m; sourceTree = "<group>"; };
-		B018BE891BA01F3300EF1D87 /* MDKEmailTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKEmailTextFieldStyle.h; sourceTree = "<group>"; };
-		B018BE8A1BA01F3300EF1D87 /* MDKEmailTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKEmailTextFieldStyle.m; sourceTree = "<group>"; };
-		B018BE8B1BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKIntegerTextFieldStyle.h; sourceTree = "<group>"; };
-		B018BE8C1BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKIntegerTextFieldStyle.m; sourceTree = "<group>"; };
-		B018BE8D1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKPhoneTextFieldStyle.h; sourceTree = "<group>"; };
-		B018BE8E1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKPhoneTextFieldStyle.m; sourceTree = "<group>"; };
-		B018BE8F1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUrlTextFieldStyle.h; sourceTree = "<group>"; };
-		B018BE901BA01F3300EF1D87 /* MDKUrlTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUrlTextFieldStyle.m; sourceTree = "<group>"; };
 		B018BE9D1BA02C6000EF1D87 /* MDKSendEmailCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSendEmailCommand.h; sourceTree = "<group>"; };
 		B018BE9E1BA02C6000EF1D87 /* MDKSendEmailCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSendEmailCommand.m; sourceTree = "<group>"; };
 		B021169C1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIFixedListDataProtocol.h; sourceTree = "<group>"; };
 		B021169E1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIFixedListBaseDelegate.h; sourceTree = "<group>"; };
 		B021169F1BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIFixedListBaseDelegate.m; sourceTree = "<group>"; };
-		B021568A1B9DAC6E001860B5 /* MDKDefaultStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKDefaultStyle.h; sourceTree = "<group>"; };
-		B021568B1B9DAC6E001860B5 /* MDKDefaultStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKDefaultStyle.m; sourceTree = "<group>"; };
-		B021568C1B9DAC6E001860B5 /* MDKStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKStyleProtocol.h; sourceTree = "<group>"; };
-		B021568D1B9DAC6E001860B5 /* StyleCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleCommons.h; sourceTree = "<group>"; };
-		B02156941B9DAC6E001860B5 /* Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Style.h; sourceTree = "<group>"; };
-		B02156A01B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDKRegexTextFieldStyle+Button.h"; sourceTree = "<group>"; };
-		B02156A11B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MDKRegexTextFieldStyle+Button.m"; sourceTree = "<group>"; };
-		B02156A21B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKRegexTextFieldStyle.h; sourceTree = "<group>"; };
-		B02156A31B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKRegexTextFieldStyle.m; sourceTree = "<group>"; };
-		B02156A41B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDKTextFieldStyle+BackgroundView.h"; sourceTree = "<group>"; };
-		B02156A51B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MDKTextFieldStyle+BackgroundView.m"; sourceTree = "<group>"; };
-		B02156A61B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDKTextFieldStyle+ErrorView.h"; sourceTree = "<group>"; };
-		B02156A71B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MDKTextFieldStyle+ErrorView.m"; sourceTree = "<group>"; };
-		B02156A81B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MDKTextFieldStyle+TextLayouting.h"; sourceTree = "<group>"; };
-		B02156A91B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MDKTextFieldStyle+TextLayouting.m"; sourceTree = "<group>"; };
-		B02156AA1B9DAC6E001860B5 /* MDKTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKTextFieldStyle.h; sourceTree = "<group>"; };
-		B02156AB1B9DAC6E001860B5 /* MDKTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKTextFieldStyle.m; sourceTree = "<group>"; };
-		B02156AC1B9DAC6E001860B5 /* StyleTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleTextField.h; sourceTree = "<group>"; };
 		B02156DA1B9DAD59001860B5 /* MDKBackgroundViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKBackgroundViewProtocol.h; sourceTree = "<group>"; };
 		B02156DB1B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlAssociatedLabelProtocol.h; sourceTree = "<group>"; };
 		B02156DC1B9DAD59001860B5 /* MDKControlAttributesProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKControlAttributesProtocol.h; sourceTree = "<group>"; };
@@ -529,8 +500,6 @@
 		B05454611C19C1160020CF1B /* UIView+MDKTooltips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MDKTooltips.m"; sourceTree = "<group>"; };
 		B05454711C19C62F0020CF1B /* MDKMessageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKMessageButton.h; sourceTree = "<group>"; };
 		B05454721C19C62F0020CF1B /* MDKMessageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKMessageButton.m; sourceTree = "<group>"; };
-		B05454761C19D5A30020CF1B /* MDKAbstractStyle_MDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKAbstractStyle_MDK.h; sourceTree = "<group>"; };
-		B05454771C19D5A30020CF1B /* MDKAbstractStyle_MDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKAbstractStyle_MDK.m; sourceTree = "<group>"; };
 		B054547A1C19DB450020CF1B /* MDKMessageUIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKMessageUIManager.h; sourceTree = "<group>"; };
 		B054547B1C19DB450020CF1B /* MDKMessageUIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKMessageUIManager.m; sourceTree = "<group>"; };
 		B055B0D81C2ADEA70093D147 /* ControlSignature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlSignature.h; sourceTree = "<group>"; };
@@ -615,9 +584,6 @@
 		B09CE7DA1BA17C220017CCA2 /* MDKIntegerFieldValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKIntegerFieldValidator.m; sourceTree = "<group>"; };
 		B0A52E551BA31EFF00EF6947 /* ControlSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlSlider.h; sourceTree = "<group>"; };
 		B0A52E571BA31F0700EF6947 /* MDK_MDKMessageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDK_MDKMessageView.xib; sourceTree = "<group>"; };
-		B0A52E5A1BA31F4F00EF6947 /* MDKSliderStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSliderStyle.h; sourceTree = "<group>"; };
-		B0A52E5B1BA31F4F00EF6947 /* MDKSliderStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSliderStyle.m; sourceTree = "<group>"; };
-		B0A52E5E1BA3227E00EF6947 /* StyleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleSlider.h; sourceTree = "<group>"; };
 		B0A74C781BA081F40002A66B /* MDKURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKURL.h; sourceTree = "<group>"; };
 		B0A74C791BA081F40002A66B /* MDKURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKURL.m; sourceTree = "<group>"; };
 		B0A74C7A1BA081F40002A66B /* MDKOpenURLCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKOpenURLCommand.h; sourceTree = "<group>"; };
@@ -634,8 +600,6 @@
 		B0AC32A31BECBA3F0016B6B4 /* mdkuiposition_map_btn_enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_map_btn_enable.png; path = position/map/mdkuiposition_map_btn_enable.png; sourceTree = "<group>"; };
 		B0AC32A61BECBA490016B6B4 /* mdkuiposition_navigation_btn_disable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_navigation_btn_disable.png; path = position/navigation/mdkuiposition_navigation_btn_disable.png; sourceTree = "<group>"; };
 		B0AC32A71BECBA490016B6B4 /* mdkuiposition_navigation_btn_enable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mdkuiposition_navigation_btn_enable.png; path = position/navigation/mdkuiposition_navigation_btn_enable.png; sourceTree = "<group>"; };
-		B0B54E101C188FAF008C37C4 /* UIView+Styleable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Styleable.h"; sourceTree = "<group>"; };
-		B0B54E111C188FAF008C37C4 /* UIView+Styleable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Styleable.m"; sourceTree = "<group>"; };
 		B0BEE1951C2472BE0057EC53 /* ControlSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlSwitch.h; sourceTree = "<group>"; };
 		B0BEE1961C2472F40057EC53 /* MDKUISwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUISwitch.h; sourceTree = "<group>"; };
 		B0BEE1971C2472F40057EC53 /* MDKUISwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUISwitch.m; sourceTree = "<group>"; };
@@ -687,6 +651,43 @@
 		B0FFDA8F1B33FBB800CA6E5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0FFDA911B33FBEB00CA6E5E /* MDKControl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MDKControl-Prefix.pch"; sourceTree = "<group>"; };
 		C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDKControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDKControl/Pods-MDKControl.debug.xcconfig"; sourceTree = "<group>"; };
+		DE8BEE961C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKBarCodeScanTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKBarCodeScanTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEE971C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKBarCodeScanTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKBarCodeScanTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEE981C887715008CA965 /* MDKDoubleTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKDoubleTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKDoubleTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEE991C887715008CA965 /* MDKDoubleTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKDoubleTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKDoubleTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEE9A1C887715008CA965 /* MDKEmailTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKEmailTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKEmailTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEE9B1C887715008CA965 /* MDKEmailTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKEmailTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKEmailTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEE9C1C887715008CA965 /* MDKIntegerTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKIntegerTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKIntegerTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEE9D1C887715008CA965 /* MDKIntegerTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKIntegerTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKIntegerTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEE9E1C887715008CA965 /* MDKPhoneTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKPhoneTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKPhoneTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEE9F1C887715008CA965 /* MDKPhoneTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKPhoneTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKPhoneTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEEA01C887715008CA965 /* MDKRegexTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKRegexTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKRegexTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEEA11C887715008CA965 /* MDKRegexTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKRegexTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKRegexTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEEA21C887715008CA965 /* MDKRegexTextFieldStyle+Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MDKRegexTextFieldStyle+Button.h"; path = "MDKControl/message/style/textfield/MDKRegexTextFieldStyle+Button.h"; sourceTree = SOURCE_ROOT; };
+		DE8BEEA31C887715008CA965 /* MDKRegexTextFieldStyle+Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MDKRegexTextFieldStyle+Button.m"; path = "MDKControl/message/style/textfield/MDKRegexTextFieldStyle+Button.m"; sourceTree = SOURCE_ROOT; };
+		DE8BEEA41C887715008CA965 /* MDKTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEEA51C887715008CA965 /* MDKTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEEA61C887715008CA965 /* MDKTextFieldStyle+BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MDKTextFieldStyle+BackgroundView.h"; path = "MDKControl/message/style/textfield/MDKTextFieldStyle+BackgroundView.h"; sourceTree = SOURCE_ROOT; };
+		DE8BEEA71C887715008CA965 /* MDKTextFieldStyle+BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MDKTextFieldStyle+BackgroundView.m"; path = "MDKControl/message/style/textfield/MDKTextFieldStyle+BackgroundView.m"; sourceTree = SOURCE_ROOT; };
+		DE8BEEA81C887715008CA965 /* MDKTextFieldStyle+ErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MDKTextFieldStyle+ErrorView.h"; path = "MDKControl/message/style/textfield/MDKTextFieldStyle+ErrorView.h"; sourceTree = SOURCE_ROOT; };
+		DE8BEEA91C887715008CA965 /* MDKTextFieldStyle+ErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MDKTextFieldStyle+ErrorView.m"; path = "MDKControl/message/style/textfield/MDKTextFieldStyle+ErrorView.m"; sourceTree = SOURCE_ROOT; };
+		DE8BEEAA1C887715008CA965 /* MDKTextFieldStyle+TextLayouting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MDKTextFieldStyle+TextLayouting.h"; path = "MDKControl/message/style/textfield/MDKTextFieldStyle+TextLayouting.h"; sourceTree = SOURCE_ROOT; };
+		DE8BEEAB1C887715008CA965 /* MDKTextFieldStyle+TextLayouting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MDKTextFieldStyle+TextLayouting.m"; path = "MDKControl/message/style/textfield/MDKTextFieldStyle+TextLayouting.m"; sourceTree = SOURCE_ROOT; };
+		DE8BEEAC1C887715008CA965 /* MDKUrlTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUrlTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKUrlTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEEAD1C887715008CA965 /* MDKUrlTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKUrlTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKUrlTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEEAE1C887715008CA965 /* StyleTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyleTextField.h; path = MDKControl/message/style/textfield/StyleTextField.h; sourceTree = SOURCE_ROOT; };
+		DE8BEEC81C887729008CA965 /* MDKDefaultStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKDefaultStyle.h; path = MDKControl/message/style/commons/MDKDefaultStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEEC91C887729008CA965 /* MDKDefaultStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKDefaultStyle.m; path = MDKControl/message/style/commons/MDKDefaultStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEECA1C887729008CA965 /* MDKStyleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKStyleProtocol.h; path = MDKControl/message/style/commons/MDKStyleProtocol.h; sourceTree = SOURCE_ROOT; };
+		DE8BEECB1C887729008CA965 /* StyleCommons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyleCommons.h; path = MDKControl/message/style/commons/StyleCommons.h; sourceTree = SOURCE_ROOT; };
+		DE8BEECC1C887729008CA965 /* UIView+Styleable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Styleable.h"; path = "MDKControl/message/style/commons/UIView+Styleable.h"; sourceTree = SOURCE_ROOT; };
+		DE8BEECD1C887729008CA965 /* UIView+Styleable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Styleable.m"; path = "MDKControl/message/style/commons/UIView+Styleable.m"; sourceTree = SOURCE_ROOT; };
+		DE8BEED41C887738008CA965 /* MDKSliderStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKSliderStyle.h; path = MDKControl/message/style/slider/MDKSliderStyle.h; sourceTree = SOURCE_ROOT; };
+		DE8BEED51C887738008CA965 /* MDKSliderStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKSliderStyle.m; path = MDKControl/message/style/slider/MDKSliderStyle.m; sourceTree = SOURCE_ROOT; };
+		DE8BEED61C887738008CA965 /* StyleSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyleSlider.h; path = MDKControl/message/style/slider/StyleSlider.h; sourceTree = SOURCE_ROOT; };
+		DE8BEEDA1C88774C008CA965 /* MDKAbstractStyle_MDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKAbstractStyle_MDK.h; path = MDKControl/message/style/abstract/MDKAbstractStyle_MDK.h; sourceTree = SOURCE_ROOT; };
+		DE8BEEDB1C88774C008CA965 /* MDKAbstractStyle_MDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKAbstractStyle_MDK.m; path = MDKControl/message/style/abstract/MDKAbstractStyle_MDK.m; sourceTree = SOURCE_ROOT; };
+		DE8BEEDE1C887756008CA965 /* Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Style.h; path = MDKControl/message/style/Style.h; sourceTree = SOURCE_ROOT; };
 		F913AC4C1C05BE47001293FD /* MDKDelegateEnumList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKDelegateEnumList.h; path = list/common/delegate/MDKDelegateEnumList.h; sourceTree = "<group>"; };
 		F913AC4D1C05BE47001293FD /* MDKDelegateEnumList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKDelegateEnumList.m; path = list/common/delegate/MDKDelegateEnumList.m; sourceTree = "<group>"; };
 		F91971581BE8B84600B94F8A /* MDKUIPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKUIPosition.h; path = position/MDKUIPosition.h; sourceTree = "<group>"; };
@@ -839,10 +840,10 @@
 		B02156881B9DAC6E001860B5 /* style */ = {
 			isa = PBXGroup;
 			children = (
+				DE8BEEDE1C887756008CA965 /* Style.h */,
 				B05454751C19D5790020CF1B /* abstract */,
 				B0A52E591BA31F3C00EF6947 /* slider */,
 				B02156891B9DAC6E001860B5 /* commons */,
-				B02156941B9DAC6E001860B5 /* Style.h */,
 				B02156951B9DAC6E001860B5 /* textfield */,
 			);
 			name = style;
@@ -852,12 +853,12 @@
 		B02156891B9DAC6E001860B5 /* commons */ = {
 			isa = PBXGroup;
 			children = (
-				B0B54E101C188FAF008C37C4 /* UIView+Styleable.h */,
-				B0B54E111C188FAF008C37C4 /* UIView+Styleable.m */,
-				B021568A1B9DAC6E001860B5 /* MDKDefaultStyle.h */,
-				B021568B1B9DAC6E001860B5 /* MDKDefaultStyle.m */,
-				B021568C1B9DAC6E001860B5 /* MDKStyleProtocol.h */,
-				B021568D1B9DAC6E001860B5 /* StyleCommons.h */,
+				DE8BEEC81C887729008CA965 /* MDKDefaultStyle.h */,
+				DE8BEEC91C887729008CA965 /* MDKDefaultStyle.m */,
+				DE8BEECA1C887729008CA965 /* MDKStyleProtocol.h */,
+				DE8BEECB1C887729008CA965 /* StyleCommons.h */,
+				DE8BEECC1C887729008CA965 /* UIView+Styleable.h */,
+				DE8BEECD1C887729008CA965 /* UIView+Styleable.m */,
 			);
 			path = commons;
 			sourceTree = "<group>";
@@ -865,31 +866,31 @@
 		B02156951B9DAC6E001860B5 /* textfield */ = {
 			isa = PBXGroup;
 			children = (
-				B018BE851BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m */,
-				B018BE861BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h */,
-				B018BE871BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h */,
-				B018BE881BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.m */,
-				B018BE891BA01F3300EF1D87 /* MDKEmailTextFieldStyle.h */,
-				B018BE8A1BA01F3300EF1D87 /* MDKEmailTextFieldStyle.m */,
-				B018BE8B1BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.h */,
-				B018BE8C1BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.m */,
-				B018BE8D1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.h */,
-				B018BE8E1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.m */,
-				B018BE8F1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.h */,
-				B018BE901BA01F3300EF1D87 /* MDKUrlTextFieldStyle.m */,
-				B02156A01B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h */,
-				B02156A11B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m */,
-				B02156A21B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h */,
-				B02156A31B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m */,
-				B02156A41B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.h */,
-				B02156A51B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.m */,
-				B02156A61B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h */,
-				B02156A71B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.m */,
-				B02156A81B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h */,
-				B02156A91B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m */,
-				B02156AA1B9DAC6E001860B5 /* MDKTextFieldStyle.h */,
-				B02156AB1B9DAC6E001860B5 /* MDKTextFieldStyle.m */,
-				B02156AC1B9DAC6E001860B5 /* StyleTextField.h */,
+				DE8BEE961C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h */,
+				DE8BEE971C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m */,
+				DE8BEE981C887715008CA965 /* MDKDoubleTextFieldStyle.h */,
+				DE8BEE991C887715008CA965 /* MDKDoubleTextFieldStyle.m */,
+				DE8BEE9A1C887715008CA965 /* MDKEmailTextFieldStyle.h */,
+				DE8BEE9B1C887715008CA965 /* MDKEmailTextFieldStyle.m */,
+				DE8BEE9C1C887715008CA965 /* MDKIntegerTextFieldStyle.h */,
+				DE8BEE9D1C887715008CA965 /* MDKIntegerTextFieldStyle.m */,
+				DE8BEE9E1C887715008CA965 /* MDKPhoneTextFieldStyle.h */,
+				DE8BEE9F1C887715008CA965 /* MDKPhoneTextFieldStyle.m */,
+				DE8BEEA01C887715008CA965 /* MDKRegexTextFieldStyle.h */,
+				DE8BEEA11C887715008CA965 /* MDKRegexTextFieldStyle.m */,
+				DE8BEEA21C887715008CA965 /* MDKRegexTextFieldStyle+Button.h */,
+				DE8BEEA31C887715008CA965 /* MDKRegexTextFieldStyle+Button.m */,
+				DE8BEEA41C887715008CA965 /* MDKTextFieldStyle.h */,
+				DE8BEEA51C887715008CA965 /* MDKTextFieldStyle.m */,
+				DE8BEEA61C887715008CA965 /* MDKTextFieldStyle+BackgroundView.h */,
+				DE8BEEA71C887715008CA965 /* MDKTextFieldStyle+BackgroundView.m */,
+				DE8BEEA81C887715008CA965 /* MDKTextFieldStyle+ErrorView.h */,
+				DE8BEEA91C887715008CA965 /* MDKTextFieldStyle+ErrorView.m */,
+				DE8BEEAA1C887715008CA965 /* MDKTextFieldStyle+TextLayouting.h */,
+				DE8BEEAB1C887715008CA965 /* MDKTextFieldStyle+TextLayouting.m */,
+				DE8BEEAC1C887715008CA965 /* MDKUrlTextFieldStyle.h */,
+				DE8BEEAD1C887715008CA965 /* MDKUrlTextFieldStyle.m */,
+				DE8BEEAE1C887715008CA965 /* StyleTextField.h */,
 			);
 			path = textfield;
 			sourceTree = "<group>";
@@ -1124,8 +1125,8 @@
 		B05454751C19D5790020CF1B /* abstract */ = {
 			isa = PBXGroup;
 			children = (
-				B05454761C19D5A30020CF1B /* MDKAbstractStyle_MDK.h */,
-				B05454771C19D5A30020CF1B /* MDKAbstractStyle_MDK.m */,
+				DE8BEEDA1C88774C008CA965 /* MDKAbstractStyle_MDK.h */,
+				DE8BEEDB1C88774C008CA965 /* MDKAbstractStyle_MDK.m */,
 			);
 			path = abstract;
 			sourceTree = "<group>";
@@ -1298,9 +1299,9 @@
 		B0A52E591BA31F3C00EF6947 /* slider */ = {
 			isa = PBXGroup;
 			children = (
-				B0A52E5A1BA31F4F00EF6947 /* MDKSliderStyle.h */,
-				B0A52E5B1BA31F4F00EF6947 /* MDKSliderStyle.m */,
-				B0A52E5E1BA3227E00EF6947 /* StyleSlider.h */,
+				DE8BEED41C887738008CA965 /* MDKSliderStyle.h */,
+				DE8BEED51C887738008CA965 /* MDKSliderStyle.m */,
+				DE8BEED61C887738008CA965 /* StyleSlider.h */,
 			);
 			path = slider;
 			sourceTree = "<group>";
@@ -1809,14 +1810,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */,
-				B0A52E5C1BA31F4F00EF6947 /* MDKSliderStyle.h in Headers */,
 				B08C193B1B9DE9A500D6F93A /* ControlExtension.h in Headers */,
+				DE8BEED91C887738008CA965 /* StyleSlider.h in Headers */,
 				F95BF3D11BF0DA2D002F2EE7 /* MDKHelperImage.h in Headers */,
 				B09EDFB81C20798000161E8E /* Provider.h in Headers */,
 				B05454621C19C1160020CF1B /* MDKMessageView.h in Headers */,
 				F965F9351BE7BF3B0060A93D /* ControlEnumImage.h in Headers */,
 				B05454651C19C1160020CF1B /* MDKSequentialTooltipManager.h in Headers */,
 				F93DAC271C0C5BD80067E6AB /* MDKUIPickerListDataProtocol.h in Headers */,
+				DE8BEECE1C887729008CA965 /* MDKDefaultStyle.h in Headers */,
 				F913AC4E1C05BE47001293FD /* MDKDelegateEnumList.h in Headers */,
 				B08C19351B9DE9A500D6F93A /* MDKControlDelegate.h in Headers */,
 				B055B0E71C2AE0510093D147 /* MDKSignatureDrawing.h in Headers */,
@@ -1827,23 +1829,23 @@
 				F9C4C90A1C1047D000C7CA66 /* MDKUIDisplayController.h in Headers */,
 				F924E8D61BEA4473006119EF /* MDKManagerPosition.h in Headers */,
 				B062A11F1C19E803006B742A /* MDKMaxLengthInfo.h in Headers */,
-				B02156CF1B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.h in Headers */,
 				B08C19461B9DE9A500D6F93A /* MDKTextField.h in Headers */,
+				DE8BEEB31C887715008CA965 /* MDKEmailTextFieldStyle.h in Headers */,
+				DE8BEED11C887729008CA965 /* StyleCommons.h in Headers */,
+				DE8BEEC11C887715008CA965 /* MDKTextFieldStyle+ErrorView.h in Headers */,
 				B08C19371B9DE9A500D6F93A /* MDKControlProtocol.h in Headers */,
 				F9C4C9101C104B5900C7CA66 /* MediaDisplayTransition.h in Headers */,
+				DE8BEEBD1C887715008CA965 /* MDKTextFieldStyle.h in Headers */,
 				B0F533241C206ECA00CC38CF /* MDKBarCodeScannerDelegate.h in Headers */,
 				F919715D1BE8C5BB00B94F8A /* ControlPosition.h in Headers */,
-				B018BE921BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.h in Headers */,
 				F994B58F1BFC7C9A0055C16C /* MDKUIPickerList.h in Headers */,
 				B0F533201C206E6B00CC38CF /* MDKBarCodeScanViewController.h in Headers */,
 				B08C18F21B9DD1AC00D6F93A /* MDKConstants.h in Headers */,
-				B018BE971BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.h in Headers */,
 				B05C93631B9F3B6D00487CFB /* MDKEmailTextField.h in Headers */,
 				B0A74C821BA081FC0002A66B /* MDKUrlFieldValidator.h in Headers */,
 				B0FFB6BE1BA1CD4800258B9D /* MDKNumberConverter.h in Headers */,
 				B0308D521B9F1673000817D3 /* MDKControlCustomStyleProtocol.h in Headers */,
 				B0A74C7E1BA081F40002A66B /* MDKOpenURLCommand.h in Headers */,
-				B018BE931BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.h in Headers */,
 				F97546EC1BF4E06E00B2E48B /* ControlEnumList.h in Headers */,
 				B054546A1C19C1160020CF1B /* MDKTooltipView.h in Headers */,
 				B05454641C19C1160020CF1B /* MessageView.h in Headers */,
@@ -1856,6 +1858,7 @@
 				B054541D1C198D8A0020CF1B /* MDKInvalidEmailValueUIValidationError.h in Headers */,
 				B054546C1C19C1160020CF1B /* MessageViewTooltip.h in Headers */,
 				B02156E41B9DAD59001860B5 /* MDKControlAssociatedLabelProtocol.h in Headers */,
+				DE8BEEBB1C887715008CA965 /* MDKRegexTextFieldStyle+Button.h in Headers */,
 				B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */,
 				B0BEE1981C2472F40057EC53 /* MDKUISwitch.h in Headers */,
 				F919715A1BE8B84600B94F8A /* MDKUIPosition.h in Headers */,
@@ -1863,6 +1866,7 @@
 				F9E3B0081BF1F0060042CFD4 /* ControlWebView.h in Headers */,
 				F965F9391BE7BF4F0060A93D /* MDKEnumHelperProtocol.h in Headers */,
 				B08C19331B9DE9A500D6F93A /* MDKBaseControl.h in Headers */,
+				DE8BEEB51C887715008CA965 /* MDKIntegerTextFieldStyle.h in Headers */,
 				B05454461C1990590020CF1B /* MDKMessageProtocol.h in Headers */,
 				F95BF3C01BF099E8002F2EE7 /* MDKUIMedia.h in Headers */,
 				B03B7FD31C29AA7A00CCA9AD /* MDKUIScanner.h in Headers */,
@@ -1871,18 +1875,19 @@
 				B021169D1BE8C55600EAD073 /* MDKUIFixedListDataProtocol.h in Headers */,
 				B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */,
 				B054542B1C198D8A0020CF1B /* MDKTooLongStringUIValidationError.h in Headers */,
-				B02156D31B9DAC6E001860B5 /* StyleTextField.h in Headers */,
+				DE8BEEC51C887715008CA965 /* MDKUrlTextFieldStyle.h in Headers */,
 				B054542D1C198D8A0020CF1B /* MDKTooShortListUIValidationError.h in Headers */,
 				B00C4DF21BA06B4C003CBB16 /* MDKCreateEmailViewControllerDelegate.h in Headers */,
 				B0C18B481BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.h in Headers */,
 				B054546D1C19C1160020CF1B /* UILabel+MDKTooltips.h in Headers */,
 				B021575C1B9DAEEA001860B5 /* MDKFieldValidatorHandler.h in Headers */,
-				B02156B51B9DAC6E001860B5 /* MDKStyleProtocol.h in Headers */,
-				B018BE991BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.h in Headers */,
+				DE8BEEDC1C88774C008CA965 /* MDKAbstractStyle_MDK.h in Headers */,
 				B00C4DFE1BA07C45003CBB16 /* MDKCallPhoneNumberCommand.h in Headers */,
+				DE8BEEB11C887715008CA965 /* MDKDoubleTextFieldStyle.h in Headers */,
 				B05454291C198D8A0020CF1B /* MDKTooLongListUIValidationError.h in Headers */,
 				B00C4E081BA07D3D003CBB16 /* MDKPhoneFieldValidator.h in Headers */,
 				B02156E61B9DAD59001860B5 /* MDKControlDataProtocol.h in Headers */,
+				DE8BEED71C887738008CA965 /* MDKSliderStyle.h in Headers */,
 				B08C18FB1B9DDC5700D6F93A /* MDKControlEventsDescriptor.h in Headers */,
 				B02158091B9DB27D001860B5 /* MDKAlertView.h in Headers */,
 				B05454671C19C1160020CF1B /* MDKTooltipManager.h in Headers */,
@@ -1893,33 +1898,34 @@
 				F965F93E1BE7BF7A0060A93D /* Helper.h in Headers */,
 				B02156E71B9DAD59001860B5 /* MDKControlMessageProtocol.h in Headers */,
 				B08C19401B9DE9A500D6F93A /* MDKTextFieldExtension.h in Headers */,
+				DE8BEEB71C887715008CA965 /* MDKPhoneTextFieldStyle.h in Headers */,
 				B05454211C198D8A0020CF1B /* MDKInvalidPhoneNumberValueUIValidationError.h in Headers */,
 				B03EFBFA1BEBB3F1002DAB18 /* MDKBarCodeScanTextField.h in Headers */,
-				B02156BC1B9DAC6E001860B5 /* Style.h in Headers */,
-				B018BE951BA01F3300EF1D87 /* MDKEmailTextFieldStyle.h in Headers */,
 				B09CE7DB1BA17C220017CCA2 /* MDKDoubleFieldValidator.h in Headers */,
 				B0261E2F1C22AA2D00685D1A /* MDKPickMediaCommand.h in Headers */,
+				DE8BEEDF1C887756008CA965 /* Style.h in Headers */,
 				B055B0DF1C2ADEC90093D147 /* MDKUISignature.h in Headers */,
+				DE8BEEB91C887715008CA965 /* MDKRegexTextFieldStyle.h in Headers */,
 				B0261E3B1C231F1B00685D1A /* MDKLocalizedString.h in Headers */,
 				F9D267401BFA186400B55A11 /* MDKListCell.h in Headers */,
 				F965F9361BE7BF3B0060A93D /* MDKUIEnumImage.h in Headers */,
 				B05454491C1991390020CF1B /* MDKCanNotPerformActionWarn.h in Headers */,
 				B05C936C1B9F3CA300487CFB /* UIView+ViewController.h in Headers */,
 				B05A86781C3A7ECF00C73113 /* MDKSignaturePopupView.h in Headers */,
-				B018BE9B1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.h in Headers */,
 				B05A86741C3A6C0900C73113 /* MDKSignatureView.h in Headers */,
 				B02156EA1B9DAD59001860B5 /* MDKMessageViewProtocol.h in Headers */,
+				DE8BEEC71C887715008CA965 /* StyleTextField.h in Headers */,
+				DE8BEED01C887729008CA965 /* MDKStyleProtocol.h in Headers */,
 				B09CE7DD1BA17C220017CCA2 /* MDKIntegerFieldValidator.h in Headers */,
 				B02116A01BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.h in Headers */,
 				B054544F1C19940E0020CF1B /* MDKMessageWarn.h in Headers */,
 				B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */,
+				DE8BEED21C887729008CA965 /* UIView+Styleable.h in Headers */,
 				B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */,
-				B05454781C19D5A30020CF1B /* MDKAbstractStyle_MDK.h in Headers */,
-				B02156D11B9DAC6E001860B5 /* MDKTextFieldStyle.h in Headers */,
 				B03AD4791BC3CDFF00A96F5D /* MDKUIDateTime.h in Headers */,
+				DE8BEEBF1C887715008CA965 /* MDKTextFieldStyle+BackgroundView.h in Headers */,
 				B05454731C19C62F0020CF1B /* MDKMessageButton.h in Headers */,
 				B05454271C198D8A0020CF1B /* MDKNoMatchingValueUIValidationError.h in Headers */,
-				B02156B31B9DAC6E001860B5 /* MDKDefaultStyle.h in Headers */,
 				F93DAC1F1C0C5BB40067E6AB /* MDKPickerItemBaseDelegate.h in Headers */,
 				B021575E1B9DAEEA001860B5 /* MDKFieldValidatorProtocol.h in Headers */,
 				F97546E31BF4E05700B2E48B /* ControlList.h in Headers */,
@@ -1935,20 +1941,20 @@
 				B062A11B1C19E5BC006B742A /* MDKMinLengthInfo.h in Headers */,
 				B054541F1C198D8A0020CF1B /* MDKInvalidIntegerValueUIValidationError.h in Headers */,
 				B06120251BD9336F0012F82F /* MDKUIFixedList.h in Headers */,
-				B02156C71B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.h in Headers */,
 				B05C93661B9F3BF900487CFB /* MDKEmail.h in Headers */,
 				B0FFDA6C1B33FAFB00CA6E5E /* MDKControl.h in Headers */,
 				F9E3B0051BF1EFD20042CFD4 /* MDKUIWebView.h in Headers */,
 				B0A74C7C1BA081F40002A66B /* MDKURL.h in Headers */,
 				B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */,
-				B02156CD1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.h in Headers */,
 				B0F5331B1C206D8C00CC38CF /* MDKOpenScanCommand.h in Headers */,
+				DE8BEEAF1C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h in Headers */,
 				B021580B1B9DB27D001860B5 /* MDKAlertViewManager.h in Headers */,
 				B02157D91B9DAFA0001860B5 /* MDKSimpleComponentProvider.h in Headers */,
 				B08C19021B9DE37300D6F93A /* MDKTags.h in Headers */,
 				B08C19501B9DE9A500D6F93A /* MDKRegexTextField.h in Headers */,
 				B05454231C198D8A0020CF1B /* MDKInvalidUrlValueUIValidationError.h in Headers */,
 				B08C193C1B9DE9A500D6F93A /* MDKBaseTextExtensionProtocol.h in Headers */,
+				DE8BEEC31C887715008CA965 /* MDKTextFieldStyle+TextLayouting.h in Headers */,
 				B05454251C198D8A0020CF1B /* MDKMandatoryFieldUIValidationError.h in Headers */,
 				B011AB7B1C28388200C7BA14 /* MDKUINumberPicker.h in Headers */,
 				B0FFB6B91BA1CD4800258B9D /* MDKConverterProtocol.h in Headers */,
@@ -1957,11 +1963,8 @@
 				F9D267351BFA180400B55A11 /* MDKUIList.h in Headers */,
 				B08C193A1B9DE9A500D6F93A /* Control.h in Headers */,
 				F965F93F1BE7BF7A0060A93D /* MDKHelperType.h in Headers */,
-				B02156B61B9DAC6E001860B5 /* StyleCommons.h in Headers */,
-				B02156CB1B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.h in Headers */,
 				B054546F1C19C1160020CF1B /* UIView+MDKTooltips.h in Headers */,
 				B08C195A1B9DEEED00D6F93A /* MDKLabel.h in Headers */,
-				B0B54E121C188FAF008C37C4 /* UIView+Styleable.h in Headers */,
 				B054547C1C19DB450020CF1B /* MDKMessageUIManager.h in Headers */,
 				B0A74C871BA082210002A66B /* MDKUrlTextField.h in Headers */,
 				B0FFB6C01BA1CD4800258B9D /* MDKStringConverter.h in Headers */,
@@ -1970,7 +1973,6 @@
 				B02157651B9DAEEA001860B5 /* MDKMandatoryFieldValidator.h in Headers */,
 				B0FFB6BA1BA1CD4800258B9D /* MDKDateConverter.h in Headers */,
 				B05454691C19C1160020CF1B /* MDKTooltips.h in Headers */,
-				B02156C91B9DAC6E001860B5 /* MDKRegexTextFieldStyle.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2180,7 +2182,6 @@
 				B08C195B1B9DEEED00D6F93A /* MDKLabel.m in Sources */,
 				B0FFB6BB1BA1CD4800258B9D /* MDKDateConverter.m in Sources */,
 				B05454201C198D8A0020CF1B /* MDKInvalidIntegerValueUIValidationError.m in Sources */,
-				B0A52E5D1BA31F4F00EF6947 /* MDKSliderStyle.m in Sources */,
 				B05454631C19C1160020CF1B /* MDKMessageView.m in Sources */,
 				B08C193F1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.m in Sources */,
 				B062A11C1C19E5BC006B742A /* MDKMinLengthInfo.m in Sources */,
@@ -2196,10 +2197,10 @@
 				B08C19391B9DE9A500D6F93A /* MDKRenderableControl.m in Sources */,
 				F93DAC201C0C5BB40067E6AB /* MDKPickerItemBaseDelegate.m in Sources */,
 				B062A1181C19E550006B742A /* MDKMessageInfo.m in Sources */,
+				DE8BEEB01C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m in Sources */,
 				B05454501C19940E0020CF1B /* MDKMessageWarn.m in Sources */,
 				B08C18F31B9DD1AC00D6F93A /* MDKConstants.m in Sources */,
 				B055B0E81C2AE0510093D147 /* MDKSignatureDrawing.m in Sources */,
-				B02156C81B9DAC6E001860B5 /* MDKRegexTextFieldStyle+Button.m in Sources */,
 				B0C18B491BE7B1A800B07306 /* MDKUIFixedListTableViewDelegate.m in Sources */,
 				B08C19511B9DE9A500D6F93A /* MDKRegexTextField.m in Sources */,
 				B0A74C7D1BA081F40002A66B /* MDKURL.m in Sources */,
@@ -2209,26 +2210,29 @@
 				F95BF3C11BF099E8002F2EE7 /* MDKUIMedia.m in Sources */,
 				F91BF6AF1C6355730093809D /* MDKUIButton.m in Sources */,
 				B00C4E091BA07D3D003CBB16 /* MDKPhoneFieldValidator.m in Sources */,
+				DE8BEEB81C887715008CA965 /* MDKPhoneTextFieldStyle.m in Sources */,
+				DE8BEED81C887738008CA965 /* MDKSliderStyle.m in Sources */,
 				F924E8D71BEA4473006119EF /* MDKManagerPosition.m in Sources */,
 				F965F9401BE7BF7A0060A93D /* MDKHelperType.m in Sources */,
+				DE8BEEB61C887715008CA965 /* MDKIntegerTextFieldStyle.m in Sources */,
 				B02116A11BE8E42100EAD073 /* MDKUIFixedListBaseDelegate.m in Sources */,
 				B05C93671B9F3BF900487CFB /* MDKEmail.m in Sources */,
 				B02157661B9DAEEA001860B5 /* MDKMandatoryFieldValidator.m in Sources */,
 				B03EFBFB1BEBB3F1002DAB18 /* MDKBarCodeScanTextField.m in Sources */,
 				F9D267411BFA186400B55A11 /* MDKListCell.m in Sources */,
 				B055B0EA1C2AE0510093D147 /* MDKSignatureHelper.m in Sources */,
-				B018BE9A1BA01F3300EF1D87 /* MDKPhoneTextFieldStyle.m in Sources */,
 				B062A1201C19E803006B742A /* MDKMaxLengthInfo.m in Sources */,
 				B09CE7DC1BA17C220017CCA2 /* MDKDoubleFieldValidator.m in Sources */,
 				B08C19411B9DE9A500D6F93A /* MDKTextFieldExtension.m in Sources */,
 				B05C93621B9F3B6D00487CFB /* MDKEmailTextField.m in Sources */,
 				B0F5331C1C206D8C00CC38CF /* MDKOpenScanCommand.m in Sources */,
+				DE8BEEBC1C887715008CA965 /* MDKRegexTextFieldStyle+Button.m in Sources */,
+				DE8BEEC01C887715008CA965 /* MDKTextFieldStyle+BackgroundView.m in Sources */,
 				B00C4DFF1BA07C45003CBB16 /* MDKCallPhoneNumberCommand.m in Sources */,
 				B0FFB6AC1BA1CB5F00258B9D /* MDKUISlider.m in Sources */,
 				B054546E1C19C1160020CF1B /* UILabel+MDKTooltips.m in Sources */,
 				F994B5901BFC7C9A0055C16C /* MDKUIPickerList.m in Sources */,
 				B054542A1C198D8A0020CF1B /* MDKTooLongListUIValidationError.m in Sources */,
-				B018BE9C1BA01F3300EF1D87 /* MDKUrlTextFieldStyle.m in Sources */,
 				B08C19361B9DE9A500D6F93A /* MDKControlDelegate.m in Sources */,
 				B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */,
 				B08C18FC1B9DDC5700D6F93A /* MDKControlEventsDescriptor.m in Sources */,
@@ -2236,9 +2240,8 @@
 				B03AD47A1BC3CDFF00A96F5D /* MDKUIDateTime.m in Sources */,
 				F93DAC241C0C5BC00067E6AB /* MDKPickerListBaseDelegate.m in Sources */,
 				B0BEE1991C2472F40057EC53 /* MDKUISwitch.m in Sources */,
+				DE8BEEB21C887715008CA965 /* MDKDoubleTextFieldStyle.m in Sources */,
 				B05C936D1B9F3CA300487CFB /* UIView+ViewController.m in Sources */,
-				B02156CA1B9DAC6E001860B5 /* MDKRegexTextFieldStyle.m in Sources */,
-				B02156D01B9DAC6E001860B5 /* MDKTextFieldStyle+TextLayouting.m in Sources */,
 				B054541C1C198D8A0020CF1B /* MDKInvalidDoubleValueUIValidationError.m in Sources */,
 				B03B7FD41C29AA7A00CCA9AD /* MDKUIScanner.m in Sources */,
 				B054547D1C19DB450020CF1B /* MDKMessageUIManager.m in Sources */,
@@ -2246,41 +2249,41 @@
 				B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */,
 				B054544A1C1991390020CF1B /* MDKCanNotPerformActionWarn.m in Sources */,
 				F95BF3D21BF0DA2D002F2EE7 /* MDKHelperImage.m in Sources */,
+				DE8BEEB41C887715008CA965 /* MDKEmailTextFieldStyle.m in Sources */,
 				B054542C1C198D8A0020CF1B /* MDKTooLongStringUIValidationError.m in Sources */,
-				B02156D21B9DAC6E001860B5 /* MDKTextFieldStyle.m in Sources */,
 				B02157641B9DAEEA001860B5 /* MDKLengthFieldValidator.m in Sources */,
+				DE8BEEC21C887715008CA965 /* MDKTextFieldStyle+ErrorView.m in Sources */,
+				DE8BEEBE1C887715008CA965 /* MDKTextFieldStyle.m in Sources */,
 				B055B0E01C2ADEC90093D147 /* MDKUISignature.m in Sources */,
 				B0261E3C1C231F1B00685D1A /* MDKLocalizedString.m in Sources */,
 				B05A86791C3A7ECF00C73113 /* MDKSignaturePopupView.m in Sources */,
 				B09CE7D31BA17C110017CCA2 /* MDKDoubleTextField.m in Sources */,
+				DE8BEECF1C887729008CA965 /* MDKDefaultStyle.m in Sources */,
+				DE8BEED31C887729008CA965 /* UIView+Styleable.m in Sources */,
 				B05454281C198D8A0020CF1B /* MDKNoMatchingValueUIValidationError.m in Sources */,
 				F97546EE1BF4E06E00B2E48B /* MDKUIEnumList.m in Sources */,
 				F9C4C9111C104B5900C7CA66 /* MediaDisplayTransition.m in Sources */,
 				B03AD4821BC4008400A96F5D /* MDKUIDateTimePickerView.m in Sources */,
 				B0F533251C206ECA00CC38CF /* MDKBarCodeScannerDelegate.m in Sources */,
 				B054546B1C19C1160020CF1B /* MDKTooltipView.m in Sources */,
-				B018BE961BA01F3300EF1D87 /* MDKEmailTextFieldStyle.m in Sources */,
-				B018BE941BA01F3300EF1D87 /* MDKDoubleTextFieldStyle.m in Sources */,
-				B02156B41B9DAC6E001860B5 /* MDKDefaultStyle.m in Sources */,
 				B0FFB6BF1BA1CD4800258B9D /* MDKNumberConverter.m in Sources */,
-				B05454791C19D5A30020CF1B /* MDKAbstractStyle_MDK.m in Sources */,
 				B0FFB6BD1BA1CD4800258B9D /* MDKFloatConverter.m in Sources */,
 				F919715B1BE8B84600B94F8A /* MDKUIPosition.m in Sources */,
 				B09CE7DE1BA17C220017CCA2 /* MDKIntegerFieldValidator.m in Sources */,
+				DE8BEEC61C887715008CA965 /* MDKUrlTextFieldStyle.m in Sources */,
+				DE8BEEDD1C88774C008CA965 /* MDKAbstractStyle_MDK.m in Sources */,
 				B05454321C198D8A0020CF1B /* MDKValidationError.m in Sources */,
-				B0B54E131C188FAF008C37C4 /* UIView+Styleable.m in Sources */,
 				B06120261BD9336F0012F82F /* MDKUIFixedList.m in Sources */,
 				F9C4C90B1C1047D000C7CA66 /* MDKUIDisplayController.m in Sources */,
-				B018BE911BA01F3300EF1D87 /* MDKBarCodeScanTextFieldStyle.m in Sources */,
 				B011AB7C1C28388200C7BA14 /* MDKUINumberPicker.m in Sources */,
 				B00C4DF11BA06B4C003CBB16 /* MDKCreateEmailViewController.m in Sources */,
+				DE8BEEBA1C887715008CA965 /* MDKRegexTextFieldStyle.m in Sources */,
 				B05454261C198D8A0020CF1B /* MDKMandatoryFieldUIValidationError.m in Sources */,
-				B02156CC1B9DAC6E001860B5 /* MDKTextFieldStyle+BackgroundView.m in Sources */,
 				B05454301C198D8A0020CF1B /* MDKTooShortStringUIValidationError.m in Sources */,
+				DE8BEEC41C887715008CA965 /* MDKTextFieldStyle+TextLayouting.m in Sources */,
 				B0A74C7F1BA081F40002A66B /* MDKOpenURLCommand.m in Sources */,
 				B0FFB6C11BA1CD4800258B9D /* MDKStringConverter.m in Sources */,
 				B05454741C19C62F0020CF1B /* MDKMessageButton.m in Sources */,
-				B02156CE1B9DAC6E001860B5 /* MDKTextFieldStyle+ErrorView.m in Sources */,
 				B02157DA1B9DAFA0001860B5 /* MDKSimpleComponentProvider.m in Sources */,
 				F9E3B0061BF1EFD20042CFD4 /* MDKUIWebView.m in Sources */,
 				B05A86751C3A6C0900C73113 /* MDKSignatureView.m in Sources */,
@@ -2290,7 +2293,6 @@
 				B08C19341B9DE9A500D6F93A /* MDKBaseControl.m in Sources */,
 				B00C4DF81BA07C38003CBB16 /* MDKPhoneTextField.m in Sources */,
 				B08C19031B9DE37300D6F93A /* MDKTags.m in Sources */,
-				B018BE981BA01F3300EF1D87 /* MDKIntegerTextFieldStyle.m in Sources */,
 				F9D267361BFA180400B55A11 /* MDKUIList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
