@@ -14,37 +14,4 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <UIKit/UIKit.h>
-
-
-
-#pragma mark - MDKUIButtonKeyPath: Public interface
-
-@interface MDKUIButtonKeyPath : NSObject
-
-//  Properties
-// ============
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *storyboardTargetName;
-
-@end
-
-
-
-#pragma mark - MDKUIButton: Public interface
-
-/*!
- * @class MDKUIButton
- * @brief The MDKUIButton Control.
- */
-@interface MDKUIButton : UIButton
-
-//  Properties
-// ============
-@property (nonatomic, strong, readonly) MDKUIButtonKeyPath *keyPath;
-
-//  Public API
-// ============
-- (void)initializeComponent;
-
-@end
+#import "Control.h"

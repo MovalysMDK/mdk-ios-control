@@ -15,6 +15,7 @@
  */
 
 #import "MDKUIButton.h"
+#import "MDKTheme.h"
 #import <objc/runtime.h>
 
 
@@ -29,16 +30,6 @@
 #pragma mark - MDKUIButton: Implementation
 
 @implementation MDKUIButton
-
-
-
-#pragma mark Synthesize
-
-//  Style
-@synthesize styleClass          = _styleClass;
-@synthesize customStyleClass    = _customStyleClass;
-@synthesize styleClassName      = styleClassName;
-
 
 
 #pragma mark Initialization and deallocation
@@ -62,45 +53,10 @@
 }
 
 - (void)initializeComponent {
-    #if !TARGET_INTERFACE_BUILDER
-    self.errors = [NSMutableArray new];
-    
-    [self setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *buttonTitle = self.keyPath.title;
-        if(buttonTitle) {
-            [self setTitle:buttonTitle forState:UIControlStateNormal];
-        }
+        [self setTitle:self.keyPath.title forState:UIControlStateNormal];
     });
-        
-    if(!self.styleDelegate) {
-        self.styleDelegate = self;
-    }
-    #endif
-}
-
-
-
-#pragma mark Style
-
-- (void)setCustomStyleClass:(Class)customStyleClass {
-    _customStyleClass = customStyleClass;
-    [self.styleDelegate setCustomStyleClass:customStyleClass];
-}
-
-
-
-#pragma mark Live Rendering
-
-- (void)prepareForInterfaceBuilder {
-    [self.styleClass applyStandardStyleOnComponent:self];
-    if(self.onError_MDK) {
-        [self.styleClass applyErrorStyleOnComponent:self];
-    }
-    else {
-        [self.styleClass applyValidStyleOnComponent:self];
-    }
+    [[MDKTheme sharedTheme] applyThemeOnMDKUIButton:self];
 }
 
 

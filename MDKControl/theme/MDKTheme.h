@@ -14,37 +14,37 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#import <UIKit/UIKit.h>
 
 
+#import "Theme.h"
 
-#pragma mark - MDKUIButtonKeyPath: Public interface
 
-@interface MDKUIButtonKeyPath : NSObject
+#pragma mark - MDKTheme: Custom types
 
-//  Properties
-// ============
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *storyboardTargetName;
+@protocol MDKThemeDelegate <NSObject>
+
+// Status bar
+@optional
+- (void)applyThemeOnStatusBar;
+
+// Navigation Bar
+@optional
+- (void)applyThemeOnNavigationBar:(UIViewController *)controller;
+
+// MDKUIButton
+@optional
+- (void)applyThemeOnMDKUIButton:(MDKUIButton *)button;
 
 @end
 
 
 
-#pragma mark - MDKUIButton: Public interface
+#pragma mark - MDKTheme: Public interface
 
-/*!
- * @class MDKUIButton
- * @brief The MDKUIButton Control.
- */
-@interface MDKUIButton : UIButton
+@interface MDKTheme : NSObject <MDKThemeDelegate>
 
-//  Properties
+//  Life cycle
 // ============
-@property (nonatomic, strong, readonly) MDKUIButtonKeyPath *keyPath;
-
-//  Public API
-// ============
-- (void)initializeComponent;
++ (MDKTheme *)sharedTheme;
 
 @end
