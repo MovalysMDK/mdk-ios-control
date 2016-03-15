@@ -19,6 +19,7 @@
 #import "ControlExtension.h"
 #import "ControlCommons.h"
 #import "Utils.h"
+#import "Theme.h"
 
 #import "MDKTextField.h"
 #import "MDKLabel.h"
@@ -105,6 +106,8 @@
 }
 
 -(void) initializeComponent {
+    [[MDKTheme sharedTheme] applyThemeOnMDKUITextField:self];
+    
     self.controlDelegate = [[MDKControlDelegate alloc] initWithControl:self];
     self.messages = [NSMutableArray new];
     self.extension = [[MDKTextFieldExtension alloc] init];

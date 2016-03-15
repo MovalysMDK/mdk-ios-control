@@ -20,6 +20,7 @@
 #import "MDKControlChangesProtocol.h"
 #import "MDKUIDateTimePickerView.h"
 #import "Utils.h"
+#import "Theme.h"
 
 const NSString *PARAMETER_DATE_TIME_MODE = @"dateTimeMode";
 const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
@@ -48,6 +49,8 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
 
 -(void)didInitializeOutlets {
     [super didInitializeOutlets];
+    [[MDKTheme sharedTheme] applyThemeOnUIButton:self.dateButton];
+    
     [self.dateButton addTarget:self action:@selector(onDateButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     [self setData:[NSDate date]];
 }
@@ -110,7 +113,6 @@ const NSString *PARAMETER_DATE_FORMAT = @"dateFormat";
 }
 
 -(void)setDisplayComponentValue:(id)value {
-    NSDate *dateValue = value;
     NSString *stringDate = [MDKDateConverter toString:value withMode:self.MDK_dateTimeMode];
     if(self.MDK_dateFormat) {
         stringDate = [MDKDateConverter toString:value withCustomFormat:self.MDK_dateFormat];

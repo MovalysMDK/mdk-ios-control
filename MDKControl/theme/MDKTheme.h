@@ -17,6 +17,7 @@
 
 
 #import "Theme.h"
+#import "Control.h"
 
 
 #pragma mark - MDKTheme: Custom types
@@ -31,9 +32,17 @@
 @optional
 - (void)applyThemeOnNavigationBar:(UIViewController *)controller;
 
+// UIButton
+@optional
+- (void)applyThemeOnUIButton:(UIButton *)button;
+
 // MDKUIButton
 @optional
 - (void)applyThemeOnMDKUIButton:(MDKUIButton *)button;
+
+// MDKTextField
+@optional
+- (void)applyThemeOnMDKUITextField:(MDKTextField *)textField;
 
 @end
 

@@ -110,6 +110,36 @@
     
 }
 
+- (void)applyThemeOnUIButton:(UIButton *)button {
+    if ([self checkIfAnotherThemeAlreadyExist]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (id userTheme in self.userThemes) {
+                if ([userTheme respondsToSelector:@selector(applyThemeOnUIButton:)]) {
+                    [userTheme performSelector:@selector(applyThemeOnUIButton:) withObject:button];
+                }
+                else {
+                    // Nothing
+                }
+            }
+        });
+    }
+}
+
+- (void)applyThemeOnMDKUITextField:(MDKTextField *)textField {
+    if ([self checkIfAnotherThemeAlreadyExist]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (id userTheme in self.userThemes) {
+                if ([userTheme respondsToSelector:@selector(applyThemeOnMDKUITextField:)]) {
+                    [userTheme performSelector:@selector(applyThemeOnMDKUITextField:) withObject:textField];
+                }
+                else {
+                    // Nothing
+                }
+            }
+        });
+    }
+}
+
 
 
 #pragma mark Private API

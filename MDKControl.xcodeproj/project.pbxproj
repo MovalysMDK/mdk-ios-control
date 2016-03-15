@@ -253,7 +253,6 @@
 		DE4D3D7C1C905D2B00F4454A /* MDKTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4D3D7A1C905D2B00F4454A /* MDKTheme.h */; };
 		DE4D3D7D1C905D2B00F4454A /* MDKTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4D3D7B1C905D2B00F4454A /* MDKTheme.m */; };
 		DE4D3D7F1C905F4C00F4454A /* Theme.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4D3D7E1C905F4C00F4454A /* Theme.h */; };
-		DE4D3D811C905F8B00F4454A /* MDKThemeDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4D3D801C905F8B00F4454A /* MDKThemeDelegate.h */; };
 		DE8BEEAF1C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEE961C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h */; };
 		DE8BEEB01C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEE971C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m */; };
 		DE8BEEB11C887715008CA965 /* MDKDoubleTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEE981C887715008CA965 /* MDKDoubleTextFieldStyle.h */; };
@@ -658,7 +657,6 @@
 		DE4D3D7A1C905D2B00F4454A /* MDKTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKTheme.h; path = theme/MDKTheme.h; sourceTree = "<group>"; };
 		DE4D3D7B1C905D2B00F4454A /* MDKTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKTheme.m; path = theme/MDKTheme.m; sourceTree = "<group>"; };
 		DE4D3D7E1C905F4C00F4454A /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Theme.h; path = theme/Theme.h; sourceTree = "<group>"; };
-		DE4D3D801C905F8B00F4454A /* MDKThemeDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKThemeDelegate.h; path = theme/MDKThemeDelegate.h; sourceTree = "<group>"; };
 		DE8BEE961C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKBarCodeScanTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKBarCodeScanTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
 		DE8BEE971C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKBarCodeScanTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKBarCodeScanTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
 		DE8BEE981C887715008CA965 /* MDKDoubleTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKDoubleTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKDoubleTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
@@ -1558,7 +1556,6 @@
 		DE4D3D791C905CEC00F4454A /* theme */ = {
 			isa = PBXGroup;
 			children = (
-				DE4D3D801C905F8B00F4454A /* MDKThemeDelegate.h */,
 				DE4D3D7A1C905D2B00F4454A /* MDKTheme.h */,
 				DE4D3D7B1C905D2B00F4454A /* MDKTheme.m */,
 				DE4D3D7E1C905F4C00F4454A /* Theme.h */,
@@ -1935,7 +1932,6 @@
 				B05A86781C3A7ECF00C73113 /* MDKSignaturePopupView.h in Headers */,
 				B05A86741C3A6C0900C73113 /* MDKSignatureView.h in Headers */,
 				B02156EA1B9DAD59001860B5 /* MDKMessageViewProtocol.h in Headers */,
-				DE4D3D811C905F8B00F4454A /* MDKThemeDelegate.h in Headers */,
 				DE8BEEC71C887715008CA965 /* StyleTextField.h in Headers */,
 				DE8BEED01C887729008CA965 /* MDKStyleProtocol.h in Headers */,
 				B09CE7DD1BA17C220017CCA2 /* MDKIntegerFieldValidator.h in Headers */,

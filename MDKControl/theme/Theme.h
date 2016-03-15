@@ -16,5 +16,4 @@
 
 
 #import "MDKTheme.h"
-#import "MDKThemeDelegate.h"
 
