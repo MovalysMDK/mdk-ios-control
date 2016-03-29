@@ -155,6 +155,21 @@
     }
 }
 
+- (void)applyThemeOnMDKFloatingButton:(UIButton *)button {
+    if ([self checkIfAnotherThemeAlreadyExist]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (id userTheme in self.userThemes) {
+                if ([userTheme respondsToSelector:@selector(applyThemeOnMDKFloatingButton:)]) {
+                    [userTheme performSelector:@selector(applyThemeOnMDKFloatingButton:) withObject:button];
+                }
+                else {
+                    // Nothing
+                }
+            }
+        });
+    }
+}
+
 - (void)applyThemeOnMDKUITextField:(MDKTextField *)textField {
     if ([self checkIfAnotherThemeAlreadyExist]) {
         dispatch_async(dispatch_get_main_queue(), ^{

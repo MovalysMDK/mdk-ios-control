@@ -56,6 +56,11 @@
 @optional
 - (void)applyThemeOnMDKFixedListAddButton:(UIButton *)button;
 
+
+// MDKFloatingButton
+@optional
+- (void)applyThemeOnMDKFloatingButton:(UIButton *)button;
+
 @end
 
 
