@@ -17,6 +17,7 @@
 #import "MDKUIFixedList.h"
 #import "MDKUIFixedListTableViewDelegate.h"
 #import "MDKUIFixedListBaseDelegate.h"
+#import "Theme.h"
 
 
 
@@ -46,6 +47,9 @@ NSString *const FIXEDLIST_PARAMETER_IS_PHOTO_KEY = @"isPhotoFixedList";
 }
 
 -(void)didInitializeOutlets {
+    [super didInitializeOutlets];
+    [[MDKTheme sharedTheme] applyThemeOnMDKFixedListAddButton:self.addButton];
+    
     self.baseFixedListDelegate = [[MDKUIFixedListBaseDelegate alloc] init];
     self.tableDelegate = [[MDKUIFixedListTableViewDelegate alloc] initWithFixedList:self];
     self.tableView.delegate = self.tableDelegate;
@@ -153,6 +157,7 @@ NSString *const FIXEDLIST_PARAMETER_IS_PHOTO_KEY = @"isPhotoFixedList";
 /******************************************************/
 
 @implementation MDKUIExternalFixedList
+
 -(NSString *)defaultXIBName {
     return @"MDKUIFixedList";
 }

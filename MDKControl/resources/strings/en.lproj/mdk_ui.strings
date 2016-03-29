@@ -16,6 +16,7 @@
 
 /*********************** GENERAL *************************/
 "mdk_general_ok_button" = "OK";
+"mdk_fixedlist_add_button" = "Add an item";
 
 /*********************** KEYBOARD *************************/
 "mdk_keyboard_clearbutton" = "Clear";

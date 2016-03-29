@@ -16,6 +16,7 @@
 
 #import "MDKLabel.h"
 #import "MDKControlProtocol.h"
+#import "Theme.h"
 
 
 @interface MDKLabel ()
@@ -105,6 +106,8 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
 
 -(void) initializeComponent {
 #if !TARGET_INTERFACE_BUILDER
+    
+    [[MDKTheme sharedTheme] applyThemeOnMDKLabel:self];
 
     self.controlDelegate = [[MDKControlDelegate alloc] initWithControl:self];
     self.errors = [NSMutableArray new];

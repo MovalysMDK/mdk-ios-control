@@ -110,6 +110,21 @@
     
 }
 
+- (void)applyThemeOnUITableViewCell:(UITableViewCell *)cell {
+    if ([self checkIfAnotherThemeAlreadyExist]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (id userTheme in self.userThemes) {
+                if ([userTheme respondsToSelector:@selector(applyThemeOnUITableViewCell:)]) {
+                    [userTheme performSelector:@selector(applyThemeOnUITableViewCell:) withObject:cell];
+                }
+                else {
+                    // Nothing
+                }
+            }
+        });
+    }
+}
+
 - (void)applyThemeOnUIButton:(UIButton *)button {
     if ([self checkIfAnotherThemeAlreadyExist]) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -125,12 +140,42 @@
     }
 }
 
+- (void)applyThemeOnMDKFixedListAddButton:(UIButton *)button {
+    if ([self checkIfAnotherThemeAlreadyExist]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (id userTheme in self.userThemes) {
+                if ([userTheme respondsToSelector:@selector(applyThemeOnMDKFixedListAddButton:)]) {
+                    [userTheme performSelector:@selector(applyThemeOnMDKFixedListAddButton:) withObject:button];
+                }
+                else {
+                    // Nothing
+                }
+            }
+        });
+    }
+}
+
 - (void)applyThemeOnMDKUITextField:(MDKTextField *)textField {
     if ([self checkIfAnotherThemeAlreadyExist]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             for (id userTheme in self.userThemes) {
                 if ([userTheme respondsToSelector:@selector(applyThemeOnMDKUITextField:)]) {
                     [userTheme performSelector:@selector(applyThemeOnMDKUITextField:) withObject:textField];
+                }
+                else {
+                    // Nothing
+                }
+            }
+        });
+    }
+}
+
+- (void)applyThemeOnMDKLabel:(MDKLabel *)label {
+    if ([self checkIfAnotherThemeAlreadyExist]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (id userTheme in self.userThemes) {
+                if ([userTheme respondsToSelector:@selector(applyThemeOnMDKLabel:)]) {
+                    [userTheme performSelector:@selector(applyThemeOnMDKLabel:) withObject:label];
                 }
                 else {
                     // Nothing

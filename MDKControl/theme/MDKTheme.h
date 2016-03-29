@@ -36,6 +36,10 @@
 @optional
 - (void)applyThemeOnUIButton:(UIButton *)button;
 
+// UITableViewCell
+@optional
+- (void)applyThemeOnUITableViewCell:(UITableViewCell *)cell;
+
 // MDKUIButton
 @optional
 - (void)applyThemeOnMDKUIButton:(MDKUIButton *)button;
@@ -43,6 +47,14 @@
 // MDKTextField
 @optional
 - (void)applyThemeOnMDKUITextField:(MDKTextField *)textField;
+
+// MDKLabel
+@optional
+- (void)applyThemeOnMDKLabel:(MDKLabel *)label;
+
+// MDKFixedListAddButton
+@optional
+- (void)applyThemeOnMDKFixedListAddButton:(UIButton *)button;
 
 @end
 
