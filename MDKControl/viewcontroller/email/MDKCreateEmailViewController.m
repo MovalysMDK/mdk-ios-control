@@ -39,7 +39,6 @@
  */
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    UIAlertView *alert = nil;
     // Notifies users about errors associated with the interface
     switch (result)
     {
@@ -79,7 +78,6 @@
             }
             break;
     }
-    [alert show];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
