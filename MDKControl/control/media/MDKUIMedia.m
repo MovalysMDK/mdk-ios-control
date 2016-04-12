@@ -22,6 +22,7 @@
 #import "MDKUIMedia.h"
 #import "MDKUIDisplayController.h"
 #import "MediaDisplayTransition.h"
+#import "AlertView.h"
 
 
 #pragma mark - MDKUIMedia - Keys
@@ -241,14 +242,10 @@ NSString *const MDKUIMediaKey = @"MDKUIMediaKey";
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
         ALAssetsLibraryWriteImageCompletionBlock imageWriteCompletionBlock =^(NSURL *assetURL, NSError *error) {
             if (error) {
-                UIAlertView *alert = [[UIAlertView alloc]
-                                      initWithTitle: MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"")
-                                      message:MDKLocalizedStringFromTable(@"mdk_control_image_save_failed", @"mdk_ui", @"")
-                                      delegate: nil
-                                      cancelButtonTitle:@"OK"
-                                      otherButtonTitles:nil];
-                
-                [alert show];
+                MDKUIAlertController *alertController = [MDKUIAlertController alertControllerWithTitle:MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"") message:MDKLocalizedStringFromTable(@"mdk_control_image_save_failed", @"mdk_ui", @"") preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:NULL];
+                [alertController addAction:alertAction];
+                [self.parentViewController presentViewController:alertController animated:true completion:NULL];
             }
             else {
                 self.controlData = [assetURL absoluteString];

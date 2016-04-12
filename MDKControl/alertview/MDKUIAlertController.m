@@ -14,9 +14,22 @@
  * along with Movalys MDK. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef MDKControl_AlertView_h
-#define MDKControl_AlertView_h
-
 #import "MDKUIAlertController.h"
+#import "Theme.h"
 
-#endif
+
+
+#pragma mark - MDKUIAlertController: Implementation
+
+@implementation MDKUIAlertController
+
+
+
+#pragma mark Life cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [[MDKTheme sharedTheme] applyThemeOnMDKUIAlertController:self];
+}
+
+@end

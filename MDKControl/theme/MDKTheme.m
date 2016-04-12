@@ -200,6 +200,21 @@
     }
 }
 
+- (void)applyThemeOnMDKUIAlertController:(MDKUIAlertController *)alertController {
+    if ([self checkIfAnotherThemeAlreadyExist]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (id userTheme in self.userThemes) {
+                if ([userTheme respondsToSelector:@selector(applyThemeOnMDKUIAlertController:)]) {
+                    [userTheme performSelector:@selector(applyThemeOnMDKUIAlertController:) withObject:alertController];
+                }
+                else {
+                    // Nothing
+                }
+            }
+        });
+    }
+}
+
 
 
 #pragma mark Private API

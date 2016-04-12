@@ -15,6 +15,7 @@
  */
 
 #import "MDKPickMediaCommand.h"
+#import "AlertView.h"
 
 @interface MDKPickMediaCommand ()
 
@@ -80,8 +81,10 @@
 
 - (void)openImagePickerControllerWithSourceType:(UIImagePickerControllerSourceType)sourceType {
     if (sourceType == UIImagePickerControllerSourceTypeCamera && ![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:@"Camera is not available on simulator" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+        MDKUIAlertController *alertController = [MDKUIAlertController alertControllerWithTitle:@"Information" message:@"Camera is not available on simulator" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:NULL];
+        [alertController addAction:cancelAction];
+        [self.parentViewController presentViewController:alertController animated:true completion:NULL];
         return;
     }
     

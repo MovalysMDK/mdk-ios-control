@@ -47,10 +47,6 @@
 		B02157D81B9DAFA0001860B5 /* MDKComponentProviderProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D11B9DAFA0001860B5 /* MDKComponentProviderProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157D91B9DAFA0001860B5 /* MDKSimpleComponentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = B02157D21B9DAFA0001860B5 /* MDKSimpleComponentProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B02157DA1B9DAFA0001860B5 /* MDKSimpleComponentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B02157D31B9DAFA0001860B5 /* MDKSimpleComponentProvider.m */; };
-		B02158091B9DB27D001860B5 /* MDKAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158041B9DB27D001860B5 /* MDKAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B021580A1B9DB27D001860B5 /* MDKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158051B9DB27D001860B5 /* MDKAlertView.m */; };
-		B021580B1B9DB27D001860B5 /* MDKAlertViewManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B02158061B9DB27D001860B5 /* MDKAlertViewManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B02158071B9DB27D001860B5 /* MDKAlertViewManager.m */; };
 		B021582A1B9DBC8C001860B5 /* MDKCommandHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B021582B1B9DBC8C001860B5 /* MDKCommandHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */; };
 		B021582C1B9DBC8C001860B5 /* MDKCommandProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -253,6 +249,8 @@
 		DE4D3D7C1C905D2B00F4454A /* MDKTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4D3D7A1C905D2B00F4454A /* MDKTheme.h */; };
 		DE4D3D7D1C905D2B00F4454A /* MDKTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4D3D7B1C905D2B00F4454A /* MDKTheme.m */; };
 		DE4D3D7F1C905F4C00F4454A /* Theme.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4D3D7E1C905F4C00F4454A /* Theme.h */; };
+		DE6079101CBBCE9500159AFA /* MDKUIAlertController.h in Headers */ = {isa = PBXBuildFile; fileRef = DE60790E1CBBCE9500159AFA /* MDKUIAlertController.h */; };
+		DE6079111CBBCE9500159AFA /* MDKUIAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE60790F1CBBCE9500159AFA /* MDKUIAlertController.m */; };
 		DE8BEEAF1C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEE961C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h */; };
 		DE8BEEB01C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = DE8BEE971C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m */; };
 		DE8BEEB11C887715008CA965 /* MDKDoubleTextFieldStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = DE8BEE981C887715008CA965 /* MDKDoubleTextFieldStyle.h */; };
@@ -424,10 +422,6 @@
 		B02157D21B9DAFA0001860B5 /* MDKSimpleComponentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKSimpleComponentProvider.h; sourceTree = "<group>"; };
 		B02157D31B9DAFA0001860B5 /* MDKSimpleComponentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKSimpleComponentProvider.m; sourceTree = "<group>"; };
 		B02157D41B9DAFA0001860B5 /* Provider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Provider.h; sourceTree = "<group>"; };
-		B02158041B9DB27D001860B5 /* MDKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKAlertView.h; sourceTree = "<group>"; };
-		B02158051B9DB27D001860B5 /* MDKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKAlertView.m; sourceTree = "<group>"; };
-		B02158061B9DB27D001860B5 /* MDKAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKAlertViewManager.h; sourceTree = "<group>"; };
-		B02158071B9DB27D001860B5 /* MDKAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKAlertViewManager.m; sourceTree = "<group>"; };
 		B021581C1B9DBC8C001860B5 /* MDKCommandHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandHandler.h; sourceTree = "<group>"; };
 		B021581D1B9DBC8C001860B5 /* MDKCommandHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKCommandHandler.m; sourceTree = "<group>"; };
 		B021581E1B9DBC8C001860B5 /* MDKCommandProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKCommandProtocol.h; sourceTree = "<group>"; };
@@ -657,6 +651,8 @@
 		DE4D3D7A1C905D2B00F4454A /* MDKTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKTheme.h; path = theme/MDKTheme.h; sourceTree = "<group>"; };
 		DE4D3D7B1C905D2B00F4454A /* MDKTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKTheme.m; path = theme/MDKTheme.m; sourceTree = "<group>"; };
 		DE4D3D7E1C905F4C00F4454A /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Theme.h; path = theme/Theme.h; sourceTree = "<group>"; };
+		DE60790E1CBBCE9500159AFA /* MDKUIAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDKUIAlertController.h; sourceTree = "<group>"; };
+		DE60790F1CBBCE9500159AFA /* MDKUIAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDKUIAlertController.m; sourceTree = "<group>"; };
 		DE8BEE961C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKBarCodeScanTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKBarCodeScanTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
 		DE8BEE971C887715008CA965 /* MDKBarCodeScanTextFieldStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MDKBarCodeScanTextFieldStyle.m; path = MDKControl/message/style/textfield/MDKBarCodeScanTextFieldStyle.m; sourceTree = SOURCE_ROOT; };
 		DE8BEE981C887715008CA965 /* MDKDoubleTextFieldStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MDKDoubleTextFieldStyle.h; path = MDKControl/message/style/textfield/MDKDoubleTextFieldStyle.h; sourceTree = SOURCE_ROOT; };
@@ -964,11 +960,9 @@
 		B02158031B9DB27D001860B5 /* alertview */ = {
 			isa = PBXGroup;
 			children = (
-				B02158041B9DB27D001860B5 /* MDKAlertView.h */,
-				B02158051B9DB27D001860B5 /* MDKAlertView.m */,
-				B02158061B9DB27D001860B5 /* MDKAlertViewManager.h */,
-				B02158071B9DB27D001860B5 /* MDKAlertViewManager.m */,
 				B08C18F71B9DDAD700D6F93A /* AlertView.h */,
+				DE60790E1CBBCE9500159AFA /* MDKUIAlertController.h */,
+				DE60790F1CBBCE9500159AFA /* MDKUIAlertController.m */,
 			);
 			path = alertview;
 			sourceTree = "<group>";
@@ -1907,7 +1901,6 @@
 				B02156E61B9DAD59001860B5 /* MDKControlDataProtocol.h in Headers */,
 				DE8BEED71C887738008CA965 /* MDKSliderStyle.h in Headers */,
 				B08C18FB1B9DDC5700D6F93A /* MDKControlEventsDescriptor.h in Headers */,
-				B02158091B9DB27D001860B5 /* MDKAlertView.h in Headers */,
 				B05454671C19C1160020CF1B /* MDKTooltipManager.h in Headers */,
 				B054541B1C198D8A0020CF1B /* MDKInvalidDoubleValueUIValidationError.h in Headers */,
 				F93DAC281C0C5BD80067E6AB /* MDKUIPickerSelectedDataProtocol.h in Headers */,
@@ -1952,6 +1945,7 @@
 				B02157631B9DAEEA001860B5 /* MDKLengthFieldValidator.h in Headers */,
 				B08C193E1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.h in Headers */,
 				B05C93701B9F3D1C00487CFB /* MDKEmailFieldValidator.h in Headers */,
+				DE6079101CBBCE9500159AFA /* MDKUIAlertController.h in Headers */,
 				F93DAC231C0C5BC00067E6AB /* MDKPickerListBaseDelegate.h in Headers */,
 				F97546ED1BF4E06E00B2E48B /* MDKUIEnumList.h in Headers */,
 				B00C4DF01BA06B4C003CBB16 /* MDKCreateEmailViewController.h in Headers */,
@@ -1966,7 +1960,6 @@
 				B02157241B9DAE4C001860B5 /* MDKControlChangesProtocol.h in Headers */,
 				B0F5331B1C206D8C00CC38CF /* MDKOpenScanCommand.h in Headers */,
 				DE8BEEAF1C887715008CA965 /* MDKBarCodeScanTextFieldStyle.h in Headers */,
-				B021580B1B9DB27D001860B5 /* MDKAlertViewManager.h in Headers */,
 				B02157D91B9DAFA0001860B5 /* MDKSimpleComponentProvider.h in Headers */,
 				B08C19021B9DE37300D6F93A /* MDKTags.h in Headers */,
 				B08C19501B9DE9A500D6F93A /* MDKRegexTextField.h in Headers */,
@@ -2197,11 +2190,11 @@
 			files = (
 				B00C4E011BA07C45003CBB16 /* MDKPhoneNumber.m in Sources */,
 				B021575D1B9DAEEA001860B5 /* MDKFieldValidatorHandler.m in Sources */,
-				B021580A1B9DB27D001860B5 /* MDKAlertView.m in Sources */,
 				B08C195B1B9DEEED00D6F93A /* MDKLabel.m in Sources */,
 				B0FFB6BB1BA1CD4800258B9D /* MDKDateConverter.m in Sources */,
 				B05454201C198D8A0020CF1B /* MDKInvalidIntegerValueUIValidationError.m in Sources */,
 				B05454631C19C1160020CF1B /* MDKMessageView.m in Sources */,
+				DE6079111CBBCE9500159AFA /* MDKUIAlertController.m in Sources */,
 				B08C193F1B9DE9A500D6F93A /* MDKRegularExpressionTextFieldExtension.m in Sources */,
 				B062A11C1C19E5BC006B742A /* MDKMinLengthInfo.m in Sources */,
 				B0261E301C22AA2D00685D1A /* MDKPickMediaCommand.m in Sources */,
@@ -2265,7 +2258,6 @@
 				B03B7FD41C29AA7A00CCA9AD /* MDKUIScanner.m in Sources */,
 				B054547D1C19DB450020CF1B /* MDKMessageUIManager.m in Sources */,
 				B05454221C198D8A0020CF1B /* MDKInvalidPhoneNumberValueUIValidationError.m in Sources */,
-				B021580C1B9DB27D001860B5 /* MDKAlertViewManager.m in Sources */,
 				B054544A1C1991390020CF1B /* MDKCanNotPerformActionWarn.m in Sources */,
 				F95BF3D21BF0DA2D002F2EE7 /* MDKHelperImage.m in Sources */,
 				DE8BEEB41C887715008CA965 /* MDKEmailTextFieldStyle.m in Sources */,

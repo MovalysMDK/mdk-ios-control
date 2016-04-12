@@ -17,6 +17,7 @@
 #import "MDKUIWebView.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "Helper.h"
+#import "AlertView.h"
 
 
 
@@ -125,16 +126,15 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
     [self.hud hide:YES];
     
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle:MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"")
-                          message:MDKLocalizedStringFromTable(@"mdk_control_cannot_load_website", @"mdk_ui", @"")
-                          delegate:nil
-                          cancelButtonTitle:MDKLocalizedStringFromTable(@"mdk_general_ok_button", @"mdk_ui", @"")
-                          otherButtonTitles:nil];
+    MDKUIAlertController *alertController = [MDKUIAlertController alertControllerWithTitle:MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"") message:MDKLocalizedStringFromTable(@"mdk_control_cannot_load_website", @"mdk_ui", @"") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAction = [UIAlertAction actionWithTitle:MDKLocalizedStringFromTable(@"mdk_general_ok_button", @"mdk_ui", @"") style:UIAlertActionStyleCancel handler:NULL];
+    [alertController addAction:alertAction];
+    
     if(error) {
         NSLog(@"ERROR : %@", error);
     }
-    [alert show];
+    
+    [self.parentViewController presentViewController:alertController animated:true completion:NULL];
 }
 
 

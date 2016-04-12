@@ -56,10 +56,13 @@
 @optional
 - (void)applyThemeOnMDKFixedListAddButton:(UIButton *)button;
 
-
 // MDKFloatingButton
 @optional
 - (void)applyThemeOnMDKFloatingButton:(UIButton *)button;
+
+// MDKAlertController
+@optional
+- (void)applyThemeOnMDKUIAlertController:(MDKUIAlertController *)alertController;
 
 @end
 
