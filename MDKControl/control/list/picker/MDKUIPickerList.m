@@ -57,8 +57,8 @@ NSString *const MDKUIPickerSelectedDelegateKey = @"selectedItemBindingDelegate";
 
 - (void)setData:(id)data {
     if (data) {
-        [self validate];
         [self setDisplayComponentValue:data];
+        [self validate];
     }
     
     if([self.userSelectedDelegate respondsToSelector:@selector(computeCellHeightAndDispatchToFormController)]) {

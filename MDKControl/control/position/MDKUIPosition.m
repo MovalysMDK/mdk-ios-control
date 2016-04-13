@@ -153,7 +153,7 @@ NSString *const MDKUIPositionAnimationKey = @"LOADING_LOCATION";
     self.textFieldLatitude.text  = value.latitude;
     self.textFieldLongitude.text = value.longitude;
     [self handleLocationEmpty];
-    [self validate];
+//    [self validate];
 }
 
 -(id)displayComponentValue {

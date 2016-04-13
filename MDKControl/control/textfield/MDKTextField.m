@@ -189,7 +189,7 @@
     else {
         self.text = fixedData;
     }
-    [self validate];
+//    [self validate];
     self.initializing = NO;
 }
 
