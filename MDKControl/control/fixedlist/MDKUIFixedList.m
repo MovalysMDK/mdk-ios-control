@@ -92,6 +92,11 @@ NSString *const FIXEDLIST_PARAMETER_IS_PHOTO_KEY = @"isPhotoFixedList";
 
 -(void)setControlAttributes:(NSDictionary *)controlAttributes {
     [super setControlAttributes:controlAttributes];
+    [self.addButton setTitle:NSLocalizedStringFromTableInBundle(controlAttributes[@"title"], @"Localizable-project", [NSBundle bundleForClass:NSClassFromString(@"AppDelegate")], nil) forState:UIControlStateNormal];
+    [self.addButton setImage:[UIImage imageNamed:@"fixedlist_add"inBundle:[NSBundle bundleForClass:MDKUIFixedList.class] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    CGSize size = [[self.addButton titleForState:UIControlStateNormal] sizeWithFont:self.addButton.titleLabel.font];
+    self.addButton.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, -size.width);
+    self.addButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, self.addButton.imageView.image.size.width + 16);
     [self.tableDelegate refreshEditionProperties];
 }
 

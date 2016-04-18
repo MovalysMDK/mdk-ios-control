@@ -161,7 +161,7 @@ NSString * const MF_MANDATORY_INDICATOR = @"MandatoryIndicator";
         fixedData = data;
     }
     else {
-        NSString *defaultValue = NSStringFromClass(self.class);
+        NSString *defaultValue = @"";
         fixedData = defaultValue;
     }
     fixedData = [self insertOrRemoveMandatoryIndicator:fixedData];
