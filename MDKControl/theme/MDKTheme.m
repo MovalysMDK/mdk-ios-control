@@ -51,6 +51,8 @@
     self = [super init];
     if (self) {
         self.userThemes = [NSMutableArray array];
+        
+        [self checkPresenceOfUserTheme];
     }
     return self;
 }
@@ -219,18 +221,22 @@
 
 #pragma mark Private API
 
-- (BOOL)checkIfAnotherThemeAlreadyExist {
-    NSDictionary *themeDictionary = [self themeDictionary];
+- (void)checkPresenceOfUserTheme {
+    NSDictionary *themeDictionary = [self themeDictionary];     // Initialize
     
-    if (themeDictionary) {
-        for (NSString *className in themeDictionary.allValues) {
-            id userTheme = [NSClassFromString(className) new];
-            if ([userTheme conformsToProtocol:@protocol(MDKThemeDelegate)]) {
-                [self.userThemes addObject:userTheme];
-            }
+    // Exits ?
+    if (!themeDictionary) { return; }
+    
+    // Add user theme: if conform MDKThemeDelegate and not contains in userThemes
+    for (NSString *className in themeDictionary.allValues) {
+        id userTheme = [NSClassFromString(className) new];
+        if ([userTheme conformsToProtocol:@protocol(MDKThemeDelegate)] && ![self.userThemes containsObject:userTheme]) {
+            [self.userThemes addObject:userTheme];
         }
     }
-    
+}
+
+- (BOOL)checkIfAnotherThemeAlreadyExist {
     return ( self.userThemes.count > 0 );
 }
 
