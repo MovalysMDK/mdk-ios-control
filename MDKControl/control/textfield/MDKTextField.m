@@ -236,6 +236,8 @@
 }
 
 -(void)showMessage:(BOOL)showMessage {
+    if (showMessage) { [[MDKTheme sharedTheme] applyThemeOnMDKUITextField:self]; }
+    self.onError_MDK = showMessage;
     [self.controlDelegate setIsValid:!showMessage];
 }
 
