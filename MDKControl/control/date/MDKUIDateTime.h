@@ -16,7 +16,6 @@
 
 
 #import "MDKRenderableControl.h"
-#import "Control.h"
 
 /*!
  * @class MDKDateTime

@@ -56,10 +56,10 @@
 		B0261E3C1C231F1B00685D1A /* MDKLocalizedString.m in Sources */ = {isa = PBXBuildFile; fileRef = B0261E3A1C231F1B00685D1A /* MDKLocalizedString.m */; };
 		B02A81211C0CB39400580411 /* MDK_MDKUIListSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = B02A81201C0CB39400580411 /* MDK_MDKUIListSearch.xib */; };
 		B0308D521B9F1673000817D3 /* MDKControlCustomStyleProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = B0308D511B9F1673000817D3 /* MDKControlCustomStyleProtocol.h */; };
-		B03AD4791BC3CDFF00A96F5D /* MDKUIDateTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B03AD4771BC3CDFF00A96F5D /* MDKUIDateTime.h */; };
+		B03AD4791BC3CDFF00A96F5D /* MDKUIDateTime.h in Headers */ = {isa = PBXBuildFile; fileRef = B03AD4771BC3CDFF00A96F5D /* MDKUIDateTime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B03AD47A1BC3CDFF00A96F5D /* MDKUIDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = B03AD4781BC3CDFF00A96F5D /* MDKUIDateTime.m */; };
 		B03AD47E1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03AD47D1BC3F58400A96F5D /* MDK_MDKUIDateTime.xib */; };
-		B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B03AD47F1BC4008400A96F5D /* MDKUIDateTimePickerView.h */; };
+		B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B03AD47F1BC4008400A96F5D /* MDKUIDateTimePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B03AD4821BC4008400A96F5D /* MDKUIDateTimePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B03AD4801BC4008400A96F5D /* MDKUIDateTimePickerView.m */; };
 		B03AD4841BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03AD4831BC4022E00A96F5D /* MDK_MDKUIDateTimePicker.xib */; };
 		B03B7FD31C29AA7A00CCA9AD /* MDKUIScanner.h in Headers */ = {isa = PBXBuildFile; fileRef = B03B7FD11C29AA7A00CCA9AD /* MDKUIScanner.h */; };
@@ -1820,6 +1820,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */,
+				B03AD4791BC3CDFF00A96F5D /* MDKUIDateTime.h in Headers */,
 				B0FFB6AB1BA1CB5F00258B9D /* MDKUISlider.h in Headers */,
 				B08C193B1B9DE9A500D6F93A /* ControlExtension.h in Headers */,
 				DE8BEED91C887738008CA965 /* StyleSlider.h in Headers */,
@@ -1932,8 +1934,6 @@
 				B054544F1C19940E0020CF1B /* MDKMessageWarn.h in Headers */,
 				B02157D71B9DAFA0001860B5 /* MDKComponentApplicationProtocol.h in Headers */,
 				DE8BEED21C887729008CA965 /* UIView+Styleable.h in Headers */,
-				B03AD4811BC4008400A96F5D /* MDKUIDateTimePickerView.h in Headers */,
-				B03AD4791BC3CDFF00A96F5D /* MDKUIDateTime.h in Headers */,
 				DE8BEEBF1C887715008CA965 /* MDKTextFieldStyle+BackgroundView.h in Headers */,
 				B05454731C19C62F0020CF1B /* MDKMessageButton.h in Headers */,
 				B05454271C198D8A0020CF1B /* MDKNoMatchingValueUIValidationError.h in Headers */,
@@ -2456,6 +2456,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -2476,6 +2477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.soprasteria.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
