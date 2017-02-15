@@ -2487,6 +2487,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C7BC8E4C1D3698DB60CC5434 /* Pods-MDKControl.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2510,6 +2511,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 903B5F1A7C02E3B3EC891D4E /* Pods-MDKControl.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
