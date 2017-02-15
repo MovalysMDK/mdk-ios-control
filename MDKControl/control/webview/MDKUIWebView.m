@@ -123,7 +123,7 @@
     [self.hud hide:YES];
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     [self.hud hide:YES];
     
     MDKUIAlertController *alertController = [MDKUIAlertController alertControllerWithTitle:MDKLocalizedStringFromTable(@"mdk_control_error_title", @"mdk_ui", @"") message:MDKLocalizedStringFromTable(@"mdk_control_cannot_load_website", @"mdk_ui", @"") preferredStyle:UIAlertControllerStyleAlert];
