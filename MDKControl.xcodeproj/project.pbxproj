@@ -2043,6 +2043,7 @@
 					};
 					B0FFDA701B33FAFB00CA6E5E = {
 						CreatedOnToolsVersion = 6.3.1;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
